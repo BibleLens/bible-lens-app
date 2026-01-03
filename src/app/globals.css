@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/* Bible Lens Brand Colors */
+:root {
+  /* Core colors */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-bg-elevated: #1a1a1a;
+  
+  /* Brand accent - Gold (top of lens) */
+  --color-gold-50: #fefce8;
+  --color-gold-100: #fef9c3;
+  --color-gold-200: #fef08a;
+  --color-gold-300: #fde047;
+  --color-gold-400: #facc15;
+  --color-gold-500: #eab308;
+  --color-gold-600: #ca8a04;
+  
+  /* Brand accent - Cyan (bottom of lens) */
+  --color-cyan-50: #ecfeff;
+  --color-cyan-100: #cffafe;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+  
+  /* Text colors */
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #737373;
+  
+  /* Scripture text */
+  --color-scripture: #fef3c7;
+  
+  /* UI colors */
+  --color-border: #262626;
+  --color-border-hover: #404040;
+  
+  /* Gradients */
+  --gradient-lens: linear-gradient(180deg, var(--color-gold-400) 0%, var(--color-cyan-400) 100%);
+  --gradient-lens-subtle: linear-gradient(180deg, rgba(250, 204, 21, 0.1) 0%, rgba(34, 211, 238, 0.1) 100%);
+  
+  /* Glow effects */
+  --glow-gold: 0 0 20px rgba(250, 204, 21, 0.3);
+  --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+@theme inline {
+  --color-background: var(--color-bg-primary);
+  --color-foreground: var(--color-text-primary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-cinzel);
+}
+
+/* Base styles */
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom utilities */
+.text-gradient-lens {
+  background: var(--gradient-lens);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-lens {
+  background: var(--gradient-lens);
+}
+
+.border-gradient-lens {
+  border-image: var(--gradient-lens) 1;
+}
+
+.glow-gold {
+  box-shadow: var(--glow-gold);
+}
+
+.glow-cyan {
+  box-shadow: var(--glow-cyan);
+}
+
+/* Scripture styling */
+.scripture-text {
+  font-family: var(--font-display), Georgia, serif;
+  color: var(--color-scripture);
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.verse-number {
+  color: var(--color-gold-400);
+  font-size: 0.75em;
+  vertical-align: super;
+  margin-right: 0.25em;
+  font-weight: 600;
+}
+
+/* Lens icon animation */
+@keyframes lens-pulse {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.4));
+  }
+  50% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.6));
+  }
+}
+
+.lens-icon {
+  animation: lens-pulse 4s ease-in-out infinite;
+}
+
+/* Search input styling */
+.search-input {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: var(--color-cyan-500);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+  outline: none;
+}
+
+/* Card styling */
+.card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-2px);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-hover);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: var(--color-text-primary);
+}
