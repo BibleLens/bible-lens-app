@@ -1,0 +1,461 @@
+{
+  "translation": "BSB",
+  "name": "Berean Standard Bible",
+  "books": [
+    {
+      "id": "genesis",
+      "name": "Genesis",
+      "abbr": "Gen",
+      "testament": "OT",
+      "chapters": 50
+    },
+    {
+      "id": "exodus",
+      "name": "Exodus",
+      "abbr": "Exod",
+      "testament": "OT",
+      "chapters": 40
+    },
+    {
+      "id": "leviticus",
+      "name": "Leviticus",
+      "abbr": "Lev",
+      "testament": "OT",
+      "chapters": 27
+    },
+    {
+      "id": "numbers",
+      "name": "Numbers",
+      "abbr": "Num",
+      "testament": "OT",
+      "chapters": 36
+    },
+    {
+      "id": "deuteronomy",
+      "name": "Deuteronomy",
+      "abbr": "Deut",
+      "testament": "OT",
+      "chapters": 34
+    },
+    {
+      "id": "joshua",
+      "name": "Joshua",
+      "abbr": "Josh",
+      "testament": "OT",
+      "chapters": 24
+    },
+    {
+      "id": "judges",
+      "name": "Judges",
+      "abbr": "Judg",
+      "testament": "OT",
+      "chapters": 21
+    },
+    {
+      "id": "ruth",
+      "name": "Ruth",
+      "abbr": "Ruth",
+      "testament": "OT",
+      "chapters": 4
+    },
+    {
+      "id": "1samuel",
+      "name": "1 Samuel",
+      "abbr": "1Sam",
+      "testament": "OT",
+      "chapters": 31
+    },
+    {
+      "id": "2samuel",
+      "name": "2 Samuel",
+      "abbr": "2Sam",
+      "testament": "OT",
+      "chapters": 24
+    },
+    {
+      "id": "1kings",
+      "name": "1 Kings",
+      "abbr": "1Kgs",
+      "testament": "OT",
+      "chapters": 22
+    },
+    {
+      "id": "2kings",
+      "name": "2 Kings",
+      "abbr": "2Kgs",
+      "testament": "OT",
+      "chapters": 25
+    },
+    {
+      "id": "1chronicles",
+      "name": "1 Chronicles",
+      "abbr": "1Chr",
+      "testament": "OT",
+      "chapters": 29
+    },
+    {
+      "id": "2chronicles",
+      "name": "2 Chronicles",
+      "abbr": "2Chr",
+      "testament": "OT",
+      "chapters": 36
+    },
+    {
+      "id": "ezra",
+      "name": "Ezra",
+      "abbr": "Ezra",
+      "testament": "OT",
+      "chapters": 10
+    },
+    {
+      "id": "nehemiah",
+      "name": "Nehemiah",
+      "abbr": "Neh",
+      "testament": "OT",
+      "chapters": 13
+    },
+    {
+      "id": "esther",
+      "name": "Esther",
+      "abbr": "Esth",
+      "testament": "OT",
+      "chapters": 10
+    },
+    {
+      "id": "job",
+      "name": "Job",
+      "abbr": "Job",
+      "testament": "OT",
+      "chapters": 150
+    },
+    {
+      "id": "proverbs",
+      "name": "Proverbs",
+      "abbr": "Prov",
+      "testament": "OT",
+      "chapters": 31
+    },
+    {
+      "id": "ecclesiastes",
+      "name": "Ecclesiastes",
+      "abbr": "Eccl",
+      "testament": "OT",
+      "chapters": 12
+    },
+    {
+      "id": "songofsolomon",
+      "name": "Song of Solomon",
+      "abbr": "Song",
+      "testament": "OT",
+      "chapters": 8
+    },
+    {
+      "id": "isaiah",
+      "name": "Isaiah",
+      "abbr": "Isa",
+      "testament": "OT",
+      "chapters": 66
+    },
+    {
+      "id": "jeremiah",
+      "name": "Jeremiah",
+      "abbr": "Jer",
+      "testament": "OT",
+      "chapters": 52
+    },
+    {
+      "id": "lamentations",
+      "name": "Lamentations",
+      "abbr": "Lam",
+      "testament": "OT",
+      "chapters": 5
+    },
+    {
+      "id": "ezekiel",
+      "name": "Ezekiel",
+      "abbr": "Ezek",
+      "testament": "OT",
+      "chapters": 48
+    },
+    {
+      "id": "daniel",
+      "name": "Daniel",
+      "abbr": "Dan",
+      "testament": "OT",
+      "chapters": 12
+    },
+    {
+      "id": "hosea",
+      "name": "Hosea",
+      "abbr": "Hos",
+      "testament": "OT",
+      "chapters": 14
+    },
+    {
+      "id": "joel",
+      "name": "Joel",
+      "abbr": "Joel",
+      "testament": "OT",
+      "chapters": 3
+    },
+    {
+      "id": "amos",
+      "name": "Amos",
+      "abbr": "Amos",
+      "testament": "OT",
+      "chapters": 9
+    },
+    {
+      "id": "obadiah",
+      "name": "Obadiah",
+      "abbr": "Obad",
+      "testament": "OT",
+      "chapters": 1
+    },
+    {
+      "id": "jonah",
+      "name": "Jonah",
+      "abbr": "Jonah",
+      "testament": "OT",
+      "chapters": 4
+    },
+    {
+      "id": "micah",
+      "name": "Micah",
+      "abbr": "Mic",
+      "testament": "OT",
+      "chapters": 7
+    },
+    {
+      "id": "nahum",
+      "name": "Nahum",
+      "abbr": "Nah",
+      "testament": "OT",
+      "chapters": 3
+    },
+    {
+      "id": "habakkuk",
+      "name": "Habakkuk",
+      "abbr": "Hab",
+      "testament": "OT",
+      "chapters": 3
+    },
+    {
+      "id": "zephaniah",
+      "name": "Zephaniah",
+      "abbr": "Zeph",
+      "testament": "OT",
+      "chapters": 3
+    },
+    {
+      "id": "haggai",
+      "name": "Haggai",
+      "abbr": "Hag",
+      "testament": "OT",
+      "chapters": 2
+    },
+    {
+      "id": "zechariah",
+      "name": "Zechariah",
+      "abbr": "Zech",
+      "testament": "OT",
+      "chapters": 14
+    },
+    {
+      "id": "malachi",
+      "name": "Malachi",
+      "abbr": "Mal",
+      "testament": "OT",
+      "chapters": 4
+    },
+    {
+      "id": "matthew",
+      "name": "Matthew",
+      "abbr": "Matt",
+      "testament": "NT",
+      "chapters": 28
+    },
+    {
+      "id": "mark",
+      "name": "Mark",
+      "abbr": "Mark",
+      "testament": "NT",
+      "chapters": 16
+    },
+    {
+      "id": "luke",
+      "name": "Luke",
+      "abbr": "Luke",
+      "testament": "NT",
+      "chapters": 24
+    },
+    {
+      "id": "john",
+      "name": "John",
+      "abbr": "John",
+      "testament": "NT",
+      "chapters": 21
+    },
+    {
+      "id": "acts",
+      "name": "Acts",
+      "abbr": "Acts",
+      "testament": "NT",
+      "chapters": 28
+    },
+    {
+      "id": "romans",
+      "name": "Romans",
+      "abbr": "Rom",
+      "testament": "NT",
+      "chapters": 16
+    },
+    {
+      "id": "1corinthians",
+      "name": "1 Corinthians",
+      "abbr": "1Cor",
+      "testament": "NT",
+      "chapters": 16
+    },
+    {
+      "id": "2corinthians",
+      "name": "2 Corinthians",
+      "abbr": "2Cor",
+      "testament": "NT",
+      "chapters": 13
+    },
+    {
+      "id": "galatians",
+      "name": "Galatians",
+      "abbr": "Gal",
+      "testament": "NT",
+      "chapters": 6
+    },
+    {
+      "id": "ephesians",
+      "name": "Ephesians",
+      "abbr": "Eph",
+      "testament": "NT",
+      "chapters": 6
+    },
+    {
+      "id": "philippians",
+      "name": "Philippians",
+      "abbr": "Phil",
+      "testament": "NT",
+      "chapters": 4
+    },
+    {
+      "id": "colossians",
+      "name": "Colossians",
+      "abbr": "Col",
+      "testament": "NT",
+      "chapters": 4
+    },
+    {
+      "id": "1thessalonians",
+      "name": "1 Thessalonians",
+      "abbr": "1Thess",
+      "testament": "NT",
+      "chapters": 5
+    },
+    {
+      "id": "2thessalonians",
+      "name": "2 Thessalonians",
+      "abbr": "2Thess",
+      "testament": "NT",
+      "chapters": 3
+    },
+    {
+      "id": "1timothy",
+      "name": "1 Timothy",
+      "abbr": "1Tim",
+      "testament": "NT",
+      "chapters": 6
+    },
+    {
+      "id": "2timothy",
+      "name": "2 Timothy",
+      "abbr": "2Tim",
+      "testament": "NT",
+      "chapters": 4
+    },
+    {
+      "id": "titus",
+      "name": "Titus",
+      "abbr": "Titus",
+      "testament": "NT",
+      "chapters": 3
+    },
+    {
+      "id": "philemon",
+      "name": "Philemon",
+      "abbr": "Phlm",
+      "testament": "NT",
+      "chapters": 1
+    },
+    {
+      "id": "hebrews",
+      "name": "Hebrews",
+      "abbr": "Heb",
+      "testament": "NT",
+      "chapters": 13
+    },
+    {
+      "id": "james",
+      "name": "James",
+      "abbr": "Jas",
+      "testament": "NT",
+      "chapters": 5
+    },
+    {
+      "id": "1peter",
+      "name": "1 Peter",
+      "abbr": "1Pet",
+      "testament": "NT",
+      "chapters": 5
+    },
+    {
+      "id": "2peter",
+      "name": "2 Peter",
+      "abbr": "2Pet",
+      "testament": "NT",
+      "chapters": 3
+    },
+    {
+      "id": "1john",
+      "name": "1 John",
+      "abbr": "1John",
+      "testament": "NT",
+      "chapters": 5
+    },
+    {
+      "id": "2john",
+      "name": "2 John",
+      "abbr": "2John",
+      "testament": "NT",
+      "chapters": 1
+    },
+    {
+      "id": "3john",
+      "name": "3 John",
+      "abbr": "3John",
+      "testament": "NT",
+      "chapters": 1
+    },
+    {
+      "id": "jude",
+      "name": "Jude",
+      "abbr": "Jude",
+      "testament": "NT",
+      "chapters": 1
+    },
+    {
+      "id": "revelation",
+      "name": "Revelation",
+      "abbr": "Rev",
+      "testament": "NT",
+      "chapters": 22
+    }
+  ]
+}
