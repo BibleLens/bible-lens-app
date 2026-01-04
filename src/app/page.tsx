@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { LensIcon } from "@/components/LensIcon";
@@ -14,21 +14,19 @@ export default function Home() {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [activeTab, setActiveTab] = useState<"old" | "new">("old");
-  const [showResults, setShowResults] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
+  const [lastSearchQuery, setLastSearchQuery] = useState("");
   
   const oldTestamentBooks = getOldTestamentBooks();
   const newTestamentBooks = getNewTestamentBooks();
 
-  // Debounced search
-  const performSearch = useCallback((query: string) => {
-    if (!query || query.trim().length < 2) {
-      setSearchResults([]);
-      setShowResults(false);
+  // Execute search (only called on Enter or button click)
+  const executeSearch = () => {
+    const query = searchQuery.trim();
+    
+    if (!query || query.length < 2) {
       return;
     }
-
-    setIsSearching(true);
-    setShowResults(true);
 
     // Check if it's a verse reference first
     const reference = parseVerseReference(query);
@@ -38,40 +36,41 @@ export default function Home() {
         ? `/bible/${reference.bookId}/${reference.chapter}#verse-${reference.verse}`
         : `/bible/${reference.bookId}/${reference.chapter}`;
       router.push(url);
-      setIsSearching(false);
       return;
     }
 
-    // Perform text search (with small delay to prevent UI blocking)
+    // Perform text search
+    setIsSearching(true);
+    setHasSearched(true);
+    setLastSearchQuery(query);
+
+    // Small delay to show loading state
     setTimeout(() => {
       const results = searchBible(query);
       setSearchResults(results);
       setIsSearching(false);
     }, 100);
-  }, [router]);
-
-  // Debounce search input
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      performSearch(searchQuery);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [searchQuery, performSearch]);
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
   };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    performSearch(searchQuery);
+    executeSearch();
+  };
+
+  const handleSearchClick = () => {
+    executeSearch();
   };
 
   const clearSearch = () => {
     setSearchQuery("");
     setSearchResults([]);
-    setShowResults(false);
+    setHasSearched(false);
+    setLastSearchQuery("");
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    setSearchQuery(suggestion);
+    // Don't auto-execute, let user press Enter
   };
 
   return (
@@ -103,19 +102,23 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
-        {/* Hero Section */}
+        {/* Hero Section - Always visible */}
         <section className="text-center mb-8">
-          <div className="flex justify-center mb-6">
-            <LensIcon size={80} />
-          </div>
-          <p 
-            className="text-[var(--color-text-secondary)] text-lg mb-8"
-            style={{ fontFamily: "var(--font-cinzel), serif" }}
-          >
-            Context Over Tradition
-          </p>
+          {!hasSearched && (
+            <>
+              <div className="flex justify-center mb-6">
+                <LensIcon size={80} />
+              </div>
+              <p 
+                className="text-[var(--color-text-secondary)] text-lg mb-8"
+                style={{ fontFamily: "var(--font-cinzel), serif" }}
+              >
+                Context Over Tradition
+              </p>
+            </>
+          )}
           
-          {/* Search Bar */}
+          {/* Search Bar - Always visible */}
           <form onSubmit={handleSearchSubmit} className="max-w-2xl mx-auto relative">
             <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
               <svg className="w-5 h-5 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -126,29 +129,39 @@ export default function Home() {
               type="text"
               placeholder="Search verses or enter reference (e.g., John 3:16)..."
               value={searchQuery}
-              onChange={handleSearchChange}
-              className="search-input w-full pl-12 pr-12 py-4 rounded-2xl text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] text-lg"
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="search-input w-full pl-12 pr-24 py-4 rounded-2xl text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] text-lg"
             />
-            {searchQuery && (
+            <div className="absolute inset-y-0 right-2 flex items-center gap-1">
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={clearSearch}
+                  className="p-2 text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
+                  title="Clear search"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
               <button
-                type="button"
-                onClick={clearSearch}
-                className="absolute inset-y-0 right-4 flex items-center text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
+                type="submit"
+                onClick={handleSearchClick}
+                className="px-4 py-2 bg-[var(--color-cyan-500)] hover:bg-[var(--color-cyan-600)] text-black font-medium rounded-xl transition-colors"
               >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                Search
               </button>
-            )}
+            </div>
           </form>
           
-          {/* Quick search suggestions */}
-          {!showResults && (
+          {/* Quick search suggestions - only when not showing results */}
+          {!hasSearched && (
             <div className="flex flex-wrap justify-center gap-2 mt-4">
               {["John 3:16", "1 Cor 15:45", "kingdom", "eternal life"].map((suggestion) => (
                 <button
                   key={suggestion}
-                  onClick={() => setSearchQuery(suggestion)}
+                  onClick={() => handleSuggestionClick(suggestion)}
                   className="px-4 py-2 rounded-full text-sm bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
                 >
                   {suggestion}
@@ -159,69 +172,38 @@ export default function Home() {
         </section>
 
         {/* Search Results or Bible Browser */}
-        {showResults ? (
+        {hasSearched ? (
           <section className="max-w-3xl mx-auto">
-            <button
-              onClick={clearSearch}
-              className="mb-4 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-cyan-400)] transition-colors flex items-center gap-1"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Back to Bible
-            </button>
             <SearchResults 
               results={searchResults} 
-              query={searchQuery} 
+              query={lastSearchQuery} 
               isSearching={isSearching} 
             />
+            
+            {/* Show Bible browser below results */}
+            {!isSearching && searchResults.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-[var(--color-border)]">
+                <h3 className="text-center text-[var(--color-text-muted)] mb-6">
+                  Or browse the Bible directly
+                </h3>
+                <BibleBrowser 
+                  activeTab={activeTab} 
+                  setActiveTab={setActiveTab}
+                  oldTestamentBooks={oldTestamentBooks}
+                  newTestamentBooks={newTestamentBooks}
+                />
+              </div>
+            )}
           </section>
         ) : (
           <>
             {/* Bible Books Section */}
-            <section>
-              {/* Testament Tabs */}
-              <div className="flex gap-1 mb-6 p-1 bg-[var(--color-bg-secondary)] rounded-lg w-fit mx-auto">
-                <button
-                  onClick={() => setActiveTab("old")}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
-                    activeTab === "old"
-                      ? "bg-[var(--color-bg-elevated)] text-[var(--color-gold-400)]"
-                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
-                  }`}
-                >
-                  Old Testament
-                </button>
-                <button
-                  onClick={() => setActiveTab("new")}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
-                    activeTab === "new"
-                      ? "bg-[var(--color-bg-elevated)] text-[var(--color-cyan-400)]"
-                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
-                  }`}
-                >
-                  New Testament
-                </button>
-              </div>
-
-              {/* Books Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
-                {(activeTab === "old" ? oldTestamentBooks : newTestamentBooks).map((book) => (
-                  <Link
-                    key={book.id}
-                    href={`/bible/${book.id}`}
-                    className="card p-4 text-left hover:border-[var(--color-cyan-500)]/50 group"
-                  >
-                    <p className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)] transition-colors truncate">
-                      {book.name}
-                    </p>
-                    <p className="text-xs text-[var(--color-text-muted)] mt-1">
-                      {book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </section>
+            <BibleBrowser 
+              activeTab={activeTab} 
+              setActiveTab={setActiveTab}
+              oldTestamentBooks={oldTestamentBooks}
+              newTestamentBooks={newTestamentBooks}
+            />
 
             {/* Featured Topics */}
             <section className="mt-12">
@@ -292,5 +274,61 @@ export default function Home() {
         </div>
       </footer>
     </div>
+  );
+}
+
+// Extracted Bible Browser component for reuse
+interface BibleBrowserProps {
+  activeTab: "old" | "new";
+  setActiveTab: (tab: "old" | "new") => void;
+  oldTestamentBooks: { id: string; name: string; chapters: number }[];
+  newTestamentBooks: { id: string; name: string; chapters: number }[];
+}
+
+function BibleBrowser({ activeTab, setActiveTab, oldTestamentBooks, newTestamentBooks }: BibleBrowserProps) {
+  return (
+    <section>
+      {/* Testament Tabs */}
+      <div className="flex gap-1 mb-6 p-1 bg-[var(--color-bg-secondary)] rounded-lg w-fit mx-auto">
+        <button
+          onClick={() => setActiveTab("old")}
+          className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+            activeTab === "old"
+              ? "bg-[var(--color-bg-elevated)] text-[var(--color-gold-400)]"
+              : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+          }`}
+        >
+          Old Testament
+        </button>
+        <button
+          onClick={() => setActiveTab("new")}
+          className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+            activeTab === "new"
+              ? "bg-[var(--color-bg-elevated)] text-[var(--color-cyan-400)]"
+              : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+          }`}
+        >
+          New Testament
+        </button>
+      </div>
+
+      {/* Books Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+        {(activeTab === "old" ? oldTestamentBooks : newTestamentBooks).map((book) => (
+          <Link
+            key={book.id}
+            href={`/bible/${book.id}`}
+            className="card p-4 text-left hover:border-[var(--color-cyan-500)]/50 group"
+          >
+            <p className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)] transition-colors truncate">
+              {book.name}
+            </p>
+            <p className="text-xs text-[var(--color-text-muted)] mt-1">
+              {book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}
+            </p>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
