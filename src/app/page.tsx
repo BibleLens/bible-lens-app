@@ -1,15 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { LensIcon } from "@/components/LensIcon";
 import { SearchResults } from "@/components/SearchResults";
 import { getOldTestamentBooks, getNewTestamentBooks } from "@/lib/bible";
 import { searchBible, parseVerseReference, SearchResult } from "@/lib/search";
 
-export default function Home() {
+// Main page content that uses useSearchParams
+function HomeContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
@@ -20,18 +23,26 @@ export default function Home() {
   const oldTestamentBooks = getOldTestamentBooks();
   const newTestamentBooks = getNewTestamentBooks();
 
-  // Execute search (only called on Enter or button click)
-  const executeSearch = () => {
-    const query = searchQuery.trim();
+  // Handle URL query parameter on load
+  useEffect(() => {
+    const queryFromUrl = searchParams.get('q');
+    if (queryFromUrl) {
+      setSearchQuery(queryFromUrl);
+      executeSearchWithQuery(queryFromUrl);
+    }
+  }, [searchParams]);
+
+  // Execute search with a specific query
+  const executeSearchWithQuery = (query: string) => {
+    const trimmedQuery = query.trim();
     
-    if (!query || query.length < 2) {
+    if (!trimmedQuery || trimmedQuery.length < 2) {
       return;
     }
 
     // Check if it's a verse reference first
-    const reference = parseVerseReference(query);
+    const reference = parseVerseReference(trimmedQuery);
     if (reference) {
-      // Navigate directly to the verse
       const url = reference.verse 
         ? `/bible/${reference.bookId}/${reference.chapter}#verse-${reference.verse}`
         : `/bible/${reference.bookId}/${reference.chapter}`;
@@ -42,22 +53,26 @@ export default function Home() {
     // Perform text search
     setIsSearching(true);
     setHasSearched(true);
-    setLastSearchQuery(query);
+    setLastSearchQuery(trimmedQuery);
 
-    // Small delay to show loading state
     setTimeout(() => {
-      const results = searchBible(query);
+      const results = searchBible(trimmedQuery);
       setSearchResults(results);
       setIsSearching(false);
     }, 100);
   };
 
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    executeSearch();
+  // Execute search (called on Enter or button click)
+  const executeSearch = () => {
+    executeSearchWithQuery(searchQuery);
+    // Update URL without navigation
+    if (searchQuery.trim()) {
+      router.push(`/?q=${encodeURIComponent(searchQuery.trim())}`, { scroll: false });
+    }
   };
 
-  const handleSearchClick = () => {
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     executeSearch();
   };
 
@@ -66,33 +81,67 @@ export default function Home() {
     setSearchResults([]);
     setHasSearched(false);
     setLastSearchQuery("");
+    router.push("/", { scroll: false });
   };
 
   const handleSuggestionClick = (suggestion: string) => {
     setSearchQuery(suggestion);
-    // Don't auto-execute, let user press Enter
   };
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg-primary)]/80 border-b border-[var(--color-border)]">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <button onClick={clearSearch} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <LensIcon size={36} animate={false} />
-            <div>
-              <h1 
-                className="text-lg font-semibold tracking-wide"
-                style={{ fontFamily: "var(--font-cinzel), serif" }}
-              >
-                <span className="text-[var(--color-gold-400)]">Bible</span>
-                <span className="text-[var(--color-cyan-400)]"> Lens</span>
-              </h1>
-            </div>
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
+          {/* Logo */}
+          <button onClick={clearSearch} className="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0">
+            <LensIcon size={32} animate={false} />
+            <span 
+              className="text-base font-semibold tracking-wide hidden sm:inline"
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+            >
+              <span className="text-[var(--color-gold-400)]">Bible</span>
+              <span className="text-[var(--color-cyan-400)]"> Lens</span>
+            </span>
           </button>
           
+          {/* Header Search Bar (always visible) */}
+          <form onSubmit={handleSearchSubmit} className="flex-1 max-w-xl relative">
+            <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+              <svg className="w-4 h-4 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Search verses or references..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-20 py-2 rounded-full bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] text-sm focus:border-[var(--color-cyan-500)] focus:outline-none transition-colors"
+            />
+            <div className="absolute inset-y-0 right-1 flex items-center">
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={clearSearch}
+                  className="p-1.5 text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+              <button
+                type="submit"
+                className="px-3 py-1.5 bg-[var(--color-cyan-500)] hover:bg-[var(--color-cyan-600)] text-black text-xs font-medium rounded-full transition-colors"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+          
           {/* User menu placeholder */}
-          <button className="w-9 h-9 rounded-full bg-[var(--color-bg-elevated)] border border-[var(--color-border)] flex items-center justify-center hover:border-[var(--color-border-hover)] transition-colors">
+          <button className="w-9 h-9 rounded-full bg-[var(--color-bg-elevated)] border border-[var(--color-border)] flex items-center justify-center hover:border-[var(--color-border-hover)] transition-colors shrink-0">
             <svg className="w-5 h-5 text-[var(--color-text-secondary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
@@ -102,61 +151,20 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
-        {/* Hero Section - Always visible */}
-        <section className="text-center mb-8">
-          {!hasSearched && (
-            <>
-              <div className="flex justify-center mb-6">
-                <LensIcon size={80} />
-              </div>
-              <p 
-                className="text-[var(--color-text-secondary)] text-lg mb-8"
-                style={{ fontFamily: "var(--font-cinzel), serif" }}
-              >
-                Context Over Tradition
-              </p>
-            </>
-          )}
-          
-          {/* Search Bar - Always visible */}
-          <form onSubmit={handleSearchSubmit} className="max-w-2xl mx-auto relative">
-            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-              <svg className="w-5 h-5 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+        {/* Hero Section - only when not showing results */}
+        {!hasSearched && (
+          <section className="text-center mb-8">
+            <div className="flex justify-center mb-6">
+              <LensIcon size={80} />
             </div>
-            <input
-              type="text"
-              placeholder="Search verses or enter reference (e.g., John 3:16)..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="search-input w-full pl-12 pr-24 py-4 rounded-2xl text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] text-lg"
-            />
-            <div className="absolute inset-y-0 right-2 flex items-center gap-1">
-              {searchQuery && (
-                <button
-                  type="button"
-                  onClick={clearSearch}
-                  className="p-2 text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
-                  title="Clear search"
-                >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              )}
-              <button
-                type="submit"
-                onClick={handleSearchClick}
-                className="px-4 py-2 bg-[var(--color-cyan-500)] hover:bg-[var(--color-cyan-600)] text-black font-medium rounded-xl transition-colors"
-              >
-                Search
-              </button>
-            </div>
-          </form>
-          
-          {/* Quick search suggestions - only when not showing results */}
-          {!hasSearched && (
+            <p 
+              className="text-[var(--color-text-secondary)] text-lg mb-8"
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+            >
+              Context Over Tradition
+            </p>
+            
+            {/* Quick search suggestions */}
             <div className="flex flex-wrap justify-center gap-2 mt-4">
               {["John 3:16", "1 Cor 15:45", "kingdom", "eternal life"].map((suggestion) => (
                 <button
@@ -168,8 +176,8 @@ export default function Home() {
                 </button>
               ))}
             </div>
-          )}
-        </section>
+          </section>
+        )}
 
         {/* Search Results or Bible Browser */}
         {hasSearched ? (
@@ -181,7 +189,7 @@ export default function Home() {
             />
             
             {/* Show Bible browser below results */}
-            {!isSearching && searchResults.length > 0 && (
+            {!isSearching && (
               <div className="mt-12 pt-8 border-t border-[var(--color-border)]">
                 <h3 className="text-center text-[var(--color-text-muted)] mb-6">
                   Or browse the Bible directly
@@ -273,6 +281,27 @@ export default function Home() {
           </p>
         </div>
       </footer>
+    </div>
+  );
+}
+
+// Main export wrapped in Suspense
+export default function Home() {
+  return (
+    <Suspense fallback={<HomeLoading />}>
+      <HomeContent />
+    </Suspense>
+  );
+}
+
+// Loading fallback
+function HomeLoading() {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <LensIcon size={64} />
+        <p className="text-[var(--color-text-muted)] mt-4">Loading...</p>
+      </div>
     </div>
   );
 }
