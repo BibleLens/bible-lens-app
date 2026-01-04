@@ -129,6 +129,13 @@
       "chapters": 150
     },
     {
+      "id": "psalms",
+      "name": "Psalms",
+      "abbr": "Ps",
+      "testament": "OT",
+      "chapters": 150
+    },
+    {
       "id": "proverbs",
       "name": "Proverbs",
       "abbr": "Prov",
