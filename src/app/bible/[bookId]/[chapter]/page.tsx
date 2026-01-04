@@ -139,8 +139,9 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
         <div className="space-y-4">
           {verses.map((verse) => (
             <p 
-              key={verse.verse} 
-              className="text-lg leading-relaxed text-[var(--color-scripture)]"
+              key={verse.verse}
+              id={`verse-${verse.verse}`}
+              className="text-lg leading-relaxed text-[var(--color-scripture)] scroll-mt-20 target:bg-[var(--color-cyan-500)]/10 target:rounded-lg target:p-2 target:-mx-2 transition-colors"
               style={{ fontFamily: "Georgia, serif" }}
             >
               <span className="verse-number">{verse.verse}</span>
