@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getChapter, getBook, findBookById, getAdjacentBooks } from "@/lib/bible";
-import { Header } from "@/components/Header";
+import { LensIcon } from "@/components/LensIcon";
 
 interface ChapterPageProps {
   params: Promise<{ bookId: string; chapter: string }>;
@@ -65,32 +65,34 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header with Search */}
-      <Header />
-
-      {/* Secondary Navigation Bar */}
-      <div className="border-b border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
-        <div className="max-w-4xl mx-auto px-4 py-2 flex items-center justify-between">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-sm">
-            <Link 
-              href={`/bible/${bookId}`}
-              className="text-[var(--color-text-muted)] hover:text-[var(--color-cyan-400)] transition-colors"
+      {/* Header */}
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg-primary)]/80 border-b border-[var(--color-border)]">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <LensIcon size={28} animate={false} />
+            <span 
+              className="text-base font-semibold tracking-wide hidden sm:inline"
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
             >
-              {bookMeta.name}
-            </Link>
-            <span className="text-[var(--color-text-muted)]">/</span>
-            <span className="text-[var(--color-text-primary)] font-medium">
-              Chapter {chapterNum}
+              <span className="text-[var(--color-gold-400)]">Bible</span>
+              <span className="text-[var(--color-cyan-400)]"> Lens</span>
             </span>
-          </div>
+          </Link>
+          
+          {/* Current location */}
+          <Link 
+            href={`/bible/${bookId}`}
+            className="text-sm font-medium text-[var(--color-text-primary)] hover:text-[var(--color-cyan-400)] transition-colors"
+          >
+            {bookMeta.name} {chapterNum}
+          </Link>
           
           {/* Chapter navigation */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 text-sm">
             {prevLink && (
               <Link 
                 href={prevLink}
-                className="p-2 rounded-lg hover:bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
+                className="p-2 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
                 title={prevLabel || undefined}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -101,7 +103,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             {nextLink && (
               <Link 
                 href={nextLink}
-                className="p-2 rounded-lg hover:bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
+                className="p-2 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
                 title={nextLabel || undefined}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -111,18 +113,24 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             )}
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Main Content */}
       <main className="flex-1 max-w-3xl mx-auto w-full px-4 py-8">
         {/* Chapter Title */}
         <div className="text-center mb-8">
+          <Link 
+            href={`/bible/${bookId}`}
+            className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors"
+          >
+            {bookMeta.testament === 'OT' ? 'Old Testament' : 'New Testament'} • {bookMeta.name}
+          </Link>
           <h1 
-            className="text-3xl font-bold"
+            className="text-3xl font-bold mt-2"
             style={{ fontFamily: "var(--font-cinzel), serif" }}
           >
             <span className={bookMeta.testament === 'OT' ? 'text-[var(--color-gold-400)]' : 'text-[var(--color-cyan-400)]'}>
-              {bookMeta.name} {chapterNum}
+              Chapter {chapterNum}
             </span>
           </h1>
         </div>
@@ -131,9 +139,8 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
         <div className="space-y-4">
           {verses.map((verse) => (
             <p 
-              key={verse.verse}
-              id={`verse-${verse.verse}`}
-              className="text-lg leading-relaxed text-[var(--color-scripture)] scroll-mt-32 target:bg-[var(--color-cyan-500)]/10 target:rounded-lg target:p-2 target:-mx-2 transition-colors"
+              key={verse.verse} 
+              className="text-lg leading-relaxed text-[var(--color-scripture)]"
               style={{ fontFamily: "Georgia, serif" }}
             >
               <span className="verse-number">{verse.verse}</span>
@@ -189,3 +196,4 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
     </div>
   );
 }
+

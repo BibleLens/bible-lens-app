@@ -49,7 +49,6 @@ import ezraData from '@/data/bibles/bsb/ezra.json';
 import nehemiahData from '@/data/bibles/bsb/nehemiah.json';
 import estherData from '@/data/bibles/bsb/esther.json';
 import jobData from '@/data/bibles/bsb/job.json';
-import psalmsData from '@/data/bibles/bsb/psalms.json';
 import proverbsData from '@/data/bibles/bsb/proverbs.json';
 import ecclesiastesData from '@/data/bibles/bsb/ecclesiastes.json';
 import songData from '@/data/bibles/bsb/songofsolomon.json';
@@ -119,7 +118,6 @@ const bookDataMap: Record<string, BookData> = {
   nehemiah: nehemiahData as BookData,
   esther: estherData as BookData,
   job: jobData as BookData,
-  psalms: psalmsData as BookData,
   proverbs: proverbsData as BookData,
   ecclesiastes: ecclesiastesData as BookData,
   songofsolomon: songData as BookData,

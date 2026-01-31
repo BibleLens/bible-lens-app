@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBook, findBookById, getAdjacentBooks } from "@/lib/bible";
-import { Header } from "@/components/Header";
+import { LensIcon } from "@/components/LensIcon";
 
 interface BookPageProps {
   params: Promise<{ bookId: string }>;
@@ -35,31 +35,44 @@ export default async function BookPage({ params }: BookPageProps) {
   
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header with Search */}
-      <Header />
+      {/* Header */}
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg-primary)]/80 border-b border-[var(--color-border)]">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <LensIcon size={32} animate={false} />
+            <span 
+              className="text-lg font-semibold tracking-wide"
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+            >
+              <span className="text-[var(--color-gold-400)]">Bible</span>
+              <span className="text-[var(--color-cyan-400)]"> Lens</span>
+            </span>
+          </Link>
+          
+          {/* Book navigation */}
+          <div className="flex items-center gap-2 text-sm">
+            {prev && (
+              <Link 
+                href={`/bible/${prev.id}`}
+                className="px-3 py-1.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
+              >
+                ← {prev.abbr}
+              </Link>
+            )}
+            {next && (
+              <Link 
+                href={`/bible/${next.id}`}
+                className="px-3 py-1.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
+              >
+                {next.abbr} →
+              </Link>
+            )}
+          </div>
+        </div>
+      </header>
 
       {/* Main Content */}
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
-        {/* Book Navigation */}
-        <div className="flex items-center justify-between mb-6">
-          {prev ? (
-            <Link 
-              href={`/bible/${prev.id}`}
-              className="px-3 py-1.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors text-sm"
-            >
-              ← {prev.name}
-            </Link>
-          ) : <div />}
-          {next && (
-            <Link 
-              href={`/bible/${next.id}`}
-              className="px-3 py-1.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors text-sm"
-            >
-              {next.name} →
-            </Link>
-          )}
-        </div>
-
         {/* Book Title */}
         <div className="text-center mb-8">
           <p className="text-sm text-[var(--color-text-muted)] mb-2">
@@ -116,3 +129,4 @@ export default async function BookPage({ params }: BookPageProps) {
     </div>
   );
 }
+
