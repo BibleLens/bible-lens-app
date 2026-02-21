@@ -93,7 +93,7 @@ async function main() {
       points: batchPoints.map((p, j) => ({
         id: uuidv4(),
         vector: batchEmbeddings[j],
-        payload: p,
+        payload: p as unknown as Record<string, unknown>,
       })),
     });
 
