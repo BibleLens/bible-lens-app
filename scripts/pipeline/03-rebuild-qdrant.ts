@@ -1,4 +1,6 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
+import { resolve } from 'path';
+dotenv.config({ path: resolve(process.cwd(), '.env.local') });
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import { v4 as uuidv4 } from 'uuid';
@@ -8,8 +10,8 @@ import { embedAll } from './lib/openai-client.js';
 import type { ScrapedDoc, EmbedPoint } from './lib/types.js';
 
 const PERSONAL_DIR = '/Users/patrickrobinson/Desktop/BibleProject/bible-lens-rag/data/processed/personal';
-const TD_JSON = new URL('../data/trinity-delusion.json', import.meta.url).pathname;
-const PDF_JSON = new URL('../data/preterist-pdfs.json', import.meta.url).pathname;
+const TD_JSON = new URL('./data/trinity-delusion.json', import.meta.url).pathname;
+const PDF_JSON = new URL('./data/preterist-pdfs.json', import.meta.url).pathname;
 
 async function main() {
   const client = createQdrantClient();
