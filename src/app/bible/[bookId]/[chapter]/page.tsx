@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getChapter, getBook, findBookById, getAdjacentBooks } from "@/lib/bible";
 import { LensIcon } from "@/components/LensIcon";
+import { CommentaryPanel } from "@/components/CommentaryPanel";
 
 interface ChapterPageProps {
   params: Promise<{ bookId: string; chapter: string }>;
@@ -35,6 +36,11 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
   
   const { prev: prevBook, next: nextBook } = getAdjacentBooks(bookId);
   const totalChapters = book.chapterCount;
+
+  const hasCommentary =
+    (bookId === "genesis" && chapterNum >= 1 && chapterNum <= 3) ||
+    (bookId === "matthew" && chapterNum === 24);
+
   const hasPrevChapter = chapterNum > 1;
   const hasNextChapter = chapterNum < totalChapters;
   
@@ -148,6 +154,13 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             </p>
           ))}
         </div>
+
+        {/* Commentary Panel — only for genesis 1-3 and matthew 24 */}
+        {hasCommentary && (
+          <div className="mt-8">
+            <CommentaryPanel book={bookId} chapter={chapterNum} />
+          </div>
+        )}
 
         {/* Chapter Navigation */}
         <div className="mt-12 flex items-center justify-between gap-4">
