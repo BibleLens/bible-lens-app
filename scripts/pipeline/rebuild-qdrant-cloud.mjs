@@ -177,7 +177,7 @@ async function main() {
           text: chunk.text,
           title: doc.title || 'Untitled',
           url: doc.url || '',
-          source: doc.source || sourceLabel,
+          source: sourceLabel, // Always use canonical sourceLabel — raw JSON may have stale source values
           priority: doc.priority || 5,
           chunkIndex: chunk.chunkIndex,
           totalChunks: chunk.totalChunks,
