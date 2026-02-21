@@ -2,12 +2,16 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { LensIcon } from "@/components/LensIcon";
+import { BackgroundPaths } from "@/components/BackgroundPaths";
+import { NeonButton } from "@/components/NeonButton";
 import { getOldTestamentBooks, getNewTestamentBooks } from "@/lib/bible";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<"old" | "new">("old");
+  const router = useRouter();
   
   const oldTestamentBooks = getOldTestamentBooks();
   const newTestamentBooks = getNewTestamentBooks();
@@ -42,44 +46,63 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
         {/* Hero Section */}
-        <section className="text-center mb-12">
-          <div className="flex justify-center mb-6">
-            <LensIcon size={80} />
-          </div>
-          <p 
-            className="text-[var(--color-text-secondary)] text-lg mb-8"
-            style={{ fontFamily: "var(--font-cinzel), serif" }}
-          >
-            Context Over Tradition
-          </p>
-          
-          {/* Search Bar */}
-          <div className="max-w-2xl mx-auto relative">
-            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-              <svg className="w-5 h-5 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+        <section className="relative text-center mb-12 py-8">
+          <BackgroundPaths />
+
+          <div className="relative z-10">
+            <div className="flex justify-center mb-6">
+              <LensIcon size={80} />
             </div>
-            <input
-              type="text"
-              placeholder="Search verses, topics, or ask a question..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="search-input w-full pl-12 pr-4 py-4 rounded-2xl text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] text-lg"
-            />
-          </div>
-          
-          {/* Quick search suggestions */}
-          <div className="flex flex-wrap justify-center gap-2 mt-4">
-            {["Who is Jesus?", "Matthew 24", "Kingdom of God", "Last Adam"].map((suggestion) => (
-              <button
-                key={suggestion}
-                onClick={() => setSearchQuery(suggestion)}
-                className="px-4 py-2 rounded-full text-sm bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
-              >
-                {suggestion}
-              </button>
-            ))}
+            <p
+              className="text-[var(--color-text-secondary)] text-lg mb-8"
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+            >
+              Context Over Tradition
+            </p>
+
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto relative">
+              <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                <svg className="w-5 h-5 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                placeholder="Search verses, topics, or ask a question..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && searchQuery.trim()) {
+                    router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+                  }
+                }}
+                className="search-input w-full pl-12 pr-4 py-4 rounded-2xl text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] text-lg"
+              />
+            </div>
+
+            {/* Quick search suggestions */}
+            <div className="flex flex-wrap justify-center gap-2 mt-4">
+              {["Who is Jesus?", "Matthew 24", "Kingdom of God", "Last Adam"].map((suggestion) => (
+                <button
+                  key={suggestion}
+                  onClick={() => router.push(`/search?q=${encodeURIComponent(suggestion)}`)}
+                  className="px-4 py-2 rounded-full text-sm bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
+                >
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex justify-center gap-4 mt-8">
+              <NeonButton variant="gold" size="lg" href="/bible/genesis">
+                Start Exploring
+              </NeonButton>
+              <NeonButton variant="outline" size="lg">
+                Learn More
+              </NeonButton>
+            </div>
           </div>
         </section>
 
