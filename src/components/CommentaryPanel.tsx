@@ -113,7 +113,7 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
         <div className="px-5 pb-5">
           <div className="space-y-0">
             {commentary.map((chunk, index) => (
-              <div key={chunk.chunkIndex ?? index}>
+              <div key={index}>
                 {index > 0 && (
                   <div className="border-t border-[var(--color-border)] my-4" />
                 )}
