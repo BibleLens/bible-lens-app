@@ -56,6 +56,24 @@ function SourceBadge({ source }: { source: string }) {
   );
 }
 
+/** Split a wall of text into readable paragraphs. Uses existing newlines
+ *  first, then falls back to breaking roughly every 3-4 sentences. */
+function splitIntoParagraphs(text: string): string[] {
+  // If the source already has paragraph breaks, use them
+  const byNewline = text.split(/\n{2,}/).filter(Boolean);
+  if (byNewline.length > 1) return byNewline;
+
+  // Otherwise, break every ~3 sentences for readability
+  const sentences = text.match(/[^.!?]+[.!?]+\s*/g);
+  if (!sentences || sentences.length <= 3) return [text];
+
+  const paragraphs: string[] = [];
+  for (let i = 0; i < sentences.length; i += 3) {
+    paragraphs.push(sentences.slice(i, i + 3).join("").trim());
+  }
+  return paragraphs;
+}
+
 function ResultsList({ results }: { results: SemanticResult[] }) {
   const [expanded, setExpanded] = useState<Set<number>>(new Set());
 
@@ -100,12 +118,26 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
                 </p>
                 <RelevanceBadge score={result.score} />
               </div>
-              <p
-                className="text-sm leading-relaxed mb-2"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
-                {displayText}
-              </p>
+              {isExpanded ? (
+                <div
+                  className="text-sm leading-relaxed mb-2 overflow-y-auto space-y-3 pr-1"
+                  style={{
+                    color: "var(--color-text-secondary)",
+                    maxHeight: "280px",
+                  }}
+                >
+                  {splitIntoParagraphs(result.text).map((para, j) => (
+                    <p key={j}>{para}</p>
+                  ))}
+                </div>
+              ) : (
+                <p
+                  className="text-sm leading-relaxed mb-2"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  {displayText}
+                </p>
+              )}
               <div className="flex items-center justify-between">
                 <SourceBadge source={result.source} />
                 {isLong && (

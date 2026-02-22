@@ -5,6 +5,7 @@ import { LensIcon } from "@/components/LensIcon";
 import { SearchInput } from "@/components/SearchInput";
 import { BibleSearch } from "@/components/BibleSearch";
 import { SemanticSearch } from "@/components/SemanticSearch";
+import { BackButton } from "@/components/BackButton";
 
 interface SearchPageProps {
   searchParams: Promise<{ q?: string }>;
@@ -36,16 +37,19 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         }}
       >
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            <LensIcon size={32} animate={false} />
-            <span
-              className="text-base font-semibold tracking-wide hidden sm:block"
-              style={{ fontFamily: "var(--font-cinzel), serif" }}
-            >
-              <span style={{ color: "var(--color-gold-400)" }}>Bible</span>
-              <span style={{ color: "var(--color-cyan-400)" }}> Lens</span>
-            </span>
-          </Link>
+          <div className="flex items-center gap-2 shrink-0">
+            <BackButton />
+            <Link href="/" className="flex items-center gap-3">
+              <LensIcon size={32} animate={false} />
+              <span
+                className="text-base font-semibold tracking-wide hidden sm:block"
+                style={{ fontFamily: "var(--font-cinzel), serif" }}
+              >
+                <span style={{ color: "var(--color-gold-400)" }}>Bible</span>
+                <span style={{ color: "var(--color-cyan-400)" }}> Lens</span>
+              </span>
+            </Link>
+          </div>
 
           {/* Search input fills remaining space */}
           <div className="flex-1 max-w-2xl">
