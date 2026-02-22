@@ -58,7 +58,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
         {/* Hero Section */}
-        <section className="relative text-center mb-12 py-8">
+        <section className="relative text-center mb-12 py-8" style={{ isolation: "isolate" }}>
           <BackgroundPaths />
 
           <div className="relative z-10">
