@@ -15,7 +15,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://app.biblelens.faith"),
+  metadataBase: new URL("https://biblelens.faith"),
   title: "Bible Lens | Context Over Tradition",
   description: "Ancient wisdom, modern clarity. Explore Scripture through historical context with the Bible Lens app.",
   keywords: ["Bible", "Scripture", "Biblical study", "historical context", "Bible app"],
