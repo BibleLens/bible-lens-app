@@ -58,10 +58,10 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
         {/* Hero Section */}
-        <section className="relative text-center mb-12 py-8" style={{ isolation: "isolate" }}>
+        <section className="relative text-center mb-12 py-8" style={{ isolation: "isolate", position: "relative" }}>
           <BackgroundPaths />
 
-          <div className="relative z-10" style={{ transform: "translateZ(0)" }}>
+          <div className="relative z-10" style={{ position: "relative", zIndex: 10, transform: "translateZ(0)" }}>
             <div className="flex justify-center mb-6">
               <LensIcon size={80} />
             </div>
@@ -99,7 +99,7 @@ export default function Home() {
                 <button
                   key={suggestion}
                   onClick={() => router.push(`/search?q=${encodeURIComponent(suggestion)}`)}
-                  className="px-4 py-2 rounded-full text-sm bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
+                  className="px-4 py-2 min-h-[44px] flex items-center rounded-full text-sm bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
                 >
                   {suggestion}
                 </button>
@@ -111,7 +111,7 @@ export default function Home() {
               <NeonButton variant="gold" size="lg" href="/bible/genesis">
                 Start Exploring
               </NeonButton>
-              <NeonButton variant="outline" size="lg">
+              <NeonButton variant="outline" size="lg" href="/about">
                 Learn More
               </NeonButton>
             </div>
