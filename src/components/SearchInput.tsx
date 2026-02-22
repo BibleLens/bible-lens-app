@@ -42,7 +42,7 @@ export function SearchInput({ defaultValue }: SearchInputProps) {
       </div>
       <input
         type="text"
-        className="search-input w-full pl-12 pr-4 py-4 rounded-2xl text-lg"
+        className="search-input w-full pl-12 pr-4 py-4 rounded-2xl text-xl"
         style={{ color: "var(--color-text-primary)" }}
         defaultValue={defaultValue}
         onChange={(e) => handleSearch(e.target.value)}

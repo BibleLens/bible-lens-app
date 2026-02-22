@@ -84,7 +84,7 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
         aria-expanded={isExpanded}
       >
         <span
-          className="text-base font-semibold tracking-wide"
+          className="text-lg font-semibold tracking-wide"
           style={{
             fontFamily: "var(--font-cinzel), serif",
             color: "var(--color-gold-400)",
@@ -118,7 +118,7 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
                   <div className="border-t border-[var(--color-border)] my-4" />
                 )}
                 <p
-                  className="leading-relaxed text-[var(--color-text-secondary)]"
+                  className="text-lg leading-relaxed text-[var(--color-text-secondary)]"
                   style={{ fontFamily: "Georgia, serif" }}
                 >
                   {chunk.text}
@@ -129,7 +129,7 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
 
           {/* Attribution */}
           <p
-            className="mt-5 text-xs"
+            className="mt-5 text-sm"
             style={{ color: "var(--color-text-muted)" }}
           >
             Bible Lens Commentary

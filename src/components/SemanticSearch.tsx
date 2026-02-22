@@ -28,7 +28,7 @@ function RelevanceBadge({ score }: { score: number }) {
   }
 
   return (
-    <span className="text-xs font-mono" style={{ color: badgeColor }}>
+    <span className="text-sm font-mono" style={{ color: badgeColor }}>
       {pct}% match
     </span>
   );
@@ -44,7 +44,7 @@ function SourceBadge({ source }: { source: string }) {
 
   return (
     <span
-      className="text-xs px-2 py-0.5 rounded-full border"
+      className="text-sm px-2 py-0.5 rounded-full border"
       style={{
         color: "var(--color-text-muted)",
         borderColor: "var(--color-border)",
@@ -111,7 +111,7 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
             >
               <div className="flex items-start justify-between gap-2 mb-2">
                 <p
-                  className="text-sm font-medium leading-tight flex-1"
+                  className="text-base font-medium leading-tight flex-1"
                   style={{ color: "var(--color-text-primary)" }}
                 >
                   {result.title ?? "Theological Content"}
@@ -120,7 +120,7 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
               </div>
               {isExpanded ? (
                 <div
-                  className="text-sm leading-relaxed mb-2 overflow-y-auto space-y-3 pr-1"
+                  className="text-base leading-relaxed mb-2 overflow-y-auto space-y-3 pr-1"
                   style={{
                     color: "var(--color-text-secondary)",
                     maxHeight: "280px",
@@ -132,7 +132,7 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
                 </div>
               ) : (
                 <p
-                  className="text-sm leading-relaxed mb-2"
+                  className="text-base leading-relaxed mb-2"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
                   {displayText}
@@ -142,7 +142,7 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
                 <SourceBadge source={result.source} />
                 {isLong && (
                   <span
-                    className="text-xs"
+                    className="text-sm"
                     style={{ color: "var(--color-cyan-400)" }}
                   >
                     {isExpanded ? "Show less" : "Read more"}
@@ -232,7 +232,7 @@ export function SemanticSearch({ query }: SemanticSearchProps) {
       {/* States */}
       {loading && (
         <p
-          className="text-sm animate-pulse"
+          className="text-base animate-pulse"
           style={{ color: "var(--color-text-muted)" }}
         >
           Searching theological content...
@@ -240,19 +240,19 @@ export function SemanticSearch({ query }: SemanticSearchProps) {
       )}
 
       {error && (
-        <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+        <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
           Could not search right now. Please try again.
         </p>
       )}
 
       {!loading && !error && query.trim() && results.length === 0 && (
-        <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+        <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
           No theological results for &ldquo;{query}&rdquo;
         </p>
       )}
 
       {!loading && !error && !query.trim() && (
-        <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+        <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
           Type a query to search theological commentary via semantic AI.
         </p>
       )}

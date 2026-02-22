@@ -136,7 +136,7 @@ export function BibleSearch({ query }: BibleSearchProps) {
       {/* States */}
       {!indexReady && (
         <p
-          className="text-sm animate-pulse"
+          className="text-base animate-pulse"
           style={{ color: "var(--color-text-muted)" }}
         >
           Building search index...
@@ -144,13 +144,13 @@ export function BibleSearch({ query }: BibleSearchProps) {
       )}
 
       {indexReady && query.trim() && results.length === 0 && (
-        <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+        <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
           No Bible results for &ldquo;{query}&rdquo;
         </p>
       )}
 
       {indexReady && !query.trim() && (
-        <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+        <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
           Type a word or phrase to search all 31,729 BSB verses.
         </p>
       )}
@@ -187,20 +187,20 @@ export function BibleSearch({ query }: BibleSearchProps) {
                 >
                   <div className="flex items-center justify-between mb-1">
                     <span
-                      className="text-sm font-medium"
+                      className="text-base font-medium"
                       style={{ color: refColor }}
                     >
                       {result.bookName} {result.chapter}:{result.verse}
                     </span>
                     <span
-                      className="text-xs font-mono"
+                      className="text-sm font-mono"
                       style={{ color: "var(--color-text-muted)" }}
                     >
                       {Math.round(result.score * 10) / 10}
                     </span>
                   </div>
                   <p
-                    className="text-sm leading-relaxed"
+                    className="text-base leading-relaxed"
                     style={{ color: "var(--color-text-secondary)" }}
                   >
                     {truncatedText}

@@ -91,7 +91,7 @@ function SourcesPanel({ sources }: { sources: Source[] }) {
     <div className="mt-3">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-1.5 text-xs transition-colors"
+        className="flex items-center gap-1.5 text-sm transition-colors"
         style={{ color: "var(--color-text-muted)" }}
       >
         <svg
@@ -116,7 +116,7 @@ function SourcesPanel({ sources }: { sources: Source[] }) {
           {sources.map((s) => (
             <li key={s.index}>
               <div
-                className="rounded-lg px-3 py-2 text-xs"
+                className="rounded-lg px-3 py-2 text-sm"
                 style={{
                   background: "var(--color-bg-elevated)",
                   border: "1px solid var(--color-border)",
@@ -171,7 +171,7 @@ function MessageBubble({ message }: { message: Message }) {
       >
         {isUser ? (
           <p
-            className="text-sm leading-relaxed"
+            className="text-base leading-relaxed"
             style={{ color: "var(--color-text-primary)" }}
           >
             {message.content}
@@ -182,7 +182,7 @@ function MessageBubble({ message }: { message: Message }) {
               <TypingDots />
             ) : (
               <p
-                className="text-sm leading-relaxed"
+                className="text-base leading-relaxed"
                 style={{ color: "var(--color-text-primary)" }}
                 dangerouslySetInnerHTML={{
                   __html: renderMarkdown(message.content),
@@ -394,7 +394,7 @@ export function ChatInterface() {
               Ask anything about Scripture
             </h2>
             <p
-              className="mt-2 text-sm max-w-sm"
+              className="mt-2 text-base max-w-sm"
               style={{ color: "var(--color-text-secondary)" }}
             >
               Get historically-grounded answers from the Bible Lens knowledge
@@ -407,7 +407,7 @@ export function ChatInterface() {
                   key={q}
                   onClick={() => handleSuggestion(q)}
                   disabled={isStreaming}
-                  className="px-4 py-2 rounded-full text-sm border transition-colors"
+                  className="px-4 py-2 rounded-full text-base border transition-colors"
                   style={{
                     background: "var(--color-bg-elevated)",
                     borderColor: "var(--color-border)",
@@ -435,7 +435,7 @@ export function ChatInterface() {
         <div className="px-4 pb-2">
           {error.kind === "rate_limit" && (
             <div
-              className="rounded-xl px-4 py-3 text-sm"
+              className="rounded-xl px-4 py-3 text-base"
               style={{
                 background: "rgba(250, 204, 21, 0.08)",
                 border: "1px solid rgba(250, 204, 21, 0.25)",
@@ -449,7 +449,7 @@ export function ChatInterface() {
           )}
           {error.kind === "network" && (
             <div
-              className="rounded-xl px-4 py-3 text-sm flex items-center justify-between gap-3"
+              className="rounded-xl px-4 py-3 text-base flex items-center justify-between gap-3"
               style={{
                 background: "rgba(239, 68, 68, 0.08)",
                 border: "1px solid rgba(239, 68, 68, 0.25)",
@@ -459,7 +459,7 @@ export function ChatInterface() {
               <span>Connection lost. Check your internet and try again.</span>
               <button
                 onClick={handleRetry}
-                className="shrink-0 px-3 py-1 rounded-lg text-xs font-medium transition-colors"
+                className="shrink-0 px-3 py-1 rounded-lg text-sm font-medium transition-colors"
                 style={{
                   background: "rgba(239, 68, 68, 0.15)",
                   color: "#f87171",
@@ -471,7 +471,7 @@ export function ChatInterface() {
           )}
           {error.kind === "unknown" && (
             <div
-              className="rounded-xl px-4 py-3 text-sm"
+              className="rounded-xl px-4 py-3 text-base"
               style={{
                 background: "var(--color-bg-elevated)",
                 border: "1px solid var(--color-border)",
@@ -542,7 +542,7 @@ export function ChatInterface() {
           </button>
         </div>
         <p
-          className="text-xs mt-2 text-center"
+          className="text-sm mt-2 text-center"
           style={{ color: "var(--color-text-muted)" }}
         >
           Press Enter to send, Shift+Enter for new line
