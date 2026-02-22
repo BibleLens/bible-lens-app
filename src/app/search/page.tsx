@@ -70,7 +70,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           {/* Chat navigation link */}
           <Link
             href="/chat"
-            className="flex items-center gap-1.5 text-sm transition-colors shrink-0"
+            className="flex items-center gap-1.5 text-sm transition-colors shrink-0 min-h-[44px]"
             style={{ color: "var(--color-text-secondary)" }}
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

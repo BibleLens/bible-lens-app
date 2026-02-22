@@ -36,13 +36,13 @@ export default function ChatPage() {
           <nav className="flex items-center gap-4 ml-auto">
             <Link
               href="/search"
-              className="text-sm transition-colors"
+              className="text-sm transition-colors min-h-[44px] flex items-center"
               style={{ color: "var(--color-text-secondary)" }}
             >
               Search
             </Link>
             <span
-              className="text-sm font-medium"
+              className="text-sm font-medium min-h-[44px] flex items-center"
               style={{ color: "var(--color-cyan-400)" }}
             >
               Chat

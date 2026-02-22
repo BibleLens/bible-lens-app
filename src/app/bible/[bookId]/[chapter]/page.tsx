@@ -92,7 +92,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           {/* Current location */}
           <Link
             href={`/bible/${bookId}`}
-            className="text-sm font-medium text-[var(--color-text-primary)] hover:text-[var(--color-cyan-400)] transition-colors"
+            className="text-sm font-medium text-[var(--color-text-primary)] hover:text-[var(--color-cyan-400)] transition-colors min-h-[44px] flex items-center"
           >
             {bookMeta.name} {chapterNum}
           </Link>
@@ -102,7 +102,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             {prevLink && (
               <Link 
                 href={prevLink}
-                className="p-2 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
+                className="p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title={prevLabel || undefined}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,7 +113,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             {nextLink && (
               <Link 
                 href={nextLink}
-                className="p-2 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
+                className="p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title={nextLabel || undefined}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
