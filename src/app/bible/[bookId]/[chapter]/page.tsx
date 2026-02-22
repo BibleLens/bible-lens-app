@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getChapter, getBook, findBookById, getAdjacentBooks } from "@/lib/bible";
 import { LensIcon } from "@/components/LensIcon";
 import { CommentaryPanel } from "@/components/CommentaryPanel";
+import { BackButton } from "@/components/BackButton";
 
 interface ChapterPageProps {
   params: Promise<{ bookId: string; chapter: string }>;
@@ -74,19 +75,22 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg-primary)]/80 border-b border-[var(--color-border)]">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <LensIcon size={28} animate={false} />
-            <span 
-              className="text-base font-semibold tracking-wide hidden sm:inline"
-              style={{ fontFamily: "var(--font-cinzel), serif" }}
-            >
-              <span className="text-[var(--color-gold-400)]">Bible</span>
-              <span className="text-[var(--color-cyan-400)]"> Lens</span>
-            </span>
-          </Link>
-          
+          <div className="flex items-center gap-3">
+            <BackButton />
+            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <LensIcon size={28} animate={false} />
+              <span
+                className="text-base font-semibold tracking-wide hidden sm:inline"
+                style={{ fontFamily: "var(--font-cinzel), serif" }}
+              >
+                <span className="text-[var(--color-gold-400)]">Bible</span>
+                <span className="text-[var(--color-cyan-400)]"> Lens</span>
+              </span>
+            </Link>
+          </div>
+
           {/* Current location */}
-          <Link 
+          <Link
             href={`/bible/${bookId}`}
             className="text-sm font-medium text-[var(--color-text-primary)] hover:text-[var(--color-cyan-400)] transition-colors"
           >

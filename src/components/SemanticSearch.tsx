@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 interface SemanticResult {
   score: number;
@@ -53,6 +53,75 @@ function SourceBadge({ source }: { source: string }) {
     >
       {label}
     </span>
+  );
+}
+
+function ResultsList({ results }: { results: SemanticResult[] }) {
+  const [expanded, setExpanded] = useState<Set<number>>(new Set());
+
+  const toggle = useCallback((index: number) => {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) next.delete(index);
+      else next.add(index);
+      return next;
+    });
+  }, []);
+
+  return (
+    <ul className="space-y-3">
+      {results.map((result, i) => {
+        const isLong = result.text.length > 200;
+        const isExpanded = expanded.has(i);
+        const displayText =
+          isLong && !isExpanded
+            ? result.text.slice(0, 200) + "..."
+            : result.text;
+
+        return (
+          <li key={i}>
+            <button
+              type="button"
+              onClick={() => toggle(i)}
+              className="w-full text-left rounded-lg p-3 transition-colors"
+              style={{
+                background: "var(--color-bg-secondary)",
+                border: isExpanded
+                  ? "1px solid var(--color-border-hover)"
+                  : "1px solid var(--color-border)",
+              }}
+            >
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <p
+                  className="text-sm font-medium leading-tight flex-1"
+                  style={{ color: "var(--color-text-primary)" }}
+                >
+                  {result.title ?? "Theological Content"}
+                </p>
+                <RelevanceBadge score={result.score} />
+              </div>
+              <p
+                className="text-sm leading-relaxed mb-2"
+                style={{ color: "var(--color-text-secondary)" }}
+              >
+                {displayText}
+              </p>
+              <div className="flex items-center justify-between">
+                <SourceBadge source={result.source} />
+                {isLong && (
+                  <span
+                    className="text-xs"
+                    style={{ color: "var(--color-cyan-400)" }}
+                  >
+                    {isExpanded ? "Show less" : "Read more"}
+                  </span>
+                )}
+              </div>
+            </button>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
@@ -158,43 +227,7 @@ export function SemanticSearch({ query }: SemanticSearchProps) {
 
       {/* Results */}
       {!loading && !error && results.length > 0 && (
-        <ul className="space-y-3">
-          {results.map((result, i) => {
-            const truncated =
-              result.text.length > 200
-                ? result.text.slice(0, 200) + "..."
-                : result.text;
-
-            return (
-              <li key={i}>
-                <div
-                  className="rounded-lg p-3"
-                  style={{
-                    background: "var(--color-bg-secondary)",
-                    border: "1px solid var(--color-border)",
-                  }}
-                >
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <p
-                      className="text-sm font-medium leading-tight flex-1"
-                      style={{ color: "var(--color-text-primary)" }}
-                    >
-                      {result.title ?? "Theological Content"}
-                    </p>
-                    <RelevanceBadge score={result.score} />
-                  </div>
-                  <p
-                    className="text-sm leading-relaxed mb-2"
-                    style={{ color: "var(--color-text-secondary)" }}
-                  >
-                    {truncated}
-                  </p>
-                  <SourceBadge source={result.source} />
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        <ResultsList results={results} />
       )}
     </div>
   );
