@@ -38,13 +38,13 @@ export default function Home() {
           <nav className="flex items-center gap-4">
             <Link
               href="/search"
-              className="text-sm transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
+              className="text-base transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
             >
               Search
             </Link>
             <Link
               href="/chat"
-              className="flex items-center gap-1.5 text-sm transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px]"
+              className="flex items-center gap-1.5 text-base transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px]"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -99,7 +99,7 @@ export default function Home() {
                 <button
                   key={suggestion}
                   onClick={() => router.push(`/search?q=${encodeURIComponent(suggestion)}`)}
-                  className="px-4 py-2 min-h-[44px] flex items-center rounded-full text-sm bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
+                  className="px-4 py-2 min-h-[44px] flex items-center rounded-full text-base bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
                 >
                   {suggestion}
                 </button>
@@ -124,7 +124,7 @@ export default function Home() {
           <div className="flex gap-1 mb-6 p-1 bg-[var(--color-bg-secondary)] rounded-lg w-fit mx-auto">
             <button
               onClick={() => setActiveTab("old")}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-6 py-2 rounded-md text-base font-medium transition-colors ${
                 activeTab === "old"
                   ? "bg-[var(--color-bg-elevated)] text-[var(--color-gold-400)]"
                   : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
@@ -134,7 +134,7 @@ export default function Home() {
             </button>
             <button
               onClick={() => setActiveTab("new")}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-6 py-2 rounded-md text-base font-medium transition-colors ${
                 activeTab === "new"
                   ? "bg-[var(--color-bg-elevated)] text-[var(--color-cyan-400)]"
                   : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
@@ -155,7 +155,7 @@ export default function Home() {
                 <p className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)] transition-colors truncate">
                   {book.name}
                 </p>
-                <p className="text-xs text-[var(--color-text-muted)] mt-1">
+                <p className="text-sm text-[var(--color-text-muted)] mt-1">
                   {book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}
                 </p>
               </Link>
@@ -165,8 +165,8 @@ export default function Home() {
 
         {/* Featured Topics */}
         <section className="mt-12">
-          <h2 
-            className="text-xl font-semibold mb-6 text-center"
+          <h2
+            className="text-2xl font-semibold mb-6 text-center"
             style={{ fontFamily: "var(--font-cinzel), serif" }}
           >
             <span className="text-gradient-lens">Featured Topics</span>
@@ -202,14 +202,14 @@ export default function Home() {
                 className="card p-6 text-left group"
               >
                 <span className="text-3xl mb-4 block">{topic.icon}</span>
-                <h3 className={`font-semibold mb-2 ${
-                  topic.color === "gold" 
-                    ? "text-[var(--color-gold-400)]" 
+                <h3 className={`text-lg font-semibold mb-2 ${
+                  topic.color === "gold"
+                    ? "text-[var(--color-gold-400)]"
                     : "text-[var(--color-cyan-400)]"
                 }`}>
                   {topic.title}
                 </h3>
-                <p className="text-sm text-[var(--color-text-secondary)]">
+                <p className="text-base text-[var(--color-text-secondary)]">
                   {topic.description}
                 </p>
               </Link>
@@ -221,10 +221,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-[var(--color-border)] py-6 mt-auto">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-sm text-[var(--color-text-muted)]">
+          <p className="text-base text-[var(--color-text-muted)]">
             Ancient wisdom, modern clarity.
           </p>
-          <p className="text-xs text-[var(--color-text-muted)] mt-2">
+          <p className="text-sm text-[var(--color-text-muted)] mt-2">
             © 2026 Bible Lens. Context Over Tradition.
           </p>
         </div>

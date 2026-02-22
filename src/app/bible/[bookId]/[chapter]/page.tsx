@@ -92,13 +92,13 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           {/* Current location */}
           <Link
             href={`/bible/${bookId}`}
-            className="text-sm font-medium text-[var(--color-text-primary)] hover:text-[var(--color-cyan-400)] transition-colors min-h-[44px] flex items-center"
+            className="text-base font-medium text-[var(--color-text-primary)] hover:text-[var(--color-cyan-400)] transition-colors min-h-[44px] flex items-center"
           >
             {bookMeta.name} {chapterNum}
           </Link>
           
           {/* Chapter navigation */}
-          <div className="flex items-center gap-1 text-sm">
+          <div className="flex items-center gap-1 text-base">
             {prevLink && (
               <Link 
                 href={prevLink}
@@ -129,9 +129,9 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
       <main className="flex-1 max-w-3xl mx-auto w-full px-4 py-8">
         {/* Chapter Title */}
         <div className="text-center mb-8">
-          <Link 
+          <Link
             href={`/bible/${bookId}`}
-            className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors"
+            className="text-base text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors"
           >
             {bookMeta.testament === 'OT' ? 'Old Testament' : 'New Testament'} • {bookMeta.name}
           </Link>
@@ -150,7 +150,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           {verses.map((verse) => (
             <p 
               key={verse.verse} 
-              className="text-lg leading-relaxed text-[var(--color-scripture)]"
+              className="text-xl leading-relaxed text-[var(--color-scripture)]"
               style={{ fontFamily: "Georgia, serif" }}
             >
               <span className="verse-number">{verse.verse}</span>
@@ -173,7 +173,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
               href={prevLink}
               className="flex-1 p-4 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-left"
             >
-              <p className="text-xs text-[var(--color-text-muted)] mb-1">Previous</p>
+              <p className="text-sm text-[var(--color-text-muted)] mb-1">Previous</p>
               <p className="font-medium text-[var(--color-text-primary)]">← {prevLabel}</p>
             </Link>
           ) : (
@@ -184,7 +184,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             href={`/bible/${bookId}`}
             className="p-4 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-center"
           >
-            <p className="text-xs text-[var(--color-text-muted)] mb-1">All Chapters</p>
+            <p className="text-sm text-[var(--color-text-muted)] mb-1">All Chapters</p>
             <p className="font-medium text-[var(--color-text-primary)]">{bookMeta.name}</p>
           </Link>
           
@@ -193,7 +193,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
               href={nextLink}
               className="flex-1 p-4 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-right"
             >
-              <p className="text-xs text-[var(--color-text-muted)] mb-1">Next</p>
+              <p className="text-sm text-[var(--color-text-muted)] mb-1">Next</p>
               <p className="font-medium text-[var(--color-text-primary)]">{nextLabel} →</p>
             </Link>
           ) : (
@@ -205,7 +205,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
       {/* Footer */}
       <footer className="border-t border-[var(--color-border)] py-4">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-xs text-[var(--color-text-muted)]">
+          <p className="text-sm text-[var(--color-text-muted)]">
             Berean Standard Bible • Context Over Tradition
           </p>
         </div>

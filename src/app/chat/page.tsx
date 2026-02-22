@@ -36,13 +36,13 @@ export default function ChatPage() {
           <nav className="flex items-center gap-4 ml-auto">
             <Link
               href="/search"
-              className="text-sm transition-colors min-h-[44px] flex items-center"
+              className="text-base transition-colors min-h-[44px] flex items-center"
               style={{ color: "var(--color-text-secondary)" }}
             >
               Search
             </Link>
             <span
-              className="text-sm font-medium min-h-[44px] flex items-center"
+              className="text-base font-medium min-h-[44px] flex items-center"
               style={{ color: "var(--color-cyan-400)" }}
             >
               Chat
@@ -62,7 +62,7 @@ export default function ChatPage() {
         style={{ borderColor: "var(--color-border)" }}
       >
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+          <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
             Ancient wisdom, modern clarity.
           </p>
         </div>

@@ -70,7 +70,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           {/* Chat navigation link */}
           <Link
             href="/chat"
-            className="flex items-center gap-1.5 text-sm transition-colors shrink-0 min-h-[44px]"
+            className="flex items-center gap-1.5 text-base transition-colors shrink-0 min-h-[44px]"
             style={{ color: "var(--color-text-secondary)" }}
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,7 +87,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         <div className="mb-6">
           {q ? (
             <p
-              className="text-sm"
+              className="text-base"
               style={{ color: "var(--color-text-muted)" }}
             >
               Results for{" "}
@@ -97,7 +97,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </p>
           ) : (
             <p
-              className="text-sm"
+              className="text-base"
               style={{ color: "var(--color-text-muted)" }}
             >
               Enter a query above to search Bible text and theological commentary.
@@ -117,7 +117,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 }}
               >
                 <p
-                  className="text-sm"
+                  className="text-base"
                   style={{ color: "var(--color-text-muted)" }}
                 >
                   Loading Bible search...
@@ -138,7 +138,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 }}
               >
                 <p
-                  className="text-sm"
+                  className="text-base"
                   style={{ color: "var(--color-text-muted)" }}
                 >
                   Loading theological search...
@@ -157,7 +157,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         style={{ borderColor: "var(--color-border)" }}
       >
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+          <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
             Ancient wisdom, modern clarity.
           </p>
         </div>

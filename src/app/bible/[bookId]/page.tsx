@@ -50,9 +50,9 @@ export default async function BookPage({ params }: BookPageProps) {
           </Link>
           
           {/* Book navigation */}
-          <div className="flex items-center gap-2 text-sm">
+          <div className="flex items-center gap-2 text-base">
             {prev && (
-              <Link 
+              <Link
                 href={`/bible/${prev.id}`}
                 className="px-3 py-1.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
               >
@@ -60,7 +60,7 @@ export default async function BookPage({ params }: BookPageProps) {
               </Link>
             )}
             {next && (
-              <Link 
+              <Link
                 href={`/bible/${next.id}`}
                 className="px-3 py-1.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
               >
@@ -75,7 +75,7 @@ export default async function BookPage({ params }: BookPageProps) {
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
         {/* Book Title */}
         <div className="text-center mb-8">
-          <p className="text-sm text-[var(--color-text-muted)] mb-2">
+          <p className="text-base text-[var(--color-text-muted)] mb-2">
             {bookMeta.testament === 'OT' ? 'Old Testament' : 'New Testament'}
           </p>
           <h1 
@@ -86,7 +86,7 @@ export default async function BookPage({ params }: BookPageProps) {
               {bookMeta.name}
             </span>
           </h1>
-          <p className="text-[var(--color-text-secondary)]">
+          <p className="text-lg text-[var(--color-text-secondary)]">
             {chapters.length} {chapters.length === 1 ? 'Chapter' : 'Chapters'}
           </p>
         </div>
@@ -121,7 +121,7 @@ export default async function BookPage({ params }: BookPageProps) {
       {/* Footer */}
       <footer className="border-t border-[var(--color-border)] py-4">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-xs text-[var(--color-text-muted)]">
+          <p className="text-sm text-[var(--color-text-muted)]">
             Berean Standard Bible • Context Over Tradition
           </p>
         </div>
