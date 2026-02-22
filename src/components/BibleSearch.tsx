@@ -59,7 +59,17 @@ function getOrBuildBibleIndex(): MiniSearch {
     }
   }
 
-  bibleIndex.addAll(docs);
+  // Deduplicate — guards against corrupted bible data with repeated verses
+  const seen = new Set<string>();
+  const uniqueDocs = [];
+  for (const doc of docs) {
+    if (!seen.has(doc.id)) {
+      seen.add(doc.id);
+      uniqueDocs.push(doc);
+    }
+  }
+
+  bibleIndex.addAll(uniqueDocs);
   return bibleIndex;
 }
 
