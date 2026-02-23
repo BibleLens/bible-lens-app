@@ -169,3 +169,27 @@ body {
   background: rgba(34, 211, 238, 0.3);
   color: var(--color-text-primary);
 }
+
+/* Neon button pulse */
+@keyframes neon-pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(250, 204, 21, 0.4),
+                0 0 20px rgba(250, 204, 21, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.6),
+                0 0 40px rgba(250, 204, 21, 0.3);
+  }
+}
+
+.neon-pulse-gold {
+  animation: neon-pulse-gold 2s ease-in-out infinite;
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .lens-icon,
+  .neon-pulse-gold {
+    animation: none;
+  }
+}
