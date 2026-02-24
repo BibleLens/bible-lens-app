@@ -9,7 +9,12 @@ export const metadata: Metadata = {
     "AI-powered theological Q&A grounded in the Bible Lens knowledge base. Ask questions about Scripture and receive historically-informed answers in a warm, accessible voice.",
 };
 
-export default function ChatPage() {
+export default async function ChatPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const { q } = await searchParams;
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -53,7 +58,7 @@ export default function ChatPage() {
 
       {/* Main content — chat fills remaining height */}
       <main className="flex-1 flex flex-col max-w-4xl mx-auto w-full px-4 py-4 overflow-hidden">
-        <ChatInterface />
+        <ChatInterface initialQuery={q} />
       </main>
 
       {/* Footer */}

@@ -179,21 +179,21 @@ export default function Home() {
                 description: "Understanding Jesus as the perfect man who succeeded where Adam failed.",
                 icon: "👤",
                 color: "gold",
-                link: "/bible/1corinthians/15",
+                link: "/chat?q=Who is the Last Adam and how does he relate to Jesus?",
               },
               {
                 title: "The Kingdom",
                 description: "What Jesus actually taught about the coming Kingdom of God.",
                 icon: "👑",
                 color: "cyan",
-                link: "/bible/matthew/6",
+                link: "/chat?q=What did Jesus mean by the Kingdom of God?",
               },
               {
                 title: "Matthew 24",
                 description: "When was the 'end of the age' Jesus predicted? Historical context reveals the answer.",
                 icon: "📜",
                 color: "gold",
-                link: "/bible/matthew/24",
+                link: "/chat?q=What was the end of the age Jesus predicted in Matthew 24?",
               },
             ].map((topic) => (
               <Link

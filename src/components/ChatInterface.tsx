@@ -203,12 +203,13 @@ function MessageBubble({ message }: { message: Message }) {
 // Main component
 // ---------------------------------------------------------------------------
 
-export function ChatInterface() {
+export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const [error, setError] = useState<ErrorState | null>(null);
   const [retryCountdown, setRetryCountdown] = useState(0);
+  const [didAutoSubmit, setDidAutoSubmit] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -239,6 +240,15 @@ export function ChatInterface() {
       if (countdownRef.current) clearInterval(countdownRef.current);
     };
   }, [error]);
+
+  // Auto-submit initial query from URL param
+  useEffect(() => {
+    if (initialQuery && !didAutoSubmit) {
+      setDidAutoSubmit(true);
+      submitQuestion(initialQuery);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialQuery, didAutoSubmit]);
 
   // Textarea auto-grow (up to 4 lines)
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
