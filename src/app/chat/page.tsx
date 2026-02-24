@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { LensIcon } from "@/components/LensIcon";
+import { BackButton } from "@/components/BackButton";
 import { ChatInterface } from "@/components/ChatInterface";
 
 export const metadata: Metadata = {
@@ -26,28 +27,31 @@ export default async function ChatPage({
         }}
       >
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center gap-4">
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            <LensIcon size={32} animate={false} />
-            <span
-              className="text-base font-semibold tracking-wide hidden sm:block"
-              style={{ fontFamily: "var(--font-cinzel), serif" }}
-            >
-              <span style={{ color: "var(--color-gold-400)" }}>Bible</span>
-              <span style={{ color: "var(--color-cyan-400)" }}> Lens</span>
-            </span>
-          </Link>
+          <div className="flex items-center gap-3">
+            <BackButton />
+            <Link href="/" className="flex items-center gap-3 shrink-0">
+              <LensIcon size={36} animate={false} />
+              <span
+                className="text-lg font-semibold tracking-wide hidden sm:block"
+                style={{ fontFamily: "var(--font-cinzel), serif" }}
+              >
+                <span style={{ color: "var(--color-gold-400)" }}>Bible</span>
+                <span style={{ color: "var(--color-cyan-400)" }}> Lens</span>
+              </span>
+            </Link>
+          </div>
 
           {/* Nav links */}
           <nav className="flex items-center gap-4 ml-auto">
             <Link
               href="/search"
-              className="text-base transition-colors min-h-[44px] flex items-center"
+              className="text-lg transition-colors min-h-[44px] flex items-center"
               style={{ color: "var(--color-text-secondary)" }}
             >
               Search
             </Link>
             <span
-              className="text-base font-medium min-h-[44px] flex items-center"
+              className="text-lg font-medium min-h-[44px] flex items-center"
               style={{ color: "var(--color-cyan-400)" }}
             >
               Chat

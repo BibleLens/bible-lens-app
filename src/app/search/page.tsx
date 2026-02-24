@@ -40,9 +40,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           <div className="flex items-center gap-2 shrink-0">
             <BackButton />
             <Link href="/" className="flex items-center gap-3">
-              <LensIcon size={32} animate={false} />
+              <LensIcon size={36} animate={false} />
               <span
-                className="text-base font-semibold tracking-wide hidden sm:block"
+                className="text-lg font-semibold tracking-wide hidden sm:block"
                 style={{ fontFamily: "var(--font-cinzel), serif" }}
               >
                 <span style={{ color: "var(--color-gold-400)" }}>Bible</span>
@@ -70,7 +70,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           {/* Chat navigation link */}
           <Link
             href="/chat"
-            className="flex items-center gap-1.5 text-base transition-colors shrink-0 min-h-[44px]"
+            className="flex items-center gap-1.5 text-lg transition-colors shrink-0 min-h-[44px]"
             style={{ color: "var(--color-text-secondary)" }}
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
