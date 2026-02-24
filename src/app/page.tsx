@@ -61,7 +61,7 @@ export default function Home() {
         <section className="relative text-center mb-12 py-8" style={{ isolation: "isolate", position: "relative" }}>
           <BackgroundPaths />
 
-          <div className="relative z-10" style={{ position: "relative", zIndex: 1 }}>
+          <div className="relative z-10" style={{ transform: "translateZ(0)" }}>
             <div className="flex justify-center mb-6">
               <LensIcon size={80} />
             </div>
@@ -106,12 +106,9 @@ export default function Home() {
               ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex justify-center gap-4 mt-8">
-              <NeonButton variant="gold" size="lg" href="/bible/genesis">
-                Start Exploring
-              </NeonButton>
-              <NeonButton variant="outline" size="lg" href="/about">
+            {/* CTA Button */}
+            <div className="flex justify-center mt-8">
+              <NeonButton variant="gold" size="lg" href="/about">
                 Learn More
               </NeonButton>
             </div>

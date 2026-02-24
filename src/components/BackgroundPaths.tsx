@@ -61,7 +61,7 @@ export function BackgroundPaths() {
   return (
     <div
       className="absolute inset-0 overflow-hidden pointer-events-none"
-      style={{ zIndex: -1, isolation: "isolate", opacity: 0.99 }}
+      style={{ zIndex: -1, opacity: 0.4 }}
     >
       <FloatingPaths position={1} />
       <FloatingPaths position={-1} />
