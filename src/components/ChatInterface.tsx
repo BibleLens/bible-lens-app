@@ -209,12 +209,13 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
   const [isStreaming, setIsStreaming] = useState(false);
   const [error, setError] = useState<ErrorState | null>(null);
   const [retryCountdown, setRetryCountdown] = useState(0);
-  const [didAutoSubmit, setDidAutoSubmit] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const lastQuestionRef = useRef<string>("");
   const countdownRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const didAutoSubmitRef = useRef(false);
+  const isStreamingRef = useRef(false);
 
   // Auto-scroll to bottom when messages change
   useEffect(() => {
@@ -241,14 +242,14 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
     };
   }, [error]);
 
-  // Auto-submit initial query from URL param
+  // Auto-submit initial query from URL param — ref guard prevents double-fire
   useEffect(() => {
-    if (initialQuery && !didAutoSubmit) {
-      setDidAutoSubmit(true);
+    if (initialQuery && !didAutoSubmitRef.current) {
+      didAutoSubmitRef.current = true;
       submitQuestion(initialQuery);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialQuery, didAutoSubmit]);
+  }, [initialQuery]);
 
   // Textarea auto-grow (up to 4 lines)
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -259,7 +260,8 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
   };
 
   const submitQuestion = async (question: string) => {
-    if (!question.trim() || isStreaming) return;
+    if (!question.trim() || isStreamingRef.current) return;
+    isStreamingRef.current = true;
 
     const trimmed = question.trim();
     lastQuestionRef.current = trimmed;
@@ -295,6 +297,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
         setMessages((prev) => prev.slice(0, -1));
         setError({ kind: "rate_limit", retryAfter });
         setIsStreaming(false);
+        isStreamingRef.current = false;
         return;
       }
 
@@ -303,6 +306,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
         setMessages((prev) => prev.slice(0, -1));
         setError({ kind: "unknown", message: data.error ?? "Invalid question." });
         setIsStreaming(false);
+        isStreamingRef.current = false;
         return;
       }
 
@@ -317,6 +321,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
         setMessages((prev) => prev.slice(0, -1));
         setError({ kind: "server", message: errorMessage });
         setIsStreaming(false);
+        isStreamingRef.current = false;
         return;
       }
 
@@ -368,6 +373,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
       setError({ kind: "network" });
     } finally {
       setIsStreaming(false);
+      isStreamingRef.current = false;
     }
   };
 
