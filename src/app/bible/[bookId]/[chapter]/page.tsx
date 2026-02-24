@@ -80,7 +80,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <LensIcon size={28} animate={false} />
               <span
-                className="text-base font-semibold tracking-wide hidden sm:inline"
+                className="text-lg font-semibold tracking-wide hidden sm:inline"
                 style={{ fontFamily: "var(--font-cinzel), serif" }}
               >
                 <span className="text-[var(--color-gold-400)]">Bible</span>
@@ -131,7 +131,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
         <div className="text-center mb-8">
           <Link
             href={`/bible/${bookId}`}
-            className="text-base text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors"
+            className="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors"
           >
             {bookMeta.testament === 'OT' ? 'Old Testament' : 'New Testament'} • {bookMeta.name}
           </Link>
@@ -173,7 +173,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
               href={prevLink}
               className="flex-1 p-4 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-left"
             >
-              <p className="text-sm text-[var(--color-text-muted)] mb-1">Previous</p>
+              <p className="text-base text-[var(--color-text-muted)] mb-1">Previous</p>
               <p className="font-medium text-[var(--color-text-primary)]">← {prevLabel}</p>
             </Link>
           ) : (
@@ -184,7 +184,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             href={`/bible/${bookId}`}
             className="p-4 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-center"
           >
-            <p className="text-sm text-[var(--color-text-muted)] mb-1">All Chapters</p>
+            <p className="text-base text-[var(--color-text-muted)] mb-1">All Chapters</p>
             <p className="font-medium text-[var(--color-text-primary)]">{bookMeta.name}</p>
           </Link>
           
@@ -193,7 +193,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
               href={nextLink}
               className="flex-1 p-4 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-right"
             >
-              <p className="text-sm text-[var(--color-text-muted)] mb-1">Next</p>
+              <p className="text-base text-[var(--color-text-muted)] mb-1">Next</p>
               <p className="font-medium text-[var(--color-text-primary)]">{nextLabel} →</p>
             </Link>
           ) : (
@@ -205,7 +205,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
       {/* Footer */}
       <footer className="border-t border-[var(--color-border)] py-4">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-sm text-[var(--color-text-muted)]">
+          <p className="text-base text-[var(--color-text-muted)]">
             Berean Standard Bible • Context Over Tradition
           </p>
         </div>

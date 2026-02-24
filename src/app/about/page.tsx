@@ -23,7 +23,7 @@ export default function AboutPage() {
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <LensIcon size={32} animate={false} />
             <span
-              className="text-base font-semibold tracking-wide hidden sm:block"
+              className="text-lg font-semibold tracking-wide hidden sm:block"
               style={{ fontFamily: "var(--font-cinzel), serif" }}
             >
               <span style={{ color: "var(--color-gold-400)" }}>Bible</span>
@@ -35,20 +35,20 @@ export default function AboutPage() {
           <nav className="flex items-center gap-4 ml-auto">
             <Link
               href="/search"
-              className="text-sm transition-colors min-h-[44px] flex items-center"
+              className="text-lg transition-colors min-h-[44px] flex items-center"
               style={{ color: "var(--color-text-secondary)" }}
             >
               Search
             </Link>
             <Link
               href="/chat"
-              className="text-sm transition-colors min-h-[44px] flex items-center"
+              className="text-lg transition-colors min-h-[44px] flex items-center"
               style={{ color: "var(--color-text-secondary)" }}
             >
               Chat
             </Link>
             <span
-              className="text-sm font-medium min-h-[44px] flex items-center"
+              className="text-lg font-medium min-h-[44px] flex items-center"
               style={{ color: "var(--color-gold-400)" }}
             >
               About
@@ -110,7 +110,7 @@ export default function AboutPage() {
           >
             About the Lens
           </h2>
-          <p className="text-base mb-8" style={{ color: "var(--color-text-muted)" }}>
+          <p className="text-lg mb-8" style={{ color: "var(--color-text-muted)" }}>
             Every reader brings a framework to the text. Here&rsquo;s ours — stated plainly.
           </p>
 
@@ -141,7 +141,7 @@ export default function AboutPage() {
                 Father... and one Lord, Jesus Christ&rdquo;), and the Shema itself (Deuteronomy
                 6:4).
               </p>
-              <p className="text-base italic" style={{ color: "var(--color-text-muted)" }}>
+              <p className="text-lg italic" style={{ color: "var(--color-text-muted)" }}>
                 We acknowledge this challenges traditional Trinitarian theology. We hold this view
                 because we believe it best reflects the historical, textual evidence — not to
                 dismiss those who read differently.
@@ -176,7 +176,7 @@ export default function AboutPage() {
                 &ldquo;soon,&rdquo; &ldquo;near,&rdquo; and &ldquo;quickly&rdquo; meant what
                 they say.
               </p>
-              <p className="text-base italic" style={{ color: "var(--color-text-muted)" }}>
+              <p className="text-lg italic" style={{ color: "var(--color-text-muted)" }}>
                 This is another minority view, held by a significant number of scholars and
                 theologians across history. We present it as historically-grounded, not as the
                 only valid reading.
@@ -251,7 +251,7 @@ export default function AboutPage() {
         <div className="text-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-base transition-colors min-h-[44px]"
+            className="inline-flex items-center gap-2 text-lg transition-colors min-h-[44px]"
             style={{ color: "var(--color-cyan-400)" }}
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -268,7 +268,7 @@ export default function AboutPage() {
         style={{ borderColor: "var(--color-border)" }}
       >
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+          <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
             Ancient wisdom, modern clarity.
           </p>
         </div>

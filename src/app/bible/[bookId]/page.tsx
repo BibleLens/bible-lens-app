@@ -75,7 +75,7 @@ export default async function BookPage({ params }: BookPageProps) {
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
         {/* Book Title */}
         <div className="text-center mb-8">
-          <p className="text-base text-[var(--color-text-muted)] mb-2">
+          <p className="text-lg text-[var(--color-text-muted)] mb-2">
             {bookMeta.testament === 'OT' ? 'Old Testament' : 'New Testament'}
           </p>
           <h1 
@@ -121,7 +121,7 @@ export default async function BookPage({ params }: BookPageProps) {
       {/* Footer */}
       <footer className="border-t border-[var(--color-border)] py-4">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-sm text-[var(--color-text-muted)]">
+          <p className="text-base text-[var(--color-text-muted)]">
             Berean Standard Bible • Context Over Tradition
           </p>
         </div>

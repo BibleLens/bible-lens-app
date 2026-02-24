@@ -87,7 +87,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         <div className="mb-6">
           {q ? (
             <p
-              className="text-base"
+              className="text-lg"
               style={{ color: "var(--color-text-muted)" }}
             >
               Results for{" "}
@@ -97,7 +97,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </p>
           ) : (
             <p
-              className="text-base"
+              className="text-lg"
               style={{ color: "var(--color-text-muted)" }}
             >
               Enter a query above to search Bible text and theological commentary.

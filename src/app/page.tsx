@@ -99,7 +99,7 @@ export default function Home() {
                 <button
                   key={suggestion}
                   onClick={() => router.push(`/search?q=${encodeURIComponent(suggestion)}`)}
-                  className="px-4 py-2 min-h-[44px] flex items-center rounded-full text-base bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
+                  className="px-4 py-2 min-h-[44px] flex items-center rounded-full text-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
                 >
                   {suggestion}
                 </button>
@@ -155,7 +155,7 @@ export default function Home() {
                 <p className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)] transition-colors truncate">
                   {book.name}
                 </p>
-                <p className="text-sm text-[var(--color-text-muted)] mt-1">
+                <p className="text-base text-[var(--color-text-muted)] mt-1">
                   {book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}
                 </p>
               </Link>
@@ -209,7 +209,7 @@ export default function Home() {
                 }`}>
                   {topic.title}
                 </h3>
-                <p className="text-base text-[var(--color-text-secondary)]">
+                <p className="text-lg text-[var(--color-text-secondary)]">
                   {topic.description}
                 </p>
               </Link>
@@ -224,7 +224,7 @@ export default function Home() {
           <p className="text-base text-[var(--color-text-muted)]">
             Ancient wisdom, modern clarity.
           </p>
-          <p className="text-sm text-[var(--color-text-muted)] mt-2">
+          <p className="text-base text-[var(--color-text-muted)] mt-2">
             © 2026 Bible Lens. Context Over Tradition.
           </p>
         </div>

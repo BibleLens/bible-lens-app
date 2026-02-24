@@ -126,7 +126,7 @@ export function BibleSearch({ query }: BibleSearchProps) {
           />
         </svg>
         <h2
-          className="font-semibold text-base"
+          className="font-semibold text-lg"
           style={{ color: "var(--color-text-primary)" }}
         >
           Bible Text
@@ -187,20 +187,20 @@ export function BibleSearch({ query }: BibleSearchProps) {
                 >
                   <div className="flex items-center justify-between mb-1">
                     <span
-                      className="text-base font-medium"
+                      className="text-lg font-medium"
                       style={{ color: refColor }}
                     >
                       {result.bookName} {result.chapter}:{result.verse}
                     </span>
                     <span
-                      className="text-sm font-mono"
+                      className="text-base font-mono"
                       style={{ color: "var(--color-text-muted)" }}
                     >
                       {Math.round(result.score * 10) / 10}
                     </span>
                   </div>
                   <p
-                    className="text-base leading-relaxed"
+                    className="text-lg leading-relaxed"
                     style={{ color: "var(--color-text-secondary)" }}
                   >
                     {truncatedText}

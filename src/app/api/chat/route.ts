@@ -11,8 +11,18 @@ import { checkChatRateLimit, getClientIp } from '@/lib/rate-limit';
 
 export const maxDuration = 30;
 
-// Module-scope singleton — persists across warm invocations, not recreated per request
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+// Lazy singleton — validates API key on first use, not at module import time
+let _anthropic: Anthropic | null = null;
+
+function getAnthropicClient(): Anthropic {
+  if (_anthropic) return _anthropic;
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY is not configured');
+  }
+  _anthropic = new Anthropic({ apiKey });
+  return _anthropic;
+}
 
 export async function POST(request: NextRequest) {
   // Step 1: Rate limit check
@@ -45,82 +55,99 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Step 3: RAG retrieval — embed question, search Qdrant for context
-  const embedding = await embedQuery(question);
-  const qdrant = getQdrantClient();
-  const ragResults = await qdrant.search(COLLECTION_NAME, {
-    vector: embedding,
-    limit: 5,
-    with_payload: true,
-    score_threshold: 0.35, // Slightly higher than search (0.3) — prefer quality in RAG context
-  });
+  try {
+    const anthropic = getAnthropicClient();
 
-  // Step 4: Format RAG context and prepare end-of-response sources
-  const sources = ragResults.map((r, i) => ({
-    index: i + 1,
-    title: r.payload?.title as string,
-    url: r.payload?.url as string,
-    source: r.payload?.source as string,
-    text: (r.payload?.text as string)?.slice(0, 300),
-    score: r.score,
-  }));
+    // Step 3: RAG retrieval — embed question, search Qdrant for context
+    const embedding = await embedQuery(question);
+    const qdrant = getQdrantClient();
+    const ragResults = await qdrant.search(COLLECTION_NAME, {
+      vector: embedding,
+      limit: 5,
+      with_payload: true,
+      score_threshold: 0.35, // Slightly higher than search (0.3) — prefer quality in RAG context
+    });
 
-  const ragContext =
-    sources.length > 0
-      ? sources.map((s) => `[${s.index}] ${s.title}\n${s.text}`).join('\n\n')
-      : '';
+    // Step 4: Format RAG context and prepare end-of-response sources
+    const sources = ragResults.map((r, i) => ({
+      index: i + 1,
+      title: r.payload?.title as string,
+      url: r.payload?.url as string,
+      source: r.payload?.source as string,
+      text: (r.payload?.text as string)?.slice(0, 300),
+      score: r.score,
+    }));
 
-  // Step 5: Build voice-constrained system prompt with RAG context injected
-  const systemPrompt = buildSystemPrompt(ragContext);
+    const ragContext =
+      sources.length > 0
+        ? sources.map((s) => `[${s.index}] ${s.title}\n${s.text}`).join('\n\n')
+        : '';
 
-  // Step 6: Stream Claude response using messages.stream() helper
-  // DO NOT use messages.create({ stream: true }) raw — use .stream() for event handling
-  const stream = anthropic.messages.stream({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 1024,
-    system: systemPrompt,
-    messages: [{ role: 'user', content: question }],
-  });
+    // Step 5: Build voice-constrained system prompt with RAG context injected
+    const systemPrompt = buildSystemPrompt(ragContext);
 
-  // Step 7: Pipe Claude stream to ReadableStream for Next.js streaming response
-  const encoder = new TextEncoder();
-  const readable = new ReadableStream({
-    async start(controller) {
-      try {
-        for await (const event of stream) {
-          if (
-            event.type === 'content_block_delta' &&
-            event.delta.type === 'text_delta'
-          ) {
-            controller.enqueue(encoder.encode(event.delta.text));
+    // Step 6: Stream Claude response using messages.stream() helper
+    // DO NOT use messages.create({ stream: true }) raw — use .stream() for event handling
+    const stream = anthropic.messages.stream({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 1024,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: question }],
+    });
+
+    // Step 7: Pipe Claude stream to ReadableStream for Next.js streaming response
+    const encoder = new TextEncoder();
+    const readable = new ReadableStream({
+      async start(controller) {
+        try {
+          for await (const event of stream) {
+            if (
+              event.type === 'content_block_delta' &&
+              event.delta.type === 'text_delta'
+            ) {
+              controller.enqueue(encoder.encode(event.delta.text));
+            }
           }
-        }
 
-        // Append end-of-response citations if RAG returned results
-        if (sources.length > 0) {
-          const sourcesBlock =
-            '\n\n---\n**Sources:**\n' +
-            sources
-              .map((s) => `[${s.index}] ${s.title}${s.url ? ` — ${s.url}` : ''}`)
-              .join('\n');
-          controller.enqueue(encoder.encode(sourcesBlock));
-        }
+          // Append end-of-response citations if RAG returned results
+          if (sources.length > 0) {
+            const sourcesBlock =
+              '\n\n---\n**Sources:**\n' +
+              sources
+                .map((s) => `[${s.index}] ${s.title}${s.url ? ` — ${s.url}` : ''}`)
+                .join('\n');
+            controller.enqueue(encoder.encode(sourcesBlock));
+          }
 
-        controller.close();
-      } catch (err) {
-        controller.error(err);
+          controller.close();
+        } catch (err) {
+          controller.error(err);
+        }
+      },
+    });
+
+    // Step 8: Return streaming response
+    // Use new Response() not NextResponse.json() — streaming content, not JSON
+    return new Response(readable, {
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'X-RateLimit-Remaining': String(remaining),
+        'Cache-Control': 'no-cache',
+        'Transfer-Encoding': 'chunked',
+      },
+    });
+  } catch (err: unknown) {
+    const message =
+      err instanceof Error ? err.message : 'Something went wrong on our end.';
+    console.error('[chat/route] Error:', message);
+    return new Response(
+      JSON.stringify({
+        error: 'Our knowledge engine hit a snag. Please try again in a moment.',
+      }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
       }
-    },
-  });
-
-  // Step 8: Return streaming response
-  // Use new Response() not NextResponse.json() — streaming content, not JSON
-  return new Response(readable, {
-    headers: {
-      'Content-Type': 'text/plain; charset=utf-8',
-      'X-RateLimit-Remaining': String(remaining),
-      'Cache-Control': 'no-cache',
-      'Transfer-Encoding': 'chunked',
-    },
-  });
+    );
+  }
 }

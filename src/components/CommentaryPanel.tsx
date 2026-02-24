@@ -129,7 +129,7 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
 
           {/* Attribution */}
           <p
-            className="mt-5 text-sm"
+            className="mt-5 text-base"
             style={{ color: "var(--color-text-muted)" }}
           >
             Bible Lens Commentary

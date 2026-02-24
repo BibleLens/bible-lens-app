@@ -28,7 +28,7 @@ function RelevanceBadge({ score }: { score: number }) {
   }
 
   return (
-    <span className="text-sm font-mono" style={{ color: badgeColor }}>
+    <span className="text-base font-mono" style={{ color: badgeColor }}>
       {pct}% match
     </span>
   );
@@ -44,7 +44,7 @@ function SourceBadge({ source }: { source: string }) {
 
   return (
     <span
-      className="text-sm px-2 py-0.5 rounded-full border"
+      className="text-base px-2 py-0.5 rounded-full border"
       style={{
         color: "var(--color-text-muted)",
         borderColor: "var(--color-border)",
@@ -111,7 +111,7 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
             >
               <div className="flex items-start justify-between gap-2 mb-2">
                 <p
-                  className="text-base font-medium leading-tight flex-1"
+                  className="text-lg font-medium leading-tight flex-1"
                   style={{ color: "var(--color-text-primary)" }}
                 >
                   {result.title ?? "Theological Content"}
@@ -120,7 +120,7 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
               </div>
               {isExpanded ? (
                 <div
-                  className="text-base leading-relaxed mb-2 overflow-y-auto space-y-3 pr-1"
+                  className="text-lg leading-relaxed mb-2 overflow-y-auto space-y-3 pr-1"
                   style={{
                     color: "var(--color-text-secondary)",
                     maxHeight: "280px",
@@ -132,7 +132,7 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
                 </div>
               ) : (
                 <p
-                  className="text-base leading-relaxed mb-2"
+                  className="text-lg leading-relaxed mb-2"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
                   {displayText}
@@ -142,7 +142,7 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
                 <SourceBadge source={result.source} />
                 {isLong && (
                   <span
-                    className="text-sm"
+                    className="text-base"
                     style={{ color: "var(--color-cyan-400)" }}
                   >
                     {isExpanded ? "Show less" : "Read more"}
@@ -222,7 +222,7 @@ export function SemanticSearch({ query }: SemanticSearchProps) {
           />
         </svg>
         <h2
-          className="font-semibold text-base"
+          className="font-semibold text-lg"
           style={{ color: "var(--color-text-primary)" }}
         >
           Theological Insights
