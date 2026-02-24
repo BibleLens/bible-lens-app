@@ -39,9 +39,9 @@ export default async function BookPage({ params }: BookPageProps) {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg-primary)]/80 border-b border-[var(--color-border)]">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <LensIcon size={32} animate={false} />
+            <LensIcon size={48} animate={false} />
             <span 
-              className="text-lg font-semibold tracking-wide"
+              className="text-2xl font-semibold tracking-wide"
               style={{ fontFamily: "var(--font-cinzel), serif" }}
             >
               <span className="text-[var(--color-gold-400)]">Bible</span>

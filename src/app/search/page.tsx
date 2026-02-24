@@ -40,9 +40,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           <div className="flex items-center gap-2 shrink-0">
             <BackButton />
             <Link href="/" className="flex items-center gap-3">
-              <LensIcon size={36} animate={false} />
+              <LensIcon size={48} animate={false} />
               <span
-                className="text-lg font-semibold tracking-wide hidden sm:block"
+                className="text-2xl font-semibold tracking-wide hidden sm:block"
                 style={{ fontFamily: "var(--font-cinzel), serif" }}
               >
                 <span style={{ color: "var(--color-gold-400)" }}>Bible</span>

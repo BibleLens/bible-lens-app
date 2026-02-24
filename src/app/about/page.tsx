@@ -21,9 +21,9 @@ export default function AboutPage() {
       >
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center gap-4">
           <Link href="/" className="flex items-center gap-3 shrink-0">
-            <LensIcon size={32} animate={false} />
+            <LensIcon size={48} animate={false} />
             <span
-              className="text-lg font-semibold tracking-wide hidden sm:block"
+              className="text-2xl font-semibold tracking-wide hidden sm:block"
               style={{ fontFamily: "var(--font-cinzel), serif" }}
             >
               <span style={{ color: "var(--color-gold-400)" }}>Bible</span>

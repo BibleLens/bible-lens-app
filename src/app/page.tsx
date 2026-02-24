@@ -22,10 +22,10 @@ export default function Home() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg-primary)]/80 border-b border-[var(--color-border)]">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <LensIcon size={36} animate={false} />
+            <LensIcon size={48} animate={false} />
             <div>
               <h1 
-                className="text-lg font-semibold tracking-wide"
+                className="text-2xl font-semibold tracking-wide"
                 style={{ fontFamily: "var(--font-cinzel), serif" }}
               >
                 <span className="text-[var(--color-gold-400)]">Bible</span>
@@ -149,7 +149,7 @@ export default function Home() {
                 href={`/bible/${book.id}`}
                 className="card p-4 text-left hover:border-[var(--color-cyan-500)]/50 group"
               >
-                <p className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)] transition-colors truncate">
+                <p className="text-lg font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)] transition-colors truncate">
                   {book.name}
                 </p>
                 <p className="text-base text-[var(--color-text-muted)] mt-1">

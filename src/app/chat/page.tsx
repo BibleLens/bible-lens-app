@@ -30,9 +30,9 @@ export default async function ChatPage({
           <div className="flex items-center gap-3">
             <BackButton />
             <Link href="/" className="flex items-center gap-3 shrink-0">
-              <LensIcon size={36} animate={false} />
+              <LensIcon size={48} animate={false} />
               <span
-                className="text-lg font-semibold tracking-wide hidden sm:block"
+                className="text-2xl font-semibold tracking-wide hidden sm:block"
                 style={{ fontFamily: "var(--font-cinzel), serif" }}
               >
                 <span style={{ color: "var(--color-gold-400)" }}>Bible</span>
