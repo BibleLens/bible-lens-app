@@ -164,9 +164,11 @@ function MessageBubble({ message }: { message: Message }) {
         className="rounded-xl px-4 py-3 max-w-[85%] md:max-w-[70%]"
         style={{
           background: isUser
-            ? "var(--color-bg-elevated)"
+            ? "rgba(34, 211, 238, 0.12)"
             : "var(--color-bg-secondary)",
-          border: "1px solid var(--color-border)",
+          border: isUser
+            ? "1px solid rgba(34, 211, 238, 0.25)"
+            : "1px solid var(--color-border)",
         }}
       >
         {isUser ? (

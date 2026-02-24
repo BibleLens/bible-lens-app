@@ -61,7 +61,7 @@ export default function Home() {
         <section className="relative text-center mb-12 py-8" style={{ isolation: "isolate", position: "relative" }}>
           <BackgroundPaths />
 
-          <div className="relative z-10" style={{ position: "relative", zIndex: 10, transform: "translateZ(0)" }}>
+          <div className="relative z-10" style={{ position: "relative", zIndex: 1 }}>
             <div className="flex justify-center mb-6">
               <LensIcon size={80} />
             </div>
