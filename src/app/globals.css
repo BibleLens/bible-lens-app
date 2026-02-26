@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Bible Lens Brand Colors */
 :root {
   /* Core colors */
@@ -44,6 +46,49 @@
   /* Glow effects */
   --glow-gold: 0 0 20px rgba(250, 204, 21, 0.3);
   --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+:root.light {
+  /* Core backgrounds */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-elevated: #ebebeb;
+
+  /* Text */
+  --color-text-primary: #171717;
+  --color-text-secondary: #525252;
+  --color-text-muted: #737373;
+
+  /* Scripture */
+  --color-scripture: #92400e;
+
+  /* UI */
+  --color-border: #e5e5e5;
+  --color-border-hover: #d4d4d4;
+
+  /* Gold accent — darkened for WCAG AA on white (amber-700/800/900) */
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #b45309;
+  --color-gold-500: #92400e;
+  --color-gold-600: #78350f;
+
+  /* Cyan accent — darkened for WCAG AA on white (cyan-700/800/900) */
+  --color-cyan-50: #ecfeff;
+  --color-cyan-100: #cffafe;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #0e7490;
+  --color-cyan-500: #155e75;
+  --color-cyan-600: #164e63;
+
+  /* Gradients update automatically via var() references */
+
+  /* Glow effects — disable in light mode */
+  --glow-gold: none;
+  --glow-cyan: none;
 }
 
 @theme inline {
@@ -167,6 +212,17 @@ body {
 /* Selection styling */
 ::selection {
   background: rgba(34, 211, 238, 0.3);
+  color: var(--color-text-primary);
+}
+
+/* Light mode overrides */
+:root.light .search-input:focus {
+  border-color: var(--color-cyan-500);
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.15);
+}
+
+:root.light ::selection {
+  background: rgba(14, 116, 144, 0.2);
   color: var(--color-text-primary);
 }
 
