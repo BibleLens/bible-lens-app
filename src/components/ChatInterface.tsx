@@ -589,7 +589,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
                 ? "var(--color-gold-400)"
                 : "var(--color-bg-secondary)",
               color: input.trim() && !isStreaming
-                ? "#0a0a0a"
+                ? "var(--color-bg-primary)"
                 : "var(--color-text-muted)",
             }}
             aria-label="Send question"

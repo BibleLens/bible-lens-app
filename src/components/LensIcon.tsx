@@ -89,17 +89,17 @@ export function LensIcon({ size = 64, className = "", animate = true }: LensIcon
         y1="50"
         x2="75"
         y2="50"
-        stroke="#22d3ee"
+        stroke="var(--color-cyan-400)"
         strokeWidth="1"
         filter="url(#glow)"
       />
-      
+
       {/* Center point */}
       <circle
         cx="50"
         cy="50"
         r="2"
-        fill="#22d3ee"
+        fill="var(--color-cyan-400)"
         filter="url(#glow)"
       />
     </svg>
