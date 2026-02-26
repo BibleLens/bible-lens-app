@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { LensIcon } from "@/components/LensIcon";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "About the Lens | Bible Lens",
@@ -53,6 +54,7 @@ export default function AboutPage() {
             >
               About
             </span>
+            <ThemeToggle />
           </nav>
         </div>
       </header>

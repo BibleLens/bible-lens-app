@@ -4,6 +4,7 @@ import { getChapter, getBook, findBookById, getAdjacentBooks } from "@/lib/bible
 import { LensIcon } from "@/components/LensIcon";
 import { CommentaryPanel } from "@/components/CommentaryPanel";
 import { BackButton } from "@/components/BackButton";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface ChapterPageProps {
   params: Promise<{ bookId: string; chapter: string }>;
@@ -100,7 +101,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           {/* Chapter navigation */}
           <div className="flex items-center gap-1 text-base">
             {prevLink && (
-              <Link 
+              <Link
                 href={prevLink}
                 className="p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title={prevLabel || undefined}
@@ -111,7 +112,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
               </Link>
             )}
             {nextLink && (
-              <Link 
+              <Link
                 href={nextLink}
                 className="p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title={nextLabel || undefined}
@@ -121,6 +122,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                 </svg>
               </Link>
             )}
+            <ThemeToggle />
           </div>
         </div>
       </header>

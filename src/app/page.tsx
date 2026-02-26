@@ -7,6 +7,7 @@ import { LensIcon } from "@/components/LensIcon";
 import { BackgroundPaths } from "@/components/BackgroundPaths";
 import { NeonButton } from "@/components/NeonButton";
 import { getOldTestamentBooks, getNewTestamentBooks } from "@/lib/bible";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -51,6 +52,7 @@ export default function Home() {
               </svg>
               Chat
             </Link>
+            <ThemeToggle />
           </nav>
         </div>
       </header>

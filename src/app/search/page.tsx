@@ -6,6 +6,7 @@ import { SearchInput } from "@/components/SearchInput";
 import { BibleSearch } from "@/components/BibleSearch";
 import { SemanticSearch } from "@/components/SemanticSearch";
 import { BackButton } from "@/components/BackButton";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface SearchPageProps {
   searchParams: Promise<{ q?: string }>;
@@ -78,6 +79,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </svg>
             Chat
           </Link>
+          <ThemeToggle />
         </div>
       </header>
 

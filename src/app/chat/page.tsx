@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { LensIcon } from "@/components/LensIcon";
 import { BackButton } from "@/components/BackButton";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { ChatInterface } from "@/components/ChatInterface";
 
 export const metadata: Metadata = {
@@ -56,6 +57,7 @@ export default async function ChatPage({
             >
               Chat
             </span>
+            <ThemeToggle />
           </nav>
         </div>
       </header>
