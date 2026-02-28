@@ -158,16 +158,33 @@ body {
 @keyframes lens-pulse {
   0%, 100% {
     opacity: 1;
-    filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.4));
+    filter: drop-shadow(0 0 12px rgba(250, 204, 21, 0.6))
+            drop-shadow(0 0 24px rgba(250, 204, 21, 0.3));
   }
   50% {
-    opacity: 0.8;
-    filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.6));
+    opacity: 0.85;
+    filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.8))
+            drop-shadow(0 0 40px rgba(34, 211, 238, 0.4));
   }
 }
 
 .lens-icon {
   animation: lens-pulse 4s ease-in-out infinite;
+}
+
+@keyframes title-pulse {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(250, 204, 21, 0.5),
+                 0 0 20px rgba(250, 204, 21, 0.25);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(34, 211, 238, 0.6),
+                 0 0 28px rgba(34, 211, 238, 0.3);
+  }
+}
+
+.title-pulse {
+  animation: title-pulse 4s ease-in-out infinite;
 }
 
 /* Search input styling */
@@ -249,6 +266,11 @@ body {
   animation: none;
 }
 
+:root.light .title-pulse {
+  animation: none;
+  text-shadow: none;
+}
+
 /* Neon button pulse */
 @keyframes neon-pulse-gold {
   0%, 100% {
@@ -268,7 +290,8 @@ body {
 /* Accessibility: reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .lens-icon,
-  .neon-pulse-gold {
+  .neon-pulse-gold,
+  .title-pulse {
     animation: none;
   }
 }
