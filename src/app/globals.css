@@ -271,6 +271,11 @@ body {
   text-shadow: none;
 }
 
+:root.light .lens-icon {
+  animation: none;
+  filter: none;
+}
+
 /* Neon button pulse */
 @keyframes neon-pulse-gold {
   0%, 100% {
