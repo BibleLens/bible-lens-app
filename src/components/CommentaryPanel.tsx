@@ -2,13 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
-interface CommentaryChunk {
-  text: string;
-  title: string;
-  score: number;
-  chunkIndex: number;
-}
+import type { CommentaryChunk } from "@/lib/commentary";
 
 interface CommentaryResponse {
   book: string;
@@ -20,12 +14,13 @@ interface CommentaryResponse {
 interface CommentaryPanelProps {
   book: string;
   chapter: number;
+  initialCommentary?: CommentaryChunk[];
 }
 
-export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
+export function CommentaryPanel({ book, chapter, initialCommentary }: CommentaryPanelProps) {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(true);
-  const [commentary, setCommentary] = useState<CommentaryChunk[]>([]);
+  const [isLoading, setIsLoading] = useState(!(initialCommentary && initialCommentary.length > 0));
+  const [commentary, setCommentary] = useState<CommentaryChunk[]>(initialCommentary ?? []);
   const [isExpanded, setIsExpanded] = useState(false);
 
   const buildPassageQuestion = (): string => {
@@ -84,6 +79,9 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
       .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "<em>$1</em>");
 
   useEffect(() => {
+    // Skip client fetch when data was pre-populated by the server (SSR)
+    if (initialCommentary && initialCommentary.length > 0) return;
+
     setIsLoading(true);
     setCommentary([]);
 
@@ -98,7 +96,7 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [book, chapter]);
+  }, [book, chapter, initialCommentary]);
 
   // Empty state — hide completely, no broken UI
   if (!isLoading && commentary.length === 0) {

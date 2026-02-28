@@ -5,6 +5,7 @@ import { LensIcon } from "@/components/LensIcon";
 import { CommentaryPanel } from "@/components/CommentaryPanel";
 import { BackButton } from "@/components/BackButton";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { getCommentaryData } from "@/lib/commentary";
 
 interface ChapterPageProps {
   params: Promise<{ bookId: string; chapter: string }>;
@@ -42,6 +43,11 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
   const hasCommentary =
     (bookId === "genesis" && chapterNum >= 1 && chapterNum <= 3) ||
     (bookId === "matthew" && chapterNum === 24);
+
+  // Server-side commentary fetch for SEO — commentary chapters only
+  const initialCommentary = hasCommentary
+    ? await getCommentaryData(bookId, chapterNum)
+    : [];
 
   const hasPrevChapter = chapterNum > 1;
   const hasNextChapter = chapterNum < totalChapters;
@@ -164,7 +170,11 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
         {/* Commentary Panel — only for genesis 1-3 and matthew 24 */}
         {hasCommentary && (
           <div className="mt-8">
-            <CommentaryPanel book={bookId} chapter={chapterNum} />
+            <CommentaryPanel
+              book={bookId}
+              chapter={chapterNum}
+              initialCommentary={initialCommentary}
+            />
           </div>
         )}
 
