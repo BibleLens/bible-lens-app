@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getChapter, getBook, findBookById, getAdjacentBooks } from "@/lib/bible";
@@ -11,17 +12,61 @@ interface ChapterPageProps {
   params: Promise<{ bookId: string; chapter: string }>;
 }
 
-export async function generateMetadata({ params }: ChapterPageProps) {
+// Hand-crafted descriptions for commentary chapters — these are our most valuable pages.
+// Each description leads with the historical question the chapter answers, using Bible Lens voice.
+const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
+  "genesis-1":
+    "What did Genesis 1 mean to its original audience? Explore the ancient cosmology framework — the cosmic temple, the firmament, and why creation week isn't a science textbook.",
+  "genesis-2":
+    "Genesis 2's second creation account through ancient Near Eastern eyes — Adam as representative humanity, the garden as sacred space, and what the original audience heard.",
+  "genesis-3":
+    "The serpent, the tree, and the fall — what the original audience understood about Genesis 3 that modern readers often miss. Here's where it gets interesting.",
+  "matthew-24":
+    "Did Matthew 24 predict AD 70? The partial preterist case for the Olivet Discourse — Jesus describing the coming destruction of Jerusalem to people who would live to see it.",
+};
+
+export async function generateMetadata({ params }: ChapterPageProps): Promise<Metadata> {
   const { bookId, chapter } = await params;
+  const chapterNum = parseInt(chapter, 10);
   const bookMeta = findBookById(bookId);
-  
+
   if (!bookMeta) {
     return { title: "Not Found | Bible Lens" };
   }
-  
+
+  const hasCommentary =
+    (bookId === "genesis" && chapterNum >= 1 && chapterNum <= 3) ||
+    (bookId === "matthew" && chapterNum === 24);
+
+  const descKey = `${bookId}-${chapterNum}`;
+  const description =
+    hasCommentary && COMMENTARY_DESCRIPTIONS[descKey]
+      ? COMMENTARY_DESCRIPTIONS[descKey]
+      : `Read ${bookMeta.name} chapter ${chapterNum} in the Berean Standard Bible with historical context.`;
+
+  const title = hasCommentary
+    ? `${bookMeta.name} ${chapterNum} Commentary — Historical Context | Bible Lens`
+    : `${bookMeta.name} ${chapterNum} | Bible Lens`;
+
+  const canonicalUrl = `https://biblelens.faith/bible/${bookId}/${chapterNum}`;
+
   return {
-    title: `${bookMeta.name} ${chapter} | Bible Lens`,
-    description: `Read ${bookMeta.name} chapter ${chapter} from the Berean Standard Bible with historical context and commentary.`,
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: "article",
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Bible Lens" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og-image.png"],
+    },
   };
 }
 
