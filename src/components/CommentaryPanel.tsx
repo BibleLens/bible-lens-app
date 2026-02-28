@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { renderMarkdown } from "@/lib/markdown";
 
 interface CommentaryChunk {
   text: string;
@@ -135,12 +136,15 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
                 {index > 0 && (
                   <div className="border-t border-[var(--color-border)] my-4" />
                 )}
-                <p
+                <div
                   className="text-lg leading-relaxed text-[var(--color-text-secondary)]"
                   style={{ fontFamily: "Georgia, serif" }}
-                >
-                  {chunk.text}
-                </p>
+                  dangerouslySetInnerHTML={{
+                    __html: renderMarkdown(
+                      chunk.text.replace(/\s*(#{1,3})\s+/g, "\n$1 ")
+                    ),
+                  }}
+                />
               </div>
             ))}
           </div>
