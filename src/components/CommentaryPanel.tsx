@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 interface CommentaryChunk {
   text: string;
@@ -22,9 +23,26 @@ interface CommentaryPanelProps {
 }
 
 export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [commentary, setCommentary] = useState<CommentaryChunk[]>([]);
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const buildPassageQuestion = (): string => {
+    const bookTitle = book.charAt(0).toUpperCase() + book.slice(1);
+    if (book === "genesis") {
+      return `What does ${bookTitle} ${chapter} mean for understanding creation?`;
+    }
+    if (book === "matthew") {
+      return `What does ${bookTitle} ${chapter} mean for understanding the Olivet Discourse?`;
+    }
+    return `What is the historical context of ${bookTitle} ${chapter}?`;
+  };
+
+  const handleAskAboutPassage = () => {
+    const question = buildPassageQuestion();
+    router.push(`/chat?q=${encodeURIComponent(question)}&t=${Date.now()}`);
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -134,6 +152,19 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
           >
             Bible Lens Commentary
           </p>
+
+          <button
+            type="button"
+            onClick={handleAskAboutPassage}
+            className="mt-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-colors hover:opacity-90"
+            style={{
+              background: "rgba(250, 204, 21, 0.08)",
+              border: "1px solid rgba(250, 204, 21, 0.25)",
+              color: "var(--color-gold-400)",
+            }}
+          >
+            Ask about this passage
+          </button>
         </div>
       )}
     </div>
