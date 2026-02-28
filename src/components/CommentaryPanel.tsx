@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { renderMarkdown } from "@/lib/markdown";
 
 interface CommentaryChunk {
   text: string;
@@ -44,6 +43,45 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
     const question = buildPassageQuestion();
     router.push(`/chat?q=${encodeURIComponent(question)}&t=${Date.now()}`);
   };
+
+  /** Split a flat commentary blob into headed sections with paragraph breaks. */
+  const parseCommentarySections = (
+    text: string
+  ): { heading: string | null; body: string }[] => {
+    // Strip leading # title (redundant with "Through This Lens")
+    const stripped = text.replace(/^#\s+[^#]+?(?=\s*##)/, "").trim();
+    // Split on ## or ### markers
+    const parts = stripped.split(/\s*#{2,3}\s+/);
+    return parts
+      .filter(Boolean)
+      .map((section) => {
+        // Heading heuristic: a sentence starts where a capitalized word is
+        // followed by two+ lowercase words (e.g. "If you've ever", "The name used").
+        // Title words like "Cosmic Temple Framework" won't false-match because
+        // they're followed by more capitalized words, not lowercase runs.
+        // Pattern: CapitalizedWord + lowercase-word (with apostrophes) + lowercase-word
+        // This catches sentence starts like "The serpent's promise", "If you've ever"
+        // but not title phrases like "Cosmic Temple Framework" (followed by uppercase)
+        const match = section.match(
+          /^(.+?)\s+([A-Z][a-z]+[.,:;!?']*\s+[a-z][a-z']*\s+[a-z])/
+        );
+        if (match) {
+          const headingEnd = match.index! + match[1].length;
+          return {
+            heading: section.substring(0, headingEnd).trim(),
+            body: section.substring(headingEnd).trim(),
+          };
+        }
+        return { heading: null, body: section };
+      })
+      .filter((s) => s.heading || s.body.trim());
+  };
+
+  /** Apply inline markdown (bold, italic) to text. */
+  const inlineMarkdown = (text: string): string =>
+    text
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "<em>$1</em>");
 
   useEffect(() => {
     setIsLoading(true);
@@ -139,12 +177,28 @@ export function CommentaryPanel({ book, chapter }: CommentaryPanelProps) {
                 <div
                   className="text-lg leading-relaxed text-[var(--color-text-secondary)]"
                   style={{ fontFamily: "Georgia, serif" }}
-                  dangerouslySetInnerHTML={{
-                    __html: renderMarkdown(
-                      chunk.text.replace(/\s*(#{1,3})\s+/g, "\n$1 ")
-                    ),
-                  }}
-                />
+                >
+                  {parseCommentarySections(chunk.text).map((section, si) => (
+                    <div key={si} className={si > 0 ? "mt-5" : ""}>
+                      {section.heading && (
+                        <h3
+                          className="text-xl font-semibold mb-2"
+                          style={{ color: "var(--color-text-primary)" }}
+                          dangerouslySetInnerHTML={{
+                            __html: inlineMarkdown(section.heading),
+                          }}
+                        />
+                      )}
+                      {section.body.trim() && (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: inlineMarkdown(section.body.trim()),
+                          }}
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
