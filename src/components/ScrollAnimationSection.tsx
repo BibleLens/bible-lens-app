@@ -27,6 +27,11 @@ interface SpokeLine {
   scatterY: number;
 }
 
+// Round to 4 decimal places to prevent SSR/client hydration mismatch —
+// Math.cos/sin produce floats that serialize with different precision
+// between server and client (e.g., "46.763932022500214" vs 46.76393202250021).
+const r4 = (n: number) => Math.round(n * 10000) / 10000;
+
 function generateSpokeLines(): SpokeLine[] {
   const lines: SpokeLine[] = [];
   const cx = 50;
@@ -38,14 +43,14 @@ function generateSpokeLines(): SpokeLine[] {
     const angleDeg = i * 18; // 360 / 20 = 18 degrees apart
     const angleRad = (angleDeg * Math.PI) / 180;
 
-    const x1 = cx + innerR * Math.cos(angleRad);
-    const y1 = cy + innerR * Math.sin(angleRad);
-    const x2 = cx + outerR * Math.cos(angleRad);
-    const y2 = cy + outerR * Math.sin(angleRad);
+    const x1 = r4(cx + innerR * Math.cos(angleRad));
+    const y1 = r4(cy + innerR * Math.sin(angleRad));
+    const x2 = r4(cx + outerR * Math.cos(angleRad));
+    const y2 = r4(cy + outerR * Math.sin(angleRad));
 
     // Scatter direction: radially outward from center
-    const scatterX = Math.cos(angleRad) * 18;
-    const scatterY = Math.sin(angleRad) * 18;
+    const scatterX = r4(Math.cos(angleRad) * 18);
+    const scatterY = r4(Math.sin(angleRad) * 18);
 
     lines.push({ x1, y1, x2, y2, scatterX, scatterY });
   }
