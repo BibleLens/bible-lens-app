@@ -28,6 +28,13 @@ const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "Did Matthew 24 predict AD 70? The partial preterist case for the Olivet Discourse — Jesus describing the coming destruction of Jerusalem to people who would live to see it.",
 };
 
+function chapterHasCommentary(bookId: string, chapterNum: number): boolean {
+  return (
+    (bookId === "genesis" && chapterNum >= 1 && chapterNum <= 3) ||
+    (bookId === "matthew" && chapterNum === 24)
+  );
+}
+
 export async function generateMetadata({ params }: ChapterPageProps): Promise<Metadata> {
   const { bookId, chapter } = await params;
   const chapterNum = parseInt(chapter, 10);
@@ -37,9 +44,7 @@ export async function generateMetadata({ params }: ChapterPageProps): Promise<Me
     return { title: "Not Found | Bible Lens" };
   }
 
-  const hasCommentary =
-    (bookId === "genesis" && chapterNum >= 1 && chapterNum <= 3) ||
-    (bookId === "matthew" && chapterNum === 24);
+  const hasCommentary = chapterHasCommentary(bookId, chapterNum);
 
   const descKey = `${bookId}-${chapterNum}`;
   const description =
@@ -88,9 +93,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
   const { prev: prevBook, next: nextBook } = getAdjacentBooks(bookId);
   const totalChapters = book.chapterCount;
 
-  const hasCommentary =
-    (bookId === "genesis" && chapterNum >= 1 && chapterNum <= 3) ||
-    (bookId === "matthew" && chapterNum === 24);
+  const hasCommentary = chapterHasCommentary(bookId, chapterNum);
 
   const videoId = getVideoId(bookId, chapterNum);
   const hasVideo = Boolean(videoId);
