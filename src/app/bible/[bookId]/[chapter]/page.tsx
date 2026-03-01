@@ -7,6 +7,7 @@ import { CommentaryPanel } from "@/components/CommentaryPanel";
 import { BackButton } from "@/components/BackButton";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { getCommentaryData } from "@/lib/commentary";
+import { ShareButton } from "@/components/ShareButton";
 
 interface ChapterPageProps {
   params: Promise<{ bookId: string; chapter: string }>;
@@ -173,6 +174,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                 </svg>
               </Link>
             )}
+            <ShareButton />
             <ThemeToggle />
           </div>
         </div>
