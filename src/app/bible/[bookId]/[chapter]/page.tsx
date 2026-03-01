@@ -8,6 +8,8 @@ import { BackButton } from "@/components/BackButton";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { getCommentaryData } from "@/lib/commentary";
 import { ShareButton } from "@/components/ShareButton";
+import { getVideoId } from "@/lib/video-config";
+import { VideoEmbed } from "@/components/VideoEmbed";
 
 interface ChapterPageProps {
   params: Promise<{ bookId: string; chapter: string }>;
@@ -89,6 +91,9 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
   const hasCommentary =
     (bookId === "genesis" && chapterNum >= 1 && chapterNum <= 3) ||
     (bookId === "matthew" && chapterNum === 24);
+
+  const videoId = getVideoId(bookId, chapterNum);
+  const hasVideo = Boolean(videoId);
 
   // Server-side commentary fetch for SEO — commentary chapters only
   const initialCommentary = hasCommentary
@@ -213,6 +218,16 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             </p>
           ))}
         </div>
+
+        {/* Video Embed — only when a YouTube video ID is configured in VIDEO_CONFIG */}
+        {hasVideo && videoId && (
+          <div className="mt-8">
+            <VideoEmbed
+              videoId={videoId}
+              title={`${bookMeta.name} ${chapterNum} Commentary`}
+            />
+          </div>
+        )}
 
         {/* Commentary Panel — only for genesis 1-3 and matthew 24 */}
         {hasCommentary && (
