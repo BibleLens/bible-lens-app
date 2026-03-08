@@ -24,6 +24,11 @@ function getAnthropicClient(): Anthropic {
   return _anthropic;
 }
 
+interface ConversationMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export async function POST(request: NextRequest) {
   // Step 1: Rate limit check
   const ip = getClientIp(request);
@@ -42,24 +47,81 @@ export async function POST(request: NextRequest) {
   }
 
   // Step 2: Parse and validate request body
+  // Accepts either { messages: ConversationMessage[] } (multi-turn) or { question: string } (legacy single-turn)
   const body = await request.json();
-  const { question } = body;
 
-  if (!question || typeof question !== 'string') {
-    return new Response(
-      JSON.stringify({ error: "That question didn't quite register — could you rephrase it?" }),
-      {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
+  let conversationMessages: ConversationMessage[];
+
+  if (body.messages !== undefined) {
+    // Multi-turn: validate messages array
+    if (!Array.isArray(body.messages) || body.messages.length === 0) {
+      return new Response(
+        JSON.stringify({ error: "That question didn't quite register — could you rephrase it?" }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    // Validate each message entry
+    for (const msg of body.messages) {
+      if (
+        typeof msg !== 'object' ||
+        (msg.role !== 'user' && msg.role !== 'assistant') ||
+        typeof msg.content !== 'string' ||
+        msg.content.trim() === ''
+      ) {
+        return new Response(
+          JSON.stringify({ error: "That question didn't quite register — could you rephrase it?" }),
+          {
+            status: 400,
+            headers: { 'Content-Type': 'application/json' },
+          }
+        );
       }
-    );
+    }
+
+    // Last message must be from the user
+    if (body.messages[body.messages.length - 1].role !== 'user') {
+      return new Response(
+        JSON.stringify({ error: "That question didn't quite register — could you rephrase it?" }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    // Cap at 50 messages to prevent abuse
+    const capped = body.messages.slice(-50);
+    conversationMessages = capped.map((m: ConversationMessage) => ({
+      role: m.role,
+      content: m.content,
+    }));
+  } else {
+    // Legacy single-turn: { question: string }
+    const { question } = body;
+    if (!question || typeof question !== 'string') {
+      return new Response(
+        JSON.stringify({ error: "That question didn't quite register — could you rephrase it?" }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+    conversationMessages = [{ role: 'user', content: question }];
   }
+
+  // Extract latest user message for RAG retrieval (scoped to latest message per v1.6 constraint)
+  const latestQuestion = conversationMessages[conversationMessages.length - 1].content;
 
   try {
     const anthropic = getAnthropicClient();
 
-    // Step 3: RAG retrieval — embed question, search Qdrant for context
-    const embedding = await embedQuery(question);
+    // Step 3: RAG retrieval — embed latest question, search Qdrant for context
+    const embedding = await embedQuery(latestQuestion);
     const qdrant = getQdrantClient();
     const ragResults = await qdrant.search(COLLECTION_NAME, {
       vector: embedding,
@@ -88,11 +150,12 @@ export async function POST(request: NextRequest) {
 
     // Step 6: Stream Claude response using messages.stream() helper
     // DO NOT use messages.create({ stream: true }) raw — use .stream() for event handling
+    // Pass full conversation history for multi-turn context awareness
     const stream = anthropic.messages.stream({
       model: 'claude-sonnet-4-6',
       max_tokens: 1024,
       system: systemPrompt,
-      messages: [{ role: 'user', content: question }],
+      messages: conversationMessages,
     });
 
     // Step 7: Pipe Claude stream to ReadableStream for Next.js streaming response
