@@ -79,6 +79,62 @@ function TypingDots() {
   );
 }
 
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard unavailable — silent fail
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label={copied ? "Copied" : "Copy response"}
+      className="p-1.5 rounded-md transition-colors flex items-center gap-1"
+      style={{ color: "var(--color-text-muted)" }}
+    >
+      {copied ? (
+        <>
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            style={{ color: "var(--color-cyan-400)" }}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span style={{ color: "var(--color-cyan-400)", fontSize: "0.875rem" }}>
+            Copied!
+          </span>
+        </>
+      ) : (
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+          />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 function SourcesPanel({ sources }: { sources: Source[] }) {
   const [open, setOpen] = useState(false);
 
@@ -188,6 +244,11 @@ function MessageBubble({ message }: { message: Message }) {
             )}
             {message.sources && message.sources.length > 0 && (
               <SourcesPanel sources={message.sources} />
+            )}
+            {!isEmpty && (
+              <div className="flex justify-end mt-2">
+                <CopyButton text={message.content} />
+              </div>
             )}
           </>
         )}
