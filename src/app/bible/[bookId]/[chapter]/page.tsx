@@ -42,6 +42,8 @@ const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "Jacob's Ladder and the gateway of heaven — ancient cosmology, sacred space, and what the original audience understood about the stairway between heaven and earth.",
   "genesis-37":
     "The opening of the Joseph narrative — dreams, a coat of many colors, and the literary devices that signal where this story is going. What the original audience would have noticed.",
+  "genesis-22":
+    "The Binding of Isaac — was God really asking for child sacrifice? The Aqedah through ancient Near Eastern eyes, where the original audience would have understood the test, the ram, and the covenant promise very differently than modern readers.",
 };
 
 function chapterHasCommentary(bookId: string, chapterNum: number): boolean {
@@ -52,6 +54,7 @@ function chapterHasCommentary(bookId: string, chapterNum: number): boolean {
       (chapterNum >= 6 && chapterNum <= 9) ||
       chapterNum === 11 ||
       chapterNum === 12 ||
+      chapterNum === 22 ||
       chapterNum === 28 ||
       chapterNum === 37
     );
