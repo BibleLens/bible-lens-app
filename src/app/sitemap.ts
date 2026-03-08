@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllBooks } from "@/lib/bible";
 
 const COMMENTARY_CHAPTERS: Record<string, number[]> = {
-  genesis: [1, 2, 3],
+  genesis: [1, 2, 3, 6, 7, 8, 9, 11, 12, 28, 37],
   matthew: [24],
 };
 

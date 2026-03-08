@@ -26,13 +26,37 @@ const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "The serpent, the tree, and the fall — what the original audience understood about Genesis 3 that modern readers often miss. Here's where it gets interesting.",
   "matthew-24":
     "Did Matthew 24 predict AD 70? The partial preterist case for the Olivet Discourse — Jesus describing the coming destruction of Jerusalem to people who would live to see it.",
+  "genesis-6":
+    "What did the original audience understand about the 'sons of God' and the Nephilim? Genesis 6 through the lens of ancient divine council theology and Mesopotamian flood parallels.",
+  "genesis-7":
+    "The Genesis flood account echoes Mesopotamian traditions — but with radical theological differences. What the original audience heard in the story of Noah entering the ark.",
+  "genesis-8":
+    "The waters recede and Noah sends birds — motifs the ancient audience would have recognized from Gilgamesh and Atrahasis. Here's where it gets interesting.",
+  "genesis-9":
+    "God's covenant with Noah — the first universal covenant in Scripture. What the rainbow, the blessing, and the dietary laws meant to the original audience.",
+  "genesis-11":
+    "The Tower of Babel as ancient ziggurat — what the original audience understood about Shinar, divine council judgment, and the scattering of the nations.",
+  "genesis-12":
+    "God's call to Abram — the covenant that reshapes everything. What 'lekh lekha' meant, why Ur matters, and how the original audience heard the promise of blessing.",
+  "genesis-28":
+    "Jacob's Ladder and the gateway of heaven — ancient cosmology, sacred space, and what the original audience understood about the stairway between heaven and earth.",
+  "genesis-37":
+    "The opening of the Joseph narrative — dreams, a coat of many colors, and the literary devices that signal where this story is going. What the original audience would have noticed.",
 };
 
 function chapterHasCommentary(bookId: string, chapterNum: number): boolean {
-  return (
-    (bookId === "genesis" && chapterNum >= 1 && chapterNum <= 3) ||
-    (bookId === "matthew" && chapterNum === 24)
-  );
+  if (bookId === "matthew" && chapterNum === 24) return true;
+  if (bookId === "genesis") {
+    return (
+      (chapterNum >= 1 && chapterNum <= 3) ||
+      (chapterNum >= 6 && chapterNum <= 9) ||
+      chapterNum === 11 ||
+      chapterNum === 12 ||
+      chapterNum === 28 ||
+      chapterNum === 37
+    );
+  }
+  return false;
 }
 
 export async function generateMetadata({ params }: ChapterPageProps): Promise<Metadata> {
@@ -232,7 +256,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           </div>
         )}
 
-        {/* Commentary Panel — only for genesis 1-3 and matthew 24 */}
+        {/* Commentary Panel — for chapters with published commentary */}
         {hasCommentary && (
           <div className="mt-8">
             <CommentaryPanel
