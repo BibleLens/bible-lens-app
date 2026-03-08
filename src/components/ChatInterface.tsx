@@ -256,14 +256,37 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
     el.style.height = Math.min(el.scrollHeight, 4 * 24 + 32) + "px";
   };
 
-  const submitQuestion = async (question: string) => {
+  // Clear conversation — resets all chat state
+  const clearConversation = () => {
+    setMessages([]);
+    setInput("");
+    setError(null);
+    didAutoSubmitRef.current = false;
+    // Focus textarea after reset so user can start a new question immediately
+    setTimeout(() => {
+      textareaRef.current?.focus();
+    }, 0);
+  };
+
+  const submitQuestion = async (question: string, currentMessages?: Message[]) => {
     if (!question.trim() || isStreamingRef.current) return;
     isStreamingRef.current = true;
 
     const trimmed = question.trim();
     lastQuestionRef.current = trimmed;
 
-    // Add user message
+    // Build conversation history from current messages state (completed exchanges only).
+    // Use the snapshot passed in (for auto-submit path) or read from closure.
+    // Strip sources from history — API only needs role + content.
+    const historySnapshot = currentMessages ?? messages;
+    const conversationHistory = historySnapshot
+      .filter((m) => m.content !== "") // exclude empty streaming placeholders
+      .map((m) => ({ role: m.role, content: m.content }));
+
+    // Append the new user message to form the full messages array to send
+    conversationHistory.push({ role: "user", content: trimmed });
+
+    // Add user message + empty assistant placeholder to local state for UI display
     setMessages((prev) => [
       ...prev,
       { role: "user", content: trimmed },
@@ -282,7 +305,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: trimmed }),
+        body: JSON.stringify({ messages: conversationHistory }),
       });
 
       if (response.status === 429) {
@@ -440,8 +463,37 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
             </div>
           </div>
         ) : (
-          /* Message list */
+          /* Message list with header bar containing clear button */
           <>
+            {/* Conversation header bar — only visible when there are messages */}
+            <div
+              className="flex justify-end mb-3 pb-2"
+              style={{ borderBottom: "1px solid var(--color-border)" }}
+            >
+              <button
+                onClick={clearConversation}
+                disabled={isStreaming}
+                className="flex items-center gap-1.5 text-base transition-colors disabled:opacity-40"
+                style={{ color: "var(--color-text-muted)" }}
+                aria-label="New conversation"
+              >
+                {/* Plus/circle-plus icon */}
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                New conversation
+              </button>
+            </div>
             {messages.map((msg, i) => (
               <MessageBubble key={i} message={msg} />
             ))}
