@@ -8,6 +8,7 @@ import { getQdrantClient, COLLECTION_NAME } from '@/lib/qdrant';
 import { embedQuery } from '@/lib/embeddings';
 import { buildSystemPrompt } from '@/lib/system-prompt';
 import { checkChatRateLimit, getClientIp } from '@/lib/rate-limit';
+import { pruneToTokenBudget, CONVERSATION_TOKEN_BUDGET } from '@/lib/token-budget';
 
 export const maxDuration = 30;
 
@@ -114,7 +115,23 @@ export async function POST(request: NextRequest) {
     conversationMessages = [{ role: 'user', content: question }];
   }
 
+  // Apply token-budget sliding window — prune to most recent messages within budget
+  // (50-message hard cap above is an abuse guard; this is the finer-grained cost control)
+  const {
+    pruned: prunedMessages,
+    originalCount,
+    prunedCount,
+    estimatedTokens,
+  } = pruneToTokenBudget(conversationMessages, CONVERSATION_TOKEN_BUDGET);
+
+  if (prunedCount < originalCount) {
+    console.log(
+      `[chat/route] Token budget: pruned ${originalCount} → ${prunedCount} messages (~${estimatedTokens} tokens)`
+    );
+  }
+
   // Extract latest user message for RAG retrieval (scoped to latest message per v1.6 constraint)
+  // Use full conversationMessages — latest user message is always preserved in prunedMessages anyway
   const latestQuestion = conversationMessages[conversationMessages.length - 1].content;
 
   try {
@@ -155,7 +172,7 @@ export async function POST(request: NextRequest) {
       model: 'claude-sonnet-4-6',
       max_tokens: 1024,
       system: systemPrompt,
-      messages: conversationMessages,
+      messages: prunedMessages,
     });
 
     // Step 7: Pipe Claude stream to ReadableStream for Next.js streaming response

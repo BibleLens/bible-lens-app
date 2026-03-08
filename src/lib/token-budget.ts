@@ -28,13 +28,13 @@ export function estimateTokens(text: string): number {
   return Math.ceil(text.length / 4);
 }
 
-interface ConversationMessage {
+interface MessageLike {
   role: string;
   content: string;
 }
 
-interface PruneResult {
-  pruned: ConversationMessage[];
+interface PruneResult<T extends MessageLike> {
+  pruned: T[];
   originalCount: number;
   prunedCount: number;
   estimatedTokens: number;
@@ -54,11 +54,14 @@ interface PruneResult {
  *
  * Edge case: If even a single message exceeds the budget, include it anyway.
  * Never returns an empty array — the latest user message is always preserved.
+ *
+ * Generic: accepts any message type with `role` and `content` (e.g. Anthropic
+ * SDK's MessageParam) and returns the same type — no widening to `string`.
  */
-export function pruneToTokenBudget(
-  messages: ConversationMessage[],
+export function pruneToTokenBudget<T extends MessageLike>(
+  messages: T[],
   tokenBudget: number
-): PruneResult {
+): PruneResult<T> {
   const originalCount = messages.length;
 
   if (originalCount === 0) {
@@ -81,7 +84,7 @@ export function pruneToTokenBudget(
     startIndex = i;
   }
 
-  let window = messages.slice(startIndex);
+  let window: T[] = messages.slice(startIndex);
 
   // Ensure window starts with a user message (Claude API requires alternating roles
   // starting with user). If pruning left an orphaned assistant message at the front,
