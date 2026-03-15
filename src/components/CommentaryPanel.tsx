@@ -46,7 +46,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
   const parseCommentarySections = (
     text: string
   ): { heading: string | null; body: string }[] => {
-    // Strip leading # title (redundant with "Through This Lens")
+    // Strip leading # title (redundant with "Read our take on this passage" CTA)
     const stripped = text.replace(/^#\s+[^#]+?(?=\s*##)/, "").trim();
     // Split on ## or ### markers
     const parts = stripped.split(/\s*#{2,3}\s+/);
@@ -133,22 +133,56 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
 
   // Content state
   return (
-    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
-      {/* Collapsible header */}
+    <>
+      <style>{`
+        @keyframes ctaGlowPulse {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+          50% { box-shadow: 0 0 8px 2px rgba(250, 204, 21, 0.15); }
+        }
+      `}</style>
+      <div
+        className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
+        style={{ animation: "ctaGlowPulse 3s ease-in-out 1s infinite" }}
+      >
+      {/* Collapsible header — "Read our take on this passage" CTA */}
       <button
         type="button"
         onClick={() => setIsExpanded((prev) => !prev)}
-        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-[var(--color-bg-elevated)] transition-colors rounded-xl"
+        className="w-full flex items-center justify-between px-5 py-5 text-left hover:bg-[var(--color-bg-elevated)] transition-colors rounded-xl"
         aria-expanded={isExpanded}
       >
-        <span
-          className="text-lg font-semibold tracking-wide"
-          style={{
-            fontFamily: "var(--font-cinzel), serif",
-            color: "var(--color-gold-400)",
-          }}
-        >
-          Through This Lens
+        <span className="flex items-center">
+          {/* Inline diamond SVG — unique gradient ID to avoid collision with homepage LensIcon */}
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 100 100"
+            fill="none"
+            className="flex-shrink-0 mr-2"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="ctaLensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#facc15" />
+                <stop offset="100%" stopColor="#22d3ee" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M50 10 L70 50 L50 90 L30 50 Z"
+              stroke="url(#ctaLensGradient)"
+              strokeWidth="2"
+              fill="none"
+            />
+          </svg>
+          <span
+            className="text-lg font-semibold"
+            style={{
+              fontFamily: "var(--font-cinzel), serif",
+              color: "var(--color-gold-400)",
+            }}
+          >
+            Read our take on this passage
+          </span>
         </span>
         <svg
           className="w-5 h-5 flex-shrink-0 transition-transform duration-200"
@@ -227,5 +261,6 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         </div>
       )}
     </div>
+    </>
   );
 }
