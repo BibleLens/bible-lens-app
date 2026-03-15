@@ -31,6 +31,9 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
     if (book === "matthew") {
       return `What does ${bookTitle} ${chapter} mean for understanding the Olivet Discourse?`;
     }
+    if (book === "revelation") {
+      return `What does ${bookTitle} ${chapter} reveal about first-century events through ancient Jewish apocalyptic imagery?`;
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
