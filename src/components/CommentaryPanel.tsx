@@ -142,7 +142,10 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       `}</style>
       <div
         className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
-        style={{ animation: "ctaGlowPulse 3s ease-in-out 1s infinite" }}
+        style={{
+          borderLeft: "3px solid var(--color-gold-400)",
+          animation: "ctaGlowPulse 3s ease-in-out 1s infinite",
+        }}
       >
       {/* Collapsible header — "Read our take on this passage" CTA */}
       <button
@@ -174,14 +177,22 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
               fill="none"
             />
           </svg>
-          <span
-            className="text-lg font-semibold"
-            style={{
-              fontFamily: "var(--font-cinzel), serif",
-              color: "var(--color-gold-400)",
-            }}
-          >
-            Read our take on this passage
+          <span className="flex flex-col">
+            <span
+              className="text-base font-semibold leading-tight"
+              style={{
+                fontFamily: "var(--font-cinzel), serif",
+                color: "var(--color-gold-400)",
+              }}
+            >
+              Bible Lens Commentary
+            </span>
+            <span
+              className="text-sm leading-snug"
+              style={{ color: "var(--color-text-muted)" }}
+            >
+              What the original audience understood
+            </span>
           </span>
         </span>
         <svg
@@ -203,6 +214,16 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       {/* Expanded content */}
       {isExpanded && (
         <div className="px-5 pb-5">
+          <p
+            className="text-xs font-semibold tracking-widest uppercase mb-4"
+            style={{
+              color: "var(--color-text-muted)",
+              fontFamily: "var(--font-cinzel), serif",
+              letterSpacing: "0.12em",
+            }}
+          >
+            Through This Lens
+          </p>
           <div className="space-y-0">
             {commentary.map((chunk, index) => (
               <div key={index}>
