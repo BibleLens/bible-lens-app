@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cinzel, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
@@ -74,6 +75,7 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-source-sans), system-ui, sans-serif" }}
       >
         <ThemeProvider>
+          <ServiceWorkerRegistration />
           {children}
         </ThemeProvider>
       </body>
