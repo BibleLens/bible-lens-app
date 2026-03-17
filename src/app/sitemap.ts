@@ -6,6 +6,7 @@ const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   daniel: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
   matthew: [24],
   revelation: [1, 2, 3, 4, 5, 6, 7, 12, 13, 14, 17, 18, 19, 20, 21, 22],
+  isaiah: [7, 9, 11, 52, 53, 65, 66],
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
