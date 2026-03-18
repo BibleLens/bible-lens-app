@@ -56,6 +56,12 @@ export function HomeClient() {
                 </svg>
                 Chat
               </Link>
+              <Link
+                href="/commentary"
+                className="text-lg transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-gold-400)] min-h-[44px] flex items-center"
+              >
+                Commentary
+              </Link>
               <ThemeToggle />
             </nav>
           </div>
@@ -126,6 +132,9 @@ export function HomeClient() {
                 </NeonButton>
                 <NeonButton variant="cyan" size="lg" href="/chat">
                   Ask a Question
+                </NeonButton>
+                <NeonButton variant="gold" size="lg" href="/commentary">
+                  Browse Commentary
                 </NeonButton>
               </div>
             </section>
