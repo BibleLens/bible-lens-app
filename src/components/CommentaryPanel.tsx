@@ -2,7 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import type { CommentaryChunk } from "@/lib/commentary";
+import { RELATED_PASSAGES } from "@/lib/commentary-index";
+import { findBookById } from "@/lib/bible";
 
 interface CommentaryResponse {
   book: string;
@@ -300,6 +303,34 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
           >
             Ask about this passage
           </button>
+
+          {(() => {
+            const relatedKeys = RELATED_PASSAGES[`${book}-${chapter}`] ?? [];
+            if (relatedKeys.length === 0) return null;
+            return (
+              <div className="mt-6 pt-4 border-t border-[var(--color-border)]">
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3"
+                  style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-cinzel), serif", letterSpacing: "0.12em" }}>
+                  Related Passages
+                </p>
+                <ul className="space-y-1">
+                  {relatedKeys.map((relKey) => {
+                    const [relBook, relChapterStr] = relKey.split("-");
+                    const relChapter = parseInt(relChapterStr, 10);
+                    const bookName = findBookById(relBook)?.name ?? relBook;
+                    return (
+                      <li key={relKey}>
+                        <Link href={`/bible/${relBook}/${relChapter}`}
+                          className="text-sm text-[var(--color-gold-400)] hover:text-[var(--color-gold-300)] transition-colors">
+                          {bookName} {relChapter}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })()}
         </div>
       )}
     </div>
