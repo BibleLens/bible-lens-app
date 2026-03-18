@@ -261,4 +261,79 @@ export const READING_PATHS: ReadingPath[] = [
 ];
 
 // key: "{bookId}-{chapter}", values: array of "{bookId}-{chapter}" keys
-export const RELATED_PASSAGES: Record<string, string[]> = {};
+export const RELATED_PASSAGES: Record<string, string[]> = {
+  // Genesis — Flood cluster
+  "genesis-6": ["ezekiel-28", "daniel-10", "revelation-12"],
+  "genesis-7": ["genesis-6", "genesis-8", "genesis-9"],
+  "genesis-8": ["genesis-7", "genesis-9"],
+  "genesis-9": ["genesis-8", "genesis-12"],
+
+  // Genesis — Covenant cluster
+  "genesis-12": ["genesis-22", "genesis-28", "isaiah-7"],
+  "genesis-22": ["genesis-12", "isaiah-53", "revelation-5"],
+  "genesis-28": ["genesis-12", "ezekiel-1"],
+
+  // Genesis — Divine council / cosmos cluster
+  "genesis-1": ["genesis-2", "ezekiel-1", "genesis-11"],
+  "genesis-2": ["genesis-1", "genesis-3", "ezekiel-28"],
+  "genesis-3": ["genesis-2", "revelation-12", "ezekiel-28"],
+  "genesis-11": ["genesis-6", "daniel-2", "revelation-17"],
+
+  // Genesis — Narrative
+  "genesis-37": ["genesis-28", "genesis-12", "daniel-1"],
+
+  // Daniel — Court tales
+  "daniel-1": ["daniel-2", "daniel-3", "ezekiel-2"],
+  "daniel-3": ["daniel-1", "daniel-6", "ezekiel-3"],
+  "daniel-4": ["daniel-5", "daniel-2", "ezekiel-28"],
+  "daniel-5": ["daniel-4", "daniel-6", "revelation-17"],
+  "daniel-6": ["daniel-3", "daniel-5", "ezekiel-3"],
+
+  // Daniel — Visions cluster
+  "daniel-2": ["daniel-7", "revelation-13", "matthew-24"],
+  "daniel-7": ["daniel-2", "revelation-1", "matthew-24"],
+  "daniel-8": ["daniel-7", "daniel-9", "revelation-13"],
+  "daniel-9": ["daniel-7", "matthew-24", "revelation-1"],
+  "daniel-10": ["daniel-9", "daniel-11", "revelation-12"],
+  "daniel-11": ["daniel-10", "daniel-12", "revelation-6"],
+  "daniel-12": ["daniel-7", "revelation-20", "ezekiel-37"],
+
+  // Matthew
+  "matthew-24": ["daniel-9", "revelation-6", "daniel-7"],
+
+  // Revelation
+  "revelation-1": ["daniel-7", "matthew-24", "revelation-22"],
+  "revelation-2": ["revelation-3", "revelation-1", "daniel-1"],
+  "revelation-3": ["revelation-2", "revelation-1", "daniel-6"],
+  "revelation-4": ["ezekiel-1", "revelation-5", "daniel-7"],
+  "revelation-5": ["revelation-4", "daniel-7", "genesis-22"],
+  "revelation-6": ["matthew-24", "daniel-9", "revelation-7"],
+  "revelation-7": ["revelation-6", "revelation-12", "revelation-14"],
+  "revelation-12": ["genesis-3", "daniel-7", "revelation-13"],
+  "revelation-13": ["daniel-7", "revelation-12", "daniel-2"],
+  "revelation-14": ["revelation-7", "revelation-19", "revelation-6"],
+  "revelation-17": ["revelation-18", "daniel-5", "genesis-11"],
+  "revelation-18": ["revelation-17", "daniel-5", "matthew-24"],
+  "revelation-19": ["revelation-20", "ezekiel-39", "daniel-7"],
+  "revelation-20": ["revelation-19", "ezekiel-38", "daniel-12"],
+  "revelation-21": ["revelation-22", "isaiah-65", "ezekiel-37"],
+  "revelation-22": ["revelation-21", "isaiah-66", "daniel-12"],
+
+  // Isaiah — Messianic cluster
+  "isaiah-7": ["isaiah-9", "isaiah-11", "matthew-24"],
+  "isaiah-9": ["isaiah-7", "isaiah-11", "daniel-7"],
+  "isaiah-11": ["isaiah-9", "isaiah-65", "revelation-20"],
+  "isaiah-52": ["isaiah-53", "daniel-9", "revelation-5"],
+  "isaiah-53": ["isaiah-52", "genesis-22", "daniel-9"],
+  "isaiah-65": ["isaiah-66", "revelation-21", "ezekiel-37"],
+  "isaiah-66": ["isaiah-65", "revelation-22", "ezekiel-39"],
+
+  // Ezekiel — Exile/restoration cluster
+  "ezekiel-1": ["ezekiel-2", "revelation-4", "daniel-7"],
+  "ezekiel-2": ["ezekiel-3", "ezekiel-1", "daniel-1"],
+  "ezekiel-3": ["ezekiel-2", "daniel-6", "ezekiel-37"],
+  "ezekiel-28": ["genesis-3", "genesis-6", "daniel-8"],
+  "ezekiel-37": ["ezekiel-38", "daniel-12", "revelation-20"],
+  "ezekiel-38": ["ezekiel-39", "revelation-20", "daniel-11"],
+  "ezekiel-39": ["ezekiel-38", "revelation-19", "revelation-20"],
+};
