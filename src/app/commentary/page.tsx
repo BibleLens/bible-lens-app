@@ -7,6 +7,7 @@ import {
   COMMENTARY_BOOKS,
   THEMATIC_SECTIONS,
   COMMENTARY_TEASERS,
+  READING_PATHS,
 } from "@/lib/commentary-index";
 import { findBookById } from "@/lib/bible";
 
@@ -100,6 +101,12 @@ export default function CommentaryPage() {
               </a>
             ))}
             <a
+              href="#reading-paths"
+              className="px-4 py-2 rounded-full text-base border border-[var(--color-gold-500)]/40 text-[var(--color-gold-400)] hover:border-[var(--color-gold-400)] hover:bg-[var(--color-gold-400)]/10 transition-colors"
+            >
+              Reading Paths
+            </a>
+            <a
               href="#by-book"
               className="px-4 py-2 rounded-full text-base border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
             >
@@ -146,6 +153,45 @@ export default function CommentaryPage() {
               </div>
             </div>
           ))}
+        </section>
+
+        {/* Reading Paths Section */}
+        <section id="reading-paths" className="max-w-6xl mx-auto px-4 pb-16">
+          <h2
+            className="text-2xl sm:text-3xl font-semibold mb-2"
+            style={{ fontFamily: "var(--font-cinzel), serif" }}
+          >
+            <span className="text-[var(--color-gold-400)]">Reading Paths</span>
+          </h2>
+          <p className="text-[var(--color-text-secondary)] mb-8">
+            Curated journeys through related commentary chapters, each tracing a theological thread across books.
+          </p>
+          <div className="space-y-10">
+            {READING_PATHS.map((path) => (
+              <div key={path.id}>
+                <h3
+                  className="text-xl font-semibold text-[var(--color-gold-400)] mb-2"
+                  style={{ fontFamily: "var(--font-cinzel), serif" }}
+                >
+                  {path.title}
+                </h3>
+                <p className="text-[var(--color-text-secondary)] mb-4">{path.throughLine}</p>
+                <ol className="space-y-2 list-decimal list-inside">
+                  {path.steps.map((step) => (
+                    <li key={`${step.bookId}-${step.chapter}`} className="text-sm">
+                      <Link
+                        href={`/bible/${step.bookId}/${step.chapter}`}
+                        className="text-[var(--color-gold-400)] hover:text-[var(--color-gold-300)] transition-colors"
+                      >
+                        {getBookDisplayName(step.bookId)} {step.chapter}
+                      </Link>
+                      <span className="text-[var(--color-text-muted)] ml-2">— {step.annotation}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* By Book Section */}
