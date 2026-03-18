@@ -117,6 +117,72 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
   "ezekiel-39": "The aftermath of Gog's defeat: the great burial, the burning of weapons, and the birds-feasting scene at Ezekiel 39:17-20 that Revelation 19:17-21 quotes directly. What the original audience heard in YHWH's cosmic banquet of judgment — and why Revelation 20:8 names Gog and Magog as a future end-of-Millennium event.",
 };
 
+// Truncates description text to a word limit for card teasers.
+// Uses the ellipsis character (…), not three dots.
+function truncateWords(text: string, wordLimit: number): string {
+  const words = text.split(/\s+/);
+  if (words.length <= wordLimit) return text;
+  return words.slice(0, wordLimit).join(" ") + "\u2026";
+}
+
+// 25-30 word teasers derived from COMMENTARY_DESCRIPTIONS — used by the /commentary index page.
+export const COMMENTARY_TEASERS: Record<string, string> = Object.fromEntries(
+  Object.entries(COMMENTARY_DESCRIPTIONS).map(([key, desc]) => [key, truncateWords(desc, 28)])
+);
+
+export interface ThematicSection {
+  id: string;
+  title: string;
+  description: string;
+  chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
+}
+
+// Total: 27 + 14 + 9 + 5 = 55 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+export const THEMATIC_SECTIONS: ThematicSection[] = [
+  {
+    id: "eschatology",
+    title: "Eschatology",
+    description: "End-times prophecy through the lens of partial preterism and premillennialism.",
+    chapterKeys: [
+      "matthew-24",
+      "daniel-7", "daniel-8", "daniel-9", "daniel-10", "daniel-11", "daniel-12",
+      "revelation-1", "revelation-2", "revelation-3", "revelation-4", "revelation-5",
+      "revelation-6", "revelation-7", "revelation-12", "revelation-13", "revelation-14",
+      "revelation-17", "revelation-18", "revelation-19", "revelation-20", "revelation-21", "revelation-22",
+      "ezekiel-38", "ezekiel-39",
+      "isaiah-65", "isaiah-66",
+    ],
+  },
+  {
+    id: "creation-cosmos",
+    title: "Creation and Cosmos",
+    description: "Ancient cosmology, the cosmic temple, and divine council theology.",
+    chapterKeys: [
+      "genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-7", "genesis-8", "genesis-9", "genesis-11",
+      "ezekiel-1", "ezekiel-28",
+      "daniel-1", "daniel-2", "daniel-3", "daniel-4",
+    ],
+  },
+  {
+    id: "covenant-arc",
+    title: "Covenant Arc",
+    description: "The covenant thread from Abraham through the exile and restoration.",
+    chapterKeys: [
+      "genesis-12", "genesis-22", "genesis-28", "genesis-37",
+      "daniel-5", "daniel-6",
+      "ezekiel-2", "ezekiel-3", "ezekiel-37",
+    ],
+  },
+  {
+    id: "messianic-prophecy",
+    title: "Messianic Prophecy",
+    description: "Servant songs, throne names, and the branch of Jesse.",
+    chapterKeys: [
+      "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-52", "isaiah-53",
+    ],
+  },
+];
+
 // Phase 50 stub types and exports — reading paths and related passage links
 export interface ReadingPathStep {
   bookId: string;
