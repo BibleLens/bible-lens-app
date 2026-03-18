@@ -74,13 +74,17 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         // followed by two+ lowercase words (e.g. "If you've ever", "The name used").
         // Title words like "Cosmic Temple Framework" won't false-match because
         // they're followed by more capitalized words, not lowercase runs.
-        // Pattern: CapitalizedWord + lowercase-word (with apostrophes) + lowercase-word
-        // This catches sentence starts like "The serpent's promise", "If you've ever"
-        // but not title phrases like "Cosmic Temple Framework" (followed by uppercase)
+        // Guard: reject if the "heading" contains sentence-ending punctuation
+        // followed by a capitalized word — that indicates body text with a proper
+        // noun (e.g. "...period. Bible Lens presents...") not a real heading.
         const match = section.match(
           /^(.+?)\s+([A-Z][a-z]+[.,:;!?']*\s+[a-z][a-z']*\s+[a-z])/
         );
-        if (match) {
+        if (
+          match &&
+          !/[.!?]\s+[A-Z]/.test(match[1]) &&
+          match[1].trim().split(/\s+/).length >= 2
+        ) {
           const headingEnd = match.index! + match[1].length;
           return {
             heading: section.substring(0, headingEnd).trim(),
