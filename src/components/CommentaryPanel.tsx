@@ -34,6 +34,23 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
     if (book === "revelation") {
       return `What does ${bookTitle} ${chapter} reveal about first-century events through ancient Jewish apocalyptic imagery?`;
     }
+    if (book === "isaiah") {
+      return `What did Isaiah ${chapter} mean to the original audience — and how does it connect to New Testament fulfillment?`;
+    }
+    if (book === "ezekiel") {
+      if ([1, 2, 3].includes(chapter)) {
+        return `What did Ezekiel's chariot vision mean to the original exilic audience — the chayot, ophanim, and the kabod of YHWH?`;
+      }
+      if (chapter === 28) {
+        return `Is Ezekiel 28 about Satan or a human king? What did the divine council imagery mean to Ezekiel's original audience?`;
+      }
+      if (chapter === 37) {
+        return `What does Ezekiel 37's valley of dry bones mean? How does the text interpret itself at verse 11?`;
+      }
+      if ([38, 39].includes(chapter)) {
+        return `Who is Gog of the land of Magog in Ezekiel ${chapter}, and how does this connect to Revelation 20:8?`;
+      }
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
