@@ -7,6 +7,7 @@ import { LensIcon } from "@/components/LensIcon";
 import { BackgroundPaths } from "@/components/BackgroundPaths";
 import { NeonButton } from "@/components/NeonButton";
 import { getOldTestamentBooks, getNewTestamentBooks } from "@/lib/bible";
+import { COMMENTARY_BOOKS } from "@/lib/commentary-index";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ScrollAnimationSection } from "@/components/ScrollAnimationSection";
 import { motion, MotionConfig } from "framer-motion";
@@ -210,22 +211,58 @@ export function HomeClient() {
               {/* Both grids always in DOM — Googlebot sees all 66 books */}
               <div className={activeTab === "old" ? "block" : "hidden"}>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
-                  {oldTestamentBooks.map((book) => (
-                    <Link key={book.id} href={`/bible/${book.id}`} className="card p-4 text-left hover:border-[var(--color-cyan-500)]/50 group">
-                      <p className="text-lg font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)] transition-colors truncate">{book.name}</p>
-                      <p className="text-base text-[var(--color-text-muted)] mt-1">{book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}</p>
-                    </Link>
-                  ))}
+                  {oldTestamentBooks.map((book) => {
+                    const hasCommentary = COMMENTARY_BOOKS.includes(book.id);
+                    return (
+                      <Link
+                        key={book.id}
+                        href={`/bible/${book.id}`}
+                        className={`card p-4 text-left group ${
+                          hasCommentary
+                            ? "border-[var(--color-gold-500)]/50 hover:border-[var(--color-gold-400)]"
+                            : "hover:border-[var(--color-cyan-500)]/50"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-1">
+                          <p className={`text-lg font-semibold transition-colors truncate ${
+                            hasCommentary
+                              ? "text-[var(--color-gold-400)] group-hover:text-[var(--color-gold-300)]"
+                              : "text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)]"
+                          }`}>{book.name}</p>
+                          {hasCommentary && <LensIcon size={14} animate={false} />}
+                        </div>
+                        <p className="text-base text-[var(--color-text-muted)]">{book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}</p>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
               <div className={activeTab === "new" ? "block" : "hidden"}>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
-                  {newTestamentBooks.map((book) => (
-                    <Link key={book.id} href={`/bible/${book.id}`} className="card p-4 text-left hover:border-[var(--color-cyan-500)]/50 group">
-                      <p className="text-lg font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)] transition-colors truncate">{book.name}</p>
-                      <p className="text-base text-[var(--color-text-muted)] mt-1">{book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}</p>
-                    </Link>
-                  ))}
+                  {newTestamentBooks.map((book) => {
+                    const hasCommentary = COMMENTARY_BOOKS.includes(book.id);
+                    return (
+                      <Link
+                        key={book.id}
+                        href={`/bible/${book.id}`}
+                        className={`card p-4 text-left group ${
+                          hasCommentary
+                            ? "border-[var(--color-gold-500)]/50 hover:border-[var(--color-gold-400)]"
+                            : "hover:border-[var(--color-cyan-500)]/50"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-1">
+                          <p className={`text-lg font-semibold transition-colors truncate ${
+                            hasCommentary
+                              ? "text-[var(--color-gold-400)] group-hover:text-[var(--color-gold-300)]"
+                              : "text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)]"
+                          }`}>{book.name}</p>
+                          {hasCommentary && <LensIcon size={14} animate={false} />}
+                        </div>
+                        <p className="text-base text-[var(--color-text-muted)]">{book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}</p>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </section>
