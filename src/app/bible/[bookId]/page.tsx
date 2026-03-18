@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBook, findBookById, getAdjacentBooks } from "@/lib/bible";
 import { LensIcon } from "@/components/LensIcon";
+import { chapterHasCommentary } from "@/lib/commentary-index";
 
 interface BookPageProps {
   params: Promise<{ bookId: string }>;
@@ -93,15 +94,28 @@ export default async function BookPage({ params }: BookPageProps) {
 
         {/* Chapter Grid */}
         <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2">
-          {chapters.map((chapter) => (
-            <Link
-              key={chapter}
-              href={`/bible/${bookId}/${chapter}`}
-              className="aspect-square flex items-center justify-center rounded-lg bg-[var(--color-bg-secondary)] border border-[var(--color-border)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
-            >
-              {chapter}
-            </Link>
-          ))}
+          {chapters.map((chapter) => {
+            const hasCommentary = chapterHasCommentary(bookId, chapter);
+            return (
+              <Link
+                key={chapter}
+                href={`/bible/${bookId}/${chapter}`}
+                title={hasCommentary ? "Bible Lens commentary" : undefined}
+                className={`relative aspect-square flex items-center justify-center rounded-lg bg-[var(--color-bg-secondary)] font-medium transition-colors ${
+                  hasCommentary
+                    ? "border border-[var(--color-gold-500)] text-[var(--color-gold-400)] hover:border-[var(--color-gold-400)] hover:bg-[var(--color-gold-500)]/10"
+                    : "border border-[var(--color-border)] text-[var(--color-text-primary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)]"
+                }`}
+              >
+                {chapter}
+                {hasCommentary && (
+                  <span className="absolute top-0.5 right-0.5">
+                    <LensIcon size={12} animate={false} />
+                  </span>
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Quick jump to chapter 1 */}
