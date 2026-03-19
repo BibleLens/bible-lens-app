@@ -139,6 +139,21 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             {bookMeta.name} {chapterNum}
           </Link>
           
+          <nav className="hidden sm:flex items-center gap-3 text-sm">
+            <Link
+              href="/start-here"
+              className="transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
+            >
+              Start Here
+            </Link>
+            <Link
+              href="/commentary"
+              className="transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
+            >
+              Commentary
+            </Link>
+          </nav>
+
           {/* Chapter navigation */}
           <div className="flex items-center gap-1 text-base">
             {prevLink && (

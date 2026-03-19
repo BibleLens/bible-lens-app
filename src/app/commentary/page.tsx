@@ -44,6 +44,12 @@ export default function CommentaryPage() {
 
           <nav className="flex items-center gap-4">
             <Link
+              href="/start-here"
+              className="text-lg transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
+            >
+              Start Here
+            </Link>
+            <Link
               href="/search"
               className="text-lg transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
             >
