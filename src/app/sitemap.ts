@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllBooks } from "@/lib/bible";
-import { COMMENTARY_CHAPTERS } from "@/lib/commentary-index";
+import { COMMENTARY_CHAPTERS, TOPIC_PAGES } from "@/lib/commentary-index";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://biblelens.faith";
@@ -23,5 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
   });
 
-  return [...staticEntries, ...chapterEntries];
+  const topicEntries: MetadataRoute.Sitemap = TOPIC_PAGES.map((topic) => ({
+    url: `${base}/topics/${topic.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...chapterEntries, ...topicEntries];
 }
