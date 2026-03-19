@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import type { CommentaryChunk } from "@/lib/commentary";
-import { RELATED_PASSAGES } from "@/lib/commentary-index";
+import { RELATED_PASSAGES, CHAPTER_TOPICS, TOPIC_PAGES } from "@/lib/commentary-index";
 import { findBookById } from "@/lib/bible";
 
 interface CommentaryResponse {
@@ -323,6 +323,31 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
                         <Link href={`/bible/${relBook}/${relChapter}`}
                           className="text-sm text-[var(--color-gold-400)] hover:text-[var(--color-gold-300)] transition-colors">
                           {bookName} {relChapter}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })()}
+          {(() => {
+            const topicSlugs = CHAPTER_TOPICS[`${book}-${chapter}`] ?? [];
+            if (topicSlugs.length === 0) return null;
+            return (
+              <div className="mt-6 pt-4 border-t border-[var(--color-border)]">
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3"
+                  style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-cinzel), serif", letterSpacing: "0.12em" }}>
+                  Explore by Topic
+                </p>
+                <ul className="space-y-1">
+                  {topicSlugs.map((slug) => {
+                    const topicTitle = TOPIC_PAGES.find((t) => t.slug === slug)?.title ?? slug;
+                    return (
+                      <li key={slug}>
+                        <Link href={`/topics/${slug}`}
+                          className="text-sm text-[var(--color-cyan-400)] hover:text-[var(--color-cyan-300)] transition-colors">
+                          {topicTitle}
                         </Link>
                       </li>
                     );
