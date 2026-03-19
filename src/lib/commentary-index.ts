@@ -260,6 +260,183 @@ export const READING_PATHS: ReadingPath[] = [
   },
 ];
 
+// Phase 51 — topic landing page data. All three exports follow the interface-then-constant
+// pattern established by ThematicSection and ReadingPath above.
+// TopicPage.prose targets theme-level queries; COMMENTARY_DESCRIPTIONS target passage-level queries.
+// No keyword or prose overlap between the two sets is intentional and enforced by the keyword strategy.
+export interface TopicPage {
+  slug: string;          // URL segment — e.g. "daniel-7-son-of-man"
+  title: string;         // H1 — theme-level, question-framed
+  description: string;   // Meta description, 100-170 chars, theme-level
+  keywords: string[];    // Theme-level SEO queries — NO passage overlap
+  chapterKeys: string[]; // "{bookId}-{chapter}" keys from COMMENTARY_DESCRIPTIONS
+  prose: string;         // 200-400 words original editorial prose in Bible Lens voice
+}
+
+export const TOPIC_PAGES: TopicPage[] = [
+  {
+    slug: "daniel-7-son-of-man",
+    title: "The Son of Man in Daniel 7: Ascent, Not Descent",
+    description: "Who is the Son of Man in Daniel 7, and which direction does he travel? The ascent vision that shaped Jesus, Paul, and first-century Judaism.",
+    keywords: [
+      "son of man theology",
+      "Daniel 7 ascent vision",
+      "ancient of days meaning",
+      "son of man christology",
+      "Daniel 7 first century interpretation",
+    ],
+    chapterKeys: ["daniel-7", "daniel-2", "matthew-24", "revelation-1", "revelation-5"],
+    prose: `The question that unlocks Daniel 7 is deceptively simple: which direction does the son of man travel?
+
+Read the verse carefully. In Daniel 7:13, the one like a son of man comes "with the clouds of heaven" and approaches the Ancient of Days — moving toward the throne, not away from it. He is being escorted upward into the divine courtroom to receive dominion, glory, and kingdom. The direction of travel is an ascent, not a descent to earth.
+
+Here's where it gets interesting: this is how Second Temple Judaism universally read the passage. The author of 1 Enoch wrote entire chapters dramatizing this heavenly enthronement scene. The Dead Sea Scrolls community prized the Daniel vision precisely because it described a figure approaching God and receiving cosmic authority. None of these readers pictured a descent to a battle on earth. They pictured a coronation in heaven.
+
+What the original audience would have understood is that Daniel's four beasts emerge from the sea — the ancient symbol of chaos and non-order — and they are progressively stripped of dominion until the court is seated and judgment is given. Into this scene steps the one like a son of man, the human-shaped figure who represents what the beasts are not: ordered, dignified, image-bearing humanity, vindicated before God.
+
+Through this lens, Revelation 5 becomes unmistakable. John weeps because no one can open the sealed scroll. Then the Lamb steps forward — and the imagery collapses back into Daniel 7:13. The unsealing of the scroll in Revelation 5 is the throne room scene of Daniel 7:13, applied to Jesus at his ascension. Matthew 24:30 follows the same logic: "the Son of Man coming on the clouds" is the enthronement language of Daniel, not a description of a physical landing on earth.
+
+This is a minority reading in popular Christianity but the majority reading among scholars who work with Second Temple literature. The distinction matters because it changes everything downstream: what "coming with clouds" means in Mark 14:62, what Pentecost announces, and what the early church meant when they said Jesus was exalted to the right hand of the Father.
+
+Ancient wisdom doesn't always travel in straight lines. Sometimes it ascends.`,
+  },
+  {
+    slug: "revelation-666-beast",
+    title: "666 and the Beast of Revelation: What the Number Actually Meant",
+    description: "The number 666 was a first-century code, not a future mystery. Gematria, Nero Caesar, and the imperial cult that demanded worship.",
+    keywords: [
+      "mark of the beast 666 meaning",
+      "Nero gematria 666",
+      "beast identity revelation",
+      "666 gematria explanation",
+      "imperial cult revelation 13",
+    ],
+    chapterKeys: ["revelation-13", "daniel-7", "daniel-2", "revelation-17"],
+    prose: `The number 666 was never meant to be a mystery. For the original audience of Revelation, it was a riddle with an answer — and the answer was politically explosive.
+
+Here's where it gets interesting: ancient Hebrew and Greek letters doubled as numbers, a practice called gematria. In Hebrew, "Neron Qesar" — Nero Caesar, rendered in Hebrew letters — totals 666. Not approximately. Exactly. And when scribes copying early manuscripts of Revelation encountered a variant that read 616 instead of 666, that variant corresponds to the Latin spelling of Nero's name, which drops one letter and changes the total by 50. Two independent numbering systems. Same man.
+
+What the original audience would have understood is that they were living under Domitian's reign while the shadow of Nero — the emperor who had launched the first systematic persecution of Christians — still shaped their world. The beast from the sea in Revelation 13 bears the marks of Daniel 7's composite monster: the lion, the bear, the leopard. But Daniel's four beasts represented successive empires. Revelation's beast is Rome itself — the final imperial power in Daniel's sequence — and the number is its emperor's signature.
+
+The land beast, the one that enforces worship of the sea beast, maps cleanly onto the imperial cult priesthood of Asia Minor. Cities like Ephesus, Smyrna, and Pergamum were not abstract symbols in Revelation 2-3 — they were places with temples dedicated to Rome and Augustus, where commerce and civic life required participation in emperor worship.
+
+Through this lens, "the mark of the beast" was never about a microchip or a barcode. It was about the social and economic pressure to signal loyalty to the empire — to have Caesar's mark on your hand or forehead in the same way a Roman citizen might display imperial tokens in trade.
+
+Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four kingdoms, then the stone that fills the earth. Revelation 13 is the fourth kingdom's final form, the beast at its most demanding — and 666 is the name written in numbers for those who have wisdom to see it.`,
+  },
+  {
+    slug: "genesis-creation-ancient-cosmology",
+    title: "Genesis and Ancient Cosmology: The Cosmic Temple Framework",
+    description: "Genesis 1-2 through ancient Near Eastern eyes — the cosmic temple, the firmament, and why the creation week was never a science textbook.",
+    keywords: [
+      "ancient cosmology Bible",
+      "cosmic temple Genesis",
+      "firmament Hebrew cosmology",
+      "Genesis 1 ANE background",
+      "creation week framework",
+    ],
+    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1"],
+    prose: `What did Genesis 1 communicate to its first audience — and what was it not trying to say?
+
+The question changes everything. Because the ancient audience of Genesis did not live in a world asking about natural selection or the age of the cosmos. They lived in a world saturated with creation stories: Enuma Elish from Babylon, Atrahasis from Sumer, the Memphite Theology from Egypt. Every surrounding culture had a cosmogony that justified its own gods, its own king, its own view of humanity's purpose. Genesis was written into that contest.
+
+What the original audience would have understood is that Genesis 1 is structured as a cosmic temple inauguration. In ancient Near Eastern thought, the world was built as a dwelling place for the gods, and a temple was the microcosm of the universe. The seven-day structure of Genesis 1 mirrors the dedication week of a temple: six days of preparation, followed by the seventh day when the deity takes up residence in the completed structure. The Sabbath is not a command to rest arbitrarily — it is the climactic moment when YHWH "rests" in his cosmic temple, as a king enthroned.
+
+The firmament — raqia in Hebrew — was not a misunderstanding of physics. It was the ancient cosmological architecture the text assumed: a solid dome holding back the waters above, with the earth resting on waters below. Genesis 1 does not correct this picture; it uses it to declare who made it and why it was made.
+
+Here's where it gets interesting: Ezekiel 1's chariot vision employs the same cosmic architecture. The expanse above the living creatures, the throne above the expanse — this is the cosmic temple described in visual terms. When Ezekiel's exilic audience heard this, they recognized the vocabulary immediately. YHWH was not confined to Jerusalem's ruined temple. He sat enthroned above the entire cosmos.
+
+Genesis 3's garden, Genesis 6's divine council crisis, and Genesis 11's ziggurat judgment all extend this framework. The cosmic temple was invaded, the boundaries were breached, and the nations were scattered — but the covenant with one family (Genesis 12) began the project of restoring what was lost.
+
+Ancient wisdom, cosmic clarity.`,
+  },
+  {
+    slug: "matthew-24-olivet-discourse",
+    title: "Matthew 24 and the Olivet Discourse: The AD 70 Reading",
+    description: "Did Jesus describe a distant future event or the fall of Jerusalem in AD 70? The partial preterist case for the Olivet Discourse explained.",
+    keywords: [
+      "Olivet Discourse explained",
+      "Matthew 24 AD 70",
+      "partial preterism Jesus",
+      "Olivet Discourse preterist interpretation",
+      "when were these things fulfilled Matthew 24",
+    ],
+    chapterKeys: ["matthew-24", "daniel-9", "daniel-7", "revelation-6"],
+    prose: `Jesus began the Olivet Discourse in response to a specific question from specific people. The disciples pointed to the temple stones. Jesus said not one stone would be left on another. They asked, in effect: when? What will be the sign?
+
+The partial preterist reading takes that question at face value. The disciples were not asking about a distant apocalypse two thousand years away. They were asking about the temple they could see from where they were sitting on the Mount of Olives. And Jesus answered them.
+
+Here's where it gets interesting: Matthew 24:34 is one of the most discussed verses in all of eschatology. "This generation will not pass away until all these things take place." The Greek genea consistently means a biological generation — roughly forty years — in Matthew's Gospel. Forty years after the Olivet Discourse puts us squarely at AD 70, when the Roman general Titus destroyed Jerusalem and the temple exactly as Jesus described, with the horror of "those days" and the flight from Judea.
+
+What the original audience would have understood is that Daniel's framework structures Jesus's response. Daniel 9's seventy weeks prophesied a coming desolation — "an abomination that causes desolation" — and Jesus invoked that language directly. The abomination Daniel foresaw in the context of Antiochus IV had a second iteration: the Roman armies surrounding and then defiling Jerusalem. "When you see Jerusalem surrounded by armies, know that its desolation has come near" (Luke 21:20).
+
+Through this lens, the cosmic language of Matthew 24:29-30 — sun darkened, stars falling, son of man coming on clouds — is not literal astronomy. It is the prophetic convention the Hebrew prophets used to describe the fall of earthly powers. Isaiah 13 uses identical language to describe Babylon's fall. Ezekiel uses it for Egypt. Jesus is using the same stock vocabulary to describe Rome's judgment on Jerusalem.
+
+Revelation 6's four horsemen follow the same covenant curse sequence: conquest, war, famine, death — Leviticus 26 enacted in history.
+
+Where Bible Lens parts from full preterism: Revelation 19-20 describes a future physical return and a literal millennium that still lies ahead.`,
+  },
+  {
+    slug: "isaiah-suffering-servant",
+    title: "Isaiah's Suffering Servant: Corporate Israel and Typological Fulfillment",
+    description: "Who is Isaiah's Suffering Servant? The historically prior corporate reading alongside typological fulfillment in Jesus — both as layers, not competitors.",
+    keywords: [
+      "suffering servant Isaiah meaning",
+      "Isaiah 53 Jewish interpretation",
+      "servant songs theology",
+      "Isaiah 53 corporate Israel reading",
+      "suffering servant who is it",
+    ],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11"],
+    prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
+
+Here's where it gets interesting: the historically prior reading, the one dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi in the eleventh century argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, carrying the weight of history, and destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion among pre-modern Jewish scholars; it was the mainstream.
+
+What the original audience would have understood is that Isaiah uses "servant" in multiple registers throughout chapters 40-55. Sometimes the servant is Israel collectively (Isaiah 41:8-9). Sometimes the servant is a faithful remnant within Israel (Isaiah 49:3-6). The oscillation between corporate and individual is built into the text's structure — and that oscillation is the key.
+
+Through this lens, Isaiah 52:13 is where the passage actually begins, not chapter 53. The servant is "exalted and lifted up" — the same Hebrew verbs used for YHWH's own exaltation. The shocking reversal is the point: from disfigurement to exaltation, from being despised to being acknowledged by kings.
+
+The typological reading — that Jesus fulfilled the servant's role — does not cancel the corporate reading. It layers on top of it. What Israel was called to be (a light to the nations, a redemptive presence among the peoples), Jesus embodied in concentrated, singular form. Both as layers, not competitors.
+
+Isaiah 7's Immanuel sign, the throne names of Isaiah 9, and the Branch of Isaiah 11 all work this way: they address an original crisis first, then carry a typological weight that later generations recognize in light of Jesus.
+
+This is a reading that takes the text's historical context seriously before reaching for christological application — and finds both dimensions more compelling as a result.`,
+  },
+  {
+    slug: "ezekiel-gog-magog",
+    title: "Gog and Magog in Ezekiel: Geography, Identity, and Eschatology",
+    description: "Who is Gog of the land of Magog? Ancient Anatolian geography, Ezekiel 38-39, and Revelation 20's end-of-millennium placement explained.",
+    keywords: [
+      "Gog Magog prophecy",
+      "Ezekiel 38 39 meaning",
+      "end times battle Bible",
+      "Gog Magog geography ancient",
+      "Revelation 20 Gog Magog",
+    ],
+    chapterKeys: ["ezekiel-38", "ezekiel-39", "revelation-20", "daniel-11"],
+    prose: `The identification of Gog has generated more confident speculation than almost any passage in prophetic literature — and most of that speculation has been wrong.
+
+The text itself is the place to start. Ezekiel 38's "Gog of the land of Magog, chief prince of Meshech and Tubal" is not pointing toward Russia or a modern nation-state. The Table of Nations in Genesis 10 places Magog, Meshech, Tubal, and Gomer in ancient Anatolia — the geographic region we now call Turkey. Togarmah, also named, is associated in ANE sources with the Hittite heartland. These were the peoples at the outer northern horizon of the ancient Israelite world, the far peoples beyond the known map.
+
+Here's where it gets interesting: Ezekiel deliberately evokes an enemy from "the uttermost parts of the north" (38:15) — the directional extreme in the ancient Near Eastern cosmological geography. This is the literary equivalent of describing an invader from the ends of the earth. The point is not ethnicity but cosmic extremity: this attack comes from the furthest reaches of the known world.
+
+What the original audience would have understood is that Gog's defeat is a demonstration of YHWH's sovereignty over all nations — even those the exiles had never encountered. The prophecy was not a news report filed in advance about 21st century geopolitics. It was a theological statement about the scope of divine authority after the exile, addressed to a community wondering whether YHWH could still act in history.
+
+Through this lens, Revelation 20:8 is significant precisely because it names Gog and Magog as a future event, placed explicitly after the thousand years. John is not re-running Ezekiel 38-39 as a past event that occurred in the first century. He is reserving Ezekiel's ultimate "nations gathered against God's people" scenario for an end-of-millennium judgment. The birds-feasting aftermath in Ezekiel 39:17-20 is quoted verbatim by Revelation 19:17-21 — connecting Ezekiel's aftermath to Revelation's final battle sequence.
+
+Daniel 11's detailed Seleucid history provides the near-term backdrop: the pattern of northern aggression against God's people reaches a final, cosmic iteration in Gog's campaign.`,
+  },
+];
+
+// Derived reverse index: chapter key → array of topic slugs.
+// Never authored manually — always derived from TOPIC_PAGES to prevent drift.
+export const CHAPTER_TOPICS: Record<string, string[]> = {};
+for (const topic of TOPIC_PAGES) {
+  for (const key of topic.chapterKeys) {
+    (CHAPTER_TOPICS[key] ??= []).push(topic.slug);
+  }
+}
+
 // key: "{bookId}-{chapter}", values: array of "{bookId}-{chapter}" keys
 export const RELATED_PASSAGES: Record<string, string[]> = {
   // Genesis — Flood cluster
