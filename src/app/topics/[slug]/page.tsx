@@ -5,6 +5,7 @@ import { LensIcon } from "@/components/LensIcon";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { TOPIC_PAGES, COMMENTARY_DESCRIPTIONS } from "@/lib/commentary-index";
 import { findBookById } from "@/lib/bible";
+import { EmailCapture } from "@/components/EmailCapture";
 
 export const dynamic = "force-static";
 
@@ -213,6 +214,11 @@ export default async function TopicPage({ params }: TopicPageProps) {
               );
             })}
           </div>
+        </section>
+
+        {/* Email Capture */}
+        <section className="max-w-4xl mx-auto px-4 pb-16">
+          <EmailCapture />
         </section>
       </main>
 

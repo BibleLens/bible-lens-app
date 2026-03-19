@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/chat`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/search`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/commentary`, changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${base}/start-here`, changeFrequency: "monthly" as const, priority: 0.8 },
   ];
 
   const chapterEntries: MetadataRoute.Sitemap = books.flatMap((book) => {
