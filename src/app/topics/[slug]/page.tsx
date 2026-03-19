@@ -150,7 +150,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
       <main className="flex-1 w-full">
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto px-4 py-12">
-          <h2
+          <h1
             className="text-3xl sm:text-4xl lg:text-5xl font-semibold"
             style={{ fontFamily: "var(--font-cinzel), serif" }}
           >
@@ -158,7 +158,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
               <span className="text-[var(--color-gold-400)]">{gold}</span>
             )}
             <span className="text-[var(--color-text-primary)]">{primary}</span>
-          </h2>
+          </h1>
           <p className="text-lg sm:text-xl text-[var(--color-text-secondary)] leading-relaxed mt-4">
             {topic.description}
           </p>
