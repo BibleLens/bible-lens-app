@@ -104,7 +104,7 @@ export default function StartHerePage() {
           </p>
           <div className="space-y-4">
             <Link
-              href="/bible/dan/7"
+              href="/bible/daniel/7"
               className="card block border-l-2 border-[var(--color-gold-400)] p-4 group hover:bg-[var(--color-bg-elevated)] transition-colors"
             >
               <span className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-gold-400)] transition-colors">
@@ -116,7 +116,7 @@ export default function StartHerePage() {
               </p>
             </Link>
             <Link
-              href="/bible/mat/24"
+              href="/bible/matthew/24"
               className="card block border-l-2 border-[var(--color-gold-400)] p-4 group hover:bg-[var(--color-bg-elevated)] transition-colors"
             >
               <span className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-gold-400)] transition-colors">
@@ -128,7 +128,7 @@ export default function StartHerePage() {
               </p>
             </Link>
             <Link
-              href="/bible/rev/13"
+              href="/bible/revelation/13"
               className="card block border-l-2 border-[var(--color-gold-400)] p-4 group hover:bg-[var(--color-bg-elevated)] transition-colors"
             >
               <span className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-gold-400)] transition-colors">
@@ -155,7 +155,7 @@ export default function StartHerePage() {
           </p>
           <div className="space-y-4">
             <Link
-              href="/bible/gen/1"
+              href="/bible/genesis/1"
               className="card block border-l-2 border-[var(--color-gold-400)] p-4 group hover:bg-[var(--color-bg-elevated)] transition-colors"
             >
               <span className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-gold-400)] transition-colors">
@@ -167,7 +167,7 @@ export default function StartHerePage() {
               </p>
             </Link>
             <Link
-              href="/bible/ezek/1"
+              href="/bible/ezekiel/1"
               className="card block border-l-2 border-[var(--color-gold-400)] p-4 group hover:bg-[var(--color-bg-elevated)] transition-colors"
             >
               <span className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-gold-400)] transition-colors">
@@ -180,7 +180,7 @@ export default function StartHerePage() {
               </p>
             </Link>
             <Link
-              href="/bible/dan/2"
+              href="/bible/daniel/2"
               className="card block border-l-2 border-[var(--color-gold-400)] p-4 group hover:bg-[var(--color-bg-elevated)] transition-colors"
             >
               <span className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-gold-400)] transition-colors">
@@ -207,7 +207,7 @@ export default function StartHerePage() {
           </p>
           <div className="space-y-4">
             <Link
-              href="/bible/gen/22"
+              href="/bible/genesis/22"
               className="card block border-l-2 border-[var(--color-gold-400)] p-4 group hover:bg-[var(--color-bg-elevated)] transition-colors"
             >
               <span className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-gold-400)] transition-colors">
@@ -219,7 +219,7 @@ export default function StartHerePage() {
               </p>
             </Link>
             <Link
-              href="/bible/isa/53"
+              href="/bible/isaiah/53"
               className="card block border-l-2 border-[var(--color-gold-400)] p-4 group hover:bg-[var(--color-bg-elevated)] transition-colors"
             >
               <span className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-gold-400)] transition-colors">
@@ -231,7 +231,7 @@ export default function StartHerePage() {
               </p>
             </Link>
             <Link
-              href="/bible/ezek/37"
+              href="/bible/ezekiel/37"
               className="card block border-l-2 border-[var(--color-gold-400)] p-4 group hover:bg-[var(--color-bg-elevated)] transition-colors"
             >
               <span className="font-medium text-[var(--color-text-primary)] group-hover:text-[var(--color-gold-400)] transition-colors">
