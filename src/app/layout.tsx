@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Source_Sans_3 } from "next/font/google";
+import { Cinzel, Source_Sans_3, Space_Grotesk, Noto_Sans_Samaritan } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
@@ -14,6 +14,21 @@ const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
   subsets: ["latin"],
   display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
+  display: "swap",
+});
+
+const notoSansSamaritan = Noto_Sans_Samaritan({
+  variable: "--font-noto-samaritan",
+  subsets: ["samaritan"],
+  weight: "400",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -71,7 +86,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${cinzel.variable} ${sourceSans.variable} antialiased bg-[var(--color-bg-primary)] text-[var(--color-text-primary)]`}
+        className={[
+          cinzel.variable,
+          sourceSans.variable,
+          spaceGrotesk.variable,
+          notoSansSamaritan.variable,
+          "antialiased",
+          "bg-[var(--color-bg-primary)]",
+          "text-[var(--color-text-primary)]",
+        ].join(" ")}
         style={{ fontFamily: "var(--font-source-sans), system-ui, sans-serif" }}
       >
         <ThemeProvider>

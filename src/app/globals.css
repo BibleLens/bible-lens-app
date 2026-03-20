@@ -51,6 +51,24 @@
   --bg-paths-opacity: 0.7;
 }
 
+/* ==========================================
+   Homepage Design Tokens (Phase 57+)
+   Always-dark: used by homepage sections only
+   Source: Strategy/Design/DESIGN.md
+   ========================================== */
+:root {
+  --homepage-bg: #050508;
+  --homepage-surface: #0F0F16;
+  --homepage-text: #F3F3F5;
+  --homepage-muted: #4A4A5A;
+  --homepage-primary: #00E5FF;
+  --homepage-accent: #FF6B00;
+  --homepage-glow-cyan: 0 0 20px rgba(0, 229, 255, 0.4);
+  --homepage-glow-orange: 0 0 20px rgba(255, 107, 0, 0.4);
+  --homepage-font-display: var(--font-cinzel), serif;
+  --homepage-font-body: var(--font-space-grotesk), sans-serif;
+}
+
 :root.light {
   /* Core backgrounds — more separation between surface levels */
   --color-bg-primary: #ffffff;
