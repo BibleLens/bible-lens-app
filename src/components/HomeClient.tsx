@@ -6,19 +6,13 @@ import { useRouter } from "next/navigation";
 import { LensIcon } from "@/components/LensIcon";
 import { BackgroundPaths } from "@/components/BackgroundPaths";
 import { NeonButton } from "@/components/NeonButton";
-import { getOldTestamentBooks, getNewTestamentBooks } from "@/lib/bible";
-import { COMMENTARY_BOOKS } from "@/lib/commentary-index";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ScrollAnimationSection } from "@/components/ScrollAnimationSection";
 import { motion, MotionConfig } from "framer-motion";
 
 export function HomeClient() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeTab, setActiveTab] = useState<"old" | "new">("old");
   const router = useRouter();
-
-  const oldTestamentBooks = getOldTestamentBooks();
-  const newTestamentBooks = getNewTestamentBooks();
 
   return (
     <MotionConfig reducedMotion="user">
@@ -61,6 +55,12 @@ export function HomeClient() {
                 className="text-lg transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-gold-400)] min-h-[44px] flex items-center"
               >
                 Commentary
+              </Link>
+              <Link
+                href="/books"
+                className="text-lg transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-gold-400)] min-h-[44px] flex items-center"
+              >
+                Books
               </Link>
               <ThemeToggle />
             </nav>
@@ -127,7 +127,7 @@ export function HomeClient() {
               </div>
 
               <div className="flex flex-wrap justify-center gap-4 mt-8">
-                <NeonButton variant="gold" size="lg" href="#bible-books">
+                <NeonButton variant="gold" size="lg" href="/books">
                   Explore the Bible
                 </NeonButton>
                 <NeonButton variant="cyan" size="lg" href="/chat">
@@ -191,90 +191,6 @@ export function HomeClient() {
               </div>
             </section>
 
-            {/* Bible Books Section */}
-            <section id="bible-books">
-              {/* Testament Tabs */}
-              <div className="flex gap-1 mb-6 p-1 bg-[var(--color-bg-secondary)] rounded-lg w-fit mx-auto">
-                <button
-                  onClick={() => setActiveTab("old")}
-                  className={`px-6 py-2 rounded-md text-base font-medium transition-colors ${
-                    activeTab === "old"
-                      ? "bg-[var(--color-bg-elevated)] text-[var(--color-gold-400)]"
-                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
-                  }`}
-                >
-                  Old Testament
-                </button>
-                <button
-                  onClick={() => setActiveTab("new")}
-                  className={`px-6 py-2 rounded-md text-base font-medium transition-colors ${
-                    activeTab === "new"
-                      ? "bg-[var(--color-bg-elevated)] text-[var(--color-cyan-400)]"
-                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
-                  }`}
-                >
-                  New Testament
-                </button>
-              </div>
-
-              {/* Both grids always in DOM — Googlebot sees all 66 books */}
-              <div className={activeTab === "old" ? "block" : "hidden"}>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
-                  {oldTestamentBooks.map((book) => {
-                    const hasCommentary = COMMENTARY_BOOKS.includes(book.id);
-                    return (
-                      <Link
-                        key={book.id}
-                        href={`/bible/${book.id}`}
-                        className={`card p-4 text-left group ${
-                          hasCommentary
-                            ? "border-[var(--color-gold-500)]/50 hover:border-[var(--color-gold-400)]"
-                            : "hover:border-[var(--color-cyan-500)]/50"
-                        }`}
-                      >
-                        <div className="flex items-center justify-between mb-1">
-                          <p className={`text-lg font-semibold transition-colors truncate ${
-                            hasCommentary
-                              ? "text-[var(--color-gold-400)] group-hover:text-[var(--color-gold-300)]"
-                              : "text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)]"
-                          }`}>{book.name}</p>
-                          {hasCommentary && <LensIcon size={14} animate={false} />}
-                        </div>
-                        <p className="text-base text-[var(--color-text-muted)]">{book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}</p>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-              <div className={activeTab === "new" ? "block" : "hidden"}>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
-                  {newTestamentBooks.map((book) => {
-                    const hasCommentary = COMMENTARY_BOOKS.includes(book.id);
-                    return (
-                      <Link
-                        key={book.id}
-                        href={`/bible/${book.id}`}
-                        className={`card p-4 text-left group ${
-                          hasCommentary
-                            ? "border-[var(--color-gold-500)]/50 hover:border-[var(--color-gold-400)]"
-                            : "hover:border-[var(--color-cyan-500)]/50"
-                        }`}
-                      >
-                        <div className="flex items-center justify-between mb-1">
-                          <p className={`text-lg font-semibold transition-colors truncate ${
-                            hasCommentary
-                              ? "text-[var(--color-gold-400)] group-hover:text-[var(--color-gold-300)]"
-                              : "text-[var(--color-text-primary)] group-hover:text-[var(--color-cyan-400)]"
-                          }`}>{book.name}</p>
-                          {hasCommentary && <LensIcon size={14} animate={false} />}
-                        </div>
-                        <p className="text-base text-[var(--color-text-muted)]">{book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}</p>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
           </div>
         </main>
 
