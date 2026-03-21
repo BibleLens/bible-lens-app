@@ -81,6 +81,12 @@ export function HeroSection() {
         },
       });
 
+      // --- Clarified track: set initial position via GSAP (not CSS) to avoid transform conflicts ---
+      gsap.set(clarifiedTrackRef.current, {
+        xPercent: -50,
+        yPercent: -50,
+      });
+
       // --- Clarified track fades in immediately ---
       gsap.to(clarifiedTrackRef.current, {
         opacity: 1,
@@ -218,8 +224,8 @@ export function HeroSection() {
           <div className="absolute inset-0 lens-container overflow-hidden">
             <div
               ref={clarifiedTrackRef}
-              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-screen opacity-0"
-              style={{ top: "80%" }}
+              className="absolute w-screen h-screen opacity-0"
+              style={{ top: "80%", left: "50%" }}
             >
               {/* Clarified Section 1 — insights revealed through the lens */}
               <div className="absolute w-full top-[100vh] flex flex-col items-center justify-center px-10 text-[#00E5FF]">
