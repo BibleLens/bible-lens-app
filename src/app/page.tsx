@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { HomeClient } from "@/components/HomeClient";
+import { HomepageLayout } from "@/components/homepage/HomepageLayout";
+import { NavBar } from "@/components/homepage/NavBar";
+import { HeroSection } from "@/components/homepage/HeroSection";
 
 export const metadata: Metadata = {
   title: "Bible Lens | Context Over Tradition",
@@ -22,5 +24,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomeClient />;
+  return (
+    <HomepageLayout>
+      <NavBar />
+      <HeroSection />
+    </HomepageLayout>
+  );
 }
