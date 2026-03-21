@@ -173,8 +173,8 @@ export function HeroSection() {
 
         {/* Main Scroll Track — Blurred Ancient Text */}
         <div ref={mainTrackRef} className="relative z-10 w-full">
-          {/* Hero padding — title occupies this space */}
-          <section className="h-screen flex items-center justify-center relative" />
+          {/* Short spacer — title is at z-50 above this */}
+          <div style={{ height: "10vh" }} />
 
           {/* Ancient manuscripts scroll through */}
           <section className="h-[120vh] flex flex-col items-center justify-center px-10">
