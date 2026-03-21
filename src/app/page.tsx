@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { HomepageLayout } from "@/components/homepage/HomepageLayout";
 import { NavBar } from "@/components/homepage/NavBar";
 import { HeroSection } from "@/components/homepage/HeroSection";
+import { FeaturedTopicsSection } from "@/components/homepage/FeaturedTopicsSection";
 
 export const metadata: Metadata = {
   title: "Bible Lens | Context Over Tradition",
@@ -28,6 +29,7 @@ export default function Home() {
     <HomepageLayout>
       <NavBar />
       <HeroSection />
+      <FeaturedTopicsSection />
     </HomepageLayout>
   );
 }
