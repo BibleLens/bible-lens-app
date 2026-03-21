@@ -8,11 +8,11 @@ const PARTICLE_COUNT = 40;
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const pinnedRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<HTMLDivElement>(null);
   const mainTrackRef = useRef<HTMLDivElement>(null);
   const clarifiedTrackRef = useRef<HTMLDivElement>(null);
   const lensFrameRef = useRef<HTMLDivElement>(null);
+  const lensContainerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const heroTitleWrapperRef = useRef<HTMLDivElement>(null);
   const scrollHintRef = useRef<HTMLDivElement>(null);
@@ -51,18 +51,7 @@ export function HeroSection() {
         particlesRef.current.appendChild(frag);
       }
 
-      // --- Pin the hero viewport for the scroll duration ---
-      gsap.to(pinnedRef.current, {
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: "bottom bottom",
-          pin: true,
-          pinSpacing: false,
-        },
-      });
-
-      // --- Lens entrance animation ---
+      // --- Lens entrance ---
       gsap.set(lensFrameRef.current, { scale: 0, rotation: 45 });
 
       const tlEntrance = gsap.timeline({ defaults: { ease: "power4.out" } });
@@ -80,7 +69,7 @@ export function HeroSection() {
           "-=0.5"
         );
 
-      // --- Title fades quickly on scroll ---
+      // --- Title fades in first 100px ---
       gsap.to(heroTitleWrapperRef.current, {
         scale: 0.8,
         opacity: 0,
@@ -92,9 +81,20 @@ export function HeroSection() {
         },
       });
 
-      // --- Main track: blurred ancient text scrolls through viewport ---
+      // --- Clarified track fades in immediately ---
+      gsap.to(clarifiedTrackRef.current, {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: container,
+          start: "10px top",
+          end: "100px top",
+          scrub: true,
+        },
+      });
+
+      // --- Main track: -700px over full scroll range ---
       gsap.to(mainTrackRef.current, {
-        yPercent: -50,
+        y: -700,
         ease: "none",
         scrollTrigger: {
           trigger: container,
@@ -104,35 +104,19 @@ export function HeroSection() {
         },
       });
 
-      // --- Clarified track: hidden initially, fades in as title fades ---
-      gsap.set(clarifiedTrackRef.current, { opacity: 0 });
+      // --- Clarified track: same -700px, same range ---
       gsap.to(clarifiedTrackRef.current, {
-        opacity: 1,
+        y: -700,
+        ease: "none",
         scrollTrigger: {
           trigger: container,
-          start: "30px top",
-          end: "100px top",
-          scrub: true,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
         },
       });
 
-      // --- Clarified track: scrolls UP through the diamond lens ---
-      gsap.fromTo(
-        clarifiedTrackRef.current,
-        { y: 0 },
-        {
-          y: -700,
-          ease: "none",
-          scrollTrigger: {
-            trigger: container,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        }
-      );
-
-      // --- Lens border pulse ---
+      // --- Lens pulse ---
       gsap.to(lensFrameRef.current, {
         boxShadow: "0 0 40px rgba(0, 229, 255, 0.8)",
         repeat: -1,
@@ -141,21 +125,20 @@ export function HeroSection() {
         ease: "sine.inOut",
       });
 
-      // --- Fade lens out near end of scroll ---
-      const lensParent = lensFrameRef.current?.parentElement;
-      if (lensParent) {
-        gsap.to(lensParent, {
+      // --- Fade lens out near end ---
+      if (lensContainerRef.current) {
+        gsap.to(lensContainerRef.current, {
           opacity: 0,
           scrollTrigger: {
             trigger: container,
             start: "85% top",
-            end: "98% top",
+            end: "95% top",
             scrub: true,
           },
         });
       }
 
-      // --- Fade scroll hint early ---
+      // --- Fade scroll hint ---
       gsap.to(scrollHintRef.current, {
         opacity: 0,
         scrollTrigger: {
@@ -170,10 +153,10 @@ export function HeroSection() {
   );
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "170vh" }}>
+    <div ref={containerRef} style={{ height: "270vh" }}>
+      {/* Sticky viewport — stays in place while container scrolls (170vh of scroll) */}
       <div
-        ref={pinnedRef}
-        className="h-screen w-full relative overflow-hidden"
+        className="sticky top-0 h-screen w-full overflow-hidden"
         style={{ background: "var(--homepage-bg)" }}
       >
         {/* Parallax Particles */}
@@ -183,17 +166,13 @@ export function HeroSection() {
         />
 
         {/* Main Scroll Track — Blurred Ancient Text */}
-        <div
-          ref={mainTrackRef}
-          className="absolute w-full z-10"
-          style={{ height: "170vh", top: 0 }}
-        >
-          {/* Minimal spacer — title fades during this */}
-          <div style={{ height: "10vh" }} />
+        <div ref={mainTrackRef} className="relative z-10 w-full">
+          {/* Hero padding — title occupies this space */}
+          <section className="h-screen flex items-center justify-center relative" />
 
-          {/* Ancient text scrolls through viewport center (where lens is) */}
-          <section className="h-[100vh] flex flex-col items-center justify-center px-10">
-            <div className="max-w-2xl space-y-12 ancient-text text-2xl text-center">
+          {/* Ancient manuscripts scroll through */}
+          <section className="h-[120vh] flex flex-col items-center justify-center px-10">
+            <div className="max-w-2xl space-y-32 ancient-text text-2xl text-center">
               <p style={{ fontFamily: "var(--font-noto-samaritan), serif" }}>
                 𐤁𐤓𐤀𐤔𐤉𐤕 𐤁𐤓𐤀 𐤀𐤋𐤄𐤉𐤌 𐤀𐤕 𐤄𐤔𐤌𐤉𐤌 𐤅𐤀𐤕 𐤄𐤀𐤓𐤒
               </p>
@@ -209,12 +188,25 @@ export function HeroSection() {
             </div>
           </section>
 
+          {/* Constellation dots */}
+          <section className="h-[120vh] flex items-center justify-center relative">
+            <div className="w-full max-w-4xl h-[600px] relative opacity-30">
+              <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#4A4A5A] rounded-full" />
+              <div className="absolute top-1/2 left-3/4 w-2 h-2 bg-[#4A4A5A] rounded-full" />
+              <div className="absolute top-3/4 left-1/2 w-2 h-2 bg-[#4A4A5A] rounded-full" />
+              <div className="absolute top-1/3 left-2/3 w-2 h-2 bg-[#4A4A5A] rounded-full" />
+            </div>
+          </section>
+
           {/* End spacer */}
           <div style={{ height: "60vh" }} />
         </div>
 
         {/* THE LENS — Diamond Mask at Center */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 w-[320px] h-[320px] pointer-events-none">
+        <div
+          ref={lensContainerRef}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 w-[320px] h-[320px] pointer-events-none"
+        >
           {/* Diamond border frame */}
           <div
             ref={lensFrameRef}
@@ -222,26 +214,54 @@ export function HeroSection() {
             style={{ boxShadow: "0 0 20px rgba(0, 229, 255, 0.4)" }}
           />
 
-          {/* Clarified content window (clipped to diamond shape) */}
+          {/* Clarified content window (clipped to diamond) */}
           <div className="absolute inset-0 lens-container overflow-hidden">
-            {/* Content starts below the lens, GSAP scrolls it up through the diamond */}
             <div
               ref={clarifiedTrackRef}
-              className="absolute inset-x-0 flex flex-col items-center gap-[60px] text-[#00E5FF] text-xl font-bold text-center"
-              style={{ top: "80%", padding: "0 20px" }}
+              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-screen opacity-0"
+              style={{ top: "80%" }}
             >
-              <p className="drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] max-w-[280px]">
-                &ldquo;In the beginning, God created...&rdquo;
-              </p>
-              <p className="text-[#FF6B00] drop-shadow-[0_0_8px_rgba(255,107,0,0.5)] max-w-[280px]">
-                Elohim: A complex unity of the divine.
-              </p>
-              <p className="max-w-[280px]">
-                Linguistic roots reveal structural patterns.
-              </p>
-              <p className="max-w-[280px]">
-                Clarity emerges where tradition ends.
-              </p>
+              {/* Clarified Section 1 — insights revealed through the lens */}
+              <div className="absolute w-full top-[100vh] flex flex-col items-center justify-center px-10 text-[#00E5FF]">
+                <div className="max-w-2xl space-y-32 text-2xl text-center font-bold">
+                  <p className="drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]">
+                    &ldquo;In the beginning, God created...&rdquo;
+                  </p>
+                  <p className="text-[#FF6B00] drop-shadow-[0_0_8px_rgba(255,107,0,0.5)]">
+                    Elohim: A complex unity of the divine.
+                  </p>
+                  <p>Linguistic roots reveal structural patterns.</p>
+                  <p>Clarity emerges where tradition ends.</p>
+                </div>
+              </div>
+
+              {/* Clarified Section 2 — timeline nodes */}
+              <div className="absolute w-full top-[220vh] flex items-center justify-center">
+                <div className="w-full max-w-4xl h-[600px] relative">
+                  <div className="absolute top-1/4 left-1/4 flex flex-col items-center">
+                    <div
+                      className="w-4 h-4 bg-[#FF6B00] rounded-full"
+                      style={{
+                        boxShadow: "0 0 20px rgba(255, 107, 0, 0.4)",
+                      }}
+                    />
+                    <span className="text-[10px] mt-2 whitespace-nowrap">
+                      Babylonian Exile (586 BCE)
+                    </span>
+                  </div>
+                  <div className="absolute top-3/4 left-1/2 flex flex-col items-center">
+                    <div
+                      className="w-4 h-4 bg-[#FF6B00] rounded-full"
+                      style={{
+                        boxShadow: "0 0 20px rgba(255, 107, 0, 0.4)",
+                      }}
+                    />
+                    <span className="text-[10px] mt-2 whitespace-nowrap">
+                      Writing of Genesis
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -249,7 +269,7 @@ export function HeroSection() {
         {/* Hero Title — Fades on scroll */}
         <div
           ref={heroTitleWrapperRef}
-          className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none"
+          className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none"
         >
           <div className="text-center px-4">
             <h1
