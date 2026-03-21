@@ -20,8 +20,7 @@ export function HeroSection() {
   useGSAP(
     () => {
       const container = containerRef.current;
-      const pinned = pinnedRef.current;
-      if (!container || !pinned) return;
+      if (!container) return;
 
       // --- Particles ---
       if (particlesRef.current) {
@@ -52,8 +51,8 @@ export function HeroSection() {
         particlesRef.current.appendChild(frag);
       }
 
-      // --- Pin the hero viewport ---
-      gsap.to(pinned, {
+      // --- Pin the hero viewport for the scroll duration ---
+      gsap.to(pinnedRef.current, {
         scrollTrigger: {
           trigger: container,
           start: "top top",
@@ -63,10 +62,9 @@ export function HeroSection() {
         },
       });
 
-      // --- Set initial lens state ---
+      // --- Lens entrance animation ---
       gsap.set(lensFrameRef.current, { scale: 0, rotation: 45 });
 
-      // --- Entrance animation ---
       const tlEntrance = gsap.timeline({ defaults: { ease: "power4.out" } });
       tlEntrance
         .from(titleRef.current?.children || [], {
@@ -75,32 +73,28 @@ export function HeroSection() {
           duration: 1.5,
           stagger: 0.2,
         })
-        .to(
-          lensFrameRef.current,
-          { scale: 1, duration: 1.2 },
-          "-=0.8"
-        )
+        .to(lensFrameRef.current, { scale: 1, duration: 1.2 }, "-=0.8")
         .from(
           scrollHintRef.current,
           { opacity: 0, y: 20, duration: 1 },
           "-=0.5"
         );
 
-      // --- Hero title fade/scale on scroll ---
+      // --- Title fades quickly on scroll ---
       gsap.to(heroTitleWrapperRef.current, {
         scale: 0.8,
         opacity: 0,
         scrollTrigger: {
           trigger: container,
           start: "top top",
-          end: "300px top",
+          end: "200px top",
           scrub: true,
         },
       });
 
-      // --- Dual-track scroll sync ---
+      // --- Main track: blurred ancient text scrolls through viewport ---
       gsap.to(mainTrackRef.current, {
-        y: "-100%",
+        yPercent: -60,
         ease: "none",
         scrollTrigger: {
           trigger: container,
@@ -110,16 +104,22 @@ export function HeroSection() {
         },
       });
 
-      gsap.to(clarifiedTrackRef.current, {
-        y: "-100%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-        },
-      });
+      // --- Clarified track: crisp text scrolls UP through the diamond lens ---
+      // Content starts at bottom of lens (top: 100%), moves up through the diamond
+      gsap.fromTo(
+        clarifiedTrackRef.current,
+        { y: 0 },
+        {
+          y: -800,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+          },
+        }
+      );
 
       // --- Lens border pulse ---
       gsap.to(lensFrameRef.current, {
@@ -130,13 +130,13 @@ export function HeroSection() {
         ease: "sine.inOut",
       });
 
-      // --- Fade scroll hint ---
+      // --- Fade scroll hint early ---
       gsap.to(scrollHintRef.current, {
         opacity: 0,
         scrollTrigger: {
           trigger: container,
           start: "50px top",
-          end: "200px top",
+          end: "150px top",
           scrub: true,
         },
       });
@@ -145,7 +145,7 @@ export function HeroSection() {
   );
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "400vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
       <div
         ref={pinnedRef}
         className="h-screen w-full relative overflow-hidden"
@@ -161,14 +161,14 @@ export function HeroSection() {
         <div
           ref={mainTrackRef}
           className="absolute w-full z-10"
-          style={{ height: "400vh", top: 0 }}
+          style={{ height: "250vh", top: 0 }}
         >
-          {/* Spacer for hero title area */}
-          <div className="h-screen" />
+          {/* Short spacer — title fades during this */}
+          <div style={{ height: "60vh" }} />
 
-          {/* Section 1: Ancient manuscripts */}
-          <section className="h-[150vh] flex flex-col items-center justify-center px-10">
-            <div className="max-w-2xl space-y-32 ancient-text text-2xl text-center">
+          {/* Ancient text scrolls through viewport center (where lens is) */}
+          <section className="h-[120vh] flex flex-col items-center justify-center px-10">
+            <div className="max-w-2xl space-y-16 ancient-text text-2xl text-center">
               <p style={{ fontFamily: "var(--font-noto-samaritan), serif" }}>
                 𐤁𐤓𐤀𐤔𐤉𐤕 𐤁𐤓𐤀 𐤀𐤋𐤄𐤉𐤌 𐤀𐤕 𐤄𐤔𐤌𐤉𐤌 𐤅𐤀𐤕 𐤄𐤀𐤓𐤒
               </p>
@@ -184,18 +184,8 @@ export function HeroSection() {
             </div>
           </section>
 
-          {/* Section 2: Constellation dots */}
-          <section className="h-[150vh] flex items-center justify-center relative">
-            <div className="w-full max-w-4xl h-[600px] relative opacity-30">
-              <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#4A4A5A] rounded-full" />
-              <div className="absolute top-1/2 left-3/4 w-2 h-2 bg-[#4A4A5A] rounded-full" />
-              <div className="absolute top-3/4 left-1/2 w-2 h-2 bg-[#4A4A5A] rounded-full" />
-              <div className="absolute top-1/3 left-2/3 w-2 h-2 bg-[#4A4A5A] rounded-full" />
-            </div>
-          </section>
-
           {/* End spacer */}
-          <div className="h-screen" />
+          <div style={{ height: "70vh" }} />
         </div>
 
         {/* THE LENS — Diamond Mask at Center */}
@@ -206,54 +196,27 @@ export function HeroSection() {
             className="absolute inset-0 border border-[#00E5FF] backdrop-blur-sm bg-[#0F0F16]/20 origin-center"
             style={{ boxShadow: "0 0 20px rgba(0, 229, 255, 0.4)" }}
           />
-          {/* Clarified content window (clipped to diamond) */}
+
+          {/* Clarified content window (clipped to diamond shape) */}
           <div className="absolute inset-0 lens-container overflow-hidden">
+            {/* Content starts below the lens, GSAP scrolls it up through the diamond */}
             <div
               ref={clarifiedTrackRef}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen"
-              style={{ height: "400vh" }}
+              className="absolute inset-x-0 flex flex-col items-center gap-[100px] text-[#00E5FF] text-xl font-bold text-center"
+              style={{ top: "100%", padding: "0 20px" }}
             >
-              {/* Clarified Section 1 — Translated insights */}
-              <div className="absolute w-full top-[100vh] flex flex-col items-center justify-center px-10 text-[#00E5FF]">
-                <div className="max-w-2xl space-y-32 text-2xl text-center font-bold">
-                  <p className="drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]">
-                    &ldquo;In the beginning, God created...&rdquo;
-                  </p>
-                  <p className="text-[#FF6B00] drop-shadow-[0_0_8px_rgba(255,107,0,0.5)]">
-                    Elohim: A complex unity of the divine.
-                  </p>
-                  <p>Linguistic roots reveal structural patterns.</p>
-                  <p>Clarity emerges where tradition ends.</p>
-                </div>
-              </div>
-
-              {/* Clarified Section 2 — Timeline nodes */}
-              <div className="absolute w-full top-[250vh] flex items-center justify-center">
-                <div className="w-full max-w-4xl h-[600px] relative">
-                  <div className="absolute top-1/4 left-1/4 flex flex-col items-center">
-                    <div
-                      className="w-4 h-4 bg-[#FF6B00] rounded-full"
-                      style={{
-                        boxShadow: "0 0 20px rgba(255, 107, 0, 0.4)",
-                      }}
-                    />
-                    <span className="text-[10px] mt-2 whitespace-nowrap">
-                      Babylonian Exile (586 BCE)
-                    </span>
-                  </div>
-                  <div className="absolute top-3/4 left-1/2 flex flex-col items-center">
-                    <div
-                      className="w-4 h-4 bg-[#FF6B00] rounded-full"
-                      style={{
-                        boxShadow: "0 0 20px rgba(255, 107, 0, 0.4)",
-                      }}
-                    />
-                    <span className="text-[10px] mt-2 whitespace-nowrap">
-                      Writing of Genesis
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <p className="drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] max-w-[280px]">
+                &ldquo;In the beginning, God created...&rdquo;
+              </p>
+              <p className="text-[#FF6B00] drop-shadow-[0_0_8px_rgba(255,107,0,0.5)] max-w-[280px]">
+                Elohim: A complex unity of the divine.
+              </p>
+              <p className="max-w-[280px]">
+                Linguistic roots reveal structural patterns.
+              </p>
+              <p className="max-w-[280px]">
+                Clarity emerges where tradition ends.
+              </p>
             </div>
           </div>
         </div>
