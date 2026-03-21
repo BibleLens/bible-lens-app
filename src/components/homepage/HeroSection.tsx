@@ -87,14 +87,14 @@ export function HeroSection() {
         scrollTrigger: {
           trigger: container,
           start: "top top",
-          end: "200px top",
+          end: "100px top",
           scrub: true,
         },
       });
 
       // --- Main track: blurred ancient text scrolls through viewport ---
       gsap.to(mainTrackRef.current, {
-        yPercent: -55,
+        yPercent: -50,
         ease: "none",
         scrollTrigger: {
           trigger: container,
@@ -110,7 +110,7 @@ export function HeroSection() {
         clarifiedTrackRef.current,
         { y: 0 },
         {
-          y: -600,
+          y: -800,
           ease: "none",
           scrollTrigger: {
             trigger: container,
@@ -137,8 +137,8 @@ export function HeroSection() {
           opacity: 0,
           scrollTrigger: {
             trigger: container,
-            start: "60% top",
-            end: "85% top",
+            start: "85% top",
+            end: "98% top",
             scrub: true,
           },
         });
@@ -159,7 +159,7 @@ export function HeroSection() {
   );
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "160vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "200vh" }}>
       <div
         ref={pinnedRef}
         className="h-screen w-full relative overflow-hidden"
@@ -175,10 +175,10 @@ export function HeroSection() {
         <div
           ref={mainTrackRef}
           className="absolute w-full z-10"
-          style={{ height: "160vh", top: 0 }}
+          style={{ height: "200vh", top: 0 }}
         >
           {/* Minimal spacer — title fades during this */}
-          <div style={{ height: "20vh" }} />
+          <div style={{ height: "10vh" }} />
 
           {/* Ancient text scrolls through viewport center (where lens is) */}
           <section className="h-[100vh] flex flex-col items-center justify-center px-10">
@@ -199,7 +199,7 @@ export function HeroSection() {
           </section>
 
           {/* End spacer */}
-          <div style={{ height: "20vh" }} />
+          <div style={{ height: "90vh" }} />
         </div>
 
         {/* THE LENS — Diamond Mask at Center */}
@@ -216,7 +216,7 @@ export function HeroSection() {
             {/* Content starts below the lens, GSAP scrolls it up through the diamond */}
             <div
               ref={clarifiedTrackRef}
-              className="absolute inset-x-0 flex flex-col items-center gap-[80px] text-[#00E5FF] text-xl font-bold text-center"
+              className="absolute inset-x-0 flex flex-col items-center gap-[60px] text-[#00E5FF] text-xl font-bold text-center"
               style={{ top: "105%", padding: "0 20px" }}
             >
               <p className="drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] max-w-[280px]">
