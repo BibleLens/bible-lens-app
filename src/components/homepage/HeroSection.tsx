@@ -72,7 +72,7 @@ export function HeroSection() {
           background: "var(--homepage-primary)",
           color: "var(--homepage-bg)",
           padding: "0.75rem 2rem",
-          borderRadius: "9999px",
+          borderRadius: "0px",
           fontWeight: 700,
           fontFamily: "var(--homepage-font-body)",
           marginTop: "2rem",
