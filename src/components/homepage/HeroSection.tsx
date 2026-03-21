@@ -228,8 +228,8 @@ export function HeroSection() {
               style={{ top: "80%", left: "50%" }}
             >
               {/* Clarified Section 1 — insights revealed through the lens */}
-              <div className="absolute w-full top-[100vh] flex flex-col items-center justify-center px-10 text-[#00E5FF]">
-                <div className="max-w-2xl space-y-32 text-2xl text-center font-bold">
+              <div className="absolute w-full top-[50vh] flex flex-col items-center justify-center px-10 text-[#00E5FF]">
+                <div className="max-w-2xl space-y-16 text-2xl text-center font-bold">
                   <p className="drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]">
                     &ldquo;In the beginning, God created...&rdquo;
                   </p>
