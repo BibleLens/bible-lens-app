@@ -1,25 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Source_Sans_3, Space_Grotesk, Noto_Sans_Samaritan } from "next/font/google";
+import { Newsreader, Manrope, Source_Sans_3, Noto_Sans_Samaritan } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
   display: "swap",
+  style: ["normal", "italic"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["300", "400", "600"],
   display: "swap",
 });
 
@@ -95,9 +96,9 @@ export default function RootLayout({
       </head>
       <body
         className={[
-          cinzel.variable,
+          newsreader.variable,
+          manrope.variable,
           sourceSans.variable,
-          spaceGrotesk.variable,
           notoSansSamaritan.variable,
           "antialiased",
           "bg-[var(--color-bg-primary)]",
