@@ -430,8 +430,8 @@ body {
 }
 
 .ancient-text {
-  filter: blur(2px);
-  opacity: 0.6;
+  filter: blur(1px);
+  opacity: 0.7;
 }
 
 .hero-particle {
