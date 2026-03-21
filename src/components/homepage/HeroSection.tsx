@@ -104,13 +104,24 @@ export function HeroSection() {
         },
       });
 
-      // --- Clarified track: crisp text scrolls UP through the diamond lens ---
-      // Content starts at bottom of lens (top: 100%), moves up through the diamond
+      // --- Clarified track: hidden initially, fades in as title fades ---
+      gsap.set(clarifiedTrackRef.current, { opacity: 0 });
+      gsap.to(clarifiedTrackRef.current, {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: container,
+          start: "30px top",
+          end: "100px top",
+          scrub: true,
+        },
+      });
+
+      // --- Clarified track: scrolls UP through the diamond lens ---
       gsap.fromTo(
         clarifiedTrackRef.current,
         { y: 0 },
         {
-          y: -800,
+          y: -700,
           ease: "none",
           scrollTrigger: {
             trigger: container,
@@ -159,7 +170,7 @@ export function HeroSection() {
   );
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "200vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "170vh" }}>
       <div
         ref={pinnedRef}
         className="h-screen w-full relative overflow-hidden"
@@ -175,7 +186,7 @@ export function HeroSection() {
         <div
           ref={mainTrackRef}
           className="absolute w-full z-10"
-          style={{ height: "200vh", top: 0 }}
+          style={{ height: "170vh", top: 0 }}
         >
           {/* Minimal spacer — title fades during this */}
           <div style={{ height: "10vh" }} />
@@ -199,7 +210,7 @@ export function HeroSection() {
           </section>
 
           {/* End spacer */}
-          <div style={{ height: "90vh" }} />
+          <div style={{ height: "60vh" }} />
         </div>
 
         {/* THE LENS — Diamond Mask at Center */}
@@ -217,7 +228,7 @@ export function HeroSection() {
             <div
               ref={clarifiedTrackRef}
               className="absolute inset-x-0 flex flex-col items-center gap-[60px] text-[#00E5FF] text-xl font-bold text-center"
-              style={{ top: "105%", padding: "0 20px" }}
+              style={{ top: "80%", padding: "0 20px" }}
             >
               <p className="drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] max-w-[280px]">
                 &ldquo;In the beginning, God created...&rdquo;
