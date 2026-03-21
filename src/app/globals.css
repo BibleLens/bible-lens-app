@@ -314,7 +314,55 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .lens-icon,
   .neon-pulse-gold,
-  .title-pulse {
+  .title-pulse,
+  .ethereal-float,
+  .scroll-indicator {
     animation: none;
   }
+}
+
+/* ==========================================
+   Stitch Design System Utilities (Phase 58+)
+   Source: Strategy/Design/dark-hero.html
+   ========================================== */
+.glass-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(34, 211, 238, 0.1);
+}
+
+.premium-hover-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-hover-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+  border-color: rgba(34, 211, 238, 0.4);
+}
+
+.ethereal-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.scroll-indicator {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--homepage-primary), transparent);
+  animation: pulse-opacity 2s ease-in-out infinite;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
 }
