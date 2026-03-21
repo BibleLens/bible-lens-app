@@ -16,17 +16,17 @@ export function NavBar() {
     <nav
       className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-cyan-400/10 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.5)]"
     >
-      <div className="flex items-center justify-between px-6 py-3">
+      <div className="flex items-center justify-between px-6 py-4">
         {/* Left: Logo */}
         <Link
           href="/"
           className="flex items-center gap-3"
           aria-label="Bible Lens home"
         >
-          <LensIcon size={36} animate={true} />
+          <LensIcon size={56} animate={true} />
           <span
             style={{ fontFamily: "var(--homepage-font-display)" }}
-            className="text-lg font-bold tracking-wide"
+            className="text-xl font-bold tracking-wide"
           >
             <span className="text-gold-400" style={{ color: "#facc15" }}>Bible</span>
             <span className="text-cyan-400"> Lens</span>

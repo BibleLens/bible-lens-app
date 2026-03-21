@@ -60,7 +60,7 @@
   --homepage-bg: #050508;
   --homepage-surface: #0F0F16;
   --homepage-text: #F3F3F5;
-  --homepage-muted: #4A4A5A;
+  --homepage-muted: #9A9AB0;
   --homepage-primary: #00E5FF;
   --homepage-accent: #FF6B00;
   --homepage-glow-cyan: 0 0 20px rgba(0, 229, 255, 0.4);
@@ -120,7 +120,7 @@
   --color-foreground: var(--color-text-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-cinzel);
+  --font-display: var(--font-newsreader);
 }
 
 /* Base styles */
@@ -422,6 +422,23 @@ body {
 @keyframes pulse-opacity {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
+}
+
+/* Lens reveal animation (Phase 59) */
+.lens-container {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.ancient-text {
+  filter: blur(4px);
+  opacity: 0.4;
+}
+
+.hero-particle {
+  position: absolute;
+  background: #F3F3F5;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .scroll-indicator {
