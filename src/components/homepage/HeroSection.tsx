@@ -110,7 +110,7 @@ export function HeroSection() {
         clarifiedTrackRef.current,
         { y: 0 },
         {
-          y: -500,
+          y: -600,
           ease: "none",
           scrollTrigger: {
             trigger: container,
@@ -130,6 +130,20 @@ export function HeroSection() {
         ease: "sine.inOut",
       });
 
+      // --- Fade lens out near end of scroll ---
+      const lensParent = lensFrameRef.current?.parentElement;
+      if (lensParent) {
+        gsap.to(lensParent, {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: container,
+            start: "60% top",
+            end: "85% top",
+            scrub: true,
+          },
+        });
+      }
+
       // --- Fade scroll hint early ---
       gsap.to(scrollHintRef.current, {
         opacity: 0,
@@ -145,7 +159,7 @@ export function HeroSection() {
   );
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "180vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "160vh" }}>
       <div
         ref={pinnedRef}
         className="h-screen w-full relative overflow-hidden"
@@ -161,7 +175,7 @@ export function HeroSection() {
         <div
           ref={mainTrackRef}
           className="absolute w-full z-10"
-          style={{ height: "180vh", top: 0 }}
+          style={{ height: "160vh", top: 0 }}
         >
           {/* Minimal spacer — title fades during this */}
           <div style={{ height: "20vh" }} />
@@ -185,7 +199,7 @@ export function HeroSection() {
           </section>
 
           {/* End spacer */}
-          <div style={{ height: "60vh" }} />
+          <div style={{ height: "20vh" }} />
         </div>
 
         {/* THE LENS — Diamond Mask at Center */}
@@ -203,7 +217,7 @@ export function HeroSection() {
             <div
               ref={clarifiedTrackRef}
               className="absolute inset-x-0 flex flex-col items-center gap-[80px] text-[#00E5FF] text-xl font-bold text-center"
-              style={{ top: "60%", padding: "0 20px" }}
+              style={{ top: "105%", padding: "0 20px" }}
             >
               <p className="drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] max-w-[280px]">
                 &ldquo;In the beginning, God created...&rdquo;
