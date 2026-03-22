@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const TOPIC_CARDS = [
   {
@@ -141,7 +142,7 @@ export function FeaturedTopicsSection() {
       {/* Bento grid */}
       <div className="bento-grid">
         {TOPIC_CARDS.map((card) => (
-          <a
+          <Link
             key={card.slug}
             href={`/topics/${card.slug}`}
             className={`${card.colSpan} ${card.rowSpan} glass-card group`}
@@ -334,7 +335,7 @@ export function FeaturedTopicsSection() {
                 </>
               )}
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 

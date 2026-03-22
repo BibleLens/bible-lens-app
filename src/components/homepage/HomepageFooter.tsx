@@ -1,6 +1,7 @@
 "use client";
 
 import { LensIcon } from "@/components/LensIcon";
+import Link from "next/link";
 
 export function HomepageFooter() {
   return (
@@ -34,17 +35,28 @@ export function HomepageFooter() {
             { label: "Theology", href: "/commentary" },
             { label: "Historical Context", href: "/about" },
             { label: "Hermeneutics", href: "/start-here" },
-            { label: "Privacy", href: "#" },
-          ].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-[10px] uppercase tracking-[0.2rem] transition-all hover:text-[#00e5ff]"
-              style={{ fontFamily: "var(--homepage-font-body)", color: "#DCC1B4" }}
-            >
-              {link.label}
-            </a>
-          ))}
+            { label: "Privacy", href: "#" }, // TODO: add privacy page
+          ].map((link) =>
+            link.href.startsWith("/") ? (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-[10px] uppercase tracking-[0.2rem] transition-all hover:text-[#00e5ff]"
+                style={{ fontFamily: "var(--homepage-font-body)", color: "#DCC1B4" }}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-[10px] uppercase tracking-[0.2rem] transition-all hover:text-[#00e5ff]"
+                style={{ fontFamily: "var(--homepage-font-body)", color: "#DCC1B4" }}
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
       </div>
     </footer>
