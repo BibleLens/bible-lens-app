@@ -29,6 +29,12 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
   const buildPassageQuestion = (): string => {
     const bookTitle = book.charAt(0).toUpperCase() + book.slice(1);
     if (book === "genesis") {
+      if (chapter === 15) {
+        return `What is the significance of the covenant cutting ceremony in Genesis 15 — why does only God walk between the pieces, and what did the self-maledictory oath mean to the original audience?`;
+      }
+      if (chapter === 18) {
+        return `Who were the three visitors at Mamre in Genesis 18, and what does divine council theology tell us about how Yahweh's messengers functioned in the ancient Near East?`;
+      }
       return `What does ${bookTitle} ${chapter} mean for understanding creation?`;
     }
     if (book === "matthew") {
@@ -38,6 +44,15 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       return `What does ${bookTitle} ${chapter} reveal about first-century events through ancient Jewish apocalyptic imagery?`;
     }
     if (book === "isaiah") {
+      if (chapter === 1) {
+        return `What is the rib covenant lawsuit genre in Isaiah 1 — how does the ancient treaty lawsuit form transform the meaning of every word Isaiah speaks, including verse 18?`;
+      }
+      if (chapter === 2) {
+        return `What does Isaiah 2's vision of the mountain of the LORD describe — and why do the peaceful conditions in verses 2-4 match Isaiah 11 and 65 rather than the eternal state?`;
+      }
+      if (chapter === 6) {
+        return `What did the seraphim and the trisagion mean to Isaiah's original audience — and what does the ANE throne-guardian tradition reveal about the 'holy, holy, holy' declaration?`;
+      }
       return `What did Isaiah ${chapter} mean to the original audience — and how does it connect to New Testament fulfillment?`;
     }
     if (book === "ezekiel") {
