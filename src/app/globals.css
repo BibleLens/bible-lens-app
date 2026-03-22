@@ -469,4 +469,11 @@ body {
   .glass-card:hover .card-spotlight {
     opacity: 0;
   }
+
+  /* FIX: animate-content children start at opacity:0 — make visible without hover */
+  .animate-content > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

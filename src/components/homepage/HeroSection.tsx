@@ -22,10 +22,28 @@ export function HeroSection() {
       const container = containerRef.current;
       if (!container) return;
 
+      // --- Reduced motion guard ---
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (prefersReducedMotion) {
+        // Ensure all entrance-animated elements are at their final visible state
+        gsap.set(titleRef.current?.children || [], { opacity: 1, y: 0 });
+        gsap.set(lensFrameRef.current, { scale: 1, rotation: 0 });
+        gsap.set(scrollHintRef.current, { opacity: 0.7, y: 0 });
+        gsap.set(clarifiedTrackRef.current, { opacity: 1, xPercent: -50, yPercent: -50 });
+        return; // Skip ALL scroll-driven and entrance animation setup
+      }
+
+      // --- Mobile particle optimization ---
+      const isMobile = window.innerWidth < 768;
+      const particleCount = isMobile ? 20 : PARTICLE_COUNT;
+
       // --- Particles ---
       if (particlesRef.current) {
         const frag = document.createDocumentFragment();
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
+        for (let i = 0; i < particleCount; i++) {
           const p = document.createElement("div");
           p.className = "hero-particle";
           const size = Math.random() * 3 + 1;
@@ -159,7 +177,7 @@ export function HeroSection() {
   );
 
   return (
-    <div ref={containerRef} style={{ height: "270vh" }}>
+    <div ref={containerRef} className="h-[150vh] md:h-[270vh]">
       {/* Sticky viewport — stays in place while container scrolls (170vh of scroll) */}
       <div
         className="sticky top-0 h-screen w-full overflow-hidden"
