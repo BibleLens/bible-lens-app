@@ -2,11 +2,11 @@
 // No React, no Qdrant, no side effects.
 
 export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
-  genesis: [1, 2, 3, 6, 7, 8, 9, 11, 12, 22, 28, 37],
+  genesis: [1, 2, 3, 6, 7, 8, 9, 11, 12, 15, 18, 22, 28, 37],
   daniel: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
   matthew: [24],
   revelation: [1, 2, 3, 4, 5, 6, 7, 12, 13, 14, 17, 18, 19, 20, 21, 22],
-  isaiah: [7, 9, 11, 52, 53, 65, 66],
+  isaiah: [1, 2, 6, 7, 9, 11, 52, 53, 65, 66],
   ezekiel: [1, 2, 3, 28, 37, 38, 39],
 };
 
@@ -115,6 +115,16 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
   "ezekiel-37": "Ezekiel doesn't leave the valley of dry bones to interpretation — he interprets it himself at verse 11. 'These bones are the whole house of Israel.' The national restoration reading anchored in self-interpreting scripture, the ruach/chayah/etsem vocabulary, and what the original exilic audience heard.",
   "ezekiel-38": "Who is Gog of the land of Magog? The Table of Nations geography — Meshech, Tubal, Gomer, Togarmah — points to ancient Anatolia and the far northern peoples at the outer horizon of the ancient world. Through this lens, the historical identification candidates and the eschatological framing the text itself provides.",
   "ezekiel-39": "The aftermath of Gog's defeat: the great burial, the burning of weapons, and the birds-feasting scene at Ezekiel 39:17-20 that Revelation 19:17-21 quotes directly. What the original audience heard in YHWH's cosmic banquet of judgment — and why Revelation 20:8 names Gog and Magog as a future end-of-Millennium event.",
+  "genesis-15":
+    "The most one-sided deal in the ancient world — a covenant where only God walks between the pieces. Genesis 15's self-maledictory oath, tardemah theophany, and ANE treaty framework reveal why Abraham doesn't even sign. Through this lens, the covenant God made alone.",
+  "genesis-18":
+    "Who were the three visitors at Mamre? The Christophany interpretation runs into three interlocking problems — and the agency model resolves them. What the original audience understood about divine council messengers, Abraham's intercession, and the justice question behind Sodom.",
+  "isaiah-1":
+    "Isaiah opens not with a sermon but with a lawsuit. The rib covenant lawsuit form — heaven and earth summoned as witnesses, the charges read in court — transforms everything about Isaiah 1. Here's where it gets interesting: verse 18 is not an invitation. It's a sarcastic legal challenge.",
+  "isaiah-2":
+    "Two visions, one chapter — breathtaking hope followed by cosmic terror. The har-YHWH oracle (shared almost word-for-word with Micah 4) describes Millennial conditions, not the eternal state. What the original audience understood about the cosmic mountain tradition and the Day of the LORD that follows.",
+  "isaiah-6":
+    "In the year that King Uzziah died, Isaiah walks into a throne room with seraphim. The trisagion — holy, holy, holy — is not a proof of Trinity. It is a Hebrew superlative. Through this lens, the ANE throne-guardian iconography, the hardening mandate, and the anomaly in Isaiah's call narrative structure.",
 };
 
 // Truncates description text to a word limit for card teasers.
@@ -137,7 +147,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 27 + 14 + 9 + 5 = 55 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 29 + 16 + 10 + 5 = 60 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -151,6 +161,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "revelation-17", "revelation-18", "revelation-19", "revelation-20", "revelation-21", "revelation-22",
       "ezekiel-38", "ezekiel-39",
       "isaiah-65", "isaiah-66",
+      "isaiah-1", "isaiah-2",
     ],
   },
   {
@@ -161,6 +172,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-7", "genesis-8", "genesis-9", "genesis-11",
       "ezekiel-1", "ezekiel-28",
       "daniel-1", "daniel-2", "daniel-3", "daniel-4",
+      "genesis-18", "isaiah-6",
     ],
   },
   {
@@ -168,7 +180,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
     title: "Covenant Arc",
     description: "The covenant thread from Abraham through the exile and restoration.",
     chapterKeys: [
-      "genesis-12", "genesis-22", "genesis-28", "genesis-37",
+      "genesis-12", "genesis-15", "genesis-22", "genesis-28", "genesis-37",
       "daniel-5", "daniel-6",
       "ezekiel-2", "ezekiel-3", "ezekiel-37",
     ],
@@ -237,6 +249,7 @@ export const READING_PATHS: ReadingPath[] = [
       "From Abraham's call through the Babylonian exile and promised restoration, this path follows the covenant that never breaks — even when the people do. What the original audience would have understood is that the dry bones of Ezekiel 37 and the new heavens of Isaiah 65 are not distant abstractions but the covenant's own answer to exile.",
     steps: [
       { bookId: "genesis", chapter: 12, annotation: "The Abrahamic call — the covenant that reshapes everything." },
+      { bookId: "genesis", chapter: 15, annotation: "The covenant cutting ceremony — God alone walks between the pieces, binding himself with a self-maledictory oath." },
       { bookId: "genesis", chapter: 22, annotation: "The Aqedah: covenant test, sacrifice, and ram-as-substitute." },
       { bookId: "genesis", chapter: 28, annotation: "Jacob's ladder — sacred geography and covenant renewal." },
       { bookId: "daniel", chapter: 5, annotation: "Belshazzar and the writing on the wall — covenant judgment in Babylon." },
@@ -387,7 +400,7 @@ Where Bible Lens parts from full preterism: Revelation 19-20 describes a future 
       "Isaiah 53 corporate Israel reading",
       "suffering servant who is it",
     ],
-    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11"],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6"],
     prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
 
 Here's where it gets interesting: the historically prior reading, the one dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi in the eleventh century argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, carrying the weight of history, and destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion among pre-modern Jewish scholars; it was the mainstream.
@@ -446,7 +459,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "genesis-9": ["genesis-8", "genesis-12"],
 
   // Genesis — Covenant cluster
-  "genesis-12": ["genesis-22", "genesis-28", "isaiah-7"],
+  "genesis-12": ["genesis-15", "genesis-22", "genesis-28"],
   "genesis-22": ["genesis-12", "isaiah-53", "revelation-5"],
   "genesis-28": ["genesis-12", "ezekiel-1"],
 
@@ -482,7 +495,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "revelation-1": ["daniel-7", "matthew-24", "revelation-22"],
   "revelation-2": ["revelation-3", "revelation-1", "daniel-1"],
   "revelation-3": ["revelation-2", "revelation-1", "daniel-6"],
-  "revelation-4": ["ezekiel-1", "revelation-5", "daniel-7"],
+  "revelation-4": ["isaiah-6", "ezekiel-1", "revelation-5"],
   "revelation-5": ["revelation-4", "daniel-7", "genesis-22"],
   "revelation-6": ["matthew-24", "daniel-9", "revelation-7"],
   "revelation-7": ["revelation-6", "revelation-12", "revelation-14"],
@@ -498,7 +511,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
 
   // Isaiah — Messianic cluster
   "isaiah-7": ["isaiah-9", "isaiah-11", "matthew-24"],
-  "isaiah-9": ["isaiah-7", "isaiah-11", "daniel-7"],
+  "isaiah-9": ["isaiah-7", "isaiah-6", "isaiah-11"],
   "isaiah-11": ["isaiah-9", "isaiah-65", "revelation-20"],
   "isaiah-52": ["isaiah-53", "daniel-9", "revelation-5"],
   "isaiah-53": ["isaiah-52", "genesis-22", "daniel-9"],
@@ -506,11 +519,18 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "isaiah-66": ["isaiah-65", "revelation-22", "ezekiel-39"],
 
   // Ezekiel — Exile/restoration cluster
-  "ezekiel-1": ["ezekiel-2", "revelation-4", "daniel-7"],
+  "ezekiel-1": ["isaiah-6", "ezekiel-2", "revelation-4"],
   "ezekiel-2": ["ezekiel-3", "ezekiel-1", "daniel-1"],
   "ezekiel-3": ["ezekiel-2", "daniel-6", "ezekiel-37"],
   "ezekiel-28": ["genesis-3", "genesis-6", "daniel-8"],
   "ezekiel-37": ["ezekiel-38", "daniel-12", "revelation-20"],
   "ezekiel-38": ["ezekiel-39", "revelation-20", "daniel-11"],
   "ezekiel-39": ["ezekiel-38", "revelation-19", "revelation-20"],
+
+  // New chapters — Genesis 15/18 and Isaiah 1/2/6
+  "genesis-15": ["genesis-12", "genesis-22", "isaiah-53"],
+  "genesis-18": ["genesis-12", "isaiah-6", "daniel-10"],
+  "isaiah-1": ["isaiah-2", "ezekiel-2", "matthew-24"],
+  "isaiah-2": ["isaiah-1", "isaiah-11", "ezekiel-38"],
+  "isaiah-6": ["isaiah-1", "ezekiel-1", "revelation-4"],
 };
