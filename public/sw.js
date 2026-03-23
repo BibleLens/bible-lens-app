@@ -20,7 +20,6 @@ self.addEventListener('fetch', (event) => {
   // /api/chat uses Transfer-Encoding: chunked streaming — any caching breaks it
   // /api/commentary, /api/search, /api/health are also protected
   if (url.pathname.startsWith('/api/')) {
-    event.respondWith(fetch(event.request));
     return;
   }
 
