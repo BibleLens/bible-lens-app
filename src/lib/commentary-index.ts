@@ -8,6 +8,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   revelation: [1, 2, 3, 4, 5, 6, 7, 12, 13, 14, 17, 18, 19, 20, 21, 22],
   isaiah: [1, 2, 6, 7, 9, 11, 52, 53, 65, 66],
   ezekiel: [1, 2, 3, 28, 37, 38, 39],
+  exodus: [3, 12, 14, 19, 20, 25, 26, 27, 32, 33, 34],
 };
 
 export const COMMENTARY_BOOKS = Object.keys(COMMENTARY_CHAPTERS);
@@ -125,6 +126,30 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "Two visions, one chapter — breathtaking hope followed by cosmic terror. The har-YHWH oracle (shared almost word-for-word with Micah 4) describes Millennial conditions, not the eternal state. What the original audience understood about the cosmic mountain tradition and the Day of the LORD that follows.",
   "isaiah-6":
     "In the year that King Uzziah died, Isaiah walks into a throne room with seraphim. The trisagion — holy, holy, holy — is not a proof of Trinity. It is a Hebrew superlative. Through this lens, the ANE throne-guardian iconography, the hardening mandate, and the anomaly in Isaiah's call narrative structure.",
+
+  // Exodus — 6 commentary clusters, 11 chapters
+  "exodus-3":
+    "What did Moses hear at the burning bush — and why does the traditional translation 'I AM WHO I AM' miss the point? The divine name ehyeh asher ehyeh is first-person imperfect Hebrew, which points forward, not upward. Here's where it gets interesting: this is not a philosophical statement about ontology. It is a covenant promise of dynamic presence — 'I will be what I will be' — addressed to a frightened shepherd about to face Pharaoh. What the original audience would have understood is that YHWH's self-introduction echoes the ANE suzerainty treaty formula, binding the deity to the liberation project before it begins. The burning bush is not a metaphysics lecture; it is a commissioning ceremony.",
+  "exodus-12":
+    "What was the Passover before it became a Christian symbol? Here's where it gets interesting: the night of the tenth plague was, for the original audience, an ANE apotropaic blood ritual — a rite using blood to ward off a destroying agent. The doorposts marked with hyssop and blood were not primarily a forward-pointing typology; they were ancient protective technology, operating within the visual and ritual logic of the ancient Near East. What the original audience would have understood is that YHWH was using the very categories of their Egyptian world — blood rituals, divine judgment, night terrors — and turning them toward liberation. The Passover is first a night of violent deliverance; the layers of meaning come after.",
+  "exodus-14":
+    "What actually happened at the Reed Sea — and what did the original audience understand about YHWH commanding the waters? The divine warrior motif is one of the oldest patterns in the ancient Near East: a deity defeats the sea-chaos monster and establishes cosmic order. Here's where it gets interesting: the Yam Suph crossing inverts this pattern. There is no monster to defeat — just Pharaoh's army swallowed by the waters YHWH commands. What the original audience would have heard is a combat myth where YHWH does not fight chaos; YHWH commands it. The sea that destroys Egypt is the same sea that walked Israel through on dry ground. This is ancient cosmological vocabulary — the divine warrior who makes and unmakes the waters.",
+  "exodus-19":
+    "What if the Sinai covenant was not primarily a religious experience but a legal treaty? Hittite suzerainty treaties from the late Bronze Age follow a recognizable structure: preamble identifying the great king, historical prologue recounting past acts of benevolence, treaty stipulations, deposit and reading instructions, witnesses, blessings and curses. Exodus 19 follows this structure almost exactly — including the historical prologue ('I brought you out of Egypt on eagles' wings') before any demands are made. Here's where it gets interesting: the original audience would have recognized this genre immediately. YHWH is not presenting religion; YHWH is presenting a treaty, binding a vassal people to a suzerain deity who has already acted on their behalf.",
+  "exodus-20":
+    "The Ten Commandments are not an ethics list. What the original audience would have understood is that the Decalogue is the stipulations section of a Hittite suzerainty treaty — the binding terms that the vassal (Israel) agrees to keep in gratitude for the suzerain's (YHWH's) acts of deliverance. This changes everything about how the commandments land. They are not universal moral principles extracted from their context. They are covenant obligations, grounded in a specific history: 'I am YHWH your God, who brought you out of the land of Egypt.' Here's where it gets interesting: the Sabbath commandment at the treaty's center echoes Genesis 1's cosmic temple — the rest of the suzerain written into the rhythms of the covenant community.",
+  "exodus-25":
+    "What if the Tabernacle was not a portable worship tent but a portable cosmos? Here's where it gets interesting: the Hebrew vocabulary of Exodus 25 — mishkan (dwelling), kapporet (mercy seat/cover), aron (chest), tabnit (pattern/blueprint) — is the vocabulary of cosmic architecture, not furniture assembly. What the original audience would have understood is that YHWH was re-creating the sacred space of Eden in the wilderness. The same sevenfold creation structure, the same tripartite division of space (outer court, holy place, holy of holies) mirroring the ancient three-tier cosmos, the lampstand (menorah) echoing the tree of life. The Tabernacle is Eden rebuilt in acacia wood and gold.",
+  "exodus-26":
+    "The mishkan structure of Exodus 26 is cosmic architecture made portable. The curtains and their measurements, the parokhet (the dividing veil), the framework of acacia boards — all of it encodes the same sacred-space logic that organized the cosmos in Genesis 1. Here's where it gets interesting: the parokhet that divides the holy place from the holy of holies in Exodus 26 is not decorating a tent. It is the boundary between the accessible and the unapproachable — the same boundary that the cherubim with the flaming sword guard at the entrance to Eden in Genesis 3. What the original audience would have understood is that approaching the Tabernacle meant approaching the portable Eden, the dwelling where YHWH had agreed to reside among his treaty people.",
+  "exodus-27":
+    "The outer courtyard of the Tabernacle — the altar of burnt offering, the basin, the pillars — completes the three-zone cosmos that Exodus 25-27 establishes. Through this lens, the courtyard is the outer-world zone (corresponding to the earth in the three-tier cosmos), the holy place is the heavenly mediating zone, and the holy of holies is the divine throne room. What the original audience would have understood is that worshippers moving through the courtyard were enacting a movement toward the center of the cosmos, approaching the place where heaven and earth intersect. The altar at the courtyard entrance is not incidental; it is the ritual gateway that makes approach to the divine dwelling possible.",
+  "exodus-32":
+    "The golden calf is not a story about idolatry in the simple sense. Here's where it gets interesting: within the suzerainty treaty framework established at Sinai, Israel's construction of an alternative divine image while Moses is on the mountain is covenant infidelity — the vassal breaking the treaty terms within weeks of signing them. What the original audience would have understood is that Aaron's proclamation ('These are your gods, O Israel, who brought you up out of Egypt') is a direct violation of the first two treaty stipulations of Exodus 20. The narrative consequence is covenant dissolution. YHWH tells Moses to step aside so he can destroy Israel and start over. Moses intercedes — and what happens next becomes the theological center of the Hebrew Bible.",
+  "exodus-33":
+    "What does it mean to see the face of God — and why does Moses ask? Exodus 33 is one of the most theologically dense chapters in the entire Hebrew Bible. The kavod of YHWH — the divine glory/weight — is the central concept. Here's where it gets interesting: Moses, who has spoken with YHWH 'face to face, as a man speaks with his friend' (33:11), now asks for something more. He asks to see the kabod itself. YHWH's response sets up one of the great asymmetries of the text: the face cannot be seen, but the back can. What the original audience would have understood is that this is not physics — it is a meditation on divine hiddenness and partial revelation, and it establishes the theological foundation for what follows in Exodus 34.",
+  "exodus-34":
+    "The Thirteen Attributes of Exodus 34:6-7 are the most theologically significant verses in the Torah — and possibly in the entire Hebrew Bible. After the covenant crisis of the golden calf, YHWH passes before Moses and proclaims his own name: 'YHWH, YHWH, a God merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness...' Here's where it gets interesting: this self-declaration becomes the foundation for every subsequent appeal to divine mercy in the Hebrew Bible. The prophets cite it, the Psalms echo it, the post-exilic community recites it. What the original audience would have understood is that the covenant renewal of Exodus 34 does not just restore the broken Sinai treaty — it redefines the terms on which YHWH relates to a covenant-breaking people.",
 };
 
 // Truncates description text to a word limit for card teasers.
@@ -147,7 +172,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 29 + 16 + 10 + 5 = 60 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 29 + 19 + 18 + 5 = 71 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -173,6 +198,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "ezekiel-1", "ezekiel-28",
       "daniel-1", "daniel-2", "daniel-3", "daniel-4",
       "genesis-18", "isaiah-6",
+      "exodus-25", "exodus-26", "exodus-27",
     ],
   },
   {
@@ -183,6 +209,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "genesis-12", "genesis-15", "genesis-22", "genesis-28", "genesis-37",
       "daniel-5", "daniel-6",
       "ezekiel-2", "ezekiel-3", "ezekiel-37",
+      "exodus-3", "exodus-12", "exodus-14", "exodus-19", "exodus-20", "exodus-32", "exodus-33", "exodus-34",
     ],
   },
   {
@@ -271,6 +298,20 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "isaiah", chapter: 53, annotation: "Corporate Israel first, then typological Christ — both as layers." },
     ],
   },
+  {
+    id: "liberation-arc",
+    title: "Liberation Arc",
+    throughLine:
+      "From divine encounter through liberation, covenant, dwelling-place, to covenant crisis and renewal — the arc of God establishing a people and a place to dwell among them. What the original audience would have understood is that Exodus traces a single movement: YHWH calls, delivers, binds himself to a people by treaty, then builds a dwelling-place in their midst — and when the covenant shatters at the golden calf, the Thirteen Attributes of Exodus 34 become the theological foundation for everything that follows.",
+    steps: [
+      { bookId: "exodus", chapter: 3, annotation: "The divine encounter: ehyeh asher ehyeh — a first-person promise of presence that launches the liberation." },
+      { bookId: "exodus", chapter: 12, annotation: "The night of deliverance: Passover as apotropaic blood ritual — protection before exodus." },
+      { bookId: "exodus", chapter: 14, annotation: "The divine warrior acts: Yam Suph crossing as combat myth inversion — YHWH commands the chaos waters." },
+      { bookId: "exodus", chapter: 19, annotation: "Sinai as suzerainty treaty: the covenant-making ceremony that transforms liberated slaves into a treaty people." },
+      { bookId: "exodus", chapter: 25, annotation: "The cosmic temple: Tabernacle as Eden rebuilt — YHWH's dwelling-place in the midst of the camp." },
+      { bookId: "exodus", chapter: 32, annotation: "Covenant crisis and renewal: the golden calf shatters the treaty, and the Thirteen Attributes of Exodus 34:6-7 become the theological center of the Hebrew Bible." },
+    ],
+  },
 ];
 
 // Phase 51 — topic landing page data. All three exports follow the interface-then-constant
@@ -348,18 +389,20 @@ Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four k
       "Genesis 1 ANE background",
       "creation week framework",
     ],
-    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1"],
+    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27"],
     prose: `What did Genesis 1 communicate to its first audience — and what was it not trying to say?
 
-The question changes everything. Because the ancient audience of Genesis did not live in a world asking about natural selection or the age of the cosmos. They lived in a world saturated with creation stories: Enuma Elish from Babylon, Atrahasis from Sumer, the Memphite Theology from Egypt. Every surrounding culture had a cosmogony that justified its own gods, its own king, its own view of humanity's purpose. Genesis was written into that contest.
+The ancient audience of Genesis did not live in a world asking about natural selection or the age of the cosmos. They lived in a world saturated with creation stories: Enuma Elish from Babylon, Atrahasis from Sumer, the Memphite Theology from Egypt. Every surrounding culture had a cosmogony that justified its own gods, its own king, its own view of humanity's purpose. Genesis was written into that contest.
 
-What the original audience would have understood is that Genesis 1 is structured as a cosmic temple inauguration. In ancient Near Eastern thought, the world was built as a dwelling place for the gods, and a temple was the microcosm of the universe. The seven-day structure of Genesis 1 mirrors the dedication week of a temple: six days of preparation, followed by the seventh day when the deity takes up residence in the completed structure. The Sabbath is not a command to rest arbitrarily — it is the climactic moment when YHWH "rests" in his cosmic temple, as a king enthroned.
+What the original audience would have understood is that Genesis 1 is structured as a cosmic temple inauguration. In ancient Near Eastern thought, the world was built as a dwelling place for the gods, and a temple was the microcosm of the universe. The seven-day structure mirrors the dedication week of a temple: six days of preparation, then the deity takes up residence. The Sabbath is not a command to rest arbitrarily — it is the climactic moment when YHWH "rests" in his cosmic temple, as a king enthroned.
 
-The firmament — raqia in Hebrew — was not a misunderstanding of physics. It was the ancient cosmological architecture the text assumed: a solid dome holding back the waters above, with the earth resting on waters below. Genesis 1 does not correct this picture; it uses it to declare who made it and why it was made.
+The firmament — raqia — was not a misunderstanding of physics. It was the ancient cosmological architecture the text assumed: a solid dome holding back the waters above, the earth resting on waters below. Genesis 1 uses this picture to declare who made it and why.
 
-Here's where it gets interesting: Ezekiel 1's chariot vision employs the same cosmic architecture. The expanse above the living creatures, the throne above the expanse — this is the cosmic temple described in visual terms. When Ezekiel's exilic audience heard this, they recognized the vocabulary immediately. YHWH was not confined to Jerusalem's ruined temple. He sat enthroned above the entire cosmos.
+Here's where it gets interesting: Ezekiel 1's chariot vision employs the same cosmic architecture. The throne above the expanse, the living creatures below — YHWH enthroned above the entire cosmos, not confined to Jerusalem's ruined temple.
 
-Genesis 3's garden, Genesis 6's divine council crisis, and Genesis 11's ziggurat judgment all extend this framework. The cosmic temple was invaded, the boundaries were breached, and the nations were scattered — but the covenant with one family (Genesis 12) began the project of restoring what was lost.
+The Tabernacle of Exodus 25-27 is the cosmic temple made portable. The mishkan encodes the same three-tier cosmos: outer court as earth, holy place as heaven, holy of holies as the divine throne room. The seven-branched menorah echoes the seven days of creation. This is not forced symbolism — it is Genesis 1's architectural vocabulary rendered in acacia wood and gold, carried through the wilderness.
+
+Genesis 3, 6, and 11 extend the framework. The cosmic temple was invaded, the boundaries breached, the nations scattered — but the covenant with one family began the project of restoring what was lost.
 
 Ancient wisdom, cosmic clarity.`,
   },
@@ -460,11 +503,11 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
 
   // Genesis — Covenant cluster
   "genesis-12": ["genesis-15", "genesis-22", "genesis-28"],
-  "genesis-22": ["genesis-12", "isaiah-53", "revelation-5"],
+  "genesis-22": ["genesis-12", "isaiah-53", "exodus-12"],
   "genesis-28": ["genesis-12", "ezekiel-1"],
 
   // Genesis — Divine council / cosmos cluster
-  "genesis-1": ["genesis-2", "ezekiel-1", "genesis-11"],
+  "genesis-1": ["genesis-2", "ezekiel-1", "exodus-25"],
   "genesis-2": ["genesis-1", "genesis-3", "ezekiel-28"],
   "genesis-3": ["genesis-2", "revelation-12", "ezekiel-28"],
   "genesis-11": ["genesis-6", "daniel-2", "revelation-17"],
@@ -476,7 +519,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "daniel-1": ["daniel-2", "daniel-3", "ezekiel-2"],
   "daniel-3": ["daniel-1", "daniel-6", "ezekiel-3"],
   "daniel-4": ["daniel-5", "daniel-2", "ezekiel-28"],
-  "daniel-5": ["daniel-4", "daniel-6", "revelation-17"],
+  "daniel-5": ["daniel-4", "daniel-6", "exodus-20"],
   "daniel-6": ["daniel-3", "daniel-5", "ezekiel-3"],
 
   // Daniel — Visions cluster
@@ -504,9 +547,9 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "revelation-14": ["revelation-7", "revelation-19", "revelation-6"],
   "revelation-17": ["revelation-18", "daniel-5", "genesis-11"],
   "revelation-18": ["revelation-17", "daniel-5", "matthew-24"],
-  "revelation-19": ["revelation-20", "ezekiel-39", "daniel-7"],
+  "revelation-19": ["revelation-20", "ezekiel-39", "exodus-14"],
   "revelation-20": ["revelation-19", "ezekiel-38", "daniel-12"],
-  "revelation-21": ["revelation-22", "isaiah-65", "ezekiel-37"],
+  "revelation-21": ["revelation-22", "isaiah-65", "exodus-27"],
   "revelation-22": ["revelation-21", "isaiah-66", "daniel-12"],
 
   // Isaiah — Messianic cluster
@@ -523,14 +566,27 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "ezekiel-2": ["ezekiel-3", "ezekiel-1", "daniel-1"],
   "ezekiel-3": ["ezekiel-2", "daniel-6", "ezekiel-37"],
   "ezekiel-28": ["genesis-3", "genesis-6", "daniel-8"],
-  "ezekiel-37": ["ezekiel-38", "daniel-12", "revelation-20"],
+  "ezekiel-37": ["ezekiel-38", "daniel-12", "exodus-34"],
   "ezekiel-38": ["ezekiel-39", "revelation-20", "daniel-11"],
   "ezekiel-39": ["ezekiel-38", "revelation-19", "revelation-20"],
 
   // New chapters — Genesis 15/18 and Isaiah 1/2/6
-  "genesis-15": ["genesis-12", "genesis-22", "isaiah-53"],
+  "genesis-15": ["genesis-12", "genesis-22", "exodus-19"],
   "genesis-18": ["genesis-12", "isaiah-6", "daniel-10"],
   "isaiah-1": ["isaiah-2", "ezekiel-2", "matthew-24"],
   "isaiah-2": ["isaiah-1", "isaiah-11", "ezekiel-38"],
-  "isaiah-6": ["isaiah-1", "ezekiel-1", "revelation-4"],
+  "isaiah-6": ["isaiah-1", "ezekiel-1", "exodus-33"],
+
+  // Exodus — Liberation Arc cluster
+  "exodus-3": ["genesis-15", "isaiah-6", "exodus-12"],
+  "exodus-12": ["exodus-3", "exodus-14", "genesis-22"],
+  "exodus-14": ["exodus-12", "exodus-19", "revelation-19"],
+  "exodus-19": ["exodus-20", "exodus-14", "genesis-15"],
+  "exodus-20": ["exodus-19", "exodus-32", "daniel-5"],
+  "exodus-25": ["exodus-26", "exodus-27", "genesis-1"],
+  "exodus-26": ["exodus-25", "exodus-27", "ezekiel-1"],
+  "exodus-27": ["exodus-25", "exodus-26", "revelation-21"],
+  "exodus-32": ["exodus-33", "exodus-34", "exodus-20"],
+  "exodus-33": ["exodus-32", "exodus-34", "isaiah-6"],
+  "exodus-34": ["exodus-32", "exodus-33", "ezekiel-37"],
 };

@@ -55,6 +55,27 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       }
       return `What did Isaiah ${chapter} mean to the original audience — and how does it connect to New Testament fulfillment?`;
     }
+    if (book === "exodus") {
+      if (chapter === 3) {
+        return `What did it mean when God introduced himself as 'ehyeh asher ehyeh' at the burning bush — and why does the original Hebrew suggest a promise of presence rather than a statement about eternal self-existence?`;
+      }
+      if (chapter === 12) {
+        return `What was the Passover before it became a Christian symbol? How does the ancient Near Eastern apotropaic blood-ritual context reshape what the original audience understood about the night of deliverance?`;
+      }
+      if (chapter === 14) {
+        return `How does the divine warrior motif and ancient combat myth tradition illuminate the Sea crossing — and what does 'Yam Suph' actually refer to in the original text?`;
+      }
+      if ([19, 20].includes(chapter)) {
+        return `How does the Hittite suzerainty treaty structure frame the Sinai covenant — and what changes when we read the Decalogue as treaty stipulations rather than a universal ethics list?`;
+      }
+      if ([25, 26, 27].includes(chapter)) {
+        return `What is the cosmic temple theology behind the Tabernacle — and how do the mishkan, the kapporet, and the three-zone sacred architecture mirror the created order described in Genesis 1?`;
+      }
+      if ([32, 33, 34].includes(chapter)) {
+        return `Why are the Thirteen Attributes of Exodus 34:6-7 considered the theological center of the Hebrew Bible — and how does the golden calf crisis redefine the covenant relationship?`;
+      }
+      return `What is the historical context of ${bookTitle} ${chapter}?`;
+    }
     if (book === "ezekiel") {
       if ([1, 2, 3].includes(chapter)) {
         return `What did Ezekiel's chariot vision mean to the original exilic audience — the chayot, ophanim, and the kabod of YHWH?`;
