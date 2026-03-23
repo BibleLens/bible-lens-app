@@ -9,6 +9,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   isaiah: [1, 2, 6, 7, 9, 11, 52, 53, 65, 66],
   ezekiel: [1, 2, 3, 28, 37, 38, 39],
   exodus: [3, 12, 14, 19, 20, 25, 26, 27, 32, 33, 34],
+  zechariah: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
 };
 
 export const COMMENTARY_BOOKS = Object.keys(COMMENTARY_CHAPTERS);
@@ -150,6 +151,36 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "What does it mean to see the face of God — and why does Moses ask? Exodus 33 is one of the most theologically dense chapters in the entire Hebrew Bible. The kavod of YHWH — the divine glory/weight — is the central concept. Here's where it gets interesting: Moses, who has spoken with YHWH 'face to face, as a man speaks with his friend' (33:11), now asks for something more. He asks to see the kabod itself. YHWH's response sets up one of the great asymmetries of the text: the face cannot be seen, but the back can. What the original audience would have understood is that this is not physics — it is a meditation on divine hiddenness and partial revelation, and it establishes the theological foundation for what follows in Exodus 34.",
   "exodus-34":
     "The Thirteen Attributes of Exodus 34:6-7 are the most theologically significant verses in the Torah — and possibly in the entire Hebrew Bible. After the covenant crisis of the golden calf, YHWH passes before Moses and proclaims his own name: 'YHWH, YHWH, a God merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness...' Here's where it gets interesting: this self-declaration becomes the foundation for every subsequent appeal to divine mercy in the Hebrew Bible. The prophets cite it, the Psalms echo it, the post-exilic community recites it. What the original audience would have understood is that the covenant renewal of Exodus 34 does not just restore the broken Sinai treaty — it redefines the terms on which YHWH relates to a covenant-breaking people.",
+
+  // Zechariah — 5 commentary clusters, 14 chapters
+  "zechariah-1":
+    "It is February 519 BCE, the second year of Darius I, and a young priest-prophet named Zechariah receives eight visions in a single night. The first vision opens with colored horses patrolling the earth on YHWH's behalf — Persian-period divine surveillance imagery drawn from Mesopotamian messenger traditions, not a preview of Revelation 6. The patrol reports that the earth is 'at rest,' and YHWH is distressed, not satisfied — the nations' peace has come at Judah's expense. Here's where it gets interesting: the vision's core claim is that YHWH is still governing, even in a world that looks settled under Persian control. The colored horses represent the four winds in ANE cosmological framing. They are not the four horsemen of Revelation, who appear 600 years later, by a different author, for a different audience. What the original audience would have understood is reassurance: divine agents are surveying the world, and YHWH's verdict is that Judah's suffering has not gone unnoticed.",
+  "zechariah-2":
+    "The third of Zechariah's night visions shows a man with a measuring line walking toward Jerusalem to map its dimensions. An angel intercepts him with a counter-message: stop measuring. Jerusalem will be inhabited as a city without walls — not because it is vulnerable, but because the multitude of people and animals will overflow any boundary, and YHWH himself will be 'a wall of fire around her and the glory in her midst.' Through this lens, the vision reframes the entire post-exilic rebuilding project. The returning community is laying foundations, measuring streets, planning defensible perimeters — standard Persian-period urban reconstruction. But the prophetic word says the future exceeds current measurement. The unwalled city is a sign of divine protection and expected expansion, not a defensive failure. What the original audience would have understood is that YHWH's presence replaces what stone walls cannot guarantee.",
+  "zechariah-3":
+    "In the fourth night vision, the high priest Joshua stands before the divine council in filthy garments while ha-satan — the accuser, with the Hebrew definite article — brings charges against him. This is not a cosmic adversary in the later theological sense. The definite article matters: ha-satan is 'the accuser,' a prosecuting attorney role within the divine court, the same function visible in Job 1-2. YHWH rebukes the accuser, strips Joshua of the filthy garments (representing the community's guilt and exile-contamination), and reclothes him in clean priestly vestments with the turban (tsanif). Then comes the Branch oracle: 'I am going to bring my servant the Branch (tzemach)' — a term built from the Hebrew root tsadi-mem-chet, distinct from Isaiah 11:1's netzer (nun-tsade-resh). The primary referent is Zerubbabel, the Davidic governor, with Jeremiah 23:5 as the primary cross-reference. Here's where it gets interesting: the vision simultaneously restores the priesthood and announces the royal counterpart.",
+  "zechariah-4":
+    "At the structural heart of the eight night visions stands a golden lampstand (menorah) with seven lamps and two olive trees flanking it. The interpreting angel identifies the two olive trees as 'the two bnei-yitzhar — sons of fresh oil — who stand beside the Lord of the whole earth.' This Zechariah-specific term describes Zerubbabel and Joshua: the Davidic governor and the Zadokite high priest, the dual leadership of post-exilic Yehud. The seven lamps are 'the eyes of YHWH, which range through the whole earth' — omniscient divine oversight of the restoration. Embedded in this vision is the oracle to Zerubbabel: 'Not by might, nor by power, but by my Spirit.' The great mountain — the combination of opposition, scarcity, and discouragement stalling the temple project — will become a plain before him. What the original audience would have understood is divine authorization of their two leaders and their rebuilding program, conveyed through sacred-furniture imagery they recognized from the tabernacle tradition.",
+  "zechariah-5":
+    "A flying scroll (megillah) sails through the air, twenty cubits by ten — the exact dimensions of Solomon's Temple vestibule. This is not an accident. The scroll is a temple-cleansing image: covenant law administered from the sacred center, going out across the land. One side curses thieves, the other curses perjurers — two violations of covenant treaty stipulations, echoing the curse sanctions found in Hittite and Neo-Assyrian suzerainty treaties. The scroll enters the houses of violators and consumes them. Then a second vision appears: a woman named Wickedness (rishah) sealed in an ephah-measure and carried by two winged women to Shinar (Babylon), where a house is built for her. Through this lens, the visions form a purification pair — covenant enforcement within the land and moral contamination physically removed from it. What the original audience would have understood is accountability: the rebuilt temple will be a center of covenant justice, not a blank slate.",
+  "zechariah-6":
+    "Four chariots emerge from between two mountains of bronze — YHWH's war vehicles dispatched to the four winds. Then the night visions end and a daylight oracle arrives: take silver and gold, make a crown (atarah), and set it on the head of Joshua the high priest. But the oracle calls the crowned figure tzemach — the same Branch title given to Zerubbabel in Zechariah 3:8. Here's where it gets interesting: the crown oracle merges priestly and royal identity in a single symbolic act. The atarah is distinct from the Greek stephanos (victory wreath) and diadema (royal band) — it is a uniquely Hebrew priestly-royal crown. The tzemach who will 'build the temple of YHWH and bear royal honor and sit and rule on his throne' is described in language that blends the roles of Zerubbabel and Joshua into a single anticipated figure. What the original audience would have understood is a vision of governance where priestly holiness and royal authority converge — a dual-leadership ideal crystallized in one prophetic image.",
+  "zechariah-7":
+    "It is December 518 BCE, and a delegation from Bethel arrives in Jerusalem with a question that sounds simple but carries seventy years of grief: 'Should we continue weeping and fasting in the fifth month, as we have done for so many years?' The fifth-month fast commemorated the destruction of Solomon's Temple in 586 BCE. YHWH's answer is not what they expected. Instead of a procedural ruling, Zechariah delivers a devastating counter-question: 'When you fasted for these seventy years, was it for me that you fasted?' This places Zechariah squarely in the prophetic cult-critique tradition — the same line that runs from Amos 5 ('I hate, I despise your feasts') through Micah 6 ('What does YHWH require?') through Isaiah 1 ('I cannot endure iniquity and solemn assembly') through Jeremiah 7 ('Do not trust in deceptive words'). What YHWH demands is not fasting but mishpat (justice) and hesed (covenant loyalty) — 'render true judgments, show kindness and mercy to one another' (7:9). The cult-critique is sharp: empty ritual without covenant behavior is self-serving performance.",
+  "zechariah-8":
+    "After the sharp rebuke of chapter 7, Zechariah 8 pivots to one of the most stunning reversal-promises in the prophetic tradition. The four mourning fasts — fourth, fifth, seventh, and tenth months, each marking a stage of Jerusalem's destruction — 'shall become seasons of joy and gladness and cheerful feasts' (8:19). Old men and women will again sit in Jerusalem's streets, and children will play in its squares. Nations will come streaming to Jerusalem, grasping the garment of a Judean and saying, 'Let us go with you, for we have heard that God is with you.' Through this lens, Zech 8 is eschatological restoration at its most concrete and beautiful — not abstract theology but aged couples resting safely, children playing freely, nations drawn to a renewed city. What the original audience would have understood is a promise that exceeds anything the post-exilic community could build by itself. This is not Second Temple realization — it is future Millennial language, a vision of wholeness (shalom) that the prophetic tradition consistently places in the age to come.",
+  "zechariah-9":
+    "Open Zechariah 9 and you encounter a war dispatch. An oracle traces a route: Hadrach, Damascus, Hamath, then south through Tyre, Sidon, and the Philistine plain — Ashkelon, Gaza, Ekron, Ashdod. It reads like a military communique, and there is a reason: Alexander the Great's 332 BCE campaign through the Levant followed the identical route. Then the tone shifts. Into the silence after conquest, a different kind of king appears: 'righteous and having salvation, humble (ani) and mounted on a donkey.' In the ancient Near East, the mount told you the intent — a warhorse meant conquest, a donkey meant peace. The ani/anav descriptor identifies the king with the afflicted, not the powerful. Here's where it gets interesting: in the same historical moment when Alexander demonstrates that horseback conquest reshapes the world, this oracle envisions a king who arrives without a horse, whose rule extends 'from sea to sea' through disarmament, not force. Matthew 21:5 applies this imagery to Jesus's Jerusalem entry — a significant act of reception history. But for the original audience, the verse's primary weight is post-conquest political hope: a peaceful Davidic king who undoes what the war machine has done.",
+  "zechariah-10":
+    "Following the peaceful-king oracle, Zechariah 10 expands the restoration vision. YHWH himself will be the true shepherd of the scattered flock, gathering the houses of Judah and Ephraim from exile among the nations. The teraphim (household idols) and diviners have given empty comfort — but YHWH will 'whistle for them and gather them in, for I have redeemed them.' The military imagery reverses: 'From him shall come the cornerstone, from him the tent peg, from him the battle bow' — not weapons of imperial oppression but instruments of covenant governance. What the original audience would have understood is the counterpoint to chapters 1-8: where the night visions addressed the community already in the land, chapter 10 addresses the scattered remnant still in exile. The promise of ingathering is not yet fulfilled in the post-exilic period. It stands as eschatological hope, continuous with the restoration trajectory of Zech 8.",
+  "zechariah-11":
+    "One of the most unsettling passages in the Hebrew Bible. Zechariah enacts a parable: he becomes the shepherd of 'the flock doomed to slaughter,' carrying two staffs — No'am (Favor, representing YHWH's covenant loyalty) and Chovelim (Union, representing the brotherhood of Judah and Israel). The shepherd allegory uses ANE royal-pastoral governance imagery: Hammurabi's law code opens with his self-description as 'shepherd of the people,' and Ezekiel 34 denounces failed shepherds at length. When the flock's merchants reject the shepherd, he breaks the first staff — the covenant is annulled. His wages are assessed at thirty silver pieces (kesef), the price of a slave gored by an ox in Exodus 21:32 — a contemptibly low valuation. YHWH instructs: 'Throw it to the potter (ha-yotzer).' Then the second staff is broken — national unity dissolved. Matthew 27:9-10 attributes this passage to Jeremiah, not Zechariah. R.T. France (NICNT Matthew) identifies this as anthological citation: Matthew is weaving together Zechariah 11:12-13 with Jeremiah 18-19 (the potter, ha-yotzer), using Jeremiah as the heading because the potter imagery belongs to his tradition.",
+  "zechariah-12":
+    "One of the most extraordinary and contested verses in the Hebrew Bible appears here: 'They shall look on me, on him whom they have pierced (daqar), and they shall mourn for him as one mourns for an only child (yachid).' Before anything else, the mourning context must be understood. Verse 11 compares the grief to 'the mourning of Hadad Rimmon in the plain of Megiddo' — a Northwest Semitic penitential mourning tradition of maximum cosmic significance, possibly also evoking the historical grief for King Josiah's death at Megiddo. The Hebrew daqar means literal physical piercing (Num 25:8, Judg 9:54, 1 Sam 31:4). The Masoretic Text reads elai — 'on me' — in the first person, while the Septuagint renders the pronoun in the third person. Boda (NICOT) and Meyers-Meyers (Anchor Bible) treat the MT as the earlier, more difficult reading (lectio difficilior). The question of whether YHWH is speaking of himself as the pierced figure remains one of the most debated interpretive questions in Hebrew Bible scholarship. John 19:37 applies this passage to the crucifixion as NT reception history.",
+  "zechariah-13":
+    "A fountain (maqor) opens for the house of David and the inhabitants of Jerusalem 'to cleanse them from sin and uncleanness.' The Hebrew maqor connects to Levitical purification imagery — mayim chayyim (living water) used in the rituals of Numbers 19:17 and Leviticus 15:13. This is not metaphorical decoration; it is priestly vocabulary applied to communal purification on a national scale. Through this lens, the fountain of Zech 13:1 is the ritual-purification answer to the mourning of Zech 12:10-14 — the grief over the pierced one leads directly to cleansing. Then a sharp turn: 'Strike the shepherd, and the sheep will be scattered' (13:7). The shepherd motif from chapters 9-11 returns in its darkest form. Two-thirds will be cut off, one-third refined through fire. What the original audience would have understood is a purification theology that moves from mourning through cleansing through suffering — the mayim chayyim of 13:1 connecting forward to the living waters of 14:8.",
+  "zechariah-14":
+    "The Day of the LORD arrives in full force. 'Behold, a day is coming for YHWH when the spoil taken from you will be divided in your midst. For I will gather all the nations against Jerusalem to battle' (14:1-2). The military imagery is severe: the city captured, houses plundered, half the population going into exile. Then YHWH's feet stand on the Mount of Olives, which splits east-west, and 'living waters (mayim chayyim) shall flow out from Jerusalem, half to the eastern sea and half to the western sea' (14:8). The partial preterist reading is important here: the siege imagery of 14:1-5 has its primary historical referent in the 70 CE Roman siege. But YHWH's universal reign — 'YHWH will be king over all the earth; on that day YHWH will be one and his name one' (14:9) — and the Sukkot pilgrimage of the nations (14:16-19) are future eschatological language, consistent with the Millennial framework. What the original audience would have understood is that not all of Zechariah 14 collapses into a single historical moment. The Day of the LORD contains both judgment accomplished and reign anticipated.",
 };
 
 // Truncates description text to a word limit for card teasers.
@@ -172,7 +203,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 29 + 19 + 18 + 5 = 71 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 41 + 19 + 20 + 9 = 89 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -187,6 +218,8 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "ezekiel-38", "ezekiel-39",
       "isaiah-65", "isaiah-66",
       "isaiah-1", "isaiah-2",
+      "zechariah-1", "zechariah-2", "zechariah-3", "zechariah-4", "zechariah-5", "zechariah-6",
+      "zechariah-9", "zechariah-10", "zechariah-11", "zechariah-12", "zechariah-13", "zechariah-14",
     ],
   },
   {
@@ -210,6 +243,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "daniel-5", "daniel-6",
       "ezekiel-2", "ezekiel-3", "ezekiel-37",
       "exodus-3", "exodus-12", "exodus-14", "exodus-19", "exodus-20", "exodus-32", "exodus-33", "exodus-34",
+      "zechariah-7", "zechariah-8",
     ],
   },
   {
@@ -218,6 +252,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
     description: "Servant songs, throne names, and the branch of Jesse.",
     chapterKeys: [
       "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-52", "isaiah-53",
+      "zechariah-3", "zechariah-6", "zechariah-9", "zechariah-11",
     ],
   },
 ];
@@ -310,6 +345,19 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "exodus", chapter: 19, annotation: "Sinai as suzerainty treaty: the covenant-making ceremony that transforms liberated slaves into a treaty people." },
       { bookId: "exodus", chapter: 25, annotation: "The cosmic temple: Tabernacle as Eden rebuilt — YHWH's dwelling-place in the midst of the camp." },
       { bookId: "exodus", chapter: 32, annotation: "Covenant crisis and renewal: the golden calf shatters the treaty, and the Thirteen Attributes of Exodus 34:6-7 become the theological center of the Hebrew Bible." },
+    ],
+  },
+  {
+    id: "prophetic-arc",
+    title: "Prophetic Arc",
+    throughLine:
+      "From Persian-period restoration visions through dual leadership, covenant demands, royal hope, and final purification — Zechariah traces a single arc across all 14 chapters: YHWH is still governing, even in the shadow of empire. What the original audience would have understood is that every cluster answers the same underlying question: is YHWH still present and active in a post-exilic world governed by Persia? The night visions say yes through reassurance, the fasting oracles say yes through covenant demand, and the final chapters say yes through eschatological promise.",
+    steps: [
+      { bookId: "zechariah", chapter: 1, annotation: "Patrol vision: YHWH's agents surveying the Persian world — reassurance that he is still governing." },
+      { bookId: "zechariah", chapter: 4, annotation: "Lampstand and olive trees: dual leadership of Zerubbabel and Joshua — 'not by might, not by power, but by my Spirit.'" },
+      { bookId: "zechariah", chapter: 7, annotation: "Fasting oracle: justice and mercy over empty ritual — the prophetic cult-critique tradition at its sharpest." },
+      { bookId: "zechariah", chapter: 9, annotation: "The peaceful king: ANE donkey-vs-warhorse contrast — the oracle that anticipates a ruler through peace, not force." },
+      { bookId: "zechariah", chapter: 12, annotation: "The pierced one: Hadad Rimmon mourning, MT/LXX variant, and communal grief opening into fountain and universal reign." },
     ],
   },
 ];
@@ -417,7 +465,7 @@ Ancient wisdom, cosmic clarity.`,
       "Olivet Discourse preterist interpretation",
       "when were these things fulfilled Matthew 24",
     ],
-    chapterKeys: ["matthew-24", "daniel-9", "daniel-7", "revelation-6"],
+    chapterKeys: ["matthew-24", "daniel-9", "daniel-7", "revelation-6", "zechariah-14"],
     prose: `Jesus began the Olivet Discourse in response to a specific question from specific people. The disciples pointed to the temple stones. Jesus said not one stone would be left on another. They asked, in effect: when? What will be the sign?
 
 The partial preterist reading takes that question at face value. The disciples were not asking about a distant apocalypse two thousand years away. They were asking about the temple they could see from where they were sitting on the Mount of Olives. And Jesus answered them.
@@ -427,6 +475,8 @@ Here's where it gets interesting: Matthew 24:34 is one of the most discussed ver
 What the original audience would have understood is that Daniel's framework structures Jesus's response. Daniel 9's seventy weeks prophesied a coming desolation — "an abomination that causes desolation" — and Jesus invoked that language directly. The abomination Daniel foresaw in the context of Antiochus IV had a second iteration: the Roman armies surrounding and then defiling Jerusalem. "When you see Jerusalem surrounded by armies, know that its desolation has come near" (Luke 21:20).
 
 Through this lens, the cosmic language of Matthew 24:29-30 — sun darkened, stars falling, son of man coming on clouds — is not literal astronomy. It is the prophetic convention the Hebrew prophets used to describe the fall of earthly powers. Isaiah 13 uses identical language to describe Babylon's fall. Ezekiel uses it for Egypt. Jesus is using the same stock vocabulary to describe Rome's judgment on Jerusalem.
+
+Zechariah 14 provides the OT Day of the LORD narrative that the Olivet Discourse echoes — Jerusalem besieged, nations gathered, YHWH intervening on the Mount of Olives — the same geography Jesus stands on when his disciples ask "when will these things be?"
 
 Revelation 6's four horsemen follow the same covenant curse sequence: conquest, war, famine, death — Leviticus 26 enacted in history.
 
@@ -469,7 +519,7 @@ This is a reading that takes the text's historical context seriously before reac
       "Gog Magog geography ancient",
       "Revelation 20 Gog Magog",
     ],
-    chapterKeys: ["ezekiel-38", "ezekiel-39", "revelation-20", "daniel-11"],
+    chapterKeys: ["ezekiel-38", "ezekiel-39", "revelation-20", "daniel-11", "zechariah-14"],
     prose: `The identification of Gog has generated more confident speculation than almost any passage in prophetic literature — and most of that speculation has been wrong.
 
 The text itself is the place to start. Ezekiel 38's "Gog of the land of Magog, chief prince of Meshech and Tubal" is not pointing toward Russia or a modern nation-state. The Table of Nations in Genesis 10 places Magog, Meshech, Tubal, and Gomer in ancient Anatolia — the geographic region we now call Turkey. Togarmah, also named, is associated in ANE sources with the Hittite heartland. These were the peoples at the outer northern horizon of the ancient Israelite world, the far peoples beyond the known map.
@@ -479,6 +529,8 @@ Here's where it gets interesting: Ezekiel deliberately evokes an enemy from "the
 What the original audience would have understood is that Gog's defeat is a demonstration of YHWH's sovereignty over all nations — even those the exiles had never encountered. The prophecy was not a news report filed in advance about 21st century geopolitics. It was a theological statement about the scope of divine authority after the exile, addressed to a community wondering whether YHWH could still act in history.
 
 Through this lens, Revelation 20:8 is significant precisely because it names Gog and Magog as a future event, placed explicitly after the thousand years. John is not re-running Ezekiel 38-39 as a past event that occurred in the first century. He is reserving Ezekiel's ultimate "nations gathered against God's people" scenario for an end-of-millennium judgment. The birds-feasting aftermath in Ezekiel 39:17-20 is quoted verbatim by Revelation 19:17-21 — connecting Ezekiel's aftermath to Revelation's final battle sequence.
+
+Zechariah 14 adds a third node to this eschatological frame — the Day of the LORD with nations gathered against Jerusalem, living waters flowing out, and Sukkot pilgrimage under YHWH's universal reign.
 
 Daniel 11's detailed Seleucid history provides the near-term backdrop: the pattern of northern aggression against God's people reaches a final, cosmic iteration in Gog's campaign.`,
   },
@@ -529,13 +581,13 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "daniel-9": ["daniel-7", "matthew-24", "revelation-1"],
   "daniel-10": ["daniel-9", "daniel-11", "revelation-12"],
   "daniel-11": ["daniel-10", "daniel-12", "revelation-6"],
-  "daniel-12": ["daniel-7", "revelation-20", "ezekiel-37"],
+  "daniel-12": ["daniel-7", "revelation-20", "zechariah-12"],
 
   // Matthew
-  "matthew-24": ["daniel-9", "revelation-6", "daniel-7"],
+  "matthew-24": ["daniel-9", "revelation-6", "zechariah-14"],
 
   // Revelation
-  "revelation-1": ["daniel-7", "matthew-24", "revelation-22"],
+  "revelation-1": ["daniel-7", "matthew-24", "zechariah-12"],
   "revelation-2": ["revelation-3", "revelation-1", "daniel-1"],
   "revelation-3": ["revelation-2", "revelation-1", "daniel-6"],
   "revelation-4": ["isaiah-6", "ezekiel-1", "revelation-5"],
@@ -548,14 +600,14 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "revelation-17": ["revelation-18", "daniel-5", "genesis-11"],
   "revelation-18": ["revelation-17", "daniel-5", "matthew-24"],
   "revelation-19": ["revelation-20", "ezekiel-39", "exodus-14"],
-  "revelation-20": ["revelation-19", "ezekiel-38", "daniel-12"],
-  "revelation-21": ["revelation-22", "isaiah-65", "exodus-27"],
+  "revelation-20": ["revelation-19", "ezekiel-38", "zechariah-14"],
+  "revelation-21": ["revelation-22", "isaiah-65", "zechariah-8"],
   "revelation-22": ["revelation-21", "isaiah-66", "daniel-12"],
 
   // Isaiah — Messianic cluster
   "isaiah-7": ["isaiah-9", "isaiah-11", "matthew-24"],
-  "isaiah-9": ["isaiah-7", "isaiah-6", "isaiah-11"],
-  "isaiah-11": ["isaiah-9", "isaiah-65", "revelation-20"],
+  "isaiah-9": ["isaiah-7", "zechariah-9", "isaiah-11"],
+  "isaiah-11": ["isaiah-9", "isaiah-65", "zechariah-3"],
   "isaiah-52": ["isaiah-53", "daniel-9", "revelation-5"],
   "isaiah-53": ["isaiah-52", "genesis-22", "daniel-9"],
   "isaiah-65": ["isaiah-66", "revelation-21", "ezekiel-37"],
@@ -567,7 +619,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "ezekiel-3": ["ezekiel-2", "daniel-6", "ezekiel-37"],
   "ezekiel-28": ["genesis-3", "genesis-6", "daniel-8"],
   "ezekiel-37": ["ezekiel-38", "daniel-12", "exodus-34"],
-  "ezekiel-38": ["ezekiel-39", "revelation-20", "daniel-11"],
+  "ezekiel-38": ["ezekiel-39", "revelation-20", "zechariah-14"],
   "ezekiel-39": ["ezekiel-38", "revelation-19", "revelation-20"],
 
   // New chapters — Genesis 15/18 and Isaiah 1/2/6
@@ -589,4 +641,20 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "exodus-32": ["exodus-33", "exodus-34", "exodus-20"],
   "exodus-33": ["exodus-32", "exodus-34", "isaiah-6"],
   "exodus-34": ["exodus-32", "exodus-33", "ezekiel-37"],
+
+  // Zechariah — 5 commentary clusters, 14 chapters
+  "zechariah-1": ["ezekiel-1", "daniel-10", "revelation-6"],
+  "zechariah-2": ["zechariah-1", "ezekiel-38", "revelation-21"],
+  "zechariah-3": ["zechariah-6", "isaiah-11", "daniel-9"],
+  "zechariah-4": ["zechariah-5", "zechariah-6", "revelation-1"],
+  "zechariah-5": ["zechariah-4", "zechariah-6", "revelation-17"],
+  "zechariah-6": ["zechariah-3", "zechariah-4", "isaiah-11"],
+  "zechariah-7": ["zechariah-8", "isaiah-1", "isaiah-2"],
+  "zechariah-8": ["zechariah-7", "isaiah-65", "revelation-21"],
+  "zechariah-9": ["zechariah-3", "isaiah-9", "matthew-24"],
+  "zechariah-10": ["zechariah-9", "zechariah-11", "isaiah-11"],
+  "zechariah-11": ["zechariah-9", "zechariah-10", "isaiah-53"],
+  "zechariah-12": ["zechariah-13", "revelation-1", "daniel-12"],
+  "zechariah-13": ["zechariah-12", "zechariah-14", "ezekiel-37"],
+  "zechariah-14": ["zechariah-13", "revelation-20", "ezekiel-38"],
 };

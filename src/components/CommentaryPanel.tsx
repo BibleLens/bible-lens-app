@@ -76,6 +76,24 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       }
       return `What is the historical context of ${bookTitle} ${chapter}?`;
     }
+    if (book === "zechariah") {
+      if ([1, 2, 3].includes(chapter)) {
+        return `What were Zechariah's night visions actually about — and why does the historical context of 519 BCE Persian-period Yehud change how we read the colored horses, the divine court trial, and the Branch oracle?`;
+      }
+      if ([4, 5, 6].includes(chapter)) {
+        return `What do the lampstand, the flying scroll, and the crown oracle reveal about the dual leadership of post-exilic Yehud — and why is the bnei-yitzhar designation for Zerubbabel and Joshua significant?`;
+      }
+      if ([7, 8].includes(chapter)) {
+        return `How does Zechariah's response to the Bethel fasting delegation connect to the prophetic cult-critique tradition from Amos through Jeremiah — and what is the eschatological significance of fasts becoming feasts?`;
+      }
+      if ([9, 10, 11].includes(chapter)) {
+        return `What did the ancient Near Eastern donkey-vs-warhorse contrast communicate about the peaceful king of Zechariah 9 — and how does the shepherd allegory with its thirty silver pieces connect to Matthew 27:9?`;
+      }
+      if ([12, 13, 14].includes(chapter)) {
+        return `What is the Hadad Rimmon mourning context behind the pierced one of Zechariah 12:10, what does the MT/LXX textual variant reveal, and how does the Day of the LORD in chapter 14 relate to both 70 CE and eschatological hope?`;
+      }
+      return `What is the historical context of ${bookTitle} ${chapter}?`;
+    }
     if (book === "ezekiel") {
       if ([1, 2, 3].includes(chapter)) {
         return `What did Ezekiel's chariot vision mean to the original exilic audience — the chayot, ophanim, and the kabod of YHWH?`;
