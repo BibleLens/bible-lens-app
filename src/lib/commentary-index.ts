@@ -10,6 +10,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   ezekiel: [1, 2, 3, 28, 37, 38, 39],
   exodus: [3, 12, 14, 19, 20, 25, 26, 27, 32, 33, 34],
   zechariah: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+  psalms: [2, 8, 22, 23, 45, 51, 82, 89, 110, 139],
 };
 
 export const COMMENTARY_BOOKS = Object.keys(COMMENTARY_CHAPTERS);
@@ -181,6 +182,28 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "A fountain (maqor) opens for the house of David and the inhabitants of Jerusalem 'to cleanse them from sin and uncleanness.' The Hebrew maqor connects to Levitical purification imagery — mayim chayyim (living water) used in the rituals of Numbers 19:17 and Leviticus 15:13. This is not metaphorical decoration; it is priestly vocabulary applied to communal purification on a national scale. Through this lens, the fountain of Zech 13:1 is the ritual-purification answer to the mourning of Zech 12:10-14 — the grief over the pierced one leads directly to cleansing. Then a sharp turn: 'Strike the shepherd, and the sheep will be scattered' (13:7). The shepherd motif from chapters 9-11 returns in its darkest form. Two-thirds will be cut off, one-third refined through fire. What the original audience would have understood is a purification theology that moves from mourning through cleansing through suffering — the mayim chayyim of 13:1 connecting forward to the living waters of 14:8.",
   "zechariah-14":
     "The Day of the LORD arrives in full force. 'Behold, a day is coming for YHWH when the spoil taken from you will be divided in your midst. For I will gather all the nations against Jerusalem to battle' (14:1-2). The military imagery is severe: the city captured, houses plundered, half the population going into exile. Then YHWH's feet stand on the Mount of Olives, which splits east-west, and 'living waters (mayim chayyim) shall flow out from Jerusalem, half to the eastern sea and half to the western sea' (14:8). The partial preterist reading is important here: the siege imagery of 14:1-5 has its primary historical referent in the 70 CE Roman siege. But YHWH's universal reign — 'YHWH will be king over all the earth; on that day YHWH will be one and his name one' (14:9) — and the Sukkot pilgrimage of the nations (14:16-19) are future eschatological language, consistent with the Millennial framework. What the original audience would have understood is that not all of Zechariah 14 collapses into a single historical moment. The Day of the LORD contains both judgment accomplished and reign anticipated.",
+
+  // Psalms — 10 commentary chapters
+  "psalms-2":
+    "What did 'You are my son; today I have begotten you' mean in the ancient Near East? Explore the ANE coronation adoption formula -- a performative declaration of royal status, not a statement about ontological origins.",
+  "psalms-8":
+    "What does ben enosh -- 'son of man' as mortal human -- reveal about Psalm 8's vision of humanity? This creation praise psalm situates human dignity within the cosmic temple, with Hebrews 2 as later reception history.",
+  "psalms-22":
+    "Why does Psalm 22 open with 'My God, my God, why have you forsaken me?' The individual lament structure -- complaint, petition, vow of praise -- shapes every line. The NT quotations are typological reception, not the psalm's original purpose.",
+  "psalms-23":
+    "What did the shepherd metaphor communicate in the ancient Near East? Shepherd-king royal ideology, tsalmaveth as 'deep darkness' rather than 'shadow of death,' and the dramatic voice-shift at verse 4 that changes everything.",
+  "psalms-45":
+    "Is Psalm 45:6 addressing the king as God? The Hebrew grammar allows both the vocative reading ('Your throne, O God') and the Harris predicate analysis ('Your throne is God-like'). Here's where it gets interesting: both readings coexist in the original.",
+  "psalms-51":
+    "What does ruach mean in Psalm 51 -- and why does it matter? The penitential psalm's three uses of ruach point to divine presence and animating breath, consistent with Psalm 139, rooted in the Thirteen Attributes tradition.",
+  "psalms-82":
+    "Who are the elohim being judged in Psalm 82? The heavenly court scene -- not human judges -- where YHWH's council members face condemnation. The word ke-adam ('like mortals') proves the beings addressed are non-human.",
+  "psalms-89":
+    "Why does the Psalter's most confident covenant promise end in theological crisis? Psalm 89 moves from Ugaritic Rahab combat imagery and Hittite treaty form to an unresolved lament -- the covenant's hardest question left open.",
+  "psalms-110":
+    "What does adoni -- a human honorific used 335 times in the Hebrew Bible, never for God -- reveal about the most-cited Old Testament verse in the New Testament? The ANE royal enthronement oracle, Melchizedek, and why NT citations are reception history.",
+  "psalms-139":
+    "What does 'you knit me together in my mother's womb' communicate about divine knowledge? Psalm 139's ruach vocabulary -- consistent with Psalm 51 -- frames creation in the womb as intimate relational knowledge, not surveillance.",
 };
 
 // Truncates description text to a word limit for card teasers.
@@ -203,7 +226,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 41 + 19 + 20 + 9 = 89 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 41 + 22 + 23 + 13 = 99 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -232,6 +255,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "daniel-1", "daniel-2", "daniel-3", "daniel-4",
       "genesis-18", "isaiah-6",
       "exodus-25", "exodus-26", "exodus-27",
+      "psalms-8", "psalms-82", "psalms-139",
     ],
   },
   {
@@ -244,6 +268,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "ezekiel-2", "ezekiel-3", "ezekiel-37",
       "exodus-3", "exodus-12", "exodus-14", "exodus-19", "exodus-20", "exodus-32", "exodus-33", "exodus-34",
       "zechariah-7", "zechariah-8",
+      "psalms-23", "psalms-51", "psalms-89",
     ],
   },
   {
@@ -253,6 +278,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
     chapterKeys: [
       "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-52", "isaiah-53",
       "zechariah-3", "zechariah-6", "zechariah-9", "zechariah-11",
+      "psalms-2", "psalms-22", "psalms-45", "psalms-110",
     ],
   },
 ];
@@ -360,6 +386,20 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "zechariah", chapter: 12, annotation: "The pierced one: Hadad Rimmon mourning, MT/LXX variant, and communal grief opening into fountain and universal reign." },
     ],
   },
+  {
+    id: "psalmic-arc",
+    title: "Psalmic Arc",
+    throughLine:
+      "From royal coronation through individual lament, divine judgment, covenant crisis, enthronement oracle, and penitential restoration -- the Psalter traces a theological heartbeat that Israel kept returning to. What the original audience would have understood is that these psalms were never isolated poems; they formed a liturgical arc from commission to failure to lament to renewal, revealing that Israel's relationship with YHWH was a repeated pattern of enthronement and penitence, not a smooth ascent.",
+    steps: [
+      { bookId: "psalms", chapter: 2, annotation: "The ANE coronation adoption formula: YHWH installs the Davidic king as royal son -- 'today I have begotten you' as performative declaration." },
+      { bookId: "psalms", chapter: 22, annotation: "Individual lament structure: complaint, petition, vow of praise -- the psalm Jesus quotes from the cross, but the genre logic comes first." },
+      { bookId: "psalms", chapter: 82, annotation: "The heavenly court: YHWH rises to judge the elohim of his own council -- ke-adam proves they are non-human beings." },
+      { bookId: "psalms", chapter: 89, annotation: "Covenant lament: the Psalter's most confident promises crash into theological crisis -- the Davidic covenant's hardest question left unresolved." },
+      { bookId: "psalms", chapter: 110, annotation: "The royal enthronement oracle: adoni as human honorific, Melchizedek typology, the most-cited OT verse in the NT -- all as reception history." },
+      { bookId: "psalms", chapter: 51, annotation: "Penitential restoration: ruach as divine presence and animating breath -- the covenant cycle's answer to failure, rooted in the Thirteen Attributes." },
+    ],
+  },
 ];
 
 // Phase 51 — topic landing page data. All three exports follow the interface-then-constant
@@ -387,7 +427,7 @@ export const TOPIC_PAGES: TopicPage[] = [
       "son of man christology",
       "Daniel 7 first century interpretation",
     ],
-    chapterKeys: ["daniel-7", "daniel-2", "matthew-24", "revelation-1", "revelation-5"],
+    chapterKeys: ["daniel-7", "daniel-2", "matthew-24", "revelation-1", "revelation-5", "psalms-2", "psalms-110"],
     prose: `The question that unlocks Daniel 7 is deceptively simple: which direction does the son of man travel?
 
 Read the verse carefully. In Daniel 7:13, the one like a son of man comes "with the clouds of heaven" and approaches the Ancient of Days — moving toward the throne, not away from it. He is being escorted upward into the divine courtroom to receive dominion, glory, and kingdom. The direction of travel is an ascent, not a descent to earth.
@@ -400,7 +440,7 @@ Through this lens, Revelation 5 becomes unmistakable. John weeps because no one 
 
 This is a minority reading in popular Christianity but the majority reading among scholars who work with Second Temple literature. The distinction matters because it changes everything downstream: what "coming with clouds" means in Mark 14:62, what Pentecost announces, and what the early church meant when they said Jesus was exalted to the right hand of the Father.
 
-Ancient wisdom doesn't always travel in straight lines. Sometimes it ascends.`,
+Psalms 2 and 110 are the Psalter's two coronation bookends -- the same enthronement vocabulary, the same upward trajectory, the same throne-room audience with the Ancient of Days. Ancient wisdom doesn't always travel in straight lines. Sometimes it ascends.`,
   },
   {
     slug: "revelation-666-beast",
@@ -437,7 +477,7 @@ Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four k
       "Genesis 1 ANE background",
       "creation week framework",
     ],
-    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27"],
+    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27", "psalms-8", "psalms-82"],
     prose: `What did Genesis 1 communicate to its first audience — and what was it not trying to say?
 
 The ancient audience of Genesis did not live in a world asking about natural selection or the age of the cosmos. They lived in a world saturated with creation stories: Enuma Elish from Babylon, Atrahasis from Sumer, the Memphite Theology from Egypt. Every surrounding culture had a cosmogony that justified its own gods, its own king, its own view of humanity's purpose. Genesis was written into that contest.
@@ -451,6 +491,8 @@ Here's where it gets interesting: Ezekiel 1's chariot vision employs the same co
 The Tabernacle of Exodus 25-27 is the cosmic temple made portable. The mishkan encodes the same three-tier cosmos: outer court as earth, holy place as heaven, holy of holies as the divine throne room. The seven-branched menorah echoes the seven days of creation. This is not forced symbolism — it is Genesis 1's architectural vocabulary rendered in acacia wood and gold, carried through the wilderness.
 
 Genesis 3, 6, and 11 extend the framework. The cosmic temple was invaded, the boundaries breached, the nations scattered — but the covenant with one family began the project of restoring what was lost.
+
+Psalm 8's creation praise -- "when I consider your heavens, the work of your fingers" -- and Psalm 82's heavenly court scene extend this cosmic architecture into the Psalter's liturgical voice.
 
 Ancient wisdom, cosmic clarity.`,
   },
@@ -493,7 +535,7 @@ Where Bible Lens parts from full preterism: Revelation 19-20 describes a future 
       "Isaiah 53 corporate Israel reading",
       "suffering servant who is it",
     ],
-    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6"],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110"],
     prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
 
 Here's where it gets interesting: the historically prior reading, the one dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi in the eleventh century argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, carrying the weight of history, and destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion among pre-modern Jewish scholars; it was the mainstream.
@@ -505,6 +547,8 @@ Through this lens, Isaiah 52:13 is where the passage actually begins, not chapte
 The typological reading — that Jesus fulfilled the servant's role — does not cancel the corporate reading. It layers on top of it. What Israel was called to be (a light to the nations, a redemptive presence among the peoples), Jesus embodied in concentrated, singular form. Both as layers, not competitors.
 
 Isaiah 7's Immanuel sign, the throne names of Isaiah 9, and the Branch of Isaiah 11 all work this way: they address an original crisis first, then carry a typological weight that later generations recognize in light of Jesus.
+
+The Psalter's royal messianic cluster -- Psalm 2's coronation formula, Psalm 22's lament-to-vindication arc, Psalm 45's royal wedding, Psalm 110's enthronement oracle -- forms the second OT pillar alongside the servant songs that early Christians drew on for christology.
 
 This is a reading that takes the text's historical context seriously before reaching for christological application — and finds both dimensions more compelling as a result.`,
   },
@@ -559,7 +603,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "genesis-28": ["genesis-12", "ezekiel-1"],
 
   // Genesis — Divine council / cosmos cluster
-  "genesis-1": ["genesis-2", "ezekiel-1", "exodus-25"],
+  "genesis-1": ["genesis-2", "ezekiel-1", "psalms-8"],
   "genesis-2": ["genesis-1", "genesis-3", "ezekiel-28"],
   "genesis-3": ["genesis-2", "revelation-12", "ezekiel-28"],
   "genesis-11": ["genesis-6", "daniel-2", "revelation-17"],
@@ -576,7 +620,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
 
   // Daniel — Visions cluster
   "daniel-2": ["daniel-7", "revelation-13", "matthew-24"],
-  "daniel-7": ["daniel-2", "revelation-1", "matthew-24"],
+  "daniel-7": ["daniel-2", "psalms-110", "matthew-24"],
   "daniel-8": ["daniel-7", "daniel-9", "revelation-13"],
   "daniel-9": ["daniel-7", "matthew-24", "revelation-1"],
   "daniel-10": ["daniel-9", "daniel-11", "revelation-12"],
@@ -606,10 +650,10 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
 
   // Isaiah — Messianic cluster
   "isaiah-7": ["isaiah-9", "isaiah-11", "matthew-24"],
-  "isaiah-9": ["isaiah-7", "zechariah-9", "isaiah-11"],
+  "isaiah-9": ["isaiah-7", "zechariah-9", "psalms-2"],
   "isaiah-11": ["isaiah-9", "isaiah-65", "zechariah-3"],
   "isaiah-52": ["isaiah-53", "daniel-9", "revelation-5"],
-  "isaiah-53": ["isaiah-52", "genesis-22", "daniel-9"],
+  "isaiah-53": ["isaiah-52", "genesis-22", "psalms-22"],
   "isaiah-65": ["isaiah-66", "revelation-21", "ezekiel-37"],
   "isaiah-66": ["isaiah-65", "revelation-22", "ezekiel-39"],
 
@@ -617,7 +661,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "ezekiel-1": ["isaiah-6", "ezekiel-2", "revelation-4"],
   "ezekiel-2": ["ezekiel-3", "ezekiel-1", "daniel-1"],
   "ezekiel-3": ["ezekiel-2", "daniel-6", "ezekiel-37"],
-  "ezekiel-28": ["genesis-3", "genesis-6", "daniel-8"],
+  "ezekiel-28": ["genesis-3", "genesis-6", "psalms-82"],
   "ezekiel-37": ["ezekiel-38", "daniel-12", "exodus-34"],
   "ezekiel-38": ["ezekiel-39", "revelation-20", "zechariah-14"],
   "ezekiel-39": ["ezekiel-38", "revelation-19", "revelation-20"],
@@ -657,4 +701,16 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "zechariah-12": ["zechariah-13", "revelation-1", "daniel-12"],
   "zechariah-13": ["zechariah-12", "zechariah-14", "ezekiel-37"],
   "zechariah-14": ["zechariah-13", "revelation-20", "ezekiel-38"],
+
+  // Psalms -- 10 commentary chapters
+  "psalms-2": ["psalms-110", "daniel-7", "isaiah-9"],
+  "psalms-8": ["psalms-82", "genesis-1", "genesis-2"],
+  "psalms-22": ["psalms-89", "psalms-51", "isaiah-53"],
+  "psalms-23": ["psalms-22", "psalms-89", "exodus-33"],
+  "psalms-45": ["psalms-2", "psalms-110", "isaiah-9"],
+  "psalms-51": ["psalms-139", "psalms-22", "ezekiel-37"],
+  "psalms-82": ["genesis-6", "ezekiel-28", "daniel-10"],
+  "psalms-89": ["psalms-2", "psalms-22", "genesis-15"],
+  "psalms-110": ["psalms-2", "psalms-45", "daniel-7"],
+  "psalms-139": ["psalms-51", "psalms-8", "genesis-1"],
 };

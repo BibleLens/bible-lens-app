@@ -108,6 +108,30 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         return `Who is Gog of the land of Magog in Ezekiel ${chapter}, and how does this connect to Revelation 20:8?`;
       }
     }
+    if (book === "psalms") {
+      if ([2, 110].includes(chapter)) {
+        return `What does the ANE coronation adoption formula reveal about Psalm ${chapter} -- and why is the distinction between adoni and adonai critical for understanding how the New Testament cites this psalm?`;
+      }
+      if ([8, 139].includes(chapter)) {
+        return `What does Psalm ${chapter} reveal about the ancient Israelite understanding of creation and divine presence -- and how does the ruach vocabulary connect to the cosmic temple framework?`;
+      }
+      if ([22, 89].includes(chapter)) {
+        return `What does the lament structure of Psalm ${chapter} reveal about how ancient Israel processed theological crisis -- and why does the genre logic matter more than the New Testament citations?`;
+      }
+      if (chapter === 23) {
+        return `What did the shepherd-king metaphor communicate in ancient Near Eastern royal ideology -- and why does tsalmaveth mean 'deep darkness' rather than 'shadow of death'?`;
+      }
+      if (chapter === 45) {
+        return `How does the Hebrew grammar of Psalm 45:6 allow both the vocative reading ('Your throne, O God') and the predicate analysis ('Your throne is God-like') -- and why do both readings matter?`;
+      }
+      if (chapter === 51) {
+        return `What does ruach mean in Psalm 51's three distinct uses -- and how does the penitential tradition connect to the Thirteen Attributes of Exodus 34?`;
+      }
+      if (chapter === 82) {
+        return `Who are the elohim being judged in Psalm 82's heavenly court -- and how does ke-adam ('like mortals') prove these beings are non-human members of YHWH's council?`;
+      }
+      return `What is the historical context of ${bookTitle} ${chapter}?`;
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
