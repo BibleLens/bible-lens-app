@@ -11,6 +11,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   exodus: [3, 12, 14, 19, 20, 25, 26, 27, 32, 33, 34],
   zechariah: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
   psalms: [2, 8, 22, 23, 45, 51, 82, 89, 110, 139],
+  jeremiah: [1, 7, 18, 19, 23, 29, 31, 36, 52],
 };
 
 export const COMMENTARY_BOOKS = Object.keys(COMMENTARY_CHAPTERS);
@@ -204,6 +205,26 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "What does adoni -- a human honorific used 335 times in the Hebrew Bible, never for God -- reveal about the most-cited Old Testament verse in the New Testament? The ANE royal enthronement oracle, Melchizedek, and why NT citations are reception history.",
   "psalms-139":
     "What does 'you knit me together in my mother's womb' communicate about divine knowledge? Psalm 139's ruach vocabulary -- consistent with Psalm 51 -- frames creation in the womb as intimate relational knowledge, not surveillance.",
+
+  // Jeremiah — 8 commentary clusters, 9 chapters
+  "jeremiah-1":
+    "What does it mean when YHWH says 'Before I formed you in the womb I knew you'? The answer lies not in metaphysics but in genre — Jeremiah 1 is a berufungsbericht, a prophetic call narrative with direct parallels in the commissioning of Moses (Exodus 3-4) and Isaiah (Isaiah 6). The Hebrew verb yadati functions here as a covenant designation term — the same verb Amos uses in 'You only have I known of all the families of the earth' (Amos 3:2). Through this lens, Jeremiah's call follows a four-element structure — divine confrontation, prophetic resistance, divine reassurance, and sign confirmation — placing it squarely within the ANE tradition of royal and prophetic commissioning texts. The chapter opens under the shadow of Josiah's reform and the rising Neo-Babylonian threat, framing Jeremiah's entire ministry as a commission 'over nations and over kingdoms, to pluck up and to pull down, to destroy and to overthrow, to build and to plant' (1:10).",
+  "jeremiah-7":
+    "When Jeremiah stood in the gate of the temple and said 'Do not trust in these deceptive words: The temple of YHWH, the temple of YHWH, the temple of YHWH,' he was making an argument from archaeology before archaeology existed. His precedent was Shiloh — the earlier sanctuary where the Ark once dwelled. Tel Seilun excavations confirm a destruction layer from the mid-eleventh century BCE, giving Jeremiah's audience a physical reminder that YHWH's presence was never guaranteed by a building. The phrase 'den of robbers' (Jer 7:11) — later quoted by Jesus in the temple courts — originates here as Jeremiah's indictment of a people who treat the temple as a talisman while breaking covenant. The sermon reframes temple theology: the institution is not the guarantee; covenant fidelity is.",
+  "jeremiah-18":
+    "The potter's house visit in Jeremiah 18 is the first half of a carefully constructed diptych — a two-part literary unit with Jeremiah 19. At the potter's wheel, Jeremiah watches a vessel being reshaped while still wet, and YHWH draws a lesson about conditional covenant logic: the clay that has not yet hardened can be reworked. Read through the ANE suzerain-vassal treaty framework, this is not a statement about divine determinism but about covenant conditionality — the same 'if...then' structure found in Hittite and Assyrian treaty curses. The vessel on the wheel still has a future because the terms of the treaty have not yet been irrevocably broken.",
+  "jeremiah-19":
+    "Jeremiah 19 completes the potter's diptych begun in chapter 18 — but this time the vessel is fired clay, and the action is irreversible. Jeremiah takes a completed flask to the Valley of Ben Hinnom (Topheth) and shatters it before the elders with the declaration that what is hardened cannot be remade. Where chapter 18 offered conditional hope at the potter's wheel, chapter 19 delivers irrevocable judgment in the valley. The two chapters together establish the full arc of covenant logic: grace before hardening, judgment after. The smashed flask becomes Jeremiah's most vivid prophetic sign-act.",
+  "jeremiah-23":
+    "What did 'Behold, the days are coming' mean to an audience watching the last Davidic kings fail? Jeremiah 23 opens with an indictment of the shepherds who scattered YHWH's flock — Jehoiakim, Jehoiachin, and Zedekiah named implicitly as the failed leadership — before delivering the Branch oracle: YHWH will raise up a tzemach tsaddiq, a 'righteous Branch.' Here's where it gets interesting: the reigning king's own name, Tsidqiyahu ('YHWH is my righteousness'), becomes the primary interpretive key. The oracle's throne name YHWH Tsidkenu inverts the king's name as a deliberate contrast — what Zedekiah failed to be, the coming Branch will embody. This is the source tradition that Zechariah 3:8 and 6:12 later draw upon, not the reverse. The 23:6/33:16 pronoun shift — from 'he' (the king) to 'she/it' (Jerusalem) — demonstrates ANE royal-corporate solidarity, extending the throne name to the community.",
+  "jeremiah-29":
+    "Everyone knows 'For I know the plans I have for you' — but almost no one reads the sentence that precedes it. Jeremiah 29 is a letter addressed to a specific community: the 597 BCE deportees living in Babylon after Nebuchadnezzar's first siege. The command is not passive optimism but an active mandate — darash shalom, 'seek the welfare of the city where I have sent you into exile.' The Hebrew root d-r-sh carries the weight of active inquiry and pursuit, not passive goodwill. Daniel 1 reads as a narrative embodiment of this ethic — a young exile seeking the welfare of a foreign court. The seventy-year timeline (29:10) anchors the promise in a specific horizon, and the communal addressee means the famous verse 29:11 is a covenant promise to a displaced people, not an individual prosperity guarantee.",
+  "jeremiah-31":
+    "The phrase berit chadasha — 'new covenant' — appears exactly once in the entire Hebrew Bible, here in Jeremiah 31:31. That makes it a hapax legomenon, and the rarity matters: when Jeremiah reaches for language no prophet has used before, the audience knows something unprecedented is being announced. The covenant is addressed explicitly to 'the house of Israel AND the house of Judah' — a politically specific two-house formulation, not a generic spiritual audience. Its four stipulations — Torah internalized (31:33a), renewed covenant relationship (33b), universal direct knowledge of YHWH through yadah (34a), and forgiveness of sin (34b) — describe a covenant that transforms how people relate to divine instruction. Ezekiel 36:26-27 develops a companion vision from the same exilic context using different vocabulary (new heart, new spirit). The third stipulation — universal knowledge — maps to the eschatological consummation that has not yet been fully realized. Hebrews 8-10 applies this passage typologically to an inaugurated phase of the covenant, but the two-house address remains the primary scope.",
+  "jeremiah-36":
+    "Jeremiah 36 is the Bible's own story about how the Bible was written. When King Jehoiakim cuts apart Jeremiah's scroll and burns it column by column in the brazier, the text reports what happened next: Baruch the scribe re-dictated the entire scroll 'and many similar words were added' (36:32). Through this lens, the chapter becomes a meta-commentary on textual transmission — the same process of dictation, destruction, and expansion that scholars observe between the shorter Septuagint and longer Masoretic editions of Jeremiah itself. Baruch's role as amanuensis is now corroborated by the Baruch Bulla — a clay seal impression reading 'Belonging to Berekhyahu son of Neriyahu the scribe' — providing direct archaeological attestation of the figure behind the text.",
+  "jeremiah-52":
+    "Jeremiah 52 begins immediately after the editorial marker 'Thus far are the words of Jeremiah' at 51:64 — a signal that what follows is not Jeremiah's own composition but a Deuteronomistic appendix added by later editors. The chapter parallels 2 Kings 25 nearly verbatim, recounting the fall of Jerusalem, the destruction of the temple, and the deportation lists. But it ends with a detail 2 Kings shares and that transforms the entire book's conclusion: the release of King Jehoiachin from Babylonian prison and his elevation to eat at the king's table. Corroborated by cuneiform ration tablets listing provisions for 'Yaukin, king of Yahud,' this closing coda functions as the Deuteronomistic History's final note of hope — exile is not the last word.",
 };
 
 // Truncates description text to a word limit for card teasers.
@@ -226,7 +247,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 41 + 22 + 23 + 13 = 99 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 41 + 22 + 28 + 14 = 105 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -269,6 +290,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "exodus-3", "exodus-12", "exodus-14", "exodus-19", "exodus-20", "exodus-32", "exodus-33", "exodus-34",
       "zechariah-7", "zechariah-8",
       "psalms-23", "psalms-51", "psalms-89",
+      "jeremiah-1", "jeremiah-29", "jeremiah-31", "jeremiah-36", "jeremiah-52",
     ],
   },
   {
@@ -279,6 +301,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-52", "isaiah-53",
       "zechariah-3", "zechariah-6", "zechariah-9", "zechariah-11",
       "psalms-2", "psalms-22", "psalms-45", "psalms-110",
+      "jeremiah-23",
     ],
   },
 ];
@@ -343,6 +366,7 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "daniel", chapter: 5, annotation: "Belshazzar and the writing on the wall — covenant judgment in Babylon." },
       { bookId: "daniel", chapter: 6, annotation: "Lions' den: covenant faithfulness vindicated under empire." },
       { bookId: "ezekiel", chapter: 37, annotation: "Dry bones: national restoration — self-interpreted by the text." },
+      { bookId: "jeremiah", chapter: 31, annotation: "The new covenant (berit chadasha) — written on the heart after the old covenant breaks under exile." },
       { bookId: "isaiah", chapter: 65, annotation: "New heavens, new earth — Millennial conditions, not the eternal state." },
     ],
   },
@@ -355,6 +379,7 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "isaiah", chapter: 7, annotation: "Immanuel as a 735 BC timeline — before Matthew's typology." },
       { bookId: "isaiah", chapter: 9, annotation: "Throne names as ANE coronation titulary, not divine attributes." },
       { bookId: "isaiah", chapter: 11, annotation: "The Branch from Jesse's stump — Millennial conditions ahead." },
+      { bookId: "jeremiah", chapter: 23, annotation: "The Branch oracle — tzemach tsaddiq, the source tradition Zechariah will later develop." },
       { bookId: "isaiah", chapter: 52, annotation: "The servant's exaltation: where Isaiah 53 actually begins." },
       { bookId: "isaiah", chapter: 53, annotation: "Corporate Israel first, then typological Christ — both as layers." },
     ],
@@ -398,6 +423,22 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "psalms", chapter: 89, annotation: "Covenant lament: the Psalter's most confident promises crash into theological crisis -- the Davidic covenant's hardest question left unresolved." },
       { bookId: "psalms", chapter: 110, annotation: "The royal enthronement oracle: adoni as human honorific, Melchizedek typology, the most-cited OT verse in the NT -- all as reception history." },
       { bookId: "psalms", chapter: 51, annotation: "Penitential restoration: ruach as divine presence and animating breath -- the covenant cycle's answer to failure, rooted in the Thirteen Attributes." },
+    ],
+  },
+  {
+    id: "prophetic-crisis-arc",
+    title: "Prophetic Crisis Arc",
+    throughLine:
+      "From the commissioning of a reluctant prophet to the fall of the city he warned — Jeremiah's ministry traces forty years of institutional collapse and covenant faithfulness under pressure. Here's where it gets interesting: every chapter in this arc answers the same question: is YHWH's covenant still operative when the temple fails, the kings fail, and the city falls?",
+    steps: [
+      { bookId: "jeremiah", chapter: 1, annotation: "Prophetic commissioning in the berufungsbericht genre — yadati as covenant designation before the Neo-Babylonian shadow arrives." },
+      { bookId: "jeremiah", chapter: 7, annotation: "Temple sermon: Shiloh's destruction layer proves the institution is not the guarantee of YHWH's presence." },
+      { bookId: "jeremiah", chapter: 18, annotation: "Potter's house: conditional covenant logic — YHWH can reshape what is not yet hardened." },
+      { bookId: "jeremiah", chapter: 23, annotation: "Branch oracle: YHWH's answer to failed shepherds — tzemach tsaddiq as the source tradition Zechariah will draw on." },
+      { bookId: "jeremiah", chapter: 29, annotation: "Exile letter: darash shalom as active mandate — seek the welfare of Babylon, for in its welfare you will find yours." },
+      { bookId: "jeremiah", chapter: 31, annotation: "New covenant: berit chadasha hapax — uniquely in the Hebrew Bible, a covenant written on the heart." },
+      { bookId: "jeremiah", chapter: 36, annotation: "Scroll burning: royal resistance cannot stop the prophetic word — Baruch re-dictates with additions." },
+      { bookId: "jeremiah", chapter: 52, annotation: "Deuteronomistic appendix: the fall of Jerusalem, and Jehoiachin's release as the coda of hope." },
     ],
   },
 ];
@@ -507,7 +548,7 @@ Ancient wisdom, cosmic clarity.`,
       "Olivet Discourse preterist interpretation",
       "when were these things fulfilled Matthew 24",
     ],
-    chapterKeys: ["matthew-24", "daniel-9", "daniel-7", "revelation-6", "zechariah-14"],
+    chapterKeys: ["matthew-24", "daniel-9", "daniel-7", "revelation-6", "zechariah-14", "jeremiah-7"],
     prose: `Jesus began the Olivet Discourse in response to a specific question from specific people. The disciples pointed to the temple stones. Jesus said not one stone would be left on another. They asked, in effect: when? What will be the sign?
 
 The partial preterist reading takes that question at face value. The disciples were not asking about a distant apocalypse two thousand years away. They were asking about the temple they could see from where they were sitting on the Mount of Olives. And Jesus answered them.
@@ -535,7 +576,7 @@ Where Bible Lens parts from full preterism: Revelation 19-20 describes a future 
       "Isaiah 53 corporate Israel reading",
       "suffering servant who is it",
     ],
-    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110"],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23"],
     prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
 
 Here's where it gets interesting: the historically prior reading, the one dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi in the eleventh century argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, carrying the weight of history, and destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion among pre-modern Jewish scholars; it was the mainstream.
@@ -622,13 +663,13 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "daniel-2": ["daniel-7", "revelation-13", "matthew-24"],
   "daniel-7": ["daniel-2", "psalms-110", "matthew-24"],
   "daniel-8": ["daniel-7", "daniel-9", "revelation-13"],
-  "daniel-9": ["daniel-7", "matthew-24", "revelation-1"],
+  "daniel-9": ["daniel-7", "matthew-24", "jeremiah-29"],
   "daniel-10": ["daniel-9", "daniel-11", "revelation-12"],
   "daniel-11": ["daniel-10", "daniel-12", "revelation-6"],
   "daniel-12": ["daniel-7", "revelation-20", "zechariah-12"],
 
   // Matthew
-  "matthew-24": ["daniel-9", "revelation-6", "zechariah-14"],
+  "matthew-24": ["daniel-9", "revelation-6", "jeremiah-7"],
 
   // Revelation
   "revelation-1": ["daniel-7", "matthew-24", "zechariah-12"],
@@ -651,7 +692,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   // Isaiah — Messianic cluster
   "isaiah-7": ["isaiah-9", "isaiah-11", "matthew-24"],
   "isaiah-9": ["isaiah-7", "zechariah-9", "psalms-2"],
-  "isaiah-11": ["isaiah-9", "isaiah-65", "zechariah-3"],
+  "isaiah-11": ["isaiah-9", "isaiah-65", "jeremiah-23"],
   "isaiah-52": ["isaiah-53", "daniel-9", "revelation-5"],
   "isaiah-53": ["isaiah-52", "genesis-22", "psalms-22"],
   "isaiah-65": ["isaiah-66", "revelation-21", "ezekiel-37"],
@@ -662,7 +703,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "ezekiel-2": ["ezekiel-3", "ezekiel-1", "daniel-1"],
   "ezekiel-3": ["ezekiel-2", "daniel-6", "ezekiel-37"],
   "ezekiel-28": ["genesis-3", "genesis-6", "psalms-82"],
-  "ezekiel-37": ["ezekiel-38", "daniel-12", "exodus-34"],
+  "ezekiel-37": ["ezekiel-38", "daniel-12", "jeremiah-31"],
   "ezekiel-38": ["ezekiel-39", "revelation-20", "zechariah-14"],
   "ezekiel-39": ["ezekiel-38", "revelation-19", "revelation-20"],
 
@@ -689,10 +730,10 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   // Zechariah — 5 commentary clusters, 14 chapters
   "zechariah-1": ["ezekiel-1", "daniel-10", "revelation-6"],
   "zechariah-2": ["zechariah-1", "ezekiel-38", "revelation-21"],
-  "zechariah-3": ["zechariah-6", "isaiah-11", "daniel-9"],
+  "zechariah-3": ["zechariah-6", "jeremiah-23", "daniel-9"],
   "zechariah-4": ["zechariah-5", "zechariah-6", "revelation-1"],
   "zechariah-5": ["zechariah-4", "zechariah-6", "revelation-17"],
-  "zechariah-6": ["zechariah-3", "zechariah-4", "isaiah-11"],
+  "zechariah-6": ["zechariah-3", "zechariah-4", "jeremiah-23"],
   "zechariah-7": ["zechariah-8", "isaiah-1", "isaiah-2"],
   "zechariah-8": ["zechariah-7", "isaiah-65", "revelation-21"],
   "zechariah-9": ["zechariah-3", "isaiah-9", "matthew-24"],
@@ -713,4 +754,15 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "psalms-89": ["psalms-2", "psalms-22", "genesis-15"],
   "psalms-110": ["psalms-2", "psalms-45", "daniel-7"],
   "psalms-139": ["psalms-51", "psalms-8", "genesis-1"],
+
+  // Jeremiah — 8 commentary clusters, 9 chapters
+  "jeremiah-1": ["exodus-3", "isaiah-6", "ezekiel-1"],
+  "jeremiah-7": ["isaiah-1", "matthew-24", "exodus-20"],
+  "jeremiah-18": ["jeremiah-19", "exodus-32", "genesis-18"],
+  "jeremiah-19": ["jeremiah-18", "isaiah-1", "exodus-14"],
+  "jeremiah-23": ["zechariah-3", "zechariah-6", "isaiah-11"],
+  "jeremiah-29": ["daniel-1", "jeremiah-31", "daniel-9"],
+  "jeremiah-31": ["isaiah-65", "jeremiah-29", "ezekiel-37"],
+  "jeremiah-36": ["isaiah-6", "exodus-34", "jeremiah-52"],
+  "jeremiah-52": ["daniel-1", "jeremiah-36", "ezekiel-37"],
 };

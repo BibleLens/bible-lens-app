@@ -108,6 +108,33 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         return `Who is Gog of the land of Magog in Ezekiel ${chapter}, and how does this connect to Revelation 20:8?`;
       }
     }
+    if (book === "jeremiah") {
+      if (chapter === 1) {
+        return `What is the berufungsbericht — the 'call narrative' genre — in Jeremiah 1, and why does yadati in verse 5 function as a commissioning verb rather than a statement about universal pre-birth existence?`;
+      }
+      if (chapter === 7) {
+        return `What did the Tel Seilun destruction layer at ancient Shiloh mean for Jeremiah's temple sermon — and how does the archaeological evidence of Shiloh's destruction reshape what 'do not trust in deceptive words' meant to the original audience?`;
+      }
+      if ([18, 19].includes(chapter)) {
+        return `How does the potter's house diptych of Jeremiah 18-19 establish conditional vs. irrevocable covenant logic — and what does the ANE suzerain-vassal treaty framework reveal about why one pot can be reshaped while another must be smashed?`;
+      }
+      if (chapter === 23) {
+        return `What does tzemach tsaddiq mean — and why is the Zedekiah name-contrast (Tsidqiyahu = 'YHWH is my righteousness') the primary interpretive key for the Jeremiah 23 Branch oracle?`;
+      }
+      if (chapter === 29) {
+        return `What does darash shalom mean as an active mandate — and why does the exile letter of Jeremiah 29 address a specific community in 597 BCE Babylon rather than offering a universal promise to modern readers seeking prosperity?`;
+      }
+      if (chapter === 31) {
+        return `Why is berit chadasha a hapax legomenon — appearing only once in the entire Hebrew Bible — and what does the two-house address ('house of Israel AND house of Judah') reveal about who the new covenant was originally made with?`;
+      }
+      if (chapter === 36) {
+        return `What does the story of Baruch the scribe and the burning scroll reveal about how prophetic texts were transmitted — and how does 're-dictated with additions' (Jer 36:32) describe the same compositional growth process Jeremiah 36 itself documents?`;
+      }
+      if (chapter === 52) {
+        return `Why does Jeremiah 52 begin immediately after the editorial marker 'the words of Jeremiah end here' at 51:64 — and what does the near-verbatim parallel with 2 Kings 25 reveal about the Deuteronomistic appendix's function in the book?`;
+      }
+      return `What is the historical context of Jeremiah ${chapter}?`;
+    }
     if (book === "psalms") {
       if ([2, 110].includes(chapter)) {
         return `What does the ANE coronation adoption formula reveal about Psalm ${chapter} -- and why is the distinction between adoni and adonai critical for understanding how the New Testament cites this psalm?`;
