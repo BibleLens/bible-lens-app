@@ -13,6 +13,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   psalms: [2, 8, 22, 23, 45, 51, 82, 89, 110, 139],
   jeremiah: [1, 7, 18, 19, 23, 29, 31, 36, 52],
   job: [1, 2, 3, 19, 28, 38, 39, 40, 41, 42],
+  proverbs: [1, 7, 8, 10, 16, 22, 23, 25, 31],
 };
 
 export const COMMENTARY_BOOKS = Object.keys(COMMENTARY_CHAPTERS);
@@ -248,6 +249,26 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "Who is Leviathan in Job 41 — and why does the Ugaritic Lotan cognate matter? The seven-headed sea dragon of Chaoskampf tradition is the creature YHWH claims mastery over. This is not a crocodile; it is the chaos monster that only the Creator can subdue.",
   "job-42":
     "What does YHWH's verdict in Job 42:7 actually say? 'You have not spoken of me what is right, as my servant Job has' — the friends' retribution theology is explicitly rebuked. The restoration that follows is grace, not reward, and does not vindicate the framework Job spent 40 chapters dismantling.",
+
+  // Proverbs — 7 RAG clusters, 9 commentary chapters
+  "proverbs-1":
+    "What does 'the fear of the LORD is the beginning of wisdom' actually mean in its ancient setting? Proverbs 1 opens as a father's instruction to a son — a recognized genre in ancient Near Eastern wisdom literature called sebayt, the Egyptian instructional tradition that stretches from Ptahhotep to Amenemope. The thesis statement of 1:7, yir'at YHWH, is not about terror; it is an epistemological claim — wisdom begins with a posture of reverence toward the cosmic order YHWH established, not with raw intelligence or technique. Here's where it gets interesting: Woman Wisdom makes her first appearance in 1:20-33, crying out in the public square. What the original audience would have understood is that this is a literary personification — the same move Egyptian wisdom tradition made with Maat, the goddess of cosmic order. Woman Wisdom is not a supernatural being or a proto-Christ figure; she is the voice of the moral order itself, given dramatic form to compete with Woman Folly for the son's allegiance. The father-son instruction frame that opens Proverbs is the oldest classroom in the world — and its thesis is that wisdom is not a skill to acquire but a relationship to enter.",
+  "proverbs-7":
+    "Who is the 'strange woman' of Proverbs 7 — and what is the bridal-courtship spine threading through chapters 1-9? The midnight-streets vignette of Proverbs 7 is the literary climax of the prologue's warning sequence: the father watches from a window as a naive young man walks into Woman Folly's trap. Here's where it gets interesting: this is not simply a warning about sexual temptation. It is the penultimate act in a carefully constructed courtship narrative. Chapters 1-9 present the son with two women and demand a choice — court Wisdom or court Folly. The father's pedagogy is deliberate: he warns the son away from Folly in chapter 7 precisely to prepare him for Woman Wisdom's cosmogonic speech in chapter 8. What the original audience would have understood is that the 'strange woman' (ishah zarah) functions as the literary counterpart to Woman Wisdom — the anti-Maat figure, representing disorder where Wisdom represents cosmic order. The entire prologue builds toward a single decision point: whom will the son choose to embrace?",
+  "proverbs-8":
+    "What is Woman Wisdom actually claiming in Proverbs 8:22-31 — and why does the Hebrew qanah point to bridal-acquisition language rather than the creation (Arian) or eternal possession (Nicene) that later theological traditions read into it? This is the most theologically contested chapter in all of Proverbs, and the contest itself is revealing. The cosmogonic speech of 8:22-31 presents Woman Wisdom as present at creation — the cosmic ordering principle personified, dancing before YHWH as the world takes shape (8:30). What the original audience would have understood is the Egyptian Maat parallel: cosmic order given literary voice, a figure who stands beside the creator as the world is arranged. The Hebrew verb qanah in 8:22 belongs to the semantic field of Ruth 4:10 — bridal-acquisition language — which closes the courtship spine that opened in chapter 1. Here's where it gets interesting: the reception history is enormous. Sirach 24 identifies Wisdom with Torah; the Wisdom of Solomon fuses her with divine spirit; Philo maps her onto Logos; John 1 opens with 'In the beginning was the Word.' But reception history is not primary meaning. The gendered grammar matters — Wisdom is 'she' throughout Proverbs, and the courtship frame makes a pre-existent Christ reading structurally incoherent. The grammar breaks before the theology can land.",
+  "proverbs-10":
+    "Why does the antithetical parallelism of Proverbs 10 present deed-consequence as observed pattern rather than divine guarantee? Chapter 10 marks the shift from the extended discourse of chapters 1-9 to the sentence proverbs — short, self-contained two-line sayings that constitute the bulk of the book. Here's where it gets interesting: every saying in this chapter works by contrast. The righteous versus the wicked, the wise versus the foolish, wealth versus poverty, speech versus silence — the antithetical form itself communicates the worldview. What the original audience would have understood is that these are the conclusions of generations of careful observation by the sages of ancient Israel and the broader ANE wisdom tradition. 'The LORD does not let the righteous go hungry' (10:3) is what the sages observed to be generally true — not a contractual guarantee that YHWH will intervene in every individual case. This distinction matters enormously because Proverbs' deed-consequence framework is precisely the theology Job's friends articulate — and which YHWH rebukes in Job 42:7. Proverbs says wisdom tends to flourish; Job says the tendency is not a guarantee. Together they define the honest space of Wisdom Literature.",
+  "proverbs-16":
+    "What does Proverbs 16:9 reveal about YHWH's sovereignty over royal plans? 'The heart of man plans his way, but YHWH establishes his steps' — this is the theological center of the royal wisdom cluster that runs from chapter 16 through 22:16. Here's where it gets interesting: chapter 16 sits at the editorial center of this collection, and the concentration of YHWH-sayings is no accident. The sages placed the sovereignty sayings at the structural heart of the royal wisdom tradition to frame everything that follows. What the original audience would have understood is that the sentence proverbs shift form here — from the strict antithetical parallelism of chapters 10-15 to synonymous and comparison forms ('Better a little with righteousness than much gain with injustice,' 16:8). The royal context is explicit: kings, counselors, just weights, and the administration of justice dominate this cluster. The 16:9 saying does not teach determinism; it teaches that wisdom works within the reality of YHWH's governance — human planning is real but not ultimate. The sages observed that even the best-laid plans of kings operate within a larger framework they do not control.",
+  "proverbs-22":
+    "What is the Amenemope parallel in Proverbs 22:17 — and why is this the strongest case of ANE literary dependency in the entire Hebrew Bible? The section beginning at 22:17 with 'Incline your ear and hear the words of the wise' opens the most significant cross-cultural literary connection in the wisdom tradition. Here's where it gets interesting: the Hebrew word shalishim in 22:20 — traditionally rendered 'excellent things' — almost certainly means 'thirty,' directly paralleling the thirty chapters of the Egyptian Instruction of Amenemope preserved on BM Papyrus 10474. The structural correspondence is not a coincidence or a vague thematic similarity: specific sayings in Proverbs 22:17-24:22 map onto specific chapters of Amenemope in sequence. What the original audience would have understood is that Israel's sages were not working in isolation. They were actively engaging with the best wisdom of the ancient Near East — borrowing, adapting, and reframing Egyptian instruction within a YHWH-centered theological framework. This is not an apologetic problem to minimize; it is evidence of how wisdom crossed cultural borders in the ANE world.",
+  "proverbs-23":
+    "How do the warning speeches of Proverbs 23 map onto the instruction chapters of the Egyptian Amenemope — and what does parallel structure tell us about how wisdom crossed cultural borders? The Amenemope literary dependency continues into Proverbs 23 with some of the most specific parallels in the collection. The warning against eating at a ruler's table (23:1-3) corresponds to Amenemope's chapter on dining with a superior. The drunkard passages (23:29-35) follow the same structural sequence as their Egyptian counterparts. Here's where it gets interesting: the parallels are not just thematic — they follow the same order, suggesting the Israelite compiler had access to an Amenemope source text or a closely related Egyptian instruction. What the original audience would have understood is that reframing foreign wisdom within YHWH-centered theology was not plagiarism but standard practice in the ANE scribal world. The sages took what was observationally true in Egyptian wisdom and set it within the covenant framework of Israel — the same God who governs the moral order the Egyptians also observed.",
+  "proverbs-25":
+    "What does the editorial superscription in Proverbs 25:1 — 'these also are proverbs of Solomon that the men of Hezekiah king of Judah copied' — reveal about how biblical wisdom was transmitted? This is one of the most historically revealing verses in the entire book. The 'men of Hezekiah' are royal scribes working in the late eighth century BCE, and their act of copying is itself evidence of the editorial process behind the Hebrew Bible. Here's where it gets interesting: the verb he'etiqu ('copied, transmitted') tells us that the Proverbs collection as we have it is the product of deliberate scribal activity across centuries — not a single moment of Solomonic composition but a tradition that grew, was curated, and was transmitted by institutional hands. What the original audience would have understood is that wisdom was preserved by the same scribal infrastructure that produced the royal archives. The comparative proverb form that dominates this section ('Like snow in summer or rain in harvest, so honor is not fitting for a fool,' 26:1) represents a distinct literary style — the 'Like X, so Y' pattern that characterizes the Hezekian collection.",
+  "proverbs-31":
+    "Who is the eshet chayil — the 'woman of valor' — in Proverbs 31, and why does the Hebrew chayil refuse to let this poem become a domesticity prescription? The word chayil appears throughout the Hebrew Bible as military vocabulary — gibbore chayil ('mighty warriors'), tzeva chayil ('army of valor'). When the closing poem of Proverbs calls its subject eshet chayil, it is reaching for the strongest word the language has for strength, capacity, and power. Here's where it gets interesting: the 22-line acrostic structure (each line beginning with a successive letter of the Hebrew alphabet) signals that this is a carefully composed literary portrait, not a spontaneous description of an actual woman. What the original audience would have understood is the inclusio — the literary bracket with chapter 8. Woman Wisdom cries out in the public square in Proverbs 1 and 8; Woman of Valor closes the book in chapter 31. The bridal-courtship spine that opened in the prologue is here brought to resolution: the son who was told to seek Wisdom has found her — embodied, active, powerful, praised at the city gates. The 'virtuous wife' translation deflates the vocabulary. This is Wisdom incarnate in the world the cosmos built.",
 };
 
 // Truncates description text to a word limit for card teasers.
@@ -270,7 +291,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 41 + 28 + 32 + 14 = 115 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 41 + 30 + 39 + 14 = 124 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -301,6 +322,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "exodus-25", "exodus-26", "exodus-27",
       "psalms-8", "psalms-82", "psalms-139",
       "job-1", "job-2", "job-38", "job-39", "job-40", "job-41",
+      "proverbs-8", "proverbs-31",
     ],
   },
   {
@@ -316,6 +338,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "psalms-23", "psalms-51", "psalms-89",
       "jeremiah-1", "jeremiah-29", "jeremiah-31", "jeremiah-36", "jeremiah-52",
       "job-3", "job-19", "job-28", "job-42",
+      "proverbs-1", "proverbs-7", "proverbs-10", "proverbs-16", "proverbs-22", "proverbs-23", "proverbs-25",
     ],
   },
   {
@@ -470,12 +493,15 @@ export const READING_PATHS: ReadingPath[] = [
     id: "wisdom-arc",
     title: "Wisdom Arc",
     throughLine:
-      "From the divine council scene through protest, legal advocacy, the Hymn to Wisdom, the theophanic whirlwind, chaos creatures, and epilogue verdict — Job traces the most honest theological arc in the Hebrew Bible. Here's where it gets interesting: YHWH's 42:7 verdict explicitly endorses Job's protest over the friends' retribution theology. What the original audience would have understood is that Job is not a comfort book; it is a permission-giving book — permission to protest, to demand, and to receive something other than an answer.",
+      "From Proverbs' systematic framework — wisdom as cosmic ordering principle, the deed-consequence nexus as observable pattern — to Job's devastating counter-test when that framework collapses under innocent suffering. Here's where it gets interesting: YHWH's own verdict in Job 42:7 explicitly endorses Job's protest over the friends' retribution theology. What the original audience would have understood is that Proverbs and Job are not contradictory; they are a canonical dialogue. Proverbs says wisdom tends to flourish; Job says the tendency is not a guarantee. Together they define the honest space of Wisdom Literature: observational, not mechanical.",
     steps: [
+      { bookId: "proverbs", chapter: 1, annotation: "The oldest classroom in the world: yir'at YHWH as epistemological thesis — wisdom begins with posture, not intelligence." },
+      { bookId: "proverbs", chapter: 8, annotation: "Woman Wisdom at creation: ANE Maat parallel, qanah as bridal-acquisition, the cosmogonic claim that grounds all instruction." },
+      { bookId: "proverbs", chapter: 10, annotation: "Deed-consequence as observational wisdom: the sentence collection poses retribution as probabilistic pattern, not divine guarantee." },
       { bookId: "job", chapter: 1, annotation: "Divine council opening: ha-satan as prosecuting attorney — Wisdom Literature genre primer." },
       { bookId: "job", chapter: 3, annotation: "The lament hinge: prose to poetry, 'why was I born?' as theologically legitimate protest." },
       { bookId: "job", chapter: 19, annotation: "Goel legal trajectory: from arbiter to witness to vindicator — the legal advocate escalation." },
-      { bookId: "job", chapter: 28, annotation: "Hymn to Wisdom structural midpoint: the book's own answer before YHWH speaks." },
+      { bookId: "job", chapter: 28, annotation: "(Job 28) Hymn to Wisdom: where can wisdom be found? The canonical complement to Proverbs — the same question, a different answer." },
       { bookId: "job", chapter: 38, annotation: "Divine speeches creation survey: rhetorical reframing, not answering Job's questions." },
       { bookId: "job", chapter: 40, annotation: "Behemoth and Leviathan: Ugaritic Lotan cognate, Chaoskampf — chaos creatures, not zoology." },
       { bookId: "job", chapter: 42, annotation: "Epilogue verdict: YHWH rebukes retribution theology — Job spoke what is right, the friends did not." },
@@ -558,22 +584,24 @@ Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four k
       "Genesis 1 ANE background",
       "creation week framework",
     ],
-    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27", "psalms-8", "psalms-82", "job-38", "job-39", "job-40", "job-41"],
+    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27", "psalms-8", "psalms-82", "job-38", "job-39", "job-40", "job-41", "proverbs-8", "proverbs-31"],
     prose: `What did Genesis 1 communicate to its first audience — and what was it not trying to say?
 
 The ancient audience of Genesis did not live in a world asking about natural selection or the age of the cosmos. They lived in a world saturated with creation stories: Enuma Elish from Babylon, Atrahasis from Sumer, the Memphite Theology from Egypt. Every surrounding culture had a cosmogony that justified its own gods, its own king, its own view of humanity's purpose. Genesis was written into that contest.
 
 What the original audience would have understood is that Genesis 1 is structured as a cosmic temple inauguration. In ancient Near Eastern thought, the world was built as a dwelling place for the gods, and a temple was the microcosm of the universe. The seven-day structure mirrors the dedication week of a temple: six days of preparation, then the deity takes up residence. The Sabbath is not a command to rest arbitrarily — it is the climactic moment when YHWH "rests" in his cosmic temple, as a king enthroned.
 
-The firmament — raqia — was not a misunderstanding of physics. It was the ancient cosmological architecture the text assumed: a solid dome holding back the waters above, the earth resting on waters below. Genesis 1 uses this picture to declare who made it and why.
+The firmament — raqia — was the ancient cosmological architecture the text assumed: a solid dome holding back the waters above, the earth on waters below. Genesis 1 uses this picture to declare who made it and why.
 
-Here's where it gets interesting: Ezekiel 1's chariot vision employs the same cosmic architecture. The throne above the expanse, the living creatures below — YHWH enthroned above the entire cosmos, not confined to Jerusalem's ruined temple.
+Here's where it gets interesting: Ezekiel 1's chariot vision employs the same cosmic architecture — YHWH enthroned above the entire cosmos, not confined to Jerusalem's ruined temple.
 
-The Tabernacle of Exodus 25-27 is the cosmic temple made portable. The mishkan encodes the same three-tier cosmos: outer court as earth, holy place as heaven, holy of holies as the divine throne room. The seven-branched menorah echoes the seven days of creation. This is not forced symbolism — it is Genesis 1's architectural vocabulary rendered in acacia wood and gold, carried through the wilderness.
+The Tabernacle of Exodus 25-27 is the cosmic temple made portable. The mishkan encodes the same three-tier cosmos: outer court as earth, holy place as heaven, holy of holies as the divine throne room. Genesis 1's architectural vocabulary rendered in acacia wood and gold.
+
+Proverbs 8 presents Woman Wisdom as present at creation itself — the cosmic ordering principle personified, dancing before YHWH as the world takes shape (8:30). The Egyptian Maat parallel is unmistakable: cosmic order given literary voice. Proverbs 31's Woman of Valor closes the arc — Wisdom embodied in the world the cosmos built.
 
 Genesis 3, 6, and 11 extend the framework. The cosmic temple was invaded, the boundaries breached, the nations scattered — but the covenant with one family began the project of restoring what was lost.
 
-Psalm 8's creation praise -- "when I consider your heavens, the work of your fingers" -- and Psalm 82's heavenly court scene extend this cosmic architecture into the Psalter's liturgical voice.
+Psalm 8's creation praise and Psalm 82's heavenly court scene extend this cosmic architecture into the Psalter's liturgical voice.
 
 Ancient wisdom, cosmic clarity.`,
   },
@@ -784,7 +812,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "zechariah-14": ["zechariah-13", "revelation-20", "ezekiel-38"],
 
   // Psalms -- 10 commentary chapters
-  "psalms-2": ["psalms-110", "daniel-7", "isaiah-9"],
+  "psalms-2": ["psalms-110", "daniel-7", "proverbs-16"],
   "psalms-8": ["psalms-82", "genesis-1", "genesis-2"],
   "psalms-22": ["psalms-89", "psalms-51", "isaiah-53"],
   "psalms-23": ["psalms-22", "psalms-89", "exodus-33"],
@@ -811,10 +839,21 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "job-2": ["job-1", "psalms-82", "genesis-6"],
   "job-3": ["job-19", "jeremiah-1", "psalms-22"],
   "job-19": ["job-3", "isaiah-53", "psalms-22"],
-  "job-28": ["job-3", "job-42", "psalms-8"],
+  "job-28": ["job-3", "job-42", "proverbs-8"],
   "job-38": ["job-39", "genesis-1", "psalms-8"],
   "job-39": ["job-38", "job-40", "genesis-2"],
   "job-40": ["job-41", "genesis-6", "ezekiel-28"],
   "job-41": ["job-40", "genesis-3", "psalms-89"],
   "job-42": ["job-28", "psalms-89", "jeremiah-23"],
+
+  // Proverbs — 7 RAG clusters, 9 commentary chapters
+  "proverbs-1": ["proverbs-7", "proverbs-8", "job-28"],
+  "proverbs-7": ["proverbs-1", "proverbs-8", "proverbs-31"],
+  "proverbs-8": ["proverbs-1", "proverbs-31", "job-28"],
+  "proverbs-10": ["proverbs-16", "proverbs-25", "job-42"],
+  "proverbs-16": ["proverbs-10", "proverbs-25", "psalms-2"],
+  "proverbs-22": ["proverbs-23", "proverbs-25", "genesis-12"],
+  "proverbs-23": ["proverbs-22", "proverbs-25", "exodus-20"],
+  "proverbs-25": ["proverbs-16", "proverbs-22", "jeremiah-36"],
+  "proverbs-31": ["proverbs-8", "proverbs-1", "job-28"],
 };

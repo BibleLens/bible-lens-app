@@ -182,6 +182,30 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         return `What does YHWH's verdict in Job 42:7 actually say about retribution theology — and why does restoring Job not vindicate the friends' argument that suffering always indicates sin?`;
       }
     }
+    if (book === "proverbs") {
+      if ([1, 7].includes(chapter)) {
+        return `What is the bridal-courtship spine of Proverbs 1-9 — and why does the father's instruction to court Woman Wisdom function as a theological frame, not just a metaphor?`;
+      }
+      if (chapter === 8) {
+        return `What is the ANE Maat parallel behind Woman Wisdom's cosmogonic speech in Proverbs 8 — and why does the Hebrew qanah in 8:22 point to bridal-acquisition language rather than creation (Arian) or eternal possession (Nicene)?`;
+      }
+      if (chapter === 10) {
+        return `What does the shift from instruction discourse to antithetical sentence proverbs in Proverbs 10 reveal — and why is the deed-consequence framework observational wisdom rather than a guarantee from God?`;
+      }
+      if (chapter === 16) {
+        return `How does Proverbs 16:9 ('The heart of man plans his way, but YHWH establishes his steps') function as the theological center of the royal wisdom cluster — and what does it reveal about YHWH's sovereignty over human plans?`;
+      }
+      if ([22, 23].includes(chapter)) {
+        return `What is the Amenemope literary dependency in Proverbs 22:17-24:22 — and why does the shalishim ('thirty') of verse 20 directly parallel the thirty chapters of the Egyptian wisdom text on BM Papyrus 10474?`;
+      }
+      if (chapter === 25) {
+        return `What does the Hezekian editorial superscription in Proverbs 25:1 reveal about how biblical wisdom was transmitted — and why does the act of copying Solomon's proverbs itself embody the book's own courtship-of-wisdom theology?`;
+      }
+      if (chapter === 31) {
+        return `How does the eshet chayil of Proverbs 31 close the bridal-courtship spine opened in chapter 1 — and why does chayil (military valor) refuse to let the poem become a domesticity prescription?`;
+      }
+      return `What is the historical context of ${bookTitle} ${chapter}?`;
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
