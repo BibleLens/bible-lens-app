@@ -12,6 +12,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   zechariah: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
   psalms: [2, 8, 22, 23, 45, 51, 82, 89, 110, 139],
   jeremiah: [1, 7, 18, 19, 23, 29, 31, 36, 52],
+  job: [1, 2, 3, 19, 28, 38, 39, 40, 41, 42],
 };
 
 export const COMMENTARY_BOOKS = Object.keys(COMMENTARY_CHAPTERS);
@@ -225,6 +226,28 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "Jeremiah 36 is the Bible's own story about how the Bible was written. When King Jehoiakim cuts apart Jeremiah's scroll and burns it column by column in the brazier, the text reports what happened next: Baruch the scribe re-dictated the entire scroll 'and many similar words were added' (36:32). Through this lens, the chapter becomes a meta-commentary on textual transmission — the same process of dictation, destruction, and expansion that scholars observe between the shorter Septuagint and longer Masoretic editions of Jeremiah itself. Baruch's role as amanuensis is now corroborated by the Baruch Bulla — a clay seal impression reading 'Belonging to Berekhyahu son of Neriyahu the scribe' — providing direct archaeological attestation of the figure behind the text.",
   "jeremiah-52":
     "Jeremiah 52 begins immediately after the editorial marker 'Thus far are the words of Jeremiah' at 51:64 — a signal that what follows is not Jeremiah's own composition but a Deuteronomistic appendix added by later editors. The chapter parallels 2 Kings 25 nearly verbatim, recounting the fall of Jerusalem, the destruction of the temple, and the deportation lists. But it ends with a detail 2 Kings shares and that transforms the entire book's conclusion: the release of King Jehoiachin from Babylonian prison and his elevation to eat at the king's table. Corroborated by cuneiform ration tablets listing provisions for 'Yaukin, king of Yahud,' this closing coda functions as the Deuteronomistic History's final note of hope — exile is not the last word.",
+
+  // Job — 4 RAG clusters, 10 commentary chapters
+  "job-1":
+    "What was actually happening in the divine council scene that opens Job? The ha-satan figure — 'the accuser' with the Hebrew definite article — holds a prosecuting attorney role in YHWH's court, not the cosmic adversary of later theology. Here's where it gets interesting: the Wisdom Literature genre signals from the first verse that this prose frame is teaching device, not biography.",
+  "job-2":
+    "What happens when the ha-satan returns to the divine council for a second challenge? Job 2 escalates from possessions to body — 'skin for skin' — and Job's wife speaks the line the narrator refuses to endorse. Through this lens, the second council scene tests whether the reader will side with the accuser's logic or the narrator's verdict.",
+  "job-3":
+    "Why does Job 3 shift from prose to poetry — and what does the 'why was I born?' lament mean in the wisdom tradition? The curse of the birthday echoes Jeremiah 20:14-18 and signals that this is not sinful rebellion but the most extreme form of legitimate grief in ancient Israelite literature.",
+  "job-19":
+    "What does goel mean in Job 19:25 — and who is the 'Redeemer' who lives? The legal advocate trajectory from mokiach (9:33) through ed/witness (16:19) to goel (19:25) reveals an escalating legal advocacy, not a spiritual confession. The text deliberately leaves the vindicator's identity open.",
+  "job-28":
+    "Where can wisdom be found? Job 28's Hymn to Wisdom uses a three-strophe mining illustration to pose the question humanity cannot answer — then delivers the book's own thesis: 'the fear of the Lord, that is wisdom.' This structural midpoint speaks before the divine speeches arrive.",
+  "job-38":
+    "What is YHWH actually saying from the whirlwind in Job 38? The creation survey — from the sea's boundaries to the storehouses of snow — reframes Job's suffering without answering it. These are not trick questions; they are an invitation to see the cosmos from the Creator's perspective.",
+  "job-39":
+    "Why does YHWH's first divine speech continue with wild animals Job cannot domesticate? The mountain goat, the wild donkey, the ostrich, the war horse — each creature demonstrates that the cosmos operates on purposes beyond human utility or comprehension.",
+  "job-40":
+    "Who is Behemoth in Job 40? The intensive plural behemot signals a primordial category — 'the Animal' — not a species identification. Through this lens, Behemoth is the land chaos creature, the counterpart to Leviathan's sea domain, drawn from ANE mythology the original audience would have recognized.",
+  "job-41":
+    "Who is Leviathan in Job 41 — and why does the Ugaritic Lotan cognate matter? The seven-headed sea dragon of Chaoskampf tradition is the creature YHWH claims mastery over. This is not a crocodile; it is the chaos monster that only the Creator can subdue.",
+  "job-42":
+    "What does YHWH's verdict in Job 42:7 actually say? 'You have not spoken of me what is right, as my servant Job has' — the friends' retribution theology is explicitly rebuked. The restoration that follows is grace, not reward, and does not vindicate the framework Job spent 40 chapters dismantling.",
 };
 
 // Truncates description text to a word limit for card teasers.
@@ -247,7 +270,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 41 + 22 + 28 + 14 = 105 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 41 + 28 + 32 + 14 = 115 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -277,6 +300,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "genesis-18", "isaiah-6",
       "exodus-25", "exodus-26", "exodus-27",
       "psalms-8", "psalms-82", "psalms-139",
+      "job-1", "job-2", "job-38", "job-39", "job-40", "job-41",
     ],
   },
   {
@@ -291,6 +315,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "zechariah-7", "zechariah-8",
       "psalms-23", "psalms-51", "psalms-89",
       "jeremiah-1", "jeremiah-29", "jeremiah-31", "jeremiah-36", "jeremiah-52",
+      "job-3", "job-19", "job-28", "job-42",
     ],
   },
   {
@@ -441,6 +466,21 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "jeremiah", chapter: 52, annotation: "Deuteronomistic appendix: the fall of Jerusalem, and Jehoiachin's release as the coda of hope." },
     ],
   },
+  {
+    id: "wisdom-arc",
+    title: "Wisdom Arc",
+    throughLine:
+      "From the divine council scene through protest, legal advocacy, the Hymn to Wisdom, the theophanic whirlwind, chaos creatures, and epilogue verdict — Job traces the most honest theological arc in the Hebrew Bible. Here's where it gets interesting: YHWH's 42:7 verdict explicitly endorses Job's protest over the friends' retribution theology. What the original audience would have understood is that Job is not a comfort book; it is a permission-giving book — permission to protest, to demand, and to receive something other than an answer.",
+    steps: [
+      { bookId: "job", chapter: 1, annotation: "Divine council opening: ha-satan as prosecuting attorney — Wisdom Literature genre primer." },
+      { bookId: "job", chapter: 3, annotation: "The lament hinge: prose to poetry, 'why was I born?' as theologically legitimate protest." },
+      { bookId: "job", chapter: 19, annotation: "Goel legal trajectory: from arbiter to witness to vindicator — the legal advocate escalation." },
+      { bookId: "job", chapter: 28, annotation: "Hymn to Wisdom structural midpoint: the book's own answer before YHWH speaks." },
+      { bookId: "job", chapter: 38, annotation: "Divine speeches creation survey: rhetorical reframing, not answering Job's questions." },
+      { bookId: "job", chapter: 40, annotation: "Behemoth and Leviathan: Ugaritic Lotan cognate, Chaoskampf — chaos creatures, not zoology." },
+      { bookId: "job", chapter: 42, annotation: "Epilogue verdict: YHWH rebukes retribution theology — Job spoke what is right, the friends did not." },
+    ],
+  },
 ];
 
 // Phase 51 — topic landing page data. All three exports follow the interface-then-constant
@@ -518,7 +558,7 @@ Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four k
       "Genesis 1 ANE background",
       "creation week framework",
     ],
-    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27", "psalms-8", "psalms-82"],
+    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27", "psalms-8", "psalms-82", "job-38", "job-39", "job-40", "job-41"],
     prose: `What did Genesis 1 communicate to its first audience — and what was it not trying to say?
 
 The ancient audience of Genesis did not live in a world asking about natural selection or the age of the cosmos. They lived in a world saturated with creation stories: Enuma Elish from Babylon, Atrahasis from Sumer, the Memphite Theology from Egypt. Every surrounding culture had a cosmogony that justified its own gods, its own king, its own view of humanity's purpose. Genesis was written into that contest.
@@ -576,7 +616,7 @@ Where Bible Lens parts from full preterism: Revelation 19-20 describes a future 
       "Isaiah 53 corporate Israel reading",
       "suffering servant who is it",
     ],
-    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23"],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19"],
     prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
 
 Here's where it gets interesting: the historically prior reading, the one dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi in the eleventh century argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, carrying the weight of history, and destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion among pre-modern Jewish scholars; it was the mainstream.
@@ -644,7 +684,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "genesis-28": ["genesis-12", "ezekiel-1"],
 
   // Genesis — Divine council / cosmos cluster
-  "genesis-1": ["genesis-2", "ezekiel-1", "psalms-8"],
+  "genesis-1": ["genesis-2", "ezekiel-1", "job-38"],
   "genesis-2": ["genesis-1", "genesis-3", "ezekiel-28"],
   "genesis-3": ["genesis-2", "revelation-12", "ezekiel-28"],
   "genesis-11": ["genesis-6", "daniel-2", "revelation-17"],
@@ -702,7 +742,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "ezekiel-1": ["isaiah-6", "ezekiel-2", "revelation-4"],
   "ezekiel-2": ["ezekiel-3", "ezekiel-1", "daniel-1"],
   "ezekiel-3": ["ezekiel-2", "daniel-6", "ezekiel-37"],
-  "ezekiel-28": ["genesis-3", "genesis-6", "psalms-82"],
+  "ezekiel-28": ["genesis-3", "genesis-6", "job-40"],
   "ezekiel-37": ["ezekiel-38", "daniel-12", "jeremiah-31"],
   "ezekiel-38": ["ezekiel-39", "revelation-20", "zechariah-14"],
   "ezekiel-39": ["ezekiel-38", "revelation-19", "revelation-20"],
@@ -730,7 +770,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   // Zechariah — 5 commentary clusters, 14 chapters
   "zechariah-1": ["ezekiel-1", "daniel-10", "revelation-6"],
   "zechariah-2": ["zechariah-1", "ezekiel-38", "revelation-21"],
-  "zechariah-3": ["zechariah-6", "jeremiah-23", "daniel-9"],
+  "zechariah-3": ["zechariah-6", "jeremiah-23", "job-1"],
   "zechariah-4": ["zechariah-5", "zechariah-6", "revelation-1"],
   "zechariah-5": ["zechariah-4", "zechariah-6", "revelation-17"],
   "zechariah-6": ["zechariah-3", "zechariah-4", "jeremiah-23"],
@@ -750,7 +790,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "psalms-23": ["psalms-22", "psalms-89", "exodus-33"],
   "psalms-45": ["psalms-2", "psalms-110", "isaiah-9"],
   "psalms-51": ["psalms-139", "psalms-22", "ezekiel-37"],
-  "psalms-82": ["genesis-6", "ezekiel-28", "daniel-10"],
+  "psalms-82": ["genesis-6", "ezekiel-28", "job-1"],
   "psalms-89": ["psalms-2", "psalms-22", "genesis-15"],
   "psalms-110": ["psalms-2", "psalms-45", "daniel-7"],
   "psalms-139": ["psalms-51", "psalms-8", "genesis-1"],
@@ -765,4 +805,16 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "jeremiah-31": ["isaiah-65", "jeremiah-29", "ezekiel-37"],
   "jeremiah-36": ["isaiah-6", "exodus-34", "jeremiah-52"],
   "jeremiah-52": ["daniel-1", "jeremiah-36", "ezekiel-37"],
+
+  // Job — 4 RAG clusters, 10 commentary chapters (each entry has exactly 3 related passages)
+  "job-1": ["psalms-82", "ezekiel-28", "zechariah-3"],
+  "job-2": ["job-1", "psalms-82", "genesis-6"],
+  "job-3": ["job-19", "jeremiah-1", "psalms-22"],
+  "job-19": ["job-3", "isaiah-53", "psalms-22"],
+  "job-28": ["job-3", "job-42", "psalms-8"],
+  "job-38": ["job-39", "genesis-1", "psalms-8"],
+  "job-39": ["job-38", "job-40", "genesis-2"],
+  "job-40": ["job-41", "genesis-6", "ezekiel-28"],
+  "job-41": ["job-40", "genesis-3", "psalms-89"],
+  "job-42": ["job-28", "psalms-89", "jeremiah-23"],
 };
