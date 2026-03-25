@@ -159,6 +159,29 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       }
       return `What is the historical context of ${bookTitle} ${chapter}?`;
     }
+    if (book === "job") {
+      if ([1, 2].includes(chapter)) {
+        return `What was actually happening in Job's divine council opening — who is ha-satan, and how does the prosecuting-attorney role differ from the later theological concept of Satan?`;
+      }
+      if (chapter === 3) {
+        return `What is the theological significance of Job 3's opening lament — and why does the 'why was I born?' protest represent legitimate grief rather than sinful rebellion in the wisdom literature tradition?`;
+      }
+      if (chapter === 19) {
+        return `What does the Hebrew word goel mean in Job 19:25 — and how does the legal advocate trajectory from Job 9:33 through 16:19 to 19:25 change what the 'Redeemer who lives' is actually saying?`;
+      }
+      if (chapter === 28) {
+        return `What is the three-strophe mining illustration doing in Job 28 — and why does the 'fear of the Lord is wisdom' conclusion of the Hymn to Wisdom function as the book's own answer before the divine speeches arrive?`;
+      }
+      if ([38, 39].includes(chapter)) {
+        return `What is YHWH actually saying in the divine speeches of Job 38-39 — and why do these cosmic questions about creation reframe Job's suffering without answering it directly?`;
+      }
+      if ([40, 41].includes(chapter)) {
+        return `Who are Behemoth and Leviathan in Job 40-41 — and what does the Ugaritic Lotan cognate and the Chaoskampf tradition reveal about why YHWH uses chaos creatures to answer Job's complaint?`;
+      }
+      if (chapter === 42) {
+        return `What does YHWH's verdict in Job 42:7 actually say about retribution theology — and why does restoring Job not vindicate the friends' argument that suffering always indicates sin?`;
+      }
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
