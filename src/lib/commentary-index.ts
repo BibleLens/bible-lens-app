@@ -6,7 +6,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   daniel: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
   matthew: [24],
   revelation: [1, 2, 3, 4, 5, 6, 7, 12, 13, 14, 17, 18, 19, 20, 21, 22],
-  isaiah: [1, 2, 6, 7, 9, 11, 52, 53, 65, 66],
+  isaiah: [1, 2, 6, 7, 9, 11, 40, 42, 43, 44, 45, 49, 50, 52, 53, 54, 55, 65, 66],
   ezekiel: [1, 2, 3, 28, 37, 38, 39],
   exodus: [3, 12, 14, 19, 20, 25, 26, 27, 32, 33, 34],
   zechariah: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
@@ -115,6 +115,18 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
   "isaiah-53": "The most contested chapter in the Hebrew Bible. Corporate-Israel reading first — Rashi, Ibn Ezra, the historically prior interpretation. Then the typological fulfillment in Jesus. Both as layers, not competitors.",
   "isaiah-65": "New heavens and new earth — but death is still present. The hinge verse: death at age 100 is dying young. What the original audience understood about Isaiah 65 as Millennial conditions, and why 65:20 rules out the eternal state.",
   "isaiah-66": "The conclusion of Isaiah's vision — cosmic worship, new moons, Sabbaths. Through this lens, the eschatological placement of Isaiah 66 and the three options for the judgment scene. Ancient wisdom, modern premillennial clarity.",
+
+  // Deutero-Isaiah — 5 RAG clusters, 9 commentary chapters (Phase 105)
+  "isaiah-40": "What did 'comfort, comfort my people' mean to Judean exiles in Babylon — and why is this a divine council commissioning scene, not a pastoral greeting? The Hebrew nahamu nahamu ammi opens with a command issued in the heavenly throne room: voices are dispatched, a highway is ordered through the wilderness, and YHWH's kabod is about to be revealed. Here's where it gets interesting: the 'voice crying in the wilderness' is not a lonely prophet — it is a herald announcing a new exodus that will surpass the first. The al tira salvation oracle genre frames the entire chapter: 'do not fear' because YHWH is incomparable — who measured the waters in the hollow of his hand? The Babylonian gods are nothing beside this. Through this lens, Isaiah 40 is the overture to everything that follows in chapters 40-55: the servant, the trial speeches, the Cyrus oracle, the covenant banquet. Every theme announced here finds its development in the chapters ahead. What the original audience would have understood is a message of imminent divine action — not distant hope, but active preparation for return.",
+  "isaiah-42": "What is the First Servant Song — and why does the servant's method matter as much as his mission? Isaiah 42:1-4 introduces a figure commissioned to bring mishpat (justice, right order) to the nations. But the method is striking: a bruised reed he will not break, a dimly burning wick he will not snuff out. Here's where it gets interesting: the triple repetition of mishpat in four verses is the highest concentration of this term in any prophetic commission. The servant does not shout or raise his voice in the street — the opposite of the Babylonian imperial announcement style. What the original audience would have understood is a deliberate contrast with empire: justice through gentleness, not through force. Through this lens, the First Song establishes the method that all four Servant Songs develop — and the arc continues through Isaiah 49, 50, and into 52-53.",
+  "isaiah-43": "What does 'I am he' mean when YHWH declares ani hu in Isaiah 43 — and why has this phrase generated one of the most significant debates in biblical theology? The trial speech genre dominates this chapter: YHWH summons the nations to court and calls Israel as witnesses. Here's where it gets interesting: the ani hu declarations of Isaiah 43:10-13 have been read by scholars like Richard Bauckham as a divine-identity formula that the Fourth Gospel's ego eimi sayings deliberately echo. The text, however, operates within a specific courtroom context — YHWH is establishing that no god existed before him and none will after, as a polemic against Babylonian deity claims. What the original audience would have understood is a legal argument for YHWH's exclusive sovereignty, delivered to exiles surrounded by Marduk worship. The passage is theologically explosive precisely because it refuses to be domesticated by any later framework — it demands to be heard in its own voice first.",
+  "isaiah-44": "What does the idol polemic satire of Isaiah 44 actually describe — and why is it more structurally precise than it first appears? The craftsman who cuts down a tree, burns half for warmth, roasts meat over the coals, and carves the other half into a god is not just a joke. Here's where it gets interesting: the satire targets the Babylonian mis pi ritual — the 'mouth-washing' ceremony that was believed to animate cult statues into living divine presences. What the original audience would have understood is that Isaiah is not merely mocking woodworking; he is dismantling the theological infrastructure of Babylonian religion. The en od declarations — 'there is no other' — reach their first crescendo here, positioning YHWH as the yotzer (former/creator) of all things. Through this lens, the idol polemic is the negative argument that clears the ground for the Cyrus oracle that follows immediately in chapter 45.",
+  "isaiah-45": "Why does YHWH call the Persian emperor Cyrus his mashiach — and what does this word actually mean in its original context? Isaiah 45 contains the most theologically provocative appointment in the Hebrew Bible: a foreign king given YHWH's own anointing title. Here's where it gets interesting: mashiach here is a functional title — 'the one YHWH has greased for the task' — not a proto-messianic figure in the later Christian sense. The Cyrus Cylinder (BM 90920), the Persian emperor's own propaganda text, claims Marduk chose Cyrus. Isaiah 45 counter-claims: it was YHWH, not Marduk. What the original audience would have understood is a bold theological reinterpretation of geopolitics — the same emperor, but reattributed to Israel's God. The en od ('there is no other') monotheism peak continues from chapter 44, reaching its fullest expression here. Ancient wisdom, modern clarity: the text is doing theology through political commentary.",
+  "isaiah-49": "What happens when the servant is named 'Israel' in 49:3 — and then sent to Israel in 49:5-6? The Second Servant Song opens with a birth-from-womb commissioning that echoes Jeremiah 1:5, placing the servant in the prophetic-call genre. Here's where it gets interesting: the literary tension between the servant being Israel and being sent to Israel is deliberate — the text refuses to resolve it, and that refusal is the point. The servant has labored in vain (49:4), yet YHWH declares the mission is too small if it only restores Jacob — the servant will be or lagoyim, a light to the nations. What the original audience would have understood is a universalizing move: covenant faithfulness expanding beyond ethnic boundaries, through the very figure who embodies Israel's vocation. Through this lens, the arc that began in Isaiah 42's First Song takes its next step here.",
+  "isaiah-50": "What is the limmud tongue — and why does the Third Servant Song describe a figure who is taught morning by morning what to say to the weary? Isaiah 50:4-9 presents a servant whose authority comes not from royal power but from disciplined listening. The Hebrew limmud (continually-taught) describes the tongue of a disciple, not a sovereign. Here's where it gets interesting: this servant does not resist when struck, does not turn away when they pull out the beard — yet the response is not passive resignation but confident legal challenge: 'Who will contend with me? Let us stand together.' What the original audience would have understood is a prophetic-disciple register: authority through suffering endured, not suffering enjoyed. Through this lens, the Third Song's morning-by-morning awakening discipline establishes the pattern the arc will complete in Isaiah 52-53.",
+  "isaiah-54": "What does the marriage metaphor mean when YHWH tells Zion 'your Maker is your husband' — and why is this a legal restitution scene, not a romantic one? Isaiah 54 addresses the exilic community as a forsaken wife who will be restored: the barren woman will have more children than the married one. Here's where it gets interesting: the go'el (kinsman-redeemer) language here is a legal institution, not sentimental piety — YHWH is acting as Zion's legal advocate under the covenant. The hesed (covenant loyalty) of peace and the berith olam (everlasting covenant) declared in 54:10 mark the transition from judgment to permanent restoration. What the original audience would have understood is a post-exilic address: Zion is not abandoned, the covenant stands, and the mountains may depart before YHWH's hesed does. Through this lens, Isaiah 54 is the theological pivot between the servant's suffering and the covenant banquet invitation of chapter 55.",
+  "isaiah-55": "What does 'come, everyone who thirsts, come to the waters — you who have no money, come, buy and eat' mean to people who have been buying grain in Babylon? Isaiah 55's covenant banquet invitation is counter-programming: the Babylonian temple economy charged for access to the gods, and here YHWH offers the berith olam (everlasting covenant) without price. Here's where it gets interesting: the David reference in 55:3-4 extends the Davidic covenant promises to the entire community — no longer restricted to a single royal line but democratized to all who come. What the original audience would have understood is an economic metaphor with teeth: the gods of Babylon cost something, but YHWH's covenant is free. Through this lens, Isaiah 55 closes the Deutero-Isaiah collection (chapters 40-55) with an open invitation — the servant has suffered, the covenant is renewed, and the banquet table is set. Ancient wisdom: the best things cannot be purchased.",
+
   "ezekiel-1": "What did the chariot vision mean to Ezekiel's first audience — the Judean exiles in Babylon? The chayot, ophanim, and kabod are not a riddle. They are YHWH answering the most urgent theological question of the exile in the visual vocabulary of lamassu iconography the exiles walked past every day.",
   "ezekiel-2": "The call of Ezekiel — a priest without a temple commissioned as a watchman to a rebellious house. Through this lens, the scroll Ezekiel eats and the resistance he is told to expect from the exiles at Tel-abib. Ancient wisdom about prophetic calling under imperial pressure.",
   "ezekiel-3": "Ezekiel's commissioning concludes with the watchman oracle — individual moral responsibility articulated for the first time with this clarity in the Hebrew prophets. Here's where it gets interesting: the kabod departs Ezekiel's vision site at the Chebar canal and heads toward Jerusalem.",
@@ -316,7 +328,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 41 + 33 + 47 + 14 = 135 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 41 + 33 + 49 + 21 = 144 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -366,6 +378,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "job-3", "job-19", "job-28", "job-42",
       "proverbs-1", "proverbs-7", "proverbs-10", "proverbs-16", "proverbs-22", "proverbs-23", "proverbs-25",
       "ecclesiastes-2", "ecclesiastes-5", "ecclesiastes-6", "ecclesiastes-8", "ecclesiastes-9", "ecclesiastes-10", "ecclesiastes-11", "ecclesiastes-12",
+      "isaiah-54", "isaiah-55",
     ],
   },
   {
@@ -377,6 +390,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "zechariah-3", "zechariah-6", "zechariah-9", "zechariah-11",
       "psalms-2", "psalms-22", "psalms-45", "psalms-110",
       "jeremiah-23",
+      "isaiah-40", "isaiah-42", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-49", "isaiah-50",
     ],
   },
 ];
@@ -538,6 +552,19 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "ecclesiastes", chapter: 12, annotation: "The aging allegory closes the trilogy: dust returns to dust, breath to the one who breathed it. Genesis 2:7 undone. The epilogue narrator gets the last word." },
     ],
   },
+  {
+    id: "servant-songs-arc",
+    title: "Servant Songs Arc",
+    throughLine:
+      "Four poems embedded in Isaiah 40-55 trace a single arc: a servant commissioned to bring mishpat to the nations through gentleness, not force (Song 1, Isaiah 42); named 'Israel' yet sent to Israel, expanding the covenant to become a light to the nations (Song 2, Isaiah 49); taught morning by morning, suffering endured but not passive — 'who will contend with me?' (Song 3, Isaiah 50); and finally exalted after disfigurement, the most contested passage in the Hebrew Bible where corporate Israel and typological fulfillment layer on top of each other (Song 4, Isaiah 52-53). What the original audience would have understood is that these four poems were not isolated oracles but a developing portrait — the method, the mission, the cost, and the vindication.",
+    steps: [
+      { bookId: "isaiah", chapter: 42, annotation: "First Song: mishpat to the nations — gentle method, bruised reed, dimly burning wick." },
+      { bookId: "isaiah", chapter: 49, annotation: "Second Song: the Servant named Israel, yet sent to Israel — the identity tension the text refuses to resolve." },
+      { bookId: "isaiah", chapter: 50, annotation: "Third Song: the limmud tongue — morning by morning the Servant is taught what to say to the weary." },
+      { bookId: "isaiah", chapter: 52, annotation: "Fourth Song begins here: the Servant exalted — the passage actually starts at 52:13, not chapter 53." },
+      { bookId: "isaiah", chapter: 53, annotation: "The most contested chapter in the Hebrew Bible: corporate Israel first, then typological fulfillment — both as layers, not competitors." },
+    ],
+  },
 ];
 
 // Phase 51 — topic landing page data. All three exports follow the interface-then-constant
@@ -675,7 +702,7 @@ Where Bible Lens parts from full preterism: Revelation 19-20 describes a future 
       "Isaiah 53 corporate Israel reading",
       "suffering servant who is it",
     ],
-    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19", "ecclesiastes-9"],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-42", "isaiah-49", "isaiah-50", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19", "ecclesiastes-9"],
     prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
 
 Here's where it gets interesting: the historically prior reading, dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion; it was the mainstream.
@@ -686,13 +713,15 @@ Through this lens, Isaiah 52:13 is where the passage actually begins, not chapte
 
 The typological reading — that Jesus fulfilled the servant's role — does not cancel the corporate reading. It layers on top of it. What Israel was called to be (a light to the nations, a redemptive presence among the peoples), Jesus embodied in concentrated, singular form. Both as layers, not competitors.
 
-Isaiah 7's Immanuel sign, the throne names of Isaiah 9, and the Branch of Isaiah 11 all work this way: they address an original crisis first, then carry a typological weight that later generations recognize in light of Jesus.
+Isaiah 7, 9, and 11 work the same way: each addresses an original crisis first, then carries typological weight recognized in light of Jesus.
 
-The Psalter's royal messianic cluster -- Psalm 2's coronation formula, Psalm 22's lament-to-vindication arc, Psalm 45's royal wedding, Psalm 110's enthronement oracle -- forms the second OT pillar alongside the servant songs.
+The Psalter's royal messianic cluster — Psalms 2, 22, 45, 110 — forms the second OT pillar alongside the servant songs.
+
+Songs 1 through 3 (Isaiah 42, 49, 50) trace the arc before 52-53: the servant commissioned through gentleness, named Israel yet sent to Israel, taught morning by morning the limmud tongue.
 
 Ecclesiastes 9's death-as-equalizer observation — 'the righteous and the wicked share the same fate' — extends the canonical tension. Where Job's friends insist suffering proves guilt, and the servant songs transform suffering into vocation, Qoheleth simply observes: death does not distinguish.
 
-This reading takes the text's historical context seriously before reaching for christological application — and finds both dimensions more compelling as a result.`,
+This reading takes the text's historical context seriously before christological application — and finds both dimensions more compelling.`,
   },
   {
     slug: "ezekiel-gog-magog",
@@ -794,8 +823,8 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "isaiah-7": ["isaiah-9", "isaiah-11", "matthew-24"],
   "isaiah-9": ["isaiah-7", "zechariah-9", "psalms-2"],
   "isaiah-11": ["isaiah-9", "isaiah-65", "jeremiah-23"],
-  "isaiah-52": ["isaiah-53", "daniel-9", "revelation-5"],
-  "isaiah-53": ["isaiah-52", "genesis-22", "psalms-22"],
+  "isaiah-52": ["isaiah-53", "isaiah-50", "revelation-5"],
+  "isaiah-53": ["isaiah-52", "isaiah-49", "psalms-22"],
   "isaiah-65": ["isaiah-66", "revelation-21", "ezekiel-37"],
   "isaiah-66": ["isaiah-65", "revelation-22", "ezekiel-39"],
 
@@ -902,4 +931,15 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "ecclesiastes-10": ["ecclesiastes-9", "ecclesiastes-11", "proverbs-25"],
   "ecclesiastes-11": ["ecclesiastes-10", "ecclesiastes-12", "proverbs-31"],
   "ecclesiastes-12": ["ecclesiastes-9", "ecclesiastes-11", "genesis-2"],
+
+  // Deutero-Isaiah — 5 RAG clusters, 9 commentary chapters
+  "isaiah-40": ["isaiah-42", "exodus-14", "isaiah-6"],
+  "isaiah-42": ["isaiah-49", "isaiah-40", "psalms-2"],
+  "isaiah-43": ["isaiah-42", "isaiah-44", "exodus-3"],
+  "isaiah-44": ["isaiah-45", "isaiah-43", "jeremiah-7"],
+  "isaiah-45": ["isaiah-44", "isaiah-40", "daniel-1"],
+  "isaiah-49": ["isaiah-42", "isaiah-50", "jeremiah-1"],
+  "isaiah-50": ["isaiah-49", "isaiah-42", "jeremiah-1"],
+  "isaiah-54": ["isaiah-55", "isaiah-49", "jeremiah-31"],
+  "isaiah-55": ["isaiah-54", "isaiah-40", "exodus-19"],
 };

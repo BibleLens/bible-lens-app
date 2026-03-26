@@ -53,6 +53,21 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       if (chapter === 6) {
         return `What did the seraphim and the trisagion mean to Isaiah's original audience — and what does the ANE throne-guardian tradition reveal about the 'holy, holy, holy' declaration?`;
       }
+      if (chapter === 40) {
+        return `What does 'comfort, comfort my people' mean as a divine council commissioning scene — and why is the 'voice crying in the wilderness' announcing a new exodus that will surpass the first?`;
+      }
+      if ([42, 43].includes(chapter)) {
+        return `What is the Servant Song in this chapter — and how do the trial speeches, the ani hu declarations, and the bruised-reed method of mishpat reshape what 'justice to the nations' means?`;
+      }
+      if ([44, 45].includes(chapter)) {
+        return `Why does YHWH call the Persian emperor Cyrus his mashiach — and what does the idol polemic satire reveal about the Babylonian mis pi ritual that Isaiah is dismantling?`;
+      }
+      if ([49, 50].includes(chapter)) {
+        return `What happens when the servant is named 'Israel' yet sent to Israel — and what does the limmud tongue of the Third Song reveal about prophetic authority through morning-by-morning discipline?`;
+      }
+      if ([54, 55].includes(chapter)) {
+        return `What does YHWH's marriage metaphor and the covenant banquet invitation mean to exiles in Babylon — and why is 'come buy without price' counter-programming against the Babylonian temple economy?`;
+      }
       return `What did Isaiah ${chapter} mean to the original audience — and how does it connect to New Testament fulfillment?`;
     }
     if (book === "exodus") {
