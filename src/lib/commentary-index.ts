@@ -14,6 +14,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   jeremiah: [1, 7, 18, 19, 23, 29, 31, 36, 52],
   job: [1, 2, 3, 19, 28, 38, 39, 40, 41, 42],
   proverbs: [1, 7, 8, 10, 16, 22, 23, 25, 31],
+  ecclesiastes: [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12],
 };
 
 export const COMMENTARY_BOOKS = Object.keys(COMMENTARY_CHAPTERS);
@@ -269,6 +270,30 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "What does the editorial superscription in Proverbs 25:1 — 'these also are proverbs of Solomon that the men of Hezekiah king of Judah copied' — reveal about how biblical wisdom was transmitted? This is one of the most historically revealing verses in the entire book. The 'men of Hezekiah' are royal scribes working in the late eighth century BCE, and their act of copying is itself evidence of the editorial process behind the Hebrew Bible. Here's where it gets interesting: the verb he'etiqu ('copied, transmitted') tells us that the Proverbs collection as we have it is the product of deliberate scribal activity across centuries — not a single moment of Solomonic composition but a tradition that grew, was curated, and was transmitted by institutional hands. What the original audience would have understood is that wisdom was preserved by the same scribal infrastructure that produced the royal archives. The comparative proverb form that dominates this section ('Like snow in summer or rain in harvest, so honor is not fitting for a fool,' 26:1) represents a distinct literary style — the 'Like X, so Y' pattern that characterizes the Hezekian collection.",
   "proverbs-31":
     "Who is the eshet chayil — the 'woman of valor' — in Proverbs 31, and why does the Hebrew chayil refuse to let this poem become a domesticity prescription? The word chayil appears throughout the Hebrew Bible as military vocabulary — gibbore chayil ('mighty warriors'), tzeva chayil ('army of valor'). When the closing poem of Proverbs calls its subject eshet chayil, it is reaching for the strongest word the language has for strength, capacity, and power. Here's where it gets interesting: the 22-line acrostic structure (each line beginning with a successive letter of the Hebrew alphabet) signals that this is a carefully composed literary portrait, not a spontaneous description of an actual woman. What the original audience would have understood is the inclusio — the literary bracket with chapter 8. Woman Wisdom cries out in the public square in Proverbs 1 and 8; Woman of Valor closes the book in chapter 31. The bridal-courtship spine that opened in the prologue is here brought to resolution: the son who was told to seek Wisdom has found her — embodied, active, powerful, praised at the city gates. The 'virtuous wife' translation deflates the vocabulary. This is Wisdom incarnate in the world the cosmos built.",
+
+  // Ecclesiastes — 5 RAG clusters, 11 commentary chapters
+  "ecclesiastes-1":
+    "What does hebel actually mean — and why does the difference between 'meaningless' and 'vapor' reshape everything Ecclesiastes says? The opening line of Ecclesiastes — hebel hebalim, 'vapor of vapors' — is the thesis statement of the entire book. The Hebrew noun hebel literally means breath or vapor: something real, observable, and present, but transient and ungraspable. You can see your breath on a cold morning; you cannot hold it. That sensory image is Qoheleth's central metaphor for human endeavor. The NIV's 'meaningless' and the KJV's 'vanity' flatten this vivid Hebrew metaphor into an abstract nihilistic verdict. Qoheleth is not saying nothing matters; he is saying nothing can be grasped permanently. Here's where it gets interesting: Qoheleth is a literary persona — the name means 'the assembler' or 'the one who convenes.' The royal framing of 1:12 ('I, Qoheleth, was king over Israel in Jerusalem') is a rhetorical device, not autobiography. The sage adopts the persona of the ultimate wealth-and-wisdom possessor to test whether privilege resolves the hebel problem. The cosmological poem of 1:4-11 frames the thesis with ANE cyclic observation — sun, wind, and rivers as recurring natural phenomena observed 'under the sun,' the realm of human experience bounded by the heavens above.",
+  "ecclesiastes-2":
+    "What happens when the richest, wisest person in the world runs the ultimate experiment — and finds that even privilege cannot resolve the hebel problem? The royal experiment of 1:12-2:26 is the most extensive literary thought experiment in the Hebrew Bible. Qoheleth adopts the persona of a king who commands unlimited resources and tests whether wisdom, pleasure, grand building projects, or accumulated wealth can produce yitron — lasting profit, a permanent gain that outlasts the vapor. The verdict is devastating: there is no yitron under the sun. Here's where it gets interesting: this is not nihilism. Qoheleth distinguishes sharply between yitron (lasting profit — which he denies exists) and heleq (allotted portion — which he affirms as a gift from God). The difference matters enormously. What the original audience would have understood is that the sage is not saying life is worthless; he is saying that the attempt to extract permanent advantage from transient experience is the category error. The constructive response emerges already in 2:24-26: eating, drinking, and finding enjoyment in one's toil is the heleq — the creaturely good one can actually hold, not as permanent possession but as present gift.",
+  "ecclesiastes-3":
+    "What does 'a time for everything' actually mean in its ancient context — and why is it observational wisdom, not a divine masterplan? The fourteen antithetical pairs of Ecclesiastes 3:1-8 — a time to be born and a time to die, a time to plant and a time to uproot — are among the most quoted lines in the Hebrew Bible. But what the original audience would have understood is that these are observations about the rhythms of the human condition, not a theological claim that God micromanages every event. Qoheleth is describing what he sees in the created order: life has seasons, and those seasons come and go whether you welcome them or not. This is wisdom observation about the structure of lived experience, not Calvinist providentialism. Here's where it gets interesting: 3:11 introduces the word olam — variously translated 'eternity,' 'long duration,' or 'the world.' 'He has made everything beautiful in its time. He has also set olam in the human heart; yet no one can fathom what God has done from beginning to end.' The emphasis falls on the limitation: 'yet they cannot fathom.' The human heart longs for comprehensive understanding — olam as the ache for transcendence — but the capacity to grasp the whole is precisely what is denied. This is not proof of an immortal soul; it is the observation that humans are wired to want more than they can see. Through this lens, 3:19-21 becomes the mortality observation that completes the picture: humans and animals share the same death, the same breath (ruah), the same return to dust. Qoheleth asks 'who knows whether the human spirit rises upward and the spirit of the animal goes down?' — a rhetorical question that resists answering what cannot be observed from under the sun.",
+  "ecclesiastes-5":
+    "What does Qoheleth's temple speech reveal about ancient Israelite worship — and why does 'guard your steps when you go to the house of God' cut against modern casual piety? Ecclesiastes 5:1-7 is the only explicit cultic instruction in the entire book. Where Qoheleth elsewhere speaks as sage-observer, here he speaks with the directness of a wisdom teacher issuing a command: guard your steps, let your words be few, do not be hasty with your mouth before God. The instruction centers on vow theology (neder): when you make a vow to God, fulfill it — better not to vow at all than to vow and not pay. Here's where it gets interesting: this is not generic piety advice. In the ancient Israelite temple context, a neder was a binding legal-religious obligation. Breaking a vow was not merely disappointing; it carried real consequences in the covenantal framework. What the original audience would have understood is that Qoheleth is addressing a specific institutional practice — the making and keeping of sacred vows — with the same unflinching realism he brings to everything else. Words before God should be few because God is in heaven and you are on earth. The asymmetry is the point.",
+  "ecclesiastes-6":
+    "Why does Qoheleth observe that a man can have a hundred children and live many years, yet if his appetite is not satisfied, a stillborn child is better off? The wealth critique of 5:10-6:9 is Qoheleth's most sustained examination of the gap between accumulation and enjoyment. The problem is not wealth itself but the inability to enjoy it — having much without having heleq, the capacity to take pleasure in one's allotted portion. Here's where it gets interesting: the 'better than' proverbs of this section — 'better a stillborn child than a man who cannot enjoy his prosperity' — are deliberately provocative. They are designed to shock the listener into recognizing that possession without enjoyment is worse than non-existence. What the original audience would have understood is that Qoheleth is distinguishing between two categories the modern world often collapses: having and enjoying. Through this lens, the wealth critique is not anti-wealth; it is anti-accumulation-without-presence. The sage observes that appetite (nephesh) is never satisfied, that the eye is never filled — and that this restless grasping is the hebel condition at its most acute.",
+  "ecclesiastes-7":
+    "What does 'who can find out?' mean as a refrain — and why does Qoheleth's observation that 'God made mankind upright, but they have sought out many schemes' resist being read as a fall-of-man doctrine? The controlling question of Ecclesiastes 7 is the refrain 'who can find out?' — repeated to mark the boundary of human wisdom. Qoheleth tests the limits of wisdom and finds them real: 'I said, I will be wise, but it was far from me. That which has been is far off, and deep, very deep — who can find it out?' Here's where it gets interesting: 7:29 uses the Hebrew words yashar (upright, straight) and heshbon (schemes, devices, calculations). 'God made mankind yashar, but they have sought out many heshbon.' What the original audience would have understood is that this is Qoheleth's observational register, not a fall-of-man doctrine imported from Genesis 3. The echo of Genesis 1:31 ('God saw all that he had made, and it was very good') is present — creation goodness is affirmed. But Qoheleth's point is about human complexity, not about a historical fall event. Humanity was made straightforward; humanity has become complicated. That is an observation about the human condition, not a systematic theology of original sin.",
+  "ecclesiastes-8":
+    "Why does Qoheleth's endorsement of joy in 8:15 — 'I commend enjoyment' — function as positive ANE creaturely wisdom rather than resignation? Ecclesiastes 8:15 is the clearest and most direct of Qoheleth's joy commands: 'So I commend enjoyment, for there is nothing better for a person under the sun than to eat and drink and be glad, for this will accompany them in their toil throughout the days of their life that God has given them under the sun.' Here's where it gets interesting: this is not hedonism, not resignation, and not a consolation prize. This is the constructive response to the hebel observation. The sage commends enjoyment precisely because the cosmos is not fully comprehensible — and the correct response to inscrutability is not paralysis but present engagement. The direct ANE parallel is the Siduri speech in the Gilgamesh epic (Tablet X, Old Babylonian version): 'When the gods created mankind, they allotted death to mankind, but life they retained in their own keeping. As for you, Gilgamesh, let your belly be full, make merry day and night.' What the original audience would have understood is that Qoheleth stands in this ancient tradition of creaturely wisdom — the sage who has looked at mortality squarely and commends joy not despite death but because of it.",
+  "ecclesiastes-9":
+    "What does 'the living know that they will die, but the dead know nothing' mean in its original context — and why is this a mortality observation, not an ontological claim about the soul? Ecclesiastes 9:1-6 is the death-as-equalizer passage that has generated more theological anxiety than almost any other in the Wisdom Literature corpus. The righteous and the wicked, the clean and the unclean, those who sacrifice and those who do not — 'one fate comes to all.' Here's where it gets interesting: Qoheleth's observation that 'the dead know nothing, and they have no more reward, and even the memory of them is forgotten' (9:5) is a phenomenological statement about what is observable from under the sun. It is not a systematic treatise on the soul's ontology. Do not project annihilationism, soul sleep, or conscious afterlife onto this text. Qoheleth is describing what the living can see: the dead no longer participate in anything under the sun. Through this lens, the carpe diem commands of 9:7-10 are not a desperate pivot away from death but the sage's positive counsel in full view of mortality: 'Go, eat your bread with joy, and drink your wine with a merry heart, for God has already approved what you do. Let your garments always be white. Let not oil be lacking on your head. Enjoy life with the wife whom you love.' This is the most tender passage in Ecclesiastes — the sage at his most humane, commending present joy as the creaturely good that death cannot retroactively erase.",
+  "ecclesiastes-10":
+    "How does Ecclesiastes 10 function as practical wisdom delivered under the shadow of the death-equalizer observation — and why do the proverbs about fools, rulers, and chance operate differently from the Proverbs of Solomon? The practical wisdom sayings of Ecclesiastes 10 — dead flies in perfumer's ointment, the folly of a ruler's anger, the snake that bites before it is charmed — are delivered after the death-equalizer frame of chapter 9 has been established. This context changes everything. What the original audience would have understood is that these are wisdom-under-hebel, not wisdom-as-guarantee. Where Proverbs presents its sentence sayings as observed patterns that tend to hold, Qoheleth's proverbs operate in the register of 'even so' — even knowing that death equalizes all, here is how the wise person navigates the world. Through this lens, the observation that 'time and chance happen to them all' (9:11) is the controlling frame for chapter 10's practical advice. The sage offers wisdom not because it guarantees outcomes but because it is the appropriate posture for creatures who cannot control the cosmos.",
+  "ecclesiastes-11":
+    "What does 'send your bread upon the waters' mean — and why is Qoheleth's final instruction to 'rejoice, young person, in your youth' the climactic carpe diem command of the entire book? Ecclesiastes 11:1-6 counsels risk-taking in the face of uncertainty: send your bread upon the waters, for after many days you may find it again. Divide your portion among seven or even eight, for you do not know what disaster may come upon the land. The sage's advice is not recklessness but diversified engagement — act generously and broadly because the future is unknowable. Here's where it gets interesting: 11:7-10 is the book's climactic positive command. 'Light is sweet, and it is pleasant for the eyes to see the sun. Rejoice, young person, in your youth, and let your heart cheer you in the days of your youth.' This is ANE creaturely wisdom at its most direct, with parallels in the Siduri speech tradition of the Gilgamesh epic. What the original audience would have understood is that this is not hedonism or resignation — it is the sage's final constructive word before the aging allegory of chapter 12 closes the book. Enjoy while you can, not because life is trivial, but because it is fleeting.",
+  "ecclesiastes-12":
+    "What is the aging allegory of Ecclesiastes 12 — and why does 'the spirit returns to God who gave it' reverse Genesis 2:7 rather than promise conscious afterlife? The aging allegory of 12:1-7 is the most sustained piece of extended metaphor in Ecclesiastes: the grinders cease because they are few, the doors on the street are shut, the sound of the grinding is low, one rises up at the sound of a bird, the almond tree blossoms white, the grasshopper drags itself along. What the original audience would have understood is that every image maps onto the aging body — teeth, ears, hair, vitality — in a poetic catalogue of mortal decline. Here's where it gets interesting: 12:7 is the theological crux of the entire book. 'The dust returns to the ground it came from, and the spirit returns to God who gave it.' This directly reverses Genesis 2:7, where YHWH formed the human from dust and breathed the breath of life (nishmat hayyim) into its nostrils. At death, the act of creation is undone: dust to dust, breath (ruah) back to the one who breathed it. This is not saying 'the soul goes to heaven' or 'we will be with God when we die.' It is saying the animating life-force returns to its source — the creation is disassembled. Through this lens, the epilogue narrator of 12:9-14 performs a canonical editorial move: 'Fear God and keep his commandments, for this is the whole duty of humanity.' The narrator steps outside Qoheleth's voice to anchor the book's radical observations within the broader wisdom-and-Torah framework — a framing device the original audience would have recognized as the compiler's last word, not Qoheleth's.",
 };
 
 // Truncates description text to a word limit for card teasers.
@@ -291,7 +316,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 41 + 30 + 39 + 14 = 124 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 41 + 33 + 47 + 14 = 135 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -323,6 +348,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "psalms-8", "psalms-82", "psalms-139",
       "job-1", "job-2", "job-38", "job-39", "job-40", "job-41",
       "proverbs-8", "proverbs-31",
+      "ecclesiastes-1", "ecclesiastes-3", "ecclesiastes-7",
     ],
   },
   {
@@ -339,6 +365,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "jeremiah-1", "jeremiah-29", "jeremiah-31", "jeremiah-36", "jeremiah-52",
       "job-3", "job-19", "job-28", "job-42",
       "proverbs-1", "proverbs-7", "proverbs-10", "proverbs-16", "proverbs-22", "proverbs-23", "proverbs-25",
+      "ecclesiastes-2", "ecclesiastes-5", "ecclesiastes-6", "ecclesiastes-8", "ecclesiastes-9", "ecclesiastes-10", "ecclesiastes-11", "ecclesiastes-12",
     ],
   },
   {
@@ -493,7 +520,7 @@ export const READING_PATHS: ReadingPath[] = [
     id: "wisdom-arc",
     title: "Wisdom Arc",
     throughLine:
-      "From Proverbs' systematic framework — wisdom as cosmic ordering principle, the deed-consequence nexus as observable pattern — to Job's devastating counter-test when that framework collapses under innocent suffering. Here's where it gets interesting: YHWH's own verdict in Job 42:7 explicitly endorses Job's protest over the friends' retribution theology. What the original audience would have understood is that Proverbs and Job are not contradictory; they are a canonical dialogue. Proverbs says wisdom tends to flourish; Job says the tendency is not a guarantee. Together they define the honest space of Wisdom Literature: observational, not mechanical.",
+      "From Proverbs' systematic framework — wisdom as cosmic ordering principle, the deed-consequence nexus as observable pattern — to Job's devastating counter-test when that framework collapses under innocent suffering, to Ecclesiastes' unflinching conclusion: hebel, vapor, the ungraspable nature of human experience under the sun. Here's where it gets interesting: Proverbs says wisdom tends to flourish; Job says the tendency is not a guarantee; Ecclesiastes says even the distinction between wisdom and folly dissolves before death. What the original audience would have understood is that these three books form a canonical dialogue, not a contradiction. Together they define the honest space of Wisdom Literature — observational, not mechanical, and ending with Qoheleth's radical counsel to enjoy the portion you are given.",
     steps: [
       { bookId: "proverbs", chapter: 1, annotation: "The oldest classroom in the world: yir'at YHWH as epistemological thesis — wisdom begins with posture, not intelligence." },
       { bookId: "proverbs", chapter: 8, annotation: "Woman Wisdom at creation: ANE Maat parallel, qanah as bridal-acquisition, the cosmogonic claim that grounds all instruction." },
@@ -505,6 +532,10 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "job", chapter: 38, annotation: "Divine speeches creation survey: rhetorical reframing, not answering Job's questions." },
       { bookId: "job", chapter: 40, annotation: "Behemoth and Leviathan: Ugaritic Lotan cognate, Chaoskampf — chaos creatures, not zoology." },
       { bookId: "job", chapter: 42, annotation: "Epilogue verdict: YHWH rebukes retribution theology — Job spoke what is right, the friends did not." },
+      { bookId: "ecclesiastes", chapter: 1, annotation: "Qoheleth enters the conversation: hebel — vapor, breath, fleeting — reframes everything. The question is not 'is life meaningful?' but 'can you hold it?'" },
+      { bookId: "ecclesiastes", chapter: 3, annotation: "Appointed times: the created order has rhythms you can observe but not control — and olam in the heart means you will always long to see the whole picture." },
+      { bookId: "ecclesiastes", chapter: 9, annotation: "Death as equalizer: the living know they will die, the dead know nothing — and from this observation, the most radical carpe diem in Scripture: eat, drink, enjoy." },
+      { bookId: "ecclesiastes", chapter: 12, annotation: "The aging allegory closes the trilogy: dust returns to dust, breath to the one who breathed it. Genesis 2:7 undone. The epilogue narrator gets the last word." },
     ],
   },
 ];
@@ -584,20 +615,20 @@ Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four k
       "Genesis 1 ANE background",
       "creation week framework",
     ],
-    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27", "psalms-8", "psalms-82", "job-38", "job-39", "job-40", "job-41", "proverbs-8", "proverbs-31"],
+    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27", "psalms-8", "psalms-82", "job-38", "job-39", "job-40", "job-41", "proverbs-8", "proverbs-31", "ecclesiastes-3"],
     prose: `What did Genesis 1 communicate to its first audience — and what was it not trying to say?
 
 The ancient audience of Genesis did not live in a world asking about natural selection or the age of the cosmos. They lived in a world saturated with creation stories: Enuma Elish from Babylon, Atrahasis from Sumer, the Memphite Theology from Egypt. Every surrounding culture had a cosmogony that justified its own gods, its own king, its own view of humanity's purpose. Genesis was written into that contest.
 
 What the original audience would have understood is that Genesis 1 is structured as a cosmic temple inauguration. In ancient Near Eastern thought, the world was built as a dwelling place for the gods, and a temple was the microcosm of the universe. The seven-day structure mirrors the dedication week of a temple: six days of preparation, then the deity takes up residence. The Sabbath is not a command to rest arbitrarily — it is the climactic moment when YHWH "rests" in his cosmic temple, as a king enthroned.
 
-The firmament — raqia — was the ancient cosmological architecture the text assumed: a solid dome holding back the waters above, the earth on waters below. Genesis 1 uses this picture to declare who made it and why.
+The firmament — raqia — was the solid dome holding back the waters above. Genesis 1 uses this picture to declare who made it and why.
 
-Here's where it gets interesting: Ezekiel 1's chariot vision employs the same cosmic architecture — YHWH enthroned above the entire cosmos, not confined to Jerusalem's ruined temple.
+Here's where it gets interesting: Ezekiel 1's chariot vision employs the same cosmic architecture — YHWH enthroned above the cosmos, not confined to Jerusalem's ruined temple. The Tabernacle of Exodus 25-27 is the cosmic temple made portable: outer court as earth, holy place as heaven, holy of holies as the divine throne room.
 
-The Tabernacle of Exodus 25-27 is the cosmic temple made portable. The mishkan encodes the same three-tier cosmos: outer court as earth, holy place as heaven, holy of holies as the divine throne room. Genesis 1's architectural vocabulary rendered in acacia wood and gold.
+Proverbs 8 presents Woman Wisdom as present at creation itself — the cosmic ordering principle personified, dancing before YHWH as the world takes shape (8:30). Proverbs 31's Woman of Valor closes the arc — Wisdom embodied in the world the cosmos built.
 
-Proverbs 8 presents Woman Wisdom as present at creation itself — the cosmic ordering principle personified, dancing before YHWH as the world takes shape (8:30). The Egyptian Maat parallel is unmistakable: cosmic order given literary voice. Proverbs 31's Woman of Valor closes the arc — Wisdom embodied in the world the cosmos built.
+Ecclesiastes 3 maps the same created order from a different angle: the fourteen antithetical pairs — a time to be born, a time to die — are the rhythms of the cosmos observed from within. Where Genesis 1 builds the temple, Ecclesiastes 3 watches its seasons turn.
 
 Genesis 3, 6, and 11 extend the framework. The cosmic temple was invaded, the boundaries breached, the nations scattered — but the covenant with one family began the project of restoring what was lost.
 
@@ -644,10 +675,10 @@ Where Bible Lens parts from full preterism: Revelation 19-20 describes a future 
       "Isaiah 53 corporate Israel reading",
       "suffering servant who is it",
     ],
-    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19"],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19", "ecclesiastes-9"],
     prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
 
-Here's where it gets interesting: the historically prior reading, the one dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi in the eleventh century argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, carrying the weight of history, and destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion among pre-modern Jewish scholars; it was the mainstream.
+Here's where it gets interesting: the historically prior reading, dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion; it was the mainstream.
 
 What the original audience would have understood is that Isaiah uses "servant" in multiple registers throughout chapters 40-55. Sometimes the servant is Israel collectively (Isaiah 41:8-9). Sometimes the servant is a faithful remnant within Israel (Isaiah 49:3-6). The oscillation between corporate and individual is built into the text's structure — and that oscillation is the key.
 
@@ -657,9 +688,11 @@ The typological reading — that Jesus fulfilled the servant's role — does not
 
 Isaiah 7's Immanuel sign, the throne names of Isaiah 9, and the Branch of Isaiah 11 all work this way: they address an original crisis first, then carry a typological weight that later generations recognize in light of Jesus.
 
-The Psalter's royal messianic cluster -- Psalm 2's coronation formula, Psalm 22's lament-to-vindication arc, Psalm 45's royal wedding, Psalm 110's enthronement oracle -- forms the second OT pillar alongside the servant songs that early Christians drew on for christology.
+The Psalter's royal messianic cluster -- Psalm 2's coronation formula, Psalm 22's lament-to-vindication arc, Psalm 45's royal wedding, Psalm 110's enthronement oracle -- forms the second OT pillar alongside the servant songs.
 
-This is a reading that takes the text's historical context seriously before reaching for christological application — and finds both dimensions more compelling as a result.`,
+Ecclesiastes 9's death-as-equalizer observation — 'the righteous and the wicked share the same fate' — extends the canonical tension. Where Job's friends insist suffering proves guilt, and the servant songs transform suffering into vocation, Qoheleth simply observes: death does not distinguish.
+
+This reading takes the text's historical context seriously before reaching for christological application — and finds both dimensions more compelling as a result.`,
   },
   {
     slug: "ezekiel-gog-magog",
@@ -713,7 +746,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
 
   // Genesis — Divine council / cosmos cluster
   "genesis-1": ["genesis-2", "ezekiel-1", "job-38"],
-  "genesis-2": ["genesis-1", "genesis-3", "ezekiel-28"],
+  "genesis-2": ["genesis-1", "genesis-3", "ecclesiastes-12"],
   "genesis-3": ["genesis-2", "revelation-12", "ezekiel-28"],
   "genesis-11": ["genesis-6", "daniel-2", "revelation-17"],
 
@@ -837,9 +870,9 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   // Job — 4 RAG clusters, 10 commentary chapters (each entry has exactly 3 related passages)
   "job-1": ["psalms-82", "ezekiel-28", "zechariah-3"],
   "job-2": ["job-1", "psalms-82", "genesis-6"],
-  "job-3": ["job-19", "jeremiah-1", "psalms-22"],
+  "job-3": ["job-19", "jeremiah-1", "ecclesiastes-9"],
   "job-19": ["job-3", "isaiah-53", "psalms-22"],
-  "job-28": ["job-3", "job-42", "proverbs-8"],
+  "job-28": ["ecclesiastes-7", "job-42", "proverbs-8"],
   "job-38": ["job-39", "genesis-1", "psalms-8"],
   "job-39": ["job-38", "job-40", "genesis-2"],
   "job-40": ["job-41", "genesis-6", "ezekiel-28"],
@@ -847,13 +880,26 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "job-42": ["job-28", "psalms-89", "jeremiah-23"],
 
   // Proverbs — 7 RAG clusters, 9 commentary chapters
-  "proverbs-1": ["proverbs-7", "proverbs-8", "job-28"],
+  "proverbs-1": ["proverbs-7", "proverbs-8", "ecclesiastes-1"],
   "proverbs-7": ["proverbs-1", "proverbs-8", "proverbs-31"],
   "proverbs-8": ["proverbs-1", "proverbs-31", "job-28"],
-  "proverbs-10": ["proverbs-16", "proverbs-25", "job-42"],
+  "proverbs-10": ["proverbs-16", "proverbs-25", "ecclesiastes-2"],
   "proverbs-16": ["proverbs-10", "proverbs-25", "psalms-2"],
   "proverbs-22": ["proverbs-23", "proverbs-25", "genesis-12"],
   "proverbs-23": ["proverbs-22", "proverbs-25", "exodus-20"],
   "proverbs-25": ["proverbs-16", "proverbs-22", "jeremiah-36"],
   "proverbs-31": ["proverbs-8", "proverbs-1", "job-28"],
+
+  // Ecclesiastes — 5 RAG clusters, 11 commentary chapters
+  "ecclesiastes-1": ["ecclesiastes-2", "proverbs-1", "job-3"],
+  "ecclesiastes-2": ["ecclesiastes-1", "proverbs-10", "job-42"],
+  "ecclesiastes-3": ["ecclesiastes-9", "genesis-1", "job-38"],
+  "ecclesiastes-5": ["ecclesiastes-6", "exodus-20", "proverbs-22"],
+  "ecclesiastes-6": ["ecclesiastes-5", "proverbs-10", "job-28"],
+  "ecclesiastes-7": ["ecclesiastes-8", "proverbs-8", "job-28"],
+  "ecclesiastes-8": ["ecclesiastes-7", "proverbs-16", "job-42"],
+  "ecclesiastes-9": ["ecclesiastes-3", "ecclesiastes-12", "job-3"],
+  "ecclesiastes-10": ["ecclesiastes-9", "ecclesiastes-11", "proverbs-25"],
+  "ecclesiastes-11": ["ecclesiastes-10", "ecclesiastes-12", "proverbs-31"],
+  "ecclesiastes-12": ["ecclesiastes-9", "ecclesiastes-11", "genesis-2"],
 };

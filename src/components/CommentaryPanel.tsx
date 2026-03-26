@@ -206,6 +206,24 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       }
       return `What is the historical context of ${bookTitle} ${chapter}?`;
     }
+    if (book === "ecclesiastes") {
+      if ([1, 2].includes(chapter)) {
+        return `What does hebel — vapor, breath, fleeting — actually mean in Ecclesiastes, and why does the difference between 'meaningless' and 'vapor' reshape the entire book? How does the royal experiment of chapters 1-2 test whether wisdom, pleasure, or toil can resolve the hebel problem?`;
+      }
+      if (chapter === 3) {
+        return `What does 'a time for everything' mean in its ancient context — are the fourteen antithetical pairs a divine masterplan or an observation about the rhythms of the human condition? And what does olam in 3:11 actually mean when the emphasis falls on 'yet they cannot fathom'?`;
+      }
+      if ([5, 6].includes(chapter)) {
+        return `What does Qoheleth's temple speech in Ecclesiastes 5 reveal about ancient Israelite vow theology — and why does the wealth critique of chapters 5-6 distinguish between having much and enjoying one's portion (heleq)?`;
+      }
+      if ([7, 8].includes(chapter)) {
+        return `What does the 'who can find out?' refrain reveal about wisdom's limits in Ecclesiastes 7-8 — and why does 8:15's joy command ('I commend enjoyment') function as positive ANE creaturely wisdom anchored in the Gilgamesh Siduri speech tradition?`;
+      }
+      if ([9, 10, 11, 12].includes(chapter)) {
+        return `What does 'the living know that they will die, but the dead know nothing' mean in its original context — and how does the aging allegory of chapter 12, where 'the spirit returns to God who gave it,' reverse Genesis 2:7 rather than promise conscious afterlife?`;
+      }
+      return `What is the historical context of ${bookTitle} ${chapter}?`;
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
