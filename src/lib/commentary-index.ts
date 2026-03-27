@@ -15,6 +15,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   job: [1, 2, 3, 19, 28, 38, 39, 40, 41, 42],
   proverbs: [1, 7, 8, 10, 16, 22, 23, 25, 31],
   ecclesiastes: [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12],
+  john: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
 };
 
 export const COMMENTARY_BOOKS = Object.keys(COMMENTARY_CHAPTERS);
@@ -283,6 +284,50 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
   "proverbs-31":
     "Who is the eshet chayil — the 'woman of valor' — in Proverbs 31, and why does the Hebrew chayil refuse to let this poem become a domesticity prescription? The word chayil appears throughout the Hebrew Bible as military vocabulary — gibbore chayil ('mighty warriors'), tzeva chayil ('army of valor'). When the closing poem of Proverbs calls its subject eshet chayil, it is reaching for the strongest word the language has for strength, capacity, and power. Here's where it gets interesting: the 22-line acrostic structure (each line beginning with a successive letter of the Hebrew alphabet) signals that this is a carefully composed literary portrait, not a spontaneous description of an actual woman. What the original audience would have understood is the inclusio — the literary bracket with chapter 8. Woman Wisdom cries out in the public square in Proverbs 1 and 8; Woman of Valor closes the book in chapter 31. The bridal-courtship spine that opened in the prologue is here brought to resolution: the son who was told to seek Wisdom has found her — embodied, active, powerful, praised at the city gates. The 'virtuous wife' translation deflates the vocabulary. This is Wisdom incarnate in the world the cosmos built.",
 
+  // John — 11 RAG clusters, 21 commentary chapters (Phase 111)
+  "john-1":
+    "What did John's Prologue mean to its original audience — and why does the logos of John 1:1 connect to the Jewish Wisdom tradition of Proverbs 8 and Sirach 24 rather than Greek philosophical logos? Here's where it gets interesting: the Prologue opens as an overture, not a thesis statement. Before the first character appears, before the Baptist speaks or Jesus acts, John plants a cosmic framework — logos was with God (pros ton theon) and logos was theos, qualitative, not numerical identity. Philip Harner's 1973 JBL article on anarthrous predicate nouns establishes the grammatical case: the absence of the article before theos in John 1:1c signals qualitative force — what kind of being logos is — not a numerical claim about identity. What the original audience would have understood is that the logos vocabulary activates the entire Wisdom tradition: Proverbs 8's cosmic ordering figure dancing before YHWH, Sirach 24's Wisdom given a dwelling in Israel, the memra of the Aramaic Targumim. Through this lens, the Prologue is not beginning a Greek philosophical treatise but closing a Jewish theological arc: Wisdom, present at creation, now tabernacles among humanity. The NWT reading ('a god') is named here only to be rejected — it is alien to Johannine monotheism, importing polytheism into a text devoted to the unique agency of the one sent by the only true God. Ancient wisdom, Johannine clarity: the logos is the agent of creation, the embodied Wisdom of Israel, the commissioned envoy whose identity is inseparable from the One who sent him.",
+  "john-2":
+    "What do the early signs in John 2-4 reveal about the 'sent one' framework — and what did the Cana wedding sign mean to John's original audience? The transformation of water to wine at Cana is not simply a convenience miracle. It is a semeion — a sign that reveals glory and precipitates belief. Here's where it gets interesting: the Greek semeion differs from the Synoptic dynameis ('mighty works'). Signs in John are not demonstrations of power alone; they are revelatory acts within the shaliach commission — each one making visible the Father's authority delegated to the one he sent. The Cana sign operates at the intersection of hospitality obligation and eschatological abundance — the messianic banquet language of Isaiah 25, the new wine that signals the age to come. What the original audience would have understood is that the sign language is progressive: Cana reveals glory to the disciples, the progression will reach its climax at the Lazarus sign. Through this lens, John 2 also introduces the temple cleansing as a prophetic sign-act — not Synoptic chronology but Johannine architecture, placing the temple's judgment at the Gospel's opening.",
+  "john-3":
+    "What did Jesus's conversation with Nicodemus mean — and why is 'born again' a mistranslation that misses the entire point? The Greek anothen means 'from above,' not 'again' — the wordplay is between Nicodemus's literalistic 'again' reading and Jesus's 'from above' meaning. Here's where it gets interesting: this is the Fourth Gospel's first extended theological dialogue, and it operates entirely in the register of covenant renewal theology. What the original audience would have understood is that 'birth from above' echoes Ezekiel 36:26-27 — the new heart, the new spirit, the transformation that enables participation in the covenant community of the age to come. The famous 3:16 verse functions within this framework as a summary of the shaliach commission: the Father sent the Son not to condemn the world but that the world through him might be saved. Through this lens, John 3 is not primarily an evangelistic tract — it is a covenantal explanation of what the sent one's mission actually means.",
+  "john-4":
+    "What did the encounter with the Samaritan woman reveal — and why is 'living water' a technical term with specific covenantal resonance? The Samaritan woman meets Jesus at Jacob's well, a geography charged with covenant memory. Here's where it gets interesting: 'living water' (hydor zon) in both Hebrew (mayim chayim) and Greek refers to running water — springs and rivers, not cisterns — and carries Jeremiah 2:13's theological weight: YHWH as the fountain of living waters. What the original audience would have understood is that the offer of living water is simultaneously an offer of covenant renewal, access to the divine source that the exile described as Israel's abandonment. Through this lens, the encounter also performs a boundary-crossing mission theology: the sent one offers the covenant gift across Samaritan-Jewish division, anticipating the 'light to the nations' trajectory of Isaiah's servant.",
+  "john-5":
+    "How does John 5's agency defense answer the 'equal with God' charge — and why is 5:23's honor-authorization the proskyneo coherence key for the entire Gospel? The Bethesda healing precipitates a Sabbath controversy and the most concentrated agency theology in the Fourth Gospel. Here's where it gets interesting: the charge is 'making himself equal with God' (5:18), and Jesus's response is a sustained counter-argument that runs from 5:19 through 5:30. The structure is clear: 'the Son can do nothing by himself, but only what he sees the Father doing' (5:19). This is not false modesty — it is a precise description of the shaliach model: the authorized representative acts only within the commission. What the original audience would have understood is that 5:23's honor-authorization clause — 'that all may honor the Son just as they honor the Father' — is not a claim to ontological equality. It is the Father's specific authorization of proskyneo directed toward the Son. This is why the Revelation angel refuses proskyneo (he is a fellow servant, without that authorization) while Jesus accepts it: the difference is not ontological identity but the Father's explicit grant. Through this lens, John 5 is the Gospel's legal brief for the agency Christology that every other chapter presupposes. James McGrath's work on John 5:18-23 provides the scholarly framework for this reading.",
+  "john-6":
+    "What does the Bread of Life discourse reveal — and how does the manna typology reshape what Jesus is claiming? The feeding of five thousand and the discourse that follows operate within an elaborate typological framework: the feeding echoes the manna in the wilderness, and the claim 'I am the bread of life' answers the question 'what sign will you give?' with Moses's manna as the implicit comparison. Here's where it gets interesting: the logic is shaliach commission logic — Moses did not give the bread from heaven, the Father gives the true bread from heaven. The parallel with John 5 is exact: Jesus does not act on his own authority; he acts as the one sent by the Father. What the original audience would have understood is that the discourse escalates to a crisis around 6:41-66 — the 'hard saying' — which is not primarily about eucharistic theology but about whether the audience will accept the shaliach's commission claim. Through this lens, the sea-walking sign (the fifth of the seven) is not a nature miracle appended as an afterthought; it is a reiteration of the Father's authorization displayed in the first Cana sign.",
+  "john-7":
+    "What does the Feast of Tabernacles context reveal about the confrontations in John 7 — and why does the water-pouring ceremony matter for reading Jesus's declaration? John 7 is set during Sukkot, the Feast of Tabernacles, the most water-focused festival in the Jewish liturgical year. The water-pouring ceremony (Simchat Beit Ha-Sho'evah) drew water from Siloam and poured it on the altar as a rain petition and a symbol of the prophetic promise of living waters (Zechariah 14:8, Isaiah 44:3). Here's where it gets interesting: on the last day of the festival, Jesus stands and cries out 'If anyone thirsts, let him come to me and drink.' What the original audience would have understood is that this is not merely metaphorical language; it is a deliberate act of positioning within the festival's own theology — the one who provides the living water Zechariah and Isaiah promised. Through this lens, the debates in John 7 about whether Jesus is the prophet or the Messiah are not tangential; they are the audience's attempt to locate him within their existing messianic categories.",
+  "john-8":
+    "What is the ego eimi claim of John 8:58 — and how does the Pericope Adulterae's textual status affect how we read the chapter? First, the text-critical note: the Pericope Adulterae (7:53-8:11) is absent from the earliest and most reliable manuscripts — P66, P75, Codex Sinaiticus, Codex Vaticanus. Bruce Metzger's Textual Commentary on the Greek New Testament documents the evidence clearly. The passage has value as a tradition but should not be read as original Johannine text. The textually secure chapter 8 then proceeds to Jesus's Tabernacles discourse: 'I am the light of the world.' Here's where it gets interesting: 8:58 — 'Before Abraham was, I am' — has generated one of the most significant debates in biblical theology. Richard Bauckham, in Jesus and the God of Israel, argues that ego eimi here deliberately echoes the ani hu trial-speech formula of Isaiah 43:10-13. His divine-identity framework is a serious scholarly argument, and Bible Lens engages it directly. What the original audience would have understood, however, is that the trial-speech context of Isaiah 43 is itself a polemic against Babylonian deity claims — YHWH establishing his exclusive sovereignty before witnesses. NT-03 provides the six-point counter-reading: the shaliach model offers a better account of 8:58 within its narrative context. Through this lens, ego eimi is the sent one's claim of commissioned authority, not an ontological identity declaration.",
+  "john-9":
+    "What does the healing of the blind man at Siloam reveal — and why is 'I am the light of the world' enacted rather than merely declared? The sixth of John's seven signs is also the most developed narrative — it occupies an entire chapter. The Siloam pool has been archaeologically identified in Jerusalem excavations, and the pool's name ('sent') provides the chapter's interpretive key: the one who was sent sends the blind man to the pool called Sent. Here's where it gets interesting: the healing precipitates a formal investigation by the Pharisees, which becomes a trial — and the trial structure mirrors the Isaiah trial speeches. The blind man, who sees progressively (first 'the man called Jesus,' then 'a prophet,' then his act of worship), models the gospel's call to recognize the sent one's authority. What the original audience would have understood is that the chapter is structured as a theological courtroom: those who claim to see are blind, and the one who was physically blind sees. Through this lens, John 9 is not primarily about miraculous healing; it is about the discernment of commissioned authority in the face of institutional resistance.",
+  "john-10":
+    "What does 'I and the Father are one' in John 10:30 actually claim — and how does Jesus's Psalm 82 argument function within the agency model? The Good Shepherd discourse and the Hanukkah confrontation are the two poles of John 10. Here's where it gets interesting: the Psalm 82 argument in 10:34-36 is one of the most remarkable passages in the Gospel. When the crowd picks up stones for blasphemy, Jesus appeals to Psalm 82:6 — 'I said, you are gods' — and uses it as a halakhic argument from the lesser to the greater: if the divine council members who received God's word are called elohim, how much more can the one whom the Father sanctified and sent into the world be called Son of God? The shaliach principle is explicit: the sent one is as the one who sent him. What the original audience would have understood is that 10:30 — 'I and the Father are one' — is functional unity, not ontological identity. The Greek hen (neuter singular) is the key: 'one thing,' not 'one being.' Anthony Buzzard's work on 10:30 and the functional unity reading is directly applicable here. Through this lens, the Good Shepherd discourse establishes the commission structure before the identity controversy — the shepherd's authority comes from the Father's authorization, not from ontological equality.",
+  "john-11":
+    "What does the Lazarus raising reveal as the climactic seventh sign — and why does the 'I am the resurrection and the life' declaration reframe resurrection from future hope to present agency? The raising of Lazarus is the Gospel's literary and theological climax: the seventh sign, the one that precipitates the Sanhedrin's decision to kill Jesus. Here's where it gets interesting: 'I am the resurrection and the life' (11:25) is uttered not as a general theological principle but in the face of Martha's grief and her affirmation that Lazarus would rise at the last day. Jesus's response reframes resurrection from a future event to a present relational claim: the agent of resurrection is now standing before her. What the original audience would have understood is that the raising is not a private event; it is a public sign that generates both belief and hostile response. The Sanhedrin's decision in 11:47-53 directly links the sign to the crucifixion — and Caiaphas's ironic prophecy ('it is better that one man die for the people') becomes a moment of unconscious commission theology.",
+  "john-12":
+    "What does John 12:41 mean when it says Isaiah saw Jesus's glory — and how does the agency model account for Isaiah seeing YHWH's kabod in Isaiah 6 while John identifies it with Jesus? The triumphal entry, the Greeks' request, and the closing of Jesus's public ministry all converge in John 12. But the exegetical key is 12:41: 'Isaiah said these things because he saw his glory and spoke of him.' Here's where it gets interesting: the antecedent of 'his glory' is disputed. Raymond Brown's Anchor Bible commentary documents the full range of options: the 'his' could refer to YHWH (Isaiah saw YHWH's throne-room glory) or to Jesus (Isaiah saw the pre-existent Christ). The autou ambiguity is not a textual error; it is a deliberate theological move. What the original audience would have understood is that the agency model offers a coherent reading: the Father's glory was displayed through the authorized representative, so that seeing the one sent was, in the commission framework, seeing the authority of the one who sent him. Through this lens, John 12 marks the transition from the Book of Signs to the Book of Glory — and the transition itself enacts the theology: glory is not a property Jesus possesses independently but the display of the Father's authorization through the commissioned work.",
+  "john-13":
+    "What does the foot washing in John 13 reveal about the glorification theology of the Book of Glory — and why does the new commandment follow immediately after Judas's departure? The Book of Glory opens not with a throne-room vision but with a servant act: the one whom the Father had entrusted with all things, knowing his hour had come, took a towel and washed his disciples' feet. Here's where it gets interesting: the foot washing is an enacted parable of the entire Passion — the voluntary self-abasement of the commissioned one who holds authority precisely by not grasping it. What the original audience would have understood is that 13:31-33 — 'Now is the Son of Man glorified, and God is glorified in him' — is the programmatic statement of the Book of Glory. The glorification does not wait for the resurrection; it begins at the moment the betrayer departs and the cross becomes inevitable. Through this lens, the new commandment that follows — 'love one another as I have loved you' — is not an ethical appendix. It is the mission statement of the post-resurrection community, grounded in the model of the foot washing: the community lives by the pattern of the sent one's love.",
+  "john-14":
+    "What are the Paraclete passages in John 14-16 — and why does the delegated-authority pattern place the Paraclete within the agency-commission structure? The Farewell Discourse spans chapters 13-17, and its theological spine is the four Paraclete passages. The first and second are in chapter 14 (14:16-17 and 14:26). Here's where it gets interesting: the delegated-authority pattern is consistent across all four passages — the Paraclete is sent by the Father (14:16) or sent by the Son from the Father (15:26); he speaks what he hears (16:13), not on his own authority ('he will not speak on his own'). This is the agency model extended: just as the Son received his commission from the Father, the Paraclete receives his commission from the Son and the Father. What the original audience would have understood is that 14:28 — 'the Father is greater than I' — is the plain-sense statement of commission subordination. Wayne Grudem's Eternal Functional Subordination framework acknowledges this subordination while maintaining Trinitarian orthodoxy; Bible Lens holds the agency reading, which finds subordination built into the commission structure itself. Through this lens, the Farewell Discourse is the commission briefing for the post-resurrection community.",
+  "john-15":
+    "What does the vine-and-branches metaphor reveal — and why is the Paraclete described as the 'Spirit of truth' in the third Paraclete passage? The vine-and-branches metaphor of John 15 is the Fourth Gospel's most sustained agricultural allegory. The Father is the vinedresser, Jesus is the true vine, and the disciples are the branches. Here's where it gets interesting: 'true vine' positions Jesus as the genuine fulfillment of Israel's vine identity (Psalm 80, Isaiah 5:1-7, Ezekiel 19:10-14). Israel as YHWH's vine was a standard prophetic metaphor for the covenant community; Jesus's claim to be the true vine is a commission claim within that tradition — the sent one embodies what the covenant community was called to be. The third Paraclete passage (15:26-27) describes the Paraclete as the Spirit of truth who proceeds from the Father and will testify concerning Jesus. What the original audience would have understood is that this is still agency language: the Paraclete proceeds from the Father, is sent by the Son, and his testimony is directed toward the Son's identity.",
+  "john-16":
+    "What does the fourth Paraclete passage reveal — and why does 'he will not speak on his own' establish the delegated-authority pattern so clearly? The fourth Paraclete passage (16:7-15) is the most extended and theologically developed of the four. Here's where it gets interesting: 16:13 contains the most explicit delegated-authority statement in the entire Farewell Discourse — 'he will not speak on his own; he will speak only what he hears.' The structure is precise: whatever the Paraclete hears, he speaks; whatever belongs to Jesus, the Paraclete takes and declares to the disciples. This is the same commission logic as 5:19: the authorized representative does not act independently but within the explicit scope of the commission. What the original audience would have understood is that the fourth Paraclete passage anchors the entire Farewell Discourse's agency structure: the Father sends the Son; the Son sends the Paraclete; the Paraclete testifies to the Son. The chain of authorization runs from the Father through every commissioned agent. Through this lens, the four Paraclete passages together describe the ongoing presence of the Father's commission in the community after the Son's departure.",
+  "john-17":
+    "What does 'eternal life is knowing you, the only true God, and Jesus Christ whom you sent' mean for Trinitarian theology — and why did Augustine acknowledge the plain-sense pressure of this verse? John 17:3 is the theological center of the High Priestly Prayer and the clearest relational definition of eternal life in the Gospel. Here's where it gets interesting: the verse defines eternal life as relational knowing (ginōskō) of two distinct referents — 'the only true God' and 'Jesus Christ whom you sent.' The apposition is not incidental: the Father is identified as the only true God; Jesus is identified as the one the Father sent. This is not a statement about ontological equality; it is a statement about distinct identities within a commission relationship. What the original audience would have understood is that Augustine himself, in De Trinitate Book I, acknowledged the force of 17:3 as a text that does not easily yield to Trinitarian categories — he argued that the verse requires careful exegetical handling precisely because the plain sense creates pressure. The ideational pre-existence of 17:5 — 'glorify me with the glory I had with you before the world was' — is best understood through the Wisdom-tradition parallel of 1 Peter 1:20 ('foreknown before the foundation of the world'). James Dunn's Christology in the Making frames the pre-existence language as 'what kind of pre-existence?' rather than a dismissal. Through this lens, John 17 is the Gospel's own answer to the Christological question: the one sent knew his commission before the world began.",
+  "john-18":
+    "What happened at the Garden arrest when soldiers fell back at Jesus's 'I am he' response — and how does the Passion narrative activate the agency framework? The arrest scene of John 18:1-11 contains one of the most discussed moments in the Gospel: when Jesus says 'I am he' (ego eimi) in response to the soldiers' search, they fall backward to the ground. Here's where it gets interesting: the falling-back scene has been read as a theophanic moment — the divine name spoken causing prostration. The agency reading offers a different account: within the commission framework, the Garden ego eimi is the sent one claiming his identity at the moment of voluntary surrender. He does not flee or call for angelic intervention; he controls the arrest (18:8 — 'let these men go'). What the original audience would have understood is that the Passion in John is not a defeat but a deliberate completion of the commission — 'the cup the Father has given me, shall I not drink it?' (18:11). Through this lens, the Garden scene establishes the Passion's theological register: the sent one's completion of the assigned work, not a tragic ending to a failed mission.",
+  "john-19":
+    "What does 'It is finished' mean — and how does the completion vocabulary of John 19 close the commission framework opened in the Prologue? The crucifixion narrative in John is framed by completion language from beginning to end. Here's where it gets interesting: tetelestai (19:30) — 'It is finished' — is the perfect passive of teleō, the same root used for accomplishing a commissioned task. The word appears in the Septuagint and Hellenistic Greek for the completion of a vow or an assigned duty. What the original audience would have understood is that the cross is not the unexpected interruption of the mission but its deliberate culmination: the commissioned work is complete. John 19's crucifixion account also includes the 'not a bone of him shall be broken' (19:36, echoing Exodus 12:46 and Psalm 34:20) and the piercing of the side (19:37, echoing Zechariah 12:10) — both framed as fulfillments of Scripture, placing the Passion within the framework of the Father's plan. Through this lens, the Passion narrative in John is a theology of completion, not of tragedy: the sent one accomplishes precisely what he was sent to do.",
+  "john-20":
+    "What does Thomas's confession 'my Lord and my God' mean — and how do the same-chapter bracket of 20:17 and the Psalm 35:23 doxological parallel reshape what Thomas is actually saying? The Resurrection chapter is also the Gospel's theological climax, and 20:28 — Thomas's confession — is its most contested verse. Here's where it gets interesting: the same-chapter bracket that surrounds 20:28 is the primary contextual argument. Eleven verses earlier, in 20:17, the risen Jesus says 'I am ascending to my Father and your Father, to my God and your God.' The possessive 'my God' is Jesus's own description of his relationship to the Father — not equality but commission-relationship. Then Thomas, in 20:28, says 'my Lord and my God.' The agency-doxological reading, anchored in Psalm 35:23 ('Awake, my God and my Lord') and Psalm 88:1 ('O YHWH, God of my salvation'), shows that this doxological address pattern is Psalmic — praise directed toward the one who has acted in salvation. Murray Harris's Jesus as God (Baker, 1992) engages the Trinitarian case most rigorously; the nominative-versus-vocative grammatical argument is insufficient alone, as Harris shows. What the original audience would have understood is that 20:30-31 provides the Gospel's own interpretive key: 'these are written so that you may believe that Jesus is the Messiah, the Son of God' — not 'so that you may believe that Jesus is YHWH.' Ancient wisdom, Johannine clarity: Son of God is the category, not divine identity.",
+  "john-21":
+    "What does the epilogue of John 21 reveal — and why is the lakeside commission the Gospel's closing movement of restoration and authorization? John 20:30-31 functions as the Gospel's original conclusion, and John 21 is widely recognized as an epilogue, added to address the community's questions about Peter, the Beloved Disciple, and the continuation of mission. Here's where it gets interesting: the lakeside breakfast scene enacts the restoration of Peter through a triple affirmation that mirrors the triple denial of 18:17-27. The commission — 'feed my sheep' — is the pastoral authorization of Peter's post-resurrection leadership. What the original audience would have understood is that the epilogue answers two pressing community questions: what happened to Peter (he is restored and commissioned), and what about the Beloved Disciple's apparent prediction of an imminent return (Jesus never said he would not die, only 'if I want him to remain until I come'). Through this lens, John 21 is not a loose appendix but a deliberate pastoral extension of the Gospel's commission theology: the sent one's mission continues through the community he has authorized.",
+
   // Ecclesiastes — 5 RAG clusters, 11 commentary chapters
   "ecclesiastes-1":
     "What does hebel actually mean — and why does the difference between 'meaningless' and 'vapor' reshape everything Ecclesiastes says? The opening line of Ecclesiastes — hebel hebalim, 'vapor of vapors' — is the thesis statement of the entire book. The Hebrew noun hebel literally means breath or vapor: something real, observable, and present, but transient and ungraspable. You can see your breath on a cold morning; you cannot hold it. That sensory image is Qoheleth's central metaphor for human endeavor. The NIV's 'meaningless' and the KJV's 'vanity' flatten this vivid Hebrew metaphor into an abstract nihilistic verdict. Qoheleth is not saying nothing matters; he is saying nothing can be grasped permanently. Here's where it gets interesting: Qoheleth is a literary persona — the name means 'the assembler' or 'the one who convenes.' The royal framing of 1:12 ('I, Qoheleth, was king over Israel in Jerusalem') is a rhetorical device, not autobiography. The sage adopts the persona of the ultimate wealth-and-wisdom possessor to test whether privilege resolves the hebel problem. The cosmological poem of 1:4-11 frames the thesis with ANE cyclic observation — sun, wind, and rivers as recurring natural phenomena observed 'under the sun,' the realm of human experience bounded by the heavens above.",
@@ -328,7 +373,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 41 + 33 + 49 + 21 = 144 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 41 + 33 + 49 + 21 + 21 = 165 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -361,6 +406,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "job-1", "job-2", "job-38", "job-39", "job-40", "job-41",
       "proverbs-8", "proverbs-31",
       "ecclesiastes-1", "ecclesiastes-3", "ecclesiastes-7",
+      "john-1",
     ],
   },
   {
@@ -379,6 +425,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "proverbs-1", "proverbs-7", "proverbs-10", "proverbs-16", "proverbs-22", "proverbs-23", "proverbs-25",
       "ecclesiastes-2", "ecclesiastes-5", "ecclesiastes-6", "ecclesiastes-8", "ecclesiastes-9", "ecclesiastes-10", "ecclesiastes-11", "ecclesiastes-12",
       "isaiah-54", "isaiah-55",
+      "john-3", "john-13", "john-17",
     ],
   },
   {
@@ -391,6 +438,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "psalms-2", "psalms-22", "psalms-45", "psalms-110",
       "jeremiah-23",
       "isaiah-40", "isaiah-42", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-49", "isaiah-50",
+      "john-1", "john-5", "john-8", "john-10", "john-12",
     ],
   },
 ];
@@ -565,6 +613,63 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "isaiah", chapter: 53, annotation: "The most contested chapter in the Hebrew Bible: corporate Israel first, then typological fulfillment — both as layers, not competitors." },
     ],
   },
+  {
+    id: "john-signs-arc",
+    title: "Signs Arc",
+    throughLine:
+      "Seven signs run through John 1-11, each called a semeion — a revelatory act, not merely a miracle. Here's where it gets interesting: John's signs vocabulary differs deliberately from the Synoptic dynameis ('mighty works'). Each semeion is not a demonstration of raw power but a disclosure of the Father's authority delegated to the sent one — a window into the commission. The literary crescendo is no accident: water-to-wine (glory revealed, disciples believe), then official's son (faith without seeing), then Bethesda (Sabbath controversy, the agency defense begins), then feeding and sea walking together (manna typology, the Bread of Life discourse provoked), then the blind man at Siloam (the light of the world enacted in the pool 'called Sent'), then Lazarus (the seventh sign, the climax that precipitates the cross). Through this lens, the signs are not scattered miracles held together by a common narrative — they are a progressive revelation of the Father's authorization. Each sign makes visible what the Prologue announced: the logos agent through whom all things were made is now operating in history, and the signs are the evidence.",
+    steps: [
+      { bookId: "john", chapter: 1, annotation: "The logos overture — theological frame for all seven signs." },
+      { bookId: "john", chapter: 2, annotation: "First sign: Cana — glory revealed, disciples believe." },
+      { bookId: "john", chapter: 4, annotation: "Second sign: official's son — faith without seeing." },
+      { bookId: "john", chapter: 5, annotation: "Third sign: Bethesda — Sabbath controversy, agency defense begins." },
+      { bookId: "john", chapter: 6, annotation: "Fourth and fifth signs: feeding and sea walking — manna typology." },
+      { bookId: "john", chapter: 9, annotation: "Sixth sign: blind man — 'I am the light of the world' enacted." },
+      { bookId: "john", chapter: 11, annotation: "Seventh sign: Lazarus — climactic revelation, 'I am the resurrection.'" },
+    ],
+  },
+  {
+    id: "john-i-am-declarations-arc",
+    title: "I Am Declarations Arc",
+    throughLine:
+      "Seven ego eimi declarations run through the Fourth Gospel, each completing the pattern: 'I am the bread of life,' 'I am the light of the world,' 'I am the good shepherd,' 'I am the resurrection and the life,' 'I am the way, the truth, and the life,' 'I am the true vine.' And then the absolute 'I am' of 8:58: 'Before Abraham was, I am.' Here's where it gets interesting: each declaration fits the shaliach agency model — the sent one declares what the Father authorized, not an independent ontological claim. Richard Bauckham connects 8:58 to the ani hu trial-speech formula of Isaiah 43, arguing for a divine-identity echo. NT-03 engages this argument directly: the Isaiah 43 courtroom context is a polemic against Babylonian deity claims, not a formula establishing ontological identity. What the original audience would have understood is that the 'I am' sayings are the Fourth Gospel's sustained answer to the question 'who sent you and what authority do you carry?' — the sent one declares the Father's authorization in each domain. Through this lens, the seven declarations trace the scope of the commission: bread (life itself), light (revelation), door (access), shepherd (governance), resurrection (ultimate authority), way-truth-life (direction), vine (fruitfulness). The commission is total.",
+    steps: [
+      { bookId: "john", chapter: 6, annotation: "I am the bread of life — manna from the Father, not Moses." },
+      { bookId: "john", chapter: 8, annotation: "I am the light of the world — Tabernacles context, 8:58 absolute ego eimi." },
+      { bookId: "john", chapter: 10, annotation: "I am the good shepherd / I am the door — Psalm 82 agency argument." },
+      { bookId: "john", chapter: 11, annotation: "I am the resurrection and the life — before the seventh sign." },
+      { bookId: "john", chapter: 14, annotation: "I am the way, the truth, and the life — Farewell Discourse." },
+      { bookId: "john", chapter: 15, annotation: "I am the true vine — the Father as vinedresser, branches as commission." },
+    ],
+  },
+  {
+    id: "john-farewell-discourse-arc",
+    title: "Farewell Discourse Arc",
+    throughLine:
+      "Chapters 13-17 form the most sustained theological unit in the Fourth Gospel: the Farewell Discourse, from foot washing through the High Priestly Prayer. The literary architecture is deliberate: an enacted parable (foot washing) opens the Book of Glory, followed by the new commandment after Judas's departure, then four Paraclete passages weave through chapters 14-16, then the vine metaphor, then the prayer of chapter 17. Here's where it gets interesting: the four Paraclete passages (14:16-17, 14:26, 15:26, 16:7-15) all carry the same delegated-authority pattern — 'he will not speak on his own' (16:13). The Paraclete is sent by the Father or by the Son from the Father; he speaks what he hears; his testimony is directed toward the Son's identity. What the original audience would have understood is that this is the commission structure extended: the Father authorized the Son; the Son authorizes the Paraclete; the Paraclete authorizes the community. Through this lens, the Farewell Discourse is the commission briefing for the post-resurrection community — the transfer of authority from the Son's visible presence to the Paraclete's ongoing presence.",
+    steps: [
+      { bookId: "john", chapter: 13, annotation: "Foot washing and new commandment — the enacted parable opens the Book of Glory." },
+      { bookId: "john", chapter: 14, annotation: "First and second Paraclete passages — 'the Father is greater than I' (14:28)." },
+      { bookId: "john", chapter: 15, annotation: "Vine and branches — third Paraclete passage, the 'Spirit of truth.'" },
+      { bookId: "john", chapter: 16, annotation: "Fourth Paraclete passage — 'he will not speak on his own' (16:13)." },
+      { bookId: "john", chapter: 17, annotation: "High Priestly Prayer — 'the only true God' (17:3), ideational pre-existence (17:5)." },
+    ],
+  },
+  {
+    id: "john-unitarian-lens-arc",
+    title: "Unitarian Lens Arc",
+    throughLine:
+      "This arc is not a proof-text tour — that framing would violate the voice discipline of NT-07. It is a reading of John's agency Christology as a coherent whole, from Prologue to Resurrection. The Father-Son distinction runs through every chapter: the Son can do nothing by himself (5:19), the Father is greater than I (14:28), the only true God and Jesus Christ whom you sent (17:3). Here's where it gets interesting: these are not isolated proof-texts for a minority position — they are the structural load-bearing claims of the Fourth Gospel's Christology. What the original audience would have understood is that the Gospel's stated purpose (20:30-31) is 'that you may believe Jesus is the Messiah, the Son of God' — not 'so that you may believe Jesus is YHWH.' Son of God is the category; commissioned agent is the relationship. John 17:3 is the theological center of this arc: eternal life defined as relational knowing of the only true God and the one he sent. The highest Christological moments of the Gospel — logos as theos (1:1c), ego eimi (8:58), I and the Father are one (10:30), Thomas's confession (20:28) — all point, through this lens, to authorized agency rather than ontological identity.",
+    steps: [
+      { bookId: "john", chapter: 1, annotation: "Logos as personified Wisdom — qualitative theos at 1:1c, not numerical identity." },
+      { bookId: "john", chapter: 5, annotation: "Agency defense: 'the Son can do nothing by himself' (5:19) — the Father-Son commission." },
+      { bookId: "john", chapter: 8, annotation: "Ego eimi in trial-speech context — Bauckham's divine-identity argument engaged via NT-03." },
+      { bookId: "john", chapter: 10, annotation: "'I and the Father are one' (10:30) — functional unity, Psalm 82 gods argument." },
+      { bookId: "john", chapter: 14, annotation: "'The Father is greater than I' (14:28) — the subordination built into the commission." },
+      { bookId: "john", chapter: 17, annotation: "'The only true God' (17:3) — the theological center of the agency reading." },
+      { bookId: "john", chapter: 20, annotation: "Thomas's confession (20:28) in light of 20:17 and 20:30-31 purpose statement." },
+    ],
+  },
 ];
 
 // Phase 51 — topic landing page data. All three exports follow the interface-then-constant
@@ -592,7 +697,7 @@ export const TOPIC_PAGES: TopicPage[] = [
       "son of man christology",
       "Daniel 7 first century interpretation",
     ],
-    chapterKeys: ["daniel-7", "daniel-2", "matthew-24", "revelation-1", "revelation-5", "psalms-2", "psalms-110"],
+    chapterKeys: ["daniel-7", "daniel-2", "matthew-24", "revelation-1", "revelation-5", "psalms-2", "psalms-110", "john-5", "john-12"],
     prose: `The question that unlocks Daniel 7 is deceptively simple: which direction does the son of man travel?
 
 Read the verse carefully. In Daniel 7:13, the one like a son of man comes "with the clouds of heaven" and approaches the Ancient of Days — moving toward the throne, not away from it. He is being escorted upward into the divine courtroom to receive dominion, glory, and kingdom. The direction of travel is an ascent, not a descent to earth.
@@ -642,7 +747,7 @@ Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four k
       "Genesis 1 ANE background",
       "creation week framework",
     ],
-    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27", "psalms-8", "psalms-82", "job-38", "job-39", "job-40", "job-41", "proverbs-8", "proverbs-31", "ecclesiastes-3"],
+    chapterKeys: ["genesis-1", "genesis-2", "genesis-3", "genesis-6", "genesis-11", "ezekiel-1", "exodus-25", "exodus-26", "exodus-27", "psalms-8", "psalms-82", "job-38", "job-39", "job-40", "job-41", "proverbs-8", "proverbs-31", "ecclesiastes-3", "john-1"],
     prose: `What did Genesis 1 communicate to its first audience — and what was it not trying to say?
 
 The ancient audience of Genesis did not live in a world asking about natural selection or the age of the cosmos. They lived in a world saturated with creation stories: Enuma Elish from Babylon, Atrahasis from Sumer, the Memphite Theology from Egypt. Every surrounding culture had a cosmogony that justified its own gods, its own king, its own view of humanity's purpose. Genesis was written into that contest.
@@ -702,7 +807,7 @@ Where Bible Lens parts from full preterism: Revelation 19-20 describes a future 
       "Isaiah 53 corporate Israel reading",
       "suffering servant who is it",
     ],
-    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-42", "isaiah-49", "isaiah-50", "isaiah-40", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-54", "isaiah-55", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19", "ecclesiastes-9"],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-42", "isaiah-49", "isaiah-50", "isaiah-40", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-54", "isaiah-55", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19", "ecclesiastes-9", "john-1", "john-12"],
     prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
 
 Here's where it gets interesting: the historically prior reading, dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion; it was the mainstream.
@@ -774,7 +879,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "genesis-28": ["genesis-12", "ezekiel-1"],
 
   // Genesis — Divine council / cosmos cluster
-  "genesis-1": ["genesis-2", "ezekiel-1", "job-38"],
+  "genesis-1": ["genesis-2", "ezekiel-1", "john-1"],
   "genesis-2": ["genesis-1", "genesis-3", "ecclesiastes-12"],
   "genesis-3": ["genesis-2", "revelation-12", "ezekiel-28"],
   "genesis-11": ["genesis-6", "daniel-2", "revelation-17"],
@@ -814,7 +919,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "revelation-14": ["revelation-7", "revelation-19", "revelation-6"],
   "revelation-17": ["revelation-18", "daniel-5", "genesis-11"],
   "revelation-18": ["revelation-17", "daniel-5", "matthew-24"],
-  "revelation-19": ["revelation-20", "ezekiel-39", "exodus-14"],
+  "revelation-19": ["revelation-20", "ezekiel-39", "john-20"],
   "revelation-20": ["revelation-19", "ezekiel-38", "zechariah-14"],
   "revelation-21": ["revelation-22", "isaiah-65", "zechariah-8"],
   "revelation-22": ["revelation-21", "isaiah-66", "daniel-12"],
@@ -880,7 +985,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "psalms-23": ["psalms-22", "psalms-89", "exodus-33"],
   "psalms-45": ["psalms-2", "psalms-110", "isaiah-9"],
   "psalms-51": ["psalms-139", "psalms-22", "ezekiel-37"],
-  "psalms-82": ["genesis-6", "ezekiel-28", "job-1"],
+  "psalms-82": ["genesis-6", "ezekiel-28", "john-10"],
   "psalms-89": ["psalms-2", "psalms-22", "genesis-15"],
   "psalms-110": ["psalms-2", "psalms-45", "daniel-7"],
   "psalms-139": ["psalms-51", "psalms-8", "genesis-1"],
@@ -911,7 +1016,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   // Proverbs — 7 RAG clusters, 9 commentary chapters
   "proverbs-1": ["proverbs-7", "proverbs-8", "ecclesiastes-1"],
   "proverbs-7": ["proverbs-1", "proverbs-8", "proverbs-31"],
-  "proverbs-8": ["proverbs-1", "proverbs-31", "job-28"],
+  "proverbs-8": ["proverbs-1", "proverbs-31", "john-1"],
   "proverbs-10": ["proverbs-16", "proverbs-25", "ecclesiastes-2"],
   "proverbs-16": ["proverbs-10", "proverbs-25", "psalms-2"],
   "proverbs-22": ["proverbs-23", "proverbs-25", "genesis-12"],
@@ -935,11 +1040,34 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   // Deutero-Isaiah — 5 RAG clusters, 9 commentary chapters
   "isaiah-40": ["isaiah-42", "exodus-14", "isaiah-6"],
   "isaiah-42": ["isaiah-49", "isaiah-40", "psalms-2"],
-  "isaiah-43": ["isaiah-42", "isaiah-44", "exodus-3"],
+  "isaiah-43": ["isaiah-42", "isaiah-44", "john-8"],
   "isaiah-44": ["isaiah-45", "isaiah-43", "jeremiah-7"],
   "isaiah-45": ["isaiah-44", "isaiah-40", "daniel-1"],
   "isaiah-49": ["isaiah-42", "isaiah-50", "jeremiah-1"],
   "isaiah-50": ["isaiah-49", "isaiah-42", "jeremiah-1"],
   "isaiah-54": ["isaiah-55", "isaiah-49", "jeremiah-31"],
   "isaiah-55": ["isaiah-54", "isaiah-40", "exodus-19"],
+
+  // John — 11 RAG clusters, 21 commentary chapters
+  "john-1": ["genesis-1", "proverbs-8", "john-2"],
+  "john-2": ["john-3", "john-4", "john-1"],
+  "john-3": ["john-2", "john-4", "john-17"],
+  "john-4": ["john-2", "john-3", "john-5"],
+  "john-5": ["john-6", "john-10", "psalms-82"],
+  "john-6": ["john-5", "john-11", "exodus-14"],
+  "john-7": ["john-8", "john-9", "isaiah-43"],
+  "john-8": ["john-7", "isaiah-43", "john-18"],
+  "john-9": ["john-10", "john-5", "psalms-82"],
+  "john-10": ["john-9", "psalms-82", "john-5"],
+  "john-11": ["john-12", "john-6", "john-20"],
+  "john-12": ["john-11", "isaiah-6", "john-1"],
+  "john-13": ["john-14", "john-17", "john-1"],
+  "john-14": ["john-15", "john-16", "john-13"],
+  "john-15": ["john-14", "john-16", "john-17"],
+  "john-16": ["john-14", "john-15", "john-17"],
+  "john-17": ["john-13", "john-16", "john-20"],
+  "john-18": ["john-19", "john-8", "isaiah-53"],
+  "john-19": ["john-18", "john-20", "isaiah-52"],
+  "john-20": ["john-21", "john-17", "psalms-22"],
+  "john-21": ["john-20", "john-1", "john-13"],
 };

@@ -239,6 +239,42 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       }
       return `What is the historical context of ${bookTitle} ${chapter}?`;
     }
+    if (book === "john") {
+      if (chapter === 1) {
+        return `What did John's Prologue mean to its original audience — and why does the logos in John 1:1 connect to the Jewish Wisdom tradition of Proverbs 8 and Sirach 24 rather than Greek philosophical logos?`;
+      }
+      if ([2, 3, 4].includes(chapter)) {
+        return `What do the early signs and encounters in John 2-4 reveal about the 'sent one' framework — and what did the Nicodemus conversation and the Samaritan woman encounter share in their offer of 'life from above' vs 'living water'?`;
+      }
+      if ([5, 6].includes(chapter)) {
+        return `How does John 5's agency defense (5:19-30) answer the 'equal with God' charge — and why does 5:23's honor-authorization clause resolve the proskyneo coherence question that runs through the entire Gospel?`;
+      }
+      if ([7, 8].includes(chapter)) {
+        return `What is the ego eimi claim of John 8:58 — and how does Bauckham's divine-identity argument differ from a Nicene ontological claim, and why does the shaliach model offer a better reading of the trial-speech context?`;
+      }
+      if ([9, 10].includes(chapter)) {
+        return `What does 'I and the Father are one' in John 10:30 actually claim — and how does Jesus's Psalm 82 argument (10:34-36) function within the shaliach agency model?`;
+      }
+      if ([11, 12].includes(chapter)) {
+        return `What does John 12:41 mean when it says Isaiah saw Jesus's glory — and how does the agency model account for Isaiah seeing YHWH's kabod in Isaiah 6 while John identifies it with Jesus?`;
+      }
+      if (chapter === 13) {
+        return `What does the foot washing in John 13 reveal about the glorification theology of the Book of Glory — and why does the new commandment follow immediately after Judas's departure and the 'Now is the Son of Man glorified' declaration?`;
+      }
+      if ([14, 15, 16].includes(chapter)) {
+        return `What are the four Paraclete passages in John 14-16 — and why does the delegated-authority pattern ('he will not speak on his own') place the Paraclete within the agency-commission structure rather than as an independent divine person?`;
+      }
+      if (chapter === 17) {
+        return `What does 'eternal life is knowing you, the only true God, and Jesus Christ whom you sent' mean for Trinitarian theology — and why did Augustine acknowledge the plain-sense pressure of this verse even as he argued for Trinitarian interpretation?`;
+      }
+      if ([18, 19].includes(chapter)) {
+        return `What happened when soldiers fell back at the Garden arrest in John 18:6 — and how does the 'I am he' response function as an echo of YHWH's trial-speech formula without requiring a claim to ontological identity with the Father?`;
+      }
+      if ([20, 21].includes(chapter)) {
+        return `What does Thomas's confession 'my Lord and my God' in John 20:28 mean — and how do the narrative context (20:30-31 purpose statement), the same-chapter bracket (20:17 'my God and your God'), and the Psalm 35:23 doxological parallel reshape what Thomas is actually saying?`;
+      }
+      return `What does John ${chapter} reveal about the agency Christology running through the Fourth Gospel?`;
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
