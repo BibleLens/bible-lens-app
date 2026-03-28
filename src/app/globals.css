@@ -492,6 +492,16 @@ body {
     transform: none !important;
     transition: none !important;
   }
+
+  /* D-05/D-07: Suppress card hover translateY (vestibular trigger) */
+  .card:hover {
+    transform: none;
+  }
+
+  /* Suppress infinite animate-pulse loops (FeaturedTopicsSection cyan dot) */
+  .animate-pulse {
+    animation: none;
+  }
 }
 
 /* ==========================================

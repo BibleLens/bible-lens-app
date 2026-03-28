@@ -3,6 +3,7 @@ import { Newsreader, Manrope, Source_Sans_3, Noto_Sans_Samaritan } from "next/fo
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
+import { MotionProvider } from "@/components/MotionProvider";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -107,19 +108,21 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-source-sans), system-ui, sans-serif" }}
       >
         <ThemeProvider>
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium focus:no-underline"
-            style={{
-              background: "var(--color-bg-elevated)",
-              color: "var(--color-text-primary)",
-              border: "2px solid var(--color-cyan-400)",
-            }}
-          >
-            Skip to main content
-          </a>
-          <ServiceWorkerRegistration />
-          {children}
+          <MotionProvider>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium focus:no-underline"
+              style={{
+                background: "var(--color-bg-elevated)",
+                color: "var(--color-text-primary)",
+                border: "2px solid var(--color-cyan-400)",
+              }}
+            >
+              Skip to main content
+            </a>
+            <ServiceWorkerRegistration />
+            {children}
+          </MotionProvider>
         </ThemeProvider>
       </body>
     </html>
