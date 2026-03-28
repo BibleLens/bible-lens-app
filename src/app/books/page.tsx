@@ -179,7 +179,7 @@ export default function BooksPage() {
         </div>
       </header>
 
-      <main className="flex-1 w-full">
+      <main id="main-content" className="flex-1 w-full">
         {/* Page title */}
         <section className="max-w-4xl mx-auto px-4 py-12 text-center">
           <h1

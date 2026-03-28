@@ -68,7 +68,7 @@ export function HomeClient() {
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 w-full">
+        <main id="main-content" className="flex-1 w-full">
           {/* Hero Section */}
           <div className="max-w-6xl mx-auto px-4">
             <section className="text-center py-8 mb-12">

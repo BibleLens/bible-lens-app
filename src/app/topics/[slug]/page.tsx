@@ -154,7 +154,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
         </div>
       </header>
 
-      <main className="flex-1 w-full">
+      <main id="main-content" className="flex-1 w-full">
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto px-4 py-12">
           <h1

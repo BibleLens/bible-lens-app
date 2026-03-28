@@ -73,7 +73,7 @@ export default async function BookPage({ params }: BookPageProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
+      <main id="main-content" className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
         {/* Book Title */}
         <div className="text-center mb-8">
           <p className="text-lg text-[var(--color-text-muted)] mb-2">

@@ -185,7 +185,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-3xl mx-auto w-full px-4 py-8">
+      <main id="main-content" className="flex-1 max-w-3xl mx-auto w-full px-4 py-8">
         {/* Chapter Title */}
         <div className="text-center mb-8">
           <Link

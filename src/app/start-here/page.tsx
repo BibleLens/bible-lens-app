@@ -77,7 +77,7 @@ export default function StartHerePage() {
         </div>
       </header>
 
-      <main className="flex-1 w-full">
+      <main id="main-content" className="flex-1 w-full">
         {/* Hero */}
         <section className="max-w-4xl mx-auto px-4 py-12 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">

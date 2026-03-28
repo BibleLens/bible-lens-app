@@ -60,7 +60,7 @@ export default function AboutPage() {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 max-w-3xl mx-auto w-full px-4 py-12">
+      <main id="main-content" className="flex-1 max-w-3xl mx-auto w-full px-4 py-12">
 
         {/* Section 1: About Bible Lens */}
         <section className="mb-14">

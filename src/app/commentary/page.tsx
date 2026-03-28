@@ -81,7 +81,7 @@ export default function CommentaryPage() {
         </div>
       </header>
 
-      <main className="flex-1 w-full">
+      <main id="main-content" className="flex-1 w-full">
         {/* Hero */}
         <section className="max-w-6xl mx-auto px-4 py-12 text-center">
           <h1

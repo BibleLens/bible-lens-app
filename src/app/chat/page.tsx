@@ -63,7 +63,7 @@ export default async function ChatPage({
       </header>
 
       {/* Main content — chat fills remaining height */}
-      <main className="flex-1 flex flex-col max-w-4xl mx-auto w-full px-4 py-4 overflow-hidden">
+      <main id="main-content" className="flex-1 flex flex-col max-w-4xl mx-auto w-full px-4 py-4 overflow-hidden">
         <ChatInterface initialQuery={q} />
       </main>
 

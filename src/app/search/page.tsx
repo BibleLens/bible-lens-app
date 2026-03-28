@@ -84,7 +84,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
+      <main id="main-content" className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
         {/* Page title */}
         <div className="mb-6">
           {q ? (
