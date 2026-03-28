@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 function FloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 36 }, (_, i) => {
@@ -57,14 +57,64 @@ function FloatingPaths({ position }: { position: number }) {
   );
 }
 
+function StaticFloatingPaths({ position }: { position: number }) {
+  const paths = Array.from({ length: 36 }, (_, i) => {
+    const t = i / 35;
+    const r = Math.round(250 - t * 216);
+    const g = Math.round(204 - t * 7);
+    const b = Math.round(21 + t * 217);
+
+    return {
+      id: i,
+      d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
+        380 - i * 5 * position
+      } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
+        152 - i * 5 * position
+      } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
+        684 - i * 5 * position
+      } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
+      color: `rgba(${r},${g},${b},${0.08 + i * 0.02})`,
+      width: 0.5 + i * 0.03,
+    };
+  });
+
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      <svg className="w-full h-full" viewBox="0 0 696 316" fill="none">
+        <title>Background Paths</title>
+        {paths.map((path) => (
+          <path
+            key={path.id}
+            d={path.d}
+            stroke={path.color}
+            strokeWidth={path.width}
+            strokeOpacity={0.25}
+          />
+        ))}
+      </svg>
+    </div>
+  );
+}
+
 export function BackgroundPaths() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <div
       className="absolute inset-0 overflow-hidden pointer-events-none"
       style={{ zIndex: -1, opacity: "var(--bg-paths-opacity, 0.4)" as unknown as number }}
     >
-      <FloatingPaths position={1} />
-      <FloatingPaths position={-1} />
+      {shouldReduceMotion ? (
+        <>
+          <StaticFloatingPaths position={1} />
+          <StaticFloatingPaths position={-1} />
+        </>
+      ) : (
+        <>
+          <FloatingPaths position={1} />
+          <FloatingPaths position={-1} />
+        </>
+      )}
     </div>
   );
 }
