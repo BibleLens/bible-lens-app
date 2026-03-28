@@ -122,7 +122,7 @@ export default async function BookPage({ params }: BookPageProps) {
         <div className="mt-8 text-center">
           <Link
             href={`/bible/${bookId}/1`}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[var(--color-gold-500)] to-[var(--color-cyan-500)] text-black font-semibold hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[var(--color-gold-500)] to-[var(--color-cyan-500)] text-white font-semibold hover:opacity-90 transition-opacity"
           >
             Start Reading {bookMeta.name}
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
