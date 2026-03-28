@@ -476,8 +476,8 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
                   <div className="border-t border-[var(--color-border)] my-4" />
                 )}
                 <div
-                  className="text-lg leading-relaxed text-[var(--color-text-secondary)]"
-                  style={{ fontFamily: "Georgia, serif" }}
+                  className="text-lg commentary-prose text-[var(--color-text-secondary)]"
+                  style={{ fontFamily: "Georgia, serif", color: "var(--color-commentary-body, var(--color-text-secondary))" }}
                 >
                   {parseCommentarySections(chunk.text).map((section, si) => (
                     <div key={si} className={si > 0 ? "mt-5" : ""}>
