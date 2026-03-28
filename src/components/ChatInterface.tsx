@@ -267,6 +267,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
   const [isStreaming, setIsStreaming] = useState(false);
   const [error, setError] = useState<ErrorState | null>(null);
   const [retryCountdown, setRetryCountdown] = useState(0);
+  const [liveAnnouncement, setLiveAnnouncement] = useState("");
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -425,6 +426,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
           };
           return updated;
         });
+        setLiveAnnouncement(currentText.slice(-200));
       }
       // Final flush
       fullText += decoder.decode();
@@ -455,6 +457,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
     } finally {
       setIsStreaming(false);
       isStreamingRef.current = false;
+      setLiveAnnouncement("");
     }
   };
 
@@ -702,6 +705,15 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
         >
           Press Enter to send, Shift+Enter for new line
         </p>
+      </div>
+
+      {/* Persistent aria-live region for streaming announcements — must always be in DOM */}
+      <div
+        aria-live="polite"
+        aria-atomic="false"
+        className="sr-only"
+      >
+        {liveAnnouncement}
       </div>
     </div>
   );
