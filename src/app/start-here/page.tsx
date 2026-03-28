@@ -38,7 +38,7 @@ export default function StartHerePage() {
             </h1>
           </Link>
 
-          <nav className="flex items-center gap-4">
+          <nav className="flex items-center gap-4" aria-label="Main navigation">
             <Link
               href="/start-here"
               className="text-lg transition-colors font-semibold text-[var(--color-gold-400)] min-h-[44px] flex items-center"

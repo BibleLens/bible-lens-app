@@ -33,7 +33,7 @@ export default function AboutPage() {
           </Link>
 
           {/* Nav links */}
-          <nav className="flex items-center gap-4 ml-auto">
+          <nav className="flex items-center gap-4 ml-auto" aria-label="Main navigation">
             <Link
               href="/search"
               className="text-lg transition-colors min-h-[44px] flex items-center"

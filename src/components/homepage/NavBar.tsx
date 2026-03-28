@@ -15,6 +15,7 @@ export function NavBar() {
   return (
     <nav
       className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-cyan-400/10 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.5)]"
+      aria-label="Main navigation"
     >
       <div className="flex items-center justify-between px-6 py-4">
         {/* Left: Logo */}

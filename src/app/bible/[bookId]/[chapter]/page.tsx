@@ -139,7 +139,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             {bookMeta.name} {chapterNum}
           </Link>
           
-          <nav className="hidden sm:flex items-center gap-3 text-sm">
+          <nav className="hidden sm:flex items-center gap-3 text-sm" aria-label="Chapter navigation">
             <Link
               href="/start-here"
               className="transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
@@ -161,6 +161,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                 href={prevLink}
                 className="p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title={prevLabel || undefined}
+                aria-label={prevLabel ? `Previous chapter: ${prevLabel}` : "Previous chapter"}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -172,6 +173,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                 href={nextLink}
                 className="p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title={nextLabel || undefined}
+                aria-label={nextLabel ? `Next chapter: ${nextLabel}` : "Next chapter"}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

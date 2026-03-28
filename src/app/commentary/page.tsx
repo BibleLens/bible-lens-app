@@ -42,7 +42,7 @@ export default function CommentaryPage() {
             </h1>
           </Link>
 
-          <nav className="flex items-center gap-4">
+          <nav className="flex items-center gap-4" aria-label="Main navigation">
             <Link
               href="/start-here"
               className="text-lg transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
