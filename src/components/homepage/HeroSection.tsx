@@ -22,155 +22,158 @@ export function HeroSection() {
       const container = containerRef.current;
       if (!container) return;
 
-      // --- Reduced motion guard ---
-      const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
+      const mm = gsap.matchMedia();
 
-      if (prefersReducedMotion) {
-        // Ensure all entrance-animated elements are at their final visible state
+      // --- Reduced motion: set final state immediately ---
+      mm.add("(prefers-reduced-motion: reduce)", () => {
         gsap.set(titleRef.current?.children || [], { opacity: 1, y: 0 });
         gsap.set(lensFrameRef.current, { scale: 1, rotation: 0 });
         gsap.set(scrollHintRef.current, { opacity: 0.7, y: 0 });
-        gsap.set(clarifiedTrackRef.current, { opacity: 1, xPercent: -50, yPercent: -50 });
-        return; // Skip ALL scroll-driven and entrance animation setup
-      }
+        gsap.set(clarifiedTrackRef.current, {
+          opacity: 1,
+          xPercent: -50,
+          yPercent: -50,
+        });
+      });
 
-      // --- Mobile particle optimization ---
-      const isMobile = window.innerWidth < 768;
-      const particleCount = isMobile ? 20 : PARTICLE_COUNT;
+      // --- Full motion: all animations ---
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        // Mobile particle optimization
+        const isMobile = window.innerWidth < 768;
+        const particleCount = isMobile ? 20 : PARTICLE_COUNT;
 
-      // --- Particles ---
-      if (particlesRef.current) {
-        const frag = document.createDocumentFragment();
-        for (let i = 0; i < particleCount; i++) {
-          const p = document.createElement("div");
-          p.className = "hero-particle";
-          const size = Math.random() * 3 + 1;
-          gsap.set(p, {
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            width: size,
-            height: size,
-            opacity: Math.random() * 0.4 + 0.1,
-          });
-          frag.appendChild(p);
-          gsap.to(p, {
-            y: "-=200",
-            ease: "none",
-            scrollTrigger: {
-              trigger: container,
-              start: "top top",
-              end: "bottom bottom",
-              scrub: Math.random() * 2 + 1,
-            },
-          });
+        // --- Particles ---
+        if (particlesRef.current) {
+          const frag = document.createDocumentFragment();
+          for (let i = 0; i < particleCount; i++) {
+            const p = document.createElement("div");
+            p.className = "hero-particle";
+            const size = Math.random() * 3 + 1;
+            gsap.set(p, {
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+              width: size,
+              height: size,
+              opacity: Math.random() * 0.4 + 0.1,
+            });
+            frag.appendChild(p);
+            gsap.to(p, {
+              y: "-=200",
+              ease: "none",
+              scrollTrigger: {
+                trigger: container,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: Math.random() * 2 + 1,
+              },
+            });
+          }
+          particlesRef.current.appendChild(frag);
         }
-        particlesRef.current.appendChild(frag);
-      }
 
-      // --- Lens entrance ---
-      gsap.set(lensFrameRef.current, { scale: 0, rotation: 45 });
+        // --- Lens entrance ---
+        gsap.set(lensFrameRef.current, { scale: 0, rotation: 45 });
 
-      const tlEntrance = gsap.timeline({ defaults: { ease: "power4.out" } });
-      tlEntrance
-        .from(titleRef.current?.children || [], {
-          opacity: 0,
-          y: 30,
-          duration: 1.5,
-          stagger: 0.2,
-        })
-        .to(lensFrameRef.current, { scale: 1, duration: 1.2 }, "-=0.8")
-        .from(
-          scrollHintRef.current,
-          { opacity: 0, y: 20, duration: 1 },
-          "-=0.5"
-        );
+        const tlEntrance = gsap.timeline({ defaults: { ease: "power4.out" } });
+        tlEntrance
+          .from(titleRef.current?.children || [], {
+            opacity: 0,
+            y: 30,
+            duration: 1.5,
+            stagger: 0.2,
+          })
+          .to(lensFrameRef.current, { scale: 1, duration: 1.2 }, "-=0.8")
+          .from(
+            scrollHintRef.current,
+            { opacity: 0, y: 20, duration: 1 },
+            "-=0.5"
+          );
 
-      // --- Title fades in first 100px ---
-      gsap.to(heroTitleWrapperRef.current, {
-        scale: 0.8,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: "100px top",
-          scrub: true,
-        },
-      });
-
-      // --- Clarified track: set initial position via GSAP (not CSS) to avoid transform conflicts ---
-      gsap.set(clarifiedTrackRef.current, {
-        xPercent: -50,
-        yPercent: -50,
-      });
-
-      // --- Clarified track fades in immediately ---
-      gsap.to(clarifiedTrackRef.current, {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: container,
-          start: "10px top",
-          end: "100px top",
-          scrub: true,
-        },
-      });
-
-      // --- Main track: -700px over full scroll range ---
-      gsap.to(mainTrackRef.current, {
-        y: -700,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-        },
-      });
-
-      // --- Clarified track: same -700px, same range ---
-      gsap.to(clarifiedTrackRef.current, {
-        y: -700,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-        },
-      });
-
-      // --- Lens pulse ---
-      gsap.to(lensFrameRef.current, {
-        boxShadow: "0 0 40px rgba(0, 229, 255, 0.8)",
-        repeat: -1,
-        yoyo: true,
-        duration: 2,
-        ease: "sine.inOut",
-      });
-
-      // --- Fade lens out near end ---
-      if (lensContainerRef.current) {
-        gsap.to(lensContainerRef.current, {
+        // --- Title fades in first 100px ---
+        gsap.to(heroTitleWrapperRef.current, {
+          scale: 0.8,
           opacity: 0,
           scrollTrigger: {
             trigger: container,
-            start: "85% top",
-            end: "95% top",
+            start: "top top",
+            end: "100px top",
             scrub: true,
           },
         });
-      }
 
-      // --- Fade scroll hint ---
-      gsap.to(scrollHintRef.current, {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: container,
-          start: "50px top",
-          end: "150px top",
-          scrub: true,
-        },
+        // --- Clarified track: set initial position via GSAP (not CSS) to avoid transform conflicts ---
+        gsap.set(clarifiedTrackRef.current, {
+          xPercent: -50,
+          yPercent: -50,
+        });
+
+        // --- Clarified track fades in immediately ---
+        gsap.to(clarifiedTrackRef.current, {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: container,
+            start: "10px top",
+            end: "100px top",
+            scrub: true,
+          },
+        });
+
+        // --- Main track: -700px over full scroll range ---
+        gsap.to(mainTrackRef.current, {
+          y: -700,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+          },
+        });
+
+        // --- Clarified track: same -700px, same range ---
+        gsap.to(clarifiedTrackRef.current, {
+          y: -700,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+          },
+        });
+
+        // --- Lens pulse ---
+        gsap.to(lensFrameRef.current, {
+          boxShadow: "0 0 40px rgba(0, 229, 255, 0.8)",
+          repeat: -1,
+          yoyo: true,
+          duration: 2,
+          ease: "sine.inOut",
+        });
+
+        // --- Fade lens out near end ---
+        if (lensContainerRef.current) {
+          gsap.to(lensContainerRef.current, {
+            opacity: 0,
+            scrollTrigger: {
+              trigger: container,
+              start: "85% top",
+              end: "95% top",
+              scrub: true,
+            },
+          });
+        }
+
+        // --- Fade scroll hint ---
+        gsap.to(scrollHintRef.current, {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: container,
+            start: "50px top",
+            end: "150px top",
+            scrub: true,
+          },
+        });
       });
     },
     { scope: containerRef }
