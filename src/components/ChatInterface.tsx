@@ -659,7 +659,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
             disabled={isStreaming}
             placeholder="Ask a theological question..."
             rows={1}
-            className="flex-1 resize-none bg-transparent outline-none leading-6 placeholder-opacity-60"
+            className="flex-1 resize-none bg-transparent leading-6 placeholder-opacity-60"
             style={{
               color: "var(--color-text-primary)",
               fontSize: "16px", // prevents iOS zoom on focus

@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Phase 114: A11Y-01 — global keyboard focus ring */
+*:focus-visible {
+  outline: 2px solid var(--color-cyan-400);
+  outline-offset: 2px;
+}
+
+/* Phase 114: A11Y-05 — sticky header offset for keyboard focus */
+html {
+  scroll-padding-top: 80px;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Bible Lens Brand Colors */
