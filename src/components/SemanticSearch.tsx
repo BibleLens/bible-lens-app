@@ -38,19 +38,12 @@ function SourceBadge({ source }: { source: string }) {
   const labels: Record<string, string> = {
     trinity_delusion: "Trinity Delusion",
     preterist_pdf: "Preterist PDF",
-    personal: "Personal",
+    personal: "Commentary",
   };
   const label = labels[source] ?? source;
 
   return (
-    <span
-      className="text-base px-2 py-0.5 rounded-full border"
-      style={{
-        color: "var(--color-text-muted)",
-        borderColor: "var(--color-border)",
-        background: "var(--color-bg-secondary)",
-      }}
-    >
+    <span className="micro-label" style={{ color: "var(--homepage-primary)" }}>
       {label}
     </span>
   );
@@ -101,13 +94,8 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
             <button
               type="button"
               onClick={() => toggle(i)}
-              className="w-full text-left rounded-none p-3 transition-colors"
-              style={{
-                background: "var(--color-bg-secondary)",
-                border: isExpanded
-                  ? "1px solid var(--color-border-hover)"
-                  : "1px solid var(--color-border)",
-              }}
+              className="w-full text-left glass-card p-3 transition-colors"
+              style={isExpanded ? { borderColor: "var(--homepage-primary)" } : {}}
             >
               <div className="flex items-start justify-between gap-2 mb-2">
                 <p
@@ -198,35 +186,10 @@ export function SemanticSearch({ query }: SemanticSearchProps) {
   }, [query]);
 
   return (
-    <div
-      className="rounded-none border p-5"
-      style={{
-        background: "var(--color-bg-elevated)",
-        borderColor: "var(--color-border)",
-      }}
-    >
+    <div className="glass-card p-5">
       {/* Section heading */}
-      <div className="flex items-center gap-2 mb-4">
-        <svg
-          className="w-5 h-5"
-          style={{ color: "var(--color-cyan-400)" }}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-          />
-        </svg>
-        <h2
-          className="font-semibold text-lg"
-          style={{ color: "var(--color-text-primary)" }}
-        >
-          Theological Insights
-        </h2>
+      <div className="mb-4">
+        <span className="micro-label" style={{ color: "var(--homepage-primary)" }}>THEOLOGICAL INSIGHTS</span>
       </div>
 
       {/* States */}
