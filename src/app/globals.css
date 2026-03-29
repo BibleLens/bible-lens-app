@@ -65,6 +65,11 @@ html {
   /* Off-white reduces halation against dark backgrounds */
   /* Contrast: 14.06:1 on #0a0a0a, 13.38:1 on #111111, 12.38:1 on #1a1a1a — all PASS */
   --color-commentary-body: #e2e2e2;
+
+  /* DSF-08 — Ethereal Scholar Redesign Tokens */
+  --color-obsidian: #050508;
+  --color-scripture-surface: #FBF9F4;
+  --color-text-muted-warm: #dcc1b4;
 }
 
 /* ==========================================
@@ -73,7 +78,7 @@ html {
    Source: Strategy/Design/DESIGN.md
    ========================================== */
 :root {
-  --homepage-bg: #050508;
+  --homepage-bg: var(--color-obsidian);
   --homepage-surface: #0F0F16;
   --homepage-text: #F3F3F5;
   --homepage-muted: #9A9AB0;
@@ -446,6 +451,74 @@ body {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
+/* Grain overlay — DSF-03 */
+.grain-overlay {
+  position: relative;
+}
+
+.grain-overlay::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  z-index: 49;
+}
+
+/* Suppress grain in light mode */
+:root.light .grain-overlay::after {
+  display: none;
+}
+
+/* Micro-label — DSF-04 */
+.micro-label {
+  font-size: 10px;
+  font-family: var(--font-space-grotesk), var(--font-manrope), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+/* Diamond motif — DSF-06 */
+.diamond-motif {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.diamond-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.diamond-divider::before,
+.diamond-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 229, 255, 0.2);
+}
+
+.diamond-divider-icon {
+  width: 8px;
+  height: 8px;
+  background: var(--homepage-primary, #00E5FF);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  flex-shrink: 0;
+}
+
+/* Greyscale-to-color hover — DSF-07 */
+.image-colorize {
+  filter: grayscale(100%);
+  transition: filter 0.8s ease;
+}
+
+.group:hover .image-colorize {
+  filter: grayscale(0%);
+}
+
 .ancient-text {
   filter: blur(1px);
   opacity: 0.7;
@@ -502,6 +575,20 @@ body {
   /* Suppress infinite animate-pulse loops (FeaturedTopicsSection cyan dot) */
   .animate-pulse {
     animation: none;
+  }
+
+  /* DSF-09: Suppress v3.6 design system effects */
+  .grain-overlay::after {
+    animation: none;
+  }
+  .image-colorize {
+    transition: none;
+    filter: grayscale(0%);
+  }
+  .glass-card,
+  .glass-card:hover {
+    transition: none;
+    transform: none;
   }
 }
 
