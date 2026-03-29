@@ -126,7 +126,7 @@ export function FeaturedTopicsSection() {
       <div className="mb-20">
         <h2
           className="text-5xl md:text-8xl font-bold tracking-tight mb-6"
-          style={{ fontFamily: "var(--homepage-font-display)", color: "#FBF9F4" }}
+          style={{ fontFamily: "var(--homepage-font-display)", color: "var(--homepage-text)" }}
         >
           Featured Topics{" "}
           <span
@@ -192,7 +192,7 @@ export function FeaturedTopicsSection() {
                     className="text-4xl font-bold mb-3"
                     style={{
                       fontFamily: "var(--homepage-font-display)",
-                      color: "#FBF9F4",
+                      color: "var(--homepage-text)",
                     }}
                   >
                     {card.title}
@@ -201,7 +201,7 @@ export function FeaturedTopicsSection() {
                     className="text-sm"
                     style={{
                       fontFamily: "var(--homepage-font-body)",
-                      color: "#DCC1B4",
+                      color: "var(--color-text-muted-warm)",
                     }}
                   >
                     {card.description}
@@ -212,7 +212,7 @@ export function FeaturedTopicsSection() {
               {card.slug === "revelation-666-beast" && (
                 <>
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="w-2 h-2 bg-[#00e5ff] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,229,255,0.8)]" />
+                    <span className="w-2 h-2 bg-[var(--homepage-primary)] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,229,255,0.8)]" />
                     <p
                       className="micro-label text-[var(--color-cyan-400)]"
                     >
@@ -223,7 +223,7 @@ export function FeaturedTopicsSection() {
                     className="text-4xl font-bold mb-3"
                     style={{
                       fontFamily: "var(--homepage-font-display)",
-                      color: "#FBF9F4",
+                      color: "var(--homepage-text)",
                     }}
                   >
                     {card.title}
@@ -232,7 +232,7 @@ export function FeaturedTopicsSection() {
                     className="text-base max-w-lg"
                     style={{
                       fontFamily: "var(--homepage-font-body)",
-                      color: "#DCC1B4",
+                      color: "var(--color-text-muted-warm)",
                     }}
                   >
                     {card.description}
@@ -246,7 +246,7 @@ export function FeaturedTopicsSection() {
                     className="text-2xl font-bold mb-2"
                     style={{
                       fontFamily: "var(--homepage-font-display)",
-                      color: "#FBF9F4",
+                      color: "var(--homepage-text)",
                     }}
                   >
                     {card.title}
@@ -265,7 +265,7 @@ export function FeaturedTopicsSection() {
                     className="text-2xl font-bold mb-2"
                     style={{
                       fontFamily: "var(--homepage-font-display)",
-                      color: "#FBF9F4",
+                      color: "var(--homepage-text)",
                     }}
                   >
                     {card.title}
@@ -274,7 +274,7 @@ export function FeaturedTopicsSection() {
                     className="text-xs italic opacity-70"
                     style={{
                       fontFamily: "var(--homepage-font-body)",
-                      color: "#DCC1B4",
+                      color: "var(--color-text-muted-warm)",
                     }}
                   >
                     {card.description}
@@ -284,7 +284,7 @@ export function FeaturedTopicsSection() {
 
               {card.slug === "isaiah-suffering-servant" && (
                 <>
-                  <div className="h-[1px] w-16 bg-[#00e5ff]/30 mb-4" />
+                  <div className="h-[1px] w-16 bg-[var(--homepage-primary)]/30 mb-4" />
                   <p
                     className="micro-label text-[var(--color-cyan-400)] mb-3"
                   >
@@ -294,13 +294,13 @@ export function FeaturedTopicsSection() {
                     className="text-4xl font-bold mb-6"
                     style={{
                       fontFamily: "var(--homepage-font-display)",
-                      color: "#FBF9F4",
+                      color: "var(--homepage-text)",
                     }}
                   >
                     {card.title}
                   </h3>
                   <span
-                    className="px-8 py-3 border border-[#00e5ff]/30 bg-[#00e5ff]/5 text-[#00e5ff] text-xs font-bold uppercase tracking-widest hover:bg-[#00e5ff] hover:text-[#050508] transition-all flex items-center gap-3 w-fit"
+                    className="px-8 py-3 border border-[var(--homepage-primary)]/30 bg-[var(--homepage-primary)]/5 text-[var(--homepage-primary)] text-xs font-bold uppercase tracking-widest hover:bg-[var(--homepage-primary)] hover:text-[var(--color-obsidian)] transition-all flex items-center gap-3 w-fit"
                     style={{ fontFamily: "var(--homepage-font-body)" }}
                   >
                     {card.ctaText}
@@ -317,7 +317,7 @@ export function FeaturedTopicsSection() {
                     className="text-3xl font-bold mb-3"
                     style={{
                       fontFamily: "var(--homepage-font-display)",
-                      color: "#FBF9F4",
+                      color: "var(--homepage-text)",
                     }}
                   >
                     {card.title}
