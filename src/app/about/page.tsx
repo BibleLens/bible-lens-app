@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { LensIcon } from "@/components/LensIcon";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "About the Lens | Bible Lens",
@@ -12,55 +10,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header
-        className="sticky top-0 z-50 backdrop-blur-md border-b"
-        style={{
-          background: "var(--color-bg-primary)",
-          borderColor: "var(--color-border)",
-        }}
-      >
-        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center gap-4">
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            <LensIcon size={48} animate={false} />
-            <span
-              className="text-2xl font-semibold tracking-wide hidden sm:block"
-              style={{ fontFamily: "var(--font-cinzel), serif" }}
-            >
-              <span style={{ color: "var(--color-gold-400)" }}>Bible</span>
-              <span style={{ color: "var(--color-cyan-400)" }}> Lens</span>
-            </span>
-          </Link>
-
-          {/* Nav links */}
-          <nav className="flex items-center gap-4 ml-auto" aria-label="Main navigation">
-            <Link
-              href="/search"
-              className="text-lg transition-colors min-h-[44px] flex items-center"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              Search
-            </Link>
-            <Link
-              href="/chat"
-              className="text-lg transition-colors min-h-[44px] flex items-center"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              Chat
-            </Link>
-            <span
-              className="text-lg font-medium min-h-[44px] flex items-center"
-              style={{ color: "var(--color-gold-400)" }}
-            >
-              About
-            </span>
-            <ThemeToggle />
-          </nav>
-        </div>
-      </header>
-
       {/* Main content */}
-      <main id="main-content" className="flex-1 max-w-3xl mx-auto w-full px-4 py-12">
+      <main id="main-content" className="flex-1 max-w-3xl mx-auto w-full px-4 py-12 pt-28">
 
         {/* Section 1: About Bible Lens */}
         <section className="mb-14">

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { LensIcon } from "@/components/LensIcon";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { TOPIC_PAGES, COMMENTARY_DESCRIPTIONS } from "@/lib/commentary-index";
 import { findBookById } from "@/lib/bible";
 import { EmailCapture } from "@/components/EmailCapture";
@@ -101,60 +99,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Sticky Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg-primary)]/80 border-b border-[var(--color-border)]">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <LensIcon size={48} animate={false} />
-            <h1
-              className="text-2xl font-semibold tracking-wide"
-              style={{ fontFamily: "var(--font-cinzel), serif" }}
-            >
-              <span className="text-[var(--color-gold-400)]">Bible</span>
-              <span className="text-[var(--color-cyan-400)]"> Lens</span>
-            </h1>
-          </Link>
-
-          <nav className="flex items-center gap-4" aria-label="Main navigation">
-            <Link
-              href="/start-here"
-              className="text-lg transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
-            >
-              Start Here
-            </Link>
-            <Link
-              href="/search"
-              className="text-lg transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px] flex items-center"
-            >
-              Search
-            </Link>
-            <Link
-              href="/chat"
-              className="flex items-center gap-1.5 text-lg transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-cyan-400)] min-h-[44px]"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
-              Chat
-            </Link>
-            <Link
-              href="/commentary"
-              className="text-lg transition-colors text-[var(--color-gold-400)] min-h-[44px] flex items-center font-medium"
-              aria-current="page"
-            >
-              Commentary
-            </Link>
-            <ThemeToggle />
-          </nav>
-        </div>
-      </header>
-
-      <main id="main-content" className="flex-1 w-full">
+      <main id="main-content" className="flex-1 w-full pt-16">
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto px-4 py-12">
           <h1

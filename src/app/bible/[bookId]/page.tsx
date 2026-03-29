@@ -36,50 +36,14 @@ export default async function BookPage({ params }: BookPageProps) {
   
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg-primary)]/80 border-b border-[var(--color-border)]">
-        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <LensIcon size={48} animate={false} />
-            <span 
-              className="text-2xl font-semibold tracking-wide"
-              style={{ fontFamily: "var(--font-cinzel), serif" }}
-            >
-              <span className="text-[var(--color-gold-400)]">Bible</span>
-              <span className="text-[var(--color-cyan-400)]"> Lens</span>
-            </span>
-          </Link>
-          
-          {/* Book navigation */}
-          <div className="flex items-center gap-2 text-base">
-            {prev && (
-              <Link
-                href={`/bible/${prev.id}`}
-                className="px-3 py-1.5 rounded-none bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
-              >
-                ← {prev.abbr}
-              </Link>
-            )}
-            {next && (
-              <Link
-                href={`/bible/${next.id}`}
-                className="px-3 py-1.5 rounded-none bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
-              >
-                {next.abbr} →
-              </Link>
-            )}
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
-      <main id="main-content" className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
+      <main id="main-content" className="flex-1 max-w-4xl mx-auto w-full px-4 py-8 pt-20">
         {/* Book Title */}
         <div className="text-center mb-8">
           <p className="text-lg text-[var(--color-text-muted)] mb-2">
             {bookMeta.testament === 'OT' ? 'Old Testament' : 'New Testament'}
           </p>
-          <h1 
+          <h1
             className="text-4xl font-bold mb-2"
             style={{ fontFamily: "var(--font-cinzel), serif" }}
           >
@@ -90,6 +54,27 @@ export default async function BookPage({ params }: BookPageProps) {
           <p className="text-lg text-[var(--color-text-secondary)]">
             {chapters.length} {chapters.length === 1 ? 'Chapter' : 'Chapters'}
           </p>
+          {/* Adjacent book navigation */}
+          {(prev || next) && (
+            <div className="flex items-center justify-center gap-2 mt-4 text-base">
+              {prev && (
+                <Link
+                  href={`/bible/${prev.id}`}
+                  className="px-3 py-1.5 rounded-none bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
+                >
+                  ← {prev.abbr}
+                </Link>
+              )}
+              {next && (
+                <Link
+                  href={`/bible/${next.id}`}
+                  className="px-3 py-1.5 rounded-none bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
+                >
+                  {next.abbr} →
+                </Link>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Chapter Grid */}
