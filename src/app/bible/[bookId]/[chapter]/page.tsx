@@ -86,7 +86,32 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
   const hasPrevChapter = chapterNum > 1;
   const hasNextChapter = chapterNum < totalChapters;
-  
+
+  // BreadcrumbList JSON-LD for Google rich results (per D-09, D-10, D-11)
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://biblelens.faith/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: bookMeta.name,
+        item: `https://biblelens.faith/bible/${bookId}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `Chapter ${chapterNum}`,
+      },
+    ],
+  };
+
   // Determine prev/next navigation
   const prevLink = hasPrevChapter 
     ? `/bible/${bookId}/${chapterNum - 1}`
@@ -114,6 +139,12 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* BreadcrumbList JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg-primary)]/80 border-b border-[var(--color-border)]">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -188,15 +219,39 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
       {/* Main Content */}
       <main id="main-content" className="flex-1 max-w-3xl mx-auto w-full px-4 py-8">
-        {/* Chapter Title */}
+        {/* Breadcrumb + Chapter Title */}
         <div className="text-center mb-8">
-          <Link
-            href={`/bible/${bookId}`}
-            className="text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors"
-          >
-            {bookMeta.testament === 'OT' ? 'Old Testament' : 'New Testament'} • {bookMeta.name}
-          </Link>
-          <h1 
+          <nav aria-label="Breadcrumb" className="mb-4">
+            <ol className="flex items-center gap-1 text-sm flex-wrap justify-center">
+              <li>
+                <Link
+                  href="/"
+                  className="text-[var(--color-text-muted)] hover:text-[var(--color-cyan-400)] transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-[var(--color-text-muted)] select-none">›</li>
+              <li>
+                <Link
+                  href={`/bible/${bookId}`}
+                  className="text-[var(--color-text-muted)] hover:text-[var(--color-cyan-400)] transition-colors"
+                >
+                  {bookMeta.name}
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-[var(--color-text-muted)] select-none">›</li>
+              <li>
+                <span
+                  aria-current="page"
+                  className="text-[var(--color-text-secondary)]"
+                >
+                  Chapter {chapterNum}
+                </span>
+              </li>
+            </ol>
+          </nav>
+          <h1
             className="text-3xl font-bold mt-2"
             style={{ fontFamily: "var(--font-cinzel), serif" }}
           >
