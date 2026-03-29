@@ -244,7 +244,7 @@ body {
 .card {
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 0;
   transition: all 0.2s ease;
 }
 
@@ -340,9 +340,10 @@ body {
 /* Glass card — updated Phase 59 values (D-17, D-18, D-19, D-20) */
 .glass-card {
   background: rgba(27, 28, 25, 0.4);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 229, 255, 0.1);
+  border-radius: 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
   will-change: transform;
