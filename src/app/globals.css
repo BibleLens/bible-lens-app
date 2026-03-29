@@ -339,7 +339,7 @@ body {
 
 /* Glass card — updated Phase 59 values (D-17, D-18, D-19, D-20) */
 .glass-card {
-  background: rgba(45, 48, 42, 0.6);
+  background: rgba(20, 28, 32, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 229, 255, 0.25);
@@ -352,7 +352,7 @@ body {
 }
 
 .glass-card:hover {
-  background: rgba(27, 28, 25, 0.7);
+  background: rgba(20, 28, 32, 0.8);
   border-color: rgba(0, 229, 255, 0.4);
   box-shadow: 0 0 40px rgba(0, 229, 255, 0.1);
   transform: scale(1.02) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
