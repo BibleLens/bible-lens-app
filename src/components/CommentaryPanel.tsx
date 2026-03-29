@@ -355,7 +355,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
   if (isLoading) {
     return (
       <div
-        className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-5"
+        className="rounded-none border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-5"
         aria-hidden="true"
       >
         <div className="animate-pulse space-y-3">
@@ -386,7 +386,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         }
       `}</style>
       <div
-        className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
+        className="rounded-none border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
         style={{
           borderLeft: "3px solid var(--color-gold-400)",
           animation: "ctaGlowPulse 3s ease-in-out 1s infinite",
@@ -396,7 +396,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       <button
         type="button"
         onClick={() => setIsExpanded((prev) => !prev)}
-        className="w-full flex items-center justify-between px-5 py-5 text-left hover:bg-[var(--color-bg-elevated)] transition-colors rounded-xl"
+        className="w-full flex items-center justify-between px-5 py-5 text-left hover:bg-[var(--color-bg-elevated)] transition-colors rounded-none"
         aria-expanded={isExpanded}
       >
         <span className="flex items-center">
@@ -515,7 +515,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
           <button
             type="button"
             onClick={handleAskAboutPassage}
-            className="mt-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-colors hover:opacity-90"
+            className="mt-4 w-full px-4 py-3 rounded-none text-lg font-medium transition-colors hover:opacity-90"
             style={{
               background: "rgba(250, 204, 21, 0.08)",
               border: "1px solid rgba(250, 204, 21, 0.25)",

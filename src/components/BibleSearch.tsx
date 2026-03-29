@@ -103,7 +103,7 @@ export function BibleSearch({ query }: BibleSearchProps) {
 
   return (
     <div
-      className="rounded-xl border p-5"
+      className="rounded-none border p-5"
       style={{
         background: "var(--color-bg-elevated)",
         borderColor: "var(--color-border)",
@@ -179,7 +179,7 @@ export function BibleSearch({ query }: BibleSearchProps) {
               <li key={result.id}>
                 <Link
                   href={`/bible/${result.book}/${result.chapter}`}
-                  className="block rounded-lg p-3 hover:border-[var(--color-border-hover)] transition-colors"
+                  className="block rounded-none p-3 hover:border-[var(--color-border-hover)] transition-colors"
                   style={{
                     background: "var(--color-bg-secondary)",
                     border: "1px solid var(--color-border)",

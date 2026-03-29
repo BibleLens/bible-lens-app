@@ -107,7 +107,7 @@ export function HomeClient() {
                           router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
                         }
                       }}
-                      className="search-input w-full pl-12 pr-4 py-4 rounded-2xl text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] text-lg"
+                      className="search-input w-full pl-12 pr-4 py-4 rounded-none text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] text-lg"
                     />
                   </div>
                 </div>

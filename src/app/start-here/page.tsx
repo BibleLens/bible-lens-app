@@ -258,7 +258,7 @@ export default function StartHerePage() {
           </p>
           <Link
             href="/chat"
-            className="inline-block px-6 py-2.5 rounded-lg bg-[var(--color-cyan-400)] text-black font-medium hover:brightness-110 transition-all"
+            className="inline-block px-6 py-2.5 rounded-none bg-[var(--color-cyan-400)] text-black font-medium hover:brightness-110 transition-all"
           >
             Start a Conversation
           </Link>

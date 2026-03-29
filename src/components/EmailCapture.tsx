@@ -91,12 +91,12 @@ export function EmailCapture({
                 placeholder="Your email address"
                 required
                 disabled={status === "loading"}
-                className="flex-1 px-4 py-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold-400)]/50"
+                className="flex-1 px-4 py-2.5 rounded-none bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold-400)]/50"
               />
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="px-5 py-2.5 rounded-lg bg-[var(--color-gold-400)] text-black font-medium hover:brightness-110 disabled:opacity-50 transition-all whitespace-nowrap"
+                className="px-5 py-2.5 rounded-none bg-[var(--color-gold-400)] text-black font-medium hover:brightness-110 disabled:opacity-50 transition-all whitespace-nowrap"
               >
                 {status === "loading" ? "Sending..." : "Subscribe"}
               </button>

@@ -57,7 +57,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             <Suspense
               fallback={
                 <input
-                  className="search-input w-full px-4 py-2 rounded-xl"
+                  className="search-input w-full px-4 py-2 rounded-none"
                   defaultValue={q}
                   placeholder="Search verses, topics, or ask a question..."
                   readOnly
@@ -112,7 +112,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           <Suspense
             fallback={
               <div
-                className="rounded-xl border p-5 animate-pulse"
+                className="rounded-none border p-5 animate-pulse"
                 style={{
                   background: "var(--color-bg-elevated)",
                   borderColor: "var(--color-border)",
@@ -133,7 +133,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           <Suspense
             fallback={
               <div
-                className="rounded-xl border p-5 animate-pulse"
+                className="rounded-none border p-5 animate-pulse"
                 style={{
                   background: "var(--color-bg-elevated)",
                   borderColor: "var(--color-border)",

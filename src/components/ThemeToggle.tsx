@@ -21,7 +21,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="w-9 h-9 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg transition-colors"
+      className="w-9 h-9 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-none transition-colors"
       style={{
         color: "var(--color-text-secondary)",
         border: "1px solid var(--color-border)",

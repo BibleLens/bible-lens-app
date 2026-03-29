@@ -101,7 +101,7 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
             <button
               type="button"
               onClick={() => toggle(i)}
-              className="w-full text-left rounded-lg p-3 transition-colors"
+              className="w-full text-left rounded-none p-3 transition-colors"
               style={{
                 background: "var(--color-bg-secondary)",
                 border: isExpanded
@@ -199,7 +199,7 @@ export function SemanticSearch({ query }: SemanticSearchProps) {
 
   return (
     <div
-      className="rounded-xl border p-5"
+      className="rounded-none border p-5"
       style={{
         background: "var(--color-bg-elevated)",
         borderColor: "var(--color-border)",

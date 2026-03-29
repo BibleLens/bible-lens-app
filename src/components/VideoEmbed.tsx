@@ -13,7 +13,7 @@ export function VideoEmbed({ videoId, title }: VideoEmbedProps) {
     // — prevents CLS (Cumulative Layout Shift). Without this, a layout shift occurs
     // from 0px to the video height when the custom element registers itself.
     <div
-      className="rounded-xl overflow-hidden border border-[var(--color-border)]"
+      className="rounded-none overflow-hidden border border-[var(--color-border)]"
       style={{ aspectRatio: "16/9", width: "100%" }}
     >
       <YouTubeEmbed

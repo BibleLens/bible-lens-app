@@ -190,7 +190,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             {prevLink && (
               <Link
                 href={prevLink}
-                className="p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                className="p-2.5 rounded-none bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title={prevLabel || undefined}
                 aria-label={prevLabel ? `Previous chapter: ${prevLabel}` : "Previous chapter"}
               >
@@ -202,7 +202,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             {nextLink && (
               <Link
                 href={nextLink}
-                className="p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                className="p-2.5 rounded-none bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title={nextLabel || undefined}
                 aria-label={nextLabel ? `Next chapter: ${nextLabel}` : "Next chapter"}
               >
@@ -301,7 +301,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           {prevLink ? (
             <Link
               href={prevLink}
-              className="flex-1 p-4 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-left"
+              className="flex-1 p-4 rounded-none bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-left"
             >
               <p className="text-base text-[var(--color-text-muted)] mb-1">Previous</p>
               <p className="font-medium text-[var(--color-text-primary)]">← {prevLabel}</p>
@@ -312,7 +312,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           
           <Link
             href={`/bible/${bookId}`}
-            className="p-4 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-center"
+            className="p-4 rounded-none bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-center"
           >
             <p className="text-base text-[var(--color-text-muted)] mb-1">All Chapters</p>
             <p className="font-medium text-[var(--color-text-primary)]">{bookMeta.name}</p>
@@ -321,7 +321,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           {nextLink ? (
             <Link
               href={nextLink}
-              className="flex-1 p-4 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-right"
+              className="flex-1 p-4 rounded-none bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-right"
             >
               <p className="text-base text-[var(--color-text-muted)] mb-1">Next</p>
               <p className="font-medium text-[var(--color-text-primary)]">{nextLabel} →</p>

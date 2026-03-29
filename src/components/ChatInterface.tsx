@@ -97,7 +97,7 @@ function CopyButton({ text }: { text: string }) {
       type="button"
       onClick={handleCopy}
       aria-label={copied ? "Copied" : "Copy response"}
-      className="p-1.5 rounded-md transition-colors flex items-center gap-1"
+      className="p-1.5 rounded-none transition-colors flex items-center gap-1"
       style={{ color: "var(--color-text-muted)" }}
     >
       {copied ? (
@@ -167,7 +167,7 @@ function SourcesPanel({ sources }: { sources: Source[] }) {
           {sources.map((s) => (
             <li key={s.index}>
               <div
-                className="rounded-lg px-3 py-2 text-base"
+                className="rounded-none px-3 py-2 text-base"
                 style={{
                   background: "var(--color-bg-elevated)",
                   border: "1px solid var(--color-border)",
@@ -212,7 +212,7 @@ function MessageBubble({ message }: { message: Message }) {
       className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}
     >
       <div
-        className="rounded-xl px-4 py-3 max-w-[85%] md:max-w-[70%]"
+        className="rounded-none px-4 py-3 max-w-[85%] md:max-w-[70%]"
         style={{
           background: isUser
             ? "rgba(34, 211, 238, 0.12)"
@@ -481,7 +481,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
 
   return (
     <div
-      className="flex flex-col flex-1 rounded-xl overflow-hidden"
+      className="flex flex-col flex-1 rounded-none overflow-hidden"
       style={{
         border: "1px solid var(--color-border)",
         background: "var(--color-bg-primary)",
@@ -571,7 +571,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
         <div className="px-4 pb-2">
           {error.kind === "rate_limit" && (
             <div
-              className="rounded-xl px-4 py-3 text-lg"
+              className="rounded-none px-4 py-3 text-lg"
               style={{
                 background: "rgba(250, 204, 21, 0.08)",
                 border: "1px solid rgba(250, 204, 21, 0.25)",
@@ -585,7 +585,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
           )}
           {error.kind === "network" && (
             <div
-              className="rounded-xl px-4 py-3 text-lg flex items-center justify-between gap-3"
+              className="rounded-none px-4 py-3 text-lg flex items-center justify-between gap-3"
               style={{
                 background: "rgba(239, 68, 68, 0.08)",
                 border: "1px solid rgba(239, 68, 68, 0.25)",
@@ -595,7 +595,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
               <span>Connection lost. Check your internet and try again.</span>
               <button
                 onClick={handleRetry}
-                className="shrink-0 px-3 py-1 rounded-lg text-base font-medium transition-colors"
+                className="shrink-0 px-3 py-1 rounded-none text-base font-medium transition-colors"
                 style={{
                   background: "rgba(239, 68, 68, 0.15)",
                   color: "#f87171",
@@ -607,7 +607,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
           )}
           {error.kind === "server" && (
             <div
-              className="rounded-xl px-4 py-3 text-lg flex items-center justify-between gap-3"
+              className="rounded-none px-4 py-3 text-lg flex items-center justify-between gap-3"
               style={{
                 background: "rgba(250, 204, 21, 0.08)",
                 border: "1px solid rgba(250, 204, 21, 0.25)",
@@ -617,7 +617,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
               <span>{error.message ?? "Something went wrong. Please try again."}</span>
               <button
                 onClick={handleRetry}
-                className="shrink-0 px-3 py-1 rounded-lg text-base font-medium transition-colors"
+                className="shrink-0 px-3 py-1 rounded-none text-base font-medium transition-colors"
                 style={{
                   background: "rgba(250, 204, 21, 0.15)",
                   color: "var(--color-gold-400)",
@@ -629,7 +629,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
           )}
           {error.kind === "unknown" && (
             <div
-              className="rounded-xl px-4 py-3 text-lg"
+              className="rounded-none px-4 py-3 text-lg"
               style={{
                 background: "var(--color-bg-elevated)",
                 border: "1px solid var(--color-border)",
@@ -648,7 +648,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
         style={{ borderTop: "1px solid var(--color-border)" }}
       >
         <div
-          className="flex items-end gap-3 rounded-2xl px-4 py-3"
+          className="flex items-end gap-3 rounded-none px-4 py-3"
           style={{
             background: "var(--color-bg-elevated)",
             border: "1px solid var(--color-border)",
@@ -673,7 +673,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
           <button
             onClick={() => submitQuestion(input)}
             disabled={!input.trim() || isStreaming}
-            className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-colors disabled:opacity-40"
+            className="shrink-0 w-11 h-11 rounded-none flex items-center justify-center transition-colors disabled:opacity-40"
             style={{
               background: input.trim() && !isStreaming
                 ? "var(--color-gold-400)"

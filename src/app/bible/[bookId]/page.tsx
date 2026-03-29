@@ -55,7 +55,7 @@ export default async function BookPage({ params }: BookPageProps) {
             {prev && (
               <Link
                 href={`/bible/${prev.id}`}
-                className="px-3 py-1.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
+                className="px-3 py-1.5 rounded-none bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
               >
                 ← {prev.abbr}
               </Link>
@@ -63,7 +63,7 @@ export default async function BookPage({ params }: BookPageProps) {
             {next && (
               <Link
                 href={`/bible/${next.id}`}
-                className="px-3 py-1.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
+                className="px-3 py-1.5 rounded-none bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-colors"
               >
                 {next.abbr} →
               </Link>
@@ -101,7 +101,7 @@ export default async function BookPage({ params }: BookPageProps) {
                 key={chapter}
                 href={`/bible/${bookId}/${chapter}`}
                 title={hasCommentary ? "Bible Lens commentary" : undefined}
-                className={`relative aspect-square flex items-center justify-center rounded-lg bg-[var(--color-bg-secondary)] font-medium transition-colors ${
+                className={`relative aspect-square flex items-center justify-center rounded-none bg-[var(--color-bg-secondary)] font-medium transition-colors ${
                   hasCommentary
                     ? "border border-[var(--color-gold-500)] text-[var(--color-gold-400)] hover:border-[var(--color-gold-400)] hover:bg-[var(--color-gold-500)]/10"
                     : "border border-[var(--color-border)] text-[var(--color-text-primary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)]"
