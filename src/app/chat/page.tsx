@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ChatInterface } from "@/components/ChatInterface";
+import { ChatSidebar } from "@/components/ChatSidebar";
 
 export const metadata: Metadata = {
   title: "Ask a Question | Bible Lens",
@@ -14,10 +15,18 @@ export default async function ChatPage({
 }) {
   const { q } = await searchParams;
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Main content — chat fills remaining height */}
-      <main id="main-content" className="flex-1 flex flex-col max-w-4xl mx-auto w-full px-4 py-4 pt-20 overflow-hidden">
-        <ChatInterface initialQuery={q} />
+    <div
+      className="min-h-screen flex flex-col"
+      style={{ background: "var(--color-obsidian)" }}
+    >
+      {/* Main content */}
+      <main id="main-content" className="flex-1 flex flex-col pt-20">
+        <div className="flex-1 flex lg:grid lg:grid-cols-[280px_1fr]">
+          <ChatSidebar />
+          <div className="flex-1 flex flex-col min-h-0 px-4 py-4">
+            <ChatInterface initialQuery={q} />
+          </div>
+        </div>
       </main>
 
       {/* Footer */}
