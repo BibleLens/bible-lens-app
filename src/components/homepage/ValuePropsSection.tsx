@@ -42,17 +42,17 @@ export function ValuePropsSection() {
       <div className="mb-20">
         <h2
           className="text-5xl md:text-8xl font-bold tracking-tight mb-6"
-          style={{ fontFamily: "var(--homepage-font-display)", color: "#FBF9F4" }}
+          style={{ fontFamily: "var(--homepage-font-display)", color: "var(--homepage-text)" }}
         >
           Why Bible Lens?{" "}
           <span
             className="font-light italic text-3xl md:text-5xl block md:inline md:ml-6"
-            style={{ color: "rgba(0, 229, 255, 0.4)" }}
+            style={{ color: "var(--homepage-primary)", opacity: 0.4 }}
           >
             Ancient wisdom, modern clarity
           </span>
         </h2>
-        <div className="h-[2px] w-32 bg-[#00e5ff]/50" />
+        <div className="h-[2px] w-32 bg-[var(--homepage-primary)]/50" />
       </div>
 
       {/* Card grid */}
@@ -76,18 +76,18 @@ export function ValuePropsSection() {
             <div className="shimmer-layer" />
 
             <div className="relative z-10 flex flex-col gap-6">
-              <span className="material-symbols-outlined text-[#00e5ff] text-4xl">
+              <span className="material-symbols-outlined text-[var(--homepage-primary)] text-4xl">
                 {card.icon}
               </span>
               <h3
                 className="text-xl font-bold"
-                style={{ fontFamily: "var(--homepage-font-display)", color: "#FBF9F4" }}
+                style={{ fontFamily: "var(--homepage-font-display)", color: "var(--homepage-text)" }}
               >
                 {card.title}
               </h3>
               <p
                 className="text-sm leading-relaxed animate-content"
-                style={{ fontFamily: "var(--homepage-font-body)", color: "#DCC1B4" }}
+                style={{ fontFamily: "var(--homepage-font-body)", color: "var(--color-text-muted-warm)" }}
               >
                 {card.body}
               </p>
