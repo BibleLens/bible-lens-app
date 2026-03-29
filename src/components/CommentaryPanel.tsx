@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { CommentaryChunk } from "@/lib/commentary";
 import { RELATED_PASSAGES, CHAPTER_TOPICS, TOPIC_PAGES } from "@/lib/commentary-index";
 import { findBookById } from "@/lib/bible";
+import { GlassCard } from "@/components/GlassCard";
 
 interface CommentaryResponse {
   book: string;
@@ -24,7 +25,6 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(!(initialCommentary && initialCommentary.length > 0));
   const [commentary, setCommentary] = useState<CommentaryChunk[]>(initialCommentary ?? []);
-  const [isExpanded, setIsExpanded] = useState(false);
 
   const buildPassageQuestion = (): string => {
     const bookTitle = book.charAt(0).toUpperCase() + book.slice(1);
@@ -354,232 +354,118 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
   // Loading state — subtle shimmer
   if (isLoading) {
     return (
-      <div
-        className="rounded-none border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-5"
-        aria-hidden="true"
-      >
+      <GlassCard className="p-5" aria-hidden="true">
         <div className="animate-pulse space-y-3">
-          <div
-            className="h-4 w-40 rounded"
-            style={{ background: "var(--color-bg-elevated)" }}
-          />
-          <div
-            className="h-3 w-full rounded"
-            style={{ background: "var(--color-bg-elevated)" }}
-          />
-          <div
-            className="h-3 w-5/6 rounded"
-            style={{ background: "var(--color-bg-elevated)" }}
-          />
+          <div className="h-4 w-40 rounded" style={{ background: "rgba(255,255,255,0.05)" }} />
+          <div className="h-3 w-full rounded" style={{ background: "rgba(255,255,255,0.05)" }} />
+          <div className="h-3 w-5/6 rounded" style={{ background: "rgba(255,255,255,0.05)" }} />
         </div>
-      </div>
+      </GlassCard>
     );
   }
 
-  // Content state
+  // Related passages content
+  const relatedKeys = RELATED_PASSAGES[`${book}-${chapter}`] ?? [];
+  const relatedPassagesContent =
+    relatedKeys.length > 0 ? (
+      <GlassCard as="section" className="p-5 space-y-3">
+        <p className="micro-label">Related Passages</p>
+        <ul className="space-y-1">
+          {relatedKeys.map((relKey) => {
+            const [relBook, relChapterStr] = relKey.split("-");
+            const relChapter = parseInt(relChapterStr, 10);
+            const bookName = findBookById(relBook)?.name ?? relBook;
+            return (
+              <li key={relKey}>
+                <Link
+                  href={`/bible/${relBook}/${relChapter}`}
+                  className="text-sm text-[var(--color-gold-400)] hover:text-[var(--color-gold-300)] transition-colors"
+                >
+                  {bookName} {relChapter}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </GlassCard>
+    ) : null;
+
+  // Explore by topic content
+  const topicSlugs = CHAPTER_TOPICS[`${book}-${chapter}`] ?? [];
+  const topicContent =
+    topicSlugs.length > 0 ? (
+      <GlassCard as="section" className="p-5 space-y-3">
+        <p className="micro-label">Explore by Topic</p>
+        <ul className="space-y-1">
+          {topicSlugs.map((slug) => {
+            const topicTitle = TOPIC_PAGES.find((t) => t.slug === slug)?.title ?? slug;
+            return (
+              <li key={slug}>
+                <Link
+                  href={`/topics/${slug}`}
+                  className="text-sm text-[var(--color-cyan-400)] hover:text-[var(--color-cyan-300)] transition-colors"
+                >
+                  {topicTitle}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </GlassCard>
+    ) : null;
+
+  // Content state — glass card cluster layout
   return (
-    <>
-      <style>{`
-        @keyframes ctaGlowPulse {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
-          50% { box-shadow: 0 0 8px 2px rgba(250, 204, 21, 0.15); }
-        }
-      `}</style>
-      <div
-        className="rounded-none border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
-        style={{
-          borderLeft: "3px solid var(--color-gold-400)",
-          animation: "ctaGlowPulse 3s ease-in-out 1s infinite",
-        }}
-      >
-      {/* Collapsible header — "Read our take on this passage" CTA */}
+    <div className="space-y-4">
+      {/* Section header (RDR-04) */}
+      <p className="micro-label" style={{ color: "var(--color-cyan-400)" }}>
+        Through This Lens
+      </p>
+
+      {/* Commentary sections as glass card clusters (RDR-04) */}
+      {commentary.map((chunk, index) => (
+        <div key={index} className="space-y-4">
+          {parseCommentarySections(chunk.text).map((section, si) => (
+            <GlassCard key={si} as="article" className="p-5 space-y-3">
+              {section.heading && (
+                <p className="micro-label">{section.heading}</p>
+              )}
+              {section.body.trim() && (
+                <p
+                  className="commentary-prose text-lg"
+                  style={{
+                    fontFamily: "Georgia, serif",
+                    color: "var(--color-commentary-body, #e2e2e2)",
+                    lineHeight: "1.7",
+                  }}
+                  dangerouslySetInnerHTML={{ __html: inlineMarkdown(section.body.trim()) }}
+                />
+              )}
+            </GlassCard>
+          ))}
+        </div>
+      ))}
+
+      {/* Related Passages as its own glass card */}
+      {relatedPassagesContent}
+
+      {/* Explore by Topic as its own glass card */}
+      {topicContent}
+
+      {/* Deepen Analysis button (RDR-05) */}
       <button
         type="button"
-        onClick={() => setIsExpanded((prev) => !prev)}
-        className="w-full flex items-center justify-between px-5 py-5 text-left hover:bg-[var(--color-bg-elevated)] transition-colors rounded-none"
-        aria-expanded={isExpanded}
+        onClick={handleAskAboutPassage}
+        className="mt-2 w-full px-4 py-3 rounded-none text-base font-medium transition-colors hover:opacity-90 flex items-center justify-center gap-2"
+        style={{
+          background: "rgba(34, 211, 238, 0.08)",
+          border: "1px solid rgba(34, 211, 238, 0.3)",
+          color: "var(--color-cyan-400)",
+        }}
       >
-        <span className="flex items-center">
-          {/* Inline diamond SVG — unique gradient ID to avoid collision with homepage LensIcon */}
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 100 100"
-            fill="none"
-            className="flex-shrink-0 mr-2"
-            aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="ctaLensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#facc15" />
-                <stop offset="100%" stopColor="#22d3ee" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M50 10 L70 50 L50 90 L30 50 Z"
-              stroke="url(#ctaLensGradient)"
-              strokeWidth="2"
-              fill="none"
-            />
-          </svg>
-          <span className="flex flex-col">
-            <span
-              className="text-base font-semibold leading-tight"
-              style={{
-                fontFamily: "var(--font-cinzel), serif",
-                color: "var(--color-gold-400)",
-              }}
-            >
-              Bible Lens Commentary
-            </span>
-            <span
-              className="text-sm leading-snug"
-              style={{ color: "var(--color-text-muted)" }}
-            >
-              What the original audience understood
-            </span>
-          </span>
-        </span>
-        <svg
-          className="w-5 h-5 flex-shrink-0 transition-transform duration-200"
-          style={{
-            color: "var(--color-text-muted)",
-            transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)",
-          }}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-          aria-hidden="true"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
+        <span className="micro-label mr-1">Scholar AI</span>
+        Deepen Analysis
       </button>
-
-      {/* Expanded content */}
-      {isExpanded && (
-        <div className="px-5 pb-5">
-          <p
-            className="text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{
-              color: "var(--color-text-muted)",
-              fontFamily: "var(--font-cinzel), serif",
-              letterSpacing: "0.12em",
-            }}
-          >
-            Through This Lens
-          </p>
-          <div className="space-y-0">
-            {commentary.map((chunk, index) => (
-              <div key={index}>
-                {index > 0 && (
-                  <div className="border-t border-[var(--color-border)] my-4" />
-                )}
-                <div
-                  className="text-lg commentary-prose text-[var(--color-text-secondary)]"
-                  style={{ fontFamily: "Georgia, serif", color: "var(--color-commentary-body, var(--color-text-secondary))" }}
-                >
-                  {parseCommentarySections(chunk.text).map((section, si) => (
-                    <div key={si} className={si > 0 ? "mt-5" : ""}>
-                      {section.heading && (
-                        <h3
-                          className="text-xl font-semibold mb-2"
-                          style={{ color: "var(--color-text-primary)" }}
-                          dangerouslySetInnerHTML={{
-                            __html: inlineMarkdown(section.heading),
-                          }}
-                        />
-                      )}
-                      {section.body.trim() && (
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html: inlineMarkdown(section.body.trim()),
-                          }}
-                        />
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Attribution */}
-          <p
-            className="mt-5 text-base"
-            style={{ color: "var(--color-text-muted)" }}
-          >
-            Bible Lens Commentary
-          </p>
-
-          <button
-            type="button"
-            onClick={handleAskAboutPassage}
-            className="mt-4 w-full px-4 py-3 rounded-none text-lg font-medium transition-colors hover:opacity-90"
-            style={{
-              background: "rgba(250, 204, 21, 0.08)",
-              border: "1px solid rgba(250, 204, 21, 0.25)",
-              color: "var(--color-gold-400)",
-            }}
-          >
-            Ask about this passage
-          </button>
-
-          {(() => {
-            const relatedKeys = RELATED_PASSAGES[`${book}-${chapter}`] ?? [];
-            if (relatedKeys.length === 0) return null;
-            return (
-              <div className="mt-6 pt-4 border-t border-[var(--color-border)]">
-                <p className="text-xs font-semibold tracking-widest uppercase mb-3"
-                  style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-cinzel), serif", letterSpacing: "0.12em" }}>
-                  Related Passages
-                </p>
-                <ul className="space-y-1">
-                  {relatedKeys.map((relKey) => {
-                    const [relBook, relChapterStr] = relKey.split("-");
-                    const relChapter = parseInt(relChapterStr, 10);
-                    const bookName = findBookById(relBook)?.name ?? relBook;
-                    return (
-                      <li key={relKey}>
-                        <Link href={`/bible/${relBook}/${relChapter}`}
-                          className="text-sm text-[var(--color-gold-400)] hover:text-[var(--color-gold-300)] transition-colors">
-                          {bookName} {relChapter}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            );
-          })()}
-          {(() => {
-            const topicSlugs = CHAPTER_TOPICS[`${book}-${chapter}`] ?? [];
-            if (topicSlugs.length === 0) return null;
-            return (
-              <div className="mt-6 pt-4 border-t border-[var(--color-border)]">
-                <p className="text-xs font-semibold tracking-widest uppercase mb-3"
-                  style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-cinzel), serif", letterSpacing: "0.12em" }}>
-                  Explore by Topic
-                </p>
-                <ul className="space-y-1">
-                  {topicSlugs.map((slug) => {
-                    const topicTitle = TOPIC_PAGES.find((t) => t.slug === slug)?.title ?? slug;
-                    return (
-                      <li key={slug}>
-                        <Link href={`/topics/${slug}`}
-                          className="text-sm text-[var(--color-cyan-400)] hover:text-[var(--color-cyan-300)] transition-colors">
-                          {topicTitle}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            );
-          })()}
-        </div>
-      )}
     </div>
-    </>
   );
 }
