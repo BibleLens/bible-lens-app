@@ -131,12 +131,12 @@ export function FeaturedTopicsSection() {
           Featured Topics{" "}
           <span
             className="font-light italic text-3xl md:text-5xl block md:inline md:ml-6"
-            style={{ color: "rgba(0, 229, 255, 0.4)" }}
+            style={{ color: "var(--homepage-primary)", opacity: 0.4 }}
           >
             Ancient Texts, Fresh Eyes
           </span>
         </h2>
-        <div className="h-[2px] w-32 bg-[#00e5ff]/50" />
+        <div className="h-[2px] w-32 bg-[var(--homepage-primary)]/50" />
       </div>
 
       {/* Bento grid */}
@@ -184,8 +184,7 @@ export function FeaturedTopicsSection() {
               {card.slug === "daniel-7-son-of-man" && (
                 <>
                   <p
-                    className="text-xs uppercase tracking-[0.3rem] text-[#00e5ff] mb-3 cyan-glow-text"
-                    style={{ fontFamily: "var(--homepage-font-body)" }}
+                    className="micro-label text-[var(--color-cyan-400)] mb-3 cyan-glow-text"
                   >
                     {card.category}
                   </p>
@@ -215,8 +214,7 @@ export function FeaturedTopicsSection() {
                   <div className="flex items-center gap-3 mb-3">
                     <span className="w-2 h-2 bg-[#00e5ff] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,229,255,0.8)]" />
                     <p
-                      className="text-xs uppercase tracking-[0.3rem] text-[#00e5ff]"
-                      style={{ fontFamily: "var(--homepage-font-body)" }}
+                      className="micro-label text-[var(--color-cyan-400)]"
                     >
                       {card.category}
                     </p>
@@ -254,8 +252,7 @@ export function FeaturedTopicsSection() {
                     {card.title}
                   </h3>
                   <p
-                    className="text-[10px] uppercase tracking-[0.2rem] text-[#00e5ff]/60"
-                    style={{ fontFamily: "var(--homepage-font-body)" }}
+                    className="micro-label text-[var(--color-cyan-400)]/60"
                   >
                     {card.category}
                   </p>
@@ -289,8 +286,7 @@ export function FeaturedTopicsSection() {
                 <>
                   <div className="h-[1px] w-16 bg-[#00e5ff]/30 mb-4" />
                   <p
-                    className="text-xs uppercase tracking-[0.3rem] text-[#00e5ff] mb-3"
-                    style={{ fontFamily: "var(--homepage-font-body)" }}
+                    className="micro-label text-[var(--color-cyan-400)] mb-3"
                   >
                     {card.category}
                   </p>
@@ -327,8 +323,7 @@ export function FeaturedTopicsSection() {
                     {card.title}
                   </h3>
                   <p
-                    className="text-[10px] uppercase tracking-[0.4rem] text-[#00e5ff]/60"
-                    style={{ fontFamily: "var(--homepage-font-body)" }}
+                    className="micro-label text-[var(--color-cyan-400)]/60"
                   >
                     {card.category}
                   </p>
