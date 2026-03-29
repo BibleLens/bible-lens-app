@@ -5,11 +5,10 @@ import { LensIcon } from "@/components/LensIcon";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
-  { label: "Search", href: "/search" },
-  { label: "Chat", href: "/chat" },
-  { label: "Commentary", href: "/commentary" },
-  { label: "Books", href: "/books" },
-  { label: "Topics", href: "/topics/daniel-7-son-of-man" },
+  { label: "Explore", href: "/books" },
+  { label: "Context", href: "/commentary" },
+  { label: "Archive", href: "/start-here" },
+  { label: "Scholar", href: "/chat" },
 ];
 
 export function NavBar() {
