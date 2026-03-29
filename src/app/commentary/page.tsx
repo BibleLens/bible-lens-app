@@ -25,59 +25,98 @@ function getBookDisplayName(bookId: string): string {
 
 export default function CommentaryPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--color-bg-primary)]">
-      <main id="main-content" className="flex-1 w-full pt-16">
-        {/* Hero */}
-        <section className="max-w-6xl mx-auto px-4 py-12 text-center">
-          <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4"
-            style={{ fontFamily: "var(--font-cinzel), serif" }}
-          >
-            <span className="text-[var(--color-gold-400)]">Bible Lens</span>{" "}
-            <span className="text-[var(--color-text-primary)]">Commentary</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed">
-            55 chapters of historically-grounded commentary across 6 books of the Bible. Through
-            this lens, ancient wisdom meets modern clarity.
-          </p>
+    <div
+      className="min-h-screen flex flex-col"
+      style={{ background: "var(--color-obsidian)" }}
+    >
+      <main id="main-content" className="flex-1 w-full pt-20">
 
-          {/* Jump links */}
-          <nav className="flex flex-wrap justify-center gap-3 mt-8" aria-label="Jump to section">
-            {THEMATIC_SECTIONS.map((section) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                className="px-4 py-2 rounded-full text-base border border-[var(--color-gold-500)]/40 text-[var(--color-gold-400)] hover:border-[var(--color-gold-400)] hover:bg-[var(--color-gold-400)]/10 transition-colors"
+        {/* Editorial Hero (CMT-01) */}
+        <section
+          className="grain-overlay min-h-[40vh] flex items-end pb-16 px-6"
+          style={{ background: "var(--color-obsidian)" }}
+        >
+          <div className="max-w-6xl mx-auto w-full">
+            <span className="micro-label text-[var(--color-cyan-400)] mb-4 block">
+              THE SCHOLARLY ARCHIVE
+            </span>
+            <div className="border-l-2 border-[var(--color-cyan-400)] pl-6">
+              <h1
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[var(--color-text-primary)]"
+                style={{ fontFamily: "var(--font-display)" }}
               >
-                {section.title}
-              </a>
-            ))}
-            <a
-              href="#reading-paths"
-              className="px-4 py-2 rounded-full text-base border border-[var(--color-gold-500)]/40 text-[var(--color-gold-400)] hover:border-[var(--color-gold-400)] hover:bg-[var(--color-gold-400)]/10 transition-colors"
-            >
-              Reading Paths
-            </a>
-            <a
-              href="#by-book"
-              className="px-4 py-2 rounded-full text-base border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-cyan-500)] hover:text-[var(--color-cyan-400)] transition-colors"
-            >
-              By Book
-            </a>
-          </nav>
+                The Scholarly Archive
+              </h1>
+              <p className="text-[var(--color-text-muted-warm)] mt-3 max-w-2xl text-lg">
+                55 chapters of historically-grounded commentary across 6 books of the Bible.
+                Ancient wisdom, modern clarity.
+              </p>
+            </div>
+          </div>
         </section>
 
-        {/* Thematic Sections */}
-        <section className="max-w-6xl mx-auto px-4 pb-12 space-y-16">
+        {/* Asymmetric Bento Grid — Topic Categories (CMT-02) */}
+        <section className="max-w-6xl mx-auto px-6 py-16">
+          <div className="bento-grid">
+            {THEMATIC_SECTIONS.map((section, index) => {
+              const isFocus = index === 0;
+              return (
+                <Link
+                  key={section.id}
+                  href={`#${section.id}`}
+                  className={
+                    isFocus
+                      ? "col-span-12 md:col-span-8 row-span-2 glass-card group p-10 flex flex-col justify-end min-h-[300px]"
+                      : "col-span-12 md:col-span-4 glass-card group p-8 flex flex-col justify-end min-h-[200px]"
+                  }
+                >
+                  <div className="shimmer-layer" />
+                  <div className="relative z-10">
+                    <span className="micro-label text-[var(--color-cyan-400)] mb-3 block">
+                      {section.title.toUpperCase()}
+                    </span>
+                    <h2
+                      className={
+                        isFocus
+                          ? "text-3xl font-semibold text-[var(--color-text-primary)]"
+                          : "text-2xl font-semibold text-[var(--color-text-primary)]"
+                      }
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {section.title}
+                    </h2>
+                    <span className="micro-label text-[var(--color-text-muted-warm)] mt-2 block">
+                      {section.chapterKeys.length} CHAPTERS
+                    </span>
+                    <div className="animate-content mt-4">
+                      <p className="text-[var(--color-text-muted-warm)] text-sm leading-relaxed">
+                        {section.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Diamond Divider */}
+        <div className="diamond-divider max-w-6xl mx-auto my-8" />
+
+        {/* Thematic Chapter Sections (CMT-03) */}
+        <section
+          className="max-w-6xl mx-auto px-6 pb-12 space-y-16"
+          style={{ background: "var(--color-obsidian)" }}
+        >
           {THEMATIC_SECTIONS.map((section) => (
-            <div key={section.id} id={section.id}>
+            <section key={section.id} id={section.id}>
               <h2
-                className="text-2xl sm:text-3xl font-semibold mb-2"
-                style={{ fontFamily: "var(--font-cinzel), serif" }}
+                className="text-2xl sm:text-3xl font-semibold text-[var(--color-text-primary)] mb-2"
+                style={{ fontFamily: "var(--font-display)" }}
               >
-                <span className="text-[var(--color-gold-400)]">{section.title}</span>
+                {section.title}
               </h2>
-              <p className="text-[var(--color-text-secondary)] mb-6">{section.description}</p>
+              <p className="text-[var(--color-text-muted-warm)] mb-6">{section.description}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {section.chapterKeys.map((key) => {
                   const [bookId, chapterStr] = key.split("-");
@@ -88,56 +127,66 @@ export default function CommentaryPage() {
                     <Link
                       key={key}
                       href={`/bible/${bookId}/${chapter}`}
-                      className="card p-4 text-left group border-l-2 border-l-[var(--color-gold-500)] hover:border-l-[var(--color-gold-400)] transition-colors"
+                      className="glass-card p-4 text-left group"
                     >
-                      <p
-                        className="text-base font-semibold text-[var(--color-gold-400)] group-hover:text-[var(--color-gold-300)] mb-1 transition-colors"
-                        style={{ fontFamily: "var(--font-cinzel), serif" }}
-                      >
-                        {bookName} {chapter}
-                      </p>
-                      <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
-                        {teaser}
-                      </p>
+                      <div className="shimmer-layer" />
+                      <div className="relative z-10">
+                        <p
+                          className="text-base font-semibold text-[var(--color-cyan-400)] group-hover:text-[var(--color-cyan-300)] mb-1 transition-colors"
+                          style={{ fontFamily: "var(--font-display)" }}
+                        >
+                          {bookName} {chapter}
+                        </p>
+                        <p className="text-sm text-[var(--color-text-muted-warm)] leading-relaxed">
+                          {teaser}
+                        </p>
+                      </div>
                     </Link>
                   );
                 })}
               </div>
-            </div>
+            </section>
           ))}
         </section>
 
         {/* Reading Paths Section */}
-        <section id="reading-paths" className="max-w-6xl mx-auto px-4 pb-16">
+        <section
+          id="reading-paths"
+          className="max-w-6xl mx-auto px-6 pb-16"
+          style={{ background: "var(--color-obsidian)" }}
+        >
           <h2
-            className="text-2xl sm:text-3xl font-semibold mb-2"
-            style={{ fontFamily: "var(--font-cinzel), serif" }}
+            className="text-2xl sm:text-3xl font-semibold text-[var(--color-text-primary)] mb-2"
+            style={{ fontFamily: "var(--font-display)" }}
           >
-            <span className="text-[var(--color-gold-400)]">Reading Paths</span>
+            Reading Paths
           </h2>
-          <p className="text-[var(--color-text-secondary)] mb-8">
-            Curated journeys through related commentary chapters, each tracing a theological thread across books.
+          <p className="text-[var(--color-text-muted-warm)] mb-8">
+            Curated journeys through related commentary chapters, each tracing a theological thread
+            across books.
           </p>
           <div className="space-y-10">
             {READING_PATHS.map((path) => (
               <div key={path.id}>
                 <h3
-                  className="text-xl font-semibold text-[var(--color-gold-400)] mb-2"
-                  style={{ fontFamily: "var(--font-cinzel), serif" }}
+                  className="text-xl font-semibold text-[var(--color-cyan-400)] mb-2"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   {path.title}
                 </h3>
-                <p className="text-[var(--color-text-secondary)] mb-4">{path.throughLine}</p>
+                <p className="text-[var(--color-text-muted-warm)] mb-4">{path.throughLine}</p>
                 <ol className="space-y-2 list-decimal list-inside">
                   {path.steps.map((step) => (
                     <li key={`${step.bookId}-${step.chapter}`} className="text-sm">
                       <Link
                         href={`/bible/${step.bookId}/${step.chapter}`}
-                        className="text-[var(--color-gold-400)] hover:text-[var(--color-gold-300)] transition-colors"
+                        className="text-[var(--color-cyan-400)] hover:text-[var(--color-cyan-300)] transition-colors"
                       >
                         {getBookDisplayName(step.bookId)} {step.chapter}
                       </Link>
-                      <span className="text-[var(--color-text-muted)] ml-2">— {step.annotation}</span>
+                      <span className="text-[var(--color-text-muted-warm)] ml-2">
+                        — {step.annotation}
+                      </span>
                     </li>
                   ))}
                 </ol>
@@ -147,12 +196,16 @@ export default function CommentaryPage() {
         </section>
 
         {/* By Book Section */}
-        <section id="by-book" className="max-w-6xl mx-auto px-4 pb-16">
+        <section
+          id="by-book"
+          className="max-w-6xl mx-auto px-6 pb-16"
+          style={{ background: "var(--color-obsidian)" }}
+        >
           <h2
-            className="text-2xl sm:text-3xl font-semibold mb-8"
-            style={{ fontFamily: "var(--font-cinzel), serif" }}
+            className="text-2xl sm:text-3xl font-semibold text-[var(--color-text-primary)] mb-8"
+            style={{ fontFamily: "var(--font-display)" }}
           >
-            <span className="text-[var(--color-text-primary)]">By Book</span>
+            By Book
           </h2>
           <div className="space-y-10">
             {COMMENTARY_BOOKS.map((bookId) => {
@@ -161,8 +214,8 @@ export default function CommentaryPage() {
               return (
                 <div key={bookId}>
                   <h3
-                    className="text-xl font-semibold text-[var(--color-gold-400)] mb-4"
-                    style={{ fontFamily: "var(--font-cinzel), serif" }}
+                    className="text-xl font-semibold text-[var(--color-cyan-400)] mb-4"
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
                     {bookName}
                   </h3>
@@ -174,12 +227,12 @@ export default function CommentaryPage() {
                         <li key={key}>
                           <Link
                             href={`/bible/${bookId}/${chapter}`}
-                            className="group flex gap-3 items-start hover:text-[var(--color-gold-400)] transition-colors"
+                            className="group flex gap-3 items-start hover:text-[var(--color-cyan-400)] transition-colors"
                           >
-                            <span className="shrink-0 text-sm font-medium text-[var(--color-gold-500)] group-hover:text-[var(--color-gold-400)] pt-0.5 min-w-[4rem]">
+                            <span className="shrink-0 text-sm font-medium text-[var(--color-cyan-400)] group-hover:text-[var(--color-cyan-300)] pt-0.5 min-w-[4rem]">
                               Ch. {chapter}
                             </span>
-                            <span className="text-sm text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] leading-relaxed transition-colors">
+                            <span className="text-sm text-[var(--color-text-muted-warm)] group-hover:text-[var(--color-text-primary)] leading-relaxed transition-colors">
                               {teaser}
                             </span>
                           </Link>
@@ -193,25 +246,17 @@ export default function CommentaryPage() {
           </div>
         </section>
 
-        {/* Email Capture */}
-        <section className="max-w-4xl mx-auto px-4 pb-16">
-          <EmailCapture />
+        {/* Email CTA (CMT-04) */}
+        <section className="max-w-4xl mx-auto px-6 py-16">
+          <div className="glass-card p-10">
+            <EmailCapture
+              headline="Contribute to the Archive"
+              subtext="New commentary drops monthly — historically grounded, no spam, just fresh perspectives on ancient texts."
+            />
+          </div>
         </section>
-      </main>
 
-      {/* Footer */}
-      <footer className="border-t border-[var(--color-border)] py-6 mt-auto">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-base text-[var(--color-text-muted)]">
-            Ancient wisdom, modern clarity.
-          </p>
-          <p className="text-base text-[var(--color-text-muted)] mt-2">
-            <Link href="/" className="hover:text-[var(--color-cyan-400)] transition-colors">
-              Back to Bible Lens
-            </Link>
-          </p>
-        </div>
-      </footer>
+      </main>
     </div>
   );
 }
