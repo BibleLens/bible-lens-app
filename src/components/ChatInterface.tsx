@@ -209,17 +209,26 @@ function MessageBubble({ message }: { message: Message }) {
 
   return (
     <div
-      className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}
+      className={`flex ${isUser ? "justify-end" : "justify-start items-start gap-3"} mb-4`}
     >
+      {!isUser && (
+        <div
+          className="diamond-motif shrink-0 mt-1"
+          style={{
+            width: 28,
+            height: 28,
+            background: "linear-gradient(180deg, var(--color-gold-400) 0%, var(--color-cyan-400) 100%)",
+          }}
+        />
+      )}
       <div
-        className="rounded-none px-4 py-3 max-w-[85%] md:max-w-[70%]"
-        style={{
-          background: isUser
-            ? "rgba(34, 211, 238, 0.12)"
-            : "var(--color-bg-secondary)",
-          border: isUser
-            ? "1px solid rgba(34, 211, 238, 0.25)"
-            : "1px solid var(--color-border)",
+        className={`rounded-none px-4 py-3 max-w-[85%] md:max-w-[70%] ${!isUser ? "glass-card" : ""}`}
+        style={isUser ? {
+          background: "rgba(34, 211, 238, 0.12)",
+          border: "1px solid rgba(34, 211, 238, 0.25)",
+        } : {
+          boxShadow: "0 0 20px rgba(0,229,255,0.12), 0 0 40px rgba(0,229,255,0.04)",
+          transform: "none",
         }}
       >
         {isUser ? (
@@ -647,57 +656,73 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
         className="px-4 pb-4 pt-2 shrink-0"
         style={{ borderTop: "1px solid var(--color-border)" }}
       >
-        <div
-          className="flex items-end gap-3 rounded-none px-4 py-3"
-          style={{
-            background: "var(--color-bg-elevated)",
-            border: "1px solid var(--color-border)",
-          }}
-        >
-          <textarea
-            ref={textareaRef}
-            value={input}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyDown}
-            disabled={isStreaming}
-            placeholder="Ask a theological question..."
-            rows={1}
-            className="flex-1 resize-none bg-transparent leading-6 placeholder-opacity-60"
-            style={{
-              color: "var(--color-text-primary)",
-              fontSize: "16px", // prevents iOS zoom on focus
-              maxHeight: "128px",
-              overflowY: "auto",
-            }}
-          />
-          <button
-            onClick={() => submitQuestion(input)}
-            disabled={!input.trim() || isStreaming}
-            className="shrink-0 w-11 h-11 rounded-none flex items-center justify-center transition-colors disabled:opacity-40"
-            style={{
-              background: input.trim() && !isStreaming
-                ? "var(--color-gold-400)"
-                : "var(--color-bg-secondary)",
-              color: input.trim() && !isStreaming
-                ? "var(--color-bg-primary)"
-                : "var(--color-text-muted)",
-            }}
-            aria-label="Send question"
+        <div className="flex flex-col rounded-none px-4 py-3 glass-card" style={{ transform: "none" }}>
+          {/* Lens Active status row */}
+          <div
+            className="flex items-center gap-2 pb-2 mb-2 border-b"
+            style={{ borderColor: "rgba(0,229,255,0.1)" }}
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <div
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: "50%",
+                background: "var(--color-cyan-400)",
+                boxShadow: "0 0 6px rgba(34,211,238,0.7)",
+                flexShrink: 0,
+              }}
+            />
+            <span className="micro-label" style={{ color: "var(--color-cyan-400)" }}>
+              LENS: ACTIVE
+            </span>
+          </div>
+          {/* Textarea + send button row */}
+          <div className="flex items-end gap-3">
+            <textarea
+              ref={textareaRef}
+              value={input}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              disabled={isStreaming}
+              placeholder="Ask a theological question..."
+              rows={1}
+              className="flex-1 resize-none bg-transparent leading-6 placeholder-opacity-60"
+              style={{
+                color: "var(--color-text-primary)",
+                fontSize: "16px", // prevents iOS zoom on focus
+                maxHeight: "128px",
+                overflowY: "auto",
+              }}
+            />
+            <button
+              onClick={() => submitQuestion(input)}
+              disabled={!input.trim() || isStreaming}
+              className="shrink-0 w-11 h-11 rounded-none flex items-center justify-center transition-colors disabled:opacity-40"
+              style={{
+                background: input.trim() && !isStreaming
+                  ? "var(--color-gold-400)"
+                  : "var(--color-bg-secondary)",
+                color: input.trim() && !isStreaming
+                  ? "var(--color-bg-primary)"
+                  : "var(--color-text-muted)",
+              }}
+              aria-label="Send question"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <p
           className="text-base mt-2 text-center"
