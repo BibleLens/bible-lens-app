@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Chat", href: "/chat" },
   { label: "Commentary", href: "/commentary" },
   { label: "Books", href: "/books" },
+  { label: "Topics", href: "/topics/daniel-7-son-of-man" },
 ];
 
 export function NavBar() {
