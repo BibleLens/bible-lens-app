@@ -120,7 +120,7 @@ export function BooksGrid({ books }: BooksGridProps) {
           return (
             <div
               key={book.id}
-              className="glass-card relative cursor-pointer overflow-hidden"
+              className="glass-card group relative cursor-pointer overflow-hidden"
               style={{ minHeight: "160px" }}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
@@ -172,7 +172,7 @@ export function BooksGrid({ books }: BooksGridProps) {
 
               {/* Metadata overlay (revealed on hover via animate-content) */}
               <div
-                className="absolute inset-0 flex flex-col justify-end p-4 animate-content z-20"
+                className="absolute inset-0 flex flex-col justify-end p-4 animate-content z-20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
                   background: "rgba(5,5,8,0.92)",
                   pointerEvents: "none",
