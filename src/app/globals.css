@@ -137,6 +137,7 @@ html {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-newsreader);
+  --font-interface: var(--font-space-grotesk);
 }
 
 /* Base styles */

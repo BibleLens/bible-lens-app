@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Newsreader, Manrope, Source_Sans_3, Noto_Sans_Samaritan } from "next/font/google";
+import { Newsreader, Manrope, Source_Sans_3, Noto_Sans_Samaritan, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
@@ -32,6 +32,13 @@ const notoSansSamaritan = Noto_Sans_Samaritan({
   weight: "400",
   display: "swap",
   preload: false,
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -102,6 +109,7 @@ export default function RootLayout({
           manrope.variable,
           sourceSans.variable,
           notoSansSamaritan.variable,
+          spaceGrotesk.variable,
           "antialiased",
           "bg-[var(--color-bg-primary)]",
           "text-[var(--color-text-primary)]",
