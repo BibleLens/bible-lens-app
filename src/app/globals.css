@@ -339,10 +339,10 @@ body {
 
 /* Glass card — updated Phase 59 values (D-17, D-18, D-19, D-20) */
 .glass-card {
-  background: rgba(27, 28, 25, 0.55);
+  background: rgba(45, 48, 42, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 229, 255, 0.18);
+  border: 1px solid rgba(0, 229, 255, 0.25);
   border-radius: 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
