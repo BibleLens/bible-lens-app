@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { MotionProvider } from "@/components/MotionProvider";
 import { FocusResetOnNav } from "@/components/FocusResetOnNav";
+import { SiteNav } from "@/components/SiteNav";
+import { MobileTabBar } from "@/components/MobileTabBar";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -113,6 +115,8 @@ export default function RootLayout({
           "antialiased",
           "bg-[var(--color-bg-primary)]",
           "text-[var(--color-text-primary)]",
+          "pb-[calc(60px+env(safe-area-inset-bottom))]",
+          "md:pb-0",
         ].join(" ")}
         style={{ fontFamily: "var(--font-source-sans), system-ui, sans-serif" }}
       >
@@ -131,7 +135,9 @@ export default function RootLayout({
               Skip to main content
             </a>
             <ServiceWorkerRegistration />
+            <SiteNav />
             {children}
+            <MobileTabBar />
           </MotionProvider>
         </ThemeProvider>
       </body>

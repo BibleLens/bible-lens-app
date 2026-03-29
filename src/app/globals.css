@@ -8,7 +8,7 @@
 
 /* Phase 114: A11Y-05 — sticky header offset for keyboard focus */
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 64px;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
