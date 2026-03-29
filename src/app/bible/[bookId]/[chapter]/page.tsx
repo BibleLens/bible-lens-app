@@ -217,119 +217,160 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main id="main-content" className="flex-1 max-w-3xl mx-auto w-full px-4 py-8">
-        {/* Breadcrumb + Chapter Title */}
-        <div className="text-center mb-8">
-          <nav aria-label="Breadcrumb" className="mb-4">
-            <ol className="flex items-center gap-1 text-sm flex-wrap justify-center">
-              <li>
-                <Link
-                  href="/"
-                  className="text-[var(--color-text-muted)] hover:text-[var(--color-cyan-400)] transition-colors"
-                >
-                  Home
-                </Link>
-              </li>
-              <li aria-hidden="true" className="text-[var(--color-text-muted)] select-none">›</li>
-              <li>
-                <Link
-                  href={`/bible/${bookId}`}
-                  className="text-[var(--color-text-muted)] hover:text-[var(--color-cyan-400)] transition-colors"
-                >
-                  {bookMeta.name}
-                </Link>
-              </li>
-              <li aria-hidden="true" className="text-[var(--color-text-muted)] select-none">›</li>
-              <li>
-                <span
-                  aria-current="page"
-                  className="text-[var(--color-text-secondary)]"
-                >
-                  Chapter {chapterNum}
-                </span>
-              </li>
-            </ol>
-          </nav>
-          <h1
-            className="text-3xl font-bold mt-2"
-            style={{ fontFamily: "var(--font-cinzel), serif" }}
-          >
-            <span className={bookMeta.testament === 'OT' ? 'text-[var(--color-gold-400)]' : 'text-[var(--color-cyan-400)]'}>
-              Chapter {chapterNum}
-            </span>
-          </h1>
-        </div>
-
-        {/* Verses */}
-        <div className="space-y-4">
-          {verses.map((verse) => (
-            <p 
-              key={verse.verse} 
-              className="text-xl leading-relaxed text-[var(--color-scripture)]"
-              style={{ fontFamily: "Georgia, serif" }}
+      {/* Main Content — two-pane grid when commentary exists, single-column otherwise */}
+      <main
+        id="main-content"
+        className={hasCommentary ? "flex-1 lg:grid lg:grid-cols-[55fr_45fr]" : "flex-1"}
+      >
+        {/* LEFT PANE: scripture surface (warm light #FBF9F4) */}
+        <div
+          className="min-h-screen px-6 lg:px-10 py-8"
+          style={{ background: "var(--color-scripture-surface)" }}
+        >
+          {/* Breadcrumb + Chapter Title */}
+          <div className="text-center mb-8">
+            <nav aria-label="Breadcrumb" className="mb-4">
+              <ol className="flex items-center gap-1 text-sm flex-wrap justify-center">
+                <li>
+                  <Link
+                    href="/"
+                    className="hover:text-[var(--color-cyan-400)] transition-colors"
+                    style={{ color: "#666" }}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li aria-hidden="true" className="select-none" style={{ color: "#666" }}>›</li>
+                <li>
+                  <Link
+                    href={`/bible/${bookId}`}
+                    className="hover:text-[var(--color-cyan-400)] transition-colors"
+                    style={{ color: "#666" }}
+                  >
+                    {bookMeta.name}
+                  </Link>
+                </li>
+                <li aria-hidden="true" className="select-none" style={{ color: "#666" }}>›</li>
+                <li>
+                  <span
+                    aria-current="page"
+                    style={{ color: "#333" }}
+                  >
+                    Chapter {chapterNum}
+                  </span>
+                </li>
+              </ol>
+            </nav>
+            <h1
+              className="text-3xl font-bold mt-2"
+              style={{ fontFamily: "var(--font-display)", color: "#1a1a1a" }}
             >
-              <span className="verse-number">{verse.verse}</span>
-              {verse.text}
-            </p>
-          ))}
+              {bookMeta.name} {chapterNum}
+            </h1>
+          </div>
+
+          {/* Verses */}
+          <div className="space-y-4">
+            {verses.map((verse) => (
+              <p
+                key={verse.verse}
+                style={{
+                  fontFamily: "var(--font-display)",
+                  color: "#2d2d2d",
+                  fontSize: "1.125rem",
+                  lineHeight: "1.8",
+                }}
+              >
+                <sup
+                  style={{ color: "var(--color-gold-500)", fontSize: "0.8em", verticalAlign: "super" }}
+                >
+                  {verse.verse}
+                </sup>
+                {" "}{verse.text}
+              </p>
+            ))}
+          </div>
+
+          {/* Video Embed — only when a YouTube video ID is configured in VIDEO_CONFIG */}
+          {hasVideo && videoId && (
+            <div className="mt-8">
+              <VideoEmbed
+                videoId={videoId}
+                title={`${bookMeta.name} ${chapterNum} Commentary`}
+              />
+            </div>
+          )}
+
+          {/* Chapter Navigation */}
+          <div className="mt-12 flex items-center justify-between gap-4">
+            {prevLink ? (
+              <Link
+                href={prevLink}
+                className="flex-1 p-4 rounded-none transition-colors text-left"
+                style={{
+                  background: "rgba(0,0,0,0.04)",
+                  border: "1px solid rgba(0,0,0,0.1)",
+                  color: "#1a1a1a",
+                }}
+              >
+                <p className="text-base mb-1" style={{ color: "#666" }}>Previous</p>
+                <p className="font-medium" style={{ color: "#1a1a1a" }}>← {prevLabel}</p>
+              </Link>
+            ) : (
+              <div className="flex-1" />
+            )}
+
+            <Link
+              href={`/bible/${bookId}`}
+              className="p-4 rounded-none transition-colors text-center"
+              style={{
+                background: "rgba(0,0,0,0.04)",
+                border: "1px solid rgba(0,0,0,0.1)",
+                color: "#1a1a1a",
+              }}
+            >
+              <p className="text-base mb-1" style={{ color: "#666" }}>All Chapters</p>
+              <p className="font-medium" style={{ color: "#1a1a1a" }}>{bookMeta.name}</p>
+            </Link>
+
+            {nextLink ? (
+              <Link
+                href={nextLink}
+                className="flex-1 p-4 rounded-none transition-colors text-right"
+                style={{
+                  background: "rgba(0,0,0,0.04)",
+                  border: "1px solid rgba(0,0,0,0.1)",
+                  color: "#1a1a1a",
+                }}
+              >
+                <p className="text-base mb-1" style={{ color: "#666" }}>Next</p>
+                <p className="font-medium" style={{ color: "#1a1a1a" }}>{nextLabel} →</p>
+              </Link>
+            ) : (
+              <div className="flex-1" />
+            )}
+          </div>
         </div>
 
-        {/* Video Embed — only when a YouTube video ID is configured in VIDEO_CONFIG */}
-        {hasVideo && videoId && (
-          <div className="mt-8">
-            <VideoEmbed
-              videoId={videoId}
-              title={`${bookMeta.name} ${chapterNum} Commentary`}
-            />
-          </div>
-        )}
-
-        {/* Commentary Panel — for chapters with published commentary */}
+        {/* DIAMOND DIVIDER — mobile only, between panes */}
         {hasCommentary && (
-          <div className="mt-8">
-            <CommentaryPanel
-              book={bookId}
-              chapter={chapterNum}
-              initialCommentary={initialCommentary}
-            />
+          <div
+            className="diamond-divider lg:hidden py-4"
+            style={{ background: "var(--color-obsidian)" }}
+          >
+            <div className="diamond-divider-icon" />
           </div>
         )}
 
-        {/* Chapter Navigation */}
-        <div className="mt-12 flex items-center justify-between gap-4">
-          {prevLink ? (
-            <Link
-              href={prevLink}
-              className="flex-1 p-4 rounded-none bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-left"
-            >
-              <p className="text-base text-[var(--color-text-muted)] mb-1">Previous</p>
-              <p className="font-medium text-[var(--color-text-primary)]">← {prevLabel}</p>
-            </Link>
-          ) : (
-            <div className="flex-1" />
-          )}
-          
-          <Link
-            href={`/bible/${bookId}`}
-            className="p-4 rounded-none bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-center"
+        {/* RIGHT PANE: dark commentary container */}
+        {hasCommentary && (
+          <div
+            className="grain-overlay min-h-screen px-6 py-8 lg:border-l"
+            style={{ background: "var(--color-obsidian)", borderColor: "rgba(0,229,255,0.15)" }}
           >
-            <p className="text-base text-[var(--color-text-muted)] mb-1">All Chapters</p>
-            <p className="font-medium text-[var(--color-text-primary)]">{bookMeta.name}</p>
-          </Link>
-          
-          {nextLink ? (
-            <Link
-              href={nextLink}
-              className="flex-1 p-4 rounded-none bg-[var(--color-bg-secondary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors text-right"
-            >
-              <p className="text-base text-[var(--color-text-muted)] mb-1">Next</p>
-              <p className="font-medium text-[var(--color-text-primary)]">{nextLabel} →</p>
-            </Link>
-          ) : (
-            <div className="flex-1" />
-          )}
-        </div>
+            <CommentaryPanel book={bookId} chapter={chapterNum} initialCommentary={initialCommentary} />
+          </div>
+        )}
       </main>
 
       {/* Footer */}
