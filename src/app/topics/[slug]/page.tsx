@@ -153,12 +153,12 @@ export default async function TopicPage({ params }: TopicPageProps) {
                   className="card p-4 text-left group border-l-2 border-l-[var(--color-gold-500)] hover:border-l-[var(--color-gold-400)] transition-colors block"
                 >
                   <p
-                    className="text-base font-semibold text-[var(--color-gold-400)] group-hover:text-[var(--color-gold-300)] mb-1 transition-colors"
+                    className="text-lg font-semibold text-[var(--color-gold-400)] group-hover:text-[var(--color-gold-300)] mb-1 transition-colors"
                     style={{ fontFamily: "var(--font-cinzel), serif" }}
                   >
                     {bookName} {chapter}
                   </p>
-                  <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed group-hover:text-[var(--color-text-primary)] transition-colors">
+                  <p className="text-base text-[var(--color-text-secondary)] leading-relaxed group-hover:text-[var(--color-text-primary)] transition-colors">
                     {annotation}
                   </p>
                 </Link>

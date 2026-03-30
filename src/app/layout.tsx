@@ -7,6 +7,7 @@ import { MotionProvider } from "@/components/MotionProvider";
 import { FocusResetOnNav } from "@/components/FocusResetOnNav";
 import { SiteNav } from "@/components/SiteNav";
 import { MobileTabBar } from "@/components/MobileTabBar";
+import { NavigationLoader } from "@/components/NavigationLoader";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -121,6 +122,7 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-source-sans), system-ui, sans-serif" }}
       >
         <ThemeProvider>
+          <NavigationLoader />
           <MotionProvider>
             <FocusResetOnNav />
             <a

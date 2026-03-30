@@ -16,17 +16,22 @@ export interface CommentaryChunk {
 export const getCommentaryData = cache(
   async (book: string, chapter: number): Promise<CommentaryChunk[]> => {
     try {
+      const expectedTitle = `${book}-${chapter}-commentary`;
       const query = `${book} chapter ${chapter}`;
       const embedding = await embedQuery(query);
       const client = getQdrantClient();
+      // Fetch extra results then post-filter by title (title field is not indexed in Qdrant)
       const results = await client.search(COLLECTION_NAME, {
         vector: embedding,
-        limit: 5,
+        limit: 20,
         with_payload: true,
         score_threshold: 0.3,
         filter: { must: [{ key: "source", match: { value: "personal" } }] },
       });
-      return results.map((r) => ({
+      const filtered = results
+        .filter((r) => r.payload?.title === expectedTitle)
+        .slice(0, 5);
+      return filtered.map((r) => ({
         text: r.payload?.text as string,
         title: r.payload?.title as string,
         score: r.score,

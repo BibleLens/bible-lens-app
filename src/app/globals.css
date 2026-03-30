@@ -68,8 +68,15 @@ html {
 
   /* DSF-08 — Ethereal Scholar Redesign Tokens */
   --color-obsidian: #050508;
-  --color-scripture-surface: #FBF9F4;
+  --color-scripture-surface: #0a0a0a;
   --color-text-muted-warm: #dcc1b4;
+
+  /* Scripture reader text — themed (dark mode defaults) */
+  --color-scripture-heading: #f5f5f5;
+  --color-scripture-body: #e8e8e8;
+  --color-scripture-muted: #a3a3a3;
+  --color-scripture-nav-bg: rgba(255,255,255,0.06);
+  --color-scripture-nav-border: rgba(255,255,255,0.1);
 }
 
 /* ==========================================
@@ -134,6 +141,19 @@ html {
 
   /* Background paths — boost for visibility on white */
   --bg-paths-opacity: 0.85;
+
+  /* Scripture reader surface — light mode (warm reading surface) */
+  --color-scripture-surface: #FBF9F4;
+  --color-obsidian: #f5f5f5;
+  --color-text-muted-warm: #6b7280;
+  --color-commentary-body: #374151;
+
+  /* Scripture reader text — themed */
+  --color-scripture-heading: #111111;
+  --color-scripture-body: #1a1a1a;
+  --color-scripture-muted: #6b7280;
+  --color-scripture-nav-bg: rgba(0,0,0,0.04);
+  --color-scripture-nav-border: rgba(0,0,0,0.1);
 }
 
 @theme inline {

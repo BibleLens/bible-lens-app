@@ -456,7 +456,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       <button
         type="button"
         onClick={handleAskAboutPassage}
-        className="mt-2 w-full px-4 py-3 rounded-none text-base font-medium transition-colors hover:opacity-90 flex items-center justify-center gap-2"
+        className="mt-2 w-full px-4 py-3 rounded-none text-base font-medium transition-colors hover:opacity-90 flex items-center justify-center gap-2 cursor-pointer"
         style={{
           background: "rgba(34, 211, 238, 0.08)",
           border: "1px solid rgba(34, 211, 238, 0.3)",

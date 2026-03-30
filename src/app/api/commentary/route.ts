@@ -27,22 +27,26 @@ export async function GET(request: NextRequest) {
   const embedding = await embedQuery(query);
   const client = getQdrantClient();
 
-  // Filter to personal-source content only (priority 10 — our original commentary)
+  // Fetch extra results then post-filter by title (title field is not indexed in Qdrant)
+  const expectedTitle = `${book}-${chapter}-commentary`;
   const results = await client.search(COLLECTION_NAME, {
     vector: embedding,
-    limit: 5,
+    limit: 20,
     with_payload: true,
     score_threshold: 0.3,
     filter: {
       must: [{ key: 'source', match: { value: 'personal' } }],
     },
   });
+  const filtered = results
+    .filter((r) => r.payload?.title === expectedTitle)
+    .slice(0, 5);
 
   return NextResponse.json({
     book,
     chapter,
     verse: verse || null,
-    commentary: results.map((r) => ({
+    commentary: filtered.map((r) => ({
       text: r.payload?.text,
       title: r.payload?.title,
       score: r.score,

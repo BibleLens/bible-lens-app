@@ -235,26 +235,26 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                   <Link
                     href="/"
                     className="hover:text-[var(--color-cyan-400)] transition-colors"
-                    style={{ color: "#666" }}
+                    style={{ color: "var(--color-scripture-muted)" }}
                   >
                     Home
                   </Link>
                 </li>
-                <li aria-hidden="true" className="select-none" style={{ color: "#666" }}>›</li>
+                <li aria-hidden="true" className="select-none" style={{ color: "var(--color-scripture-muted)" }}>›</li>
                 <li>
                   <Link
                     href={`/bible/${bookId}`}
                     className="hover:text-[var(--color-cyan-400)] transition-colors"
-                    style={{ color: "#666" }}
+                    style={{ color: "var(--color-scripture-muted)" }}
                   >
                     {bookMeta.name}
                   </Link>
                 </li>
-                <li aria-hidden="true" className="select-none" style={{ color: "#666" }}>›</li>
+                <li aria-hidden="true" className="select-none" style={{ color: "var(--color-scripture-muted)" }}>›</li>
                 <li>
                   <span
                     aria-current="page"
-                    style={{ color: "#333" }}
+                    style={{ color: "var(--color-scripture-heading)" }}
                   >
                     Chapter {chapterNum}
                   </span>
@@ -263,7 +263,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             </nav>
             <h1
               className="text-3xl font-bold mt-2"
-              style={{ fontFamily: "var(--font-display)", color: "#1a1a1a" }}
+              style={{ fontFamily: "var(--font-display)", color: "var(--color-scripture-heading)" }}
             >
               {bookMeta.name} {chapterNum}
             </h1>
@@ -276,7 +276,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                 key={verse.verse}
                 style={{
                   fontFamily: "var(--font-display)",
-                  color: "#2d2d2d",
+                  color: "var(--color-scripture-body)",
                   fontSize: "1.125rem",
                   lineHeight: "1.8",
                 }}
@@ -308,13 +308,13 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                 href={prevLink}
                 className="flex-1 p-4 rounded-none transition-colors text-left"
                 style={{
-                  background: "rgba(0,0,0,0.04)",
-                  border: "1px solid rgba(0,0,0,0.1)",
-                  color: "#1a1a1a",
+                  background: "var(--color-scripture-nav-bg)",
+                  border: "1px solid var(--color-scripture-nav-border)",
+                  color: "var(--color-scripture-heading)",
                 }}
               >
-                <p className="text-base mb-1" style={{ color: "#666" }}>Previous</p>
-                <p className="font-medium" style={{ color: "#1a1a1a" }}>← {prevLabel}</p>
+                <p className="text-base mb-1" style={{ color: "var(--color-scripture-muted)" }}>Previous</p>
+                <p className="font-medium" style={{ color: "var(--color-scripture-heading)" }}>← {prevLabel}</p>
               </Link>
             ) : (
               <div className="flex-1" />
@@ -326,11 +326,11 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
               style={{
                 background: "rgba(0,0,0,0.04)",
                 border: "1px solid rgba(0,0,0,0.1)",
-                color: "#1a1a1a",
+                color: "var(--color-scripture-heading)",
               }}
             >
-              <p className="text-base mb-1" style={{ color: "#666" }}>All Chapters</p>
-              <p className="font-medium" style={{ color: "#1a1a1a" }}>{bookMeta.name}</p>
+              <p className="text-base mb-1" style={{ color: "var(--color-scripture-muted)" }}>All Chapters</p>
+              <p className="font-medium" style={{ color: "var(--color-scripture-heading)" }}>{bookMeta.name}</p>
             </Link>
 
             {nextLink ? (
@@ -338,13 +338,13 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                 href={nextLink}
                 className="flex-1 p-4 rounded-none transition-colors text-right"
                 style={{
-                  background: "rgba(0,0,0,0.04)",
-                  border: "1px solid rgba(0,0,0,0.1)",
-                  color: "#1a1a1a",
+                  background: "var(--color-scripture-nav-bg)",
+                  border: "1px solid var(--color-scripture-nav-border)",
+                  color: "var(--color-scripture-heading)",
                 }}
               >
-                <p className="text-base mb-1" style={{ color: "#666" }}>Next</p>
-                <p className="font-medium" style={{ color: "#1a1a1a" }}>{nextLabel} →</p>
+                <p className="text-base mb-1" style={{ color: "var(--color-scripture-muted)" }}>Next</p>
+                <p className="font-medium" style={{ color: "var(--color-scripture-heading)" }}>{nextLabel} →</p>
               </Link>
             ) : (
               <div className="flex-1" />
