@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { getArticleBySlug, getAllArticleSlugs } from '@/lib/articles'
 import { estimateTextHeight, AVG_CHAR_WIDTHS } from '@/lib/pretext'
 import { ArticleHero } from '@/components/article/ArticleHero'
-import { ArticleScriptureInset } from '@/components/article/ArticleScriptureInset'
+import { ArticleLayout } from '@/components/article/ArticleLayout'
 
 interface StudyArticlePageProps {
   params: Promise<{ slug: string }>
@@ -54,55 +54,7 @@ export default async function StudyArticlePage({ params }: StudyArticlePageProps
         publishedAt={article.publishedAt}
       />
       <div className="max-w-[1200px] mx-auto px-8">
-        {/* SSR single-column placeholder — ArticleLayout (Plan 02) replaces this */}
-        <div
-          style={{ minHeight: `${ssrEstimateHeight}px` }}
-          className="text-[#e2e2e2] font-newsreader text-[18px] leading-[28px]"
-        >
-          {article.blocks.map((block, i) => {
-            switch (block.type) {
-              case 'heading':
-                return block.level === 2 ? (
-                  <h2
-                    key={i}
-                    className="font-newsreader text-[28px] leading-[34px] text-[#e2e2e2] mt-8 mb-4 border-l-2 border-[#00E5FF] pl-4"
-                  >
-                    {block.text}
-                  </h2>
-                ) : null
-              case 'paragraph':
-                return (
-                  <p key={i} className="mb-4">
-                    {block.text}
-                  </p>
-                )
-              case 'scriptureInset':
-                return (
-                  <ArticleScriptureInset
-                    key={i}
-                    reference={block.reference}
-                    verses={block.verses}
-                  />
-                )
-              case 'pullQuote':
-                return (
-                  <aside
-                    key={i}
-                    className="glass-card p-4 my-6 font-newsreader italic text-[20px] leading-[30px] text-[#e2e2e2]"
-                  >
-                    <p>{block.text}</p>
-                    {block.attribution && (
-                      <cite className="block mt-2 font-space-grotesk text-[11px] font-semibold tracking-wider uppercase text-[#a3a3a3] not-italic">
-                        {block.attribution}
-                      </cite>
-                    )}
-                  </aside>
-                )
-              default:
-                return null
-            }
-          })}
-        </div>
+        <ArticleLayout blocks={article.blocks} ssrEstimateHeight={ssrEstimateHeight} />
       </div>
       <footer className="max-w-[1200px] mx-auto px-8 py-12 text-center">
         <a
