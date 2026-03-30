@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useTextLayout, PRETEXT_FONTS } from "@/lib/pretext";
 import { LensIcon } from "@/components/LensIcon";
 
 // ---------------------------------------------------------------------------
@@ -203,9 +204,44 @@ function SourcesPanel({ sources }: { sources: Source[] }) {
   );
 }
 
-function MessageBubble({ message }: { message: Message }) {
+function MessageBubble({ message, isActiveStream }: { message: Message; isActiveStream: boolean }) {
   const isUser = message.role === "user";
   const isEmpty = message.content === "";
+
+  // --- Pretext streaming height prediction (Phase 126: STRM-01, STRM-02) ---
+  const bubbleRef = useRef<HTMLDivElement>(null)
+  const [bubbleWidth, setBubbleWidth] = useState(0)
+
+  useEffect(() => {
+    if (!bubbleRef.current) return
+    const observer = new ResizeObserver((entries) => {
+      const entry = entries[0]
+      if (entry) setBubbleWidth(entry.contentRect.width)
+    })
+    observer.observe(bubbleRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  // Throttle: only re-measure every 50 characters to limit prepare() calls (~19ms each)
+  const measuredText = useMemo(() => {
+    if (!isActiveStream || !message.content) return message.content
+    const step = 50
+    const rounded = Math.ceil(message.content.length / step) * step
+    return message.content.slice(0, rounded)
+  }, [message.content, isActiveStream])
+
+  const { height: pretextHeight, ready: pretextReady } = useTextLayout(
+    measuredText,
+    PRETEXT_FONTS.sourceSans3(18),
+    Math.max(0, bubbleWidth),
+    29,  // Math.round(18 * 1.625) — text-lg with leading-relaxed
+  )
+
+  // Only apply during active streaming on assistant bubbles (per STRM-02)
+  const isAssistant = message.role !== 'user'
+  const streamingStyle = isAssistant && isActiveStream && pretextReady && pretextHeight > 0
+    ? { minHeight: `${pretextHeight}px`, transition: 'min-height 80ms ease-out' as const }
+    : {}
 
   return (
     <div
@@ -222,6 +258,7 @@ function MessageBubble({ message }: { message: Message }) {
         />
       )}
       <div
+        ref={bubbleRef}
         className={`rounded-none px-4 py-3 max-w-[85%] md:max-w-[70%] ${!isUser ? "glass-card" : ""}`}
         style={isUser ? {
           background: "rgba(34, 211, 238, 0.12)",
@@ -229,6 +266,7 @@ function MessageBubble({ message }: { message: Message }) {
         } : {
           boxShadow: "0 0 20px rgba(0,229,255,0.12), 0 0 40px rgba(0,229,255,0.04)",
           transform: "none",
+          ...streamingStyle,
         }}
       >
         {isUser ? (
@@ -568,7 +606,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
               </button>
             </div>
             {messages.map((msg, i) => (
-              <MessageBubble key={i} message={msg} />
+              <MessageBubble key={i} message={msg} isActiveStream={isStreaming && i === messages.length - 1} />
             ))}
           </>
         )}
