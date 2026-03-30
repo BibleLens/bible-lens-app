@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { getAllBooks } from "@/lib/bible";
+import type { BookMeta } from "@/lib/bible";
 import { BooksGrid } from "@/components/BooksGrid";
+import { estimateTextHeight, AVG_CHAR_WIDTHS } from "@/lib/pretext";
+import { bookMetaMap } from "@/lib/book-meta";
 
 export const dynamic = "force-static";
 
@@ -18,8 +21,30 @@ export const metadata: Metadata = {
   },
 };
 
+// SSR estimation constants
+const CARD_CHROME_HEIGHT = 102;
+const CARD_MIN_HEIGHT = 118;
+const SSR_COL_WIDTH = 280; // conservative estimate for 2-col on 768px viewport
+const DESC_LINE_HEIGHT = 20;
+const DESC_AVG_CHAR_WIDTH = AVG_CHAR_WIDTHS.manrope16 * (14 / 16); // scale 6.8 to 14px = 5.95
+
+function computeSSRHeights(books: BookMeta[]): number[] {
+  return books.map((book) => {
+    const meta = bookMetaMap[book.id];
+    if (!meta?.context) return CARD_MIN_HEIGHT;
+    const textHeight = estimateTextHeight(
+      meta.context,
+      DESC_AVG_CHAR_WIDTH,
+      SSR_COL_WIDTH,
+      DESC_LINE_HEIGHT
+    );
+    return Math.max(CARD_MIN_HEIGHT, CARD_CHROME_HEIGHT + textHeight);
+  });
+}
+
 export default function BooksPage() {
   const allBooks = getAllBooks();
+  const ssrEstimatedHeights = computeSSRHeights(allBooks);
 
   return (
     <div
@@ -65,7 +90,7 @@ export default function BooksPage() {
 
         {/* Filter tabs + card grid (BKS-02, BKS-03, BKS-04) */}
         <section className="max-w-7xl mx-auto px-6 pb-16">
-          <BooksGrid books={allBooks} />
+          <BooksGrid books={allBooks} ssrEstimatedHeights={ssrEstimatedHeights} />
         </section>
       </main>
 
