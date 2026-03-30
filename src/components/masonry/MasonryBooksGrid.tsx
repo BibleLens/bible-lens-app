@@ -83,10 +83,9 @@ function BookCard({ book, canonicalIndex, style, onMouseMove, onMouseLeave }: Bo
 
       {/* Metadata overlay (revealed on hover via animate-content) */}
       <div
-        className="absolute inset-0 flex flex-col justify-start p-4 pt-6 pb-6 overflow-y-auto animate-content z-20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        className="absolute inset-0 flex flex-col justify-start p-4 pt-6 pb-6 overflow-y-auto animate-content z-20 opacity-0 pointer-events-none transition-opacity duration-500 group-hover:opacity-100 group-hover:pointer-events-auto"
         style={{
           background: 'rgba(5,5,8,0.92)',
-          pointerEvents: 'none',
         }}
       >
         {meta ? (
