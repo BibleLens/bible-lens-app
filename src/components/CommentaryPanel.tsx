@@ -38,7 +38,22 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       return `What does ${bookTitle} ${chapter} mean for understanding creation?`;
     }
     if (book === "matthew") {
-      return `What does ${bookTitle} ${chapter} mean for understanding the Olivet Discourse?`;
+      if ([1, 2].includes(chapter)) {
+        return `What does Matthew's formula quotation pattern reveal about ancient typological reading — and why does the difference between almah and parthenos in Isaiah 7:14 matter less than what Matthew is doing hermeneutically with the text?`;
+      }
+      if ([5, 6, 7].includes(chapter)) {
+        return `What does 'do not think I have come to abolish the Law' mean in Second Temple context — and how does the Sermon on the Mount's antitheses structure function as Torah intensification, not Torah replacement?`;
+      }
+      if (chapter === 13) {
+        return `What is the mashal genre in Second Temple Judaism — and why does Matthew 13 begin with the insider/outsider structure of the mysterion ton ouranon before giving any parable content?`;
+      }
+      if ([24, 25].includes(chapter)) {
+        return `What does 'this generation will not pass away until all these things have happened' mean — and how does the Daniel 7:13 background reshape what 'the Son of Man coming on the clouds' describes in Matthew 24?`;
+      }
+      if (chapter === 28) {
+        return `What does 'all authority has been given to me' reveal about the shaliach commissioning structure — and why does the passive verb edothē change how we read both the authority claim and the baptismal formula that follows?`;
+      }
+      return `What is the historical context of ${bookTitle} ${chapter}?`;
     }
     if (book === "revelation") {
       return `What does ${bookTitle} ${chapter} reveal about first-century events through ancient Jewish apocalyptic imagery?`;
