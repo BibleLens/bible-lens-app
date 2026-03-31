@@ -4,7 +4,7 @@
 export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   genesis: [1, 2, 3, 6, 7, 8, 9, 11, 12, 15, 18, 22, 28, 37],
   daniel: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-  matthew: [24],
+  matthew: [1, 2, 5, 6, 7, 13, 24, 25, 28],
   revelation: [1, 2, 3, 4, 5, 6, 7, 12, 13, 14, 17, 18, 19, 20, 21, 22],
   isaiah: [1, 2, 6, 7, 9, 11, 40, 42, 43, 44, 45, 49, 50, 52, 53, 54, 55, 65, 66],
   ezekiel: [1, 2, 3, 28, 37, 38, 39],
@@ -33,8 +33,25 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
     "Genesis 2's second creation account through ancient Near Eastern eyes — Adam as representative humanity, the garden as sacred space, and what the original audience heard.",
   "genesis-3":
     "The serpent, the tree, and the fall — what the original audience understood about Genesis 3 that modern readers often miss. Here's where it gets interesting.",
+  // Matthew — 5 RAG clusters, 9 commentary chapters (Phase 132)
+  "matthew-1":
+    "What does a genealogy do in ancient Mediterranean culture — and why does Matthew's 3×14 structure encode a theological argument before verse 1 ends? In Second Temple Judaism, genealogies were not family records; they were credential documents. Matthew opens with biblos geneseos — a deliberate echo of Genesis 2:4 and 5:1 — signaling that this is a new genesis, a fresh start in the story of creation and covenant. The three groups of fourteen generations (Abraham to David, David to exile, exile to Messiah) are not historical precision; they are numerological theology. In Hebrew gematria, the name David (dwd) totals fourteen. Matthew has structured the genealogy around the Davidic throne number. Here's where it gets interesting: the genealogy includes four women — Tamar, Rahab, Ruth, and Bathsheba — all Gentiles or connected to Gentile scandal. What the original audience would have understood is that Matthew is signaling the universal scope of the covenant mission from the opening verse. The formula quotation pattern that runs through chapters 1-2 (hina plērōthē — 'in order that it might be fulfilled') is Matthew's signature hermeneutical move: reading earlier texts as having a deeper referent beyond their original historical moment. This is typological-pesher reading — a minority position within evangelical scholarship — and Matthew is its most skilled practitioner. Through this lens, the genealogy is not a boring list to skip. It is the Gospel's thesis statement in genealogical form.",
+  "matthew-2":
+    "If Isaiah 7:14 was written for Ahaz's crisis in 735 BC, why does Matthew cite it for a birth seven hundred years later — and what does 'fulfill' mean in that reading? Here's where it gets interesting: the Hebrew text of Isaiah 7:14 reads almah — a young woman of marriageable age. The Septuagint translates this as parthenos — virgin. Matthew follows the Septuagint reading. For the original audience of Isaiah 7, the sign was immediate: the young woman was present, the pregnancy was imminent, and the child would be born before the Syro-Ephraimite threat resolved. The near-fulfillment came in Isaiah's own generation. What the original audience of Matthew would have understood is that he is doing typological-pesher interpretation — a reading practice documented in the Dead Sea Scrolls, where a text has both a historical first layer and a deeper-referent second layer. Matthew is not arguing that Isaiah 7:14 had no original meaning. He is claiming that the same divine pattern operated again, at greater depth, in the birth of Jesus. This is a minority scholarly position — acknowledge it as such. The magi narrative, Herod's slaughter, the flight to Egypt, and the return from Egypt are all structured as formula quotations from the OT. Matthew is not recording incidental fulfillments; he is constructing a theological argument through five carefully chosen proof-texts, demonstrating that the new exodus has begun. Through this lens, Matthew 2 is not primarily a birth narrative; it is an argument about how to read Scripture.",
+  "matthew-5":
+    "When Jesus says 'I have not come to abolish the Law but to fulfill it,' what did Torah intensification look like in Second Temple synagogue culture — and what are the antitheses actually doing? Here's where it gets interesting: the six antitheses of the Sermon on the Mount ('you have heard it said... but I say to you') are not cancellations of Torah. They are intensifications. A Second Temple rabbi commenting on the Decalogue would extend its reach inward — from external act to internal disposition, from the prohibition of murder to the prohibition of contemptuous anger, from the prohibition of adultery to the prohibition of lustful intent. The antithetical structure is a recognized didactic genre. What the original audience would have understood is that Jesus is operating within the tradition of the sages who extended Torah's reach through interpretation, not outside it. The Hebrew teleios in Matthew 5:48 ('be perfect as your Father is perfect') is better rendered 'whole' or 'undivided' — from the LXX tamim, the covenant faithfulness term used for Noah ('blameless') and Abraham ('walk before me and be blameless'). Through this lens, the Sermon on the Mount is not a new law abolishing the old; it is a Second Temple teacher's masterclass in what covenant fidelity looks like when lived from the inside out. The Beatitudes that open it are not a checklist to perform — they are declarations about who already belongs to the kingdom, reversing the honor calculations of the Roman world.",
+  "matthew-6":
+    "What was a hypocrite in the ancient world — and what does the Lord's Prayer's 'kingdom come' mean when you're living under Roman occupation? In classical Greek drama, a hypocrites was an actor — someone playing a role on a stage, wearing a mask. Jesus's target in Matthew 6 is not hypocrisy in the modern psychological sense of inconsistency; it is performance for the wrong audience. The Pharisees who pray at street corners and blow trumpets before their almsgiving are doing something real — but they are staging it for human observers rather than divine ones. Here's where it gets interesting: the Lord's Prayer is a profoundly political text. 'Your kingdom come' (elthato hē basileia sou) addressed to a community living under Caesar's kingdom is not a comfortable prayer. The phrase 'your will be done on earth as it is in heaven' sets up a contrast between two governance systems. What the original audience would have understood is that the prayer is a covenant petition — using the language of the Jewish kaddish prayer tradition — asking YHWH to act as the real sovereign over the world he created. The section on wealth and anxiety (6:19-34) extends the kingdom ethics: you cannot serve two masters (YHWH and mammon). Through this lens, Matthew 6 is not piety advice; it is a manifesto about who governs the world and what it looks like to live as if that were true. The practical instruction on prayer, fasting, and giving is organized around one question: who is your real audience?",
+  "matthew-7":
+    "Why does the Sermon on the Mount end with two roads, two builders, and a crowd that is astonished — and what does teleios in Matthew 5:48 actually mean for how we read the whole? Here's where it gets interesting: the closing sections of Matthew 7 are a rhetorical escalation. The narrow gate and the wide gate, the good tree and the bad tree, the false prophets and the true ones, the two builders — they all press the same binary choice. The original audience would have heard these as the choices the wisdom tradition always presented: the two ways (Proverbs 1-9's two women, Deuteronomy's blessing and curse). What the original audience would have understood is that 'Lord, Lord' language — 'we prophesied in your name, cast out demons in your name, did many mighty works' — is not the language of hypocrites who know they are rejected. These are people who genuinely believe they have served the king. The verdict ('I never knew you') uses the covenant knowledge term yadati — the same term used for Abraham and Jeremiah's commissioning. 'I never had covenant relationship with you' is more precise than 'I didn't recognize you.' Through this lens, the Sermon on the Mount's conclusion is not a threat to make disciples anxious; it is an invitation to the teleios life — whole, undivided, covenant-faithful — that was the goal of the Torah all along. The crowd's astonishment (exeplēssonto) is because Jesus taught as one having authority, not as their scribes: Second Temple teachers cited authorities. Jesus cited himself.",
+  "matthew-13":
+    "What is a mashal in Second Temple Jewish teaching — and why does Matthew 13 begin with an insider/outsider structure before any parable content arrives? A mashal is not simply a story with a moral. In Hebrew wisdom tradition, a mashal is a riddle-teaching, a comparative saying that requires interpretive work from the hearer. The word comes from the root meaning 'to be like' and runs from Proverbs' extended mashalim through the Psalter's riddles to the Similitudes of 1 Enoch. Here's where it gets interesting: Jesus's explanation of why he speaks in parables (Matthew 13:10-17) quotes Isaiah 6:9-10 — the hardening mandate from the prophet's commissioning vision. The insider/outsider structure is not incidental; it is the declared pedagogical purpose. Those with ears to hear will understand; those without will hear but not perceive. What the original audience would have understood is that the mysterion ton ouranon — 'the mystery of the kingdom of the heavens' (the plural ouranon is distinctively Matthean) — is a literary-theological category, not an esoteric secret. The mystery is that the kingdom is arriving in unexpected form: not imperial conquest but mustard seed, not visible triumph but leaven working through flour. Through this lens, the seven parables of Matthew 13 form a unified mashal discourse about the nature of the kingdom's presence in the world — hidden, small, mixed (wheat and weeds together), of incomparable value (treasure in the field, pearl of great price). Ancient wisdom: the kingdom that looks like nothing is the one worth everything.",
   "matthew-24":
     "Did Matthew 24 predict AD 70? The partial preterist case for the Olivet Discourse — Jesus describing the coming destruction of Jerusalem to people who would live to see it.",
+  "matthew-25":
+    "When the Son of Man separates sheep from goats, what does the phrase 'all the nations' mean — and does this scene describe a final cosmic judgment or a first-century crisis? Here's where it gets interesting: Matthew 25 contains three eschatological parables that function as the sequel to the Olivet Discourse of chapter 24. The ten virgins, the talents, and the sheep-and-goats parable all develop the same theme: the people of God living with faithful vigilance in the time between the announcement and the consummation. The partial-preterist reading, which this resource acknowledges as one serious scholarly option, locates the sheep-and-goats judgment scene within the AD 70 horizon — the Son of Man arriving in the judicial-heavenly sense described in Daniel 7:13 (ascent to the Ancient of Days to receive judgment authority), with 'all the nations' as the Roman-era Gentile world. On this reading, 'the least of these my brothers' refers to the persecuted Jewish-Christian community, and the judgment of the nations turns on how they treated that community during the siege. What the original audience would have understood is that this reading is labeled here as one scholarly position among others — not the only reading, and acknowledged as a minority view within mainstream evangelical interpretation. The second-coming reading of a universal final judgment remains the majority position in Christian tradition, and both readings deserve honest engagement. Through this lens, D-09 (the partial-preterist eschatological framework) provides the primary cross-reference for the Son of Man arrival language shared between Matthew 24 and 25.",
+  "matthew-28":
+    "When Matthew writes that 'all authority has been given to me,' what does the passive verb edothē reveal — and what does the shaliach commissioning pattern tell us about who gives and who receives? The passive verb edothē — 'was given' — is a theological key. Passive voice in this context indicates divine causation: all authority was given to Jesus by the Father. This is not Jesus claiming inherent, self-grounded cosmic authority; it is Jesus reporting a received commission. Here's where it gets interesting: the shaliach principle in Jewish agency law held that a duly authorized agent was 'as the one who sent him' — carried the sender's full authority within the scope of the mission. Matthew's commissioning scene deploys exactly this pattern: the risen Jesus, having received authority from the Father, now commissions the disciples as his own agents, extending the chain of authorization. What the original audience would have understood is that the Great Commission is a shaliach delegation sequence, not an ontological statement about Jesus's divine nature. The baptismal formula ('in the name of the Father and of the Son and of the Holy Spirit') is analyzed here as a commissioning triad — who authorizes, who was sent, and who will continue the mission — rather than as a Trinitarian proof-text. This reading is theologically neutral on the ontological question. Through this lens, Matthew 28 closes the Gospel with the Emmanuel inclusio: the Gospel opened with Emmanuel ('God with us') in chapter 1 and closes with 'I am with you always, to the end of the age' — the presence promise that brackets the entire narrative. Ancient wisdom: authority given is not authority possessed independently. The Great Commission's power runs through the chain of authorization, not from a self-grounded source.",
   "genesis-6":
     "What did the original audience understand about the 'sons of God' and the Nephilim? Genesis 6 through the lens of ancient divine council theology and Mesopotamian flood parallels.",
   "genesis-7":
@@ -373,14 +390,14 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 41 + 33 + 49 + 21 + 21 = 165 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 42 + 33 + 53 + 24 + 21 = 173 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
     title: "Eschatology",
     description: "End-times prophecy through the lens of partial preterism and premillennialism.",
     chapterKeys: [
-      "matthew-24",
+      "matthew-24", "matthew-25",
       "daniel-7", "daniel-8", "daniel-9", "daniel-10", "daniel-11", "daniel-12",
       "revelation-1", "revelation-2", "revelation-3", "revelation-4", "revelation-5",
       "revelation-6", "revelation-7", "revelation-12", "revelation-13", "revelation-14",
@@ -426,6 +443,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "ecclesiastes-2", "ecclesiastes-5", "ecclesiastes-6", "ecclesiastes-8", "ecclesiastes-9", "ecclesiastes-10", "ecclesiastes-11", "ecclesiastes-12",
       "isaiah-54", "isaiah-55",
       "john-3", "john-13", "john-17",
+      "matthew-5", "matthew-6", "matthew-7", "matthew-13",
     ],
   },
   {
@@ -439,6 +457,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "jeremiah-23",
       "isaiah-40", "isaiah-42", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-49", "isaiah-50",
       "john-1", "john-5", "john-8", "john-10", "john-12",
+      "matthew-1", "matthew-2", "matthew-28",
     ],
   },
 ];
@@ -656,6 +675,20 @@ export const READING_PATHS: ReadingPath[] = [
     ],
   },
   {
+    id: "matthew-gospel-arc",
+    title: "Narrative Arc through Matthew's Gospel",
+    throughLine:
+      "Follow Matthew's five-discourse structure from the genealogy through the Great Commission — each cluster reveals how a first-century Jewish author framed Jesus as a new Moses figure.",
+    steps: [
+      { bookId: "matthew", chapter: 1, annotation: "The genealogy as theology: Davidic credential encoded in a 3×14 structure, formula quotation pattern opening — Matthew's Gospel as typological new genesis." },
+      { bookId: "matthew", chapter: 2, annotation: "Formula quotations and typological-pesher reading: how Matthew reads OT texts as having a deeper referent beyond their original historical context." },
+      { bookId: "matthew", chapter: 5, annotation: "The Sermon on the Mount opens Matthew's first major discourse: Torah intensification, not replacement — antitheses structured as a Second Temple rabbi's commentary on the Decalogue." },
+      { bookId: "matthew", chapter: 13, annotation: "The parable discourse: mashal genre, kingdom mystery, and the insider/outsider structure that shapes how Matthew frames Jesus's teaching method." },
+      { bookId: "matthew", chapter: 24, annotation: "The Olivet Discourse through a partial-preterist lens: 'this generation' as a temporal marker and the Daniel 7 Son of Man background." },
+      { bookId: "matthew", chapter: 28, annotation: "The Great Commission as shaliach commissioning: received authority, universal mission, and the Emmanuel inclusio closing the Gospel where it opened." },
+    ],
+  },
+  {
     id: "john-unitarian-lens-arc",
     title: "Unitarian Lens Arc",
     throughLine:
@@ -697,7 +730,7 @@ export const TOPIC_PAGES: TopicPage[] = [
       "son of man christology",
       "Daniel 7 first century interpretation",
     ],
-    chapterKeys: ["daniel-7", "daniel-2", "matthew-24", "revelation-1", "revelation-5", "psalms-2", "psalms-110", "john-5", "john-12"],
+    chapterKeys: ["daniel-7", "daniel-2", "matthew-24", "revelation-1", "revelation-5", "psalms-2", "psalms-110", "john-5", "john-12", "matthew-1"],
     prose: `The question that unlocks Daniel 7 is deceptively simple: which direction does the son of man travel?
 
 Read the verse carefully. In Daniel 7:13, the one like a son of man comes "with the clouds of heaven" and approaches the Ancient of Days — moving toward the throne, not away from it. He is being escorted upward into the divine courtroom to receive dominion, glory, and kingdom. The direction of travel is an ascent, not a descent to earth.
@@ -708,9 +741,11 @@ What the original audience would have understood is that Daniel's four beasts em
 
 Through this lens, Revelation 5 becomes unmistakable. John weeps because no one can open the sealed scroll. Then the Lamb steps forward — and the imagery collapses back into Daniel 7:13. The unsealing of the scroll in Revelation 5 is the throne room scene of Daniel 7:13, applied to Jesus at his ascension. Matthew 24:30 follows the same logic: "the Son of Man coming on the clouds" is the enthronement language of Daniel, not a description of a physical landing on earth.
 
-This is a minority reading in popular Christianity but the majority reading among scholars who work with Second Temple literature. The distinction matters because it changes everything downstream: what "coming with clouds" means in Mark 14:62, what Pentecost announces, and what the early church meant when they said Jesus was exalted to the right hand of the Father.
+This is a minority reading in popular Christianity but the majority reading among scholars working with Second Temple literature — it changes everything downstream: what "coming with clouds" means in Mark 14:62 and what Pentecost announces.
 
-Psalms 2 and 110 are the Psalter's two coronation bookends -- the same enthronement vocabulary, the same upward trajectory, the same throne-room audience with the Ancient of Days. Ancient wisdom doesn't always travel in straight lines. Sometimes it ascends.`,
+Psalms 2 and 110 are the Psalter's coronation bookends — same enthronement vocabulary, same upward trajectory. Ancient wisdom doesn't always travel in straight lines. Sometimes it ascends.
+
+Matthew 1's genealogy encodes the Davidic throne-number (3×14), placing "son of David" and "son of man" on the same figure the Daniel 7 enthronement scene frames.`,
   },
   {
     slug: "revelation-666-beast",
@@ -779,7 +814,7 @@ Ancient wisdom, cosmic clarity.`,
       "Olivet Discourse preterist interpretation",
       "when were these things fulfilled Matthew 24",
     ],
-    chapterKeys: ["matthew-24", "daniel-9", "daniel-7", "revelation-6", "zechariah-14", "jeremiah-7"],
+    chapterKeys: ["matthew-24", "daniel-9", "daniel-7", "revelation-6", "zechariah-14", "jeremiah-7", "matthew-25"],
     prose: `Jesus began the Olivet Discourse in response to a specific question from specific people. The disciples pointed to the temple stones. Jesus said not one stone would be left on another. They asked, in effect: when? What will be the sign?
 
 The partial preterist reading takes that question at face value. The disciples were not asking about a distant apocalypse two thousand years away. They were asking about the temple they could see from where they were sitting on the Mount of Olives. And Jesus answered them.
@@ -788,13 +823,15 @@ Here's where it gets interesting: Matthew 24:34 is one of the most discussed ver
 
 What the original audience would have understood is that Daniel's framework structures Jesus's response. Daniel 9's seventy weeks prophesied a coming desolation — "an abomination that causes desolation" — and Jesus invoked that language directly. The abomination Daniel foresaw in the context of Antiochus IV had a second iteration: the Roman armies surrounding and then defiling Jerusalem. "When you see Jerusalem surrounded by armies, know that its desolation has come near" (Luke 21:20).
 
-Through this lens, the cosmic language of Matthew 24:29-30 — sun darkened, stars falling, son of man coming on clouds — is not literal astronomy. It is the prophetic convention the Hebrew prophets used to describe the fall of earthly powers. Isaiah 13 uses identical language to describe Babylon's fall. Ezekiel uses it for Egypt. Jesus is using the same stock vocabulary to describe Rome's judgment on Jerusalem.
+Through this lens, the cosmic language of Matthew 24:29-30 — sun darkened, stars falling, son of man coming on clouds — is not literal astronomy. It is prophetic convention for the fall of earthly powers: Isaiah 13 uses it for Babylon, Ezekiel for Egypt. Jesus uses the same stock vocabulary for Rome's judgment on Jerusalem.
 
-Zechariah 14 provides the OT Day of the LORD narrative that the Olivet Discourse echoes — Jerusalem besieged, nations gathered, YHWH intervening on the Mount of Olives — the same geography Jesus stands on when his disciples ask "when will these things be?"
+Zechariah 14 provides the Day of the LORD narrative the Olivet Discourse echoes — Jerusalem besieged, YHWH intervening on the same Mount of Olives where Jesus is speaking.
 
 Revelation 6's four horsemen follow the same covenant curse sequence: conquest, war, famine, death — Leviticus 26 enacted in history.
 
-Where Bible Lens parts from full preterism: Revelation 19-20 describes a future physical return and a literal millennium that still lies ahead.`,
+Where Bible Lens parts from full preterism: Revelation 19-20 describes a future physical return and a literal millennium still ahead.
+
+Matthew 25 is the sequel discourse — ten virgins, talents, sheep-and-goats — developing faithful vigilance between announcement and consummation. Partial-preterist and majority readings differ on the eschatological frame; the ethical center stands across both.`,
   },
   {
     slug: "isaiah-suffering-servant",
@@ -807,7 +844,7 @@ Where Bible Lens parts from full preterism: Revelation 19-20 describes a future 
       "Isaiah 53 corporate Israel reading",
       "suffering servant who is it",
     ],
-    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-42", "isaiah-49", "isaiah-50", "isaiah-40", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-54", "isaiah-55", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19", "ecclesiastes-9", "john-1", "john-12"],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-42", "isaiah-49", "isaiah-50", "isaiah-40", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-54", "isaiah-55", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19", "ecclesiastes-9", "john-1", "john-12", "matthew-5"],
     prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
 
 Here's where it gets interesting: the historically prior reading, dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion; it was the mainstream.
@@ -824,9 +861,9 @@ The Psalter's royal messianic cluster — Psalms 2, 22, 45, 110 — forms the se
 
 Songs 1 through 3 (Isaiah 42, 49, 50) trace the arc before 52-53: the servant commissioned through gentleness, named Israel yet sent to Israel, taught morning by morning the limmud tongue.
 
-Ecclesiastes 9's death-as-equalizer observation — 'the righteous and the wicked share the same fate' — extends the canonical tension. Where Job's friends insist suffering proves guilt, and the servant songs transform suffering into vocation, Qoheleth simply observes: death does not distinguish.
+Ecclesiastes 9 extends the tension: where the servant songs transform suffering into vocation, Qoheleth simply observes that death does not distinguish. Together the three books hold the honest space of canonical Wisdom Literature.
 
-This reading takes the text's historical context seriously before christological application — and finds both dimensions more compelling.`,
+Matthew 5's antitheses operationalize Isaiah 42:3 — the bruised-reed servant ethic applied as Torah intensification.`,
   },
   {
     slug: "ezekiel-gog-magog",
@@ -874,8 +911,8 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "genesis-9": ["genesis-8", "genesis-12"],
 
   // Genesis — Covenant cluster
-  "genesis-12": ["genesis-15", "genesis-22", "genesis-28"],
-  "genesis-22": ["genesis-12", "isaiah-53", "exodus-12"],
+  "genesis-12": ["genesis-15", "genesis-22", "matthew-28"],
+  "genesis-22": ["genesis-12", "isaiah-53", "matthew-1"],
   "genesis-28": ["genesis-12", "ezekiel-1"],
 
   // Genesis — Divine council / cosmos cluster
@@ -903,8 +940,16 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "daniel-11": ["daniel-10", "daniel-12", "revelation-6"],
   "daniel-12": ["daniel-7", "revelation-20", "zechariah-12"],
 
-  // Matthew
+  // Matthew — 5 RAG clusters, 9 commentary chapters (Phase 132)
+  "matthew-1": ["matthew-2", "isaiah-7", "genesis-22"],
+  "matthew-2": ["matthew-1", "isaiah-7", "isaiah-9"],
+  "matthew-5": ["matthew-6", "exodus-20", "isaiah-42"],
+  "matthew-6": ["matthew-5", "matthew-7", "isaiah-55"],
+  "matthew-7": ["matthew-5", "matthew-6", "proverbs-8"],
+  "matthew-13": ["matthew-24", "daniel-2", "isaiah-6"],
   "matthew-24": ["daniel-9", "revelation-6", "jeremiah-7"],
+  "matthew-25": ["matthew-24", "daniel-7", "ezekiel-37"],
+  "matthew-28": ["matthew-1", "genesis-12", "isaiah-49"],
 
   // Revelation
   "revelation-1": ["daniel-7", "matthew-24", "zechariah-12"],
@@ -925,7 +970,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "revelation-22": ["revelation-21", "isaiah-66", "daniel-12"],
 
   // Isaiah — Messianic cluster
-  "isaiah-7": ["isaiah-9", "isaiah-11", "matthew-24"],
+  "isaiah-7": ["isaiah-9", "isaiah-11", "matthew-1"],
   "isaiah-9": ["isaiah-7", "zechariah-9", "psalms-2"],
   "isaiah-11": ["isaiah-9", "isaiah-65", "jeremiah-23"],
   "isaiah-52": ["isaiah-53", "isaiah-50", "revelation-5"],
@@ -954,7 +999,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "exodus-12": ["exodus-3", "exodus-14", "genesis-22"],
   "exodus-14": ["exodus-12", "exodus-19", "revelation-19"],
   "exodus-19": ["exodus-20", "exodus-14", "genesis-15"],
-  "exodus-20": ["exodus-19", "exodus-32", "daniel-5"],
+  "exodus-20": ["exodus-19", "exodus-32", "matthew-5"],
   "exodus-25": ["exodus-26", "exodus-27", "genesis-1"],
   "exodus-26": ["exodus-25", "exodus-27", "ezekiel-1"],
   "exodus-27": ["exodus-25", "exodus-26", "revelation-21"],
@@ -1039,7 +1084,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
 
   // Deutero-Isaiah — 5 RAG clusters, 9 commentary chapters
   "isaiah-40": ["isaiah-42", "exodus-14", "isaiah-6"],
-  "isaiah-42": ["isaiah-49", "isaiah-40", "psalms-2"],
+  "isaiah-42": ["isaiah-49", "isaiah-40", "matthew-5"],
   "isaiah-43": ["isaiah-42", "isaiah-44", "john-8"],
   "isaiah-44": ["isaiah-45", "isaiah-43", "jeremiah-7"],
   "isaiah-45": ["isaiah-44", "isaiah-40", "daniel-1"],
