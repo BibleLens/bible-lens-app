@@ -248,14 +248,9 @@ function MessageBubble({ message, isActiveStream }: { message: Message; isActive
       className={`flex ${isUser ? "justify-end" : "justify-start items-start gap-3"} mb-4`}
     >
       {!isUser && (
-        <div
-          className="diamond-motif shrink-0 mt-1"
-          style={{
-            width: 28,
-            height: 28,
-            background: "linear-gradient(180deg, var(--color-gold-400) 0%, var(--color-cyan-400) 100%)",
-          }}
-        />
+        <div className="shrink-0 mt-1">
+          <LensIcon size={28} animate={false} />
+        </div>
       )}
       <div
         ref={bubbleRef}
