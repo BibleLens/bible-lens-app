@@ -58,18 +58,13 @@ export default function StartHerePage() {
         {/* Reading Path Bento Grid (STH-02) */}
         <section className="max-w-6xl mx-auto px-6 py-16">
           <div className="bento-grid">
-            {READING_PATHS.slice(0, 6).map((path, index) => {
-              const isFocus = index === 0;
+            {READING_PATHS.slice(0, 6).map((path) => {
               const firstStep = path.steps[0];
               return (
                 <Link
                   key={path.id}
                   href={`/bible/${firstStep.bookId}/${firstStep.chapter}`}
-                  className={
-                    isFocus
-                      ? "col-span-12 md:col-span-8 row-span-2 glass-card group p-10 flex flex-col justify-end min-h-[300px] relative"
-                      : "col-span-12 md:col-span-4 glass-card group p-8 flex flex-col justify-end min-h-[200px] relative"
-                  }
+                  className="col-span-12 md:col-span-4 glass-card group p-8 flex flex-col justify-end min-h-[200px] relative"
                 >
                   <div className="shimmer-layer" />
                   <div className="relative z-10">
@@ -80,7 +75,7 @@ export default function StartHerePage() {
                       READING PATH
                     </span>
                     <h2
-                      className={isFocus ? "text-3xl font-semibold" : "text-2xl font-semibold"}
+                      className="text-2xl font-semibold"
                       style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
                     >
                       {path.title}

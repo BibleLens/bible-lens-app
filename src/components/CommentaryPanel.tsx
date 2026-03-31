@@ -341,6 +341,21 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "<em>$1</em>");
 
+  /** Split a text block into readable paragraphs. Tries double-newlines first;
+   *  if the chunker collapsed them, falls back to splitting every ~3 sentences. */
+  const splitIntoParagraphs = (text: string): string[] => {
+    const byNewlines = text.split(/\n\n+/).map(s => s.trim()).filter(Boolean);
+    if (byNewlines.length > 1) return byNewlines;
+    // Chunker joined everything with single spaces — split by sentence groups
+    const sentences = text.match(/[^.!?]+[.!?]+(?:\s+|$)/g);
+    if (!sentences || sentences.length <= 4) return [text];
+    const paragraphs: string[] = [];
+    for (let i = 0; i < sentences.length; i += 3) {
+      paragraphs.push(sentences.slice(i, i + 3).join("").trim());
+    }
+    return paragraphs;
+  };
+
   useEffect(() => {
     // Skip client fetch when data was pre-populated by the server (SSR)
     if (initialCommentary && initialCommentary.length > 0) return;
@@ -445,27 +460,23 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
               {section.heading && (
                 <p className="micro-label">{section.heading}</p>
               )}
-              {section.body.trim() && (
-                <p
-                  className="commentary-prose text-lg"
-                  style={{
-                    fontFamily: "Georgia, serif",
-                    color: "var(--color-commentary-body, #e2e2e2)",
-                    lineHeight: "1.7",
-                  }}
-                  dangerouslySetInnerHTML={{ __html: inlineMarkdown(section.body.trim()) }}
-                />
-              )}
+              {section.body.trim() &&
+                splitIntoParagraphs(section.body.trim()).map((para, pi) => (
+                  <p
+                    key={pi}
+                    className="commentary-prose text-lg"
+                    style={{
+                      fontFamily: "Georgia, serif",
+                      color: "var(--color-commentary-body, #e2e2e2)",
+                      lineHeight: "1.7",
+                    }}
+                    dangerouslySetInnerHTML={{ __html: inlineMarkdown(para) }}
+                  />
+                ))}
             </GlassCard>
           ))}
         </div>
       ))}
-
-      {/* Related Passages as its own glass card */}
-      {relatedPassagesContent}
-
-      {/* Explore by Topic as its own glass card */}
-      {topicContent}
 
       {/* Deepen Analysis button (RDR-05) */}
       <button
@@ -481,6 +492,12 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         <span className="micro-label mr-1">Scholar AI</span>
         Deepen Analysis
       </button>
+
+      {/* Related Passages as its own glass card */}
+      {relatedPassagesContent}
+
+      {/* Explore by Topic as its own glass card */}
+      {topicContent}
     </div>
   );
 }

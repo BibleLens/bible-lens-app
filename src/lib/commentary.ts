@@ -13,10 +13,23 @@ export interface CommentaryChunk {
   chunkIndex: number;
 }
 
+/** Check if a Qdrant title like "matthew-5-7-commentary" covers the given chapter.
+ *  Handles single (matthew-13-commentary) and range (matthew-1-2-commentary) titles. */
+export function titleCoversChapter(title: string, book: string, chapter: number): boolean {
+  const prefix = `${book}-`;
+  const suffix = "-commentary";
+  if (!title.startsWith(prefix) || !title.endsWith(suffix)) return false;
+  const middle = title.slice(prefix.length, -suffix.length);
+  const nums = middle.split("-").map(Number);
+  if (nums.some(isNaN)) return false;
+  if (nums.length === 1) return nums[0] === chapter;
+  // Range: check chapter falls between first and last number
+  return chapter >= nums[0] && chapter <= nums[nums.length - 1];
+}
+
 export const getCommentaryData = cache(
   async (book: string, chapter: number): Promise<CommentaryChunk[]> => {
     try {
-      const expectedTitle = `${book}-${chapter}-commentary`;
       const query = `${book} chapter ${chapter}`;
       const embedding = await embedQuery(query);
       const client = getQdrantClient();
@@ -29,7 +42,7 @@ export const getCommentaryData = cache(
         filter: { must: [{ key: "source", match: { value: "personal" } }] },
       });
       const filtered = results
-        .filter((r) => r.payload?.title === expectedTitle)
+        .filter((r) => titleCoversChapter(r.payload?.title as string, book, chapter))
         .slice(0, 5);
       return filtered.map((r) => ({
         text: r.payload?.text as string,

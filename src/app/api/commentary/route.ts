@@ -3,6 +3,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getQdrantClient, COLLECTION_NAME } from '@/lib/qdrant';
 import { embedQuery } from '@/lib/embeddings';
+import { titleCoversChapter } from '@/lib/commentary';
 
 export const maxDuration = 15;
 
@@ -27,8 +28,6 @@ export async function GET(request: NextRequest) {
   const embedding = await embedQuery(query);
   const client = getQdrantClient();
 
-  // Fetch extra results then post-filter by title (title field is not indexed in Qdrant)
-  const expectedTitle = `${book}-${chapter}-commentary`;
   const results = await client.search(COLLECTION_NAME, {
     vector: embedding,
     limit: 20,
@@ -38,8 +37,9 @@ export async function GET(request: NextRequest) {
       must: [{ key: 'source', match: { value: 'personal' } }],
     },
   });
+  const chapterNum = parseInt(chapter, 10);
   const filtered = results
-    .filter((r) => r.payload?.title === expectedTitle)
+    .filter((r) => titleCoversChapter(r.payload?.title as string, book, chapterNum))
     .slice(0, 5);
 
   return NextResponse.json({

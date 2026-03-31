@@ -494,6 +494,20 @@ export const READING_PATHS: ReadingPath[] = [
     ],
   },
   {
+    id: "matthew-gospel-arc",
+    title: "Narrative Arc through Matthew's Gospel",
+    throughLine:
+      "Follow Matthew's five-discourse structure from the genealogy through the Great Commission — each cluster reveals how a first-century Jewish author framed Jesus as a new Moses figure.",
+    steps: [
+      { bookId: "matthew", chapter: 1, annotation: "The genealogy as theology: Davidic credential encoded in a 3×14 structure, formula quotation pattern opening — Matthew's Gospel as typological new genesis." },
+      { bookId: "matthew", chapter: 2, annotation: "Formula quotations and typological-pesher reading: how Matthew reads OT texts as having a deeper referent beyond their original historical context." },
+      { bookId: "matthew", chapter: 5, annotation: "The Sermon on the Mount opens Matthew's first major discourse: Torah intensification, not replacement — antitheses structured as a Second Temple rabbi's commentary on the Decalogue." },
+      { bookId: "matthew", chapter: 13, annotation: "The parable discourse: mashal genre, kingdom mystery, and the insider/outsider structure that shapes how Matthew frames Jesus's teaching method." },
+      { bookId: "matthew", chapter: 24, annotation: "The Olivet Discourse through a partial-preterist lens: 'this generation' as a temporal marker and the Daniel 7 Son of Man background." },
+      { bookId: "matthew", chapter: 28, annotation: "The Great Commission as shaliach commissioning: received authority, universal mission, and the Emmanuel inclusio closing the Gospel where it opened." },
+    ],
+  },
+  {
     id: "creation-cosmos",
     title: "Creation and Cosmos",
     throughLine:
@@ -672,20 +686,6 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "john", chapter: 15, annotation: "Vine and branches — third Paraclete passage, the 'Spirit of truth.'" },
       { bookId: "john", chapter: 16, annotation: "Fourth Paraclete passage — 'he will not speak on his own' (16:13)." },
       { bookId: "john", chapter: 17, annotation: "High Priestly Prayer — 'the only true God' (17:3), ideational pre-existence (17:5)." },
-    ],
-  },
-  {
-    id: "matthew-gospel-arc",
-    title: "Narrative Arc through Matthew's Gospel",
-    throughLine:
-      "Follow Matthew's five-discourse structure from the genealogy through the Great Commission — each cluster reveals how a first-century Jewish author framed Jesus as a new Moses figure.",
-    steps: [
-      { bookId: "matthew", chapter: 1, annotation: "The genealogy as theology: Davidic credential encoded in a 3×14 structure, formula quotation pattern opening — Matthew's Gospel as typological new genesis." },
-      { bookId: "matthew", chapter: 2, annotation: "Formula quotations and typological-pesher reading: how Matthew reads OT texts as having a deeper referent beyond their original historical context." },
-      { bookId: "matthew", chapter: 5, annotation: "The Sermon on the Mount opens Matthew's first major discourse: Torah intensification, not replacement — antitheses structured as a Second Temple rabbi's commentary on the Decalogue." },
-      { bookId: "matthew", chapter: 13, annotation: "The parable discourse: mashal genre, kingdom mystery, and the insider/outsider structure that shapes how Matthew frames Jesus's teaching method." },
-      { bookId: "matthew", chapter: 24, annotation: "The Olivet Discourse through a partial-preterist lens: 'this generation' as a temporal marker and the Daniel 7 Son of Man background." },
-      { bookId: "matthew", chapter: 28, annotation: "The Great Commission as shaliach commissioning: received authority, universal mission, and the Emmanuel inclusio closing the Gospel where it opened." },
     ],
   },
   {
