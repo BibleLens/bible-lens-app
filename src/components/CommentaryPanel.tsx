@@ -308,6 +308,21 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       }
       return `What is the historical context of Romans ${chapter}?`;
     }
+    if (book === "galatians") {
+      if ([1, 2].includes(chapter)) {
+        return `What did Paul mean when he told Peter 'you are a hypocrite' at Antioch — and why does the compressed antithesis of pistis Christou (twice) and erga nomou (three times) in Galatians 2:16 create the strongest tautology argument for reading 'the faithfulness of Christ' rather than 'faith in Christ'? How does the Antioch incident prove that 'works of the law' meant ethnic boundary markers — table fellowship, food purity — not moral effort?`;
+      }
+      if (chapter === 3) {
+        return `What was a paidagogos in the Greco-Roman world — and why does correcting the translation from 'teacher' to 'slave-guardian' change everything about Paul's argument in Galatians 3:24-25? How does the midrashic reading of Abraham's 'seed' (singular = Christ) in Gal 3:16 ground Gentile inclusion in the Abrahamic promise rather than Torah observance?`;
+      }
+      if (chapter === 4) {
+        return `What are the stoicheia tou kosmou — the 'elemental things of the world' — in Galatians 4:3 and 4:9, and why do scholars disagree on whether Paul means elementary religious principles, physical elements, or spiritual beings? How does huiothesia (adoption) in Gal 4:5 differ from the same word in Romans 8:15 — and why does the Hagar/Sarah allegory invert the expected identification?`;
+      }
+      if ([5, 6].includes(chapter)) {
+        return `Why do the 'works of the flesh' in Galatians 5:19-21 include social sins like enmity, strife, jealousy, and factions — and what does that tell us about why sarx cannot mean 'physical body' in Paul's usage? How does the kaine ktisis (new creation) of Gal 6:15 connect to Isaiah 65-66, and why is the 'Israel of God' in Gal 6:16 one of the most contested phrases in the Pauline corpus?`;
+      }
+      return `What is the historical context of ${bookTitle} ${chapter}?`;
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
