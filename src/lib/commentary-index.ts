@@ -16,6 +16,7 @@ export const COMMENTARY_CHAPTERS: Record<string, number[]> = {
   proverbs: [1, 7, 8, 10, 16, 22, 23, 25, 31],
   ecclesiastes: [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12],
   john: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+  romans: [1, 3, 5, 6, 8, 9, 10, 11, 13, 15, 16],
 };
 
 export const COMMENTARY_BOOKS = Object.keys(COMMENTARY_CHAPTERS);
@@ -345,6 +346,30 @@ export const COMMENTARY_DESCRIPTIONS: Record<string, string> = {
   "john-21":
     "What does the epilogue of John 21 reveal — and why is the lakeside commission the Gospel's closing movement of restoration and authorization? John 20:30-31 functions as the Gospel's original conclusion, and John 21 is widely recognized as an epilogue, added to address the community's questions about Peter, the Beloved Disciple, and the continuation of mission. Here's where it gets interesting: the lakeside breakfast scene enacts the restoration of Peter through a triple affirmation that mirrors the triple denial of 18:17-27. The commission — 'feed my sheep' — is the pastoral authorization of Peter's post-resurrection leadership. What the original audience would have understood is that the epilogue answers two pressing community questions: what happened to Peter (he is restored and commissioned), and what about the Beloved Disciple's apparent prediction of an imminent return (Jesus never said he would not die, only 'if I want him to remain until I come'). Through this lens, John 21 is not a loose appendix but a deliberate pastoral extension of the Gospel's commission theology: the sent one's mission continues through the community he has authorized.",
 
+  // Romans — 5 RAG clusters, 11 commentary chapters (Phase 136)
+  "romans-1":
+    "What kind of letter opens by introducing a messenger who has been 'appointed' to his task — and why does Paul's word choice in Romans 1:4 change everything about how we read what follows? The Greek horisthentos, typically rendered 'declared' or 'designated,' carries the force of appointment or installation. Paul opens his letter to a church he has never visited by establishing his theological credentials: Jesus, descended from David according to the flesh, was appointed Son of God in power at the resurrection. What the original audience would have understood is that this is installation language — the same performative register as a royal decree — not a retrospective confirmation of something eternally settled. Through this lens, Romans 1:3-4 frames the entire letter's Christology: the Davidic heir who was appointed/installed at the resurrection as the first-fruits of the new creation. Here's where it gets interesting: the opening movement of the letter (chapters 1-3) is Paul's argument for universal human failure before the faithfulness of the Anointed One — that is the letter's first answer to 'what went wrong and how is it fixed.' The universal diagnosis of Romans 1-3 is the dark canvas on which the pistis Christou answer of chapter 3 is painted. Ancient wisdom: the appointment that changes history is not always the one that looked impressive at the time.",
+  "romans-3":
+    "What does the phrase 'faithfulness of the Anointed One' mean — and why does the answer depend on whether you read a Greek genitive as subjective or objective? Romans 3:22 contains one of the most debated phrases in Pauline studies: pistis Christou. The traditional English rendering — 'faith in Christ' — reads the genitive as objective: Christ is the object of the faith. The subjective genitive reading — 'the faithfulness of Christ,' meaning Christ's own faithful obedience to the covenant mission — reads Christ as the subject who exercises faithfulness. Here's where it gets interesting: Richard Hays and N.T. Wright argue that pistis Christou should be read as Christ's own covenant faithfulness; this reading is supported by the grammatical parallel in 'the faith of Abraham' (pistis Abraam, Romans 4:16), where Abraham is clearly the subject. The BSB renders pistis Christou as 'faith in Christ Jesus' (3:22) and 'faith in Jesus' (3:26) — objective genitive. Bible Lens reads subjective genitive, following Hays and the parallel with pistis Abraam. What the original audience would have understood is that the question is grammatically open, and both readings are serious scholarly positions. Through this lens, the pistis Christou framing presents God's solution to universal human failure as grounded in the Anointed One's own faithfulness to the covenant, not only in the believer's trust in him. Both dimensions remain; the question is which is primary. Ancient wisdom: sometimes the most important argument is the one about who is acting.",
+  "romans-5":
+    "Why does Paul introduce Adam into a letter about the inclusion of Gentiles — and what does it mean to say that 'just as sin entered the world through one man, death spread to all because all sinned'? Romans 5 deploys Adam as a typological figure: the progenitor through whom the human condition entered, the counter-type to the Anointed One who reverses its trajectory. What the original audience would have understood is that this is corporate-representative logic — the Adam through whom the pattern spread is not invoked to make a claim about scientific human origins but to establish the structural parallel: one act of faithfulness reverses what one act of failure established. Here's where it gets interesting: the phrase 'all sinned' in 5:12 has generated enormous debate — did all humanity sin in Adam's original act (Augustinian reading), or did death spread because all humanity subsequently sinned? Paul does not settle the question, and that is likely intentional. The typological argument works either way. Through this lens, the Adam typology of Romans 5 is a representative-structural claim, not a scientific-historical one — and that distinction does not weaken the argument; it clarifies what the argument is actually for. The contrast is not between Adam and Jesus as two people but between two modes of existence: the old humanity marked by sin's reign, the new humanity marked by grace's reign. Ancient wisdom: the most powerful arguments about the human condition operate at the level of structure, not biography.",
+  "romans-6":
+    "What was Paul's audience meant to picture when he described baptism as dying and rising with the Anointed One — and why does that image resist both sacramental and merely symbolic readings? Romans 6's baptism language is one of the most precise passages in Paul's covenant theology: 'Do you not know that all of us who have been baptized into the Anointed One Jesus were baptized into his death?' The ritual of immersion into water is here reframed as covenant identification — the believer entering the death and resurrection narrative of the Anointed One, not as a magic act but as a covenant-entrance rite. What the original audience would have understood is that the water-crossing imagery resonates with Exodus 14: the Reed Sea crossing where Israel entered the death of Egypt and emerged as a new people. Paul's baptism language is not primarily about sacramental necessity — it is about covenant identification with the new representative human. Here's where it gets interesting: the grammar of 6:3-4 is deliberately corporate. 'We were buried with him' — the plural is the community of the new covenant. Through this lens, the logic of Romans 6 is: you have already crossed the threshold; now live as people who are on the other side. The indicative precedes the imperative. You are dead to sin's dominion — therefore, do not let sin reign. Ancient wisdom: you cannot be called to become what you already are by the covenant's own logic.",
+  "romans-8":
+    "What is Paul describing when he writes about 'the Spirit of God,' 'the Spirit of Christ,' and 'Christ in you' in almost interchangeable proximity — and why does the proximity not collapse into identity? Romans 8 is the most pneumatically dense chapter in Paul, and its Spirit-Christology raises questions that the agency model must address carefully. Here's where it gets interesting: in 8:9-11, Paul shifts between 'Spirit of God,' 'Spirit of Christ,' 'Christ in you,' and then 'the Spirit of him who raised Jesus' — four overlapping phrases in three verses. The interchangeability is real, but the agent is consistently the Father, who acts through the Spirit he sent: 'the Spirit of him who raised Jesus from the dead.' What the original audience would have understood is that pneuma here is agent, not a separate ontological hypostasis. The Spirit operates as the Father's active presence in the life of the community — not Trinitarian Spirit-personhood in the later creedal sense, but the dynamic power of the God who raised Jesus, now dwelling in those who are 'in Christ.' Through this lens, huiothesia — adoption — is the legal-status term that governs the entire chapter: those led by the Spirit are sons and daughters of God by adoption, not by nature. The 'firstborn among many brothers' (8:29) is the resurrection appointment of the Anointed One as the model of the new humanity; the community follows his pattern. Ancient wisdom, pneumatic clarity: the Spirit who indwells is the Father's agent, not a third co-equal person — the distinction is subtle and the language permits overlap, but the subordination is present.",
+  "romans-9":
+    "How does Paul move from Israel's covenant privileges to 'the one he calls my people' being the Gentile nations — without abandoning Israel's story? Romans 9-11 is the most sustained theological argument in the Pauline corpus, and its center is the question of divine faithfulness: has the word of God failed? Paul's answer is not a simple no. It is a complex, layered defense of YHWH's covenant consistency that moves through two arguments. First, the election of Israel was always corporate-covenantal — 'not all who are descended from Israel are Israel' (9:6). The covenant was never about ethnic lineage as such but about the identity of the people YHWH called. Here's where it gets interesting: Romans 9:5 is one of the most textually contested verses in the NT. The BSB renders it 'Christ, who is God over all, forever praised' — a Trinitarian punctuation. The alternative punctuation, favored by Metzger's Textual Commentary and a significant scholarly tradition, reads verse 5b as a separate doxology directed to God: 'may God who is over all be praised forever.' The scholarly case for the Trinitarian reading is careful — Moo, Harris, and others give it serious weight. But the doxological separation fits the letter's own Christology more naturally, where Paul consistently reserves the title 'God' (ho theos) for the Father. What the original audience would have understood is that both readings require honest engagement, not dismissal. The corporate election argument continues: Israel's election was never about individual predestination but about covenant vocation — 'not of works but of the one who calls' is a statement about God's freedom in covenant-making, not a doctrine of eternal individual destiny.",
+  "romans-10":
+    "When Paul quotes Joel 2:32 — 'everyone who calls on the name of the Lord shall be saved' — and applies it to Jesus, is he claiming that Jesus is YHWH, or deploying a different explanatory framework? Romans 10 contains one of the most significant kyrios passages in Paul's letters: the Joel 2:32 quotation with kyrios transferred from YHWH's original referent to the Anointed One. What the original audience would have understood is that this transfer operates within the Jewish shaliach principle: the one commissioned fully represents the one who sent him, to the point of carrying his name and authority. Here's where it gets interesting: Larry Hurtado argues that Paul's exalted Christology at this point reflects a genuinely novel 'binitarian' divine devotion — YHWH's name shared with a second figure in a way that breaks all Jewish parallels. Bible Lens engages Hurtado's argument on its own terms: the Joel 2:32 application in Romans 10 is the strongest evidence of divine name-sharing in Paul. The shaliach model reads this as authorized name-bearing within the commission framework, not ontological YHWH-identity. 'The same Lord is Lord of all' (10:12) names the Anointed One as the commissioned representative through whom the covenant's universal scope is enacted. Through this lens, the universality of salvation — Jew and Gentile alike — is grounded not in Jesus being YHWH but in Jesus being the authorized agent through whom YHWH's covenant reaches all nations.",
+  "romans-11":
+    "What does the olive tree image mean — and why does Paul insist that 'all Israel will be saved' at the end of the most complex argument he ever wrote? Romans 11 brings the corporate election argument to its climax with the olive tree parable: Israel is the cultivated tree whose natural branches were broken off to allow wild branches (Gentiles) to be grafted in. What the original audience would have understood is that this is corporate-covenantal imagery, not a metaphor for individual predestination. The tree is the covenant community; the branches represent covenant participation, which can be lost and regained. Here's where it gets interesting: 'all Israel will be saved' (11:26) has generated enormous debate. Paul's argument in context is not about every ethnic Israelite but about the corporate restoration of the covenant people — the hardening that has come upon part of Israel is not permanent but 'until the fullness of the Gentiles has come in.' Through this lens, the olive tree is Paul's answer to supersessionism before supersessionism existed as a word: Gentile inclusion does not erase Israel from the covenant. The branches were not cut off to make room for permanent Gentile ownership of the tree; they were broken off so that the roots' covenant vitality could reach the wider world — and the natural branches remain graft-able. Romans 11:33-36 closes with a doxology that Paul himself has not surpassed anywhere: 'For from him and through him and to him are all things.' Ancient wisdom: the mystery of divine faithfulness is not a problem to be solved but a depth to be entered.",
+  "romans-13":
+    "When Paul told the Roman church to 'be subject to the governing authorities,' what was the historical situation he was writing into — and does that context change how the command reads? Romans 13 is the most politically explosive passage in Paul, and its history of use ranges from courageous civil obedience to the justification of imperial church collaboration. What the original audience would have understood is that the letter was written during the quinquennium Neronis — the first five years of Nero's reign (54-59 CE), identified by the historian Tacitus as unusually just and moderate. Robert Jewett's social-scientific commentary argues that the command to submit to governing authorities is addressed to a specific community living in the shadow of the Claudian expulsion (49 CE), recently re-admitted to Rome, navigating the complex social politics of a city where Jewish-Christian communities were already marked as troublemakers. Here's where it gets interesting: Romans 13's submission language is calibrated to the quinquennium context — not an absolute, timeless command to obey any government at any time, but a situation-specific pastoral instruction for a vulnerable community trying to exist in imperial Rome without triggering fresh persecution. Through this lens, the 'governing authorities' are the conduit of a limited, legitimate social function — not the ultimate moral arbiter. Paul's letter was written in the space between the Claudian expulsion and the Neronian persecution, and its political counsel reflects that specific window. Ancient wisdom: context does not dissolve the command; it locates it.",
+  "romans-15":
+    "Why does Paul describe his entire apostolic career as a 'priestly service of the gospel' — and what does Isaiah 52:15 have to do with his ambition never to build on someone else's foundation? Romans 15 is Paul's apostolic mission charter, and it is thick with Isaiah quotations. The crowning citation is 52:15 — 'those who were never told about him will see, and those who have never heard will understand' — which Paul reads as the scriptural mandate for his Gentile mission. What the original audience would have understood is that Paul positions himself as the servant figure of Isaiah's fourth song: the one carrying the message of servant-exaltation to the nations who had not previously heard it. Here's where it gets interesting: this is a Gentile-inclusion argument grounded in the covenant story of Israel, not a replacement of that story. Paul's mission is not that Israel's calling is over — it is that through the Anointed One, the covenant's universal scope (promised to Abraham in Genesis 12) is now being enacted. Through this lens, the Gentile mission of Romans 15 is not a Gentile takeover of Israel's covenant but the covenant reaching its originally intended breadth. Paul describes himself as a leitourgos — a priestly servant — offering the Gentiles as a 'pleasing offering' to God. The priestly and sacrificial vocabulary frames Gentile inclusion as the completion of Israel's vocation, not its replacement. Ancient wisdom: the mission that looks like it is moving away from the center is sometimes moving most faithfully toward it.",
+  "romans-16":
+    "Who is Phoebe — and why does Paul's description of her deserve at least as much attention as any other figure he commends in this chapter? Romans 16 opens with Phoebe, a deacon (diakonos) of the church at Cenchreae, described by the Greek prostatis — a word that in every other occurrence in Greek literature describes a leader, patron, and person of authority and standing. What the original audience would have understood is that Phoebe was almost certainly the letter carrier — the one who delivered Romans to Rome and would have read and explained the letter on its arrival. A letter carrier in the ancient world was not a passive postal worker; they were the authorized representative of the author, expected to answer questions and defend the letter's arguments. Here's where it gets interesting: Moo argues that prostatis here should be rendered 'helper' or 'patron,' denoting financial support rather than leadership authority. But as Jewett and others note, prostatis in secular Greek usage — and in the LXX, where it appears for governing officials — carries unambiguous leadership connotations. To translate prostatis as merely 'helper' is to flatten the word. Through this lens, Romans 16 does not merely greet Phoebe in passing — it introduces her as the leader through whom the letter enters Rome. The final chapter's network of greetings reveals a Pauline network with remarkable female leadership: Prisca listed before Aquila, Junia named among the apostles, Phoebe as prostatis. Ancient wisdom: the authority visible in the greetings is often the authority that sustained the movement.",
+
   // Ecclesiastes — 5 RAG clusters, 11 commentary chapters
   "ecclesiastes-1":
     "What does hebel actually mean — and why does the difference between 'meaningless' and 'vapor' reshape everything Ecclesiastes says? The opening line of Ecclesiastes — hebel hebalim, 'vapor of vapors' — is the thesis statement of the entire book. The Hebrew noun hebel literally means breath or vapor: something real, observable, and present, but transient and ungraspable. You can see your breath on a cold morning; you cannot hold it. That sensory image is Qoheleth's central metaphor for human endeavor. The NIV's 'meaningless' and the KJV's 'vanity' flatten this vivid Hebrew metaphor into an abstract nihilistic verdict. Qoheleth is not saying nothing matters; he is saying nothing can be grasped permanently. Here's where it gets interesting: Qoheleth is a literary persona — the name means 'the assembler' or 'the one who convenes.' The royal framing of 1:12 ('I, Qoheleth, was king over Israel in Jerusalem') is a rhetorical device, not autobiography. The sage adopts the persona of the ultimate wealth-and-wisdom possessor to test whether privilege resolves the hebel problem. The cosmological poem of 1:4-11 frames the thesis with ANE cyclic observation — sun, wind, and rivers as recurring natural phenomena observed 'under the sun,' the realm of human experience bounded by the heavens above.",
@@ -390,7 +415,7 @@ export interface ThematicSection {
   chapterKeys: string[]; // "{bookId}-{chapter}" format matching COMMENTARY_DESCRIPTIONS keys
 }
 
-// Total: 42 + 33 + 53 + 24 + 21 = 173 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
+// Total: 42 + 33 + 61 + 27 + 21 = 184 chapters (all COMMENTARY_DESCRIPTIONS keys covered)
 export const THEMATIC_SECTIONS: ThematicSection[] = [
   {
     id: "eschatology",
@@ -444,6 +469,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "isaiah-54", "isaiah-55",
       "john-3", "john-13", "john-17",
       "matthew-5", "matthew-6", "matthew-7", "matthew-13",
+      "romans-1", "romans-3", "romans-5", "romans-6", "romans-9", "romans-10", "romans-11", "romans-13",
     ],
   },
   {
@@ -458,6 +484,7 @@ export const THEMATIC_SECTIONS: ThematicSection[] = [
       "isaiah-40", "isaiah-42", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-49", "isaiah-50",
       "john-1", "john-5", "john-8", "john-10", "john-12",
       "matthew-1", "matthew-2", "matthew-28",
+      "romans-8", "romans-15", "romans-16",
     ],
   },
 ];
@@ -703,6 +730,19 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "john", chapter: 20, annotation: "Thomas's confession (20:28) in light of 20:17 and 20:30-31 purpose statement." },
     ],
   },
+  {
+    id: "pauline-gospel-arc",
+    title: "Pauline Gospel Arc",
+    throughLine:
+      "Paul's letter to the Romans is not a systematic theology textbook — it is a missionary's case brief, written to a church he has never visited, arguing that the God of Israel has always intended to include Gentiles through the faithfulness of the Anointed One. The arc moves from universal human condition (Rom 1-3) through covenant death-and-resurrection (Rom 5-6), into the Spirit-empowered life of adopted sons and daughters (Rom 8), through the most contested election passage in the Bible (Rom 9-11), and lands on the practical ethics of a community living under Rome's shadow (Rom 13-16). Through this lens, every cluster answers the same question: how does Paul ground Gentile inclusion in the story of Israel's God — without erasing Israel from the story?",
+    steps: [
+      { bookId: "romans", chapter: 1, annotation: "Rom 1-3: The universal condition — all humanity under sin, and the faithfulness of the Anointed One (pistis Christou) as God's answer." },
+      { bookId: "romans", chapter: 5, annotation: "Rom 5-6: Adam typology and baptism — covenant death-and-resurrection as the entrance into the new humanity." },
+      { bookId: "romans", chapter: 8, annotation: "Rom 8: The Spirit-empowered life — huiothesia (adoption), pneuma genitives, and the firstborn among many brothers." },
+      { bookId: "romans", chapter: 9, annotation: "Rom 9-11: Corporate election, the olive tree, and Israel's covenant future — the most contested cluster in Paul." },
+      { bookId: "romans", chapter: 13, annotation: "Rom 13-16: Living under empire — Jewett's quinquennium Neronis context, Phoebe's leadership, and the Gentile mission charter." },
+    ],
+  },
 ];
 
 // Phase 51 — topic landing page data. All three exports follow the interface-then-constant
@@ -844,7 +884,7 @@ Matthew 25 is the sequel discourse — ten virgins, talents, sheep-and-goats —
       "Isaiah 53 corporate Israel reading",
       "suffering servant who is it",
     ],
-    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-42", "isaiah-49", "isaiah-50", "isaiah-40", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-54", "isaiah-55", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19", "ecclesiastes-9", "john-1", "john-12", "matthew-5"],
+    chapterKeys: ["isaiah-52", "isaiah-53", "isaiah-42", "isaiah-49", "isaiah-50", "isaiah-40", "isaiah-43", "isaiah-44", "isaiah-45", "isaiah-54", "isaiah-55", "isaiah-7", "isaiah-9", "isaiah-11", "isaiah-1", "isaiah-2", "isaiah-6", "psalms-2", "psalms-22", "psalms-45", "psalms-110", "jeremiah-23", "job-3", "job-19", "ecclesiastes-9", "john-1", "john-12", "matthew-5", "romans-3", "romans-9", "romans-11"],
     prose: `The most contested chapter in the Hebrew Bible was not always contested in the same way. The question of who Isaiah 53 describes — Israel or Jesus — is a modern framing of an ancient text that was originally designed to hold multiple readings at once.
 
 Here's where it gets interesting: the historically prior reading, dominant among Jewish interpreters before Christianity recontextualized the passage, understood the servant as corporate Israel. Rashi argued systematically that the servant who bears the iniquities of the nations is Israel itself — exiled, suffering, destined for vindication. Ibn Ezra followed the same trajectory. This was not a minority opinion; it was the mainstream.
@@ -973,8 +1013,8 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "isaiah-7": ["isaiah-9", "isaiah-11", "matthew-1"],
   "isaiah-9": ["isaiah-7", "zechariah-9", "psalms-2"],
   "isaiah-11": ["isaiah-9", "isaiah-65", "jeremiah-23"],
-  "isaiah-52": ["isaiah-53", "isaiah-50", "revelation-5"],
-  "isaiah-53": ["isaiah-52", "isaiah-49", "psalms-22"],
+  "isaiah-52": ["isaiah-53", "isaiah-50", "romans-15"],
+  "isaiah-53": ["isaiah-52", "psalms-22", "romans-9"],
   "isaiah-65": ["isaiah-66", "revelation-21", "ezekiel-37"],
   "isaiah-66": ["isaiah-65", "revelation-22", "ezekiel-39"],
 
@@ -988,7 +1028,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "ezekiel-39": ["ezekiel-38", "revelation-19", "revelation-20"],
 
   // New chapters — Genesis 15/18 and Isaiah 1/2/6
-  "genesis-15": ["genesis-12", "genesis-22", "exodus-19"],
+  "genesis-15": ["genesis-12", "genesis-22", "romans-5"],
   "genesis-18": ["genesis-12", "isaiah-6", "daniel-10"],
   "isaiah-1": ["isaiah-2", "ezekiel-2", "matthew-24"],
   "isaiah-2": ["isaiah-1", "isaiah-11", "ezekiel-38"],
@@ -1026,7 +1066,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   // Psalms -- 10 commentary chapters
   "psalms-2": ["psalms-110", "daniel-7", "proverbs-16"],
   "psalms-8": ["psalms-82", "genesis-1", "genesis-2"],
-  "psalms-22": ["psalms-89", "psalms-51", "isaiah-53"],
+  "psalms-22": ["psalms-89", "isaiah-53", "romans-8"],
   "psalms-23": ["psalms-22", "psalms-89", "exodus-33"],
   "psalms-45": ["psalms-2", "psalms-110", "isaiah-9"],
   "psalms-51": ["psalms-139", "psalms-22", "ezekiel-37"],
@@ -1042,7 +1082,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "jeremiah-19": ["jeremiah-18", "isaiah-1", "exodus-14"],
   "jeremiah-23": ["zechariah-3", "zechariah-6", "isaiah-11"],
   "jeremiah-29": ["daniel-1", "jeremiah-31", "daniel-9"],
-  "jeremiah-31": ["isaiah-65", "jeremiah-29", "ezekiel-37"],
+  "jeremiah-31": ["isaiah-65", "ezekiel-37", "romans-9"],
   "jeremiah-36": ["isaiah-6", "exodus-34", "jeremiah-52"],
   "jeremiah-52": ["daniel-1", "jeremiah-36", "ezekiel-37"],
 
@@ -1115,4 +1155,17 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "john-19": ["john-18", "john-20", "isaiah-52"],
   "john-20": ["john-21", "john-17", "psalms-22"],
   "john-21": ["john-20", "john-1", "john-13"],
+
+  // Romans — 5 RAG clusters, 11 commentary chapters (Phase 136)
+  "romans-1": ["genesis-12", "isaiah-52", "matthew-1"],
+  "romans-3": ["isaiah-53", "genesis-15", "psalms-22"],
+  "romans-5": ["genesis-12", "genesis-3", "isaiah-52"],
+  "romans-6": ["exodus-14", "genesis-3", "jeremiah-31"],
+  "romans-8": ["isaiah-40", "psalms-51", "genesis-1"],
+  "romans-9": ["isaiah-53", "jeremiah-31", "genesis-15"],
+  "romans-10": ["isaiah-53", "isaiah-40", "psalms-22"],
+  "romans-11": ["isaiah-65", "jeremiah-31", "ezekiel-37"],
+  "romans-13": ["isaiah-52", "matthew-24", "jeremiah-29"],
+  "romans-15": ["isaiah-52", "isaiah-40", "genesis-12"],
+  "romans-16": ["psalms-22", "jeremiah-31", "matthew-28"],
 };
