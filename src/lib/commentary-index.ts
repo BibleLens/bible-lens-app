@@ -751,13 +751,17 @@ export const READING_PATHS: ReadingPath[] = [
     id: "pauline-gospel-arc",
     title: "Pauline Gospel Arc",
     throughLine:
-      "Paul's letter to the Romans is not a systematic theology textbook — it is a missionary's case brief, written to a church he has never visited, arguing that the God of Israel has always intended to include Gentiles through the faithfulness of the Anointed One. The arc moves from universal human condition (Rom 1-3) through covenant death-and-resurrection (Rom 5-6), into the Spirit-empowered life of adopted sons and daughters (Rom 8), through the most contested election passage in the Bible (Rom 9-11), and lands on the practical ethics of a community living under Rome's shadow (Rom 13-16). Through this lens, every cluster answers the same question: how does Paul ground Gentile inclusion in the story of Israel's God — without erasing Israel from the story?",
+      "Paul's letter to the Romans is not a systematic theology textbook — it is a missionary's case brief, written to a church he has never visited, arguing that the God of Israel has always intended to include Gentiles through the faithfulness of the Anointed One. Galatians compresses the same argument into a shorter, more polemical letter — the confrontational, first-person version of what Romans would later articulate more systematically. If Romans is Paul laying out his gospel for an audience he has not met, Galatians is Paul defending the same gospel under crisis conditions in churches he planted. The arc moves from universal human condition (Rom 1-3) through covenant death-and-resurrection (Rom 5-6), into the Spirit-empowered life of adopted sons and daughters (Rom 8), through the most contested election passage in the Bible (Rom 9-11), lands on the practical ethics of a community living under Rome's shadow (Rom 13-16), and then reads Galatians as the 'angry version' — the apostolic autobiography, the Antioch confrontation, the Abrahamic seed argument, and the new creation benediction that compress the entire Pauline gospel into a crisis letter. Through this lens, every cluster answers the same question: how does Paul ground Gentile inclusion in the story of Israel's God — without erasing Israel from the story?",
     steps: [
       { bookId: "romans", chapter: 1, annotation: "Rom 1-3: The universal condition — all humanity under sin, and the faithfulness of the Anointed One (pistis Christou) as God's answer." },
       { bookId: "romans", chapter: 5, annotation: "Rom 5-6: Adam typology and baptism — covenant death-and-resurrection as the entrance into the new humanity." },
       { bookId: "romans", chapter: 8, annotation: "Rom 8: The Spirit-empowered life — huiothesia (adoption), pneuma genitives, and the firstborn among many brothers." },
       { bookId: "romans", chapter: 9, annotation: "Rom 9-11: Corporate election, the olive tree, and Israel's covenant future — the most contested cluster in Paul." },
       { bookId: "romans", chapter: 13, annotation: "Rom 13-16: Living under empire — Jewett's quinquennium Neronis context, Phoebe's leadership, and the Gentile mission charter." },
+      { bookId: "galatians", chapter: 1, annotation: "Gal 1-2: Apostolic autobiography as argument — Paul's independence from Jerusalem and the Antioch incident as lived proof that ethnic boundary markers cannot define covenant membership." },
+      { bookId: "galatians", chapter: 3, annotation: "Gal 3: The Abrahamic seed argument and the pedagogue correction — the Law as slave-guardian custody, not educational preparation, and the midrashic reading of 'seed' singular as Christ." },
+      { bookId: "galatians", chapter: 4, annotation: "Gal 4: Stoicheia, huiothesia, and the Hagar/Sarah allegory — from slavery to elemental things to adoption as full heirs of the Abrahamic promise." },
+      { bookId: "galatians", chapter: 5, annotation: "Gal 5-6: Freedom, Spirit vs. flesh, and new creation — the eschatological contrast between the old age and the new, closing with the contested 'Israel of God.'" },
     ],
   },
 ];
@@ -1185,4 +1189,12 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "romans-13": ["isaiah-52", "matthew-24", "jeremiah-29"],
   "romans-15": ["isaiah-52", "isaiah-40", "genesis-12"],
   "romans-16": ["psalms-22", "jeremiah-31", "matthew-28"],
+
+  // Galatians — 4 RAG clusters, 6 commentary chapters (Phase 140)
+  "galatians-1": ["galatians-2", "romans-1", "jeremiah-1"],
+  "galatians-2": ["galatians-1", "galatians-3", "romans-3"],
+  "galatians-3": ["galatians-4", "genesis-15", "romans-5"],
+  "galatians-4": ["galatians-3", "galatians-5", "isaiah-65"],
+  "galatians-5": ["galatians-6", "galatians-4", "romans-8"],
+  "galatians-6": ["galatians-5", "isaiah-65", "romans-11"],
 };
