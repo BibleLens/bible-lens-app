@@ -290,6 +290,24 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       }
       return `What does John ${chapter} reveal about the agency Christology running through the Fourth Gospel?`;
     }
+    if (book === "romans") {
+      if ([1, 3].includes(chapter)) {
+        return `What did Paul mean by pistis Christou in Romans 3:22 — and why does reading it as 'the faithfulness of the Anointed One' (subjective genitive) rather than 'faith in Christ' (objective genitive, as the BSB renders it) reshape the entire argument of Romans 1-3 about how God's righteousness is revealed?`;
+      }
+      if ([5, 6].includes(chapter)) {
+        return `How does Paul's Adam-Christ typology in Romans 5:12-21 work — and why does the baptism-as-covenant-death framework in Romans 6 connect the believer's identity to Israel's Exodus crossing rather than to a sacramental ritual?`;
+      }
+      if (chapter === 8) {
+        return `What are the pneuma genitives in Romans 8:9-11 ('Spirit of God,' 'Spirit of Christ,' 'Christ in you') — and why does reading them as functional descriptions of God's empowering presence rather than as references to a distinct divine person change how we understand Paul's adoption (huiothesia) theology?`;
+      }
+      if ([9, 10, 11].includes(chapter)) {
+        return `How does Paul's olive tree metaphor in Romans 11 reframe election as corporate and covenantal rather than individual — and why does the punctuation of Romans 9:5 matter for whether Paul is calling Jesus 'God over all' or offering a separate doxology to the Father?`;
+      }
+      if ([13, 15, 16].includes(chapter)) {
+        return `What was the political context of Romans 13:1-7 during Nero's quinquennium — and why does Paul's commendation of Phoebe as prostatis (patron/leader) in Romans 16:1-2 reveal more about early church leadership than most English translations suggest?`;
+      }
+      return `What is the historical context of Romans ${chapter}?`;
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
