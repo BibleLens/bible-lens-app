@@ -795,6 +795,20 @@ export const READING_PATHS: ReadingPath[] = [
       { bookId: "galatians", chapter: 5, annotation: "Gal 5-6: Freedom, Spirit vs. flesh, and new creation — the eschatological contrast between the old age and the new, closing with the contested 'Israel of God.'" },
     ],
   },
+  {
+    id: "hebrews-arc",
+    title: "Hebrews Arc",
+    throughLine:
+      "An anonymous homily addressed to a Jewish-Christian community under pressure to revert to temple worship before 70 CE. The argument arc runs from the Son's supremacy over angels (Heb 1-2) through the Moses typology (Heb 3-4) and Melchizedek priesthood (Heb 5-7) to the new covenant and the once-for-all sacrifice (Heb 8-10), then through the faith hall of fame (Heb 11) to the unshakeable kingdom (Heb 12-13). The letter's signature word is kreitton — 'better' — used not as a ranking of religions but as pastoral encouragement to a community in crisis: you already have something better, do not go back. Through this lens, Hebrews is a sermon about holding fast, not a polemic about superseding.",
+    steps: [
+      { bookId: "hebrews", chapter: 1, annotation: "Heb 1-2: The anonymous homily opens with a Wisdom Christology prologue — charaktēr and apaugasma from Wisdom of Solomon 7:25-26 — then the OT catena of seven quotations arguing the Son holds a position superior to angels via Ps 2, Ps 45, Ps 102, and Ps 110." },
+      { bookId: "hebrews", chapter: 3, annotation: "Heb 3-4: Moses honored as faithful therapōn (servant), the Son as faithful heir — and Psalm 95's 'today' still calls the audience to enter the katapausis (rest) that Joshua's conquest did not complete." },
+      { bookId: "hebrews", chapter: 5, annotation: "Heb 5-7: A priest without genealogy — Melchizedek's appearance in Genesis 14 without father, mother, or genealogy is the textual silence that authorizes an entirely different kind of priesthood, confirmed by Psalm 110:4's oath." },
+      { bookId: "hebrews", chapter: 8, annotation: "Heb 8-10: The new covenant — the full Jeremiah 31 quotation, Yom Kippur typology, and ephapax (once for all) sacrifice. The memphetai of 8:8 finds fault with the people, not the covenant — pastoral encouragement, not anti-Jewish polemic." },
+      { bookId: "hebrews", chapter: 11, annotation: "Heb 11: The faith hall of fame from Abel through the Maccabean martyrs — pistis defined as hypostasis (confident assurance) and elenchos (conviction of things unseen), not blind belief." },
+      { bookId: "hebrews", chapter: 12, annotation: "Heb 12-13: The saleuo (shaking) of Haggai 2:6 removes the shakeable old covenant institutions in 70 CE, leaving the unshakeable kingdom — the heavenly Zion the audience already belongs to." },
+    ],
+  },
 ];
 
 // Phase 51 — topic landing page data. All three exports follow the interface-then-constant
@@ -1004,7 +1018,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
 
   // Genesis — Covenant cluster
   "genesis-12": ["genesis-15", "genesis-22", "matthew-28"],
-  "genesis-22": ["genesis-12", "isaiah-53", "matthew-1"],
+  "genesis-22": ["genesis-12", "isaiah-53", "hebrews-11"],
   "genesis-28": ["genesis-12", "ezekiel-1"],
 
   // Genesis — Divine council / cosmos cluster
@@ -1092,7 +1106,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "exodus-14": ["exodus-12", "exodus-19", "revelation-19"],
   "exodus-19": ["exodus-20", "exodus-14", "genesis-15"],
   "exodus-20": ["exodus-19", "exodus-32", "matthew-5"],
-  "exodus-25": ["exodus-26", "exodus-27", "genesis-1"],
+  "exodus-25": ["exodus-26", "exodus-27", "hebrews-9"],
   "exodus-26": ["exodus-25", "exodus-27", "ezekiel-1"],
   "exodus-27": ["exodus-25", "exodus-26", "revelation-21"],
   "exodus-32": ["exodus-33", "exodus-34", "exodus-20"],
@@ -1116,7 +1130,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "zechariah-14": ["zechariah-13", "revelation-20", "ezekiel-38"],
 
   // Psalms -- 10 commentary chapters
-  "psalms-2": ["psalms-110", "daniel-7", "proverbs-16"],
+  "psalms-2": ["psalms-110", "daniel-7", "hebrews-1"],
   "psalms-8": ["psalms-82", "genesis-1", "genesis-2"],
   "psalms-22": ["psalms-89", "isaiah-53", "romans-8"],
   "psalms-23": ["psalms-22", "psalms-89", "exodus-33"],
@@ -1124,7 +1138,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "psalms-51": ["psalms-139", "psalms-22", "ezekiel-37"],
   "psalms-82": ["genesis-6", "ezekiel-28", "john-10"],
   "psalms-89": ["psalms-2", "psalms-22", "genesis-15"],
-  "psalms-110": ["psalms-2", "psalms-45", "daniel-7"],
+  "psalms-110": ["psalms-2", "psalms-45", "hebrews-7"],
   "psalms-139": ["psalms-51", "psalms-8", "genesis-1"],
 
   // Jeremiah — 8 commentary clusters, 9 chapters
@@ -1134,7 +1148,7 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "jeremiah-19": ["jeremiah-18", "isaiah-1", "exodus-14"],
   "jeremiah-23": ["zechariah-3", "zechariah-6", "isaiah-11"],
   "jeremiah-29": ["daniel-1", "jeremiah-31", "daniel-9"],
-  "jeremiah-31": ["isaiah-65", "ezekiel-37", "romans-9"],
+  "jeremiah-31": ["hebrews-8", "ezekiel-37", "romans-9"],
   "jeremiah-36": ["isaiah-6", "exodus-34", "jeremiah-52"],
   "jeremiah-52": ["daniel-1", "jeremiah-36", "ezekiel-37"],
 
@@ -1228,4 +1242,19 @@ export const RELATED_PASSAGES: Record<string, string[]> = {
   "galatians-4": ["galatians-3", "galatians-5", "isaiah-65"],
   "galatians-5": ["galatians-6", "galatians-4", "romans-8"],
   "galatians-6": ["galatians-5", "isaiah-65", "romans-11"],
+
+  // Hebrews — 6 RAG clusters, 13 commentary chapters (Phase 144)
+  "hebrews-1": ["hebrews-2", "psalms-2", "psalms-110"],
+  "hebrews-2": ["hebrews-1", "hebrews-3", "psalms-22"],
+  "hebrews-3": ["hebrews-4", "hebrews-2", "exodus-16"],
+  "hebrews-4": ["hebrews-3", "hebrews-5", "genesis-2"],
+  "hebrews-5": ["hebrews-6", "hebrews-7", "psalms-110"],
+  "hebrews-6": ["hebrews-5", "hebrews-7", "genesis-22"],
+  "hebrews-7": ["hebrews-5", "hebrews-8", "genesis-14"],
+  "hebrews-8": ["hebrews-9", "hebrews-10", "jeremiah-31"],
+  "hebrews-9": ["hebrews-8", "hebrews-10", "exodus-25"],
+  "hebrews-10": ["hebrews-8", "hebrews-9", "jeremiah-31"],
+  "hebrews-11": ["hebrews-12", "genesis-22", "genesis-12"],
+  "hebrews-12": ["hebrews-13", "hebrews-11", "psalms-2"],
+  "hebrews-13": ["hebrews-12", "hebrews-8", "psalms-110"],
 };
