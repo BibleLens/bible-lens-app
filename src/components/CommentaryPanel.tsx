@@ -323,6 +323,27 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
       }
       return `What is the historical context of ${bookTitle} ${chapter}?`;
     }
+    if (book === "hebrews") {
+      if ([1, 2].includes(chapter)) {
+        return `What does charaktēr — the exact imprint a die stamps onto a coin — reveal about how the author of Hebrews understood the Son's relationship to God? Murray Harris argues Hebrews 1:8 is a direct vocative address to Jesus as 'God' — but what does the very next verse ('your God has anointed you') do to that reading, and why does the Psalm 45 royal wedding context matter for understanding the entire OT catena of Hebrews 1:5-14?`;
+      }
+      if ([3, 4].includes(chapter)) {
+        return `What is the katapausis — the rest — that Joshua's conquest did not complete, and why does the author of Hebrews coin a new word, sabbatismos, to describe what remains for the people of God? How does Psalm 95's liturgical 'today, if you hear his voice' become a weapon of pastoral urgency in Hebrews 3-4, and what does apistia mean here — intellectual doubt or covenantal unfaithfulness?`;
+      }
+      if ([5, 6, 7].includes(chapter)) {
+        return `How does the textual silence of Genesis 14 — no father, no mother, no genealogy for Melchizedek — become the foundation for an entirely different kind of priesthood? What does the Greek wordplay pathōn/emathen ('he suffered, he learned') in Hebrews 5:8 reveal about the developmental Christology of a Son who 'learned obedience through what he suffered' — and why does the Qumran scroll 11QMelchizedek show that Second Temple Judaism was already reading this figure as an eschatological deliverer?`;
+      }
+      if ([8, 9, 10].includes(chapter)) {
+        return `Why does the author quote the entire Jeremiah 31:31-34 new covenant oracle — the longest OT quotation in the NT — and what does the Greek memphetai in Hebrews 8:8 reveal about who is actually at fault: the covenant or the people? How does the Yom Kippur typology work when the author argues the earthly sanctuary was always a typos — a copy of the heavenly original — and what does ephapax ('once for all') mean set against the annual repetition of the Day of Atonement?`;
+      }
+      if (chapter === 11) {
+        return `What does hypostasis mean in Hebrews 11:1 — and why does the same Greek word carry two different senses in the same letter (the ontological-adjacent 'exact imprint' of 1:3 versus the subjective 'confident assurance' of 11:1)? How does the Aqedah — Abraham's near-sacrifice of Isaac in Genesis 22 — become a typological resurrection argument in Hebrews 11:17-19, and what does pistis as elenchos ('conviction of things unseen') reveal about why the faith hall of fame is not a list of people who believed without evidence?`;
+      }
+      if ([12, 13].includes(chapter)) {
+        return `What is the saleuo — the shaking — of Hebrews 12:26-27 that removes the shakeable things and leaves the unshakeable kingdom? The author alludes to Haggai 2:6 — but does the shaking describe a future cosmic dissolution or the removal of old covenant institutions in 70 CE? How does the Sinai/Zion contrast of Hebrews 12:18-24 function as the letter's rhetorical climax, and what does paideia — discipline as son-formation, not slave-punishment — reveal about the purpose of suffering in the author's theology?`;
+      }
+      return `What is the historical context of ${bookTitle} ${chapter}?`;
+    }
     return `What is the historical context of ${bookTitle} ${chapter}?`;
   };
 
