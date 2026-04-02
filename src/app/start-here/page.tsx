@@ -58,7 +58,7 @@ export default function StartHerePage() {
         {/* Reading Path Bento Grid (STH-02) */}
         <section className="max-w-6xl mx-auto px-6 py-16">
           <div className="bento-grid">
-            {READING_PATHS.slice(0, 6).map((path) => {
+            {READING_PATHS.map((path) => {
               const firstStep = path.steps[0];
               return (
                 <Link
