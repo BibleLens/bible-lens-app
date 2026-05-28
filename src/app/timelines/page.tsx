@@ -55,10 +55,10 @@ export default function TimelinesPage() {
             </span>
             <div className="border-l-2 pl-6" style={{ borderColor: "var(--color-cyan-400)" }}>
               <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-semibold"
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-balance max-w-4xl"
                 style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
               >
-                Bible Chronology — Through Ancient Eyes
+                Bible Chronology Through Ancient Eyes
               </h1>
               <p
                 className="mt-3 max-w-2xl text-lg"
