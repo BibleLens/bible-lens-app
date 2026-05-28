@@ -85,19 +85,21 @@ export default function TimelinesPage() {
         </section>
 
         {/* Download CTA */}
-        <section className="max-w-6xl mx-auto px-6 pb-12 text-center">
-          <a
-            href="/timelines/israel-in-egypt-hero.png"
-            download="bible-lens-israel-in-egypt-215-vs-430.png"
-            className="inline-block px-6 py-3 font-semibold transition-all hover:brightness-110"
-            style={{
-              background: "var(--color-cyan-400)",
-              color: "var(--color-bg-primary)",
-              borderRadius: 0,
-            }}
-          >
-            Download the full pin (1000×1500 PNG)
-          </a>
+        <section className="max-w-6xl mx-auto px-6 pb-12">
+          <GlassCard className="p-8 md:p-10 text-center max-w-4xl mx-auto">
+            <a
+              href="/timelines/israel-in-egypt-hero.png"
+              download="bible-lens-israel-in-egypt-215-vs-430.png"
+              className="inline-block px-6 py-3 font-semibold transition-all hover:brightness-110"
+              style={{
+                background: "var(--color-cyan-400)",
+                color: "var(--color-bg-primary)",
+                borderRadius: 0,
+              }}
+            >
+              Download the full pin (1000×1500 PNG)
+            </a>
+          </GlassCard>
         </section>
 
         {/* Email Capture in Glass Card */}
