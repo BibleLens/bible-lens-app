@@ -16,6 +16,15 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: '/timelines/israel-in-egypt-hero.png',
+        headers: [
+          {
+            key: 'Content-Disposition',
+            value: 'attachment; filename="bible-lens-israel-in-egypt-215-vs-430.png"',
+          },
+        ],
+      },
     ];
   },
 };
