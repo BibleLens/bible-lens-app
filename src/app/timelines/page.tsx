@@ -46,25 +46,27 @@ export default function TimelinesPage() {
           className="grain-overlay min-h-[40vh] flex items-end pb-16 px-6"
           style={{ background: "var(--color-obsidian)" }}
         >
-          <div className="max-w-6xl mx-auto w-full text-center">
-            <span
-              className="micro-label mb-4 block"
-              style={{ color: "var(--color-cyan-400)" }}
-            >
-              OLD TESTAMENT CHRONOLOGY
-            </span>
-            <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-balance max-w-4xl mx-auto"
-              style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
-            >
-              Bible Chronology Through Ancient Eyes
-            </h1>
-            <p
-              className="mt-3 max-w-2xl mx-auto text-lg text-pretty"
-              style={{ color: "var(--color-text-muted-warm)" }}
-            >
-              Visual timelines of the Old Testament — the chronology questions ancient sources don&apos;t agree on, drawn in a way you can actually share.
-            </p>
+          <div className="max-w-6xl mx-auto w-full">
+            <GlassCard className="p-10 md:p-16 text-center max-w-4xl mx-auto">
+              <span
+                className="micro-label mb-4 block"
+                style={{ color: "var(--color-cyan-400)" }}
+              >
+                OLD TESTAMENT CHRONOLOGY
+              </span>
+              <h1
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-balance"
+                style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
+              >
+                Bible Chronology Through Ancient Eyes
+              </h1>
+              <p
+                className="mt-3 max-w-2xl mx-auto text-lg text-pretty"
+                style={{ color: "var(--color-text-muted-warm)" }}
+              >
+                Visual timelines of the Old Testament — the chronology questions ancient sources don&apos;t agree on, drawn in a way you can actually share.
+              </p>
+            </GlassCard>
           </div>
         </section>
 
