@@ -24,11 +24,11 @@ export const metadata: Metadata = {
 export default function StartHerePage() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "var(--color-obsidian)" }}>
-      <main id="main-content" className="flex-1 w-full pt-20">
+      <main id="main-content" className="flex-1 w-full pt-[248px]">
 
         {/* Editorial Hero (STH-01) */}
         <section
-          className="grain-overlay min-h-[40vh] flex items-end pb-16 px-6"
+          className="grain-overlay flex items-end pt-10 pb-12 px-6"
           style={{ background: "var(--color-obsidian)" }}
         >
           <div className="max-w-6xl mx-auto w-full">

@@ -3,12 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { LensIcon } from "@/components/LensIcon";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { label: "Explore", href: "/books" },
   { label: "Context", href: "/commentary" },
+  { label: "Topics", href: "/topics" },
   { label: "Archive", href: "/start-here" },
   { label: "Scholar", href: "/chat" },
 ];
@@ -18,7 +17,10 @@ function isActive(href: string, pathname: string): boolean {
     return pathname.startsWith("/books") || pathname.startsWith("/bible");
   }
   if (href === "/commentary") {
-    return pathname.startsWith("/commentary") || pathname.startsWith("/topics");
+    return pathname.startsWith("/commentary");
+  }
+  if (href === "/topics") {
+    return pathname.startsWith("/topics");
   }
   if (href === "/start-here") {
     return pathname === "/start-here" || pathname.startsWith("/start-here/");
@@ -49,44 +51,40 @@ export function SiteNav() {
         borderRadius: 0,
       }}
     >
-      <div className="flex items-center justify-between px-6 h-16">
-        {/* Left: Logo */}
-        <Link href="/" className="flex items-center gap-3" aria-label="Bible Lens home">
-          <LensIcon size={56} animate={true} />
-          <span
-            style={{ fontFamily: "var(--font-display)" }}
-            className="text-xl font-bold tracking-wide"
-          >
-            <span style={{ color: "#facc15" }}>Bible</span>
-            <span className="text-cyan-400"> Lens</span>
-          </span>
+      {/* Centered crest over nav — matches the homepage header exactly */}
+      <div className="flex flex-col items-center px-6 pt-3 pb-2">
+        {/* Centered full Bible Lens logo (wordmark baked in) */}
+        <Link href="/" className="flex justify-center" aria-label="Bible Lens home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/bible-lens-logo-no-tagline.svg"
+            alt="Bible Lens"
+            className="h-44 w-auto logo-pulse"
+          />
         </Link>
 
-        {/* Right: Nav links + ThemeToggle */}
-        <div className="flex items-center gap-4">
-          <nav aria-label="Main navigation">
-            <ul className="hidden md:flex items-center gap-6">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={isActive(item.href, pathname) ? "page" : undefined}
-                    className={cn(
-                      "min-h-[44px] flex items-center text-sm font-medium transition-colors duration-200 border-b-2",
-                      isActive(item.href, pathname)
-                        ? "text-[var(--color-cyan-400)] border-[var(--color-cyan-400)] font-semibold"
-                        : "text-[var(--color-text-secondary)] border-transparent hover:text-[var(--color-cyan-300)]"
-                    )}
-                    style={{ fontFamily: "var(--font-interface)" }}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <ThemeToggle />
-        </div>
+        {/* Nav links centered beneath the crest */}
+        <nav aria-label="Main navigation" className="mt-1">
+          <ul className="hidden md:flex items-center justify-center gap-9">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={isActive(item.href, pathname) ? "page" : undefined}
+                  className={cn(
+                    "min-h-[44px] flex items-center text-sm font-medium transition-colors duration-200 border-b-2",
+                    isActive(item.href, pathname)
+                      ? "text-[var(--color-cyan-400)] border-[var(--color-cyan-400)] font-semibold"
+                      : "text-[var(--color-text-secondary)] border-transparent hover:text-[var(--color-cyan-300)]"
+                  )}
+                  style={{ fontFamily: "var(--font-interface)" }}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );

@@ -121,7 +121,7 @@ function handleMouseLeave(e: React.MouseEvent<HTMLAnchorElement>) {
 
 export function FeaturedTopicsSection() {
   return (
-    <section className="pt-24 pb-24 px-6 max-w-screen-2xl mx-auto">
+    <section className="pt-10 pb-24 px-6 max-w-screen-2xl mx-auto">
       {/* Section header */}
       <div className="mb-20">
         <h2
@@ -130,8 +130,8 @@ export function FeaturedTopicsSection() {
         >
           Featured Topics{" "}
           <span
-            className="font-light italic text-3xl md:text-5xl block md:inline md:ml-6"
-            style={{ color: "var(--homepage-primary)", opacity: 0.4 }}
+            className="font-normal italic text-3xl md:text-5xl block md:inline md:ml-6 cyan-glow-text"
+            style={{ color: "var(--homepage-primary)" }}
           >
             Ancient Texts, Fresh Eyes
           </span>

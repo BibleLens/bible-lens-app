@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -16,6 +17,7 @@ export function HeroSection() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const heroTitleWrapperRef = useRef<HTMLDivElement>(null);
   const scrollHintRef = useRef<HTMLDivElement>(null);
+  const endCtaRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -29,6 +31,7 @@ export function HeroSection() {
         gsap.set(titleRef.current?.children || [], { opacity: 1, y: 0 });
         gsap.set(lensFrameRef.current, { scale: 1, rotation: 0 });
         gsap.set(scrollHintRef.current, { opacity: 0.7, y: 0 });
+        gsap.set(endCtaRef.current, { opacity: 1, y: 0 });
         gsap.set(clarifiedTrackRef.current, {
           opacity: 1,
           xPercent: -50,
@@ -174,13 +177,29 @@ export function HeroSection() {
             scrub: true,
           },
         });
+
+        // --- End-of-scroll CTA: fades in centered inside the diamond, while the
+        // sticky hero is still pinned (the sticky unpins around 63% of the
+        // container, so the fade must COMPLETE before then or it scrolls off
+        // screen unseen). Fades in 42%→56%, holds for the rest of the pin. ---
+        gsap.set(endCtaRef.current, { opacity: 0, y: 16 });
+        gsap.to(endCtaRef.current, {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: container,
+            start: "42% top",
+            end: "56% top",
+            scrub: true,
+          },
+        });
       });
     },
     { scope: containerRef }
   );
 
   return (
-    <div ref={containerRef} className="h-[150vh] md:h-[270vh]">
+    <div ref={containerRef} className="h-[130vh] md:h-[200vh]">
       {/* Sticky viewport — stays in place while container scrolls (170vh of scroll) */}
       <div
         className="sticky top-0 h-screen w-full overflow-hidden"
@@ -304,22 +323,54 @@ export function HeroSection() {
               className="font-bold drop-shadow-2xl"
               style={{
                 fontFamily: "var(--homepage-font-display)",
-                fontSize: "56px",
-                lineHeight: 1,
-                letterSpacing: "0.1em",
+                fontSize: "44px",
+                lineHeight: 1.1,
+                letterSpacing: "0.04em",
                 color: "var(--homepage-text)",
               }}
             >
               <span className="block">CONTEXT</span>
               <span
                 className="block italic font-normal tracking-normal"
-                style={{ fontSize: "36px", color: "#00E5FF" }}
+                style={{ fontSize: "30px", color: "#00E5FF" }}
               >
                 Over
               </span>
               <span className="block">TRADITION</span>
             </h1>
+
+            {/* Primary CTA → onboarding */}
+            <div className="mt-10 flex justify-center pointer-events-auto">
+              <Link
+                href="/start-here"
+                className="px-8 py-3 border border-[#00E5FF]/60 bg-[#00E5FF]/10 text-[#00E5FF] text-xs font-bold uppercase tracking-widest hover:bg-[#00E5FF] hover:text-[#050508] transition-all"
+                style={{ fontFamily: "var(--homepage-font-body)" }}
+              >
+                Start Here
+              </Link>
+            </div>
           </div>
+        </div>
+
+        {/* End-of-scroll CTA — reappears centered inside the diamond once the
+            lens animation completes */}
+        <div
+          ref={endCtaRef}
+          className="absolute inset-0 z-50 flex flex-col items-center justify-center gap-3 opacity-0 pointer-events-none"
+        >
+          <span
+            className="text-[11px] uppercase tracking-[0.3em] text-slate-300"
+            style={{ fontFamily: "var(--homepage-font-body)" }}
+          >
+            Ready to begin?
+          </span>
+          <Link
+            href="/start-here"
+            className="px-8 py-3 border border-[#00E5FF]/60 bg-[#00E5FF]/10 text-[#00E5FF] text-xs font-bold uppercase tracking-widest hover:bg-[#00E5FF] hover:text-[#050508] transition-all pointer-events-auto"
+            style={{ fontFamily: "var(--homepage-font-body)" }}
+          >
+            Start Here
+          </Link>
         </div>
 
         {/* Scroll Indicator */}

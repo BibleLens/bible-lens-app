@@ -91,44 +91,44 @@ function BookCard({ book, canonicalIndex, style, onMouseMove, onMouseLeave }: Bo
       >
         {meta ? (
           <>
-            <div className="mb-2">
+            <div className="mb-3">
               <p
-                className="micro-label mb-0.5"
+                className="micro-label mb-1"
                 style={{ color: 'var(--homepage-primary)' }}
               >
                 AUTHOR
               </p>
               <p
-                className="text-xs"
-                style={{ color: 'var(--color-text-muted-warm)' }}
+                className="text-sm leading-relaxed"
+                style={{ color: 'var(--color-text-primary)' }}
               >
                 {meta.author}
               </p>
             </div>
-            <div className="mb-2">
+            <div className="mb-3">
               <p
-                className="micro-label mb-0.5"
+                className="micro-label mb-1"
                 style={{ color: 'var(--homepage-primary)' }}
               >
                 DATE
               </p>
               <p
-                className="text-xs"
-                style={{ color: 'var(--color-text-muted-warm)' }}
+                className="text-sm leading-relaxed"
+                style={{ color: 'var(--color-text-primary)' }}
               >
                 {meta.date}
               </p>
             </div>
             <div>
               <p
-                className="micro-label mb-0.5"
+                className="micro-label mb-1"
                 style={{ color: 'var(--homepage-primary)' }}
               >
                 CONTEXT
               </p>
               <p
-                className="text-xs"
-                style={{ color: 'var(--color-text-muted-warm)' }}
+                className="text-sm leading-relaxed"
+                style={{ color: 'var(--color-text-primary)' }}
               >
                 {meta.context}
               </p>

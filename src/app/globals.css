@@ -40,8 +40,8 @@ html {
   
   /* Text colors */
   --color-text-primary: #f5f5f5;
-  --color-text-secondary: #a3a3a3;
-  --color-text-muted: #8b8b8b;
+  --color-text-secondary: #c4c4c4;
+  --color-text-muted: #a8a8a8;
   
   /* Scripture text */
   --color-scripture: #fef3c7;
@@ -230,6 +230,24 @@ body {
 
 .lens-icon {
   animation: lens-pulse 4s ease-in-out infinite;
+}
+
+/* Gentle breathing pulse for the full <img> logo crest (nav + inner header) */
+.logo-pulse {
+  animation: logo-pulse 4.5s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform, filter;
+}
+
+@keyframes logo-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.25)) brightness(1);
+  }
+  50% {
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.55)) brightness(1.12);
+  }
 }
 
 @keyframes title-pulse {
@@ -495,12 +513,12 @@ body {
 
 /* Micro-label — DSF-04 */
 .micro-label {
-  font-size: 10px;
+  font-size: 11px;
   font-family: var(--font-space-grotesk), var(--font-manrope), sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   font-weight: 600;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 }
 
 /* Diamond motif — DSF-06 */
@@ -566,6 +584,7 @@ body {
 /* Accessibility: reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .lens-icon,
+  .logo-pulse,
   .neon-pulse-gold,
   .title-pulse,
   .ethereal-float,
