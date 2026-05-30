@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2400" viewBox="848 876 2400 2400" role="img" aria-label="Bible Lens symbol inside round dark chip for light backgrounds">
+  <defs>
+    <radialGradient id="backgroundGlow" cx="50%" cy="49%" r="60%">
+      <stop offset="0%" stop-color="#121715"/>
+      <stop offset="42%" stop-color="#050806"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="cyanMist" cx="50%" cy="56%" r="42%">
+      <stop offset="0%" stop-color="#0ad6e8" stop-opacity=".09"/>
+      <stop offset="55%" stop-color="#0ad6e8" stop-opacity=".025"/>
+      <stop offset="100%" stop-color="#0ad6e8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldMist" cx="50%" cy="52%" r="34%">
+      <stop offset="0%" stop-color="#ff9325" stop-opacity=".08"/>
+      <stop offset="65%" stop-color="#ff9325" stop-opacity=".025"/>
+      <stop offset="100%" stop-color="#ff9325" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff7924"/>
+      <stop offset="42%" stop-color="#ffb23a"/>
+      <stop offset="78%" stop-color="#fff58f"/>
+      <stop offset="100%" stop-color="#ffc13c"/>
+    </linearGradient>
+    <linearGradient id="cyanText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#13b4e4"/>
+      <stop offset="55%" stop-color="#2ee2e7"/>
+      <stop offset="100%" stop-color="#baffed"/>
+    </linearGradient>
+    <radialGradient id="centerBlueDot" cx="50%" cy="46%" r="62%">
+      <stop offset="0%" stop-color="#f4fffb"/>
+      <stop offset="38%" stop-color="#9ffff4"/>
+      <stop offset="72%" stop-color="#29e6ee"/>
+      <stop offset="100%" stop-color="#12aede"/>
+    </radialGradient>
+    <linearGradient id="flareVertical" gradientUnits="userSpaceOnUse" x1="2048" y1="900" x2="2048" y2="3130">
+      <stop offset="0%" stop-color="#ff7427" stop-opacity=".45"/>
+      <stop offset="22%" stop-color="#ff9b25" stop-opacity=".98"/>
+      <stop offset="45%" stop-color="#ffffbe" stop-opacity="1"/>
+      <stop offset="56%" stop-color="#28f2ed" stop-opacity=".98"/>
+      <stop offset="76%" stop-color="#fff18a" stop-opacity=".95"/>
+      <stop offset="100%" stop-color="#ff7a20" stop-opacity=".70"/>
+    </linearGradient>
+    <linearGradient id="topBeam" gradientUnits="userSpaceOnUse" x1="2048" y1="1210" x2="2048" y2="1930">
+      <stop offset="0%" stop-color="#ff7f24" stop-opacity=".92"/>
+      <stop offset="38%" stop-color="#ffc847" stop-opacity=".98"/>
+      <stop offset="68%" stop-color="#ffffa8" stop-opacity=".96"/>
+      <stop offset="100%" stop-color="#2be8ed" stop-opacity=".72"/>
+    </linearGradient>
+    <linearGradient id="flareHorizontal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ab8df" stop-opacity="0"/>
+      <stop offset="26%" stop-color="#09bfdc" stop-opacity=".34"/>
+      <stop offset="50%" stop-color="#80fff0" stop-opacity="1"/>
+      <stop offset="74%" stop-color="#09bfdc" stop-opacity=".34"/>
+      <stop offset="100%" stop-color="#0ab8df" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="diamondStroke" x1="27%" y1="19%" x2="73%" y2="84%">
+      <stop offset="0%" stop-color="#ff8b22"/>
+      <stop offset="38%" stop-color="#ffe877"/>
+      <stop offset="56%" stop-color="#78fff0"/>
+      <stop offset="100%" stop-color="#ff8020"/>
+    </linearGradient>
+    <linearGradient id="strandStroke" x1="40%" y1="22%" x2="58%" y2="80%">
+      <stop offset="0%" stop-color="#ffd771" stop-opacity=".86"/>
+      <stop offset="50%" stop-color="#a6fff1" stop-opacity=".50"/>
+      <stop offset="100%" stop-color="#ff7b21" stop-opacity=".86"/>
+    </linearGradient>
+    <filter id="softGoldGlow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.9  0 0.48 0 0 0.28  0 0 0.08 0 0  0 0 0 .85 0" result="warm"/>
+      <feMerge>
+        <feMergeNode in="warm"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softCyanGlow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0.15 0 0.05  0 0.8 0 0 0.65  0 0 1 0 0.85  0 0 0 .85 0" result="cool"/>
+      <feMerge>
+        <feMergeNode in="cool"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="wideGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="32" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="lineGlow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .top-word {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 650px;
+        font-weight: 400;
+        fill: url(#goldText);
+        stroke: #ff8b29;
+        stroke-width: 5px;
+        paint-order: stroke fill;
+      }
+      .bottom-word {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 680px;
+        font-weight: 400;
+        fill: url(#cyanText);
+        stroke: #16b8e1;
+        stroke-width: 6px;
+        paint-order: stroke fill;
+      }
+      .tagline {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 172px;
+        font-weight: 400;
+        fill: #72edf1;
+      }
+      .tagline-hot {
+        fill: #ffad33;
+      }
+      .strand {
+        fill: none;
+        stroke: url(#strandStroke);
+        stroke-width: 3.5;
+        stroke-linecap: round;
+        opacity: .65;
+      }
+      .diamond {
+        fill: none;
+        stroke: url(#diamondStroke);
+        stroke-width: 4.5;
+        stroke-linejoin: round;
+        opacity: .78;
+      }
+    </style>
+    <radialGradient id="chipBg" cx="50%" cy="43%" r="74%">
+      <stop offset="0%" stop-color="#101715"/>
+      <stop offset="58%" stop-color="#030605"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="chipRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9b2a" stop-opacity=".92"/>
+      <stop offset="48%" stop-color="#59fff0" stop-opacity=".65"/>
+      <stop offset="100%" stop-color="#0fb2dd" stop-opacity=".55"/>
+    </linearGradient>
+    <filter id="chipDropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="34" stdDeviation="34" flood-color="#001010" flood-opacity=".26"/>
+    </filter>
+  </defs>
+
+  <clipPath id="symbolRoundChipClip" clipPathUnits="userSpaceOnUse">
+    <circle cx="2048" cy="2076" r="1015"/>
+  </clipPath>
+
+  <g id="symbol-round-chip" filter="url(#chipDropShadow)">
+    <circle cx="2048" cy="2076" r="1015" fill="url(#chipBg)"/>
+    <circle cx="2048" cy="2076" r="1015" fill="none" stroke="url(#chipRim)" stroke-width="10" opacity=".74"/>
+    <circle cx="2048" cy="2076" r="940" fill="none" stroke="#78fff0" stroke-width="2" opacity=".18"/>
+  </g>
+
+  <g id="symbol" clip-path="url(#symbolRoundChipClip)">
+  <g id="lens-mark">
+    <g id="diamond-glow" opacity=".52" filter="url(#wideGlow)">
+      <path class="diamond" d="M2048 1188 L2562 2052 L2048 2928 L1534 2052 Z"/>
+      <ellipse cx="2048" cy="2052" rx="685" ry="44" fill="#0ac7de" opacity=".20"/>
+    </g>
+
+    <g id="diamond-ribs">
+      <path class="diamond" d="M2048 1188 L2562 2052 L2048 2928 L1534 2052 Z"/>
+      <path class="strand" d="M2048 1188 L1534 2052 M2048 1188 L1585 2052 M2048 1188 L1637 2052 M2048 1188 L1688 2052 M2048 1188 L1740 2052 M2048 1188 L1791 2052 M2048 1188 L1843 2052 M2048 1188 L1894 2052 M2048 1188 L1946 2052 M2048 1188 L1997 2052 M2048 1188 L2099 2052 M2048 1188 L2150 2052 M2048 1188 L2202 2052 M2048 1188 L2253 2052 M2048 1188 L2305 2052 M2048 1188 L2356 2052 M2048 1188 L2408 2052 M2048 1188 L2459 2052 M2048 1188 L2511 2052 M2048 1188 L2562 2052"/>
+      <path class="strand" d="M2048 2928 L1534 2052 M2048 2928 L1585 2052 M2048 2928 L1637 2052 M2048 2928 L1688 2052 M2048 2928 L1740 2052 M2048 2928 L1791 2052 M2048 2928 L1843 2052 M2048 2928 L1894 2052 M2048 2928 L1946 2052 M2048 2928 L1997 2052 M2048 2928 L2099 2052 M2048 2928 L2150 2052 M2048 2928 L2202 2052 M2048 2928 L2253 2052 M2048 2928 L2305 2052 M2048 2928 L2356 2052 M2048 2928 L2408 2052 M2048 2928 L2459 2052 M2048 2928 L2511 2052 M2048 2928 L2562 2052"/>
+    </g>
+
+    <g id="main-flare">
+      <line x1="450" y1="2052" x2="3646" y2="2052" stroke="url(#flareHorizontal)" stroke-width="58" stroke-linecap="round" opacity=".35" filter="url(#wideGlow)"/>
+      <line x1="560" y1="2052" x2="3536" y2="2052" stroke="url(#flareHorizontal)" stroke-width="15" stroke-linecap="round" opacity=".96" filter="url(#lineGlow)"/>
+      <line x1="760" y1="2052" x2="3336" y2="2052" stroke="#84fff0" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+      <line x1="2048" y1="900" x2="2048" y2="3130" stroke="url(#flareVertical)" stroke-width="10" stroke-linecap="round" opacity=".96" filter="url(#lineGlow)"/>
+      <rect x="2038" y="1210" width="20" height="720" rx="4" fill="url(#topBeam)" opacity="1" filter="url(#lineGlow)"/>
+      <path d="M2048 2930 C2040 2702 2038 2366 2048 2178" fill="none" stroke="url(#flareVertical)" stroke-width="19" stroke-linecap="butt" opacity=".98" filter="url(#lineGlow)"/>
+      <circle cx="2048" cy="2052" r="70" fill="#21e6ee" opacity=".18" filter="url(#wideGlow)"/>
+      <circle cx="2048" cy="2052" r="36" fill="url(#centerBlueDot)" opacity=".98" filter="url(#wideGlow)"/>
+    </g>
+  </g>
+
+  </g>
+</svg>

@@ -1,12 +1,29 @@
 "use client";
 
+import { useId } from "react";
+
 interface LensIconProps {
   size?: number;
   className?: string;
   animate?: boolean;
 }
 
+/**
+ * Bible Lens canonical mark — tall mesh diamond with gold ribs, a cyan lens
+ * flare and a glowing cyan core. Lightweight programmatic vector (scales +
+ * animates cleanly down to ~12px). Palette matches the canonical brand SVGs in
+ * Assets/Brand/bible-lens-logo. Gradient IDs are made unique per instance via
+ * useId() to avoid cross-instance collisions (see ScrollAnimationSection note).
+ */
 export function LensIcon({ size = 64, className = "", animate = true }: LensIconProps) {
+  const uid = useId().replace(/:/g, "");
+  const gold = `gold-${uid}`;
+  const cyan = `cyan-${uid}`;
+  const glow = `glow-${uid}`;
+
+  // Tall diamond geometry (canonical width:height ~0.59).
+  const top = 10, bottom = 90, mid = 50, left = 27, right = 73, cx = 50;
+
   return (
     <svg
       width={size}
@@ -17,92 +34,64 @@ export function LensIcon({ size = 64, className = "", animate = true }: LensIcon
       className={`${animate ? "lens-icon" : ""} ${className}`}
     >
       <defs>
-        <linearGradient id="lensGradient" x1="50%" y1="0%" x2="50%" y2="100%">
-          <stop offset="0%" stopColor="#facc15" />
-          <stop offset="50%" stopColor="#f59e0b" />
-          <stop offset="100%" stopColor="#22d3ee" />
+        <linearGradient id={gold} x1="50%" y1="0%" x2="50%" y2="100%">
+          <stop offset="0%" stopColor="#ff7924" />
+          <stop offset="42%" stopColor="#ffb23a" />
+          <stop offset="78%" stopColor="#fff58f" />
+          <stop offset="100%" stopColor="#ffc13c" />
         </linearGradient>
-        <linearGradient id="glowGradient" x1="50%" y1="0%" x2="50%" y2="100%">
-          <stop offset="0%" stopColor="#facc15" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.6" />
+        <linearGradient id={cyan} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#13b4e4" stopOpacity="0" />
+          <stop offset="50%" stopColor="#80fff0" />
+          <stop offset="100%" stopColor="#13b4e4" stopOpacity="0" />
         </linearGradient>
-        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+        <filter id={glow} x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="1.6" result="b" />
           <feMerge>
-            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="b" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
       </defs>
-      
-      {/* Outer glow */}
-      <path
-        d="M50 10 L70 50 L50 90 L30 50 Z"
-        fill="url(#glowGradient)"
-        filter="url(#glow)"
-        opacity="0.3"
-      />
-      
-      {/* Main diamond/lens shape with lines */}
-      <g stroke="url(#lensGradient)" strokeWidth="0.5" opacity="0.8">
-        {/* Radiating lines from center to edges */}
-        {Array.from({ length: 20 }).map((_, i) => {
-          const topY = 10;
-          const bottomY = 90;
-          const centerY = 50;
-          const leftX = 30;
-          const rightX = 70;
-          const centerX = 50;
-          
-          // Lines from top to sides
-          const tLeft = i / 19;
-          const xLeft = leftX + (centerX - leftX) * tLeft;
-          const yLeft = centerY + (topY - centerY) * tLeft;
-          
-          const xRight = rightX - (rightX - centerX) * tLeft;
-          const yRight = centerY + (topY - centerY) * tLeft;
-          
+
+      {/* Radiating ribs from each apex to the equator */}
+      <g stroke={`url(#${gold})`} strokeWidth="0.4" opacity="0.55">
+        {Array.from({ length: 16 }).map((_, i) => {
+          const t = i / 15;
+          const x = left + (right - left) * t;
           return (
             <g key={i}>
-              {/* Top half lines */}
-              <line x1={centerX} y1={topY} x2={xLeft} y2={yLeft} />
-              <line x1={centerX} y1={topY} x2={xRight} y2={yRight} />
-              {/* Bottom half lines */}
-              <line x1={centerX} y1={bottomY} x2={leftX + (centerX - leftX) * tLeft} y2={centerY + (bottomY - centerY) * tLeft} />
-              <line x1={centerX} y1={bottomY} x2={rightX - (rightX - centerX) * tLeft} y2={centerY + (bottomY - centerY) * tLeft} />
+              <line x1={cx} y1={top} x2={x} y2={mid} />
+              <line x1={cx} y1={bottom} x2={x} y2={mid} />
             </g>
           );
         })}
       </g>
-      
+
       {/* Diamond outline */}
       <path
-        d="M50 10 L70 50 L50 90 L30 50 Z"
+        d={`M${cx} ${top} L${right} ${mid} L${cx} ${bottom} L${left} ${mid} Z`}
         fill="none"
-        stroke="url(#lensGradient)"
-        strokeWidth="1.5"
-      />
-      
-      {/* Center horizontal line with glow */}
-      <line
-        x1="25"
-        y1="50"
-        x2="75"
-        y2="50"
-        stroke="var(--color-cyan-400)"
-        strokeWidth="1"
-        filter="url(#glow)"
+        stroke={`url(#${gold})`}
+        strokeWidth="1.4"
+        strokeLinejoin="round"
       />
 
-      {/* Center point */}
-      <circle
-        cx="50"
-        cy="50"
-        r="2"
-        fill="var(--color-cyan-400)"
-        filter="url(#glow)"
+      {/* Horizontal lens flare */}
+      <line
+        x1="14"
+        y1={mid}
+        x2="86"
+        y2={mid}
+        stroke={`url(#${cyan})`}
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        filter={`url(#${glow})`}
       />
+
+      {/* Glowing cyan core */}
+      <circle cx={cx} cy={mid} r="2.1" fill="#80fff0" filter={`url(#${glow})`} />
+      <circle cx={cx} cy={mid} r="1" fill="#ffffff" />
     </svg>
   );
 }
-

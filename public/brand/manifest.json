@@ -1,0 +1,22 @@
+{
+  "brand": "Bible Lens",
+  "assetSet": "logo-variants",
+  "recommended": {
+    "fullWithTagline": "svg/bible-lens-logo-clean-editable.svg",
+    "noTaglineOnDark": "svg/bible-lens-logo-no-tagline-on-black.svg",
+    "symbolOnDark": "svg/bible-lens-symbol-only-on-black.svg",
+    "noTaglineForLightBackgrounds": "svg/bible-lens-logo-no-tagline-chip.svg",
+    "symbolForLightBackgrounds": "svg/bible-lens-symbol-only-chip.svg",
+    "roundSymbolForLightBackgrounds": "svg/bible-lens-symbol-only-round-chip.svg"
+  },
+  "notes": [
+    "Bare transparent glow variants are included, but chip variants are preferred on white or busy backgrounds.",
+    "The original-exact SVG preserves appearance by embedding the original PNG and is not a true editable vector.",
+    "Editable SVGs use grouped layers for text, symbol, flare, and chip treatment."
+  ],
+  "folders": {
+    "svg": "Production-ready SVG variants.",
+    "previews": "Rendered PNG previews for quick visual review.",
+    "exploration": "Earlier concept sheet and notes."
+  }
+}
