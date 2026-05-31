@@ -69,7 +69,7 @@ html {
   /* DSF-08 — Ethereal Scholar Redesign Tokens */
   --color-obsidian: #050508;
   --color-scripture-surface: #0a0a0a;
-  --color-text-muted-warm: #dcc1b4;
+  --color-text-muted-warm: #e8e8ec;
 
   /* Scripture reader text — themed (dark mode defaults) */
   --color-scripture-heading: #f5f5f5;
@@ -374,6 +374,35 @@ body {
    Stitch Design System Utilities (Phase 59+)
    Source: Strategy/Design/featured-topics.html
    ========================================== */
+
+/* Calm footer cards — glass surface + cyan border + static spotlight glow.
+   Intentionally NO 3D mouse-tilt and NO shimmer-on-hover (unlike .glass-card),
+   because the footer now repeats on every page and should read as quiet.
+   Always-dark; no light-mode handling. */
+.footer-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(20, 28, 32, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.footer-card:hover {
+  background: rgba(20, 28, 32, 0.8);
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.1);
+}
+
+/* Static, centered cyan spotlight glow — no mouse tracking. */
+.footer-card-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(600px circle at 50% 0%, rgba(0, 229, 255, 0.12), transparent 60%);
+  z-index: 0;
+}
 
 /* Glass card — updated Phase 59 values (D-17, D-18, D-19, D-20) */
 .glass-card {

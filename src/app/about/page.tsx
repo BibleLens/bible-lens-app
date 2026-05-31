@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Main content */}
-      <main id="main-content" className="flex-1 max-w-3xl mx-auto w-full px-4 py-12 pt-28">
+      <main id="main-content" className="flex-1 max-w-3xl mx-auto w-full px-4 pb-12 pt-[248px]">
 
         {/* Section 1: About Bible Lens */}
         <section className="mb-14">
@@ -214,18 +214,6 @@ export default function AboutPage() {
           </Link>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer
-        className="border-t py-6 mt-auto"
-        style={{ borderColor: "var(--color-border)" }}
-      >
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
-            Ancient wisdom, modern clarity.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LensIcon } from "@/components/LensIcon";
 
 const SUGGESTED_INQUIRIES = [
   "What did Jesus mean in Matthew 24?",
@@ -39,11 +40,27 @@ export function ChatSidebar() {
       {/* New Research link */}
       <Link
         href="/chat"
-        className="flex items-center gap-2 px-4 py-2 glass-card text-sm"
+        className="group relative flex items-center justify-center gap-2 px-4 py-3 glass-card text-sm overflow-hidden"
         style={{ color: "var(--color-cyan-400)" }}
       >
-        + New Research
+        <div className="shimmer-layer" />
+        <LensIcon size={16} animate={false} />
+        <span className="relative z-10">New Research</span>
       </Link>
+
+      {/* Diamond divider */}
+      <div className="flex items-center gap-3" aria-hidden="true">
+        <div className="flex-1 h-px" style={{ background: "rgba(0,229,255,0.1)" }} />
+        <div
+          className="w-2 h-2"
+          style={{
+            background: "var(--color-cyan-400)",
+            clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+            opacity: 0.4,
+          }}
+        />
+        <div className="flex-1 h-px" style={{ background: "rgba(0,229,255,0.1)" }} />
+      </div>
 
       {/* Suggested inquiries section */}
       <div>
@@ -58,10 +75,11 @@ export function ChatSidebar() {
             <li key={q}>
               <Link
                 href={"/chat?q=" + encodeURIComponent(q)}
-                className="block text-sm py-2 px-3 glass-card transition-colors"
+                className="group relative block text-sm py-2.5 px-3 glass-card overflow-hidden transition-all duration-300"
                 style={{ color: "var(--color-text-muted-warm)" }}
               >
-                {q}
+                <div className="shimmer-layer" />
+                <span className="relative z-10">{q}</span>
               </Link>
             </li>
           ))}

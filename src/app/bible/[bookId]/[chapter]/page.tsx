@@ -372,15 +372,13 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           </div>
         )}
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[var(--color-border)] py-4">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-base text-[var(--color-text-muted)]">
-            Berean Standard Bible • Context Over Tradition
-          </p>
-        </div>
-      </footer>
+      {/* Translation attribution — kept above the global footer */}
+      <p
+        className="text-xs text-center py-4"
+        style={{ color: "var(--color-text-muted)" }}
+      >
+        Berean Standard Bible • Context Over Tradition
+      </p>
     </div>
   );
 }

@@ -172,20 +172,6 @@ export default async function TopicPage({ params }: TopicPageProps) {
           <EmailCapture />
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[var(--color-border)] py-6 mt-auto">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-base text-[var(--color-text-muted)]">
-            Ancient wisdom, modern clarity.
-          </p>
-          <p className="text-base text-[var(--color-text-muted)] mt-2">
-            <Link href="/" className="hover:text-[var(--color-cyan-400)] transition-colors">
-              Back to Bible Lens
-            </Link>
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

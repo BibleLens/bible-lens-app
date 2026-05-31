@@ -28,7 +28,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     <div className="min-h-screen flex flex-col">
       {/* Full-screen glass hero (SRC-01) */}
       <section
-        className="grain-overlay relative min-h-[40vh] flex flex-col items-center justify-center px-6 py-20 pt-28"
+        className="grain-overlay relative min-h-[40vh] flex flex-col items-center justify-center px-6 pb-20 pt-[248px]"
         style={{ background: "var(--color-obsidian)" }}
       >
         {/* Editorial heading with border-left accent */}
@@ -115,12 +115,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           </div>
         )}
       </main>
-
-      <footer className="border-t py-6 mt-auto" style={{ borderColor: "var(--color-border)" }}>
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-base" style={{ color: "var(--color-text-muted)" }}>Ancient wisdom, modern clarity.</p>
-        </div>
-      </footer>
     </div>
   );
 }

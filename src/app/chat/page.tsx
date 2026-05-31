@@ -16,9 +16,19 @@ export default async function ChatPage({
   const { q } = await searchParams;
   return (
     <div
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col grain-overlay relative overflow-hidden"
       style={{ background: "var(--color-obsidian)" }}
     >
+      {/* Ambient glow orbs */}
+      <div
+        className="fixed top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-[#00e5ff]/5 blur-[120px] pointer-events-none -z-10"
+        aria-hidden="true"
+      />
+      <div
+        className="fixed bottom-[-15%] left-[-10%] w-[35vw] h-[35vw] rounded-full bg-[#00e5ff]/3 blur-[120px] pointer-events-none -z-10"
+        aria-hidden="true"
+      />
+
       {/* Main content */}
       <main id="main-content" className="flex-1 flex flex-col pt-20">
         <div className="flex-1 flex lg:grid lg:grid-cols-[280px_1fr]">
@@ -28,18 +38,6 @@ export default async function ChatPage({
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer
-        className="border-t py-4 shrink-0"
-        style={{ borderColor: "var(--color-border)" }}
-      >
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
-            Ancient wisdom, modern clarity.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

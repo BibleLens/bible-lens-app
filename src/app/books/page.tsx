@@ -93,23 +93,6 @@ export default function BooksPage() {
           <BooksGrid books={allBooks} ssrEstimatedHeights={ssrEstimatedHeights} />
         </section>
       </main>
-
-      <footer
-        className="border-t py-6 mt-auto"
-        style={{ borderColor: "var(--color-border)" }}
-      >
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
-            Ancient wisdom, modern clarity.
-          </p>
-          <p
-            className="text-base mt-2"
-            style={{ color: "var(--color-text-muted)" }}
-          >
-            &copy; 2026 Bible Lens. Context Over Tradition.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

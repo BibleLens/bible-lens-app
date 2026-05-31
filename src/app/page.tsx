@@ -4,7 +4,7 @@ import { NavBar } from "@/components/homepage/NavBar";
 import { HeroSection } from "@/components/homepage/HeroSection";
 import { FeaturedTopicsSection } from "@/components/homepage/FeaturedTopicsSection";
 import { ValuePropsSection } from "@/components/homepage/ValuePropsSection";
-import { HomepageFooter } from "@/components/homepage/HomepageFooter";
+import { EmailCapture } from "@/components/EmailCapture";
 
 export const metadata: Metadata = {
   title: "Bible Lens | Context Over Tradition",
@@ -33,7 +33,12 @@ export default function Home() {
       <HeroSection />
       <FeaturedTopicsSection />
       <ValuePropsSection />
-      <HomepageFooter />
+      <section className="px-6 pb-24 max-w-screen-2xl mx-auto">
+        <EmailCapture
+          headline="Read along with us"
+          subtext="Fresh commentary on ancient texts, delivered when it drops. One email, no clutter — just new perspectives on Scripture."
+        />
+      </section>
     </HomepageLayout>
   );
 }

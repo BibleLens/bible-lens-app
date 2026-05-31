@@ -14,8 +14,8 @@ const TOPIC_CARDS = [
     colSpan: "col-span-12 md:col-span-4",
     rowSpan: "row-span-2",
     imageClass:
-      "opacity-60 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110",
-    gradient: "bg-gradient-to-t from-[#050508] via-[#050508]/40 to-transparent",
+      "opacity-90 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110",
+    gradient: "bg-gradient-to-t from-[#050508]/70 via-[#050508]/20 to-transparent",
     contentLayout: "justify-end",
     padding: "p-10",
   },
@@ -30,9 +30,9 @@ const TOPIC_CARDS = [
     colSpan: "col-span-12 md:col-span-8",
     rowSpan: "row-span-1",
     imageClass:
-      "opacity-40 transition-transform duration-1000 group-hover:scale-105",
+      "opacity-85 transition-transform duration-1000 group-hover:scale-105",
     gradient:
-      "bg-gradient-to-r from-[#050508] via-transparent to-transparent",
+      "bg-gradient-to-r from-[#050508]/70 via-transparent to-transparent",
     contentLayout: "justify-center",
     padding: "p-10",
     hasPulsingDot: true,
@@ -47,8 +47,8 @@ const TOPIC_CARDS = [
     colSpan: "col-span-12 md:col-span-4",
     rowSpan: "row-span-1",
     imageClass:
-      "opacity-50 transition-all duration-700 group-hover:opacity-80",
-    gradient: "bg-gradient-to-t from-[#050508]/90 to-transparent",
+      "opacity-85 transition-all duration-700 group-hover:opacity-100",
+    gradient: "bg-gradient-to-t from-[#050508]/65 to-transparent",
     contentLayout: "justify-end",
     padding: "p-8",
   },
@@ -62,8 +62,8 @@ const TOPIC_CARDS = [
     colSpan: "col-span-12 md:col-span-4",
     rowSpan: "row-span-1",
     imageClass:
-      "opacity-50 group-hover:scale-110 transition-transform duration-700",
-    gradient: "bg-gradient-to-t from-[#050508]/90 to-transparent",
+      "opacity-85 group-hover:scale-110 transition-transform duration-700",
+    gradient: "bg-gradient-to-t from-[#050508]/65 to-transparent",
     contentLayout: "justify-end",
     padding: "p-8",
   },
@@ -77,9 +77,9 @@ const TOPIC_CARDS = [
     colSpan: "col-span-12 md:col-span-8",
     rowSpan: "row-span-1",
     imageClass:
-      "opacity-40 transition-all duration-1000 group-hover:scale-105",
+      "opacity-85 transition-all duration-1000 group-hover:scale-105",
     gradient:
-      "bg-gradient-to-r from-[#050508] via-[#050508]/20 to-transparent",
+      "bg-gradient-to-r from-[#050508]/70 via-[#050508]/20 to-transparent",
     contentLayout: "justify-center",
     padding: "p-10",
     hasCta: true,
@@ -95,8 +95,8 @@ const TOPIC_CARDS = [
     colSpan: "col-span-12 md:col-span-4",
     rowSpan: "row-span-1",
     imageClass:
-      "opacity-50 transition-all duration-700 group-hover:rotate-1",
-    gradient: "bg-gradient-to-t from-[#050508]/90 to-transparent",
+      "opacity-85 transition-all duration-700 group-hover:rotate-1",
+    gradient: "bg-gradient-to-t from-[#050508]/65 to-transparent",
     contentLayout: "justify-center items-center text-center",
     padding: "p-8",
   },
@@ -201,7 +201,7 @@ export function FeaturedTopicsSection() {
                     className="text-sm"
                     style={{
                       fontFamily: "var(--homepage-font-body)",
-                      color: "var(--color-text-muted-warm)",
+                      color: "var(--homepage-text)",
                     }}
                   >
                     {card.description}
@@ -232,7 +232,7 @@ export function FeaturedTopicsSection() {
                     className="text-base max-w-lg"
                     style={{
                       fontFamily: "var(--homepage-font-body)",
-                      color: "var(--color-text-muted-warm)",
+                      color: "var(--homepage-text)",
                     }}
                   >
                     {card.description}
@@ -274,7 +274,7 @@ export function FeaturedTopicsSection() {
                     className="text-xs italic opacity-70"
                     style={{
                       fontFamily: "var(--homepage-font-body)",
-                      color: "var(--color-text-muted-warm)",
+                      color: "var(--homepage-text)",
                     }}
                   >
                     {card.description}

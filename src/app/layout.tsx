@@ -8,6 +8,7 @@ import { FocusResetOnNav } from "@/components/FocusResetOnNav";
 import { SiteNav } from "@/components/SiteNav";
 import { MobileTabBar } from "@/components/MobileTabBar";
 import { NavigationLoader } from "@/components/NavigationLoader";
+import { HomepageFooter } from "@/components/homepage/HomepageFooter";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -125,6 +126,12 @@ export default function RootLayout({
           <NavigationLoader />
           <MotionProvider>
             <FocusResetOnNav />
+            {/* Focus sentinel: programmatically focusable div with no href.
+                FocusResetOnNav focuses this after client-side navigation to reset
+                the keyboard starting point to the top of the page. Using a plain
+                div instead of the skip-link <a> avoids triggering browser hash
+                navigation when .focus() is called on an anchor element. */}
+            <div id="focus-sentinel" tabIndex={-1} aria-hidden="true" style={{ outline: "none" }} />
             <a
               href="#main-content"
               className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium focus:no-underline"
@@ -139,6 +146,7 @@ export default function RootLayout({
             <ServiceWorkerRegistration />
             <SiteNav />
             {children}
+            <HomepageFooter />
             <MobileTabBar />
           </MotionProvider>
         </ThemeProvider>

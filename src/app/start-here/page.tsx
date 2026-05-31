@@ -148,20 +148,6 @@ export default function StartHerePage() {
         </section>
 
       </main>
-
-      {/* Footer */}
-      <footer className="border-t py-6 mt-auto" style={{ borderColor: "var(--color-border)" }}>
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
-            Ancient wisdom, modern clarity.
-          </p>
-          <p className="text-base mt-2" style={{ color: "var(--color-text-muted)" }}>
-            <Link href="/" className="hover:text-[var(--color-cyan-400)] transition-colors">
-              Back to Bible Lens
-            </Link>
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -56,14 +56,6 @@ export default async function StudyArticlePage({ params }: StudyArticlePageProps
       <div className="max-w-[1200px] mx-auto px-8">
         <ArticleLayout blocks={article.blocks} ssrEstimateHeight={ssrEstimateHeight} />
       </div>
-      <footer className="max-w-[1200px] mx-auto px-8 py-12 text-center">
-        <a
-          href="/commentary"
-          className="font-space-grotesk text-[11px] font-semibold tracking-wider uppercase text-[#00E5FF] hover:underline"
-        >
-          Explore More Deep Dives
-        </a>
-      </footer>
     </main>
   )
 }

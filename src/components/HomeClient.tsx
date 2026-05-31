@@ -193,18 +193,6 @@ export function HomeClient() {
 
           </div>
         </main>
-
-        {/* Footer */}
-        <footer className="border-t border-[var(--color-border)] py-6 mt-auto">
-          <div className="max-w-6xl mx-auto px-4 text-center">
-            <p className="text-base text-[var(--color-text-muted)]">
-              Ancient wisdom, modern clarity.
-            </p>
-            <p className="text-base text-[var(--color-text-muted)] mt-2">
-              © 2026 Bible Lens. Context Over Tradition.
-            </p>
-          </div>
-        </footer>
       </div>
     </MotionConfig>
   );

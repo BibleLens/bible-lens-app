@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const VALUE_PROPS = [
   {
     icon: "history_edu",
@@ -46,10 +48,10 @@ export function ValuePropsSection() {
         >
           Why Bible Lens?{" "}
           <span
-            className="font-light italic text-3xl md:text-5xl block md:inline md:ml-6"
-            style={{ color: "var(--homepage-primary)", opacity: 0.4 }}
+            className="font-normal italic text-3xl md:text-5xl block md:inline md:ml-6 cyan-glow-text"
+            style={{ color: "var(--homepage-primary)" }}
           >
-            Ancient wisdom, modern clarity
+            Ancient Wisdom, Modern Clarity
           </span>
         </h2>
         <div className="h-[2px] w-32 bg-[var(--homepage-primary)]/50" />
@@ -87,13 +89,24 @@ export function ValuePropsSection() {
               </h3>
               <p
                 className="text-sm leading-relaxed animate-content"
-                style={{ fontFamily: "var(--homepage-font-body)", color: "var(--color-text-muted-warm)" }}
+                style={{ fontFamily: "var(--homepage-font-body)", color: "var(--homepage-text)" }}
               >
                 {card.body}
               </p>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Reinforcing onboarding link */}
+      <div className="mt-16 flex justify-center">
+        <Link
+          href="/start-here"
+          className="px-8 py-3 border border-[var(--homepage-primary)]/40 bg-[var(--homepage-primary)]/5 text-[var(--homepage-primary)] text-xs font-bold uppercase tracking-widest hover:bg-[var(--homepage-primary)] hover:text-[var(--color-obsidian)] transition-all"
+          style={{ fontFamily: "var(--homepage-font-body)" }}
+        >
+          New here? Start Here
+        </Link>
       </div>
     </section>
   );

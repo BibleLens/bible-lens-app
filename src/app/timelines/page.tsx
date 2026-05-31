@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { EmailCapture } from "@/components/EmailCapture";
 import { GlassCard } from "@/components/GlassCard";
 
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
 export default function TimelinesPage() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "var(--color-obsidian)" }}>
-      <main id="main-content" className="flex-1 w-full pt-20">
+      <main id="main-content" className="flex-1 w-full pt-[248px]">
 
         {/* Editorial Hero */}
         <section
@@ -112,21 +111,15 @@ export default function TimelinesPage() {
           </GlassCard>
         </section>
 
-      </main>
+        {/* Sources attribution — kept above the global footer */}
+        <p
+          className="text-xs text-center mt-4 mb-12 px-6"
+          style={{ color: "var(--color-text-muted)" }}
+        >
+          Sources: Nathan Hoffmann, David Rohl, Paul of Tarsus (Galatians 3:17).
+        </p>
 
-      {/* Footer */}
-      <footer className="border-t py-6 mt-auto" style={{ borderColor: "var(--color-border)" }}>
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
-            Sources: Nathan Hoffmann, David Rohl, Paul of Tarsus (Galatians 3:17).
-          </p>
-          <p className="text-base mt-2" style={{ color: "var(--color-text-muted)" }}>
-            <Link href="/" className="hover:text-[var(--color-cyan-400)] transition-colors">
-              Back to Bible Lens
-            </Link>
-          </p>
-        </div>
-      </footer>
+      </main>
     </div>
   );
 }

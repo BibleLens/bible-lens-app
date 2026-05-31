@@ -318,8 +318,10 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
   const didAutoSubmitRef = useRef(false);
   const isStreamingRef = useRef(false);
 
-  // Auto-scroll to bottom when messages change
+  // Auto-scroll to bottom when messages change. Skip the empty initial state
+  // so the page doesn't jump down past the header on first load.
   useEffect(() => {
+    if (messages.length === 0) return;
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
@@ -523,47 +525,72 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
 
   return (
     <div
-      className="flex flex-col flex-1 rounded-none overflow-hidden"
+      className="flex flex-col flex-1 rounded-none overflow-hidden glass-card"
       style={{
-        border: "1px solid var(--color-border)",
-        background: "var(--color-bg-primary)",
         minHeight: 0,
+        boxShadow: "0 0 40px rgba(0,229,255,0.06), 0 0 80px rgba(0,229,255,0.02)",
+        transform: "none",
       }}
     >
       {/* Messages area */}
       <div className="flex-1 overflow-y-auto p-4" style={{ minHeight: 0 }}>
         {!hasMessages ? (
           /* Empty state */
-          <div className="flex flex-col items-center justify-center h-full py-12 text-center">
-            <LensIcon size={48} animate={false} />
+          <div className="flex flex-col items-center justify-center h-full py-12 text-center relative">
+            {/* Ambient lens glow behind icon */}
+            <div
+              className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full pointer-events-none"
+              style={{
+                background: "radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%)",
+                filter: "blur(40px)",
+              }}
+              aria-hidden="true"
+            />
+
+            <div className="ethereal-float relative">
+              <LensIcon size={56} animate={false} />
+            </div>
             <h2
-              className="mt-4 text-xl font-semibold text-gradient-lens"
-              style={{ fontFamily: "var(--font-cinzel), serif" }}
+              className="mt-5 text-2xl font-semibold cyan-glow-text"
+              style={{ fontFamily: "var(--font-display)", color: "var(--color-cyan-400)" }}
             >
               Ask anything about Scripture
             </h2>
             <p
               className="mt-2 text-lg max-w-sm"
-              style={{ color: "var(--color-text-secondary)" }}
+              style={{ color: "var(--color-text-muted-warm)" }}
             >
-              Get historically-grounded answers from the Bible Lens knowledge
-              base
+              Get historically-grounded answers from the Bible Lens knowledge base
             </p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-2 max-w-lg">
+            {/* Diamond divider */}
+            <div className="flex items-center gap-3 mt-8 mb-6 w-48" aria-hidden="true">
+              <div className="flex-1 h-px" style={{ background: "rgba(0,229,255,0.15)" }} />
+              <div
+                className="w-2 h-2"
+                style={{
+                  background: "var(--color-cyan-400)",
+                  clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                  opacity: 0.5,
+                }}
+              />
+              <div className="flex-1 h-px" style={{ background: "rgba(0,229,255,0.15)" }} />
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-3 max-w-xl">
               {SUGGESTED_QUESTIONS.map((q) => (
                 <button
                   key={q}
                   onClick={() => handleSuggestion(q)}
                   disabled={isStreaming}
-                  className="px-4 py-2 rounded-full text-lg border transition-colors"
+                  className="group relative px-5 py-2.5 glass-card text-lg overflow-hidden transition-all duration-300"
                   style={{
-                    background: "var(--color-bg-elevated)",
-                    borderColor: "var(--color-border)",
-                    color: "var(--color-text-secondary)",
+                    color: "var(--color-text-muted-warm)",
+                    transform: "none",
                   }}
                 >
-                  {q}
+                  <div className="shimmer-layer" />
+                  <span className="relative z-10">{q}</span>
                 </button>
               ))}
             </div>

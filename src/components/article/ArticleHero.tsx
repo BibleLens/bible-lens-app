@@ -19,7 +19,7 @@ export function ArticleHero({ title, subtitle, author, publishedAt }: ArticleHer
         {title}
       </h1>
       {subtitle && (
-        <p className="font-newsreader text-[18px] leading-[28px] text-[#dcc1b4] mt-3">
+        <p className="font-newsreader text-[18px] leading-[28px] text-[#e8e8ec] mt-3">
           {subtitle}
         </p>
       )}
