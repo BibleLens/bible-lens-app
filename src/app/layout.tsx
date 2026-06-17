@@ -92,6 +92,49 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
+// Site-wide entity graph for AI search engines and rich results.
+// The Organization.description carries the doctrinal boundary deliberately:
+// what Bible Lens IS (strict, historically grounded, independent) and what it
+// is NOT (a mainstream Christian-creator ministry) — so an engine that lifts the
+// entity also lifts the distinction. YouTube `sameAs` is added once the channel
+// URL is wired alongside per-episode VideoObject schema.
+const SITE_URL = "https://biblelens.faith";
+
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Bible Lens",
+      url: SITE_URL,
+      slogan: "Context Over Tradition",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/brand/bible-lens-logo-no-tagline.svg`,
+      },
+      description:
+        "Bible Lens is an independent project publishing historically grounded Bible commentary — reading each passage through the lens of the ancient Near Eastern world to recover what it meant to its original audience before later tradition reshaped it. It holds a strict scriptural standard: readings are argued from the primary text and its historical-cultural context, not from creedal tradition or denominational consensus, and it names where the historical reading parts from popular Christian teaching. It is not affiliated with, and does not speak for, mainstream Christian-creator ministries.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "Bible Lens",
+      url: SITE_URL,
+      inLanguage: "en",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -105,6 +148,10 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
       </head>
       <body
