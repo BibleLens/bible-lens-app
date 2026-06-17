@@ -1048,12 +1048,17 @@ Through this lens, what changes is almost everything downstream. If Genesis 2 is
 Ancient wisdom, modern clarity. The warning was always true. The death was always real. It simply was not the death we were taught to fear.`,
     datePublished: "2026-06-17",
     dateModified: "2026-06-17",
-    boundary: `Bible Lens reads Genesis 2:17 as conditional immortality, and states plainly that this is a minority position in modern Christianity. It is not the inherited reading — in which Adam's soul dies spiritually and faces conscious eternal torment — and it does not pretend that reading away: that view has careful defenders and a long history. But it imports an immortal-soul framework the Hebrew text does not supply. Bible Lens also does not claim the question is closed. The aim is to put the grammar and the ancient context on the table and name, openly, where the historical reading parts from the popular one. That boundary is part of the claim, not a footnote to it.`,
+    boundary: `Bible Lens reads Genesis 2:17 as conditional immortality, and states plainly that this is a minority position in modern Christianity. It is not the inherited reading — in which Adam's soul dies spiritually and faces conscious eternal torment — and it does not pretend that reading away: that view has careful defenders and a long history. But it imports an immortal-soul framework the Hebrew text does not supply. Bible Lens also does not claim the question is closed. The aim is to put the grammar and the ancient context on the table and name, openly, where the historical reading parts from the popular one. That boundary is part of the claim, not a footnote to it. Bible Lens also distinguishes the prospect of everlasting life — which Adam and the angels held and could forfeit — from immortality, the conferred deathlessness God grants only after proven loyalty. That two-tier reading separates this position from both the innate-immortal-soul view and a flat annihilationism.`,
     faq: [
       {
         question: "Does Genesis 2:17 teach that human beings have an immortal soul?",
         answer:
           "On the historical reading, no. The original ancient Near Eastern audience had no concept of an immortal soul separable from the body; that idea enters later through Greek philosophy. \"You will surely die\" meant the whole living self (nephesh) would end. Bible Lens holds the conditional-immortality reading — that ongoing life was tied to access to the tree of life rather than being intrinsic to humanity — and notes openly that this is a minority view in modern Christianity.",
+      },
+      {
+        question: "Did Adam start out immortal?",
+        answer:
+          "No. Adam — like the angels — began with the prospect of everlasting life, sustained by access to the tree of life and contingent on loyalty. That is not immortality. Immortality is deathlessness that cannot be lost, and Scripture presents it as something God confers after testing, not something any creature owns by nature. Jesus, having been tested and proven faithful, has been granted it (Romans 6:9 — death no longer has dominion over him); the faithful are promised the same at the resurrection (1 Corinthians 15:53-54). Adam never had it to lose.",
       },
       {
         question: "If Adam \"surely died,\" why did he live another 930 years?",
