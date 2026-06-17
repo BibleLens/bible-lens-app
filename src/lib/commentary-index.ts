@@ -822,6 +822,27 @@ export interface TopicPage {
   keywords: string[];    // Theme-level SEO queries — NO passage overlap
   chapterKeys: string[]; // "{bookId}-{chapter}" keys from COMMENTARY_DESCRIPTIONS
   prose: string;         // 200-400 words original editorial prose in Bible Lens voice
+
+  // --- AEO enrichment (optional) ---
+  // Present on essays that have been through the episode→essay pipeline.
+  // Backward-compatible: older essays omit these and render exactly as before.
+  datePublished?: string; // ISO 8601 — Article.datePublished + freshness signal
+  dateModified?: string;  // ISO 8601 — Article.dateModified
+  // The doctrinal "not this" boundary: names, visibly and in schema, where the
+  // historical reading parts from popular teaching. The boundary is part of the
+  // claim — it travels with any chunk an AI engine lifts.
+  boundary?: string;
+  // Visible FAQ that also backs FAQPage schema. Must mirror the rendered Q&A
+  // (schema-without-visible-content reads as cloaking).
+  faq?: { question: string; answer: string }[];
+  // Source episode for the VideoObject cross-link + "watch the episode" card.
+  video?: {
+    youtubeId: string;
+    name: string;
+    description: string;
+    uploadDate: string;    // ISO 8601
+    thumbnailUrl?: string;
+  };
 }
 
 export const TOPIC_PAGES: TopicPage[] = [
@@ -996,6 +1017,68 @@ Through this lens, Revelation 20:8 is significant precisely because it names Gog
 Zechariah 14 adds a third node to this eschatological frame — the Day of the LORD with nations gathered against Jerusalem, living waters flowing out, and Sukkot pilgrimage under YHWH's universal reign.
 
 Daniel 11's detailed Seleucid history provides the near-term backdrop: the pattern of northern aggression against God's people reaches a final, cosmic iteration in Gog's campaign.`,
+  },
+  {
+    slug: "genesis-2-conditional-immortality",
+    title: "Genesis 2 and \"You Will Surely Die\": Mortality, Not Damnation",
+    description:
+      "Did God threaten hell in Eden? The Hebrew mot tamut — 'dying you shall die' — read as a mortality sentence, not damnation: the conditional-immortality case.",
+    keywords: [
+      "conditional immortality",
+      "mot tamut meaning",
+      "you will surely die Genesis 2:17",
+      "does the Bible teach an immortal soul",
+      "Genesis 2:17 death not damnation",
+    ],
+    chapterKeys: ["genesis-2", "genesis-3", "genesis-1"],
+    prose: `Genesis 2:17 carries the most famous warning in the Bible — and for most of two thousand years it has been read as a threat the original audience would not have recognized.
+
+Start with the Hebrew. The phrase is mot tamut: the verb "to die" stacked on itself, an infinitive absolute paired with a finite verb. It is the strongest way Biblical Hebrew has of saying this will certainly happen. Older translations render it "thou shalt surely die"; the most literal reading is "dying you shall die." It is a guarantee, not a metaphor — and, crucially, not a description of where the dead go.
+
+Here's where it gets interesting: the people who first heard Genesis read aloud were ancient Near Eastern people, and they did not carry a concept of an immortal soul that floats free of the body. That picture arrives later, largely through Greek philosophy a thousand years downstream. To the original audience, "you will surely die" meant the nephesh — the whole breath-animated living self of Genesis 2:7 — would stop. Become dust again. Time-bound, in the most concrete sense the word has.
+
+So when God names the consequence, there is no hell in the frame, because there is no doctrine of hell or immortal souls in the frame yet. There is a man, a garden, a tree, and a clock that has been hidden until now. Eat, and the clock starts.
+
+What the original audience would have understood is that the death named here is not a place but a category change. Adam was formed from dust and given the breath of life, and as long as he had access to the tree of life his body could continue. Read the next chapter carefully: after the eating, God acts "lest he reach out and take from the tree of life, and live forever," and sets cherubim to guard the way. The death is the closing of the source. The breath stays; the image-bearing stays; the body becomes what bodies are when cut off from life — temporary.
+
+This is what resolves the obvious objection. Adam eats, and lives another nine hundred and thirty years (Genesis 5:5). Doesn't that mean the warning failed? Mot tamut never claimed instant death — it claimed the certainty of death. The clock starts in Genesis 3, runs through Genesis 5, and catches up with Adam at nine hundred and thirty. The warning told the truth slowly.
+
+Through this lens, what changes is almost everything downstream. If Genesis 2 is about mortality rather than damnation, the savior's work is no longer rescue from God's wrath against a disembodied soul — it is the restoration of access to the source. Paul names the same physical category with terrifying economy: "in Adam all die — in Christ all shall be made alive" (1 Corinthians 15:22). Not damned and pardoned. Die and alive. Adam closes the way to the tree; the last Adam opens it back.
+
+Ancient wisdom, modern clarity. The warning was always true. The death was always real. It simply was not the death we were taught to fear.`,
+    datePublished: "2026-06-17",
+    dateModified: "2026-06-17",
+    boundary: `Bible Lens reads Genesis 2:17 as conditional immortality, and states plainly that this is a minority position in modern Christianity. It is not the inherited reading — in which Adam's soul dies spiritually and faces conscious eternal torment — and it does not pretend that reading away: that view has careful defenders and a long history. But it imports an immortal-soul framework the Hebrew text does not supply. Bible Lens also does not claim the question is closed. The aim is to put the grammar and the ancient context on the table and name, openly, where the historical reading parts from the popular one. That boundary is part of the claim, not a footnote to it.`,
+    faq: [
+      {
+        question: "Does Genesis 2:17 teach that human beings have an immortal soul?",
+        answer:
+          "On the historical reading, no. The original ancient Near Eastern audience had no concept of an immortal soul separable from the body; that idea enters later through Greek philosophy. \"You will surely die\" meant the whole living self (nephesh) would end. Bible Lens holds the conditional-immortality reading — that ongoing life was tied to access to the tree of life rather than being intrinsic to humanity — and notes openly that this is a minority view in modern Christianity.",
+      },
+      {
+        question: "If Adam \"surely died,\" why did he live another 930 years?",
+        answer:
+          "The Hebrew mot tamut (\"dying you shall die,\" an infinitive absolute paired with a finite verb) asserts the certainty of death, not its immediacy. The death is the loss of access to the tree of life — the source — after which the body begins its slow return to dust. The clock starts in Genesis 3 and reaches Adam in Genesis 5:5. The warning came true slowly.",
+      },
+      {
+        question: "What does mot tamut mean?",
+        answer:
+          "It is the verb \"to die\" stacked on itself — an infinitive absolute paired with a finite verb — the strongest intensifier Biblical Hebrew has. Literally \"dying you shall die\"; traditionally \"thou shalt surely die.\" It guarantees the outcome without specifying when it arrives.",
+      },
+      {
+        question: "Is conditional immortality the mainstream Christian view?",
+        answer:
+          "No, and Bible Lens says so directly. The dominant Western reading remains the inherited immortal-soul framework with conscious eternal torment. Conditional immortality — that life is sustained by God rather than intrinsic, so \"death\" means ending rather than eternal conscious separation — is a minority position with careful defenders. Bible Lens argues it from the Hebrew grammar and ancient context rather than asserting it as settled.",
+      },
+    ],
+    video: {
+      youtubeId: "kvX3MTVps9E",
+      name: "\"You Shall Die\" — But Did He? | Bible Lens",
+      description:
+        "The Hebrew mot tamut — 'dying you shall die' — read as a mortality sentence, not a threat of hell: the conditional-immortality case from Genesis 2:17 through 1 Corinthians 15.",
+      uploadDate: "2026-06-07",
+      thumbnailUrl: "https://i.ytimg.com/vi/kvX3MTVps9E/maxresdefault.jpg",
+    },
   },
 ];
 
