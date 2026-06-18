@@ -146,7 +146,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
         />
       )}
 
-      <main id="main-content" className="flex-1 w-full pt-16">
+      <main id="main-content" className="flex-1 w-full pt-[248px]">
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto px-4 py-12">
           <h1
@@ -168,7 +168,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
           {proseParagraphs.map((paragraph, i) => (
             <p
               key={i}
-              className="text-base text-[var(--color-text-primary)] leading-relaxed mb-4"
+              className="text-lg text-[var(--color-text-primary)] leading-relaxed mb-5"
             >
               {paragraph}
             </p>
@@ -220,7 +220,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
               >
                 Where this parts from the inherited reading
               </h2>
-              <p className="text-base text-[var(--color-text-secondary)] leading-relaxed">
+              <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
                 {topic.boundary}
               </p>
             </div>
@@ -281,7 +281,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
                   <h3 className="text-lg font-semibold text-[var(--color-text-primary)] mb-2">
                     {item.question}
                   </h3>
-                  <p className="text-base text-[var(--color-text-secondary)] leading-relaxed">
+                  <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
                     {item.answer}
                   </p>
                 </div>
