@@ -873,6 +873,8 @@ This is a minority reading in popular Christianity but the majority reading amon
 Psalms 2 and 110 are the Psalter's coronation bookends — same enthronement vocabulary, same upward trajectory. Ancient wisdom doesn't always travel in straight lines. Sometimes it ascends.
 
 Matthew 1's genealogy encodes the Davidic throne-number (3×14), placing "son of David" and "son of man" on the same figure the Daniel 7 enthronement scene frames.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-03-19",
   },
   {
     slug: "revelation-666-beast",
@@ -897,6 +899,8 @@ The land beast, the one that enforces worship of the sea beast, maps cleanly ont
 Through this lens, "the mark of the beast" was never about a microchip or a barcode. It was about the social and economic pressure to signal loyalty to the empire — to have Caesar's mark on your hand or forehead in the same way a Roman citizen might display imperial tokens in trade.
 
 Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four kingdoms, then the stone that fills the earth. Revelation 13 is the fourth kingdom's final form, the beast at its most demanding — and 666 is the name written in numbers for those who have wisdom to see it.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-03-19",
   },
   {
     slug: "genesis-creation-ancient-cosmology",
@@ -929,6 +933,8 @@ Genesis 3, 6, and 11 extend the framework. The cosmic temple was invaded, the bo
 Psalm 8's creation praise and Psalm 82's heavenly court scene extend this cosmic architecture into the Psalter's liturgical voice.
 
 Ancient wisdom, cosmic clarity.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-03-19",
   },
   {
     slug: "matthew-24-olivet-discourse",
@@ -959,6 +965,8 @@ Revelation 6's four horsemen follow the same covenant curse sequence: conquest, 
 Where Bible Lens parts from full preterism: Revelation 19-20 describes a future physical return and a literal millennium still ahead.
 
 Matthew 25 is the sequel discourse — ten virgins, talents, sheep-and-goats — developing faithful vigilance between announcement and consummation. Partial-preterist and majority readings differ on the eschatological frame; the ethical center stands across both.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-03-19",
   },
   {
     slug: "isaiah-suffering-servant",
@@ -991,6 +999,8 @@ Songs 1 through 3 (Isaiah 42, 49, 50) trace the arc before 52-53: the servant co
 Ecclesiastes 9 extends the tension: where the servant songs transform suffering into vocation, Qoheleth simply observes that death does not distinguish. Together the three books hold the honest space of canonical Wisdom Literature.
 
 Matthew 5's antitheses operationalize Isaiah 42:3 — the bruised-reed servant ethic applied as Torah intensification.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-03-19",
   },
   {
     slug: "ezekiel-gog-magog",
@@ -1017,6 +1027,8 @@ Through this lens, Revelation 20:8 is significant precisely because it names Gog
 Zechariah 14 adds a third node to this eschatological frame — the Day of the LORD with nations gathered against Jerusalem, living waters flowing out, and Sukkot pilgrimage under YHWH's universal reign.
 
 Daniel 11's detailed Seleucid history provides the near-term backdrop: the pattern of northern aggression against God's people reaches a final, cosmic iteration in Gog's campaign.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-03-19",
   },
   {
     slug: "genesis-2-conditional-immortality",
