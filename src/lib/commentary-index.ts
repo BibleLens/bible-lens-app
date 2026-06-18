@@ -1223,6 +1223,65 @@ Ancient wisdom, modern clarity. The warning was always true. The death was alway
       thumbnailUrl: "https://i.ytimg.com/vi/kvX3MTVps9E/maxresdefault.jpg",
     },
   },
+  {
+    slug: "genesis-6-sons-of-god",
+    title: "The Sons of God in Genesis 6: A Council-Member Rebellion",
+    description:
+      "Who were the 'sons of God' who took human wives in Genesis 6? Not the line of Seth — the divine council (bene Elohim), the same heavenly host as Genesis 1, in rebellion.",
+    keywords: [
+      "sons of God Genesis 6",
+      "Nephilim meaning",
+      "bene elohim divine council",
+      "sons of God angels or Sethites",
+      "Genesis 6 sons of God explained",
+    ],
+    chapterKeys: ["genesis-6", "genesis-1", "job-1", "psalms-82", "genesis-11"],
+    prose: `Genesis 6 opens with four of the strangest verses in the Hebrew Bible: "the sons of God saw that the daughters of men were beautiful, and they took as wives any they chose." If you were taught that those "sons of God" were the godly line of Seth marrying the worldly line of Cain, you were taught a reading that almost certainly isn't what the original audience heard — and isn't what the New Testament writers thought either.
+
+To see who they were, you don't start in chapter 6. You start with one word God speaks in chapter 1: us. "Let us make man in our image" (Genesis 1:26). For centuries readers took that as God talking to himself, or a hint of the Trinity. The original audience heard something they already knew: God addressing his council — the heavenly host the Hebrew Bible calls the bene Elohim, the sons of God. They are there in chapter one, watching humanity be formed. In chapter six, some of them come back.
+
+Here's where it gets interesting: the phrase "sons of God" has a settled meaning everywhere else it appears in the Hebrew Bible — and it never means ordinary men. In Job, "the sons of God came to present themselves before the LORD" (1:6) — a heavenly court reporting in. When God answers Job from the whirlwind, he recalls the morning the world was made, when "the morning stars sang together and all the sons of God shouted for joy" (38:7) — before there were any people to shout. Every time the Hebrew says bene Elohim, it means divine beings. So when Genesis 6 uses that exact phrase, set in deliberate contrast against "the daughters of men," the first audience didn't wonder which family was meant. They knew.
+
+And we don't have to guess how ancient readers understood it — they left their homework. Centuries before Jesus, the book of 1 Enoch told the story in detail: two hundred divine beings, the Watchers, descended on Mount Hermon, took wives, and fathered giants. It is not in most Bibles, but it was everywhere in the centuries before Christ — the room Genesis 6 was being read in. And the New Testament writers built on that reading, not against it. Second Peter sets it in order: "God did not spare the angels when they sinned… and did not spare the ancient world… when he brought the flood" (2:4-5) — divine rebellion, then judgment. Jude says it plainly: the angels "did not stay within their own position of authority, but abandoned their proper dwelling" (Jude 6). Not a poem about bad marriages — beings leaving the realm they belonged to.
+
+Even the oldest Bible we have agrees. Three centuries before Christ, where the Hebrew said bene Elohim, the Greek translators wrote angeloi tou theou — the angels of God. The men who knew the Hebrew best, translating for their own people, reached for one word: angels.
+
+What the original audience would have understood is that this is the council from Genesis 1, still in the story. Psalm 82 shows God rendering judgment in the divine assembly; 1 Kings 22 shows him enthroned with all the host of heaven at his right and left. Genesis 6 is not a random monster story — it is members of that government going rogue, defectors from the assembly that watched the world be made. The closer you stand to the throne, the further there is to fall. The flood is the throne room's answer.
+
+Through this lens, the alternatives fall away on the evidence, not by force. The Sethite reading doesn't appear until the fourth century after Christ, and Genesis never divides humanity that way. The "mighty kings" reading founders on the fact that the Hebrew never uses this phrase for human rulers. And the "it's only myth" reading is answered by the very translators who could read the Hebrew — and rendered it angels. Every piece of the oldest evidence points past all three, to the council.
+
+The Nephilim filled the earth with violence, and the flood was a complete reset. Except — generations later, the spies sent into the land report the Nephilim still there: "the sons of Anak, of the Nephilim" (Numbers 13:33), after the flood. The reset that was supposed to end them didn't. Ancient wisdom, modern clarity.`,
+    datePublished: "2026-06-18",
+    dateModified: "2026-06-18",
+    boundary: `Genesis 6:1-4 — the "sons of God" who take human wives, and the Nephilim who follow — is usually softened in popular teaching by the Sethite reading: the "sons of God" are the godly line of Seth, the "daughters of men" the worldly line of Cain, and the sin is just intermarriage. Bible Lens reads it the way its first audience would have: the "sons of God" are the bene Elohim, the divine council — the same heavenly host God addressed in Genesis 1's "let us." Genesis 6 isn't introducing a new mystery in chapter six; it's paying off the council the reader already met in chapter one, now in rebellion.
+
+So Bible Lens parts from both the Sethite reading and the "dynastic rulers" alternative — not by attacking them, but by following the text and the way it was read in the Second Temple period (1 Enoch, and the New Testament's own witness in Jude 6 and 2 Peter 2:4-5). Everywhere else the phrase "sons of God" appears in the Hebrew Bible it means divine beings (Job 1:6, 38:7); Genesis 6 is no exception. This is a story about heavenly beings crossing a boundary — the prelude to the flood and the origin of the Nephilim.`,
+    faq: [
+      {
+        question: `Were the "sons of God" the line of Seth, or divine beings?`,
+        answer: `Divine beings — the bene Elohim, the heavenly council. The Sethite reading (the godly line of Seth marrying Cain's line) is tidy, but it doesn't appear until the fourth century after Christ, and Genesis never divides humanity into those two lines. Everywhere else the Hebrew Bible says "sons of God" it means divine beings (Job 1:6; 38:7), and Genesis 6 sets the phrase in deliberate contrast against "the daughters of men." The first audience didn't hear a story about intermarriage.`,
+      },
+      {
+        question: `What are the Nephilim?`,
+        answer: `The offspring of the union — rendered "giants" in many translations, though the sense is closer to "the fallen ones." In the Second Temple retelling (1 Enoch) they are the great giants born to the Watchers, and their violence is part of what brings on the flood. The name returns in Numbers 13:33, where the spies report the Nephilim still in the land after the flood — the thread Bible Lens picks up next.`,
+      },
+      {
+        question: `Doesn't the New Testament reject the "angel" view?`,
+        answer: `The opposite — it affirms it. Second Peter sets "the angels when they sinned" directly beside "the ancient world… the flood" (2:4-5), in that order, as one connected event; Jude describes "the angels who did not stay within their own position of authority but abandoned their proper dwelling" (Jude 6). Both reach back to Genesis 6 and read it as divine rebellion, not bad marriages. The apostles inherited the angel reading and built on it.`,
+      },
+      {
+        question: `How does this connect to Genesis 1:26's "let us"?`,
+        answer: `Directly. The "us" of Genesis 1 is God addressing his divine council — the heavenly host that watched humanity be formed. Genesis 6 doesn't introduce a new category in chapter six; it pays off that same council, now with some of its members in rebellion. Psalm 82 and 1 Kings 22 show the same assembly — the government of heaven around the throne — which is why the flood reads as the throne room's answer to a revolt within it.`,
+      },
+    ],
+    video: {
+      youtubeId: "GjoNH6iet2o",
+      name: "Who Were the Sons of God? | Bible Lens",
+      description: `The "sons of God" of Genesis 6 read as the bene Elohim — the divine council of Genesis 1 — in rebellion, with the Second Temple, New Testament, and Septuagint witness behind it.`,
+      uploadDate: "2026-06-18",
+      thumbnailUrl: "https://i.ytimg.com/vi/GjoNH6iet2o/maxresdefault.jpg",
+    },
+  },
 ];
 
 // Derived reverse index: chapter key → array of topic slugs.
