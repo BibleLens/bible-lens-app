@@ -1029,7 +1029,28 @@ Where Bible Lens parts from full preterism: Revelation 19-20 describes a future 
 
 Matthew 25 is the sequel discourse — ten virgins, talents, sheep-and-goats — developing faithful vigilance between announcement and consummation. Partial-preterist and majority readings differ on the eschatological frame; the ethical center stands across both.`,
     datePublished: "2026-03-19",
-    dateModified: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `The disciples asked Jesus about a specific building — the temple they could see from the Mount of Olives, which he'd just said would be leveled. Bible Lens takes that question at face value: the Olivet Discourse is first of all Jesus answering when the temple would fall. "This generation will not pass away until all these things take place" (24:34) means what it says — genea is a biological generation, about forty years — and forty years later, in AD 70, Rome did exactly what he described. The cosmic language (sun darkened, stars falling, the Son of Man coming on the clouds) is stock prophetic convention for the fall of a power — Isaiah used it for Babylon, Ezekiel for Egypt — not a literal sky-show.
+
+So Bible Lens parts from the popular reading in two directions. Against dispensational futurism, which defers the whole discourse to a still-future tribulation, it holds that most of Matthew 24 was fulfilled in AD 70. Against full preterism, which says everything was fulfilled then, it holds that a future physical return and a literal millennium (Revelation 19-20) are still ahead. Partial, not full; fulfilled, but not finished.`,
+    faq: [
+      {
+        question: `Was Matthew 24 fulfilled in AD 70?`,
+        answer: `Largely, yes. Jesus answered a question about the temple the disciples were looking at, and within a generation — about forty years — Rome leveled it: the siege, the flight from Judea, the horror he described. "This generation will not pass away" (24:34) puts the weight of the discourse in the first century, not a distant future.`,
+      },
+      {
+        question: `Does this mean there's no future second coming?`,
+        answer: `No — and this is where Bible Lens parts from full preterism. It reads a future physical return and a literal millennium (Revelation 19-20) as still ahead, with Matthew 24 itself centered on AD 70. That said, the line isn't drawn with total confidence: the events around AD 70 were genuinely strange — Josephus records eerie portents over Jerusalem — and thoughtful full preterists build a real case from them. Bible Lens leans to "the return is still future" while treating the question as honestly contested.`,
+      },
+      {
+        question: `"The Son of Man coming on the clouds" (24:30) — is that the second coming?`,
+        answer: `Bible Lens reads it as the AD 70 vindication — the same Daniel 7 enthronement language, where coming "on the clouds" signals a throne-room vindication rather than a descent to earth. On that reading, "the coming" in Matthew 24 isn't the future return. There are decent arguments the other way, and Bible Lens doesn't treat the case as closed — but the enthronement reading fits the discourse's own AD 70 frame best.`,
+      },
+      {
+        question: `Is the "sun darkened, stars falling" language literal?`,
+        answer: `No — it's stock prophetic convention for the collapse of a power. Isaiah used the same sun-and-stars imagery for Babylon's fall, Ezekiel for Egypt's; the first audience knew it as the standard vocabulary of judgment on a nation. Here it marks the end of the temple order, not the end of the sky.`,
+      },
+    ],
   },
   {
     slug: "isaiah-suffering-servant",
