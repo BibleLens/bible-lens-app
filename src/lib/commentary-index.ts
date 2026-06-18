@@ -921,7 +921,28 @@ Through this lens, "the mark of the beast" was never about a microchip or a barc
 
 Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four kingdoms, then the stone that fills the earth. Revelation 13 is the fourth kingdom's final form, the beast at its most demanding — and 666 is the name written in numbers for those who have wisdom to see it.`,
     datePublished: "2026-03-19",
-    dateModified: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `Revelation hands its first readers a riddle — "let the one who has understanding calculate the number of the beast" — and a riddle is only a riddle if its audience can solve it. They could: in Hebrew gematria, Neron Qesar (Nero Caesar) totals 666 exactly, and the 616 manuscript variant matches the Latin spelling of the same name. The beast is imperial Rome; the mark is the social and economic pressure to signal loyalty to the imperial cult. The number had a first-century answer because it was written for first-century eyes.
+
+This is why the long parade of later candidates — popes, dictators, more than one US president — never lands: it treats 666 as a cipher only the distant future could crack, which empties the riddle of the point Revelation gave it. Bible Lens doesn't deny that persecuting, idolatrous power recurs with similar traits across history — but the number names Nero's Rome, not a figure still to come. This parts decisively from the futurist reading that defers the mark and the beast to our own day.`,
+    faq: [
+      {
+        question: `Could 666 refer to a modern figure — a president, the pope, a coming world leader?`,
+        answer: `Almost certainly not, and Revelation tells you why: it asks its readers to calculate the number (13:18) — a puzzle meant to be solved by the people holding the letter. In Hebrew gematria, Nero Caesar totals 666; the 616 variant matches the Latin spelling. A code only the distant future could crack would have been useless to its first audience. The long line of modern candidates — popes, dictators, more than one US president — exists because the futurist method ignores that the riddle already had a first-century answer.`,
+      },
+      {
+        question: `What does 666 actually mean?`,
+        answer: `It is gematria — the ancient practice where letters double as numbers. "Neron Qesar," Nero Caesar written in Hebrew letters, totals 666 exactly; when scribes copied a variant reading 616, that matches the Latin spelling, which drops a letter and shifts the total by 50. Two numbering systems, the same man.`,
+      },
+      {
+        question: `Is the mark of the beast a microchip, barcode, or cashless system?`,
+        answer: `No — those are modern images read back into the text. For the first readers, the "mark" was the social and economic pressure to signal loyalty to Rome: participation in the imperial cult was woven into trade and civic life, so to buy and sell freely was, in effect, to bear Caesar's mark.`,
+      },
+      {
+        question: `Who is the beast?`,
+        answer: `Imperial Rome — the power demanding the worship owed to God alone. The sea-beast of Revelation 13 gathers the imagery of Daniel 7's empires (lion, bear, leopard) into one, and its land-beast maps onto the imperial-cult priesthood of Asia Minor that enforced emperor-worship in cities like Ephesus, Smyrna, and Pergamum.`,
+      },
+    ],
   },
   {
     slug: "genesis-creation-ancient-cosmology",
