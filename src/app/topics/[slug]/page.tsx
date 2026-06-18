@@ -220,9 +220,14 @@ export default async function TopicPage({ params }: TopicPageProps) {
               >
                 Where this parts from the inherited reading
               </h2>
-              <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
-                {topic.boundary}
-              </p>
+              {topic.boundary.split("\n\n").map((para, i) => (
+                <p
+                  key={i}
+                  className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-4 last:mb-0"
+                >
+                  {para}
+                </p>
+              ))}
             </div>
           </section>
         )}

@@ -874,7 +874,28 @@ Psalms 2 and 110 are the Psalter's coronation bookends — same enthronement voc
 
 Matthew 1's genealogy encodes the Davidic throne-number (3×14), placing "son of David" and "son of man" on the same figure the Daniel 7 enthronement scene frames.`,
     datePublished: "2026-03-19",
-    dateModified: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `The title is the first clue, and it's deliberate. Daniel calls the figure "one like a son of man" — a human one — set pointedly against the beasts that stand for the empires. A human designation forecloses divine origin rather than implying it: God could not be "a son of man." And the coming with the clouds is not the figure claiming YHWH's prerogative for himself — it is the sign of the Father's approval, heaven's public vindication of the Son. He is brought to the Ancient of Days and granted dominion, glory, and kingdom; he does not arrive already holding them.
+
+So Bible Lens parts from the popular reading in two directions. Against the futurist picture, the direction is an ascent to the throne, not a descent to earth. Against the Trinitarian proof-text, the scene shows a human figure divinely approved and enthroned as God's agent — through whom the saints receive the kingdom (7:18, 27) — not a second co-equal God.`,
+    faq: [
+      {
+        question: `Who is "the one like a son of man" in Daniel 7?`,
+        answer: `A human figure — deliberately so. Where the empires rise from the sea as beasts (a lion, a bear, a leopard), this one is "like a son of man," a human one, brought before God and given the kingdom. Bible Lens reads him as an exalted, divinely-approved human figure through whom "the saints of the Most High" receive the kingdom (Daniel 7:18, 27) — not a divine being.`,
+      },
+      {
+        question: `Does Daniel 7 prove the son of man is co-equal with God?`,
+        answer: `Bible Lens reads it the opposite way. The figure is granted dominion, glory, and kingdom by the Ancient of Days — he receives them, he doesn't arrive already holding them — which marks him as God's exalted agent, not the one God. The title "son of man" itself forecloses divine origin: God could not be a son of man. Faithful readers weigh the further Christology differently, but the scene shows conferral, not co-equality.`,
+      },
+      {
+        question: `Isn't "coming with the clouds" a divine prerogative — doesn't that make him God?`,
+        answer: `Cloud-imagery does accompany God's presence, and Second Temple Judaism entertained a "two powers in heaven." But in Daniel the clouds are the medium of the Father's approval — heaven publicly vindicating the figure — not evidence that he shares God's nature. The text has already named him a human one, set against the bestial empires; the clouds endorse him, they don't deify him.`,
+      },
+      {
+        question: `Is "the Son of Man coming on the clouds" in Matthew 24:30 a future descent to earth?`,
+        answer: `No — it's enthronement language lifted straight from Daniel 7, applied to Jesus' vindication. The cloud-coming is coronation imagery: the figure brought to the throne and given authority, not a description of a physical landing. Read this way, Mark 14:62 and Matthew 24:30 announce exaltation, not a return trip downward.`,
+      },
+    ],
   },
   {
     slug: "revelation-666-beast",
