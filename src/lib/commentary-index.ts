@@ -976,7 +976,28 @@ Psalm 8's creation praise and Psalm 82's heavenly court scene extend this cosmic
 
 Ancient wisdom, cosmic clarity.`,
     datePublished: "2026-03-19",
-    dateModified: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `It's interesting that Genesis 1 mirrors the shape of a temple dedication: six days of ordering, then — on the seventh — the Deity takes up residence and rests, enthroned. Some read that correspondence as the key, and call the chapter a cosmic-temple inauguration: an account of order and dwelling, of who rules and where. Bible Lens finds the parallel striking and leaves the reader to decide how much weight it carries.
+
+When God says "let us make man in our image" (1:26), Bible Lens reads the "us" as the divine council — God announcing his purpose to the heavenly host, the sons of God — not the persons of a Trinity, and not a "plural of majesty," a construction Biblical Hebrew doesn't really use this way. The act itself is God's alone: the very next verse shifts to the singular, "God created." Humanity is made as God's image-bearers and representatives, set in the world to reflect his rule.`,
+    faq: [
+      {
+        question: `"Let us make man in our image" — does that point to the Trinity?`,
+        answer: `Bible Lens reads it as the divine council, not the Trinity. God announces his purpose to the heavenly host — the sons of God — and then acts alone: the very next verse goes singular, "God created." The "plural of majesty" alternative doesn't hold up either, since Biblical Hebrew doesn't really use that construction this way. It reads as a deliberative address to the council, not a hint of plural persons within God.`,
+      },
+      {
+        question: `What does it mean to call Genesis 1 a "cosmic temple"?`,
+        answer: `It's the observation that the chapter mirrors the shape of a temple dedication — six days of ordering the space, then on the seventh the Deity takes up residence and rests, enthroned. Read that way, Genesis 1 is about order, rule, and dwelling: who is in charge, and where he lives. Bible Lens finds the parallel striking and leaves you to weigh how much it carries.`,
+      },
+      {
+        question: `What is the firmament (raqia)?`,
+        answer: `The raqia is the solid dome of ancient Near Eastern cosmology — the vault holding back the "waters above." Genesis pictures the world the way its first audience already saw it: a dome overhead, waters above and below. The point isn't a lesson in physics; it's a declaration of who built the structure and set its boundaries.`,
+      },
+      {
+        question: `Why does light appear on day 1 but the sun not until day 4?`,
+        answer: `This is the puzzle that gives the game away: "let there be light" on day one, but the sun, moon, and stars only on day four. On a temple-dedication reading it isn't a contradiction — the days assign domains and their rulers (light and time first, then the lights that govern them), the way a dedication assigns roles before installing the officials. The original audience wasn't reading an astronomy sequence; they were watching a world being set in order.`,
+      },
+    ],
   },
   {
     slug: "matthew-24-olivet-discourse",
