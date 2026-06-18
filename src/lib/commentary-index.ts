@@ -1084,7 +1084,28 @@ Ecclesiastes 9 extends the tension: where the servant songs transform suffering 
 
 Matthew 5's antitheses operationalize Isaiah 42:3 — the bruised-reed servant ethic applied as Torah intensification.`,
     datePublished: "2026-03-19",
-    dateModified: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `Isaiah 53 is treated in popular teaching as a Christian text first — a prophecy about Jesus, full stop. Bible Lens reads it the way its own structure asks to be read: in layers. The historically prior reading, mainstream among Jewish interpreters like Rashi and Ibn Ezra, took the servant as corporate Israel — exiled, suffering, destined for vindication. And Isaiah himself uses "servant" in more than one register: sometimes Israel collectively (41:8-9), sometimes a faithful figure within Israel (49:3-6). The oscillation is built in.
+
+So Bible Lens parts in two directions. It declines the exclusively-Christological reading that erases the corporate layer the text builds in, and it declines the exclusively-corporate reading that denies any messianic typology. Both stand: what Israel was called to be — a suffering, redemptive presence among the nations — Jesus embodied in concentrated, singular form. And it reads that fulfillment as vocational, not metaphysical: the servant "exalted and lifted up" (52:13) is a faithful human vindicated and raised by God — the same conferred exaltation we met in Daniel 7 — not evidence of a pre-existent divine nature.`,
+    faq: [
+      {
+        question: `Who is the suffering servant — Israel or Jesus?`,
+        answer: `Both, in layers. The historically prior reading, mainstream among Jewish interpreters like Rashi and Ibn Ezra, took the servant as corporate Israel — exiled, suffering, bound for vindication. Isaiah uses "servant" in more than one register: sometimes Israel collectively (41:8-9), sometimes a faithful figure within it (49:3-6). Bible Lens reads Jesus as the concentrated, singular embodiment of what Israel was called to be — not a replacement of the corporate reading, but a layer on top of it.`,
+      },
+      {
+        question: `Did Jewish interpreters really read the servant as Israel?`,
+        answer: `Yes, and it was the mainstream Jewish reading, not a fringe dodge of Christian claims. Rashi argued it systematically; Ibn Ezra followed. The servant who bears the nations' iniquities and is finally vindicated is Israel itself — a reading that runs alongside the Christian one and that the text's own "servant = Israel" statements (41:8-9) support.`,
+      },
+      {
+        question: `Does Isaiah 53 prove Jesus is God?`,
+        answer: `Bible Lens reads the servant's exaltation as vocational, not metaphysical. "Exalted and lifted up" (52:13) describes a faithful human vindicated and raised by God — the same conferred exaltation as Daniel 7's son of man — not a pre-existent divine nature. The servant is the one God's faithful agent who fulfills Israel's calling, not a second member of a Godhead.`,
+      },
+      {
+        question: `How does the servant's suffering "take away sin" — is it penal substitution?`,
+        answer: `The popular reading is penal substitution: the servant absorbs the punishment God's justice demanded, in our place. Bible Lens reads it differently, because its own commitments reshape the picture. If the wage of sin is death rather than eternal torment — the conditional-immortality reading — then what the servant accomplishes is the defeat of death and the powers that hold humanity, and the embodiment of the faithful obedience Adam and Israel failed to offer. He "bore our iniquities" as the representative who carries the weight and the victor who breaks death's grip (Hebrews 2:14), opening the way back to life: "in Adam all die, in Christ all are made alive." The substitution language stays; what changes is the mechanism — rescue and victory, not the appeasement of wrath against an innocent.`,
+      },
+    ],
   },
   {
     slug: "ezekiel-gog-magog",
