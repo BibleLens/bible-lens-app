@@ -1133,7 +1133,28 @@ Zechariah 14 adds a third node to this eschatological frame — the Day of the L
 
 Daniel 11's detailed Seleucid history provides the near-term backdrop: the pattern of northern aggression against God's people reaches a final, cosmic iteration in Gog's campaign.`,
     datePublished: "2026-03-19",
-    dateModified: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `"Gog of the land of Magog" has launched more confident newspaper-exegesis than almost any passage in the Bible — and the confident answers keep changing with the headlines. Bible Lens starts where Ezekiel's first readers did: the Table of Nations. Magog, Meshech, and Tubal are ancient Anatolia — the region of modern Turkey — the far-northern peoples at the edge of Israel's known world. The famous "Rosh = Russia" identification doesn't survive contact with the Hebrew: rosh means "head" or "chief" ("the chief prince," not "the prince of Rosh"), and Russia is an anachronism — a sound-alike more than a thousand years too late. Ezekiel's "uttermost parts of the north" is cosmological geography, an enemy from the furthest edge of the world, not a compass bearing on a modern map.
+
+So Bible Lens parts decisively from the geopolitical reading that casts Gog as Russia (or whatever power is currently menacing) and the prophecy as tomorrow's war. Ezekiel's own meaning is a statement about YHWH's sovereignty over even the most distant nations, addressed to exiles wondering whether their God could still act. Bible Lens does keep a future horizon — Revelation 20:8 reserves a Gog-and-Magog event for the end of the millennium — but it locates Ezekiel's prophecy in its ancient setting, not in current affairs.`,
+    faq: [
+      {
+        question: `Is Gog of Magog Russia?`,
+        answer: `No — Magog, Meshech, and Tubal map to ancient Anatolia (the region of modern Turkey) in the Table of Nations, not a modern nation-state. The "Rosh = Russia" link rests on a sound-alike: Hebrew rosh means "head" or "chief" ("the chief prince," as most translations render it), and the name Russia appears more than a thousand years after Ezekiel. The identification is an anachronism dressed up as prophecy.`,
+      },
+      {
+        question: `Is Ezekiel 38-39 a forecast of a future war?`,
+        answer: `Ezekiel's own referent is post-exilic and theological — a statement about YHWH's sovereignty over even the most distant nations, written to exiles wondering whether their God could still act in history. Bible Lens does keep a future dimension, but it is reserved in Revelation 20, not laid out in Ezekiel. The prophecy isn't a dispatch filed in advance about 21st-century geopolitics.`,
+      },
+      {
+        question: `Why does Gog come "from the far north" — is there more to it than geography?`,
+        answer: `Quite possibly. In the ancient Near East, "the north" (Hebrew tsaphon) wasn't only a compass direction — it was the location of the cosmic mountain, the dwelling of the gods and their assembly. The Bible knows that imagery and claims it for YHWH: Psalm 48 calls Mount Zion "the heights of the far north," and Isaiah 14 pictures the rebel aspiring to "the mount of assembly, in the far north." So when Gog musters "from the uttermost parts of the north," the phrase can carry a second register on top of the literal Anatolian geography: the threat comes from the direction of cosmic rebellion — the hostile powers arrayed against God's mountain and his people. On this reading, Gog is not merely a foreign army but the embodiment of the anti-divine-council forces the prophets expected to mass against God's people — and to be defeated.`,
+      },
+      {
+        question: `Why does Revelation reuse Gog and Magog?`,
+        answer: `John reserves Ezekiel's "nations gathered against God's people" scenario for an end-of-millennium judgment, placed explicitly after the thousand years (Revelation 20:8). He isn't re-running Ezekiel 38-39 as a first-century event; he is holding Ezekiel's ultimate confrontation for the very end. The aftermath imagery — birds summoned to the slain — is quoted from Ezekiel 39 in Revelation 19.`,
+      },
+    ],
   },
   {
     slug: "genesis-2-conditional-immortality",
