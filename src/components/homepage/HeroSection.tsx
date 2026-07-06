@@ -199,8 +199,8 @@ export function HeroSection() {
   );
 
   return (
-    <div ref={containerRef} className="h-[130vh] md:h-[200vh]">
-      {/* Sticky viewport — stays in place while container scrolls (170vh of scroll) */}
+    <div ref={containerRef} className="h-[330vh]">
+      {/* Sticky viewport — stays in place while container scrolls (230vh of scroll) */}
       <div
         className="sticky top-0 h-screen w-full overflow-hidden"
         style={{ background: "var(--homepage-bg)" }}
@@ -213,8 +213,9 @@ export function HeroSection() {
 
         {/* Main Scroll Track — Blurred Ancient Text */}
         <div ref={mainTrackRef} className="relative z-10 w-full">
-          {/* Short spacer — title is at z-50 above this */}
-          <div style={{ height: "10vh" }} />
+          {/* Opening spacer — clears the ~230px fixed nav so the first text
+              panel isn't hidden beneath it */}
+          <div style={{ height: "25vh" }} />
 
           {/* Ancient manuscripts scroll through */}
           <section className="h-[120vh] flex flex-col items-center justify-center px-10">
