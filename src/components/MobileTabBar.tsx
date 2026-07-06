@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const tabItems = [
-  { label: "Explore", href: "/books", icon: "menu_book", ariaLabel: "Explore books" },
-  { label: "Context", href: "/commentary", icon: "layers", ariaLabel: "Context — commentary and topics" },
-  { label: "Archive", href: "/start-here", icon: "bookmark", ariaLabel: "Archive — reading paths" },
-  { label: "Scholar", href: "/chat", icon: "robot_2", ariaLabel: "Scholar AI" },
+  { label: "Books", href: "/books", icon: "menu_book", ariaLabel: "Books" },
+  { label: "Commentary", href: "/commentary", icon: "layers", ariaLabel: "Commentary" },
+  { label: "Start Here", href: "/start-here", icon: "bookmark", ariaLabel: "Start here — reading paths" },
+  { label: "Scholar", href: "/chat", icon: "robot_2", ariaLabel: "Ask a Scholar — AI chat" },
 ];
 
 function isActive(href: string, pathname: string): boolean {
