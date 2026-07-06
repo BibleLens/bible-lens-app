@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllBooks } from "@/lib/bible";
 import { COMMENTARY_CHAPTERS, TOPIC_PAGES } from "@/lib/commentary-index";
+import { TIMELINE_SLUGS } from "@/lib/timelines-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://biblelens.faith";
@@ -33,5 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticEntries, ...chapterEntries, ...topicEntries];
+  const timelineEntries: MetadataRoute.Sitemap = TIMELINE_SLUGS.map((slug) => ({
+    url: `${base}/timelines/${slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticEntries, ...chapterEntries, ...topicEntries, ...timelineEntries];
 }

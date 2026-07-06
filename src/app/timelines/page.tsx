@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { EmailCapture } from "@/components/EmailCapture";
 import { GlassCard } from "@/components/GlassCard";
+import { TIMELINES } from "@/lib/timelines-data";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Bible Chronology Through Ancient Eyes | Bible Lens",
   description:
-    "Visual timelines of the Old Testament — scholarly chronology, ancient sources, and the conflicts that most Bibles skip over.",
+    "Visual timelines of the Old Testament — scholarly chronology, ancient sources, and the conflicts most Bibles skip over. How long was Israel in Egypt? When did the Flood happen? What was buried at Avaris?",
   alternates: { canonical: "https://biblelens.faith/timelines" },
   openGraph: {
     title: "Bible Chronology Through Ancient Eyes | Bible Lens",
     description:
-      "Visual timelines of the Old Testament — scholarly chronology, ancient sources, and the conflicts that most Bibles skip over.",
+      "Visual timelines of the Old Testament — scholarly chronology, ancient sources, and the conflicts most Bibles skip over.",
     url: "https://biblelens.faith/timelines",
     siteName: "Bible Lens",
     type: "website",
@@ -30,27 +32,23 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bible Chronology Through Ancient Eyes | Bible Lens",
     description:
-      "Visual timelines of the Old Testament — scholarly chronology, ancient sources, and the conflicts that most Bibles skip over.",
+      "Visual timelines of the Old Testament — scholarly chronology, ancient sources, and the conflicts most Bibles skip over.",
     images: ["/timelines/israel-in-egypt-hero.png"],
   },
 };
 
-export default function TimelinesPage() {
+export default function TimelinesIndexPage() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "var(--color-obsidian)" }}>
       <main id="main-content" className="flex-1 w-full pt-[248px]">
-
-        {/* Editorial Hero */}
+        {/* Editorial hero */}
         <section
-          className="grain-overlay min-h-[40vh] flex items-end pb-16 px-6"
+          className="grain-overlay min-h-[36vh] flex items-end pb-14 px-6"
           style={{ background: "var(--color-obsidian)" }}
         >
           <div className="max-w-6xl mx-auto w-full">
             <GlassCard className="p-10 md:p-16 text-center max-w-4xl mx-auto">
-              <span
-                className="micro-label mb-4 block"
-                style={{ color: "var(--color-cyan-400)" }}
-              >
+              <span className="micro-label mb-4 block" style={{ color: "var(--color-cyan-400)" }}>
                 OLD TESTAMENT CHRONOLOGY
               </span>
               <h1
@@ -63,45 +61,59 @@ export default function TimelinesPage() {
                 className="mt-3 max-w-2xl mx-auto text-lg text-pretty"
                 style={{ color: "var(--color-text-muted-warm)" }}
               >
-                Visual timelines of the Old Testament — the chronology questions ancient sources don&apos;t agree on, drawn in a way you can actually share.
+                Visual timelines of the Old Testament — the chronology questions ancient sources
+                don&apos;t agree on, drawn in a way you can actually share.
               </p>
             </GlassCard>
           </div>
         </section>
 
-        {/* Hero infographic */}
+        {/* Timeline cards */}
         <section className="max-w-6xl mx-auto px-6 py-12">
-          <div className="mx-auto" style={{ maxWidth: "640px" }}>
-            <Image
-              src="/timelines/israel-in-egypt-hero.png"
-              alt="Israel in Egypt: 215 years (LXX, Galatians 3:17) vs 430 years (Masoretic) — the dropped phrase from Exodus 12:40"
-              width={1000}
-              height={1500}
-              priority
-              className="w-full h-auto"
-            />
+          <div className="grid gap-8 md:grid-cols-3">
+            {TIMELINES.map((t) => (
+              <Link
+                key={t.slug}
+                href={`/timelines/${t.slug}`}
+                className="group block glass-card overflow-hidden"
+                aria-label={t.title}
+              >
+                <div className="relative aspect-[1000/1500] overflow-hidden">
+                  <Image
+                    src={t.heroImage}
+                    alt={t.heroAlt}
+                    fill
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/80 via-transparent to-transparent" />
+                </div>
+                <div className="p-6">
+                  <span className="micro-label" style={{ color: "var(--color-cyan-400)" }}>
+                    {t.kicker}
+                  </span>
+                  <h2
+                    className="mt-2 text-xl font-semibold text-balance"
+                    style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
+                  >
+                    {t.title}
+                  </h2>
+                  <p className="mt-2 text-sm leading-relaxed" style={{ color: "var(--color-text-muted-warm)" }}>
+                    {t.tagline}
+                  </p>
+                  <span
+                    className="mt-4 inline-block micro-label transition-colors group-hover:brightness-125"
+                    style={{ color: "var(--color-cyan-400)" }}
+                  >
+                    View timeline →
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 
-        {/* Download CTA */}
-        <section className="max-w-6xl mx-auto px-6 pb-12">
-          <GlassCard className="p-8 md:p-10 text-center max-w-4xl mx-auto">
-            <a
-              href="/timelines/israel-in-egypt-hero.png"
-              download="bible-lens-israel-in-egypt-215-vs-430.png"
-              className="inline-block px-6 py-3 font-semibold transition-all hover:brightness-110"
-              style={{
-                background: "var(--color-cyan-400)",
-                color: "var(--color-bg-primary)",
-                borderRadius: 0,
-              }}
-            >
-              Download the full pin (1000×1500 PNG)
-            </a>
-          </GlassCard>
-        </section>
-
-        {/* Email Capture in Glass Card */}
+        {/* Email capture */}
         <section className="max-w-6xl mx-auto px-6 pb-16">
           <GlassCard className="p-10">
             <EmailCapture
@@ -110,15 +122,6 @@ export default function TimelinesPage() {
             />
           </GlassCard>
         </section>
-
-        {/* Sources attribution — kept above the global footer */}
-        <p
-          className="text-xs text-center mt-4 mb-12 px-6"
-          style={{ color: "var(--color-text-muted)" }}
-        >
-          Sources: Nathan Hoffmann, David Rohl, Paul of Tarsus (Galatians 3:17).
-        </p>
-
       </main>
     </div>
   );
