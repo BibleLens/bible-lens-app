@@ -11,10 +11,11 @@ const TOPIC_CARDS = [
     description: "The one like a son of man coming with the clouds of heaven.",
     image: "/topic-cards/son-of-man.png",
     imageAlt: "Daniel 7 vision",
+    objectPosition: "center 15%",
     colSpan: "col-span-12 md:col-span-4",
     rowSpan: "row-span-2",
     imageClass:
-      "opacity-90 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110",
+      "opacity-90 transition-all duration-1000 group-hover:scale-110",
     gradient: "bg-gradient-to-t from-[#050508]/70 via-[#050508]/20 to-transparent",
     contentLayout: "justify-end",
     padding: "p-10",
@@ -27,6 +28,7 @@ const TOPIC_CARDS = [
       "Decoding the imperial cult imagery and Nero as the historical 666.",
     image: "/topic-cards/beast-of-revelation.png",
     imageAlt: "Revelation beast imagery",
+    objectPosition: "center 28%",
     colSpan: "col-span-12 md:col-span-8",
     rowSpan: "row-span-1",
     imageClass:
@@ -44,6 +46,7 @@ const TOPIC_CARDS = [
     description: null,
     image: "/topic-cards/adam-from-dust.png",
     imageAlt: "Genesis creation",
+    objectPosition: "center",
     colSpan: "col-span-12 md:col-span-4",
     rowSpan: "row-span-1",
     imageClass:
@@ -59,6 +62,7 @@ const TOPIC_CARDS = [
     description: "From the Old Adam to the Last Adam.",
     image: "/topic-cards/olivet-discourse.jpeg",
     imageAlt: "Matthew 24 discourse",
+    objectPosition: "center 18%",
     colSpan: "col-span-12 md:col-span-4",
     rowSpan: "row-span-1",
     imageClass:
@@ -74,6 +78,7 @@ const TOPIC_CARDS = [
     description: null,
     image: "/topic-cards/isaiah.jpeg",
     imageAlt: "Isaiah prophet",
+    objectPosition: "center 22%",
     colSpan: "col-span-12 md:col-span-8",
     rowSpan: "row-span-1",
     imageClass:
@@ -92,6 +97,7 @@ const TOPIC_CARDS = [
     description: null,
     image: "/topic-cards/gog-of-magog.jpeg",
     imageAlt: "Ezekiel vision",
+    objectPosition: "center 18%",
     colSpan: "col-span-12 md:col-span-4",
     rowSpan: "row-span-1",
     imageClass:
@@ -166,7 +172,8 @@ export function FeaturedTopicsSection() {
                 src={card.image}
                 alt={card.imageAlt}
                 fill
-                className={`object-cover ${card.imageClass}`}
+                className={`object-cover saturate-[0.95] contrast-[1.05] ${card.imageClass}`}
+                style={{ objectPosition: card.objectPosition }}
                 sizes={
                   card.colSpan.includes("col-span-8")
                     ? "(max-width: 768px) 100vw, 66vw"
@@ -174,6 +181,10 @@ export function FeaturedTopicsSection() {
                 }
                 priority={card.slug === "daniel-7-son-of-man"}
               />
+              {/* On-brand colour grade — echoes the gold→cyan lens gradient so
+                  every topic image reads as one branded set (soft-light keeps
+                  luminosity; tint stays subtle) */}
+              <div className="absolute inset-0 topic-grade" />
               <div className={`absolute inset-0 ${card.gradient}`} />
             </div>
 
