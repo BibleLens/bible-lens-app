@@ -96,8 +96,8 @@ export const viewport: Viewport = {
 // The Organization.description carries the doctrinal boundary deliberately:
 // what Bible Lens IS (strict, historically grounded, independent) and what it
 // is NOT (a mainstream Christian-creator ministry) — so an engine that lifts the
-// entity also lifts the distinction. YouTube `sameAs` is added once the channel
-// URL is wired alongside per-episode VideoObject schema.
+// entity also lifts the distinction. `sameAs` wires the YouTube channel and
+// Pinterest profile so engines can reconcile the entity across surfaces.
 const SITE_URL = "https://biblelens.faith";
 
 const siteJsonLd = {
@@ -115,6 +115,10 @@ const siteJsonLd = {
       },
       description:
         "Bible Lens is an independent project publishing historically grounded Bible commentary — reading each passage through the lens of the ancient Near Eastern world to recover what it meant to its original audience before later tradition reshaped it. It holds a strict scriptural standard: readings are argued from the primary text and its historical-cultural context, not from creedal tradition or denominational consensus, and it names where the historical reading parts from popular Christian teaching. It is not affiliated with, and does not speak for, mainstream Christian-creator ministries.",
+      sameAs: [
+        "https://www.youtube.com/@BibleLens-i5f",
+        "https://www.pinterest.com/biblelensfaith/",
+      ],
     },
     {
       "@type": "WebSite",
