@@ -435,6 +435,24 @@ body {
   perspective: 1000px;
 }
 
+/* On-brand colour grade for topic-card images.
+   A restrained gold→cyan wash (matching --gradient-lens) blended with soft-light
+   so the six warm oil-paintings share one branded tone without going muddy.
+   Sits above the <img>, below the dark legibility gradient. */
+.topic-grade {
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    170deg,
+    rgba(250, 204, 21, 0.16) 0%,
+    rgba(250, 204, 21, 0.04) 32%,
+    transparent 52%,
+    rgba(0, 229, 255, 0.10) 78%,
+    rgba(0, 229, 255, 0.22) 100%
+  );
+  mix-blend-mode: soft-light;
+}
+
 /* Spotlight effect (D-23) */
 .card-spotlight {
   position: absolute;

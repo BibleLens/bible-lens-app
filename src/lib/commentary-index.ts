@@ -822,6 +822,27 @@ export interface TopicPage {
   keywords: string[];    // Theme-level SEO queries — NO passage overlap
   chapterKeys: string[]; // "{bookId}-{chapter}" keys from COMMENTARY_DESCRIPTIONS
   prose: string;         // 200-400 words original editorial prose in Bible Lens voice
+
+  // --- AEO enrichment (optional) ---
+  // Present on essays that have been through the episode→essay pipeline.
+  // Backward-compatible: older essays omit these and render exactly as before.
+  datePublished?: string; // ISO 8601 — Article.datePublished + freshness signal
+  dateModified?: string;  // ISO 8601 — Article.dateModified
+  // The doctrinal "not this" boundary: names, visibly and in schema, where the
+  // historical reading parts from popular teaching. The boundary is part of the
+  // claim — it travels with any chunk an AI engine lifts.
+  boundary?: string;
+  // Visible FAQ that also backs FAQPage schema. Must mirror the rendered Q&A
+  // (schema-without-visible-content reads as cloaking).
+  faq?: { question: string; answer: string }[];
+  // Source episode for the VideoObject cross-link + "watch the episode" card.
+  video?: {
+    youtubeId: string;
+    name: string;
+    description: string;
+    uploadDate: string;    // ISO 8601
+    thumbnailUrl?: string;
+  };
 }
 
 export const TOPIC_PAGES: TopicPage[] = [
@@ -852,6 +873,29 @@ This is a minority reading in popular Christianity but the majority reading amon
 Psalms 2 and 110 are the Psalter's coronation bookends — same enthronement vocabulary, same upward trajectory. Ancient wisdom doesn't always travel in straight lines. Sometimes it ascends.
 
 Matthew 1's genealogy encodes the Davidic throne-number (3×14), placing "son of David" and "son of man" on the same figure the Daniel 7 enthronement scene frames.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `The title is the first clue, and it's deliberate. Daniel calls the figure "one like a son of man" — a human one — set pointedly against the beasts that stand for the empires. A human designation forecloses divine origin rather than implying it: God could not be "a son of man." And the coming with the clouds is not the figure claiming YHWH's prerogative for himself — it is the sign of the Father's approval, heaven's public vindication of the Son. He is brought to the Ancient of Days and granted dominion, glory, and kingdom; he does not arrive already holding them.
+
+So Bible Lens parts from the popular reading in two directions. Against the futurist picture, the direction is an ascent to the throne, not a descent to earth. Against the Trinitarian proof-text, the scene shows a human figure divinely approved and enthroned as God's agent — through whom the saints receive the kingdom (7:18, 27) — not a second co-equal God.`,
+    faq: [
+      {
+        question: `Who is "the one like a son of man" in Daniel 7?`,
+        answer: `A human figure — deliberately so. Where the empires rise from the sea as beasts (a lion, a bear, a leopard), this one is "like a son of man," a human one, brought before God and given the kingdom. Bible Lens reads him as an exalted, divinely-approved human figure through whom "the saints of the Most High" receive the kingdom (Daniel 7:18, 27) — not a divine being.`,
+      },
+      {
+        question: `Does Daniel 7 prove the son of man is co-equal with God?`,
+        answer: `Bible Lens reads it the opposite way. The figure is granted dominion, glory, and kingdom by the Ancient of Days — he receives them, he doesn't arrive already holding them — which marks him as God's exalted agent, not the one God. The title "son of man" itself forecloses divine origin: God could not be a son of man. Faithful readers weigh the further Christology differently, but the scene shows conferral, not co-equality.`,
+      },
+      {
+        question: `Isn't "coming with the clouds" a divine prerogative — doesn't that make him God?`,
+        answer: `Cloud-imagery does accompany God's presence, and Second Temple Judaism entertained a "two powers in heaven." But in Daniel the clouds are the medium of the Father's approval — heaven publicly vindicating the figure — not evidence that he shares God's nature. The text has already named him a human one, set against the bestial empires; the clouds endorse him, they don't deify him.`,
+      },
+      {
+        question: `Is "the Son of Man coming on the clouds" in Matthew 24:30 a future descent to earth?`,
+        answer: `No — it's enthronement language lifted straight from Daniel 7, applied to Jesus' vindication. The cloud-coming is coronation imagery: the figure brought to the throne and given authority, not a description of a physical landing. Read this way, Mark 14:62 and Matthew 24:30 announce exaltation, not a return trip downward.`,
+      },
+    ],
   },
   {
     slug: "revelation-666-beast",
@@ -876,6 +920,29 @@ The land beast, the one that enforces worship of the sea beast, maps cleanly ont
 Through this lens, "the mark of the beast" was never about a microchip or a barcode. It was about the social and economic pressure to signal loyalty to the empire — to have Caesar's mark on your hand or forehead in the same way a Roman citizen might display imperial tokens in trade.
 
 Daniel 2's statue, with its feet of iron and clay, provides the backdrop. Four kingdoms, then the stone that fills the earth. Revelation 13 is the fourth kingdom's final form, the beast at its most demanding — and 666 is the name written in numbers for those who have wisdom to see it.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `Revelation hands its first readers a riddle — "let the one who has understanding calculate the number of the beast" — and a riddle is only a riddle if its audience can solve it. They could: in Hebrew gematria, Neron Qesar (Nero Caesar) totals 666 exactly, and the 616 manuscript variant matches the Latin spelling of the same name. The beast is imperial Rome; the mark is the social and economic pressure to signal loyalty to the imperial cult. The number had a first-century answer because it was written for first-century eyes.
+
+This is why the long parade of later candidates — popes, dictators, more than one US president — never lands: it treats 666 as a cipher only the distant future could crack, which empties the riddle of the point Revelation gave it. Bible Lens doesn't deny that persecuting, idolatrous power recurs with similar traits across history — but the number names Nero's Rome, not a figure still to come. This parts decisively from the futurist reading that defers the mark and the beast to our own day.`,
+    faq: [
+      {
+        question: `Could 666 refer to a modern figure — a president, the pope, a coming world leader?`,
+        answer: `Almost certainly not, and Revelation tells you why: it asks its readers to calculate the number (13:18) — a puzzle meant to be solved by the people holding the letter. In Hebrew gematria, Nero Caesar totals 666; the 616 variant matches the Latin spelling. A code only the distant future could crack would have been useless to its first audience. The long line of modern candidates — popes, dictators, more than one US president — exists because the futurist method ignores that the riddle already had a first-century answer.`,
+      },
+      {
+        question: `What does 666 actually mean?`,
+        answer: `It is gematria — the ancient practice where letters double as numbers. "Neron Qesar," Nero Caesar written in Hebrew letters, totals 666 exactly; when scribes copied a variant reading 616, that matches the Latin spelling, which drops a letter and shifts the total by 50. Two numbering systems, the same man.`,
+      },
+      {
+        question: `Is the mark of the beast a microchip, barcode, or cashless system?`,
+        answer: `No — those are modern images read back into the text. For the first readers, the "mark" was the social and economic pressure to signal loyalty to Rome: participation in the imperial cult was woven into trade and civic life, so to buy and sell freely was, in effect, to bear Caesar's mark.`,
+      },
+      {
+        question: `Who is the beast?`,
+        answer: `Imperial Rome — the power demanding the worship owed to God alone. The sea-beast of Revelation 13 gathers the imagery of Daniel 7's empires (lion, bear, leopard) into one, and its land-beast maps onto the imperial-cult priesthood of Asia Minor that enforced emperor-worship in cities like Ephesus, Smyrna, and Pergamum.`,
+      },
+    ],
   },
   {
     slug: "genesis-creation-ancient-cosmology",
@@ -908,6 +975,29 @@ Genesis 3, 6, and 11 extend the framework. The cosmic temple was invaded, the bo
 Psalm 8's creation praise and Psalm 82's heavenly court scene extend this cosmic architecture into the Psalter's liturgical voice.
 
 Ancient wisdom, cosmic clarity.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `It's interesting that Genesis 1 mirrors the shape of a temple dedication: six days of ordering, then — on the seventh — the Deity takes up residence and rests, enthroned. Some read that correspondence as the key, and call the chapter a cosmic-temple inauguration: an account of order and dwelling, of who rules and where. Bible Lens finds the parallel striking and leaves the reader to decide how much weight it carries.
+
+When God says "let us make man in our image" (1:26), Bible Lens reads the "us" as the divine council — God announcing his purpose to the heavenly host, the sons of God — not the persons of a Trinity, and not a "plural of majesty," a construction Biblical Hebrew doesn't really use this way. The act itself is God's alone: the very next verse shifts to the singular, "God created." Humanity is made as God's image-bearers and representatives, set in the world to reflect his rule.`,
+    faq: [
+      {
+        question: `"Let us make man in our image" — does that point to the Trinity?`,
+        answer: `Bible Lens reads it as the divine council, not the Trinity. God announces his purpose to the heavenly host — the sons of God — and then acts alone: the very next verse goes singular, "God created." The "plural of majesty" alternative doesn't hold up either, since Biblical Hebrew doesn't really use that construction this way. It reads as a deliberative address to the council, not a hint of plural persons within God.`,
+      },
+      {
+        question: `What does it mean to call Genesis 1 a "cosmic temple"?`,
+        answer: `It's the observation that the chapter mirrors the shape of a temple dedication — six days of ordering the space, then on the seventh the Deity takes up residence and rests, enthroned. Read that way, Genesis 1 is about order, rule, and dwelling: who is in charge, and where he lives. Bible Lens finds the parallel striking and leaves you to weigh how much it carries.`,
+      },
+      {
+        question: `What is the firmament (raqia)?`,
+        answer: `The raqia is the solid dome of ancient Near Eastern cosmology — the vault holding back the "waters above." Genesis pictures the world the way its first audience already saw it: a dome overhead, waters above and below. The point isn't a lesson in physics; it's a declaration of who built the structure and set its boundaries.`,
+      },
+      {
+        question: `Why does light appear on day 1 but the sun not until day 4?`,
+        answer: `This is the puzzle that gives the game away: "let there be light" on day one, but the sun, moon, and stars only on day four. On a temple-dedication reading it isn't a contradiction — the days assign domains and their rulers (light and time first, then the lights that govern them), the way a dedication assigns roles before installing the officials. The original audience wasn't reading an astronomy sequence; they were watching a world being set in order.`,
+      },
+    ],
   },
   {
     slug: "matthew-24-olivet-discourse",
@@ -938,6 +1028,29 @@ Revelation 6's four horsemen follow the same covenant curse sequence: conquest, 
 Where Bible Lens parts from full preterism: Revelation 19-20 describes a future physical return and a literal millennium still ahead.
 
 Matthew 25 is the sequel discourse — ten virgins, talents, sheep-and-goats — developing faithful vigilance between announcement and consummation. Partial-preterist and majority readings differ on the eschatological frame; the ethical center stands across both.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `The disciples asked Jesus about a specific building — the temple they could see from the Mount of Olives, which he'd just said would be leveled. Bible Lens takes that question at face value: the Olivet Discourse is first of all Jesus answering when the temple would fall. "This generation will not pass away until all these things take place" (24:34) means what it says — genea is a biological generation, about forty years — and forty years later, in AD 70, Rome did exactly what he described. The cosmic language (sun darkened, stars falling, the Son of Man coming on the clouds) is stock prophetic convention for the fall of a power — Isaiah used it for Babylon, Ezekiel for Egypt — not a literal sky-show.
+
+So Bible Lens parts from the popular reading in two directions. Against dispensational futurism, which defers the whole discourse to a still-future tribulation, it holds that most of Matthew 24 was fulfilled in AD 70. Against full preterism, which says everything was fulfilled then, it holds that a future physical return and a literal millennium (Revelation 19-20) are still ahead. Partial, not full; fulfilled, but not finished.`,
+    faq: [
+      {
+        question: `Was Matthew 24 fulfilled in AD 70?`,
+        answer: `Largely, yes. Jesus answered a question about the temple the disciples were looking at, and within a generation — about forty years — Rome leveled it: the siege, the flight from Judea, the horror he described. "This generation will not pass away" (24:34) puts the weight of the discourse in the first century, not a distant future.`,
+      },
+      {
+        question: `Does this mean there's no future second coming?`,
+        answer: `No — and this is where Bible Lens parts from full preterism. It reads a future physical return and a literal millennium (Revelation 19-20) as still ahead, with Matthew 24 itself centered on AD 70. That said, the line isn't drawn with total confidence: the events around AD 70 were genuinely strange — Josephus records eerie portents over Jerusalem — and thoughtful full preterists build a real case from them. Bible Lens leans to "the return is still future" while treating the question as honestly contested.`,
+      },
+      {
+        question: `"The Son of Man coming on the clouds" (24:30) — is that the second coming?`,
+        answer: `Bible Lens reads it as the AD 70 vindication — the same Daniel 7 enthronement language, where coming "on the clouds" signals a throne-room vindication rather than a descent to earth. On that reading, "the coming" in Matthew 24 isn't the future return. There are decent arguments the other way, and Bible Lens doesn't treat the case as closed — but the enthronement reading fits the discourse's own AD 70 frame best.`,
+      },
+      {
+        question: `Is the "sun darkened, stars falling" language literal?`,
+        answer: `No — it's stock prophetic convention for the collapse of a power. Isaiah used the same sun-and-stars imagery for Babylon's fall, Ezekiel for Egypt's; the first audience knew it as the standard vocabulary of judgment on a nation. Here it marks the end of the temple order, not the end of the sky.`,
+      },
+    ],
   },
   {
     slug: "isaiah-suffering-servant",
@@ -970,6 +1083,29 @@ Songs 1 through 3 (Isaiah 42, 49, 50) trace the arc before 52-53: the servant co
 Ecclesiastes 9 extends the tension: where the servant songs transform suffering into vocation, Qoheleth simply observes that death does not distinguish. Together the three books hold the honest space of canonical Wisdom Literature.
 
 Matthew 5's antitheses operationalize Isaiah 42:3 — the bruised-reed servant ethic applied as Torah intensification.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `Isaiah 53 is treated in popular teaching as a Christian text first — a prophecy about Jesus, full stop. Bible Lens reads it the way its own structure asks to be read: in layers. The historically prior reading, mainstream among Jewish interpreters like Rashi and Ibn Ezra, took the servant as corporate Israel — exiled, suffering, destined for vindication. And Isaiah himself uses "servant" in more than one register: sometimes Israel collectively (41:8-9), sometimes a faithful figure within Israel (49:3-6). The oscillation is built in.
+
+So Bible Lens parts in two directions. It declines the exclusively-Christological reading that erases the corporate layer the text builds in, and it declines the exclusively-corporate reading that denies any messianic typology. Both stand: what Israel was called to be — a suffering, redemptive presence among the nations — Jesus embodied in concentrated, singular form. And it reads that fulfillment as vocational, not metaphysical: the servant "exalted and lifted up" (52:13) is a faithful human vindicated and raised by God — the same conferred exaltation we met in Daniel 7 — not evidence of a pre-existent divine nature.`,
+    faq: [
+      {
+        question: `Who is the suffering servant — Israel or Jesus?`,
+        answer: `Both, in layers. The historically prior reading, mainstream among Jewish interpreters like Rashi and Ibn Ezra, took the servant as corporate Israel — exiled, suffering, bound for vindication. Isaiah uses "servant" in more than one register: sometimes Israel collectively (41:8-9), sometimes a faithful figure within it (49:3-6). Bible Lens reads Jesus as the concentrated, singular embodiment of what Israel was called to be — not a replacement of the corporate reading, but a layer on top of it.`,
+      },
+      {
+        question: `Did Jewish interpreters really read the servant as Israel?`,
+        answer: `Yes, and it was the mainstream Jewish reading, not a fringe dodge of Christian claims. Rashi argued it systematically; Ibn Ezra followed. The servant who bears the nations' iniquities and is finally vindicated is Israel itself — a reading that runs alongside the Christian one and that the text's own "servant = Israel" statements (41:8-9) support.`,
+      },
+      {
+        question: `Does Isaiah 53 prove Jesus is God?`,
+        answer: `Bible Lens reads the servant's exaltation as vocational, not metaphysical. "Exalted and lifted up" (52:13) describes a faithful human vindicated and raised by God — the same conferred exaltation as Daniel 7's son of man — not a pre-existent divine nature. The servant is the one God's faithful agent who fulfills Israel's calling, not a second member of a Godhead.`,
+      },
+      {
+        question: `How does the servant's suffering "take away sin" — is it penal substitution?`,
+        answer: `The popular reading is penal substitution: the servant absorbs the punishment God's justice demanded, in our place. Bible Lens reads it differently, because its own commitments reshape the picture. If the wage of sin is death rather than eternal torment — the conditional-immortality reading — then what the servant accomplishes is the defeat of death and the powers that hold humanity, and the embodiment of the faithful obedience Adam and Israel failed to offer. He "bore our iniquities" as the representative who carries the weight and the victor who breaks death's grip (Hebrews 2:14), opening the way back to life: "in Adam all die, in Christ all are made alive." The substitution language stays; what changes is the mechanism — rescue and victory, not the appeasement of wrath against an innocent.`,
+      },
+    ],
   },
   {
     slug: "ezekiel-gog-magog",
@@ -996,6 +1132,155 @@ Through this lens, Revelation 20:8 is significant precisely because it names Gog
 Zechariah 14 adds a third node to this eschatological frame — the Day of the LORD with nations gathered against Jerusalem, living waters flowing out, and Sukkot pilgrimage under YHWH's universal reign.
 
 Daniel 11's detailed Seleucid history provides the near-term backdrop: the pattern of northern aggression against God's people reaches a final, cosmic iteration in Gog's campaign.`,
+    datePublished: "2026-03-19",
+    dateModified: "2026-06-18",
+    boundary: `"Gog of the land of Magog" has launched more confident newspaper-exegesis than almost any passage in the Bible — and the confident answers keep changing with the headlines. Bible Lens starts where Ezekiel's first readers did: the Table of Nations. Magog, Meshech, and Tubal are ancient Anatolia — the region of modern Turkey — the far-northern peoples at the edge of Israel's known world. The famous "Rosh = Russia" identification doesn't survive contact with the Hebrew: rosh means "head" or "chief" ("the chief prince," not "the prince of Rosh"), and Russia is an anachronism — a sound-alike more than a thousand years too late. Ezekiel's "uttermost parts of the north" is cosmological geography, an enemy from the furthest edge of the world, not a compass bearing on a modern map.
+
+So Bible Lens parts decisively from the geopolitical reading that casts Gog as Russia (or whatever power is currently menacing) and the prophecy as tomorrow's war. Ezekiel's own meaning is a statement about YHWH's sovereignty over even the most distant nations, addressed to exiles wondering whether their God could still act. Bible Lens does keep a future horizon — Revelation 20:8 reserves a Gog-and-Magog event for the end of the millennium — but it locates Ezekiel's prophecy in its ancient setting, not in current affairs.`,
+    faq: [
+      {
+        question: `Is Gog of Magog Russia?`,
+        answer: `No — Magog, Meshech, and Tubal map to ancient Anatolia (the region of modern Turkey) in the Table of Nations, not a modern nation-state. The "Rosh = Russia" link rests on a sound-alike: Hebrew rosh means "head" or "chief" ("the chief prince," as most translations render it), and the name Russia appears more than a thousand years after Ezekiel. The identification is an anachronism dressed up as prophecy.`,
+      },
+      {
+        question: `Is Ezekiel 38-39 a forecast of a future war?`,
+        answer: `Ezekiel's own referent is post-exilic and theological — a statement about YHWH's sovereignty over even the most distant nations, written to exiles wondering whether their God could still act in history. Bible Lens does keep a future dimension, but it is reserved in Revelation 20, not laid out in Ezekiel. The prophecy isn't a dispatch filed in advance about 21st-century geopolitics.`,
+      },
+      {
+        question: `Why does Gog come "from the far north" — is there more to it than geography?`,
+        answer: `Quite possibly. In the ancient Near East, "the north" (Hebrew tsaphon) wasn't only a compass direction — it was the location of the cosmic mountain, the dwelling of the gods and their assembly. The Bible knows that imagery and claims it for YHWH: Psalm 48 calls Mount Zion "the heights of the far north," and Isaiah 14 pictures the rebel aspiring to "the mount of assembly, in the far north." So when Gog musters "from the uttermost parts of the north," the phrase can carry a second register on top of the literal Anatolian geography: the threat comes from the direction of cosmic rebellion — the hostile powers arrayed against God's mountain and his people. On this reading, Gog is not merely a foreign army but the embodiment of the anti-divine-council forces the prophets expected to mass against God's people — and to be defeated.`,
+      },
+      {
+        question: `Why does Revelation reuse Gog and Magog?`,
+        answer: `John reserves Ezekiel's "nations gathered against God's people" scenario for an end-of-millennium judgment, placed explicitly after the thousand years (Revelation 20:8). He isn't re-running Ezekiel 38-39 as a first-century event; he is holding Ezekiel's ultimate confrontation for the very end. The aftermath imagery — birds summoned to the slain — is quoted from Ezekiel 39 in Revelation 19.`,
+      },
+    ],
+  },
+  {
+    slug: "genesis-2-conditional-immortality",
+    title: "Genesis 2 and \"You Will Surely Die\": Mortality, Not Damnation",
+    description:
+      "Did God threaten hell in Eden? The Hebrew mot tamut — 'dying you shall die' — read as a mortality sentence, not damnation: the conditional-immortality case.",
+    keywords: [
+      "conditional immortality",
+      "mot tamut meaning",
+      "you will surely die Genesis 2:17",
+      "does the Bible teach an immortal soul",
+      "Genesis 2:17 death not damnation",
+    ],
+    chapterKeys: ["genesis-2", "genesis-3", "genesis-1"],
+    prose: `Genesis 2:17 carries the most famous warning in the Bible — and for most of two thousand years it has been read as a threat the original audience would not have recognized.
+
+Start with the Hebrew. The phrase is mot tamut: the verb "to die" stacked on itself, an infinitive absolute paired with a finite verb. It is the strongest way Biblical Hebrew has of saying this will certainly happen. Older translations render it "thou shalt surely die"; the most literal reading is "dying you shall die." It is a guarantee, not a metaphor — and, crucially, not a description of where the dead go.
+
+Here's where it gets interesting: the people who first heard Genesis read aloud were ancient Near Eastern people, and they did not carry a concept of an immortal soul that floats free of the body. That picture arrives later, largely through Greek philosophy a thousand years downstream. To the original audience, "you will surely die" meant the nephesh — the whole breath-animated living self of Genesis 2:7 — would stop. Become dust again. Time-bound, in the most concrete sense the word has.
+
+So when God names the consequence, there is no hell in the frame, because there is no doctrine of hell or immortal souls in the frame yet. There is a man, a garden, a tree, and a clock that has been hidden until now. Eat, and the clock starts.
+
+What the original audience would have understood is that the death named here is not a place but a category change. Adam was formed from dust and given the breath of life, and as long as he had access to the tree of life his body could continue. Read the next chapter carefully: after the eating, God acts "lest he reach out and take from the tree of life, and live forever," and sets cherubim to guard the way. The death is the closing of the source. The breath stays; the image-bearing stays; the body becomes what bodies are when cut off from life — temporary.
+
+This is what resolves the obvious objection. Adam eats, and lives another nine hundred and thirty years (Genesis 5:5). Doesn't that mean the warning failed? Mot tamut never claimed instant death — it claimed the certainty of death. The clock starts in Genesis 3, runs through Genesis 5, and catches up with Adam at nine hundred and thirty. The warning told the truth slowly.
+
+Through this lens, what changes is almost everything downstream. If Genesis 2 is about mortality rather than damnation, the savior's work is no longer rescue from God's wrath against a disembodied soul — it is the restoration of access to the source. Paul names the same physical category with terrifying economy: "in Adam all die — in Christ all shall be made alive" (1 Corinthians 15:22). Not damned and pardoned. Die and alive. Adam closes the way to the tree; the last Adam opens it back.
+
+Ancient wisdom, modern clarity. The warning was always true. The death was always real. It simply was not the death we were taught to fear.`,
+    datePublished: "2026-06-17",
+    dateModified: "2026-06-17",
+    boundary: `Bible Lens reads Genesis 2:17 as conditional immortality, and states plainly that this is a minority position in modern Christianity. It is not the inherited reading — in which Adam's soul dies spiritually and faces conscious eternal torment — and it does not pretend that reading away: that view has careful defenders and a long history. But it imports an immortal-soul framework the Hebrew text does not supply. Bible Lens also does not claim the question is closed. The aim is to put the grammar and the ancient context on the table and name, openly, where the historical reading parts from the popular one. That boundary is part of the claim, not a footnote to it. Bible Lens also distinguishes the prospect of everlasting life — which Adam and the angels held and could forfeit — from immortality, the conferred deathlessness God grants only after proven loyalty. That two-tier reading separates this position from both the innate-immortal-soul view and a flat annihilationism.`,
+    faq: [
+      {
+        question: "Does Genesis 2:17 teach that human beings have an immortal soul?",
+        answer:
+          "On the historical reading, no. The original ancient Near Eastern audience had no concept of an immortal soul separable from the body; that idea enters later through Greek philosophy. \"You will surely die\" meant the whole living self (nephesh) would end. Bible Lens holds the conditional-immortality reading — that ongoing life was tied to access to the tree of life rather than being intrinsic to humanity — and notes openly that this is a minority view in modern Christianity.",
+      },
+      {
+        question: "Did Adam start out immortal?",
+        answer:
+          "No. Adam — like the angels — began with the prospect of everlasting life, sustained by access to the tree of life and contingent on loyalty. That is not immortality. Immortality is deathlessness that cannot be lost, and Scripture presents it as something God confers after testing, not something any creature owns by nature. Jesus, having been tested and proven faithful, has been granted it (Romans 6:9 — death no longer has dominion over him); the faithful are promised the same at the resurrection (1 Corinthians 15:53-54). Adam never had it to lose.",
+      },
+      {
+        question: "If Adam \"surely died,\" why did he live another 930 years?",
+        answer:
+          "The Hebrew mot tamut (\"dying you shall die,\" an infinitive absolute paired with a finite verb) asserts the certainty of death, not its immediacy. The death is the loss of access to the tree of life — the source — after which the body begins its slow return to dust. The clock starts in Genesis 3 and reaches Adam in Genesis 5:5. The warning came true slowly.",
+      },
+      {
+        question: "What does mot tamut mean?",
+        answer:
+          "It is the verb \"to die\" stacked on itself — an infinitive absolute paired with a finite verb — the strongest intensifier Biblical Hebrew has. Literally \"dying you shall die\"; traditionally \"thou shalt surely die.\" It guarantees the outcome without specifying when it arrives.",
+      },
+      {
+        question: "Is conditional immortality the mainstream Christian view?",
+        answer:
+          "No, and Bible Lens says so directly. The dominant Western reading remains the inherited immortal-soul framework with conscious eternal torment. Conditional immortality — that life is sustained by God rather than intrinsic, so \"death\" means ending rather than eternal conscious separation — is a minority position with careful defenders. Bible Lens argues it from the Hebrew grammar and ancient context rather than asserting it as settled.",
+      },
+    ],
+    video: {
+      youtubeId: "kvX3MTVps9E",
+      name: "\"You Shall Die\" — But Did He? | Bible Lens",
+      description:
+        "The Hebrew mot tamut — 'dying you shall die' — read as a mortality sentence, not a threat of hell: the conditional-immortality case from Genesis 2:17 through 1 Corinthians 15.",
+      uploadDate: "2026-06-07",
+      thumbnailUrl: "https://i.ytimg.com/vi/kvX3MTVps9E/maxresdefault.jpg",
+    },
+  },
+  {
+    slug: "genesis-6-sons-of-god",
+    title: "The Sons of God in Genesis 6: A Council-Member Rebellion",
+    description:
+      "Who were the 'sons of God' who took human wives in Genesis 6? Not the line of Seth — the divine council (bene Elohim), the same heavenly host as Genesis 1, in rebellion.",
+    keywords: [
+      "sons of God Genesis 6",
+      "Nephilim meaning",
+      "bene elohim divine council",
+      "sons of God angels or Sethites",
+      "Genesis 6 sons of God explained",
+    ],
+    chapterKeys: ["genesis-6", "genesis-1", "job-1", "psalms-82", "genesis-11"],
+    prose: `Genesis 6 opens with four of the strangest verses in the Hebrew Bible: "the sons of God saw that the daughters of men were beautiful, and they took as wives any they chose." If you were taught that those "sons of God" were the godly line of Seth marrying the worldly line of Cain, you were taught a reading that almost certainly isn't what the original audience heard — and isn't what the New Testament writers thought either.
+
+To see who they were, you don't start in chapter 6. You start with one word God speaks in chapter 1: us. "Let us make man in our image" (Genesis 1:26). For centuries readers took that as God talking to himself, or a hint of the Trinity. The original audience heard something they already knew: God addressing his council — the heavenly host the Hebrew Bible calls the bene Elohim, the sons of God. They are there in chapter one, watching humanity be formed. In chapter six, some of them come back.
+
+Here's where it gets interesting: the phrase "sons of God" has a settled meaning everywhere else it appears in the Hebrew Bible — and it never means ordinary men. In Job, "the sons of God came to present themselves before the LORD" (1:6) — a heavenly court reporting in. When God answers Job from the whirlwind, he recalls the morning the world was made, when "the morning stars sang together and all the sons of God shouted for joy" (38:7) — before there were any people to shout. Every time the Hebrew says bene Elohim, it means divine beings. So when Genesis 6 uses that exact phrase, set in deliberate contrast against "the daughters of men," the first audience didn't wonder which family was meant. They knew.
+
+And we don't have to guess how ancient readers understood it — they left their homework. Centuries before Jesus, the book of 1 Enoch told the story in detail: two hundred divine beings, the Watchers, descended on Mount Hermon, took wives, and fathered giants. It is not in most Bibles, but it was everywhere in the centuries before Christ — the room Genesis 6 was being read in. And the New Testament writers built on that reading, not against it. Second Peter sets it in order: "God did not spare the angels when they sinned… and did not spare the ancient world… when he brought the flood" (2:4-5) — divine rebellion, then judgment. Jude says it plainly: the angels "did not stay within their own position of authority, but abandoned their proper dwelling" (Jude 6). Not a poem about bad marriages — beings leaving the realm they belonged to.
+
+Even the oldest Bible we have agrees. Three centuries before Christ, where the Hebrew said bene Elohim, the Greek translators wrote angeloi tou theou — the angels of God. The men who knew the Hebrew best, translating for their own people, reached for one word: angels.
+
+What the original audience would have understood is that this is the council from Genesis 1, still in the story. Psalm 82 shows God rendering judgment in the divine assembly; 1 Kings 22 shows him enthroned with all the host of heaven at his right and left. Genesis 6 is not a random monster story — it is members of that government going rogue, defectors from the assembly that watched the world be made. The closer you stand to the throne, the further there is to fall. The flood is the throne room's answer.
+
+Through this lens, the alternatives fall away on the evidence, not by force. The Sethite reading doesn't appear until the fourth century after Christ, and Genesis never divides humanity that way. The "mighty kings" reading founders on the fact that the Hebrew never uses this phrase for human rulers. And the "it's only myth" reading is answered by the very translators who could read the Hebrew — and rendered it angels. Every piece of the oldest evidence points past all three, to the council.
+
+The Nephilim filled the earth with violence, and the flood was a complete reset. Except — generations later, the spies sent into the land report the Nephilim still there: "the sons of Anak, of the Nephilim" (Numbers 13:33), after the flood. The reset that was supposed to end them didn't. Ancient wisdom, modern clarity.`,
+    datePublished: "2026-06-18",
+    dateModified: "2026-06-18",
+    boundary: `Genesis 6:1-4 — the "sons of God" who take human wives, and the Nephilim who follow — is usually softened in popular teaching by the Sethite reading: the "sons of God" are the godly line of Seth, the "daughters of men" the worldly line of Cain, and the sin is just intermarriage. Bible Lens reads it the way its first audience would have: the "sons of God" are the bene Elohim, the divine council — the same heavenly host God addressed in Genesis 1's "let us." Genesis 6 isn't introducing a new mystery in chapter six; it's paying off the council the reader already met in chapter one, now in rebellion.
+
+So Bible Lens parts from both the Sethite reading and the "dynastic rulers" alternative — not by attacking them, but by following the text and the way it was read in the Second Temple period (1 Enoch, and the New Testament's own witness in Jude 6 and 2 Peter 2:4-5). Everywhere else the phrase "sons of God" appears in the Hebrew Bible it means divine beings (Job 1:6, 38:7); Genesis 6 is no exception. This is a story about heavenly beings crossing a boundary — the prelude to the flood and the origin of the Nephilim.`,
+    faq: [
+      {
+        question: `Were the "sons of God" the line of Seth, or divine beings?`,
+        answer: `Divine beings — the bene Elohim, the heavenly council. The Sethite reading (the godly line of Seth marrying Cain's line) is tidy, but it doesn't appear until the fourth century after Christ, and Genesis never divides humanity into those two lines. Everywhere else the Hebrew Bible says "sons of God" it means divine beings (Job 1:6; 38:7), and Genesis 6 sets the phrase in deliberate contrast against "the daughters of men." The first audience didn't hear a story about intermarriage.`,
+      },
+      {
+        question: `What are the Nephilim?`,
+        answer: `The offspring of the union — rendered "giants" in many translations, though the sense is closer to "the fallen ones." In the Second Temple retelling (1 Enoch) they are the great giants born to the Watchers, and their violence is part of what brings on the flood. The name returns in Numbers 13:33, where the spies report the Nephilim still in the land after the flood — the thread Bible Lens picks up next.`,
+      },
+      {
+        question: `Doesn't the New Testament reject the "angel" view?`,
+        answer: `The opposite — it affirms it. Second Peter sets "the angels when they sinned" directly beside "the ancient world… the flood" (2:4-5), in that order, as one connected event; Jude describes "the angels who did not stay within their own position of authority but abandoned their proper dwelling" (Jude 6). Both reach back to Genesis 6 and read it as divine rebellion, not bad marriages. The apostles inherited the angel reading and built on it.`,
+      },
+      {
+        question: `How does this connect to Genesis 1:26's "let us"?`,
+        answer: `Directly. The "us" of Genesis 1 is God addressing his divine council — the heavenly host that watched humanity be formed. Genesis 6 doesn't introduce a new category in chapter six; it pays off that same council, now with some of its members in rebellion. Psalm 82 and 1 Kings 22 show the same assembly — the government of heaven around the throne — which is why the flood reads as the throne room's answer to a revolt within it.`,
+      },
+    ],
+    video: {
+      youtubeId: "GjoNH6iet2o",
+      name: "Who Were the Sons of God? | Bible Lens",
+      description: `The "sons of God" of Genesis 6 read as the bene Elohim — the divine council of Genesis 1 — in rebellion, with the Second Temple, New Testament, and Septuagint witness behind it.`,
+      uploadDate: "2026-06-18",
+      thumbnailUrl: "https://i.ytimg.com/vi/GjoNH6iet2o/maxresdefault.jpg",
+    },
   },
 ];
 

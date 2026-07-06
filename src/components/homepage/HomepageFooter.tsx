@@ -39,9 +39,9 @@ export function HomepageFooter() {
 
           <div className="relative z-10 flex flex-wrap justify-center gap-10">
             {[
-              { label: "Theology", href: "/commentary" },
-              { label: "Historical Context", href: "/about" },
-              { label: "Hermeneutics", href: "/start-here" },
+              { label: "Commentary", href: "/commentary" },
+              { label: "About", href: "/about" },
+              { label: "Start Here", href: "/start-here" },
               { label: "Privacy", href: "/privacy" },
             ].map((link) =>
               link.href.startsWith("/") ? (

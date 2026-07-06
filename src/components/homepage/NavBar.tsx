@@ -3,11 +3,11 @@
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Explore", href: "/books" },
-  { label: "Context", href: "/commentary" },
+  { label: "Books", href: "/books" },
+  { label: "Commentary", href: "/commentary" },
   { label: "Topics", href: "/topics" },
-  { label: "Archive", href: "/start-here" },
-  { label: "Scholar", href: "/chat" },
+  { label: "Start Here", href: "/start-here" },
+  { label: "Ask a Scholar", href: "/chat" },
 ];
 
 export function NavBar() {
