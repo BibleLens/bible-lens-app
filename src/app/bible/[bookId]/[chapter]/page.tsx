@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getChapter, getBook, findBookById, getAdjacentBooks } from "@/lib/bible";
 import { LensIcon } from "@/components/LensIcon";
@@ -24,13 +25,24 @@ function parseChapterParam(chapter: string): number | null {
   return parseInt(chapter, 10);
 }
 
+// Server-side commentary fetch (Qdrant + embeddings) isolated behind Suspense —
+// keeps the commentary text in the served HTML for SEO without blocking verses
+async function CommentaryLoader({ bookId, chapterNum }: { bookId: string; chapterNum: number }) {
+  const initialCommentary = await getCommentaryData(bookId, chapterNum);
+  return <CommentaryPanel book={bookId} chapter={chapterNum} initialCommentary={initialCommentary} />;
+}
+
 export async function generateMetadata({ params }: ChapterPageProps): Promise<Metadata> {
   const { bookId, chapter } = await params;
   const chapterNum = parseChapterParam(chapter);
   const bookMeta = findBookById(bookId);
 
-  if (!bookMeta || chapterNum === null) {
-    return { title: "Not Found | Bible Lens" };
+  // notFound() here, not just in the page body: metadata resolves before the
+  // response streams, so this is what makes the HTTP status an actual 404 —
+  // once loading.tsx enables streaming, a notFound() thrown in the page body
+  // lands after the 200 shell has already been flushed
+  if (!bookMeta || chapterNum === null || !getChapter(bookId, chapterNum)) {
+    notFound();
   }
 
   const hasCommentary = chapterHasCommentary(bookId, chapterNum);
@@ -91,10 +103,11 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
   const videoId = getVideoId(bookId, chapterNum);
   const hasVideo = Boolean(videoId);
 
-  // Server-side commentary fetch for SEO — commentary chapters only
-  const initialCommentary = hasCommentary
-    ? await getCommentaryData(bookId, chapterNum)
-    : [];
+  // Commentary is fetched in <CommentaryLoader> behind Suspense so the verses
+  // (and the HTTP status) never wait on Qdrant. A route-level loading.tsx
+  // would achieve the pending UI too, but it turns the whole route into a
+  // streamed response whose 200 status is flushed before notFound() can run —
+  // in-page Suspense keeps real 404s AND streams the slow panel.
 
   const hasPrevChapter = chapterNum > 1;
   const hasNextChapter = chapterNum < totalChapters;
@@ -380,7 +393,17 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             className="grain-overlay min-h-screen px-6 py-8 lg:border-l"
             style={{ background: "var(--color-obsidian)", borderColor: "rgba(0,229,255,0.15)" }}
           >
-            <CommentaryPanel book={bookId} chapter={chapterNum} initialCommentary={initialCommentary} />
+            <Suspense
+              fallback={
+                <div className="glass-card p-5 animate-pulse">
+                  <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
+                    Loading commentary...
+                  </p>
+                </div>
+              }
+            >
+              <CommentaryLoader bookId={bookId} chapterNum={chapterNum} />
+            </Suspense>
           </div>
         )}
       </main>
