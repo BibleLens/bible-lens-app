@@ -145,21 +145,25 @@ function ResultsList({ results }: { results: SemanticResult[] }) {
   );
 }
 
+interface SemanticFetchState {
+  forQuery: string;
+  results: SemanticResult[];
+  error: boolean;
+}
+
 export function SemanticSearch({ query }: SemanticSearchProps) {
-  const [results, setResults] = useState<SemanticResult[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  // Loading/results/error are derived by comparing fetchState.forQuery with
+  // the current query — no synchronous setState inside the effect body
+  const [fetchState, setFetchState] = useState<SemanticFetchState>({
+    forQuery: "",
+    results: [],
+    error: false,
+  });
 
   useEffect(() => {
-    if (!query.trim()) {
-      setResults([]);
-      setError(false);
-      return;
-    }
+    if (!query.trim()) return;
 
     let cancelled = false;
-    setLoading(true);
-    setError(false);
 
     fetch("/api/search", {
       method: "POST",
@@ -169,21 +173,26 @@ export function SemanticSearch({ query }: SemanticSearchProps) {
       .then((res) => res.json())
       .then((data) => {
         if (cancelled) return;
-        setResults(
-          (data.results as SemanticResult[]) ?? []
-        );
-        setLoading(false);
+        setFetchState({
+          forQuery: query,
+          results: (data.results as SemanticResult[]) ?? [],
+          error: false,
+        });
       })
       .catch(() => {
         if (cancelled) return;
-        setError(true);
-        setLoading(false);
+        setFetchState({ forQuery: query, results: [], error: true });
       });
 
     return () => {
       cancelled = true;
     };
   }, [query]);
+
+  const isCurrent = fetchState.forQuery === query;
+  const results = isCurrent && query.trim() ? fetchState.results : [];
+  const error = isCurrent && Boolean(query.trim()) && fetchState.error;
+  const loading = Boolean(query.trim()) && !isCurrent;
 
   return (
     <div className="glass-card p-5">

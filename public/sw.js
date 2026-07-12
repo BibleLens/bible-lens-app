@@ -1,7 +1,7 @@
 // public/sw.js
 // Source: MDN Service Worker API + Next.js official PWA guide
 
-self.addEventListener('install', (event) => {
+self.addEventListener('install', () => {
   // Skip waiting: force this SW to become active immediately
   // Without this, the new SW sits in "waiting" state until all tabs are closed
   self.skipWaiting();

@@ -1,11 +1,29 @@
 'use client'
 
-import { useEffect, useRef, useState, useMemo } from 'react'
+import { useEffect, useRef, useState, useMemo, useSyncExternalStore } from 'react'
 import Link from 'next/link'
 import type { BookMeta } from '@/lib/bible-meta'
 import { bookMetaMap } from '@/lib/book-meta'
 import { COMMENTARY_BOOKS } from '@/lib/commentary-index'
 import { useMasonryLayout } from './useMasonryLayout'
+
+// ── Reduced-motion media query store ─────────────────────────────────────────
+
+const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
+
+function subscribeToReducedMotion(onChange: () => void): () => void {
+  const mq = window.matchMedia(REDUCED_MOTION_QUERY)
+  mq.addEventListener('change', onChange)
+  return () => mq.removeEventListener('change', onChange)
+}
+
+function getReducedMotionSnapshot(): boolean {
+  return window.matchMedia(REDUCED_MOTION_QUERY).matches
+}
+
+function getReducedMotionServerSnapshot(): boolean {
+  return false
+}
 
 // ── Props ────────────────────────────────────────────────────────────────────
 
@@ -182,15 +200,13 @@ export function MasonryBooksGrid({
   }, [])
 
   // ── Reduced motion preference ──────────────────────────────────────────────
-  const [reducedMotion, setReducedMotion] = useState(false)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setReducedMotion(mq.matches)
-    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
+  // useSyncExternalStore subscribes to the media query without setState-in-effect;
+  // server snapshot is false (no media queries during SSR)
+  const reducedMotion = useSyncExternalStore(
+    subscribeToReducedMotion,
+    getReducedMotionSnapshot,
+    getReducedMotionServerSnapshot
+  )
 
   // ── Description extraction ─────────────────────────────────────────────────
   const descriptions = useMemo(

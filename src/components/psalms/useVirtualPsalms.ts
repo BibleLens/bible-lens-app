@@ -59,9 +59,12 @@ export function useVirtualPsalms(
 
   // Attach scroll + resize listeners after hydration
   useEffect(() => {
-    // Initialize from current window values
-    setScrollY(window.scrollY)
-    setViewportHeight(window.innerHeight)
+    // Initialize from current window values on the next frame — synchronous
+    // setState in an effect body triggers a cascading re-render before paint
+    const initFrame = requestAnimationFrame(() => {
+      setScrollY(window.scrollY)
+      setViewportHeight(window.innerHeight)
+    })
 
     const onScroll = () => {
       setScrollY((prev) => {
@@ -80,6 +83,7 @@ export function useVirtualPsalms(
     window.addEventListener('resize', onResize, { passive: true })
 
     return () => {
+      cancelAnimationFrame(initFrame)
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onResize)
     }

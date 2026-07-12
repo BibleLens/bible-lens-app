@@ -17,38 +17,41 @@ interface BibleSearchProps {
   query: string;
 }
 
+interface FetchState {
+  forQuery: string;
+  results: BibleSearchResult[];
+}
+
 export function BibleSearch({ query }: BibleSearchProps) {
-  const [results, setResults] = useState<BibleSearchResult[]>([]);
-  const [loading, setLoading] = useState(false);
+  // Loading/results are derived by comparing fetchState.forQuery with the
+  // current query — no synchronous setState inside the effect body
+  const [fetchState, setFetchState] = useState<FetchState>({ forQuery: "", results: [] });
 
   // Fetch results from the server-side index — the full Bible + MiniSearch
   // no longer ship to the browser (see /api/bible-search)
   useEffect(() => {
-    if (!query.trim()) {
-      setResults([]);
-      setLoading(false);
-      return;
-    }
+    if (!query.trim()) return;
 
     const controller = new AbortController();
-    setLoading(true);
 
     fetch(`/api/bible-search?q=${encodeURIComponent(query)}`, {
       signal: controller.signal,
     })
       .then((res) => (res.ok ? res.json() : { results: [] }))
       .then((data) => {
-        setResults(data.results ?? []);
-        setLoading(false);
+        setFetchState({ forQuery: query, results: data.results ?? [] });
       })
       .catch((err) => {
         if (err instanceof DOMException && err.name === "AbortError") return;
-        setResults([]);
-        setLoading(false);
+        setFetchState({ forQuery: query, results: [] });
       });
 
     return () => controller.abort();
   }, [query]);
+
+  const isCurrent = fetchState.forQuery === query;
+  const results = isCurrent && query.trim() ? fetchState.results : [];
+  const loading = Boolean(query.trim()) && !isCurrent;
 
   return (
     <div className="glass-card p-5">

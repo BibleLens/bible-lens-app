@@ -21,10 +21,21 @@ interface CommentaryPanelProps {
   initialCommentary?: CommentaryChunk[];
 }
 
+interface CommentaryFetchState {
+  forKey: string;
+  commentary: CommentaryChunk[];
+}
+
 export function CommentaryPanel({ book, chapter, initialCommentary }: CommentaryPanelProps) {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(!(initialCommentary && initialCommentary.length > 0));
-  const [commentary, setCommentary] = useState<CommentaryChunk[]>(initialCommentary ?? []);
+  const chapterKey = `${book}-${chapter}`;
+  // Loading/commentary are derived by comparing fetchState.forKey with the
+  // current chapter — no synchronous setState inside the effect body
+  const [fetchState, setFetchState] = useState<CommentaryFetchState>(
+    initialCommentary && initialCommentary.length > 0
+      ? { forKey: chapterKey, commentary: initialCommentary }
+      : { forKey: "", commentary: [] }
+  );
 
   const buildPassageQuestion = (): string => {
     const bookTitle = book.charAt(0).toUpperCase() + book.slice(1);
@@ -414,21 +425,25 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
     // Skip client fetch when data was pre-populated by the server (SSR)
     if (initialCommentary && initialCommentary.length > 0) return;
 
-    setIsLoading(true);
-    setCommentary([]);
+    let cancelled = false;
+    const key = `${book}-${chapter}`;
 
     fetch(`/api/commentary?book=${encodeURIComponent(book)}&chapter=${chapter}`)
       .then((res) => res.json())
       .then((data: CommentaryResponse) => {
-        setCommentary(data.commentary ?? []);
+        if (!cancelled) setFetchState({ forKey: key, commentary: data.commentary ?? [] });
       })
       .catch(() => {
-        setCommentary([]);
-      })
-      .finally(() => {
-        setIsLoading(false);
+        if (!cancelled) setFetchState({ forKey: key, commentary: [] });
       });
+
+    return () => {
+      cancelled = true;
+    };
   }, [book, chapter, initialCommentary]);
+
+  const isLoading = fetchState.forKey !== chapterKey;
+  const commentary = isLoading ? [] : fetchState.commentary;
 
   // Empty state — hide completely, no broken UI
   if (!isLoading && commentary.length === 0) {

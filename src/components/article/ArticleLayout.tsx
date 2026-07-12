@@ -1,8 +1,8 @@
 'use client'
 
-import { useRef, useState, useEffect, useMemo, useCallback } from 'react'
+import { useRef, useState, useEffect, useMemo } from 'react'
 import { prepareWithSegments, layoutNextLine, layout } from '@chenglou/pretext'
-import type { LayoutCursor, PreparedTextWithSegments } from '@chenglou/pretext'
+import type { LayoutCursor } from '@chenglou/pretext'
 import { usePretextReady } from '@/lib/pretext'
 import type { ArticleBlock } from '@/lib/articles/types'
 import { ArticleDropCap, measureDropCapWidth, DROP_CAP_GAP, DROP_CAP_LINES } from './ArticleDropCap'
@@ -17,7 +17,6 @@ const PULL_QUOTE_FONT = 'italic 400 20px "Newsreader"'
 const PULL_QUOTE_LINE_HEIGHT = 30 // px
 const COLUMN_GAP = 32 // xl token — gutter between columns
 const MOBILE_BREAKPOINT = 768 // px
-const PULL_QUOTE_GAP = 8 // gap between pull quote and text
 const PULL_QUOTE_PADDING = 16 // p-4 = 16px
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -298,7 +297,6 @@ function layoutBlocks(blocks: ArticleBlock[], columnWidth: number): LayoutResult
           const isInDropCapZone = lineIndex < DROP_CAP_LINES
           const maxWidth = isInDropCapZone ? reducedWidth : columnWidth
           const xOffset = isInDropCapZone ? dropCapXOffset : 0
-          const currentCol = colAFull ? 'B' : 'A'
           const currentY = colAFull ? colBY : colAY
 
           const line = layoutNextLine(prepared, cursor, maxWidth)
@@ -342,7 +340,6 @@ function layoutBlocks(blocks: ArticleBlock[], columnWidth: number): LayoutResult
         const TARGET_COLUMN_HEIGHT = 600
 
         while (true) {
-          const currentCol = colAFull ? 'B' : 'A'
           const currentY = colAFull ? colBY : colAY
           const maxWidth = columnWidth
           const colX = colAFull ? colBX : colAX

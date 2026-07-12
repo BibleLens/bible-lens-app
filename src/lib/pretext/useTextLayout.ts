@@ -28,9 +28,11 @@ export function useTextLayout(
 ): TextLayoutResult {
   const fontsReady = usePretextReady()
 
-  // prepare() is expensive (~19ms per call) — only re-run when text, font, or ready state changes
+  // prepare() is expensive (~19ms per call) and width-independent — only re-run
+  // when text, font, or ready state changes. maxWidth is guarded in the layout
+  // memo below, not here, so the dependency list is complete.
   const prepared = useMemo(() => {
-    if (!fontsReady || !text.trim() || maxWidth <= 0) return null
+    if (!fontsReady || !text.trim()) return null
     return prepare(text, font)
   }, [text, font, fontsReady])
 

@@ -7,7 +7,7 @@ interface ArticlePullQuoteProps {
   style?: React.CSSProperties
 }
 
-export function ArticlePullQuote({ text, attribution, position, style }: ArticlePullQuoteProps) {
+export function ArticlePullQuote({ text, attribution, style }: ArticlePullQuoteProps) {
   return (
     <aside className="glass-card p-4 absolute" style={style}>
       <p className="font-newsreader italic text-[20px] leading-[30px] text-[#e2e2e2]">
