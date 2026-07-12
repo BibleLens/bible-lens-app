@@ -119,7 +119,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
     }
     if (book === "zechariah") {
       if ([1, 2, 3].includes(chapter)) {
-        return `What were Zechariah's night visions actually about — and why does the historical context of 519 BCE Persian-period Yehud change how we read the colored horses, the divine court trial, and the Branch oracle?`;
+        return `What were Zechariah's night visions actually about — and why does the historical context of 519 BCE Persian-period Yehud change how we read the colored horses, the heavenly court trial, and the Branch oracle?`;
       }
       if ([4, 5, 6].includes(chapter)) {
         return `What do the lampstand, the flying scroll, and the crown oracle reveal about the dual leadership of post-exilic Yehud — and why is the bnei-yitzhar designation for Zerubbabel and Joshua significant?`;
