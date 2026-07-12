@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Privacy | Bible Lens",
   description:
     "How Bible Lens handles your information. We collect only what's needed to send you updates, never sell your data, and make it easy to leave.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

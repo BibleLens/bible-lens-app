@@ -3,6 +3,7 @@ import { getBook, findBookById } from '@/lib/bible'
 import { estimateTextHeight, AVG_CHAR_WIDTHS } from '@/lib/pretext'
 import { PsalmsFullView } from '@/components/psalms/PsalmsFullView'
 import { CHAPTER_HEADER_PX } from '@/components/psalms/useVirtualPsalms'
+import { pageMetadata } from '@/lib/page-metadata'
 
 // ── SSR constants ─────────────────────────────────────────────────────────────
 
@@ -35,10 +36,11 @@ interface FullPageProps {
 export async function generateMetadata({ params }: FullPageProps) {
   const { bookId } = await params
   if (bookId !== 'psalms') return { title: 'Not Found | Bible Lens' }
-  return {
+  return pageMetadata({
     title: 'Psalms - Full Text | Bible Lens',
     description: 'Read all 150 Psalms in a single continuous view with smooth navigation.',
-  }
+    path: '/bible/psalms/full',
+  })
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────

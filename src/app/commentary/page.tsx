@@ -9,15 +9,16 @@ import {
 } from "@/lib/commentary-index";
 import { findBookById } from "@/lib/bible";
 import { EmailCapture } from "@/components/EmailCapture";
+import { pageMetadata } from "@/lib/page-metadata";
 
 export const dynamic = "force-static";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Bible Commentary | Bible Lens",
   description:
     "55 chapters of historically-grounded commentary on Genesis, Daniel, Revelation, Isaiah, Ezekiel, and Matthew — organised by theme and book.",
-  alternates: { canonical: "https://biblelens.faith/commentary" },
-};
+  path: "/commentary",
+});
 
 function getBookDisplayName(bookId: string): string {
   return findBookById(bookId)?.name ?? bookId;

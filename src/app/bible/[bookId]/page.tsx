@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getBook, findBookById, getAdjacentBooks } from "@/lib/bible";
 import { LensIcon } from "@/components/LensIcon";
 import { chapterHasCommentary } from "@/lib/commentary-index";
+import { pageMetadata } from "@/lib/page-metadata";
 
 interface BookPageProps {
   params: Promise<{ bookId: string }>;
@@ -11,15 +12,16 @@ interface BookPageProps {
 export async function generateMetadata({ params }: BookPageProps) {
   const { bookId } = await params;
   const bookMeta = findBookById(bookId);
-  
+
   if (!bookMeta) {
     return { title: "Book Not Found | Bible Lens" };
   }
-  
-  return {
+
+  return pageMetadata({
     title: `${bookMeta.name} | Bible Lens`,
     description: `Read ${bookMeta.name} from the Berean Standard Bible with historical context and commentary.`,
-  };
+    path: `/bible/${bookMeta.id}`,
+  });
 }
 
 export default async function BookPage({ params }: BookPageProps) {

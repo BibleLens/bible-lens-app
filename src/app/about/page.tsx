@@ -1,11 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About the Lens | Bible Lens",
   description:
     "Bible Lens reads Scripture through a unitarian, partial-preterist, historical-critical lens. Learn what that means and why it shapes every answer you get.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

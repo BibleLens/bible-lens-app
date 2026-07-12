@@ -16,12 +16,20 @@ interface ChapterPageProps {
   params: Promise<{ bookId: string; chapter: string }>;
 }
 
+// Only canonical chapter params are valid — parseInt() alone accepts prefixed
+// junk ("1abc") and leading zeros ("01"), serving duplicate content at
+// unlimited URL variants. Anything but the plain number 404s.
+function parseChapterParam(chapter: string): number | null {
+  if (!/^[1-9][0-9]*$/.test(chapter)) return null;
+  return parseInt(chapter, 10);
+}
+
 export async function generateMetadata({ params }: ChapterPageProps): Promise<Metadata> {
   const { bookId, chapter } = await params;
-  const chapterNum = parseInt(chapter, 10);
+  const chapterNum = parseChapterParam(chapter);
   const bookMeta = findBookById(bookId);
 
-  if (!bookMeta) {
+  if (!bookMeta || chapterNum === null) {
     return { title: "Not Found | Bible Lens" };
   }
 
@@ -61,12 +69,16 @@ export async function generateMetadata({ params }: ChapterPageProps): Promise<Me
 
 export default async function ChapterPage({ params }: ChapterPageProps) {
   const { bookId, chapter: chapterStr } = await params;
-  const chapterNum = parseInt(chapterStr, 10);
-  
+  const chapterNum = parseChapterParam(chapterStr);
+
+  if (chapterNum === null) {
+    notFound();
+  }
+
   const book = getBook(bookId);
   const bookMeta = findBookById(bookId);
   const verses = getChapter(bookId, chapterNum);
-  
+
   if (!book || !bookMeta || !verses) {
     notFound();
   }

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { ChatInterface } from "@/components/ChatInterface";
 import { ChatSidebar } from "@/components/ChatSidebar";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Ask a Question | Bible Lens",
   description:
     "AI-powered theological Q&A grounded in the Bible Lens knowledge base. Ask questions about Scripture and receive historically-informed answers in a warm, accessible voice.",
-};
+  path: "/chat",
+});
 
 export default async function ChatPage({
   searchParams,

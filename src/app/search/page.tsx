@@ -4,6 +4,7 @@ import { SearchInput } from "@/components/SearchInput";
 import { BibleSearch } from "@/components/BibleSearch";
 import { SemanticSearch } from "@/components/SemanticSearch";
 import { SuggestionBubbles } from "@/components/SuggestionBubbles";
+import { pageMetadata } from "@/lib/page-metadata";
 
 interface SearchPageProps {
   searchParams: Promise<{ q?: string }>;
@@ -13,12 +14,14 @@ export async function generateMetadata({
   searchParams,
 }: SearchPageProps): Promise<Metadata> {
   const { q = "" } = await searchParams;
-  return {
+  return pageMetadata({
     title: q ? `"${q}" — Search | Bible Lens` : "Search | Bible Lens",
     description: q
       ? `Search results for "${q}" — Bible verses and theological insights from Bible Lens.`
       : "Search the Bible and theological commentary. Instant keyword search across all 31,729 BSB verses plus semantic search via AI.",
-  };
+    // Canonical stays /search regardless of q — query permutations shouldn't index separately
+    path: "/search",
+  });
 }
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {

@@ -89,7 +89,6 @@ export const viewport: Viewport = {
   ],
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
 };
 
 // Site-wide entity graph for AI search engines and rich results.
