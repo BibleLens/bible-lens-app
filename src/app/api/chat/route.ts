@@ -195,12 +195,17 @@ export async function POST(request: NextRequest) {
             }
           }
 
-          // Append end-of-response citations if RAG returned results
+          // Append end-of-response citations if RAG returned results.
+          // Only web URLs — ingested payloads carry file:// paths from the
+          // machine that ran the rebuild, which must never reach the client.
           if (sources.length > 0) {
             const sourcesBlock =
               '\n\n---\n**Sources:**\n' +
               sources
-                .map((s) => `[${s.index}] ${s.title}${s.url ? ` — ${s.url}` : ''}`)
+                .map((s) => {
+                  const isWebUrl = typeof s.url === 'string' && /^https?:\/\//.test(s.url);
+                  return `[${s.index}] ${s.title}${isWebUrl ? ` — ${s.url}` : ''}`;
+                })
                 .join('\n');
             controller.enqueue(encoder.encode(sourcesBlock));
           }
