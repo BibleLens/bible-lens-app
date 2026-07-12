@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
-import type { Verse, BookMeta } from '@/lib/bible'
+import type { Verse, BookMeta } from '@/lib/bible-meta'
 import { useVirtualPsalms, SSR_COL_WIDTH } from './useVirtualPsalms'
 
 // ── Props ────────────────────────────────────────────────────────────────────

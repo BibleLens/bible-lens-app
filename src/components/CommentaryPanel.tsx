@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import type { CommentaryChunk } from "@/lib/commentary";
 import { RELATED_PASSAGES, CHAPTER_TOPICS, TOPIC_PAGES } from "@/lib/commentary-index";
-import { findBookById } from "@/lib/bible";
+import { findBookById } from "@/lib/bible-meta";
 import { GlassCard } from "@/components/GlassCard";
 
 interface CommentaryResponse {

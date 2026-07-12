@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import MiniSearch from "minisearch";
-import { getAllBooks, getBook } from "@/lib/bible";
 
 interface BibleSearchResult {
   id: string;
@@ -15,91 +13,42 @@ interface BibleSearchResult {
   score: number;
 }
 
-// Module-scope singleton — build index once across all renders
-let bibleIndex: MiniSearch | null = null;
-
-function getOrBuildBibleIndex(): MiniSearch {
-  if (bibleIndex) return bibleIndex;
-
-  bibleIndex = new MiniSearch({
-    fields: ["text"],
-    storeFields: ["book", "bookName", "chapter", "verse", "text"],
-    idField: "id",
-    searchOptions: {
-      prefix: true,
-      fuzzy: 0.2,
-    },
-  });
-
-  const books = getAllBooks();
-  const docs: Array<{
-    id: string;
-    book: string;
-    bookName: string;
-    chapter: number;
-    verse: number;
-    text: string;
-  }> = [];
-
-  for (const bookMeta of books) {
-    const bookData = getBook(bookMeta.id);
-    if (!bookData) continue;
-    for (const [chStr, verses] of Object.entries(bookData.chapters)) {
-      const chapter = parseInt(chStr, 10);
-      for (const v of verses) {
-        docs.push({
-          id: `${bookMeta.id}-${chapter}-${v.verse}`,
-          book: bookMeta.id,
-          bookName: bookMeta.name,
-          chapter,
-          verse: v.verse,
-          text: v.text,
-        });
-      }
-    }
-  }
-
-  // Deduplicate — guards against corrupted bible data with repeated verses
-  const seen = new Set<string>();
-  const uniqueDocs = [];
-  for (const doc of docs) {
-    if (!seen.has(doc.id)) {
-      seen.add(doc.id);
-      uniqueDocs.push(doc);
-    }
-  }
-
-  bibleIndex.addAll(uniqueDocs);
-  return bibleIndex;
-}
-
 interface BibleSearchProps {
   query: string;
 }
 
 export function BibleSearch({ query }: BibleSearchProps) {
   const [results, setResults] = useState<BibleSearchResult[]>([]);
-  const [indexReady, setIndexReady] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  // Build index on mount — defer with setTimeout so page paints first
+  // Fetch results from the server-side index — the full Bible + MiniSearch
+  // no longer ship to the browser (see /api/bible-search)
   useEffect(() => {
-    const timer = setTimeout(() => {
-      getOrBuildBibleIndex();
-      setIndexReady(true);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Run search when query or index readiness changes
-  useEffect(() => {
-    if (!indexReady || !query.trim()) {
+    if (!query.trim()) {
       setResults([]);
+      setLoading(false);
       return;
     }
-    const idx = getOrBuildBibleIndex();
-    const hits = (idx.search(query) as unknown as BibleSearchResult[]).slice(0, 20);
-    setResults(hits);
-  }, [query, indexReady]);
+
+    const controller = new AbortController();
+    setLoading(true);
+
+    fetch(`/api/bible-search?q=${encodeURIComponent(query)}`, {
+      signal: controller.signal,
+    })
+      .then((res) => (res.ok ? res.json() : { results: [] }))
+      .then((data) => {
+        setResults(data.results ?? []);
+        setLoading(false);
+      })
+      .catch((err) => {
+        if (err instanceof DOMException && err.name === "AbortError") return;
+        setResults([]);
+        setLoading(false);
+      });
+
+    return () => controller.abort();
+  }, [query]);
 
   return (
     <div className="glass-card p-5">
@@ -109,22 +58,22 @@ export function BibleSearch({ query }: BibleSearchProps) {
       </div>
 
       {/* States */}
-      {!indexReady && (
+      {loading && (
         <p
           className="text-base animate-pulse"
           style={{ color: "var(--color-text-muted)" }}
         >
-          Building search index...
+          Searching...
         </p>
       )}
 
-      {indexReady && query.trim() && results.length === 0 && (
+      {!loading && query.trim() && results.length === 0 && (
         <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
           No Bible results for &ldquo;{query}&rdquo;
         </p>
       )}
 
-      {indexReady && !query.trim() && (
+      {!query.trim() && (
         <p className="text-base" style={{ color: "var(--color-text-muted)" }}>
           Type a word or phrase to search all 31,729 BSB verses.
         </p>

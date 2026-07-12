@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useMemo } from 'react'
 import Link from 'next/link'
-import type { BookMeta } from '@/lib/bible'
+import type { BookMeta } from '@/lib/bible-meta'
 import { bookMetaMap } from '@/lib/book-meta'
 import { COMMENTARY_BOOKS } from '@/lib/commentary-index'
 import { useMasonryLayout } from './useMasonryLayout'

@@ -1,34 +1,24 @@
 /**
- * Bible data types and utilities
+ * Bible data types and utilities.
+ *
+ * SERVER-SIDE ONLY for value imports — this module statically imports all 66
+ * book JSONs (~4.5 MB), so importing it from a "use client" component ships
+ * the entire Bible to the browser. Client components needing book metadata
+ * (names, ids, chapter counts) or the shared types must import from
+ * '@/lib/bible-meta' instead; full-text search goes through /api/bible-search.
  */
 
-export interface Verse {
-  verse: number;
-  text: string;
-}
+export type { Verse, BookData, BookMeta, BibleIndex } from './bible-meta';
+export {
+  getBibleIndex,
+  getAllBooks,
+  getOldTestamentBooks,
+  getNewTestamentBooks,
+  findBookById,
+  getAdjacentBooks,
+} from './bible-meta';
 
-export interface BookData {
-  id: string;
-  name: string;
-  abbr: string;
-  testament: 'OT' | 'NT';
-  chapterCount: number;
-  chapters: Record<string, Verse[]>;
-}
-
-export interface BookMeta {
-  id: string;
-  name: string;
-  abbr: string;
-  testament: 'OT' | 'NT';
-  chapters: number;
-}
-
-export interface BibleIndex {
-  translation: string;
-  name: string;
-  books: BookMeta[];
-}
+import type { BookData, Verse } from './bible-meta';
 
 // Import all book data statically
 import genesisData from '@/data/bibles/bsb/genesis.json';
@@ -97,7 +87,6 @@ import john2Data from '@/data/bibles/bsb/2john.json';
 import john3Data from '@/data/bibles/bsb/3john.json';
 import judeData from '@/data/bibles/bsb/jude.json';
 import revelationData from '@/data/bibles/bsb/revelation.json';
-import indexData from '@/data/bibles/bsb/index.json';
 
 // Book data map
 const bookDataMap: Record<string, BookData> = {
@@ -169,10 +158,6 @@ const bookDataMap: Record<string, BookData> = {
   revelation: revelationData as BookData,
 };
 
-export function getBibleIndex(): BibleIndex {
-  return indexData as BibleIndex;
-}
-
 export function getBook(bookId: string): BookData | null {
   return bookDataMap[bookId] || null;
 }
@@ -181,32 +166,5 @@ export function getChapter(bookId: string, chapter: number): Verse[] | null {
   const book = getBook(bookId);
   if (!book) return null;
   return book.chapters[chapter.toString()] || null;
-}
-
-export function getAllBooks(): BookMeta[] {
-  return (indexData as BibleIndex).books;
-}
-
-export function getOldTestamentBooks(): BookMeta[] {
-  return (indexData as BibleIndex).books.filter(b => b.testament === 'OT');
-}
-
-export function getNewTestamentBooks(): BookMeta[] {
-  return (indexData as BibleIndex).books.filter(b => b.testament === 'NT');
-}
-
-export function findBookById(bookId: string): BookMeta | undefined {
-  return (indexData as BibleIndex).books.find(b => b.id === bookId);
-}
-
-// Get next/previous book for navigation
-export function getAdjacentBooks(bookId: string): { prev: BookMeta | null; next: BookMeta | null } {
-  const books = (indexData as BibleIndex).books;
-  const currentIndex = books.findIndex(b => b.id === bookId);
-  
-  return {
-    prev: currentIndex > 0 ? books[currentIndex - 1] : null,
-    next: currentIndex < books.length - 1 ? books[currentIndex + 1] : null,
-  };
 }
 

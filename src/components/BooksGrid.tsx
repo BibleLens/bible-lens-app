@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { BookMeta } from "@/lib/bible";
+import type { BookMeta } from "@/lib/bible-meta";
 import { MasonryBooksGrid } from "@/components/masonry/MasonryBooksGrid";
 
 const TABS = [
