@@ -54,12 +54,26 @@ function chunkText(text, chunkSize = CHUNK_SIZE_WORDS, overlap = CHUNK_OVERLAP_W
 }
 
 // --- Embedding ---
-async function embedBatch(texts) {
-  const response = await openai.embeddings.create({
-    model: EMBEDDING_MODEL,
-    input: texts,
-  });
-  return response.data.map(d => d.embedding);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Retry on 429 — the full corpus exceeds the 1M tokens/min embedding limit,
+// so mid-run rate limits are expected, not exceptional
+async function embedBatch(texts, attempt = 0) {
+  try {
+    const response = await openai.embeddings.create({
+      model: EMBEDDING_MODEL,
+      input: texts,
+    });
+    return response.data.map(d => d.embedding);
+  } catch (err) {
+    if (err?.status === 429 && attempt < 6) {
+      const waitMs = Math.min(60_000, 2_000 * 2 ** attempt);
+      console.log(`  Rate limited — retrying in ${Math.round(waitMs / 1000)}s (attempt ${attempt + 1}/6)`);
+      await sleep(waitMs);
+      return embedBatch(texts, attempt + 1);
+    }
+    throw err;
+  }
 }
 
 async function embedAll(texts) {
