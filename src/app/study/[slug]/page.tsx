@@ -17,12 +17,15 @@ export async function generateMetadata({ params }: StudyArticlePageProps): Promi
   const { slug } = await params
   const article = getArticleBySlug(slug)
   if (!article) return { title: 'Article Not Found' }
+  const url = `https://biblelens.faith/study/${slug}`
   return {
     title: `${article.title} — Bible Lens Deep Dive`,
     description: article.description,
+    alternates: { canonical: url },
     openGraph: {
       title: article.title,
       description: article.description,
+      url,
       type: 'article',
       publishedTime: article.publishedAt,
     },
@@ -46,7 +49,7 @@ export default async function StudyArticlePage({ params }: StudyArticlePageProps
   const ssrEstimateHeight = estimateTextHeight(allText, avgCharWidth, ssrColumnWidth, lineHeightPx)
 
   return (
-    <main className="min-h-screen bg-[#050508]">
+    <main id="main-content" className="min-h-screen bg-[#050508]">
       <ArticleHero
         title={article.title}
         subtitle={article.subtitle}

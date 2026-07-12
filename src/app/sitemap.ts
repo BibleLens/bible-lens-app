@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllBooks } from "@/lib/bible";
 import { COMMENTARY_CHAPTERS, TOPIC_PAGES } from "@/lib/commentary-index";
 import { TIMELINE_SLUGS } from "@/lib/timelines-data";
+import { getAllArticleSlugs } from "@/lib/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://biblelens.faith";
@@ -17,7 +18,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/books`, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/topics`, changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${base}/timelines`, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${base}/privacy`, changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${base}/bible/psalms/full`, changeFrequency: "monthly" as const, priority: 0.6 },
   ];
+
+  // Book index pages — the hub for each book's chapters
+  const bookEntries: MetadataRoute.Sitemap = books.map((book) => ({
+    url: `${base}/bible/${book.id}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  // Long-form study articles
+  const studyEntries: MetadataRoute.Sitemap = getAllArticleSlugs().map((slug) => ({
+    url: `${base}/study/${slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
 
   const chapterEntries: MetadataRoute.Sitemap = books.flatMap((book) => {
     const commentaryChapters = COMMENTARY_CHAPTERS[book.id] ?? [];
@@ -40,5 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...chapterEntries, ...topicEntries, ...timelineEntries];
+  return [
+    ...staticEntries,
+    ...bookEntries,
+    ...studyEntries,
+    ...chapterEntries,
+    ...topicEntries,
+    ...timelineEntries,
+  ];
 }
