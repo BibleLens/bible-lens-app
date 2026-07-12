@@ -4,10 +4,23 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getQdrantClient, COLLECTION_NAME } from '@/lib/qdrant';
 import { embedQuery } from '@/lib/embeddings';
 import { titleCoversChapter } from '@/lib/commentary';
+import { checkCommentaryRateLimit, getClientIp } from '@/lib/rate-limit';
 
 export const maxDuration = 15;
 
 export async function GET(request: NextRequest) {
+  const ip = getClientIp(request);
+  const { allowed, resetAt } = checkCommentaryRateLimit(ip);
+  if (!allowed) {
+    return NextResponse.json(
+      { error: 'Too many requests — try again in a minute.' },
+      {
+        status: 429,
+        headers: { 'Retry-After': String(Math.ceil((resetAt - Date.now()) / 1000)) },
+      }
+    );
+  }
+
   const { searchParams } = new URL(request.url);
   const book = searchParams.get('book');
   const chapter = searchParams.get('chapter');

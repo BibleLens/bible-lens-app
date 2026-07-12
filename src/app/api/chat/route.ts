@@ -30,6 +30,11 @@ interface ConversationMessage {
   content: string;
 }
 
+// Hard cap on any single message — the token-budget pruner deliberately keeps an
+// over-budget latest message, so without this a multi-megabyte question would reach
+// the embedding and Claude calls at full length.
+const MAX_MESSAGE_CHARS = 4000;
+
 export async function POST(request: NextRequest) {
   // Step 1: Rate limit check
   const ip = getClientIp(request);
@@ -71,7 +76,8 @@ export async function POST(request: NextRequest) {
         typeof msg !== 'object' ||
         (msg.role !== 'user' && msg.role !== 'assistant') ||
         typeof msg.content !== 'string' ||
-        msg.content.trim() === ''
+        msg.content.trim() === '' ||
+        msg.content.length > MAX_MESSAGE_CHARS
       ) {
         return new Response(
           JSON.stringify({ error: "That question didn't quite register — could you rephrase it?" }),
@@ -103,7 +109,7 @@ export async function POST(request: NextRequest) {
   } else {
     // Legacy single-turn: { question: string }
     const { question } = body;
-    if (!question || typeof question !== 'string') {
+    if (!question || typeof question !== 'string' || question.length > MAX_MESSAGE_CHARS) {
       return new Response(
         JSON.stringify({ error: "That question didn't quite register — could you rephrase it?" }),
         {

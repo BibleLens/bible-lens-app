@@ -19,8 +19,14 @@ const searchCache = new LRUCache<string, RateLimitEntry>({
   ttl: 60_000,
 });
 
-const CHAT_LIMIT = 10;   // 10 req/min per IP — protect the wallet on Claude calls
-const SEARCH_LIMIT = 30; // 30 req/min per IP — search is cheaper (just OpenAI + Qdrant)
+const commentaryCache = new LRUCache<string, RateLimitEntry>({
+  max: 500,
+  ttl: 60_000,
+});
+
+const CHAT_LIMIT = 10;       // 10 req/min per IP — protect the wallet on Claude calls
+const SEARCH_LIMIT = 30;     // 30 req/min per IP — search is cheaper (just OpenAI + Qdrant)
+const COMMENTARY_LIMIT = 30; // 30 req/min per IP — same cost profile as search (OpenAI + Qdrant)
 
 function checkLimit(
   cache: LRUCache<string, RateLimitEntry>,
@@ -51,6 +57,10 @@ export function checkChatRateLimit(ip: string) {
 
 export function checkSearchRateLimit(ip: string) {
   return checkLimit(searchCache, ip, SEARCH_LIMIT);
+}
+
+export function checkCommentaryRateLimit(ip: string) {
+  return checkLimit(commentaryCache, ip, COMMENTARY_LIMIT);
 }
 
 /**
