@@ -44,7 +44,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         return `What is the significance of the covenant cutting ceremony in Genesis 15 — why does only God walk between the pieces, and what did the self-maledictory oath mean to the original audience?`;
       }
       if (chapter === 18) {
-        return `Who were the three visitors at Mamre in Genesis 18, and what does divine council theology tell us about how Yahweh's messengers functioned in the ancient Near East?`;
+        return `Who were the three visitors at Mamre in Genesis 18, and what does heavenly court theology tell us about how Yahweh's messengers functioned in the ancient Near East?`;
       }
       return `What does ${bookTitle} ${chapter} mean for understanding creation?`;
     }
@@ -80,7 +80,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         return `What did the seraphim and the trisagion mean to Isaiah's original audience — and what does the ANE throne-guardian tradition reveal about the 'holy, holy, holy' declaration?`;
       }
       if (chapter === 40) {
-        return `What does 'comfort, comfort my people' mean as a divine council commissioning scene — and why is the 'voice crying in the wilderness' announcing a new exodus that will surpass the first?`;
+        return `What does 'comfort, comfort my people' mean as a heavenly court commissioning scene — and why is the 'voice crying in the wilderness' announcing a new exodus that will surpass the first?`;
       }
       if ([42, 43].includes(chapter)) {
         return `What is the Servant Song in this chapter — and how do the trial speeches, the ani hu declarations, and the bruised-reed method of mishpat reshape what 'justice to the nations' means?`;
@@ -140,7 +140,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
         return `What did Ezekiel's chariot vision mean to the original exilic audience — the chayot, ophanim, and the kabod of YHWH?`;
       }
       if (chapter === 28) {
-        return `Is Ezekiel 28 about Satan or a human king? What did the divine council imagery mean to Ezekiel's original audience?`;
+        return `Is Ezekiel 28 about Satan or a human king? What did the heavenly court imagery mean to Ezekiel's original audience?`;
       }
       if (chapter === 37) {
         return `What does Ezekiel 37's valley of dry bones mean? How does the text interpret itself at verse 11?`;
@@ -202,7 +202,7 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
     }
     if (book === "job") {
       if ([1, 2].includes(chapter)) {
-        return `What was actually happening in Job's divine council opening — who is ha-satan, and how does the prosecuting-attorney role differ from the later theological concept of Satan?`;
+        return `What was actually happening in Job's heavenly court opening — who is ha-satan, and how does the prosecuting-attorney role differ from the later theological concept of Satan?`;
       }
       if (chapter === 3) {
         return `What is the theological significance of Job 3's opening lament — and why does the 'why was I born?' protest represent legitimate grief rather than sinful rebellion in the wisdom literature tradition?`;

@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 
 const SUGGESTIONS = [
   "Who are the sons of God in Genesis 6?",
-  "What is the divine council?",
+  "What is the heavenly court?",
   "How does Daniel 7 connect to Revelation?",
   "What did the Servant Songs mean to the original audience?",
   "When was Revelation written?",

@@ -92,7 +92,7 @@ export const bookMetaMap: Record<string, { author: string; date: string; context
   psalms: {
     author: "David, Asaph, Sons of Korah, and others",
     date: "10th–5th century BC",
-    context: "Israel's hymnbook — lament, praise, royal theology, and divine council.",
+    context: "Israel's hymnbook — lament, praise, royal theology, and heavenly court.",
   },
   proverbs: {
     author: "Solomon, Agur, Lemuel's mother, and others",
@@ -187,7 +187,7 @@ export const bookMetaMap: Record<string, { author: string; date: string; context
   zechariah: {
     author: "Zechariah / Deutero-Zechariah",
     date: "c. 520–480 BC (chs. 9–14 later)",
-    context: "Eight night visions, divine council drama, and the shepherd-king who enters Jerusalem on a donkey.",
+    context: "Eight night visions, heavenly court drama, and the shepherd-king who enters Jerusalem on a donkey.",
   },
   malachi: {
     author: "Malachi (or anonymous messenger)",
