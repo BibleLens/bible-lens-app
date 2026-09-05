@@ -121,10 +121,10 @@ export const MASTER_TIMELINE_ERAS: MasterTimelineEra[] = [
     id: "patriarchs",
     range: "Genesis 12–50",
     title: "The patriarchs",
-    summary: "A working reconstruction places Abraham, Isaac, Jacob and Joseph in the Middle Bronze Age.",
+    summary: "These dates use a 1450 BC Exodus and 215 years in Egypt. Genesis 37:2, 41:46 and 45:6 place Joseph's arrival about 22 years before Jacob's; the absolute dates depend on the selected model.",
     events: [
-      { date: "c. 1875 BC", label: "The promise to Abraham", status: "derived" },
-      { date: "c. 1726 BC", label: "Joseph enters Egypt", status: "derived", href: "/timelines/joseph-at-avaris" },
+      { date: "c. 1880 BC", label: "Abraham enters Canaan in the 430-year model", status: "derived", href: "/timelines/israel-in-egypt" },
+      { date: "c. 1687 BC", label: "Joseph enters Egypt", status: "derived", href: "/timelines/joseph-at-avaris" },
       { date: "c. 1665 BC", label: "Jacob's household enters Egypt", status: "derived", href: "/timelines/israel-in-egypt" },
     ],
   },
@@ -203,10 +203,10 @@ export const TIMELINES: Timeline[] = [
       },
     ],
     evidence: [
-      { title: "The major textual witnesses differ", status: "documented", summary: "The Masoretic Text names Egypt; the Septuagint and Samaritan Pentateuch include Canaan in the 430-year residence.", sourceIds: ["exod", "frankel"] },
+      { title: "The major textual witnesses differ", status: "documented", summary: "The Masoretic Text names Egypt; the Septuagint and Samaritan Pentateuch include Canaan in the 430-year residence.", sourceIds: ["exod", "glatt-gilad"] },
       { title: "The patriarchal intervals total 215 years", status: "derived", summary: "The ages stated in Genesis yield 215 years from Abraham's entry into Canaan to Jacob's entry into Egypt.", sourceIds: ["genesis"] },
       { title: "Josephus explicitly gives both intervals", status: "documented", summary: "Antiquities 2.318 states 430 years from Abraham's entry into Canaan and 215 years from Jacob's entry into Egypt.", sourceIds: ["josephus"] },
-      { title: "The longer wording is the original text", status: "disputed", summary: "Some see omission in the Masoretic tradition; others see harmonising expansion in the Greek and Samaritan traditions.", sourceIds: ["frankel"] },
+      { title: "The longer wording is the original text", status: "disputed", summary: "Some see omission in the Masoretic tradition; others see harmonising expansion in the Greek and Samaritan traditions.", sourceIds: ["glatt-gilad"] },
     ],
     sources: [
       { id: "exod", title: "Exodus 12:40–41: Masoretic, Septuagint and Samaritan witnesses", note: "The primary textual variants at issue." },
