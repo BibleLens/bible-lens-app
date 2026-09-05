@@ -1,0 +1,3983 @@
+{
+  "schemaVersion": "0.1",
+  "author": "Pat Robinson",
+  "date": "2026-09-05",
+  "title": "Jesus' birth and its historical setting",
+  "status": "proposed_pilot_prepared_for_review",
+  "sourceRegistry": "../../../Strategy/AppDevelopment/EXPLORER-PACKET-2026-09-05/sources.json",
+  "editorial": {
+    "pilotLocked": false,
+    "preferredChronologyAdopted": false,
+    "defaultBirthViewProposal": "birth-range-herod4",
+    "birthMonthDayKnown": false,
+    "publicationApproved": false,
+    "fullPassageTextIncluded": false,
+    "passagePolicy": "References and source links only in this packet. Embed reviewed WEB text when building the reading concepts; this doesn't lock the app's default translation.",
+    "flatEarthOfficialPosition": false,
+    "gleasonFeatureRequested": true,
+    "earthShapeAndGeocentrismDistinct": true,
+    "viewpointAvailabilityMeansEndorsement": false,
+    "viewpointAvailabilityMeansEqualEvidence": false,
+    "geocentrismEssayScope": "Pat's minority biblical position essay; preserve the existing argument and qualifications.",
+    "genesis27Scope": "Biblical compatibility brief; not a scientific disproof of evolution."
+  },
+  "subjects": [
+    {
+      "id": "person-jesus",
+      "type": "person",
+      "label": "Jesus",
+      "summary": "Matthew and Luke place Jesus at the centre of their birth narratives.",
+      "summaryClaimId": "claim-person-jesus",
+      "passages": [
+        "Matthew 1:18–25"
+      ],
+      "relationshipIds": [
+        "rel-022",
+        "rel-030",
+        "rel-032"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-mary",
+      "type": "person",
+      "label": "Mary",
+      "summary": "Luke introduces Mary in Nazareth and names her as Jesus' mother.",
+      "summaryClaimId": "claim-person-mary",
+      "passages": [
+        "Luke 1:26–38",
+        "Matthew 1:18–25"
+      ],
+      "relationshipIds": [
+        "rel-004",
+        "rel-021",
+        "rel-030",
+        "rel-031",
+        "rel-036",
+        "rel-040"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-joseph",
+      "type": "person",
+      "label": "Joseph, Mary's husband",
+      "summary": "Matthew names Joseph as Mary's husband and describes his care for her child.",
+      "summaryClaimId": "claim-person-joseph",
+      "passages": [
+        "Matthew 1:18–25"
+      ],
+      "relationshipIds": [
+        "rel-020",
+        "rel-031",
+        "rel-032"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-elizabeth",
+      "type": "person",
+      "label": "Elizabeth",
+      "summary": "Luke identifies Elizabeth as Zechariah's wife, Mary's relative and John's mother.",
+      "summaryClaimId": "claim-person-elizabeth",
+      "passages": [
+        "Luke 1:26–38"
+      ],
+      "relationshipIds": [
+        "rel-005",
+        "rel-033",
+        "rel-034",
+        "rel-036"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-zechariah",
+      "type": "person",
+      "label": "Zechariah",
+      "summary": "Luke's priest belongs to Abijah's division and receives an announcement while offering incense.",
+      "summaryClaimId": "claim-person-zechariah",
+      "passages": [
+        "Luke 1:5–23"
+      ],
+      "relationshipIds": [
+        "rel-001",
+        "rel-033",
+        "rel-035",
+        "rel-037",
+        "rel-038"
+      ],
+      "aliases": [
+        "Zacharias"
+      ]
+    },
+    {
+      "id": "person-john",
+      "type": "person",
+      "label": "John the Baptist",
+      "summary": "Luke narrates John's birth to Elizabeth and Zechariah before narrating Jesus' birth.",
+      "summaryClaimId": "claim-person-john",
+      "passages": [
+        "Luke 1:57–66"
+      ],
+      "relationshipIds": [
+        "rel-009",
+        "rel-034",
+        "rel-035"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-herod",
+      "type": "person",
+      "label": "Herod the Great",
+      "summary": "Matthew places Jesus' birth during King Herod's reign.",
+      "summaryClaimId": "claim-person-herod",
+      "passages": [
+        "Matthew 2:1–12"
+      ],
+      "relationshipIds": [
+        "rel-023",
+        "rel-045"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-augustus",
+      "type": "person",
+      "label": "Caesar Augustus",
+      "summary": "Luke names Augustus in the decree that frames the journey to Bethlehem.",
+      "summaryClaimId": "claim-person-augustus",
+      "passages": [
+        "Luke 2:1–20"
+      ],
+      "relationshipIds": [
+        "rel-011",
+        "rel-046"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-quirinius",
+      "type": "person",
+      "label": "Quirinius",
+      "summary": "Luke names Quirinius in connection with the enrollment; Josephus describes his later assessment of Judaea.",
+      "summaryClaimId": "claim-person-quirinius",
+      "passages": [
+        "Luke 2:1–20"
+      ],
+      "relationshipIds": [
+        "rel-012",
+        "rel-047",
+        "rel-065"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-simeon",
+      "type": "person",
+      "label": "Simeon",
+      "summary": "Luke describes Simeon receiving the child Jesus during the family's Temple visit.",
+      "summaryClaimId": "claim-person-simeon",
+      "passages": [
+        "Luke 2:22–39"
+      ],
+      "relationshipIds": [
+        "rel-017",
+        "rel-041"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-anna",
+      "type": "person",
+      "label": "Anna",
+      "summary": "Luke names Anna as a prophetess who speaks about the child at the Temple.",
+      "summaryClaimId": "claim-person-anna",
+      "passages": [
+        "Luke 2:22–39"
+      ],
+      "relationshipIds": [
+        "rel-018",
+        "rel-042"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "person-gabriel",
+      "type": "person",
+      "label": "Gabriel",
+      "summary": "Luke names Gabriel as the messenger who addresses Zechariah and Mary.",
+      "summaryClaimId": "claim-person-gabriel",
+      "passages": [],
+      "relationshipIds": [
+        "rel-039"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "group-magi",
+      "type": "group",
+      "label": "Magi",
+      "summary": "Matthew's visitors come from the east. It gives neither their number nor their names.",
+      "summaryClaimId": "claim-group-magi",
+      "passages": [
+        "Matthew 2:1–12"
+      ],
+      "relationshipIds": [
+        "rel-024",
+        "rel-043"
+      ]
+    },
+    {
+      "id": "group-shepherds",
+      "type": "group",
+      "label": "Shepherds near Bethlehem",
+      "summary": "Luke's shepherds hear the announcement and visit the child.",
+      "summaryClaimId": "claim-group-shepherds",
+      "passages": [
+        "Luke 2:1–20"
+      ],
+      "relationshipIds": [
+        "rel-014",
+        "rel-044"
+      ]
+    },
+    {
+      "id": "group-abijah",
+      "type": "group",
+      "label": "Abijah's priestly division",
+      "summary": "Luke assigns Zechariah to Abijah; Chronicles lists Abijah eighth.",
+      "summaryClaimId": "claim-group-abijah",
+      "passages": [
+        "Luke 1:5–23"
+      ],
+      "relationshipIds": [
+        "rel-002",
+        "rel-037"
+      ]
+    },
+    {
+      "id": "place-nazareth",
+      "type": "place",
+      "label": "Nazareth",
+      "summary": "Luke locates Mary's announcement in Nazareth.",
+      "summaryClaimId": "claim-place-nazareth",
+      "passages": [],
+      "relationshipIds": [
+        "rel-050",
+        "rel-056",
+        "rel-057"
+      ],
+      "location": {
+        "precision": "settlement_context",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.300148,
+            32.701029
+          ]
+        },
+        "coordinateReferenceSystem": "WGS84",
+        "sourceRefs": [
+          {
+            "sourceId": "lmu-gazetteer",
+            "locator": "Nazareth"
+          }
+        ],
+        "attribution": "LMU Topolist, Nazareth; underlying coordinates attributed to OpenStreetMap.",
+        "displayInstruction": "General place marker. Do not label as the exact household, birth building or ancient city boundary."
+      }
+    },
+    {
+      "id": "place-bethlehem",
+      "type": "place",
+      "label": "Bethlehem",
+      "summary": "Matthew and Luke locate Jesus' birth in Bethlehem.",
+      "summaryClaimId": "claim-place-bethlehem",
+      "passages": [
+        "Luke 2:1–20"
+      ],
+      "relationshipIds": [
+        "rel-015",
+        "rel-052",
+        "rel-054"
+      ],
+      "location": {
+        "precision": "settlement_context",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.207639,
+            31.704306
+          ]
+        },
+        "coordinateReferenceSystem": "WGS84",
+        "sourceRefs": [
+          {
+            "sourceId": "bethlehem-gazetteer",
+            "locator": "Latitude, Longitude"
+          }
+        ],
+        "attribution": "OpenBible.info, Bethlehem; CC BY; settlement context only.",
+        "displayInstruction": "General place marker. Do not label as the exact household, birth building or ancient city boundary."
+      }
+    },
+    {
+      "id": "place-jerusalem",
+      "type": "place",
+      "label": "Jerusalem",
+      "summary": "Luke locates the family's presentation visit in Jerusalem.",
+      "summaryClaimId": "claim-place-jerusalem",
+      "passages": [],
+      "relationshipIds": [
+        "rel-058"
+      ],
+      "location": {
+        "precision": "settlement_context",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            35.234156,
+            31.776679
+          ]
+        },
+        "coordinateReferenceSystem": "WGS84",
+        "sourceRefs": [
+          {
+            "sourceId": "lmu-gazetteer",
+            "locator": "Hierusalem"
+          }
+        ],
+        "attribution": "LMU Topolist, Hierusalem; underlying coordinates attributed to OpenStreetMap.",
+        "displayInstruction": "General place marker. Do not label as the exact household, birth building or ancient city boundary."
+      }
+    },
+    {
+      "id": "place-temple",
+      "type": "place",
+      "label": "Jerusalem Temple",
+      "summary": "Luke's incense service and presentation scenes concern the Temple.",
+      "summaryClaimId": "claim-place-temple",
+      "passages": [
+        "Luke 2:22–39"
+      ],
+      "relationshipIds": [
+        "rel-019",
+        "rel-049",
+        "rel-053",
+        "rel-058"
+      ],
+      "location": {
+        "precision": "within_named_city",
+        "geometry": null,
+        "contextPlaceId": "place-jerusalem",
+        "displayInstruction": "Locate within Jerusalem at city scale; no sanctuary footprint or internal altar coordinates supplied."
+      }
+    },
+    {
+      "id": "place-hill-country",
+      "type": "place",
+      "label": "Judean hill country",
+      "summary": "Luke places Zechariah's household in an unnamed town in Judah's hill country.",
+      "summaryClaimId": "claim-place-hill-country",
+      "passages": [
+        "Luke 1:39–56"
+      ],
+      "relationshipIds": [
+        "rel-008",
+        "rel-051"
+      ],
+      "location": {
+        "precision": "region",
+        "geometry": null,
+        "displayInstruction": "Regional label only; no invented centroid, border or route.",
+        "unresolvedIdentification": "Luke doesn't name the town. Don't silently substitute the later Ein Karem identification."
+      }
+    },
+    {
+      "id": "place-egypt",
+      "type": "place",
+      "label": "Egypt",
+      "summary": "Matthew names Egypt as the family's refuge without naming a town.",
+      "summaryClaimId": "claim-place-egypt",
+      "passages": [
+        "Matthew 2:13–23"
+      ],
+      "relationshipIds": [
+        "rel-028",
+        "rel-055"
+      ],
+      "location": {
+        "precision": "region",
+        "geometry": null,
+        "displayInstruction": "Regional label only; no invented centroid, border or route."
+      }
+    },
+    {
+      "id": "place-galilee",
+      "type": "place",
+      "label": "Galilee",
+      "summary": "Luke locates Nazareth in Galilee.",
+      "summaryClaimId": "claim-place-galilee",
+      "passages": [],
+      "relationshipIds": [
+        "rel-057"
+      ],
+      "location": {
+        "precision": "region",
+        "geometry": null,
+        "displayInstruction": "Regional label only; no invented centroid, border or route."
+      }
+    },
+    {
+      "id": "place-syria",
+      "type": "place",
+      "label": "Syria",
+      "summary": "Luke connects Quirinius' office with Syria.",
+      "summaryClaimId": "claim-place-syria",
+      "passages": [],
+      "relationshipIds": [
+        "rel-065"
+      ],
+      "location": {
+        "precision": "historical_region",
+        "geometry": null,
+        "displayInstruction": "Regional label only; no invented centroid, border or route."
+      }
+    },
+    {
+      "id": "event-service",
+      "type": "event",
+      "label": "Zechariah's Temple service",
+      "summary": "Luke narrates an incense service followed by Zechariah's return home.",
+      "summaryClaimId": "claim-event-service",
+      "passages": [
+        "Luke 1:5–23"
+      ],
+      "relationshipIds": [
+        "rel-003",
+        "rel-038",
+        "rel-049"
+      ],
+      "dateClaimIds": [
+        "date-service-unknown",
+        "date-service-autumn",
+        "date-service-spring"
+      ]
+    },
+    {
+      "id": "event-announcement",
+      "type": "event",
+      "label": "The announcement to Mary",
+      "summary": "Gabriel's announcement to Mary occurs during Elizabeth's sixth month.",
+      "summaryClaimId": "claim-event-announcement",
+      "passages": [
+        "Luke 1:26–38"
+      ],
+      "relationshipIds": [
+        "rel-006",
+        "rel-039",
+        "rel-050"
+      ],
+      "dateClaimIds": [
+        "date-unknown-event-announcement"
+      ]
+    },
+    {
+      "id": "event-visitation",
+      "type": "event",
+      "label": "Mary visits Elizabeth",
+      "summary": "Mary travels to Elizabeth's household in the Judean hill country.",
+      "summaryClaimId": "claim-event-visitation",
+      "passages": [
+        "Luke 1:39–56"
+      ],
+      "relationshipIds": [
+        "rel-007",
+        "rel-040",
+        "rel-051"
+      ],
+      "dateClaimIds": [
+        "date-unknown-event-visitation"
+      ]
+    },
+    {
+      "id": "event-john-birth",
+      "type": "event",
+      "label": "John's birth",
+      "summary": "Luke narrates Elizabeth giving birth to John.",
+      "summaryClaimId": "claim-event-john-birth",
+      "passages": [
+        "Luke 1:57–66"
+      ],
+      "relationshipIds": [
+        "rel-010"
+      ],
+      "dateClaimIds": [
+        "date-unknown-event-john-birth"
+      ]
+    },
+    {
+      "id": "event-jesus-birth",
+      "type": "event",
+      "label": "Jesus' birth",
+      "summary": "Matthew and Luke report the birth but give no month and day.",
+      "summaryClaimId": "claim-event-jesus-birth",
+      "passages": [
+        "Luke 2:1–20"
+      ],
+      "relationshipIds": [
+        "rel-013",
+        "rel-044",
+        "rel-045",
+        "rel-046",
+        "rel-048",
+        "rel-052",
+        "rel-059",
+        "rel-062",
+        "rel-063",
+        "rel-064"
+      ],
+      "dateClaimIds": [
+        "date-birth-range",
+        "date-birth-march",
+        "date-birth-september",
+        "date-birth-december",
+        "date-birth-winter",
+        "date-birth-summer"
+      ]
+    },
+    {
+      "id": "event-presentation",
+      "type": "event",
+      "label": "Jesus is presented at the Temple",
+      "summary": "Luke narrates the family's visit after the purification period.",
+      "summaryClaimId": "claim-event-presentation",
+      "passages": [
+        "Luke 2:22–39"
+      ],
+      "relationshipIds": [
+        "rel-016",
+        "rel-041",
+        "rel-042",
+        "rel-053"
+      ],
+      "dateClaimIds": [
+        "date-unknown-event-presentation"
+      ]
+    },
+    {
+      "id": "event-magi-visit",
+      "type": "event",
+      "label": "The Magi's visit",
+      "summary": "Matthew's Magi enter a house and see the child with Mary. No exact interval from the birth is stated.",
+      "summaryClaimId": "claim-event-magi-visit",
+      "passages": [
+        "Matthew 2:1–12"
+      ],
+      "relationshipIds": [
+        "rel-025",
+        "rel-043",
+        "rel-054",
+        "rel-059",
+        "rel-060"
+      ],
+      "dateClaimIds": [
+        "date-magi-unknown"
+      ]
+    },
+    {
+      "id": "event-flight",
+      "type": "event",
+      "label": "The flight to Egypt",
+      "summary": "Matthew narrates Joseph taking the child and Mary to Egypt after a warning.",
+      "summaryClaimId": "claim-event-flight",
+      "passages": [
+        "Matthew 2:13–23"
+      ],
+      "relationshipIds": [
+        "rel-026",
+        "rel-055",
+        "rel-060"
+      ],
+      "dateClaimIds": [
+        "date-unknown-event-flight"
+      ]
+    },
+    {
+      "id": "event-return",
+      "type": "event",
+      "label": "The return to Nazareth",
+      "summary": "Matthew narrates a return after Herod's death; Luke closes the presentation account with a return to Nazareth. Their sequences need separate reading.",
+      "summaryClaimId": "claim-event-return",
+      "passages": [
+        "Matthew 2:13–23"
+      ],
+      "relationshipIds": [
+        "rel-027",
+        "rel-056",
+        "rel-061"
+      ],
+      "dateClaimIds": [
+        "date-unknown-event-return"
+      ]
+    },
+    {
+      "id": "event-census",
+      "type": "event",
+      "label": "Quirinius' assessment of Judaea",
+      "summary": "Josephus describes an assessment following Archelaus' removal. Its usual AD 6 dating creates a difficulty for combining Luke 2 with Herod's reign.",
+      "summaryClaimId": "claim-event-census",
+      "passages": [],
+      "relationshipIds": [
+        "rel-047",
+        "rel-048"
+      ],
+      "dateClaimIds": [
+        "date-census6"
+      ]
+    },
+    {
+      "id": "event-herod-death",
+      "type": "event",
+      "label": "Herod's death",
+      "summary": "Josephus' regnal totals and eclipse narrative underpin competing reconstructions of Herod's death.",
+      "summaryClaimId": "claim-event-herod-death",
+      "passages": [],
+      "relationshipIds": [
+        "rel-061"
+      ],
+      "dateClaimIds": [
+        "date-herod4",
+        "date-herod1"
+      ]
+    },
+    {
+      "id": "event-december-observance",
+      "type": "event",
+      "label": "December 25 in the Chronography of 354",
+      "summary": "The fourth-century calendar places Christ's birth at Bethlehem on December 25.",
+      "summaryClaimId": "claim-event-december-observance",
+      "passages": [],
+      "relationshipIds": [
+        "rel-062"
+      ],
+      "dateClaimIds": [
+        "date-december-attestation"
+      ]
+    },
+    {
+      "id": "event-sky-march",
+      "type": "event",
+      "label": "March Jupiter occultation",
+      "summary": "The existing calculation record places a lunar occultation of Jupiter on 20 March 6 BC, proleptic Julian. This doesn't identify a birth.",
+      "summaryClaimId": "claim-event-sky-march",
+      "passages": [],
+      "relationshipIds": [
+        "rel-063",
+        "rel-066"
+      ],
+      "dateClaimIds": [
+        "date-sky-march"
+      ]
+    },
+    {
+      "id": "event-sky-september",
+      "type": "event",
+      "label": "September sky proposal",
+      "summary": "Martin interprets a September evening through Revelation 12; the existing calculations examine positions and setting times, not the birth itself.",
+      "summaryClaimId": "claim-event-sky-september",
+      "passages": [
+        "Revelation 12:1–6, 17"
+      ],
+      "relationshipIds": [
+        "rel-029",
+        "rel-064"
+      ],
+      "dateClaimIds": [
+        "date-sky-september"
+      ]
+    },
+    {
+      "id": "event-equinox",
+      "type": "event",
+      "label": "Spring equinox in 6 BC",
+      "summary": "The existing calculations place the equinox on 23 March 6 BC Julian, equivalent to 21 March Gregorian.",
+      "summaryClaimId": "claim-event-equinox",
+      "passages": [],
+      "relationshipIds": [
+        "rel-066"
+      ],
+      "dateClaimIds": [
+        "date-equinox"
+      ]
+    },
+    {
+      "id": "passage-luke-service",
+      "type": "passage",
+      "label": "Luke 1:5–23",
+      "summary": "Zechariah's service",
+      "summaryClaimId": "claim-passage-luke-service",
+      "passages": [],
+      "relationshipIds": [
+        "rel-001",
+        "rel-002",
+        "rel-003"
+      ],
+      "reference": "Luke 1:5–23",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/LUK01.htm"
+    },
+    {
+      "id": "passage-luke-announcement",
+      "type": "passage",
+      "label": "Luke 1:26–38",
+      "summary": "The announcement to Mary",
+      "summaryClaimId": "claim-passage-luke-announcement",
+      "passages": [],
+      "relationshipIds": [
+        "rel-004",
+        "rel-005",
+        "rel-006"
+      ],
+      "reference": "Luke 1:26–38",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/LUK01.htm"
+    },
+    {
+      "id": "passage-luke-visitation",
+      "type": "passage",
+      "label": "Luke 1:39–56",
+      "summary": "Mary visits Elizabeth",
+      "summaryClaimId": "claim-passage-luke-visitation",
+      "passages": [],
+      "relationshipIds": [
+        "rel-007",
+        "rel-008"
+      ],
+      "reference": "Luke 1:39–56",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/LUK01.htm"
+    },
+    {
+      "id": "passage-luke-john",
+      "type": "passage",
+      "label": "Luke 1:57–66",
+      "summary": "John's birth",
+      "summaryClaimId": "claim-passage-luke-john",
+      "passages": [],
+      "relationshipIds": [
+        "rel-009",
+        "rel-010"
+      ],
+      "reference": "Luke 1:57–66",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/LUK01.htm"
+    },
+    {
+      "id": "passage-luke-birth",
+      "type": "passage",
+      "label": "Luke 2:1–20",
+      "summary": "The journey and birth",
+      "summaryClaimId": "claim-passage-luke-birth",
+      "passages": [],
+      "relationshipIds": [
+        "rel-011",
+        "rel-012",
+        "rel-013",
+        "rel-014",
+        "rel-015"
+      ],
+      "reference": "Luke 2:1–20",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/LUK02.htm"
+    },
+    {
+      "id": "passage-luke-presentation",
+      "type": "passage",
+      "label": "Luke 2:22–39",
+      "summary": "The Temple visit",
+      "summaryClaimId": "claim-passage-luke-presentation",
+      "passages": [],
+      "relationshipIds": [
+        "rel-016",
+        "rel-017",
+        "rel-018",
+        "rel-019"
+      ],
+      "reference": "Luke 2:22–39",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/LUK02.htm"
+    },
+    {
+      "id": "passage-matthew-family",
+      "type": "passage",
+      "label": "Matthew 1:18–25",
+      "summary": "Joseph and Mary",
+      "summaryClaimId": "claim-passage-matthew-family",
+      "passages": [],
+      "relationshipIds": [
+        "rel-020",
+        "rel-021",
+        "rel-022"
+      ],
+      "reference": "Matthew 1:18–25",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/MAT01.htm"
+    },
+    {
+      "id": "passage-matthew-magi",
+      "type": "passage",
+      "label": "Matthew 2:1–12",
+      "summary": "Herod and the Magi",
+      "summaryClaimId": "claim-passage-matthew-magi",
+      "passages": [],
+      "relationshipIds": [
+        "rel-023",
+        "rel-024",
+        "rel-025"
+      ],
+      "reference": "Matthew 2:1–12",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/MAT02.htm"
+    },
+    {
+      "id": "passage-matthew-egypt",
+      "type": "passage",
+      "label": "Matthew 2:13–23",
+      "summary": "Egypt and the return",
+      "summaryClaimId": "claim-passage-matthew-egypt",
+      "passages": [],
+      "relationshipIds": [
+        "rel-026",
+        "rel-027",
+        "rel-028"
+      ],
+      "reference": "Matthew 2:13–23",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/MAT02.htm"
+    },
+    {
+      "id": "passage-revelation-woman",
+      "type": "passage",
+      "label": "Revelation 12:1–6, 17",
+      "summary": "The woman, child and dragon",
+      "summaryClaimId": "claim-passage-revelation-woman",
+      "passages": [],
+      "relationshipIds": [
+        "rel-029"
+      ],
+      "reference": "Revelation 12:1–6, 17",
+      "translation": "World English Bible Classic",
+      "textIncluded": false,
+      "readingUrl": "https://ebible.org/eng-web/REV12.htm"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-001",
+      "from": "passage-luke-service",
+      "predicate": "describes",
+      "to": "person-zechariah",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-001"
+    },
+    {
+      "id": "rel-002",
+      "from": "passage-luke-service",
+      "predicate": "describes",
+      "to": "group-abijah",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-002"
+    },
+    {
+      "id": "rel-003",
+      "from": "passage-luke-service",
+      "predicate": "describes",
+      "to": "event-service",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-003"
+    },
+    {
+      "id": "rel-004",
+      "from": "passage-luke-announcement",
+      "predicate": "describes",
+      "to": "person-mary",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-004"
+    },
+    {
+      "id": "rel-005",
+      "from": "passage-luke-announcement",
+      "predicate": "describes",
+      "to": "person-elizabeth",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-005"
+    },
+    {
+      "id": "rel-006",
+      "from": "passage-luke-announcement",
+      "predicate": "describes",
+      "to": "event-announcement",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-006"
+    },
+    {
+      "id": "rel-007",
+      "from": "passage-luke-visitation",
+      "predicate": "describes",
+      "to": "event-visitation",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-007"
+    },
+    {
+      "id": "rel-008",
+      "from": "passage-luke-visitation",
+      "predicate": "describes",
+      "to": "place-hill-country",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-008"
+    },
+    {
+      "id": "rel-009",
+      "from": "passage-luke-john",
+      "predicate": "describes",
+      "to": "person-john",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-009"
+    },
+    {
+      "id": "rel-010",
+      "from": "passage-luke-john",
+      "predicate": "describes",
+      "to": "event-john-birth",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-010"
+    },
+    {
+      "id": "rel-011",
+      "from": "passage-luke-birth",
+      "predicate": "describes",
+      "to": "person-augustus",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-011"
+    },
+    {
+      "id": "rel-012",
+      "from": "passage-luke-birth",
+      "predicate": "describes",
+      "to": "person-quirinius",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-012"
+    },
+    {
+      "id": "rel-013",
+      "from": "passage-luke-birth",
+      "predicate": "describes",
+      "to": "event-jesus-birth",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-013"
+    },
+    {
+      "id": "rel-014",
+      "from": "passage-luke-birth",
+      "predicate": "describes",
+      "to": "group-shepherds",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-014"
+    },
+    {
+      "id": "rel-015",
+      "from": "passage-luke-birth",
+      "predicate": "describes",
+      "to": "place-bethlehem",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-015"
+    },
+    {
+      "id": "rel-016",
+      "from": "passage-luke-presentation",
+      "predicate": "describes",
+      "to": "event-presentation",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-016"
+    },
+    {
+      "id": "rel-017",
+      "from": "passage-luke-presentation",
+      "predicate": "describes",
+      "to": "person-simeon",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-017"
+    },
+    {
+      "id": "rel-018",
+      "from": "passage-luke-presentation",
+      "predicate": "describes",
+      "to": "person-anna",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-018"
+    },
+    {
+      "id": "rel-019",
+      "from": "passage-luke-presentation",
+      "predicate": "describes",
+      "to": "place-temple",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-019"
+    },
+    {
+      "id": "rel-020",
+      "from": "passage-matthew-family",
+      "predicate": "describes",
+      "to": "person-joseph",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-020"
+    },
+    {
+      "id": "rel-021",
+      "from": "passage-matthew-family",
+      "predicate": "describes",
+      "to": "person-mary",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-021"
+    },
+    {
+      "id": "rel-022",
+      "from": "passage-matthew-family",
+      "predicate": "describes",
+      "to": "person-jesus",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-022"
+    },
+    {
+      "id": "rel-023",
+      "from": "passage-matthew-magi",
+      "predicate": "describes",
+      "to": "person-herod",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-023"
+    },
+    {
+      "id": "rel-024",
+      "from": "passage-matthew-magi",
+      "predicate": "describes",
+      "to": "group-magi",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-024"
+    },
+    {
+      "id": "rel-025",
+      "from": "passage-matthew-magi",
+      "predicate": "describes",
+      "to": "event-magi-visit",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-025"
+    },
+    {
+      "id": "rel-026",
+      "from": "passage-matthew-egypt",
+      "predicate": "describes",
+      "to": "event-flight",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-026"
+    },
+    {
+      "id": "rel-027",
+      "from": "passage-matthew-egypt",
+      "predicate": "describes",
+      "to": "event-return",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-027"
+    },
+    {
+      "id": "rel-028",
+      "from": "passage-matthew-egypt",
+      "predicate": "describes",
+      "to": "place-egypt",
+      "explanation": "This passage supplies the subject's narrative context.",
+      "claimId": "claim-rel-028"
+    },
+    {
+      "id": "rel-029",
+      "from": "passage-revelation-woman",
+      "predicate": "interpreted_as_sky_by",
+      "to": "event-sky-september",
+      "explanation": "Martin connects this vision with his September proposal.",
+      "claimId": "claim-rel-029"
+    },
+    {
+      "id": "rel-030",
+      "from": "person-mary",
+      "predicate": "mother_of",
+      "to": "person-jesus",
+      "explanation": "Mary is named as Jesus' mother.",
+      "claimId": "claim-rel-030"
+    },
+    {
+      "id": "rel-031",
+      "from": "person-joseph",
+      "predicate": "husband_of",
+      "to": "person-mary",
+      "explanation": "Matthew names Joseph as Mary's husband.",
+      "claimId": "claim-rel-031"
+    },
+    {
+      "id": "rel-032",
+      "from": "person-joseph",
+      "predicate": "social_father_of",
+      "to": "person-jesus",
+      "explanation": "Joseph cares for Jesus within the household; this relationship doesn't assert biological paternity.",
+      "claimId": "claim-rel-032"
+    },
+    {
+      "id": "rel-033",
+      "from": "person-elizabeth",
+      "predicate": "wife_of",
+      "to": "person-zechariah",
+      "explanation": "Luke identifies Elizabeth as Zechariah's wife.",
+      "claimId": "claim-rel-033"
+    },
+    {
+      "id": "rel-034",
+      "from": "person-elizabeth",
+      "predicate": "mother_of",
+      "to": "person-john",
+      "explanation": "Elizabeth gives birth to John.",
+      "claimId": "claim-rel-034"
+    },
+    {
+      "id": "rel-035",
+      "from": "person-zechariah",
+      "predicate": "father_of",
+      "to": "person-john",
+      "explanation": "Luke names Zechariah as John's father.",
+      "claimId": "claim-rel-035"
+    },
+    {
+      "id": "rel-036",
+      "from": "person-elizabeth",
+      "predicate": "relative_of",
+      "to": "person-mary",
+      "explanation": "Luke calls Elizabeth Mary's relative without specifying cousin.",
+      "claimId": "claim-rel-036"
+    },
+    {
+      "id": "rel-037",
+      "from": "person-zechariah",
+      "predicate": "member_of",
+      "to": "group-abijah",
+      "explanation": "Zechariah belongs to Abijah's division.",
+      "claimId": "claim-rel-037"
+    },
+    {
+      "id": "rel-038",
+      "from": "person-zechariah",
+      "predicate": "participant_in",
+      "to": "event-service",
+      "explanation": "Zechariah performs the incense service.",
+      "claimId": "claim-rel-038"
+    },
+    {
+      "id": "rel-039",
+      "from": "person-gabriel",
+      "predicate": "messenger_in",
+      "to": "event-announcement",
+      "explanation": "Gabriel brings the announcement to Mary.",
+      "claimId": "claim-rel-039"
+    },
+    {
+      "id": "rel-040",
+      "from": "person-mary",
+      "predicate": "participant_in",
+      "to": "event-visitation",
+      "explanation": "Mary visits Elizabeth.",
+      "claimId": "claim-rel-040"
+    },
+    {
+      "id": "rel-041",
+      "from": "person-simeon",
+      "predicate": "participant_in",
+      "to": "event-presentation",
+      "explanation": "Simeon receives the child at the Temple.",
+      "claimId": "claim-rel-041"
+    },
+    {
+      "id": "rel-042",
+      "from": "person-anna",
+      "predicate": "participant_in",
+      "to": "event-presentation",
+      "explanation": "Anna speaks about the child at the same visit.",
+      "claimId": "claim-rel-042"
+    },
+    {
+      "id": "rel-043",
+      "from": "group-magi",
+      "predicate": "participant_in",
+      "to": "event-magi-visit",
+      "explanation": "Matthew's Magi visit the child and Mary.",
+      "claimId": "claim-rel-043"
+    },
+    {
+      "id": "rel-044",
+      "from": "group-shepherds",
+      "predicate": "visit_after",
+      "to": "event-jesus-birth",
+      "explanation": "Luke's shepherds visit after the birth announcement.",
+      "claimId": "claim-rel-044"
+    },
+    {
+      "id": "rel-045",
+      "from": "person-herod",
+      "predicate": "ruler_in_narrative_of",
+      "to": "event-jesus-birth",
+      "explanation": "Matthew places the birth in Herod's reign.",
+      "claimId": "claim-rel-045"
+    },
+    {
+      "id": "rel-046",
+      "from": "person-augustus",
+      "predicate": "decree_frames",
+      "to": "event-jesus-birth",
+      "explanation": "Luke uses Augustus' enrollment decree to frame the birth narrative.",
+      "claimId": "claim-rel-046"
+    },
+    {
+      "id": "rel-047",
+      "from": "person-quirinius",
+      "predicate": "conducted",
+      "to": "event-census",
+      "explanation": "Josephus assigns the assessment to Quirinius.",
+      "claimId": "claim-rel-047"
+    },
+    {
+      "id": "rel-048",
+      "from": "event-census",
+      "predicate": "chronological_tension_with",
+      "to": "event-jesus-birth",
+      "explanation": "The AD 6 assessment doesn't fall within the proposed 6–4 BC birth range.",
+      "claimId": "claim-rel-048"
+    },
+    {
+      "id": "rel-049",
+      "from": "event-service",
+      "predicate": "located_at",
+      "to": "place-temple",
+      "explanation": "The narrative locates this event in Jerusalem Temple.",
+      "claimId": "claim-rel-049"
+    },
+    {
+      "id": "rel-050",
+      "from": "event-announcement",
+      "predicate": "located_at",
+      "to": "place-nazareth",
+      "explanation": "The narrative locates this event in Nazareth.",
+      "claimId": "claim-rel-050"
+    },
+    {
+      "id": "rel-051",
+      "from": "event-visitation",
+      "predicate": "located_at",
+      "to": "place-hill-country",
+      "explanation": "The narrative locates this event in Judean hill country.",
+      "claimId": "claim-rel-051"
+    },
+    {
+      "id": "rel-052",
+      "from": "event-jesus-birth",
+      "predicate": "located_at",
+      "to": "place-bethlehem",
+      "explanation": "The narrative locates this event in Bethlehem.",
+      "claimId": "claim-rel-052"
+    },
+    {
+      "id": "rel-053",
+      "from": "event-presentation",
+      "predicate": "located_at",
+      "to": "place-temple",
+      "explanation": "The narrative locates this event in Jerusalem Temple.",
+      "claimId": "claim-rel-053"
+    },
+    {
+      "id": "rel-054",
+      "from": "event-magi-visit",
+      "predicate": "located_at",
+      "to": "place-bethlehem",
+      "explanation": "The narrative locates this event in Bethlehem.",
+      "claimId": "claim-rel-054"
+    },
+    {
+      "id": "rel-055",
+      "from": "event-flight",
+      "predicate": "located_at",
+      "to": "place-egypt",
+      "explanation": "The narrative locates this event in Egypt.",
+      "claimId": "claim-rel-055"
+    },
+    {
+      "id": "rel-056",
+      "from": "event-return",
+      "predicate": "located_at",
+      "to": "place-nazareth",
+      "explanation": "The narrative locates this event in Nazareth.",
+      "claimId": "claim-rel-056"
+    },
+    {
+      "id": "rel-057",
+      "from": "place-nazareth",
+      "predicate": "within",
+      "to": "place-galilee",
+      "explanation": "Luke identifies Nazareth as a city in Galilee.",
+      "claimId": "claim-rel-057"
+    },
+    {
+      "id": "rel-058",
+      "from": "place-temple",
+      "predicate": "within",
+      "to": "place-jerusalem",
+      "explanation": "The Temple visit takes place in Jerusalem.",
+      "claimId": "claim-rel-058"
+    },
+    {
+      "id": "rel-059",
+      "from": "event-magi-visit",
+      "predicate": "after",
+      "to": "event-jesus-birth",
+      "explanation": "Matthew introduces the Magi after Jesus has been born; the interval isn't specified.",
+      "claimId": "claim-rel-059"
+    },
+    {
+      "id": "rel-060",
+      "from": "event-flight",
+      "predicate": "after",
+      "to": "event-magi-visit",
+      "explanation": "Matthew's warning to flee follows the Magi's departure.",
+      "claimId": "claim-rel-060"
+    },
+    {
+      "id": "rel-061",
+      "from": "event-return",
+      "predicate": "after",
+      "to": "event-herod-death",
+      "explanation": "Matthew places the return after Herod's death.",
+      "claimId": "claim-rel-061"
+    },
+    {
+      "id": "rel-062",
+      "from": "event-december-observance",
+      "predicate": "commemorates",
+      "to": "event-jesus-birth",
+      "explanation": "The late calendar commemorates the birth on December 25.",
+      "claimId": "claim-rel-062"
+    },
+    {
+      "id": "rel-063",
+      "from": "event-sky-march",
+      "predicate": "proposed_sign_of",
+      "to": "event-jesus-birth",
+      "explanation": "The proposed connection between the sky event and Jesus' birth requires an additional historical and interpretive argument.",
+      "claimId": "claim-rel-063"
+    },
+    {
+      "id": "rel-064",
+      "from": "event-sky-september",
+      "predicate": "proposed_sign_of",
+      "to": "event-jesus-birth",
+      "explanation": "The proposed connection between the sky event and Jesus' birth requires an additional historical and interpretive argument.",
+      "claimId": "claim-rel-064"
+    },
+    {
+      "id": "rel-065",
+      "from": "person-quirinius",
+      "predicate": "office_located_in",
+      "to": "place-syria",
+      "explanation": "Luke locates Quirinius' governing role in Syria.",
+      "claimId": "claim-rel-065"
+    },
+    {
+      "id": "rel-066",
+      "from": "event-equinox",
+      "predicate": "three_calendar_days_after",
+      "to": "event-sky-march",
+      "explanation": "The calculated equinox falls three calendar dates after the March occultation in the same Julian year.",
+      "claimId": "claim-rel-066"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-person-jesus",
+      "subjectId": "person-jesus",
+      "statement": "Matthew and Luke place Jesus at the centre of their birth narratives.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:18–25"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–7"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-mary",
+      "subjectId": "person-mary",
+      "statement": "Luke introduces Mary in Nazareth and names her as Jesus' mother.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26–38"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-joseph",
+      "subjectId": "person-joseph",
+      "statement": "Matthew names Joseph as Mary's husband and describes his care for her child.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:16, 18–25"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-elizabeth",
+      "subjectId": "person-elizabeth",
+      "statement": "Luke identifies Elizabeth as Zechariah's wife, Mary's relative and John's mother.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5, 13, 36, 57"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-zechariah",
+      "subjectId": "person-zechariah",
+      "statement": "Luke's priest belongs to Abijah's division and receives an announcement while offering incense.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5–23"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-john",
+      "subjectId": "person-john",
+      "statement": "Luke narrates John's birth to Elizabeth and Zechariah before narrating Jesus' birth.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:57–80"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-herod",
+      "subjectId": "person-herod",
+      "statement": "Matthew places Jesus' birth during King Herod's reign.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-augustus",
+      "subjectId": "person-augustus",
+      "statement": "Luke names Augustus in the decree that frames the journey to Bethlehem.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–5"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-quirinius",
+      "subjectId": "person-quirinius",
+      "statement": "Luke names Quirinius in connection with the enrollment; Josephus describes his later assessment of Judaea.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:2"
+        },
+        {
+          "sourceId": "josephus18",
+          "locator": "18.1–4"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-simeon",
+      "subjectId": "person-simeon",
+      "statement": "Luke describes Simeon receiving the child Jesus during the family's Temple visit.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:25–35"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-anna",
+      "subjectId": "person-anna",
+      "statement": "Luke names Anna as a prophetess who speaks about the child at the Temple.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:36–38"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-person-gabriel",
+      "subjectId": "person-gabriel",
+      "statement": "Luke names Gabriel as the messenger who addresses Zechariah and Mary.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:19, 26"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-group-magi",
+      "subjectId": "group-magi",
+      "statement": "Matthew's visitors come from the east. It gives neither their number nor their names.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1–12"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-group-shepherds",
+      "subjectId": "group-shepherds",
+      "statement": "Luke's shepherds hear the announcement and visit the child.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:8–20"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-group-abijah",
+      "subjectId": "group-abijah",
+      "statement": "Luke assigns Zechariah to Abijah; Chronicles lists Abijah eighth.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5"
+        },
+        {
+          "sourceId": "chronicles24",
+          "locator": "24:10"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-place-nazareth",
+      "subjectId": "place-nazareth",
+      "statement": "Luke locates Mary's announcement in Nazareth.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-place-bethlehem",
+      "subjectId": "place-bethlehem",
+      "statement": "Matthew and Luke locate Jesus' birth in Bethlehem.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:4–7"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-place-jerusalem",
+      "subjectId": "place-jerusalem",
+      "statement": "Luke locates the family's presentation visit in Jerusalem.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:22"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-place-temple",
+      "subjectId": "place-temple",
+      "statement": "Luke's incense service and presentation scenes concern the Temple.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:8–9"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:27"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-place-hill-country",
+      "subjectId": "place-hill-country",
+      "statement": "Luke places Zechariah's household in an unnamed town in Judah's hill country.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:39–40"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-place-egypt",
+      "subjectId": "place-egypt",
+      "statement": "Matthew names Egypt as the family's refuge without naming a town.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:13–15"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-place-galilee",
+      "subjectId": "place-galilee",
+      "statement": "Luke locates Nazareth in Galilee.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-place-syria",
+      "subjectId": "place-syria",
+      "statement": "Luke connects Quirinius' office with Syria.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:2"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-service",
+      "subjectId": "event-service",
+      "statement": "Luke narrates an incense service followed by Zechariah's return home.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:8–23"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-announcement",
+      "subjectId": "event-announcement",
+      "statement": "Gabriel's announcement to Mary occurs during Elizabeth's sixth month.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26–38"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-visitation",
+      "subjectId": "event-visitation",
+      "statement": "Mary travels to Elizabeth's household in the Judean hill country.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:39–56"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-john-birth",
+      "subjectId": "event-john-birth",
+      "statement": "Luke narrates Elizabeth giving birth to John.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:57–66"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-jesus-birth",
+      "subjectId": "event-jesus-birth",
+      "statement": "Matthew and Luke report the birth but give no month and day.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:18–25"
+        },
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–7"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-presentation",
+      "subjectId": "event-presentation",
+      "statement": "Luke narrates the family's visit after the purification period.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:22–38"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-magi-visit",
+      "subjectId": "event-magi-visit",
+      "statement": "Matthew's Magi enter a house and see the child with Mary. No exact interval from the birth is stated.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1–12, 16"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-flight",
+      "subjectId": "event-flight",
+      "statement": "Matthew narrates Joseph taking the child and Mary to Egypt after a warning.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:13–15"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-return",
+      "subjectId": "event-return",
+      "statement": "Matthew narrates a return after Herod's death; Luke closes the presentation account with a return to Nazareth. Their sequences need separate reading.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:19–23"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:39"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-census",
+      "subjectId": "event-census",
+      "statement": "Josephus describes an assessment following Archelaus' removal. Its usual AD 6 dating creates a difficulty for combining Luke 2 with Herod's reign.",
+      "basis": "historical_reconstruction",
+      "sourceRefs": [
+        {
+          "sourceId": "josephus18",
+          "locator": "18.1–4"
+        },
+        {
+          "sourceId": "chadwick-birth",
+          "locator": "Census discussion"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:2"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-herod-death",
+      "subjectId": "event-herod-death",
+      "statement": "Josephus' regnal totals and eclipse narrative underpin competing reconstructions of Herod's death.",
+      "basis": "historical_reconstruction",
+      "sourceRefs": [
+        {
+          "sourceId": "josephus17",
+          "locator": "17.6–8"
+        },
+        {
+          "sourceId": "steinmann-herod",
+          "locator": "Regnal chronology"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-december-observance",
+      "subjectId": "event-december-observance",
+      "statement": "The fourth-century calendar places Christ's birth at Bethlehem on December 25.",
+      "basis": "later_attestation",
+      "sourceRefs": [
+        {
+          "sourceId": "chronography354",
+          "locator": "Opening entry"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-sky-march",
+      "subjectId": "event-sky-march",
+      "statement": "The existing calculation record places a lunar occultation of Jupiter on 20 March 6 BC, proleptic Julian. This doesn't identify a birth.",
+      "basis": "calculation_or_proposal",
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-astronomy",
+          "locator": "events[0].jupiter_occultation"
+        },
+        {
+          "sourceId": "birthday-audit",
+          "locator": "20 March 6 BC"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-sky-september",
+      "subjectId": "event-sky-september",
+      "statement": "Martin interprets a September evening through Revelation 12; the existing calculations examine positions and setting times, not the birth itself.",
+      "basis": "calculation_or_proposal",
+      "sourceRefs": [
+        {
+          "sourceId": "martin-september",
+          "locator": "Revelation 12 interpretation"
+        },
+        {
+          "sourceId": "birthday-astronomy",
+          "locator": "events[2]"
+        },
+        {
+          "sourceId": "birthday-audit",
+          "locator": "11 September 3 BC"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-event-equinox",
+      "subjectId": "event-equinox",
+      "statement": "The existing calculations place the equinox on 23 March 6 BC Julian, equivalent to 21 March Gregorian.",
+      "basis": "calculation_or_proposal",
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-astronomy",
+          "locator": "equinox_6_bc"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-luke-service",
+      "subjectId": "passage-luke-service",
+      "statement": "Zechariah's service",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5–23"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-001",
+      "subjectId": "passage-luke-service",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5–23"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-002",
+      "subjectId": "passage-luke-service",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5–23"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-003",
+      "subjectId": "passage-luke-service",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5–23"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-luke-announcement",
+      "subjectId": "passage-luke-announcement",
+      "statement": "The announcement to Mary",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26–38"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-004",
+      "subjectId": "passage-luke-announcement",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26–38"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-005",
+      "subjectId": "passage-luke-announcement",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26–38"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-006",
+      "subjectId": "passage-luke-announcement",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26–38"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-luke-visitation",
+      "subjectId": "passage-luke-visitation",
+      "statement": "Mary visits Elizabeth",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:39–56"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-007",
+      "subjectId": "passage-luke-visitation",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:39–56"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-008",
+      "subjectId": "passage-luke-visitation",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:39–56"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-luke-john",
+      "subjectId": "passage-luke-john",
+      "statement": "John's birth",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:57–66"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-009",
+      "subjectId": "passage-luke-john",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:57–66"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-010",
+      "subjectId": "passage-luke-john",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:57–66"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-luke-birth",
+      "subjectId": "passage-luke-birth",
+      "statement": "The journey and birth",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–20"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-011",
+      "subjectId": "passage-luke-birth",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–20"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-012",
+      "subjectId": "passage-luke-birth",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–20"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-013",
+      "subjectId": "passage-luke-birth",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–20"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-014",
+      "subjectId": "passage-luke-birth",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–20"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-015",
+      "subjectId": "passage-luke-birth",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–20"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-luke-presentation",
+      "subjectId": "passage-luke-presentation",
+      "statement": "The Temple visit",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:22–39"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-016",
+      "subjectId": "passage-luke-presentation",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:22–39"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-017",
+      "subjectId": "passage-luke-presentation",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:22–39"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-018",
+      "subjectId": "passage-luke-presentation",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:22–39"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-019",
+      "subjectId": "passage-luke-presentation",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:22–39"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-matthew-family",
+      "subjectId": "passage-matthew-family",
+      "statement": "Joseph and Mary",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:18–25"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-020",
+      "subjectId": "passage-matthew-family",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:18–25"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-021",
+      "subjectId": "passage-matthew-family",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:18–25"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-022",
+      "subjectId": "passage-matthew-family",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:18–25"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-matthew-magi",
+      "subjectId": "passage-matthew-magi",
+      "statement": "Herod and the Magi",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1–12"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-023",
+      "subjectId": "passage-matthew-magi",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1–12"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-024",
+      "subjectId": "passage-matthew-magi",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1–12"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-025",
+      "subjectId": "passage-matthew-magi",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1–12"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-matthew-egypt",
+      "subjectId": "passage-matthew-egypt",
+      "statement": "Egypt and the return",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:13–23"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-026",
+      "subjectId": "passage-matthew-egypt",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:13–23"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-027",
+      "subjectId": "passage-matthew-egypt",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:13–23"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-028",
+      "subjectId": "passage-matthew-egypt",
+      "statement": "This passage supplies the subject's narrative context.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:13–23"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-passage-revelation-woman",
+      "subjectId": "passage-revelation-woman",
+      "statement": "The woman, child and dragon",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "revelation12",
+          "locator": "12:1–6, 17"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-029",
+      "subjectId": "passage-revelation-woman",
+      "statement": "Martin connects this vision with his September proposal.",
+      "basis": "interpretation",
+      "sourceRefs": [
+        {
+          "sourceId": "revelation12",
+          "locator": "12:1–6, 17"
+        }
+      ],
+      "qualifier": "The passage doesn't name Virgo or an exact birthday.",
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-030",
+      "subjectId": "person-mary",
+      "statement": "Mary is named as Jesus' mother.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:18"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:7"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-031",
+      "subjectId": "person-joseph",
+      "statement": "Matthew names Joseph as Mary's husband.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:16, 19–24"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-032",
+      "subjectId": "person-joseph",
+      "statement": "Joseph cares for Jesus within the household; this relationship doesn't assert biological paternity.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew1",
+          "locator": "1:18–25"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:48"
+        }
+      ],
+      "qualifier": "Relationship label is an editorial description of the narrative role.",
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-033",
+      "subjectId": "person-elizabeth",
+      "statement": "Luke identifies Elizabeth as Zechariah's wife.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-034",
+      "subjectId": "person-elizabeth",
+      "statement": "Elizabeth gives birth to John.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:57–60"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-035",
+      "subjectId": "person-zechariah",
+      "statement": "Luke names Zechariah as John's father.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:59, 67"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-036",
+      "subjectId": "person-elizabeth",
+      "statement": "Luke calls Elizabeth Mary's relative without specifying cousin.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:36"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-037",
+      "subjectId": "person-zechariah",
+      "statement": "Zechariah belongs to Abijah's division.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-038",
+      "subjectId": "person-zechariah",
+      "statement": "Zechariah performs the incense service.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:8–9"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-039",
+      "subjectId": "person-gabriel",
+      "statement": "Gabriel brings the announcement to Mary.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26–31"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-040",
+      "subjectId": "person-mary",
+      "statement": "Mary visits Elizabeth.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:39–40"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-041",
+      "subjectId": "person-simeon",
+      "statement": "Simeon receives the child at the Temple.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:27–28"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-042",
+      "subjectId": "person-anna",
+      "statement": "Anna speaks about the child at the same visit.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:36–38"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-043",
+      "subjectId": "group-magi",
+      "statement": "Matthew's Magi visit the child and Mary.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:11"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-044",
+      "subjectId": "group-shepherds",
+      "statement": "Luke's shepherds visit after the birth announcement.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:11–16"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-045",
+      "subjectId": "person-herod",
+      "statement": "Matthew places the birth in Herod's reign.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-046",
+      "subjectId": "person-augustus",
+      "statement": "Luke uses Augustus' enrollment decree to frame the birth narrative.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:1–7"
+        }
+      ],
+      "qualifier": "This link doesn't verify one simultaneous empire-wide census.",
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-047",
+      "subjectId": "person-quirinius",
+      "statement": "Josephus assigns the assessment to Quirinius.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "josephus18",
+          "locator": "18.1–4"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-048",
+      "subjectId": "event-census",
+      "statement": "The AD 6 assessment doesn't fall within the proposed 6–4 BC birth range.",
+      "basis": "historical_reconstruction",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:2"
+        },
+        {
+          "sourceId": "chadwick-birth",
+          "locator": "Census discussion"
+        }
+      ],
+      "qualifier": "Earlier-registration and translation proposals require further evidence; neither is encoded as a resolution.",
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-049",
+      "subjectId": "event-service",
+      "statement": "The narrative locates this event in Jerusalem Temple.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:8–9"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-050",
+      "subjectId": "event-announcement",
+      "statement": "The narrative locates this event in Nazareth.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-051",
+      "subjectId": "event-visitation",
+      "statement": "The narrative locates this event in Judean hill country.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:39–40"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-052",
+      "subjectId": "event-jesus-birth",
+      "statement": "The narrative locates this event in Bethlehem.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:4–7"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-053",
+      "subjectId": "event-presentation",
+      "statement": "The narrative locates this event in Jerusalem Temple.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:27"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-054",
+      "subjectId": "event-magi-visit",
+      "statement": "The narrative locates this event in Bethlehem.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1–11"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-055",
+      "subjectId": "event-flight",
+      "statement": "The narrative locates this event in Egypt.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:13–15"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-056",
+      "subjectId": "event-return",
+      "statement": "The narrative locates this event in Nazareth.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:23"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:39"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-057",
+      "subjectId": "place-nazareth",
+      "statement": "Luke identifies Nazareth as a city in Galilee.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-058",
+      "subjectId": "place-temple",
+      "statement": "The Temple visit takes place in Jerusalem.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:22–27"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-059",
+      "subjectId": "event-magi-visit",
+      "statement": "Matthew introduces the Magi after Jesus has been born; the interval isn't specified.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-060",
+      "subjectId": "event-flight",
+      "statement": "Matthew's warning to flee follows the Magi's departure.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:13"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-061",
+      "subjectId": "event-return",
+      "statement": "Matthew places the return after Herod's death.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:19–23"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-062",
+      "subjectId": "event-december-observance",
+      "statement": "The late calendar commemorates the birth on December 25.",
+      "basis": "later_attestation",
+      "sourceRefs": [
+        {
+          "sourceId": "chronography354",
+          "locator": "Opening entry"
+        }
+      ],
+      "qualifier": "This is evidence for commemoration, not a dated eyewitness account.",
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-063",
+      "subjectId": "event-sky-march",
+      "statement": "The proposed connection between the sky event and Jesus' birth requires an additional historical and interpretive argument.",
+      "basis": "hypothesis",
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-audit",
+          "locator": "March proposal"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-064",
+      "subjectId": "event-sky-september",
+      "statement": "The proposed connection between the sky event and Jesus' birth requires an additional historical and interpretive argument.",
+      "basis": "hypothesis",
+      "sourceRefs": [
+        {
+          "sourceId": "martin-september",
+          "locator": "Revelation 12 interpretation"
+        }
+      ],
+      "qualifier": null,
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-065",
+      "subjectId": "person-quirinius",
+      "statement": "Luke locates Quirinius' governing role in Syria.",
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:2"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "claim-rel-066",
+      "subjectId": "event-equinox",
+      "statement": "The calculated equinox falls three calendar dates after the March occultation in the same Julian year.",
+      "basis": "calculation",
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-astronomy",
+          "locator": "equinox_6_bc; events[0]"
+        }
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    }
+  ],
+  "dateModels": [
+    {
+      "id": "birth-range-herod4",
+      "label": "Birth around 6–4 BC",
+      "status": "working_recommendation_not_adopted",
+      "assumptions": [
+        "Matthew's birth precedes Herod's death.",
+        "Use the conventional 4 BC death framework.",
+        "6–4 BC is a practical historical range; its early boundary is not a direct biblical date.",
+        "Month and day remain unknown."
+      ],
+      "strength": "A pre-Herod-death setting consistent with Matthew.",
+      "objections": [
+        "Luke's Quirinius reference remains unresolved.",
+        "Herod's death alone supplies a latest limit, not the entire range."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-audit",
+          "locator": "Assessment"
+        },
+        {
+          "sourceId": "chadwick-birth",
+          "locator": "Birth chronology"
+        }
+      ],
+      "canonical": false
+    },
+    {
+      "id": "birth-march-molnar-early",
+      "label": "20 March 6 BC",
+      "status": "birthday_hypothesis",
+      "assumptions": [
+        "Use the early Molnar/Cahn version.",
+        "Interpret the occultation as a royal sign linked specifically to Jesus.",
+        "A Nisan 1 identification needs a separate historical calendar argument."
+      ],
+      "strength": "An astronomical candidate within the proposed 6–4 BC range.",
+      "objections": [
+        "It isn't the spring equinox on that calendar.",
+        "Molnar's later proposal favoured 17 April.",
+        "No surviving Magi record identifies this event as Jesus' birth."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "molnar1995",
+          "locator": "Carried from birthday audit"
+        },
+        {
+          "sourceId": "molnar2001",
+          "locator": "April proposal"
+        },
+        {
+          "sourceId": "birthday-audit",
+          "locator": "20 March 6 BC"
+        }
+      ],
+      "canonical": false
+    },
+    {
+      "id": "birth-september-martin",
+      "label": "11 September 3 BC",
+      "status": "minority_birthday_hypothesis",
+      "assumptions": [
+        "Read Revelation 12 as a dateable sky description.",
+        "Adopt a Herod chronology that permits a 3 BC birth.",
+        "Identify this evening with the birth and, separately, Tishri 1."
+      ],
+      "strength": "A specific interpretation whose astronomical component can be checked.",
+      "objections": [
+        "Revelation doesn't name Virgo or a birthday.",
+        "Requires moving Herod's death later than 4 BC.",
+        "Existing calculations give about 42 minutes from sunset to moonset near Jerusalem, not Martin's 90."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "martin-september",
+          "locator": "Chapter 5"
+        },
+        {
+          "sourceId": "steinmann-herod",
+          "locator": "Minority 1 BC death argument"
+        },
+        {
+          "sourceId": "birthday-astronomy",
+          "locator": "events[2]"
+        }
+      ],
+      "canonical": false
+    },
+    {
+      "id": "birth-december-tradition",
+      "label": "25 December",
+      "status": "ancient_tradition_and_possible_birthday",
+      "assumptions": [
+        "Distinguish the attested commemoration from a proposed historical birthday.",
+        "No birth year follows from the annual date alone."
+      ],
+      "strength": "Explicit fourth-century evidence for commemoration.",
+      "objections": [
+        "No demonstrated independent chain from the calendar entry to the original birth.",
+        "Later calculation and historical memory remain alternatives."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "chronography354",
+          "locator": "Opening entry"
+        },
+        {
+          "sourceId": "birthday-audit",
+          "locator": "25 December"
+        }
+      ],
+      "canonical": false
+    },
+    {
+      "id": "service-winter-output",
+      "label": "Autumn service → winter birth",
+      "status": "schematic_example",
+      "assumptions": [
+        "Assume service and John's conception in September/October of year A.",
+        "Add roughly six months to Jesus' conception and roughly nine to his birth.",
+        "These starting months are examples, not recovered Abijah service dates."
+      ],
+      "strength": "Demonstrates the remembered winter route coherently.",
+      "objections": [
+        "The service-cycle anchor is missing.",
+        "Luke's sixth month isn't an exact elapsed six-month interval.",
+        "The annual high-priestly rite doesn't follow from Luke's incense scene."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "zechariah-audit",
+          "locator": "Winter route and sequence"
+        },
+        {
+          "sourceId": "luke1",
+          "locator": "1:23–36"
+        }
+      ],
+      "canonical": false
+    },
+    {
+      "id": "service-summer-output",
+      "label": "Spring service → summer birth",
+      "status": "schematic_example",
+      "assumptions": [
+        "Assume service and John's conception in March/April of year A.",
+        "Use the same approximate conception and pregnancy intervals."
+      ],
+      "strength": "Shows why choosing a different service turn changes the outcome.",
+      "objections": [
+        "No securely dated service occurrence selects this route.",
+        "A continuous 24-week rotation is 168 days, not exactly six calendar months."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "zechariah-audit",
+          "locator": "Summer route; twice a year"
+        },
+        {
+          "sourceId": "chronicles24",
+          "locator": "24:7–18"
+        }
+      ],
+      "canonical": false
+    },
+    {
+      "id": "historical-context",
+      "label": "Historical context",
+      "status": "conventional_reconstruction_with_limits",
+      "assumptions": [
+        "AD 6 for Quirinius' assessment.",
+        "4 BC as the conventional Herod death year."
+      ],
+      "strength": "Keeps the synchronism problem visible.",
+      "objections": [
+        "Herod's minority alternative is retained separately.",
+        "An earlier enrollment isn't established by this record."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "chadwick-birth",
+          "locator": "Historical framework"
+        },
+        {
+          "sourceId": "josephus18",
+          "locator": "18.1–4"
+        },
+        {
+          "sourceId": "josephus17",
+          "locator": "17.6–8"
+        }
+      ],
+      "canonical": false
+    },
+    {
+      "id": "sky-calculations",
+      "label": "Existing astronomical checks",
+      "status": "calculation_not_birth_chronology",
+      "assumptions": [
+        "Use the recorded observer near Jerusalem.",
+        "Regular proleptic calendars; ideal horizon and model refraction.",
+        "No inferred Nisan/Tishri dates or ancient visibility claim."
+      ],
+      "strength": "Reproducible geometry and calendar conversion.",
+      "objections": [
+        "Prior results imported; ephemerides weren't rerun here.",
+        "A calculated sky doesn't establish an ancient interpretation or birth."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-astronomy",
+          "locator": "software; location; method_limits"
+        }
+      ],
+      "canonical": false
+    },
+    {
+      "id": "text-sequence",
+      "label": "Narrative order; absolute dates unknown",
+      "status": "textual_order",
+      "assumptions": [
+        "Keep each Gospel's sequence attributed to that Gospel.",
+        "Do not create a detailed combined itinerary."
+      ],
+      "strength": "Allows exploration without guessing a birthday.",
+      "objections": [
+        "Relative order leaves many durations unknown."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2"
+        },
+        {
+          "sourceId": "matthew2",
+          "locator": "2"
+        }
+      ],
+      "canonical": false
+    },
+    {
+      "id": "later-observance",
+      "label": "Fourth-century calendar witness",
+      "status": "document_attestation",
+      "assumptions": [
+        "Date the surviving compilation rather than the birth from its annual entry."
+      ],
+      "strength": "A directly inspectable witness.",
+      "objections": [
+        "Not an eyewitness account of the nativity."
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "chronography354",
+          "locator": "Opening entry"
+        }
+      ],
+      "canonical": false
+    }
+  ],
+  "dateClaims": [
+    {
+      "id": "date-birth-range",
+      "subjectId": "event-jesus-birth",
+      "modelId": "birth-range-herod4",
+      "label": "c. 6–4 BC; day unknown",
+      "value": {
+        "kind": "range",
+        "earliest": {
+          "year": 6,
+          "era": "BC"
+        },
+        "latest": {
+          "year": 4,
+          "era": "BC"
+        },
+        "precision": "approximate_years",
+        "latestQualification": "Before Herod's death within the 4 BC endpoint."
+      },
+      "basis": "historical_reconstruction",
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-audit",
+          "locator": "Assessment"
+        }
+      ],
+      "dependencies": [
+        "date-herod4"
+      ],
+      "limitations": [
+        "No hard earliest bound or exact anniversary is established."
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-birth-march",
+      "subjectId": "event-jesus-birth",
+      "modelId": "birth-march-molnar-early",
+      "label": "20 March 6 BC, Julian",
+      "value": {
+        "kind": "point",
+        "at": {
+          "year": 6,
+          "era": "BC",
+          "month": 3,
+          "day": 20,
+          "calendar": "proleptic_julian"
+        },
+        "precision": "proposed_day"
+      },
+      "basis": "hypothesis",
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-audit",
+          "locator": "March proposal"
+        },
+        {
+          "sourceId": "molnar1995",
+          "locator": "Carried from prior review"
+        }
+      ],
+      "dependencies": [
+        "date-sky-march"
+      ],
+      "limitations": [
+        "Geometry doesn't establish the birth."
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-birth-september",
+      "subjectId": "event-jesus-birth",
+      "modelId": "birth-september-martin",
+      "label": "11 September 3 BC, Julian",
+      "value": {
+        "kind": "point",
+        "at": {
+          "year": 3,
+          "era": "BC",
+          "month": 9,
+          "day": 11,
+          "calendar": "proleptic_julian"
+        },
+        "precision": "proposed_day"
+      },
+      "basis": "hypothesis",
+      "sourceRefs": [
+        {
+          "sourceId": "martin-september",
+          "locator": "Chapter 5"
+        }
+      ],
+      "dependencies": [
+        "date-herod1",
+        "date-sky-september"
+      ],
+      "limitations": [
+        "Doesn't fit the conventional Herod death model."
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-birth-december",
+      "subjectId": "event-jesus-birth",
+      "modelId": "birth-december-tradition",
+      "label": "25 December; year unspecified",
+      "value": {
+        "kind": "annual_month_day",
+        "month": 12,
+        "day": 25,
+        "calendar": "julian_tradition",
+        "year": null
+      },
+      "basis": "hypothesis",
+      "sourceRefs": [
+        {
+          "sourceId": "chronography354",
+          "locator": "Opening entry"
+        },
+        {
+          "sourceId": "birthday-audit",
+          "locator": "December"
+        }
+      ],
+      "dependencies": [
+        "date-december-attestation"
+      ],
+      "limitations": [
+        "Attested observance doesn't verify the original day."
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-herod4",
+      "subjectId": "event-herod-death",
+      "modelId": "historical-context",
+      "label": "4 BC",
+      "value": {
+        "kind": "point",
+        "at": {
+          "year": 4,
+          "era": "BC"
+        },
+        "precision": "conventional_year"
+      },
+      "basis": "historical_reconstruction",
+      "sourceRefs": [
+        {
+          "sourceId": "chadwick-birth",
+          "locator": "Herod framework"
+        },
+        {
+          "sourceId": "josephus17",
+          "locator": "17.6–8"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-herod1",
+      "subjectId": "event-herod-death",
+      "modelId": "birth-september-martin",
+      "label": "1 BC; minority reconstruction",
+      "value": {
+        "kind": "point",
+        "at": {
+          "year": 1,
+          "era": "BC"
+        },
+        "precision": "proposed_year"
+      },
+      "basis": "historical_reconstruction",
+      "sourceRefs": [
+        {
+          "sourceId": "steinmann-herod",
+          "locator": "Conclusion"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [
+        "Using Steinmann's death year does not adopt his entire chronology or his proposed Jesus birth year."
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-census6",
+      "subjectId": "event-census",
+      "modelId": "historical-context",
+      "label": "AD 6",
+      "value": {
+        "kind": "point",
+        "at": {
+          "year": 6,
+          "era": "AD"
+        },
+        "precision": "historical_year"
+      },
+      "basis": "historical_reconstruction",
+      "sourceRefs": [
+        {
+          "sourceId": "chadwick-birth",
+          "locator": "Census discussion"
+        },
+        {
+          "sourceId": "josephus18",
+          "locator": "18.1–4; 18.26 (Actium synchronism)"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [
+        "This isn't silently assigned to the nativity."
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-service-unknown",
+      "subjectId": "event-service",
+      "modelId": "text-sequence",
+      "label": "Service date unknown",
+      "value": {
+        "kind": "unknown"
+      },
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:5–23"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-service-autumn",
+      "subjectId": "event-service",
+      "modelId": "service-winter-output",
+      "label": "September/October, year A",
+      "value": {
+        "kind": "schematic_season",
+        "months": [
+          9,
+          10
+        ],
+        "relativeYear": "A"
+      },
+      "basis": "assumption",
+      "sourceRefs": [
+        {
+          "sourceId": "zechariah-audit",
+          "locator": "Seasonal examples"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-service-spring",
+      "subjectId": "event-service",
+      "modelId": "service-summer-output",
+      "label": "March/April, year A",
+      "value": {
+        "kind": "schematic_season",
+        "months": [
+          3,
+          4
+        ],
+        "relativeYear": "A"
+      },
+      "basis": "assumption",
+      "sourceRefs": [
+        {
+          "sourceId": "zechariah-audit",
+          "locator": "Seasonal examples"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-birth-winter",
+      "subjectId": "event-jesus-birth",
+      "modelId": "service-winter-output",
+      "label": "Winter, roughly fifteen months later",
+      "value": {
+        "kind": "relative_approximate",
+        "after": "event-service",
+        "monthsApprox": 15,
+        "season": "December of B / January of C"
+      },
+      "basis": "conditional_calculation",
+      "sourceRefs": [
+        {
+          "sourceId": "zechariah-audit",
+          "locator": "Seasonal examples"
+        },
+        {
+          "sourceId": "luke1",
+          "locator": "1:23–36"
+        }
+      ],
+      "dependencies": [
+        "date-service-autumn"
+      ],
+      "limitations": [
+        "Conception delay and pregnancy intervals aren't exact."
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-birth-summer",
+      "subjectId": "event-jesus-birth",
+      "modelId": "service-summer-output",
+      "label": "Summer, roughly fifteen months later",
+      "value": {
+        "kind": "relative_approximate",
+        "after": "event-service",
+        "monthsApprox": 15,
+        "season": "June/July of B"
+      },
+      "basis": "conditional_calculation",
+      "sourceRefs": [
+        {
+          "sourceId": "zechariah-audit",
+          "locator": "Seasonal examples"
+        },
+        {
+          "sourceId": "luke1",
+          "locator": "1:23–36"
+        }
+      ],
+      "dependencies": [
+        "date-service-spring"
+      ],
+      "limitations": [
+        "The starting service occurrence isn't established."
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-magi-unknown",
+      "subjectId": "event-magi-visit",
+      "modelId": "text-sequence",
+      "label": "After the birth; interval unknown",
+      "value": {
+        "kind": "relative_unknown",
+        "after": "event-jesus-birth"
+      },
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:1–12, 16"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [
+        "The two-years-and-under order doesn't date the visit exactly two years after birth."
+      ],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-december-attestation",
+      "subjectId": "event-december-observance",
+      "modelId": "later-observance",
+      "label": "AD 354 compilation; December 25 entry",
+      "value": {
+        "kind": "point",
+        "at": {
+          "year": 354,
+          "era": "AD"
+        },
+        "precision": "compilation_year"
+      },
+      "basis": "later_attestation",
+      "sourceRefs": [
+        {
+          "sourceId": "chronography354",
+          "locator": "Document title and opening entry"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-sky-march",
+      "subjectId": "event-sky-march",
+      "modelId": "sky-calculations",
+      "label": "20 March 6 BC, Julian",
+      "value": {
+        "kind": "point",
+        "at": {
+          "year": 6,
+          "era": "BC",
+          "month": 3,
+          "day": 20,
+          "calendar": "proleptic_julian"
+        },
+        "precision": "calculated_calendar_day"
+      },
+      "basis": "calculation",
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-astronomy",
+          "locator": "events[0].jupiter_occultation"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-sky-september",
+      "subjectId": "event-sky-september",
+      "modelId": "sky-calculations",
+      "label": "11 September 3 BC, Julian",
+      "value": {
+        "kind": "point",
+        "at": {
+          "year": 3,
+          "era": "BC",
+          "month": 9,
+          "day": 11,
+          "calendar": "proleptic_julian"
+        },
+        "precision": "proposed_sky_date_checked"
+      },
+      "basis": "calculation",
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-astronomy",
+          "locator": "events[2]"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-equinox",
+      "subjectId": "event-equinox",
+      "modelId": "sky-calculations",
+      "label": "23 March 6 BC Julian / 21 March Gregorian",
+      "value": {
+        "kind": "point",
+        "at": {
+          "year": 6,
+          "era": "BC",
+          "month": 3,
+          "day": 23,
+          "calendar": "proleptic_julian"
+        },
+        "equivalent": {
+          "year": 6,
+          "era": "BC",
+          "month": 3,
+          "day": 21,
+          "calendar": "proleptic_gregorian"
+        },
+        "precision": "calculated_calendar_day"
+      },
+      "basis": "calculation",
+      "sourceRefs": [
+        {
+          "sourceId": "birthday-astronomy",
+          "locator": "equinox_6_bc"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-unknown-event-announcement",
+      "subjectId": "event-announcement",
+      "modelId": "text-sequence",
+      "label": "Absolute date unresolved",
+      "value": {
+        "kind": "unknown"
+      },
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:26–38"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-unknown-event-visitation",
+      "subjectId": "event-visitation",
+      "modelId": "text-sequence",
+      "label": "Absolute date unresolved",
+      "value": {
+        "kind": "unknown"
+      },
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:39–56"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-unknown-event-john-birth",
+      "subjectId": "event-john-birth",
+      "modelId": "text-sequence",
+      "label": "Absolute date unresolved",
+      "value": {
+        "kind": "unknown"
+      },
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke1",
+          "locator": "1:57–66"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-unknown-event-presentation",
+      "subjectId": "event-presentation",
+      "modelId": "text-sequence",
+      "label": "Absolute date unresolved",
+      "value": {
+        "kind": "unknown"
+      },
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "luke2",
+          "locator": "2:22–38"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-unknown-event-flight",
+      "subjectId": "event-flight",
+      "modelId": "text-sequence",
+      "label": "Absolute date unresolved",
+      "value": {
+        "kind": "unknown"
+      },
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:13–15"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    },
+    {
+      "id": "date-unknown-event-return",
+      "subjectId": "event-return",
+      "modelId": "text-sequence",
+      "label": "Absolute date unresolved",
+      "value": {
+        "kind": "unknown"
+      },
+      "basis": "textual_content",
+      "sourceRefs": [
+        {
+          "sourceId": "matthew2",
+          "locator": "2:19–23"
+        },
+        {
+          "sourceId": "luke2",
+          "locator": "2:39"
+        }
+      ],
+      "dependencies": [],
+      "limitations": [],
+      "reviewStatus": "prepared_for_editorial_review"
+    }
+  ],
+  "mapPolicy": {
+    "projectionChangesDateModel": false,
+    "sharedPlaceIdentity": true,
+    "coordinatesOrder": "longitude, latitude",
+    "regionalPlacesWithoutGeometry": "Keep a named-region label and explanation. Do not fabricate a boundary or marker.",
+    "routeGeometryIncluded": false,
+    "gleasonViewIncluded": false,
+    "ancientCosmologyViewIncluded": false
+  },
+  "studyTasks": [
+    {
+      "id": "task-reading",
+      "start": "passage-luke-birth",
+      "follow": [
+        "event-jesus-birth",
+        "person-mary"
+      ],
+      "expectation": "Open the source passage and inspect a person with a labelled relationship."
+    },
+    {
+      "id": "task-family",
+      "start": "person-elizabeth",
+      "follow": [
+        "person-mary",
+        "person-john"
+      ],
+      "expectation": "Explain relative-of without replacing it with cousin; distinguish Mary/Jesus and Joseph/Jesus relationships."
+    },
+    {
+      "id": "task-map",
+      "start": "event-jesus-birth",
+      "follow": [
+        "place-bethlehem"
+      ],
+      "expectation": "Use the settlement marker and show that no birth building is identified."
+    },
+    {
+      "id": "task-uncertain-place",
+      "start": "passage-luke-visitation",
+      "follow": [
+        "event-visitation",
+        "place-hill-country"
+      ],
+      "expectation": "Show regional uncertainty without an invented precise marker."
+    },
+    {
+      "id": "task-date-compare",
+      "start": "event-jesus-birth",
+      "models": [
+        "birth-range-herod4",
+        "birth-september-martin"
+      ],
+      "expectation": "Show the changed birth and Herod assumptions, with each proposal's strengths and objections."
+    },
+    {
+      "id": "task-synchronism",
+      "start": "person-quirinius",
+      "follow": [
+        "event-census",
+        "event-jesus-birth"
+      ],
+      "expectation": "Keep the AD 6 assessment and the 6–4 BC proposal distinct; explain the unresolved tension."
+    },
+    {
+      "id": "task-return",
+      "start": "passage-luke-birth",
+      "follow": [
+        "event-jesus-birth",
+        "place-bethlehem"
+      ],
+      "expectation": "Return to the passage with the selected subject and date model preserved; navigation history is an implementation requirement, not yet a tested UI."
+    }
+  ],
+  "openDependencies": [
+    "Editorial response to this pilot and date wording.",
+    "Full passage text for an offline reading concept; rights-confirmed WEB is available but isn't an adopted default translation.",
+    "Full Molnar 1995 body reinspection; original Finegan and Talmon source access if their exact arguments are expanded.",
+    "Service-cycle anchor, interval assumptions and census harmonisation unresolved.",
+    "Public-map attribution for the gazetteer and underlying coordinate providers; no historical boundary polygons yet.",
+    "No manuscript collation, fresh ephemeris run, RAG import, interface concepts or full app integration completed in this packet."
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "schemaVersion": "0.1",
+  "author": "Pat Robinson",
+  "date": "2026-09-05",
+  "status": "review_packet",
+  "pathBase": "BibleLensWorkspace root",
+  "sources": [
+    {
+      "id": "luke1",
+      "title": "Luke 1",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/LUK01.htm",
+      "locator": "Luke 1",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "luke2",
+      "title": "Luke 2",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/LUK02.htm",
+      "locator": "Luke 2",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "luke3",
+      "title": "Luke 3",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/LUK03.htm",
+      "locator": "Luke 3",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "matthew1",
+      "title": "Matthew 1",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/MAT01.htm",
+      "locator": "Matthew 1",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "matthew2",
+      "title": "Matthew 2",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/MAT02.htm",
+      "locator": "Matthew 2",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "revelation12",
+      "title": "Revelation 12",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/REV12.htm",
+      "locator": "Revelation 12",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "chronicles24",
+      "title": "1 Chronicles 24",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/1CH24.htm",
+      "locator": "1 Chronicles 24",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "genesis37",
+      "title": "Genesis 37",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/GEN37.htm",
+      "locator": "Genesis 37",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "genesis41",
+      "title": "Genesis 41",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/GEN41.htm",
+      "locator": "Genesis 41",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "genesis45",
+      "title": "Genesis 45",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/GEN45.htm",
+      "locator": "Genesis 45",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "genesis47",
+      "title": "Genesis 47",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/GEN47.htm",
+      "locator": "Genesis 47",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "genesis50",
+      "title": "Genesis 50",
+      "kind": "primary_text_translation",
+      "url": "https://ebible.org/eng-web/GEN50.htm",
+      "locator": "Genesis 50",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "World English Bible Classic; public-domain translation. A narrative statement is evidence for what this text says, not independent confirmation of each event. Record summaries are paraphrases unless marked as quotations."
+    },
+    {
+      "id": "josephus18",
+      "title": "Josephus, Antiquities 18.1–4, 26",
+      "kind": "primary_text_translation",
+      "url": "https://penelope.uchicago.edu/josephus/ant-18.html",
+      "locator": "18.1–4 (18.1.1); 18.26 (18.2.1)",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "William Whiston translation. The assessment follows Archelaus's removal; 18.26 relates its completion to the 37th year from Actium. AD 6 is a regnal-year reconstruction, not a BC/AD label printed by Josephus. Bracketed AD 7/AD 8 labels in this edition are later editorial annotations and are not used as independent dating evidence.",
+      "relatedUrls": [
+        "https://lexundria.com/j_aj/18.1/wst",
+        "https://lexundria.com/j_aj/18.26/wst"
+      ]
+    },
+    {
+      "id": "josephus17",
+      "title": "Josephus, Antiquities 17",
+      "kind": "primary_text_translation",
+      "url": "https://penelope.uchicago.edu/josephus/ant-17.html",
+      "locator": "17.6–8; 17.8.1 (17.191)",
+      "coverage": "relevant_sections_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "William Whiston translation. Eclipse and regnal totals enter competing modern datings; preserve the reasoning between text and date."
+    },
+    {
+      "id": "chadwick-birth",
+      "title": "Jeffrey R. Chadwick, Dating the Birth of Christ",
+      "kind": "research_argument",
+      "url": "https://byustudies.byu.edu/article/dating-the-birth-of-christ",
+      "locator": "Birth chronology and census discussion",
+      "coverage": "relevant_sections_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "A particular scholarly argument, with religious commitments, not a statement of universal scholarly agreement. Used for the 4 BC Herod framework and census difficulty, not adoption of every conclusion."
+    },
+    {
+      "id": "steinmann-herod",
+      "title": "Andrew E. Steinmann, When Did Herod the Great Reign? (2009)",
+      "kind": "research_argument",
+      "url": "https://www.rcyoung.org/articles/When_Did_Herod_the_Great_Reign.pdf",
+      "locator": "Novum Testamentum 51, 1–29; conclusion and regnal argument",
+      "coverage": "relevant_sections_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "Minority 1 BC death reconstruction. The article is accessible; no full adjudication of its regnal chronology is claimed."
+    },
+    {
+      "id": "martin-september",
+      "title": "Ernest L. Martin, The Star That Astonished the World, chapter 5",
+      "kind": "advocacy_argument",
+      "url": "https://www.askelm.com/star/star006.htm",
+      "locator": "The Time of Jesus' Birth",
+      "coverage": "relevant_sections_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "Source of the 11 September 3 BC proposal and Revelation 12 interpretation. Claims of Tishri 1 and the 90-minute interval are claims under assessment, not verified inputs."
+    },
+    {
+      "id": "molnar1995",
+      "title": "Michael R. Molnar, The Coin of Antioch (1995)",
+      "kind": "research_argument",
+      "url": "https://articles.adsabs.harvard.edu/pdf/1995QJRAS..36..109M",
+      "locator": "QJRAS 36, 109–126",
+      "coverage": "carried_from_prior_review",
+      "reviewedOn": "2026-09-05",
+      "note": "PDF reopened but body did not extract in this pass. March interpretation is carried from the linked birthday audit; a fresh full-text check remains outstanding."
+    },
+    {
+      "id": "molnar2001",
+      "title": "Michael R. Molnar, The Star of Bethlehem (2001 lecture abstract)",
+      "kind": "author_abstract",
+      "url": "https://scicolloq.gsfc.nasa.gov/Molnar.htm",
+      "locator": "17 April 6 BC proposal",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "Author's abstract hosted by NASA; neither full lecture inspection nor NASA endorsement."
+    },
+    {
+      "id": "chronography354",
+      "title": "Chronography of 354, Depositio martyrum",
+      "kind": "primary_text_translation",
+      "url": "https://www.tertullian.org/fathers/chronography_of_354_12_depositions_martyrs.htm",
+      "locator": "Opening December 25 entry; MGH Chronica Minora I, 71–72",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "Fourth-century commemoration evidence. No inference of a first-century birth certificate; the earlier AD 336 dating of the list is not needed for this packet."
+    },
+    {
+      "id": "qumran-calendar",
+      "title": "Library of Congress / IAA, A Calendrical Document, 4Q321",
+      "kind": "institutional_object_description",
+      "url": "https://www.loc.gov/exhibits/scrolls/scr2.html",
+      "locator": "A Calendrical Document",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "364-day calendar and priestly roster context. Does not establish the Jerusalem Temple's schedule in Zechariah's year."
+    },
+    {
+      "id": "glatt-gilad",
+      "title": "David A. Glatt-Gilad, How Many Years Were the Israelites in Egypt?",
+      "kind": "scholarly_explanation",
+      "url": "https://www.thetorah.com/article/how-many-years-were-the-israelites-in-egypt",
+      "locator": "Internal Biblical Data; Ancient Textual Witnesses",
+      "coverage": "relevant_sections_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "Author and textual-variant discussion checked. Repairs dangling app source IDs left after the earlier attribution change."
+    },
+    {
+      "id": "bethlehem-gazetteer",
+      "title": "OpenBible.info, Bethlehem location record",
+      "kind": "gazetteer",
+      "url": "https://www.openbible.info/geo/modern/m9b8daa/bethlehem",
+      "locator": "Latitude, Longitude; Point Precision",
+      "coverage": "direct_text_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "31.704306 N, 35.207639 E. CC BY attribution required. Use as a settlement-context point, not the birth building."
+    },
+    {
+      "id": "lmu-gazetteer",
+      "title": "LMU, Beda Venerabilis: De locis sanctis, Topolist",
+      "kind": "scholarly_gazetteer",
+      "url": "https://www.bedadls.gwi.uni-muenchen.de/topolist/",
+      "locator": "Nazareth; Hierusalem",
+      "coverage": "relevant_sections_checked",
+      "reviewedOn": "2026-09-05",
+      "note": "Coordinates credited there to OpenStreetMap. Nazareth: 32.701029 N, 35.300148 E; Jerusalem: 31.776679 N, 35.234156 E. Rights/attribution chain needs completion before distributing a public map."
+    },
+    {
+      "id": "chronology-audit",
+      "title": "Genesis chronology audit",
+      "kind": "internal_research",
+      "path": "Research/Analysis/GENESIS-CHRONOLOGY-AUDIT-2026-09-05.md",
+      "locator": "See linked document",
+      "coverage": "local_document_read",
+      "reviewedOn": "2026-09-05",
+      "note": "Today's existing audit; carries earlier chart inspection and source assessments. Not an additional ancient witness."
+    },
+    {
+      "id": "elliott-chart",
+      "title": "Larry Elliott, Ages Comparison, revision 0.7",
+      "kind": "source_chart",
+      "path": "septuagint-timeline/Ages_Comparison_20260206_Rev0.7_(22x22).pdf",
+      "locator": "Greek/Hebrew genealogy panels",
+      "coverage": "carried_from_prior_review",
+      "reviewedOn": "2026-09-05",
+      "note": "Numbers transcribed in today's chronology audit; PDF not re-collated in this packet. Treat printed labels and reconstructed sums separately."
+    },
+    {
+      "id": "legacy-master",
+      "title": "Bible Lens legacy master synthesis",
+      "kind": "internal_research",
+      "path": "Content/Timelines/MASTER-CHRONOLOGY.md",
+      "locator": "See linked document",
+      "coverage": "local_document_read",
+      "reviewedOn": "2026-09-05",
+      "note": "Historical working notes already under review. Contains unreconciled extractions and dates; not a canonical input to the packet."
+    },
+    {
+      "id": "preferred-proposal",
+      "title": "Preferred chronology proposal",
+      "kind": "internal_research",
+      "path": "Content/Timelines/PREFERRED-CHRONOLOGY-2026-09-05.md",
+      "locator": "See linked document",
+      "coverage": "local_document_read",
+      "reviewedOn": "2026-09-05",
+      "note": "Research recommendation, not adopted Bible Lens chronology."
+    },
+    {
+      "id": "preferred-calculations",
+      "title": "Preferred chronology calculation record",
+      "kind": "internal_research",
+      "path": "Content/Timelines/PREFERRED-CHRONOLOGY-2026-09-05.json",
+      "locator": "See linked document",
+      "coverage": "local_document_read",
+      "reviewedOn": "2026-09-05",
+      "note": "Selected textual readings and model arithmetic; not independent historical dating."
+    },
+    {
+      "id": "birthday-audit",
+      "title": "Jesus' birthday pressure test",
+      "kind": "internal_research",
+      "path": "Research/Analysis/JESUS-BIRTHDAY-PRESSURE-TEST-2026-09-05.md",
+      "locator": "See linked document",
+      "coverage": "local_document_read",
+      "reviewedOn": "2026-09-05",
+      "note": "Existing assessment, including December, March and September proposals. Not a separate primary witness."
+    },
+    {
+      "id": "birthday-astronomy",
+      "title": "Jesus' birthday astronomy calculations",
+      "kind": "internal_research",
+      "path": "Research/Analysis/JESUS-BIRTHDAY-ASTRONOMY-2026-09-05.json",
+      "locator": "See linked document",
+      "coverage": "local_document_read",
+      "reviewedOn": "2026-09-05",
+      "note": "Existing two-implementation checks and calendar conventions. Numerical fields are checked for transfer; astronomical engines are not rerun in this pass."
+    },
+    {
+      "id": "zechariah-audit",
+      "title": "Zechariah's service windows",
+      "kind": "internal_research",
+      "path": "Research/Analysis/ZECHARIAH-SERVICE-WINDOWS-2026-09-05.md",
+      "locator": "See linked document",
+      "coverage": "local_document_read",
+      "reviewedOn": "2026-09-05",
+      "note": "Existing source review. Finegan is reported through Akin; Talmon's full research was not inspected. Exact service date remains unresolved."
+    }
+  ],
+  "coverageRules": [
+    "Directly checked means the specified passage or section was read, not every argument in the publication.",
+    "Carried evidence remains attributed to the earlier review; no fresh inspection is implied.",
+    "Source existence, source accuracy and truth of the proposition are separate checks.",
+    "Only brief WEB quotations and original paraphrases are embedded; no third-party images are bundled."
+  ]
+}

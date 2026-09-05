@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Newsreader, Manrope, Source_Sans_3, Noto_Sans_Samaritan, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import "./site-shell.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { MotionProvider } from "@/components/MotionProvider";

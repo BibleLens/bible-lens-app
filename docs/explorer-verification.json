@@ -1,0 +1,54 @@
+{
+  "author": "Pat Robinson",
+  "date": "2026-09-05",
+  "status": "local-review-ready",
+  "branch": "codex/explorer-centrepiece",
+  "baseCommit": "d9ce6068734e2b145917f9846a649c5f9f816dbe",
+  "preview": "http://127.0.0.1:3017/",
+  "checks": {
+    "automatedTests": {"passed": 14, "failed": 0, "command": "npm run test:explorer"},
+    "typescript": "passed",
+    "targetedEslint": "passed",
+    "productionBuild": "passed; 37 static pages generated",
+    "dependencyAudit": {"knownVulnerabilities": 0},
+    "diffWhitespace": "passed",
+    "launcherSyntax": "passed",
+    "browserJourneys": [
+      "Homepage and collection overview enter the connected study",
+      "Mary selection updates the details panel and URL",
+      "Connections expose labelled relationships and their source evidence",
+      "September proposal changes the dependent Herod date to 1 BC, preserving AD 6 census",
+      "Sources, search, empty search results, keyboard slash, Escape and arrow/tab controls",
+      "Return to reading and Back retain study context and reading position",
+      "Saved-place download inspected on disk and successfully restored through the UI",
+      "Unrelated saved-place file rejected with an explanatory message",
+      "Shared Mary/verse-5 link survives reload with verse in view",
+      "Invalid subject, passage, view, date model and verse fall back safely",
+      "Map markers, region records and zoom/reset exercised",
+      "390px phone layouts and navigation inspected without horizontal overflow",
+      "768px tablet header and layout checked without horizontal overflow",
+      "Desktop reading, connections, map and homepage inspected",
+      "Luke 2 full chapter, Books, Topics, Timelines and Start Here open via navigation",
+      "Dark-view navigation contrast corrected and checked in the built app",
+      "No browser console errors or warnings observed in tested journeys"
+    ],
+    "exportEndpoint": {
+      "status": 200,
+      "attachment": "bible-lens-jesus-birth-study.json",
+      "robots": "noindex",
+      "subjects": 48,
+      "relationships": 66,
+      "claims": 114,
+      "dateClaims": 23,
+      "sources": 32,
+      "passages": 10,
+      "verses": 136
+    }
+  },
+  "limits": [
+    "Content remains prepared for editorial review; technical checks do not establish a historical conclusion.",
+    "No independent accessibility audit or human reader trial completed.",
+    "Email submission, paid AI chat and other credential-dependent services were not exercised.",
+    "No push, deployment or formal GSD transition."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "author": "Pat Robinson",
+  "date": "2026-09-05",
+  "passageSource": "https://ebible.org/eng-web/",
+  "passageRights": "Public domain; exact wording retained; links and footnote markers omitted for this reading preview.",
+  "mapSource": [
+    "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_land.geojson",
+    "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_lakes.geojson"
+  ],
+  "mapRights": "https://www.naturalearthdata.com/about/terms-of-use/",
+  "mapTreatment": "Clipped physical land/lake geometry; simplified display, present-day context, no historical borders.",
+  "sourcePacket": "Content/Drafts/Explorer/jesus-birth-pilot-2026-09-05.json"
+}

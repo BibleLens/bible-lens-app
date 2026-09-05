@@ -1,0 +1,2483 @@
+.explorer {
+  --ink: #233a37;
+  --muted: #62716a;
+  --paper: #f6f5ef;
+  --panel: #fffef9;
+  --line: #dedfd5;
+  --accent: #276354;
+  --gold: #b48b44;
+  --soft: #e6eee6;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans:
+    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --shadow: 0 16px 60px #24382c12;
+}
+.explorer * {
+  box-sizing: border-box;
+}
+.explorer {
+  margin: 0;
+  font: 14px/1.6 var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+}
+.explorer button,
+.explorer input,
+.explorer select {
+  font: inherit;
+}
+.explorer button,
+.explorer a,
+.explorer input,
+.explorer select {
+  touch-action: manipulation;
+}
+.explorer button {
+  cursor: pointer;
+  color: inherit;
+}
+.explorer button:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+.explorer a {
+  color: var(--accent);
+}
+.explorer button {
+  border: 0;
+  background: none;
+}
+.explorer button:focus-visible,
+.explorer a:focus-visible,
+.explorer select:focus-visible,
+.explorer input:focus-visible,
+.explorer [tabindex]:focus-visible {
+  outline: 3px solid #d5a841;
+  outline-offset: 4px;
+}
+.explorer button:hover:not(:disabled) {
+  filter: brightness(0.94);
+}
+.explorer button,
+.explorer a {
+  -webkit-tap-highlight-color: transparent;
+}
+.explorer h1,
+.explorer h2,
+.explorer h3,
+.explorer p {
+  margin-top: 0;
+}
+.explorer h1,
+.explorer h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+.explorer h1 {
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+.explorer h2 {
+  font-size: 29px;
+  line-height: 1.25;
+}
+.explorer h3 {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.explorer small {
+  font-size: 11px;
+}
+.explorer .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: 650;
+  color: var(--muted);
+}
+.explorer .muted {
+  color: var(--muted);
+}
+.explorer .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+.explorer .skip {
+  position: fixed;
+  top: -80px;
+  left: 10px;
+  z-index: 200;
+  background: var(--ink);
+  color: white;
+  padding: 12px;
+}
+.explorer .skip:focus {
+  top: 10px;
+}
+.explorer .concept-bar {
+  min-height: 57px;
+  border-bottom: 1px solid #d6d8cf;
+  background: #e9ebe2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 28px;
+  gap: 20px;
+  position: relative;
+  z-index: 20;
+}
+.explorer .concept-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.explorer .concept-options {
+  display: flex;
+  gap: 5px;
+}
+.explorer .concept-option {
+  padding: 8px 17px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #5b6a61;
+  min-height: 38px;
+}
+.explorer .concept-option b {
+  font-weight: 400;
+  margin-right: 9px;
+  opacity: 0.65;
+}
+.explorer .concept-option[aria-pressed="true"] {
+  background: var(--ink);
+  color: white;
+  box-shadow: 0 2px 4px #0001;
+}
+.explorer .concept-help {
+  font-size: 12px;
+  border-bottom: 1px solid #a6b1a3;
+  padding: 3px 0;
+}
+.explorer .product-header {
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  gap: 20px;
+}
+.explorer .brand {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+.explorer .brand svg {
+  width: 32px;
+  height: 38px;
+  color: var(--accent);
+}
+.explorer .brand-name {
+  font-size: 17px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.explorer .brand-sub {
+  letter-spacing: 2.5px;
+  color: var(--muted);
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+.explorer .study-title {
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.explorer .study-title:before {
+  content: "";
+  height: 25px;
+  width: 1px;
+  background: var(--line);
+}
+.explorer .header-left {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+.explorer .search-trigger {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--paper);
+  min-width: 220px;
+  text-align: left;
+  font-size: 12px;
+}
+.explorer .search-trigger kbd {
+  margin-left: auto;
+  color: #89968c;
+  font: 10px var(--sans);
+  border: 1px solid var(--line);
+  padding: 0 5px;
+  border-radius: 3px;
+}
+.explorer .session {
+  font-size: 11px;
+  color: var(--muted);
+}
+.explorer .toolbar {
+  padding: 14px 28px;
+  min-height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.explorer .trail {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 12px;
+  min-width: 0;
+}
+.explorer .trail-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 225px;
+}
+.explorer .back {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 19px;
+  line-height: 1;
+}
+.explorer .return-link {
+  color: var(--accent);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+.explorer .model-pill {
+  border: 1px solid #b7c9b9;
+  border-radius: 99px;
+  padding: 6px 14px;
+  background: #eef2e8;
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  font-size: 11px;
+  color: #38594b;
+  max-width: 430px;
+}
+.explorer .model-pill span:first-child {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.explorer .model-pill strong {
+  font-weight: 500;
+}
+.explorer .stage {
+  max-width: 1720px;
+  margin: 0 auto;
+  min-height: calc(100vh - 207px);
+}
+.explorer .reading-layout {
+  display: grid;
+  grid-template-columns: 205px minmax(320px, 1fr) 340px;
+  align-items: start;
+}
+.explorer .chapter-nav {
+  padding: 31px 21px;
+  border-right: 1px solid var(--line);
+  align-self: stretch;
+}
+.explorer .nav-title {
+  margin: 0 0 15px 10px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.explorer .passage-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  padding: 11px 12px;
+  border-radius: 5px;
+  margin: 3px 0;
+  line-height: 1.6;
+}
+.explorer .passage-button small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.explorer .passage-button[aria-current="true"] {
+  background: #e4ebe0;
+  color: #244f41;
+}
+.explorer .nav-divider {
+  border-top: 1px solid var(--line);
+  margin: 23px 8px;
+}
+.explorer .nav-note {
+  font: italic 16px/1.5 var(--serif);
+  color: #7b8273;
+  margin: 22px 10px;
+}
+.explorer .reading-content {
+  padding: 43px clamp(26px, 4vw, 74px) 65px;
+  max-height: calc(100vh - 207px);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.explorer .reading-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.explorer .translation {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.explorer .reading-content h1 {
+  margin-bottom: 12px;
+  max-width: 530px;
+}
+.explorer .reading-deck {
+  font: italic 19px/1.6 var(--serif);
+  color: #747b6e;
+  margin-bottom: 29px;
+}
+.explorer .reading-actions {
+  display: flex;
+  gap: 9px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.explorer .small-button {
+  font-size: 11px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 7px 11px;
+  background: var(--panel);
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  min-height: 34px;
+}
+.explorer .verses {
+  font: 21px/1.9 var(--serif);
+  max-width: 660px;
+}
+.explorer .verse {
+  margin-bottom: 19px;
+}
+.explorer .verse-number {
+  display: inline-block;
+  font: 10px var(--sans);
+  color: #858b7b;
+  vertical-align: super;
+  width: 22px;
+  padding-top: 6px;
+}
+.explorer .word {
+  font: inherit;
+  display: inline;
+  border-bottom: 1px solid #83a892;
+  background: #dce9d46e;
+  border-radius: 2px;
+  padding: 0 2px;
+  line-height: 1.4;
+  color: #245440;
+}
+.explorer .word.selected {
+  background: #254d40;
+  color: white;
+  border-color: transparent;
+}
+.explorer .reading-footnote {
+  font: 11px/1.7 var(--sans);
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+.explorer .reading-footnote a {
+  margin-right: 12px;
+}
+.explorer .inspector {
+  background: var(--panel);
+  border-left: 1px solid var(--line);
+  align-self: stretch;
+  min-height: calc(100vh - 207px);
+  padding: 28px 25px;
+  min-width: 0;
+}
+.explorer .inspector-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 21px;
+}
+.explorer .subject-glyph {
+  height: 46px;
+  width: 46px;
+  border: 1px solid #c4d5c5;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 25px var(--serif);
+  color: var(--accent);
+  background: #eff2e8;
+  flex-shrink: 0;
+}
+.explorer .inspector h2 {
+  margin: 7px 0 17px;
+  font-size: 31px;
+}
+.explorer .subject-summary {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+  margin-bottom: 21px;
+}
+.explorer .inspector-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  gap: 19px;
+  margin-bottom: 22px;
+}
+.explorer .inspector-tab {
+  font-size: 11px;
+  padding: 10px 0;
+}
+.explorer .inspector-tab[aria-selected="true"] {
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.explorer .evidence-tag {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #57715e;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.explorer .note-box {
+  background: var(--soft);
+  border-left: 2px solid #91ad8e;
+  padding: 15px 16px;
+  margin: 18px 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.explorer .note-box p:last-child {
+  margin-bottom: 0;
+}
+.explorer .note-box strong {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+.explorer .connection-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.explorer .connection-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  gap: 12px;
+}
+.explorer .connection-row .mini-glyph {
+  width: 27px;
+  height: 27px;
+  background: var(--soft);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font: 15px var(--serif);
+  flex-shrink: 0;
+}
+.explorer .connection-row strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+.explorer .connection-row small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.explorer .connection-row .arrow {
+  margin-left: auto;
+}
+.explorer .panel-action {
+  width: 100%;
+  text-align: center;
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 12px;
+  margin: 7px 0;
+  min-height: 40px;
+}
+.explorer .panel-action.primary {
+  background: var(--ink);
+  color: var(--panel);
+  border-color: var(--ink);
+}
+.explorer .panel-section-title {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 25px 0 10px;
+}
+.explorer .source-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.explorer .source-item a,
+.explorer .source-item summary {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.65;
+}
+.explorer .source-item p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+.explorer .source-item .coverage {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+}
+.explorer .date-value {
+  font: 22px/1.3 var(--serif);
+  display: block;
+  margin-bottom: 7px;
+}
+.explorer .mobile-detail-toggle {
+  display: none;
+}
+.explorer .concept-caption {
+  font-size: 11px;
+  color: var(--muted);
+  padding: 16px 30px;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.explorer .concept-caption b {
+  font-weight: 500;
+  color: var(--ink);
+}
+.explorer[data-view="connections"] {
+  --paper: #182824;
+  --panel: #1d302b;
+  --ink: #f2eee1;
+  --muted: #b1bfb4;
+  --line: #385047;
+  --accent: #afd2b7;
+  --soft: #294036;
+  --gold: #d6b36b;
+}
+.explorer .graph-layout {
+  display: grid;
+  grid-template-columns: minmax(500px, 1fr) 350px;
+}
+.explorer .graph-main {
+  padding: 32px 38px 25px;
+  background: radial-gradient(ellipse at 45% 50%, #294237 0%, #182824 65%);
+  position: relative;
+}
+.explorer .graph-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+.explorer .graph-intro h1 {
+  font-size: 35px;
+  margin: 7px 0 12px;
+}
+.explorer .graph-intro p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+.explorer .graph-filter {
+  display: flex;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 3px;
+}
+.explorer .graph-filter button {
+  font-size: 10px;
+  padding: 6px 10px;
+}
+.explorer .graph-filter button[aria-pressed="true"] {
+  background: #3b5144;
+  color: #f6f0da;
+}
+.explorer .graph-board {
+  position: relative;
+  height: 470px;
+  max-width: 970px;
+  margin: 10px auto 0;
+  background-image: radial-gradient(#99b59b20 0.75px, transparent 0.75px);
+  background-size: 21px 21px;
+  border-radius: 10px;
+}
+.explorer .graph-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.explorer .graph-lines path {
+  fill: none;
+  stroke: #7b988163;
+  stroke-width: 1.2;
+}
+.explorer .graph-node {
+  position: absolute;
+  width: 168px;
+  transform: translate(-50%, -50%);
+  background: #263d33;
+  border: 1px solid #526b59;
+  border-radius: 7px;
+  padding: 13px 10px;
+  text-align: center;
+  box-shadow: 0 12px 28px #0002;
+  line-height: 1.5;
+}
+.explorer .graph-node strong {
+  display: block;
+  font: 19px/1.25 var(--serif);
+  color: #f5f0dd;
+}
+.explorer .graph-node small {
+  font-size: 9px;
+  letter-spacing: 0.7px;
+  color: #bfcebc;
+}
+.explorer .graph-node.center {
+  width: 188px;
+  padding: 25px 16px;
+  border-color: #d2ae62;
+  background: #3c4f35;
+  box-shadow:
+    0 0 0 8px #dcc9860b,
+    0 0 65px #c3ca7820;
+}
+.explorer .graph-node.center strong {
+  font-size: 24px;
+}
+.explorer .graph-node .node-type {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: #c7cda9;
+}
+.explorer .graph-edge-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 9px;
+  background: #1b2d26;
+  padding: 2px 7px;
+  border-radius: 9px;
+  color: #c0cbb5;
+  max-width: 135px;
+  text-align: center;
+  line-height: 1.4;
+}
+.explorer .graph-hint {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.explorer .graph-legend {
+  display: flex;
+  gap: 18px;
+}
+.explorer .graph-legend span:before {
+  content: "◇";
+  color: #c6b072;
+  margin-right: 7px;
+}
+.explorer .graph-layout .inspector {
+  min-height: 650px;
+}
+.explorer .graph-empty {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 70%;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+.explorer .graph-neighbor-list {
+  display: none;
+}
+.explorer[data-view="connections"] .model-pill {
+  background: #344b36;
+  color: #eee5c3;
+  border-color: #75876a;
+}
+.explorer[data-view="connections"] .subject-glyph {
+  background: #344a36;
+  color: #e4d3a1;
+  border-color: #637957;
+}
+.explorer[data-view="connections"] .concept-bar {
+  background: #e9ebe2;
+  color: #233a37;
+}
+.explorer[data-view="connections"] .concept-option[aria-pressed="true"] {
+  background: #233a37;
+}
+.explorer[data-view="connections"] .search-trigger {
+  background: #233b30;
+}
+.explorer[data-view="connections"] .inspector-tab[aria-selected="true"] {
+  color: #e2ca8d;
+  border-color: #d6b36b;
+}
+.explorer[data-view="connections"] .note-box {
+  border-left-color: #d6b36b;
+}
+.explorer[data-view="connections"] .evidence-tag {
+  color: #c8ce9c;
+}
+.explorer[data-view="connections"] .source-item a {
+  color: #dace9a;
+}
+.explorer[data-view="connections"] .panel-action.primary {
+  background: #e1d1a3;
+  color: #1b3025;
+}
+.explorer[data-view="map"] {
+  --paper: #eff1e9;
+  --panel: #fcfcf5;
+  --line: #d4dacf;
+  --ink: #254437;
+  --muted: #657868;
+  --accent: #3d7157;
+}
+.explorer .atlas-layout {
+  display: grid;
+  grid-template-columns: minmax(460px, 1fr) 340px;
+}
+.explorer .atlas-main {
+  padding: 0;
+  position: relative;
+}
+.explorer .atlas-map {
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  background: #dce8e2;
+}
+.explorer .atlas-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.explorer .map-land {
+  fill: #ececdb;
+  stroke: #a2bba7;
+  stroke-width: 1.2;
+}
+.explorer .map-lake {
+  fill: #bacfcb;
+  stroke: #a2beba;
+  stroke-width: 1;
+}
+.explorer .map-grid {
+  stroke: #76998a;
+  opacity: 0.16;
+  stroke-width: 0.65;
+}
+.explorer .map-label {
+  fill: #6d8571;
+  font: italic 19px var(--serif);
+  letter-spacing: 2px;
+}
+.explorer .map-label.water {
+  fill: #799a93;
+  font-size: 16px;
+}
+.explorer .map-marker circle {
+  fill: #426e53;
+  stroke: #fffcdf;
+  stroke-width: 3;
+}
+.explorer .map-marker.selected circle {
+  fill: #a67936;
+  stroke: #fff5cb;
+  stroke-width: 4;
+}
+.explorer .map-marker .halo {
+  fill: #9db79e;
+  opacity: 0.25;
+  stroke: none;
+}
+.explorer .map-marker text {
+  font: 600 14px var(--sans);
+  fill: #2f533f;
+  paint-order: stroke;
+  stroke: #f5f2dc;
+  stroke-width: 5px;
+  stroke-linejoin: round;
+  letter-spacing: 0.2px;
+}
+.explorer .map-marker:focus-visible {
+  outline: none;
+}
+.explorer .map-marker:focus-visible circle {
+  stroke: #c68716;
+  stroke-width: 6;
+}
+.explorer .atlas-heading {
+  position: absolute;
+  left: 30px;
+  top: 25px;
+  max-width: 300px;
+  pointer-events: none;
+}
+.explorer .atlas-heading h1 {
+  font-size: 36px;
+  margin: 8px 0 12px;
+}
+.explorer .atlas-heading .eyebrow {
+  color: #526e5c;
+}
+.explorer .atlas-heading p {
+  font-size: 11px;
+  color: #4c6d5c;
+  max-width: 235px;
+}
+.explorer .map-controls {
+  position: absolute;
+  right: 23px;
+  top: 23px;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid #b4c5b6;
+  border-radius: 5px;
+  box-shadow: 0 8px 22px #3d67571a;
+}
+.explorer .map-controls button {
+  height: 35px;
+  width: 36px;
+  font-size: 19px;
+}
+.explorer .map-controls button + button {
+  border-top: 1px solid var(--line);
+}
+.explorer .map-location-card {
+  position: absolute;
+  left: 28px;
+  bottom: 40px;
+  background: #fffef7f5;
+  border: 1px solid #c8d2bf;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  width: 230px;
+  padding: 18px 20px;
+}
+.explorer .map-location-card h3 {
+  font: 22px var(--serif);
+  margin: 4px 0 9px;
+}
+.explorer .map-location-card p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.explorer .map-location-card .panel-action {
+  margin: 0;
+  min-height: 32px;
+  font-size: 10px;
+  padding: 6px;
+}
+.explorer .map-attribution {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 9px;
+  background: #f3f5e8db;
+  padding: 2px 8px;
+  color: #536e5e;
+}
+.explorer .map-attribution button {
+  font-size: 9px;
+  text-decoration: underline;
+}
+.explorer .regional-tray {
+  padding: 15px 27px;
+  border-bottom: 1px solid var(--line);
+  background: #f5f6ec;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.explorer .regional-tray > span {
+  font-size: 10px;
+  color: var(--muted);
+  margin-right: 8px;
+}
+.explorer .regional-tray button {
+  font-size: 10px;
+  padding: 5px 8px;
+  border: 1px dashed #a7bda9;
+  border-radius: 3px;
+}
+.explorer .timeline-strip {
+  padding: 21px 29px 24px;
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+}
+.explorer .timeline-strip .eyebrow {
+  display: flex;
+  justify-content: space-between;
+}
+.explorer .time-axis {
+  height: 75px;
+  position: relative;
+  margin: 15px 10px 0;
+}
+.explorer .axis-line {
+  position: absolute;
+  top: 29px;
+  width: 100%;
+  border-top: 1px solid #a6b4a1;
+}
+.explorer .time-tick {
+  position: absolute;
+  top: 26px;
+  transform: translateX(-50%);
+  height: 5px;
+  border-left: 1px solid #95a68c;
+}
+.explorer .time-tick span {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  transform: translateX(-50%);
+  font-size: 9px;
+  white-space: nowrap;
+  color: var(--muted);
+}
+.explorer .birth-range {
+  position: absolute;
+  height: 18px;
+  top: 21px;
+  background: #739166;
+  border: 1px solid #4d7148;
+  border-radius: 3px;
+  min-width: 5px;
+}
+.explorer .birth-range.selected {
+  background: #b8954c;
+  border-color: #997637;
+}
+.explorer .birth-range span {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 10px;
+  color: #536a49;
+}
+.explorer .time-census {
+  position: absolute;
+  top: 18px;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  color: #44654a;
+  background: var(--panel);
+  border: 1px solid #9aab91;
+  border-radius: 50%;
+  font: 12px var(--serif);
+}
+.explorer dialog {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 0;
+  border-radius: 11px;
+  width: min(900px, calc(100vw - 32px));
+  max-height: 88vh;
+  box-shadow: 0 40px 100px #0004;
+}
+.explorer dialog::backdrop {
+  background: #11291fd0;
+  backdrop-filter: blur(5px);
+}
+.explorer .dialog-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 26px 30px 19px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--panel);
+  z-index: 2;
+}
+.explorer .dialog-head h2 {
+  margin: 5px 0 0;
+}
+.explorer .close {
+  font-size: 21px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+.explorer .dialog-content {
+  padding: 25px 30px;
+}
+.explorer .dialog-intro {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  max-width: 710px;
+}
+.explorer .model-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.explorer .model-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.explorer .model-card.active {
+  border-color: var(--gold);
+  box-shadow: inset 0 3px var(--gold);
+}
+.explorer .model-card h3 {
+  font: 25px var(--serif);
+  margin: 9px 0 12px;
+}
+.explorer .model-card p,
+.explorer .model-card li {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.explorer .model-card strong {
+  font-size: 11px;
+  font-weight: 600;
+}
+.explorer .model-card ul {
+  padding-left: 16px;
+  margin: 6px 0 12px;
+}
+.explorer .model-card .panel-action {
+  margin-top: auto;
+}
+.explorer .model-card details {
+  margin-bottom: 13px;
+}
+.explorer .model-card summary {
+  font-size: 11px;
+  color: var(--accent);
+  cursor: pointer;
+}
+.explorer .model-card .eyebrow {
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+.explorer .model-status {
+  font-size: 10px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.explorer .search-input {
+  width: 100%;
+  font-size: 20px;
+  padding: 13px 15px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.explorer .search-results {
+  padding-top: 14px;
+  max-height: 55vh;
+  overflow: auto;
+}
+.explorer .search-result {
+  width: 100%;
+  display: flex;
+  gap: 14px;
+  text-align: left;
+  padding: 13px;
+  border-bottom: 1px solid var(--line);
+}
+.explorer .search-result strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+.explorer .search-result small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.explorer .search-result .eyebrow {
+  font-size: 8px;
+  min-width: 62px;
+  padding-top: 4px;
+}
+.explorer .task-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.explorer .task-card {
+  border: 1px solid var(--line);
+  padding: 19px;
+  border-radius: 6px;
+}
+.explorer .task-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.explorer .task-card h3 {
+  font: 22px var(--serif);
+}
+.explorer .task-card > span {
+  font: 28px var(--serif);
+  color: var(--gold);
+}
+.explorer .task-card button {
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.explorer .toast {
+  position: fixed;
+  bottom: 23px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  background: #244a3d;
+  color: #fffbe6;
+  padding: 12px 22px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0 6px 28px #0002;
+}
+.explorer .concept-intro {
+  font-size: 12px;
+}
+.explorer .only-mobile {
+  display: none;
+}
+@media (min-width: 1500px) {
+  .explorer .reading-layout {
+    grid-template-columns: 230px minmax(380px, 1fr) 380px;
+  }
+  .explorer .inspector {
+    padding: 35px;
+  }
+  .explorer .graph-board {
+    height: 510px;
+  }
+  .explorer .atlas-map {
+    height: 650px;
+  }
+}
+@media (max-width: 1150px) {
+  .explorer .reading-layout {
+    grid-template-columns: 165px minmax(320px, 1fr) 295px;
+  }
+  .explorer .chapter-nav {
+    padding: 25px 10px;
+  }
+  .explorer .inspector {
+    padding: 25px 19px;
+  }
+  .explorer .reading-content {
+    padding: 34px 27px;
+  }
+  .explorer .header-left {
+    gap: 20px;
+  }
+  .explorer .product-header {
+    padding: 0 25px;
+  }
+  .explorer .study-title {
+    display: none;
+  }
+  .explorer .graph-main {
+    padding: 28px 20px;
+  }
+  .explorer .graph-layout {
+    grid-template-columns: minmax(440px, 1fr) 300px;
+  }
+  .explorer .graph-node {
+    width: 135px;
+  }
+  .explorer .graph-node strong {
+    font-size: 17px;
+  }
+  .explorer .graph-node.center {
+    width: 155px;
+  }
+  .explorer .graph-board {
+    height: 470px;
+  }
+  .explorer .graph-edge-label {
+    font-size: 8px;
+    max-width: 100px;
+  }
+  .explorer .graph-intro {
+    align-items: start;
+  }
+  .explorer .graph-filter {
+    flex-direction: column;
+  }
+  .explorer .atlas-layout {
+    grid-template-columns: minmax(400px, 1fr) 300px;
+  }
+  .explorer .atlas-heading {
+    left: 22px;
+  }
+  .explorer .atlas-heading h1 {
+    font-size: 31px;
+  }
+  .explorer .concept-label {
+    display: none;
+  }
+}
+@media (max-width: 850px) {
+  .explorer .product-header {
+    height: 74px;
+  }
+  .explorer .concept-bar {
+    padding: 8px 12px;
+    gap: 10px;
+  }
+  .explorer .concept-option {
+    padding: 8px 12px;
+  }
+  .explorer .concept-help {
+    font-size: 10px;
+  }
+  .explorer .toolbar {
+    padding: 12px 18px;
+    flex-wrap: wrap;
+  }
+  .explorer .model-pill {
+    font-size: 10px;
+  }
+  .explorer .model-pill span:first-child {
+    display: none;
+  }
+  .explorer .trail-name {
+    max-width: 160px;
+  }
+  .explorer .reading-layout {
+    grid-template-columns: 165px 1fr;
+  }
+  .explorer .inspector {
+    grid-column: 1/-1;
+    min-height: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .explorer .reading-content {
+    max-height: none;
+  }
+  .explorer .graph-layout,
+  .explorer .atlas-layout {
+    grid-template-columns: 1fr;
+  }
+  .explorer .graph-layout .inspector {
+    min-height: 0;
+  }
+  .explorer .graph-board {
+    max-width: 680px;
+    height: 460px;
+  }
+  .explorer .graph-node {
+    width: 155px;
+  }
+  .explorer .graph-node.center {
+    width: 174px;
+  }
+  .explorer .atlas-map {
+    height: 530px;
+  }
+  .explorer .graph-main {
+    padding: 27px 30px;
+  }
+  .explorer .session {
+    display: none;
+  }
+  .explorer .mobile-detail-toggle {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 7px 11px;
+    font-size: 10px;
+  }
+  .explorer .concept-caption {
+    font-size: 10px;
+  }
+  .explorer .model-grid {
+    gap: 12px;
+  }
+  .explorer .graph-edge-label {
+    max-width: 110px;
+    font-size: 9px;
+  }
+}
+@media (max-width: 580px) {
+  .explorer h1 {
+    font-size: 35px;
+  }
+  .explorer .concept-bar {
+    justify-content: center;
+    min-height: 55px;
+    gap: 9px;
+  }
+  .explorer .concept-options {
+    gap: 2px;
+    flex: 1;
+    justify-content: space-around;
+  }
+  .explorer .concept-option {
+    padding: 7px 8px;
+    font-size: 10px;
+  }
+  .explorer .concept-option b {
+    margin-right: 4px;
+  }
+  .explorer .concept-help {
+    font-size: 0;
+    border: 0;
+    width: 24px;
+  }
+  .explorer .concept-help:after {
+    content: "?";
+    font-size: 13px;
+    border: 1px solid #95a693;
+    border-radius: 50%;
+    padding: 0 6px;
+  }
+  .explorer .product-header {
+    height: 70px;
+    padding: 0 19px;
+    gap: 10px;
+  }
+  .explorer .brand-name {
+    font-size: 14px;
+  }
+  .explorer .brand svg {
+    width: 26px;
+  }
+  .explorer .brand-sub {
+    font-size: 8px;
+  }
+  .explorer .search-trigger {
+    min-width: 0;
+    width: 39px;
+    height: 39px;
+    padding: 9px;
+    justify-content: center;
+  }
+  .explorer .search-trigger span,
+  .explorer .search-trigger kbd {
+    display: none;
+  }
+  .explorer .toolbar {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+  .explorer .trail {
+    gap: 8px;
+  }
+  .explorer .trail-name {
+    max-width: 105px;
+    font-size: 10px;
+  }
+  .explorer .return-link {
+    font-size: 10px;
+  }
+  .explorer .back {
+    width: 27px;
+    height: 27px;
+  }
+  .explorer .model-pill {
+    padding: 4px 10px;
+    max-width: 100%;
+    min-height: 29px;
+  }
+  .explorer .reading-layout {
+    display: block;
+  }
+  .explorer .chapter-nav {
+    display: none;
+  }
+  .explorer .only-mobile {
+    display: block;
+  }
+  .explorer .mobile-passage {
+    width: 100%;
+    padding: 9px 13px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--panel);
+    color: var(--ink);
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .explorer .reading-content {
+    padding: 27px 24px 40px;
+  }
+  .explorer .reading-topline {
+    margin-bottom: 15px;
+  }
+  .explorer .reading-deck {
+    font-size: 18px;
+  }
+  .explorer .verses {
+    font-size: 20px;
+    line-height: 1.9;
+  }
+  .explorer .inspector {
+    padding: 24px;
+  }
+  .explorer .inspector h2 {
+    font-size: 28px;
+  }
+  .explorer .concept-caption {
+    padding: 14px 20px;
+    display: block;
+  }
+  .explorer .concept-caption span {
+    display: block;
+    margin-top: 6px;
+  }
+  .explorer .graph-main {
+    padding: 25px 18px;
+  }
+  .explorer .graph-intro h1 {
+    font-size: 31px;
+  }
+  .explorer .graph-filter {
+    display: none;
+  }
+  .explorer .graph-board {
+    height: 400px;
+    margin: 18px -7px;
+  }
+  .explorer .graph-node {
+    width: 116px;
+    padding: 10px 7px;
+  }
+  .explorer .graph-node strong {
+    font-size: 15px;
+  }
+  .explorer .graph-node.center {
+    width: 130px;
+    padding: 18px 7px;
+  }
+  .explorer .graph-node.center strong {
+    font-size: 20px;
+  }
+  .explorer .graph-node small {
+    font-size: 8px;
+  }
+  .explorer .graph-node .node-type {
+    font-size: 7px;
+  }
+  .explorer .graph-edge-label {
+    font-size: 8px;
+    max-width: 75px;
+    line-height: 1.35;
+    padding: 1px 4px;
+  }
+  .explorer .graph-hint {
+    gap: 12px;
+    font-size: 9px;
+    align-items: start;
+  }
+  .explorer .graph-legend {
+    gap: 7px;
+    flex-direction: column;
+  }
+  .explorer .atlas-map {
+    height: 560px;
+  }
+  .explorer .atlas-heading {
+    top: 20px;
+    left: 20px;
+    max-width: 225px;
+  }
+  .explorer .atlas-heading h1 {
+    font-size: 32px;
+    max-width: 200px;
+  }
+  .explorer .atlas-heading p {
+    max-width: 180px;
+    font-size: 10px;
+  }
+  .explorer .map-location-card {
+    left: 18px;
+    bottom: 33px;
+    width: 180px;
+    padding: 13px 15px;
+  }
+  .explorer .map-location-card h3 {
+    font-size: 20px;
+  }
+  .explorer .map-location-card p {
+    font-size: 10px;
+  }
+  .explorer .map-attribution {
+    font-size: 8px;
+    max-width: 98%;
+    right: 3px;
+  }
+  .explorer .regional-tray {
+    padding: 13px 18px;
+    gap: 7px;
+  }
+  .explorer .timeline-strip {
+    padding: 20px 18px;
+  }
+  .explorer .timeline-strip .eyebrow {
+    font-size: 8px;
+  }
+  .explorer .dialog-head {
+    padding: 19px 21px;
+  }
+  .explorer .dialog-head h2 {
+    font-size: 25px;
+  }
+  .explorer .dialog-content {
+    padding: 21px;
+  }
+  .explorer .model-grid,
+  .explorer .task-grid {
+    grid-template-columns: 1fr;
+  }
+  .explorer .dialog-intro {
+    font-size: 12px;
+  }
+  .explorer .model-card {
+    padding: 18px;
+  }
+  .explorer .graph-layout .inspector,
+  .explorer .atlas-layout .inspector {
+    display: none;
+  }
+  .explorer .graph-layout .inspector.mobile-open,
+  .explorer .atlas-layout .inspector.mobile-open {
+    display: block;
+  }
+  .explorer .map-marker text {
+    font-size: 18px;
+  }
+  .explorer .time-axis {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  .explorer .time-census {
+    font-size: 10px;
+  }
+  .explorer .search-result {
+    padding: 12px 2px;
+  }
+  .explorer .search-result .eyebrow {
+    min-width: 47px;
+  }
+  .explorer .search-result strong {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .explorer *,
+  .explorer *:before,
+  .explorer *:after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.explorer .connection-evidence {
+  font-size: 10px;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 3px 0 9px 39px;
+  text-align: left;
+}
+.explorer .connection-row {
+  border-bottom: 0;
+  padding-bottom: 4px;
+}
+.explorer .connection-list li {
+  border-bottom: 1px solid var(--line);
+}
+.explorer .concept-bar {
+  position: sticky;
+  top: 0;
+}
+.explorer .inspector {
+  scroll-margin-top: 75px;
+}
+.explorer .mobile-edge {
+  display: none;
+}
+.explorer .back-to-reading {
+  margin-top: 24px;
+}
+@media (max-width: 580px) {
+  .explorer .graph-board {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    height: auto;
+    margin: 24px 0;
+  }
+  .explorer .graph-lines,
+  .explorer .graph-edge-label {
+    display: none;
+  }
+  .explorer .graph-node,
+  .explorer .graph-node.center {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    padding: 16px 10px;
+  }
+  .explorer .graph-node.center {
+    grid-column: 1/-1;
+    padding: 22px;
+  }
+  .explorer .graph-node strong {
+    font-size: 18px;
+  }
+  .explorer .graph-node.center strong {
+    font-size: 24px;
+  }
+  .explorer .graph-node .mobile-edge {
+    display: block;
+    color: #e1c98b;
+    font-size: 10px;
+    margin-top: 9px;
+  }
+  .explorer .graph-node small {
+    display: block;
+    font-size: 9px;
+    margin-top: 3px;
+  }
+  .explorer .atlas-map {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .explorer .atlas-heading {
+    position: relative;
+    order: 0;
+    left: auto;
+    top: auto;
+    max-width: none;
+    padding: 25px 22px 0;
+  }
+  .explorer .atlas-heading h1 {
+    max-width: 320px;
+    font-size: 32px;
+  }
+  .explorer .atlas-heading p {
+    max-width: none;
+  }
+  .explorer .atlas-canvas {
+    order: 1;
+    height: 420px;
+  }
+  .explorer .map-location-card {
+    position: relative;
+    order: 2;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    margin: 0 18px 10px;
+    padding: 16px 18px;
+  }
+  .explorer .map-location-card h3 {
+    font-size: 24px;
+  }
+  .explorer .map-location-card p {
+    font-size: 12px;
+  }
+  .explorer .map-controls {
+    top: 205px;
+    z-index: 1;
+  }
+  .explorer .map-attribution {
+    position: static;
+    order: 3;
+    max-width: 100%;
+    padding: 8px;
+    text-align: right;
+  }
+  .explorer .map-marker text {
+    font-size: 19px;
+  }
+}
+.explorer .sea-narrow {
+  display: none;
+}
+@media (max-width: 580px) {
+  .explorer .sea-wide {
+    display: none;
+  }
+  .explorer .sea-narrow {
+    display: block;
+  }
+}
+.explorer,
+.explorer[data-view="map"] {
+  --ink: #213650;
+  --muted: #606e81;
+  --paper: #f7f1e5;
+  --panel: #fffbf2;
+  --line: #ded6c5;
+  --accent: #2b5d92;
+  --gold: #af8233;
+  --soft: #f1e8d5;
+  --shadow: 0 16px 60px #23395612;
+}
+.explorer .concept-bar,
+.explorer[data-view="connections"] .concept-bar {
+  background: #ece4d4;
+  border-bottom-color: #d8ccb5;
+  color: #213650;
+}
+.explorer .concept-option {
+  color: var(--muted);
+}
+.explorer .concept-option[aria-pressed="true"],
+.explorer[data-view="connections"] .concept-option[aria-pressed="true"] {
+  background: #213b5e;
+  color: #fff4da;
+  box-shadow:
+    inset 0 -2px #c6a15a,
+    0 2px 4px #14243d18;
+}
+.explorer .concept-help {
+  border-bottom-color: #ad9a76;
+}
+.explorer .concept-help:after {
+  border-color: #ad9a76;
+}
+.explorer .search-trigger kbd {
+  color: inherit;
+}
+.explorer .model-pill {
+  border-color: #cbb57f;
+  background: #f4ead2;
+  color: #314c6b;
+}
+.explorer .passage-button[aria-current="true"] {
+  background: #e4ebf4;
+  color: #264c79;
+}
+.explorer .nav-note,
+.explorer .reading-deck {
+  color: #6b7180;
+}
+.explorer .verse-number {
+  color: #727c8c;
+}
+.explorer .word {
+  border-bottom-color: #8faaca;
+  background: #dfe9f5a6;
+  color: #285281;
+}
+.explorer .word.selected {
+  background: #294f7d;
+  color: #fff6df;
+  border-bottom-color: #c9a35b;
+}
+.explorer .subject-glyph {
+  border-color: #b9c9dd;
+  color: #2b5d92;
+  background: #e9eff7;
+}
+.explorer .evidence-tag {
+  color: #785a28;
+}
+.explorer .note-box {
+  border-left-color: #bb9650;
+}
+.explorer .axis-line {
+  border-top-color: #aab9cc;
+}
+.explorer .time-tick {
+  border-left-color: #899fb9;
+}
+.explorer .birth-range {
+  background: #557eae;
+  border-color: #365f90;
+}
+.explorer .birth-range.selected {
+  background: #bd974e;
+  border-color: #906821;
+}
+.explorer .birth-range span {
+  color: #35567d;
+}
+.explorer .time-census {
+  color: #34577f;
+  border-color: #92a9c4;
+}
+.explorer dialog::backdrop {
+  background: #10213bd0;
+}
+.explorer .toast {
+  background: #25456c;
+  color: #fff4d9;
+}
+.explorer[data-view="connections"] {
+  --paper: #14243d;
+  --panel: #1b2e49;
+  --ink: #f9f2e4;
+  --muted: #b7c6da;
+  --line: #3c526e;
+  --accent: #c0d7f2;
+  --soft: #263b56;
+  --gold: #d9b46a;
+}
+.explorer .graph-main {
+  background: radial-gradient(ellipse at 45% 50%, #263f61 0%, #14243d 65%);
+}
+.explorer .graph-filter button[aria-pressed="true"] {
+  background: #354e70;
+  color: #fff1cf;
+}
+.explorer .graph-board {
+  background-image: radial-gradient(#9bb9de26 0.75px, transparent 0.75px);
+}
+.explorer .graph-lines path {
+  stroke: #8eacd078;
+}
+.explorer .graph-node {
+  background: #213b5b;
+  border-color: #527093;
+  box-shadow: 0 12px 28px #08182c33;
+}
+.explorer .graph-node strong {
+  color: #fff5df;
+}
+.explorer .graph-node small {
+  color: #bdcee5;
+}
+.explorer .graph-node.center {
+  border-color: #d5b06b;
+  background: #304d72;
+  box-shadow:
+    0 0 0 8px #d8b76d0c,
+    0 0 65px #829dc622;
+}
+.explorer .graph-node .node-type {
+  color: #d7bd84;
+}
+.explorer .graph-edge-label {
+  background: #192e4a;
+  color: #d0deef;
+}
+.explorer .graph-legend span:before {
+  color: #d5b16b;
+}
+.explorer .graph-node .mobile-edge {
+  color: #e1c487;
+}
+.explorer[data-view="connections"] .model-pill {
+  background: #304666;
+  color: #f1dfb7;
+  border-color: #8e815f;
+}
+.explorer[data-view="connections"] .subject-glyph {
+  background: #2c4668;
+  color: #e8ca88;
+  border-color: #6e83a0;
+}
+.explorer[data-view="connections"] .search-trigger {
+  background: #203a5b;
+}
+.explorer[data-view="connections"] .inspector-tab[aria-selected="true"] {
+  color: #e6c988;
+  border-bottom-color: #d6b36b;
+}
+.explorer[data-view="connections"] .note-box {
+  border-left-color: #d6b36b;
+}
+.explorer[data-view="connections"] .evidence-tag {
+  color: #dfc690;
+}
+.explorer[data-view="connections"] .source-item a {
+  color: #e4cb96;
+}
+.explorer[data-view="connections"] .panel-action.primary {
+  background: #dfc48b;
+  color: #182e4c;
+  border-color: #dfc48b;
+}
+.explorer .atlas-map {
+  background: #cfdfeb;
+}
+.explorer .map-land {
+  fill: #eae8d1;
+  stroke: #a6b295;
+}
+.explorer .map-lake {
+  fill: #b5d2e8;
+  stroke: #8ab2cf;
+}
+.explorer .map-grid {
+  stroke: #7896a9;
+}
+.explorer .map-label {
+  fill: #566444;
+}
+.explorer .map-label.water {
+  fill: #3a6487;
+}
+.explorer .map-marker circle {
+  fill: #315f8d;
+  stroke: #fff9e9;
+}
+.explorer .map-marker.selected circle {
+  fill: #ad7e2f;
+  stroke: #fff0c9;
+}
+.explorer .map-marker .halo {
+  fill: #7498bc;
+}
+.explorer .map-marker text {
+  fill: #304f70;
+  stroke: #f6f2de;
+}
+.explorer .map-marker:focus-visible circle {
+  stroke: #b77c14;
+}
+.explorer .atlas-heading .eyebrow {
+  color: #4b6179;
+}
+.explorer .atlas-heading p {
+  color: #4e6680;
+}
+.explorer .map-controls {
+  border-color: #a4b8cd;
+  box-shadow: 0 8px 22px #2b51741a;
+}
+.explorer .map-location-card {
+  background: #fffbf2f5;
+  border-color: #cbbd9e;
+}
+.explorer .map-attribution {
+  background: #f8f4e8eb;
+  color: #46617d;
+}
+.explorer .regional-tray {
+  background: #f5eddd;
+}
+
+/* App integration: shared site header, study navigation and date tracks. */
+.explorer {
+  --serif: var(--font-newsreader), Georgia, serif;
+  --sans: var(--font-manrope), sans-serif;
+  isolation: isolate;
+}
+.explorer h1,
+.explorer h2,
+.explorer h3 {
+  font-style: normal;
+}
+.explorer button {
+  border-radius: initial;
+}
+.explorer .product-header {
+  height: 76px;
+  padding: 0 28px;
+  gap: 20px;
+}
+.explorer .study-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.explorer .study-heading > a {
+  font-size: 8px;
+  text-decoration: none;
+}
+.explorer .study-heading > span {
+  font: 17px var(--serif);
+}
+.explorer .concept-options {
+  gap: 6px;
+}
+.explorer .concept-option {
+  border-radius: 5px;
+  min-height: 38px;
+  padding: 8px 14px;
+}
+.explorer .study-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.explorer .search-trigger {
+  min-width: 170px;
+}
+.explorer .small-button {
+  border-radius: 4px;
+  text-decoration: none;
+}
+.explorer .toolbar {
+  min-height: 64px;
+  padding: 12px 28px;
+}
+.explorer .back {
+  border-radius: 50%;
+}
+.explorer .model-pill {
+  border-radius: 99px;
+}
+.explorer .stage {
+  min-height: calc(100dvh - 212px);
+}
+.explorer .reading-content {
+  max-height: calc(100dvh - 212px);
+}
+.explorer .inspector {
+  min-height: calc(100dvh - 212px);
+  max-height: calc(100dvh - 212px);
+  overflow: auto;
+  position: sticky;
+  top: 72px;
+  scrollbar-width: thin;
+}
+.explorer .inspector h2:focus {
+  outline: none;
+}
+.explorer .chapter-nav {
+  max-height: calc(100dvh - 212px);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.explorer .inspector-actions {
+  margin-top: 22px;
+}
+.explorer .graph-neighbour {
+  display: contents;
+}
+.explorer .graph-node {
+  border-radius: 7px;
+}
+.explorer .graph-empty {
+  grid-column: 1/-1;
+}
+.explorer .concept-caption {
+  padding: 13px 28px;
+}
+.explorer .concept-caption button {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font: inherit;
+}
+.explorer .mobile-save {
+  display: none;
+}
+.explorer .share-input {
+  font-size: 12px;
+  margin: 10px 0;
+}
+.explorer .restore-label {
+  display: block;
+  font-size: 12px;
+  padding: 15px 0;
+}
+.explorer .restore-label input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  font: inherit;
+}
+.explorer .tool-notice {
+  font-size: 12px;
+  color: var(--accent);
+}
+.explorer .export-details {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 15px;
+  font-size: 12px;
+}
+.explorer .source-item details {
+  margin-top: 8px;
+}
+.explorer .source-item summary {
+  font-size: 10px;
+  cursor: pointer;
+}
+.explorer .source-item strong {
+  font-size: 12px;
+}
+.explorer .source-item p {
+  overflow-wrap: anywhere;
+}
+.explorer .date-scale {
+  position: relative;
+  height: 28px;
+  margin: 24px 10px 0 185px;
+}
+.explorer .date-scale > span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 9px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.explorer .timeline-row {
+  display: grid;
+  grid-template-columns: 175px 1fr;
+  gap: 10px;
+  align-items: center;
+  min-height: 57px;
+}
+.explorer .timeline-caption {
+  text-align: left;
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 8px 0;
+}
+.explorer .timeline-caption small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+}
+.explorer .timeline-track {
+  position: relative;
+  border-top: 1px solid #aab9cc;
+  margin-right: 10px;
+}
+.explorer .timeline-mark {
+  position: absolute;
+  top: -7px;
+  min-width: 9px;
+  height: 14px;
+  border: 1px solid #355c88;
+  background: #6487b2;
+  border-radius: 3px;
+  transform: translateX(-4px);
+}
+.explorer .timeline-mark.selected {
+  background: #bd974e;
+  border-color: #906821;
+}
+.explorer .unplaced-date {
+  font-size: 9px;
+  color: var(--muted);
+  display: block;
+  padding-top: 6px;
+}
+.explorer .timeline-note {
+  font-size: 10px;
+  color: var(--muted);
+  margin: 15px 0 0;
+}
+.explorer .map-location-card p {
+  font-size: 10px;
+}
+.explorer .map-location-card {
+  width: 230px;
+}
+.explorer .map-marker {
+  cursor: pointer;
+}
+.explorer .model-card {
+  gap: 5px;
+}
+.explorer .model-card .panel-action {
+  border-radius: 4px;
+}
+.explorer .graph-board {
+  height: 430px;
+}
+.explorer .graph-intro h1 {
+  font-size: 34px;
+}
+.explorer dialog {
+  font-family: var(--sans);
+}
+@media (max-width: 1150px) {
+  .explorer .study-heading > span {
+    font-size: 14px;
+    max-width: 190px;
+  }
+  .explorer .search-trigger {
+    min-width: 40px;
+    width: 40px;
+    padding: 10px;
+  }
+  .explorer .search-trigger span,
+  .explorer .search-trigger kbd {
+    display: none;
+  }
+  .explorer .save-place {
+    font-size: 10px;
+  }
+  .explorer .product-header {
+    padding: 0 22px;
+  }
+  .explorer .reading-content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media (max-width: 850px) {
+  .explorer .inspector {
+    max-height: none;
+    min-height: 0;
+    position: static;
+  }
+  .explorer .chapter-nav {
+    max-height: none;
+  }
+  .explorer .reading-content {
+    max-height: none;
+  }
+  .explorer .graph-filter {
+    display: flex;
+  }
+  .explorer .product-header {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 94px;
+    padding: 14px 20px;
+    gap: 12px;
+  }
+  .explorer .study-heading {
+    flex: 1;
+  }
+  .explorer .study-heading > span {
+    max-width: none;
+    font-size: 15px;
+  }
+  .explorer .study-tools {
+    order: 1;
+  }
+  .explorer .concept-options {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+  .explorer .concept-option {
+    flex: 1;
+  }
+  .explorer .save-place {
+    display: none;
+  }
+  .explorer .mobile-save {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .explorer .inspector {
+    scroll-margin-top: 80px;
+  }
+  .explorer .graph-layout .inspector,
+  .explorer .atlas-layout .inspector {
+    display: none;
+  }
+  .explorer .graph-layout .inspector.mobile-open,
+  .explorer .atlas-layout .inspector.mobile-open {
+    display: block;
+  }
+  .explorer .graph-board {
+    height: 430px;
+  }
+}
+@media (max-width: 580px) {
+  .explorer .product-header {
+    gap: 12px;
+    padding: 12px 18px;
+  }
+  .explorer .concept-options {
+    flex-basis: 100%;
+  }
+  .explorer .study-heading > span {
+    font-size: 14px;
+    max-width: 260px;
+  }
+  .explorer .concept-option {
+    font-size: 12px;
+  }
+  .explorer .toolbar {
+    padding: 10px 15px;
+    gap: 9px;
+  }
+  .explorer .reading-content {
+    padding: 25px 24px;
+  }
+  .explorer .reading-content h1 {
+    font-size: 35px;
+  }
+  .explorer .graph-board {
+    height: auto;
+  }
+  .explorer .graph-filter {
+    flex-direction: row;
+  }
+  .explorer .graph-intro {
+    flex-direction: column;
+    align-items: start;
+  }
+  .explorer .graph-intro h1 {
+    font-size: 31px;
+  }
+  .explorer .graph-node.center {
+    grid-column: 1/-1;
+  }
+  .explorer .map-location-card {
+    width: auto;
+  }
+  .explorer .date-scale {
+    margin-left: 116px;
+    margin-right: 10px;
+  }
+  .explorer .date-scale > span {
+    font-size: 8px;
+  }
+  .explorer .date-scale > span:nth-child(even) {
+    top: -12px;
+  }
+  .explorer .timeline-row {
+    grid-template-columns: 105px 1fr;
+    gap: 11px;
+  }
+  .explorer .timeline-caption {
+    font-size: 10px;
+  }
+  .explorer .timeline-caption small {
+    font-size: 8px;
+  }
+  .explorer .concept-caption {
+    padding: 14px 20px;
+  }
+  .explorer .concept-caption > div {
+    margin-top: 8px;
+  }
+}
+
+.explorer {
+  color-scheme: light;
+}
+.explorer[data-view="connections"] {
+  color-scheme: dark;
+}
+.explorer ::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+.explorer ::-webkit-scrollbar-thumb {
+  background: #b4bac3;
+  border-radius: 9px;
+}
+.explorer .product-header {
+  position: sticky;
+  top: 72px;
+  z-index: 24;
+}
+.explorer .toolbar {
+  position: sticky;
+  top: 148px;
+  z-index: 23;
+  background: var(--paper);
+}
+.explorer .inspector {
+  top: 212px;
+}
+@media (max-width: 850px) {
+  .explorer .toolbar {
+    position: static;
+  }
+  .explorer .inspector {
+    scroll-margin-top: 220px;
+  }
+}
+@media (max-width: 760px) {
+  .explorer .product-header {
+    top: 64px;
+  }
+}

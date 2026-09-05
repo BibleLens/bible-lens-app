@@ -1,153 +1,79 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { READING_PATHS } from "@/lib/commentary-index";
-import { EmailCapture } from "@/components/EmailCapture";
-import { GlassCard } from "@/components/GlassCard";
-
-export const dynamic = "force-static";
-
-export const metadata: Metadata = {
-  title: "Start Here | Bible Lens",
+import { pageMetadata } from "@/lib/page-metadata";
+import { studyUrl } from "@/lib/explorer/state";
+export const metadata = pageMetadata({
+  title: "Start here | Bible Lens",
   description:
-    "New to Bible Lens? Find your entry point — whether you're questioning tradition, curious about ancient context, or tracing biblical threads through history.",
-  alternates: { canonical: "https://www.biblelens.faith/start-here" },
-  openGraph: {
-    title: "Start Here | Bible Lens",
-    description:
-      "New to Bible Lens? Find your entry point — whether you're questioning tradition, curious about ancient context, or tracing biblical threads through history.",
-    url: "https://www.biblelens.faith/start-here",
-    siteName: "Bible Lens",
-    type: "website",
-  },
-};
-
-export default function StartHerePage() {
+    "Begin a connected study in the Explorer or choose a reading path through the Bible Lens commentary library.",
+  path: "/start-here",
+});
+export default function StartHere() {
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "var(--color-obsidian)" }}>
-      <main id="main-content" className="flex-1 w-full">
-
-        {/* Editorial Hero (STH-01) */}
-        <section
-          className="grain-overlay flex items-end pt-10 pb-12 px-6"
-          style={{ background: "var(--color-obsidian)" }}
-        >
-          <div className="max-w-6xl mx-auto w-full">
-            <span
-              className="micro-label mb-4 block"
-              style={{ color: "var(--color-cyan-400)" }}
-            >
-              THE ETHEREAL PATH TO UNDERSTANDING
-            </span>
-            <div className="border-l-2 pl-6" style={{ borderColor: "var(--color-cyan-400)" }}>
-              <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-semibold"
-                style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
-              >
-                The Ethereal Path to Understanding
-              </h1>
-              <p
-                className="mt-3 max-w-2xl text-lg"
-                style={{ color: "var(--color-text-muted-warm)" }}
-              >
-                New to Bible Lens? Find your entry point.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Reading Path Bento Grid (STH-02) */}
-        <section className="max-w-6xl mx-auto px-6 py-16">
-          <div className="bento-grid">
-            {READING_PATHS.map((path) => {
-              const firstStep = path.steps[0];
-              return (
-                <Link
-                  key={path.id}
-                  href={`/bible/${firstStep.bookId}/${firstStep.chapter}`}
-                  className="col-span-12 md:col-span-4 glass-card group p-8 flex flex-col justify-end min-h-[200px] relative"
-                >
-                  <div className="shimmer-layer" />
-                  <div className="relative z-10">
-                    <span
-                      className="micro-label mb-3 block"
-                      style={{ color: "var(--color-cyan-400)" }}
-                    >
-                      READING PATH
-                    </span>
-                    <h2
-                      className="text-2xl font-semibold"
-                      style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
-                    >
-                      {path.title}
-                    </h2>
-                    <span
-                      className="micro-label mt-2 block"
-                      style={{ color: "var(--color-text-muted-warm)" }}
-                    >
-                      {path.steps.length} CHAPTERS
-                    </span>
-                    <div className="animate-content mt-4">
-                      <p
-                        className="text-sm leading-relaxed line-clamp-3"
-                        style={{ color: "var(--color-text-muted-warm)" }}
-                      >
-                        {path.throughLine.slice(0, 180)}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* "Still not sure?" CTA (STH-03) */}
-        <div className="max-w-6xl mx-auto px-6 py-8">
-          <GlassCard as="section" className="p-12 text-center">
-            <span
-              className="micro-label mb-4 block"
-              style={{ color: "var(--color-cyan-400)" }}
-            >
-              SCHOLAR AI
-            </span>
-            <h2
-              className="text-2xl md:text-3xl font-semibold mb-4"
-              style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
-            >
-              Still not sure where to start?
-            </h2>
-            <p
-              className="mb-6 max-w-lg mx-auto"
-              style={{ color: "var(--color-text-muted-warm)" }}
-            >
-              Ask Bible Lens anything — the AI chat draws from our full commentary library and
-              scholarly research.
-            </p>
-            <Link
-              href="/chat"
-              className="inline-block px-6 py-3 font-semibold transition-all hover:brightness-110"
-              style={{
-                background: "var(--color-cyan-400)",
-                color: "var(--color-bg-primary)",
-                borderRadius: 0,
-              }}
-            >
-              Start a Conversation
-            </Link>
-          </GlassCard>
+    <main id="main-content" className="discovery-home collection-page">
+      <header>
+        <span className="site-eyebrow">New to Bible Lens?</span>
+        <h1>
+          Start with
+          <br />
+          <em>one question.</em>
+        </h1>
+        <p>
+          You don’t need to know where the study will lead. Read a passage,
+          notice a detail and follow it into the world around the text.
+        </p>
+      </header>
+      <section className="collection-card">
+        <div>
+          <span className="site-eyebrow">Begin with the Explorer</span>
+          <h2>A passage. A person. A place.</h2>
+          <p>
+            Start in Luke 2. Select Mary in the text, follow her connections and
+            locate Bethlehem. Then compare what different birth-date proposals
+            explain and what they have to assume.
+          </p>
+          <Link className="site-button primary" href={studyUrl()}>
+            Begin the connected study →
+          </Link>
         </div>
-
-        {/* Email Capture in Glass Card (STH-04) */}
-        <section className="max-w-6xl mx-auto px-6 pb-16">
-          <GlassCard className="p-10">
-            <EmailCapture
-              headline="Stay in the loop"
-              subtext="Get notified when new commentary drops — no spam, just fresh perspectives on ancient texts."
-            />
-          </GlassCard>
-        </section>
-
-      </main>
-    </div>
+        <nav aria-label="Other ways to begin">
+          <Link href="/books">
+            <span>01</span> Choose a book of the Bible <b>→</b>
+          </Link>
+          <Link href="/topics">
+            <span>02</span> Explore a topic <b>→</b>
+          </Link>
+          <Link href="/chat">
+            <span>03</span> Ask a Scholar <b>→</b>
+          </Link>
+        </nav>
+      </section>
+      <section className="guided-paths">
+        <div className="section-heading">
+          <div>
+            <span className="site-eyebrow">Go further</span>
+            <h2>Follow a reading path.</h2>
+          </div>
+          <p>
+            These paths draw on the existing commentary library and take you
+            through related chapters.
+          </p>
+        </div>
+        <div className="path-cards">
+          {READING_PATHS.map((path) => (
+            <Link
+              className="path-card"
+              key={path.id}
+              href={`/bible/${path.steps[0].bookId}/${path.steps[0].chapter}`}
+            >
+              <span>{path.steps.length} chapters</span>
+              <h3>{path.title}</h3>
+              <p>{path.throughLine}</p>
+              <strong>Start reading →</strong>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }

@@ -2,96 +2,101 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
 
-const navItems = [
-  { label: "Books", href: "/books" },
+const links = [
+  { label: "Explorer", href: "/explore" },
+  { label: "Read the Bible", href: "/books" },
   { label: "Commentary", href: "/commentary" },
-  { label: "Topics", href: "/topics" },
   { label: "Timelines", href: "/timelines" },
-  { label: "Start Here", href: "/start-here" },
-  { label: "Ask a Scholar", href: "/chat" },
 ];
-
-function isActive(href: string, pathname: string): boolean {
-  if (href === "/books") {
-    return pathname.startsWith("/books") || pathname.startsWith("/bible");
-  }
-  if (href === "/commentary") {
-    return pathname.startsWith("/commentary");
-  }
-  if (href === "/topics") {
-    return pathname.startsWith("/topics");
-  }
-  if (href === "/timelines") {
-    return pathname.startsWith("/timelines");
-  }
-  if (href === "/start-here") {
-    return pathname === "/start-here" || pathname.startsWith("/start-here/");
-  }
-  if (href === "/chat") {
-    return pathname.startsWith("/chat");
-  }
-  return false;
-}
-
 export function SiteNav() {
   const pathname = usePathname();
-
-  // Suppress on homepage (has its own NavBar)
-  if (pathname === "/") return null;
-
-  // Suppress on chapter reader routes (has its own header)
-  if (pathname.startsWith("/bible/") && pathname.split("/").length > 3) return null;
-
+  if (pathname.startsWith("/bible/") && pathname.split("/").length > 3)
+    return null;
   return (
-    <>
-      <header
-        className="fixed top-0 w-full z-50"
-        style={{
-          background: "rgba(5,5,8,0.85)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(0,229,255,0.1)",
-          borderRadius: 0,
-        }}
-      >
-        {/* The full crest remains on the homepage; inner pages use a more
-            compact masthead so reading content arrives sooner. */}
-        <div className="flex flex-col items-center px-6 pt-3 pb-2">
-          <Link href="/" className="flex justify-center" aria-label="Bible Lens home">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/bible-lens-logo-no-tagline.svg"
-              alt="Bible Lens"
-              className="h-32 w-auto logo-pulse"
-            />
-          </Link>
-
-          <nav aria-label="Main navigation" className="mt-1">
-            <ul className="hidden md:flex items-center justify-center gap-7 lg:gap-9">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={isActive(item.href, pathname) ? "page" : undefined}
-                    className={cn(
-                      "min-h-[44px] flex items-center text-sm font-medium transition-colors duration-200 border-b-2",
-                      isActive(item.href, pathname)
-                        ? "text-[var(--color-cyan-400)] border-[var(--color-cyan-400)] font-semibold"
-                        : "text-[var(--color-text-secondary)] border-transparent hover:text-[var(--color-cyan-300)]"
-                    )}
-                    style={{ fontFamily: "var(--font-interface)" }}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+    <header className="site-header">
+      <Link href="/" className="site-brand" aria-label="Bible Lens home">
+        <svg viewBox="0 0 44 50" fill="none" aria-hidden="true">
+          <path
+            d="M22 2 41 13v24L22 48 3 37V13Z"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+          <path d="M22 9 35 17v16L22 41 9 33V17Z" stroke="currentColor" />
+          <path
+            d="m9 17 13 8 13-8M22 25v16"
+            stroke="currentColor"
+            strokeWidth="1.3"
+          />
+        </svg>
+        <span>
+          BIBLE LENS<small>Ancient wisdom, modern clarity</small>
+        </span>
+      </Link>
+      <nav aria-label="Main navigation">
+        <div className="site-main-links">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={
+                pathname.startsWith(link.href) ||
+                (link.href === "/books" && pathname.startsWith("/bible"))
+                  ? "page"
+                  : undefined
+              }
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
-      </header>
-      <div aria-hidden="true" className="h-[var(--site-nav-offset)] shrink-0" />
-    </>
+        <details className="site-menu">
+          <summary>
+            More <span aria-hidden="true">⌄</span>
+          </summary>
+          <div>
+            {[
+              ...links,
+              { label: "Topics", href: "/topics" },
+              { label: "Start here", href: "/start-here" },
+              { label: "Ask a Scholar", href: "/chat" },
+              { label: "About Bible Lens", href: "/about" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={(e) =>
+                  e.currentTarget.closest("details")?.removeAttribute("open")
+                }
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </details>
+        <Link
+          className="site-search"
+          href="/search"
+          aria-label="Search the Bible Lens library"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle
+              cx="8"
+              cy="8"
+              r="5.5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <path d="m12 12 5 5" stroke="currentColor" strokeWidth="1.5" />
+          </svg>
+        </Link>
+      </nav>
+    </header>
   );
 }

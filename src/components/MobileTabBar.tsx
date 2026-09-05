@@ -8,7 +8,7 @@ const tabItems = [
   { label: "Books", href: "/books", icon: "menu_book", ariaLabel: "Books" },
   { label: "Notes", href: "/commentary", icon: "layers", ariaLabel: "Commentary" },
   { label: "Timelines", href: "/timelines", icon: "timeline", ariaLabel: "Bible timelines" },
-  { label: "Start Here", href: "/start-here", icon: "bookmark", ariaLabel: "Start here — reading paths" },
+  { label: "Explorer", href: "/explore", icon: "explore", ariaLabel: "Bible Lens Explorer" },
   { label: "Scholar", href: "/chat", icon: "robot_2", ariaLabel: "Ask a Scholar — AI chat" },
 ];
 
@@ -22,8 +22,8 @@ function isActive(href: string, pathname: string): boolean {
   if (href === "/timelines") {
     return pathname.startsWith("/timelines");
   }
-  if (href === "/start-here") {
-    return pathname === "/start-here" || pathname.startsWith("/start-here/");
+  if (href === "/explore") {
+    return pathname.startsWith("/explore");
   }
   if (href === "/chat") {
     return pathname.startsWith("/chat");
@@ -35,7 +35,7 @@ export function MobileTabBar() {
   const pathname = usePathname();
 
   // Suppress on homepage (has its own NavBar)
-  if (pathname === "/") return null;
+  if (pathname === "/" || pathname.startsWith("/explore")) return null;
 
   return (
     <nav

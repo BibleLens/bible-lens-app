@@ -58,6 +58,10 @@ function buildLlmsTxt(): string {
 
 Bible Lens holds a strict scriptural standard: every reading is argued from the primary text and its historical-cultural background (Second Temple Judaism, the ancient Near East, the original languages), not from creedal tradition or denominational consensus. Where the historically grounded reading diverges from popular Christian teaching, Bible Lens follows the text and says so explicitly. It is an independent project and does not represent, or speak for, mainstream Christian-creator ministries.
 
+## Explorer
+
+- [The Explorer](${BASE}/explore): Connected studies joining passages, people, places and dated claims. The first study covers Jesus’ birth and is an editorial preview, not a settled chronology. Its proposed dates carry assumptions and objections.
+
 ## Topic Studies
 
 In-depth thematic essays. Each argues one contested question from the primary text and its ancient context, and names where its reading parts from the popular one.

@@ -98,6 +98,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
   const { prev: prevBook, next: nextBook } = getAdjacentBooks(bookId);
   const totalChapters = book.chapterCount;
 
+  const explorerPassage: string | undefined = ({ 'luke-1': 'passage-luke-announcement', 'luke-2': 'passage-luke-birth', 'matthew-1': 'passage-matthew-family', 'matthew-2': 'passage-matthew-magi', 'revelation-12': 'passage-revelation-woman' } as Record<string,string>)[`${bookId}-${chapterNum}`];
   const hasCommentary = chapterHasCommentary(bookId, chapterNum);
 
   const videoId = getVideoId(bookId, chapterNum);
@@ -252,6 +253,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           className="min-h-screen px-6 lg:px-10 py-8"
           style={{ background: "var(--color-scripture-surface)" }}
         >
+          {explorerPassage && <Link className="chapter-explorer-link" href={`/explore/jesus-birth?view=read&passage=${explorerPassage}&subject=${explorerPassage}`}>Explore the people, places and questions in this passage →</Link>}
           {/* Breadcrumb + Chapter Title */}
           <div className="text-center mb-8">
             <nav aria-label="Breadcrumb" className="mb-4">
