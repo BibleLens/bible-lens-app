@@ -15,20 +15,20 @@ export function ArticleHero({ title, subtitle, author, publishedAt }: ArticleHer
   return (
     <header className="px-8 max-w-[1200px] mx-auto pt-16 pb-12">
       <span className="micro-label">DEEP DIVE</span>
-      <h1 className="font-newsreader text-[40px] leading-[48px] font-normal text-[#e2e2e2] mt-4">
+      <h1 className="font-newsreader text-[40px] leading-[48px] font-normal text-[var(--color-commentary-body)] mt-4">
         {title}
       </h1>
       {subtitle && (
-        <p className="font-newsreader text-[18px] leading-[28px] text-[#e8e8ec] mt-3">
+        <p className="font-newsreader text-[18px] leading-[28px] text-[var(--color-text-secondary)] mt-3">
           {subtitle}
         </p>
       )}
       <div className="flex items-center gap-3 mt-4">
-        <span className="font-space-grotesk text-[11px] font-semibold tracking-wider uppercase text-[#a3a3a3]">
+        <span className="font-space-grotesk text-[11px] font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">
           {author}
         </span>
-        <span className="text-[#a3a3a3]">·</span>
-        <span className="font-space-grotesk text-[11px] font-semibold tracking-wider uppercase text-[#a3a3a3]">
+        <span className="text-[var(--color-text-muted)]">·</span>
+        <span className="font-space-grotesk text-[11px] font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">
           Published {formatDate(publishedAt)}
         </span>
       </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Explorer } from "@/components/explorer/Explorer";
 import { pageMetadata } from "@/lib/page-metadata";
 import "../explorer.css";
+import "../explorer-themes.css";
 
 export const metadata = {
   ...pageMetadata({

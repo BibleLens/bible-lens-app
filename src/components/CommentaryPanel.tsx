@@ -455,9 +455,9 @@ export function CommentaryPanel({ book, chapter, initialCommentary }: Commentary
     return (
       <GlassCard className="p-5" aria-hidden="true">
         <div className="animate-pulse space-y-3">
-          <div className="h-4 w-40 rounded" style={{ background: "rgba(255,255,255,0.05)" }} />
-          <div className="h-3 w-full rounded" style={{ background: "rgba(255,255,255,0.05)" }} />
-          <div className="h-3 w-5/6 rounded" style={{ background: "rgba(255,255,255,0.05)" }} />
+          <div className="h-4 w-40 rounded" style={{ background: "var(--color-bg-elevated)" }} />
+          <div className="h-3 w-full rounded" style={{ background: "var(--color-bg-elevated)" }} />
+          <div className="h-3 w-5/6 rounded" style={{ background: "var(--color-bg-elevated)" }} />
         </div>
       </GlassCard>
     );

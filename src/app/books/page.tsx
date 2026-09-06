@@ -55,7 +55,7 @@ export default function BooksPage() {
         {/* Editorial hero (BKS-01) */}
         <section
           className="max-w-7xl mx-auto px-6 pt-4 pb-16"
-          style={{ borderTop: "1px solid rgba(0,229,255,0.1)" }}
+          style={{ borderTop: "1px solid var(--color-accent-line)" }}
         >
           <div
             style={{

@@ -132,7 +132,7 @@ export function ZoomableTimelineImage({
             style={{
               width: 44,
               height: 44,
-              color: "var(--color-text-primary)",
+              color: "#f5f5f5",
               background: "rgba(20,28,32,0.7)",
               border: "1px solid rgba(0,229,255,0.3)",
             }}

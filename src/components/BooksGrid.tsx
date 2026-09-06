@@ -66,7 +66,7 @@ export function BooksGrid({ books, ssrEstimatedHeights }: BooksGridProps) {
       {/* Filter tabs */}
       <div
         className="flex gap-1 overflow-x-auto pb-1 mb-8"
-        style={{ borderBottom: "1px solid rgba(0,229,255,0.1)" }}
+        style={{ borderBottom: "1px solid var(--color-accent-line)" }}
       >
         {TABS.map((tab) => (
           <button

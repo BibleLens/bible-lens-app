@@ -90,7 +90,7 @@ html {
 
 /* ==========================================
    Homepage Design Tokens (Phase 57+)
-   Always-dark: used by homepage sections only
+   Shared presentation tokens; light values are in themes.css
    Source: Strategy/Design/DESIGN.md
    ========================================== */
 :root {
@@ -106,64 +106,6 @@ html {
   --homepage-font-body: "Manrope", system-ui, sans-serif;
 }
 
-:root.light {
-  /* Core backgrounds — more separation between surface levels */
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f8f8f8;
-  --color-bg-elevated: #f0f0f0;
-
-  /* Text */
-  --color-text-primary: #171717;
-  --color-text-secondary: #404040;
-  --color-text-muted: #6b7280;
-
-  /* Scripture */
-  --color-scripture: #92400e;
-
-  /* UI — stronger borders for definition */
-  --color-border: #d1d5db;
-  --color-border-hover: #9ca3af;
-
-  /* Gold accent — darkened for WCAG AA on white (amber-700/800/900) */
-  --color-gold-50: #fffbeb;
-  --color-gold-100: #fef3c7;
-  --color-gold-200: #fde68a;
-  --color-gold-300: #fcd34d;
-  --color-gold-400: #92400e;
-  --color-gold-500: #92400e;
-  --color-gold-600: #78350f;
-
-  /* Cyan accent — darkened for WCAG AA on white (cyan-700/800/900) */
-  --color-cyan-50: #ecfeff;
-  --color-cyan-100: #cffafe;
-  --color-cyan-200: #a5f3fc;
-  --color-cyan-300: #67e8f9;
-  --color-cyan-400: #0e7490;
-  --color-cyan-500: #155e75;
-  --color-cyan-600: #164e63;
-
-  /* Gradients update automatically via var() references */
-
-  /* Glow effects — subtle shadow instead of neon glow in light mode */
-  --glow-gold: 0 1px 3px rgba(180, 83, 9, 0.15);
-  --glow-cyan: 0 1px 3px rgba(14, 116, 144, 0.15);
-
-  /* Background paths — boost for visibility on white */
-  --bg-paths-opacity: 0.85;
-
-  /* Scripture reader surface — light mode (warm reading surface) */
-  --color-scripture-surface: #FBF9F4;
-  --color-obsidian: #f5f5f5;
-  --color-text-muted-warm: #6b7280;
-  --color-commentary-body: #374151;
-
-  /* Scripture reader text — themed */
-  --color-scripture-heading: #111111;
-  --color-scripture-body: #1a1a1a;
-  --color-scripture-muted: #6b7280;
-  --color-scripture-nav-bg: rgba(0,0,0,0.04);
-  --color-scripture-nav-border: rgba(0,0,0,0.1);
-}
 
 @theme inline {
   --color-background: var(--color-bg-primary);
@@ -335,7 +277,7 @@ body {
 
 /* Light mode overrides */
 :root.light .search-input {
-  background: #ffffff;
+  background: var(--color-bg-elevated);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--color-border);
 }
 
@@ -395,7 +337,7 @@ body {
 /* Calm footer cards — glass surface + cyan border + static spotlight glow.
    Intentionally NO 3D mouse-tilt and NO shimmer-on-hover (unlike .glass-card),
    because the footer now repeats on every page and should read as quiet.
-   Always-dark; no light-mode handling. */
+   Surface colours follow the selected theme. */
 .footer-card {
   position: relative;
   overflow: hidden;

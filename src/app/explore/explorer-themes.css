@@ -1,0 +1,154 @@
+/* View changes and theme changes are independent; geography keeps its own palette. */
+:root.dark .explorer {
+  --ink: #f3f0e7;
+  --muted: #b7c6da;
+  --paper: #101c2c;
+  --panel: #17273c;
+  --line: #3c526e;
+  --accent: #b9d7f6;
+  --gold: #dfc082;
+  --soft: #243a54;
+  color-scheme: dark;
+}
+:root.light .explorer[data-view="connections"] {
+  --ink: #213650;
+  --muted: #606e81;
+  --paper: #f7f1e5;
+  --panel: #fffbf2;
+  --line: #ded6c5;
+  --accent: #2b5d92;
+  --gold: #80602d;
+  --soft: #f1e8d5;
+  color-scheme: light;
+}
+:root.dark .explorer .nav-note,
+:root.dark .explorer .reading-deck,
+:root.dark .explorer .verse-number {
+  color: var(--muted);
+}
+:root.dark .explorer .word {
+  color: #c9e0fc;
+  background: #2a4362;
+  border-color: #7295bf;
+}
+:root.dark .explorer .word.selected {
+  color: #17273c;
+  background: #e2c587;
+  border-color: #e2c587;
+}
+:root.dark .explorer .passage-button[aria-current="true"] {
+  color: #d5e6fa;
+  background: #29415e;
+}
+:root.dark .explorer .subject-glyph {
+  color: #e8ca88;
+  background: #2c4668;
+  border-color: #6e83a0;
+}
+:root.dark .explorer .evidence-tag,
+:root.dark .explorer .source-item a {
+  color: #e4cb96;
+}
+:root.dark .explorer .model-pill {
+  color: #f1dfb7;
+  background: #304666;
+  border-color: #8e815f;
+}
+:root.dark .explorer .concept-option[aria-pressed="true"] {
+  color: #fff4da;
+  background: #315279;
+}
+:root.dark .explorer .panel-action.primary {
+  color: #17273c;
+  background: #dfc48b;
+  border-color: #dfc48b;
+}
+:root.dark .explorer .regional-tray {
+  background: var(--panel);
+}
+:root.dark .explorer .map-location-card {
+  color: var(--ink);
+  background: #17273cf5;
+  border-color: var(--line);
+}
+:root.dark .explorer .atlas-heading {
+  color: #213650;
+}
+:root.dark .explorer .map-controls {
+  color: #213650;
+  background: #fffbf2;
+}
+:root.dark .explorer .search-result:hover {
+  background: var(--soft);
+}
+:root.dark .explorer .birth-range span,
+:root.dark .explorer .time-census {
+  color: #b9d7f6;
+}
+
+:root.light .explorer .graph-main {
+  background: radial-gradient(ellipse at 45% 50%, #e7edf5 0%, #f7f1e5 75%);
+}
+:root.light .explorer .graph-board {
+  background-image: radial-gradient(#315f8d24 0.75px, transparent 0.75px);
+}
+:root.light .explorer .graph-lines path {
+  stroke: #8198b4;
+}
+:root.light .explorer .graph-node {
+  color: #213650;
+  background: #fffbf2;
+  border-color: #b4c4d8;
+  box-shadow: 0 8px 25px #23395614;
+}
+:root.light .explorer .graph-node strong {
+  color: #213650;
+}
+:root.light .explorer .graph-node small {
+  color: #53647b;
+}
+:root.light .explorer .graph-node.center {
+  background: #f1e5cc;
+  border-color: #ad8744;
+  box-shadow: 0 0 0 7px #b8904910;
+}
+:root.light .explorer .graph-node .node-type,
+:root.light .explorer .graph-node .mobile-edge {
+  color: #775923;
+}
+:root.light .explorer .graph-edge-label {
+  color: #3d5575;
+  background: #e7edf5;
+}
+:root.light .explorer .graph-filter button[aria-pressed="true"] {
+  color: #fff4da;
+  background: #315279;
+}
+:root.light .explorer[data-view="connections"] .model-pill {
+  color: #314c6b;
+  background: #f4ead2;
+  border-color: #cbb57f;
+}
+:root.light .explorer[data-view="connections"] .subject-glyph {
+  color: #2b5d92;
+  background: #e9eff7;
+  border-color: #b9c9dd;
+}
+:root.light .explorer[data-view="connections"] .search-trigger {
+  background: #fffbf2;
+}
+:root.light
+  .explorer[data-view="connections"]
+  .inspector-tab[aria-selected="true"] {
+  color: #785a28;
+  border-bottom-color: #ad8744;
+}
+:root.light .explorer[data-view="connections"] .evidence-tag,
+:root.light .explorer[data-view="connections"] .source-item a {
+  color: #785a28;
+}
+:root.light .explorer[data-view="connections"] .panel-action.primary {
+  color: #fff4da;
+  background: #244a77;
+  border-color: #244a77;
+}

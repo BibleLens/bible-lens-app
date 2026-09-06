@@ -65,7 +65,7 @@ function renderSSRBlock(block: ArticleBlock, index: number): React.ReactNode {
       return block.level === 2 ? (
         <h2
           key={index}
-          className="font-newsreader text-[28px] leading-[34px] text-[#e2e2e2] mt-8 mb-4 border-l-2 border-[#00E5FF] pl-4"
+          className="font-newsreader text-[28px] leading-[34px] text-[var(--color-commentary-body)] mt-8 mb-4 border-l-2 border-[var(--homepage-primary)] pl-4"
         >
           {block.text}
         </h2>
@@ -88,11 +88,11 @@ function renderSSRBlock(block: ArticleBlock, index: number): React.ReactNode {
       return (
         <aside
           key={index}
-          className="glass-card p-4 my-6 font-newsreader italic text-[20px] leading-[30px] text-[#e2e2e2]"
+          className="glass-card p-4 my-6 font-newsreader italic text-[20px] leading-[30px] text-[var(--color-commentary-body)]"
         >
           <p>{block.text}</p>
           {block.attribution && (
-            <cite className="block mt-2 font-space-grotesk text-[11px] font-semibold tracking-wider uppercase text-[#a3a3a3] not-italic">
+            <cite className="block mt-2 font-space-grotesk text-[11px] font-semibold tracking-wider uppercase text-[var(--color-text-muted)] not-italic">
               {block.attribution}
             </cite>
           )}
@@ -131,7 +131,7 @@ function layoutBlocks(blocks: ArticleBlock[], columnWidth: number): LayoutResult
       elements.push(
         <span
           key={line.key}
-          className="absolute font-newsreader text-[18px] text-[#e2e2e2] whitespace-pre"
+          className="absolute font-newsreader text-[18px] text-[var(--color-commentary-body)] whitespace-pre"
           style={{
             left: `${line.x}px`,
             top: `${line.y}px`,
@@ -147,7 +147,7 @@ function layoutBlocks(blocks: ArticleBlock[], columnWidth: number): LayoutResult
       elements.push(
         <span
           key={line.key}
-          className="absolute font-newsreader text-[18px] text-[#e2e2e2] whitespace-pre"
+          className="absolute font-newsreader text-[18px] text-[var(--color-commentary-body)] whitespace-pre"
           style={{
             left: `${line.x}px`,
             top: `${line.y}px`,
@@ -179,7 +179,7 @@ function layoutBlocks(blocks: ArticleBlock[], columnWidth: number): LayoutResult
         elements.push(
           <h2
             key={`heading-${blockIndex}`}
-            className="absolute font-newsreader text-[28px] leading-[34px] text-[#e2e2e2] border-l-2 border-[#00E5FF] pl-4"
+            className="absolute font-newsreader text-[28px] leading-[34px] text-[var(--color-commentary-body)] border-l-2 border-[var(--homepage-primary)] pl-4"
             style={{
               left: 0,
               top: `${headingY}px`,
@@ -278,7 +278,7 @@ function layoutBlocks(blocks: ArticleBlock[], columnWidth: number): LayoutResult
             style={{
               left: `${colAX}px`,
               top: `${dropCapY}px`,
-              color: '#facc15',
+              color: 'var(--color-gold-400)',
               lineHeight: '0.8',
               // Drop cap visual height ≈ 54 * 0.8 = ~43px, covers ~3 body lines of 28px each
             }}
@@ -417,7 +417,7 @@ export function ArticleLayout({ blocks, ssrEstimateHeight }: ArticleLayoutProps)
         // SSR fallback / mobile: simple block rendering with minHeight
         <div
           style={{ minHeight: `${ssrEstimateHeight}px` }}
-          className="text-[#e2e2e2] font-newsreader text-[18px] leading-[28px]"
+          className="text-[var(--color-commentary-body)] font-newsreader text-[18px] leading-[28px]"
         >
           {blocks.map((block, i) => renderSSRBlock(block, i))}
         </div>

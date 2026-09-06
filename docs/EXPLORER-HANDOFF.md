@@ -7,6 +7,8 @@ status: local-review
 
 # Bible Lens Explorer — integrated preview
 
+**6 September update:** the entire site now has selectable light and dark themes. See [theme notes](THEMES.md) for coverage and verification. The original screenshots below record the initial Explorer iteration; current theme examples are in `theme-screenshots/`.
+
 The Explorer is now part of the existing Bible Lens application. The homepage, primary navigation and Start Here page lead into a connected study, with the Bible reader, commentary, topics and timelines still available alongside it.
 
 Open the [homepage](http://127.0.0.1:3017/) or [begin the study](http://127.0.0.1:3017/explore/jesus-birth). If the local server has stopped, double-click **Open Explorer.command** at the application root. The launcher starts a local production build; keep its Terminal window open while reviewing.

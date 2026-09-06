@@ -5,7 +5,7 @@ interface ArticleDropCapProps {
   color?: string
 }
 
-export function ArticleDropCap({ char, color = '#facc15' }: ArticleDropCapProps) {
+export function ArticleDropCap({ char, color = 'var(--color-gold-400)' }: ArticleDropCapProps) {
   return (
     <span
       aria-hidden="true"

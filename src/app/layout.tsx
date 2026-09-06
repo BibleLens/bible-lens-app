@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Newsreader, Manrope, Source_Sans_3, Noto_Sans_Samaritan, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import "./site-shell.css";
+import "./themes.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { MotionProvider } from "@/components/MotionProvider";
@@ -86,7 +87,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f1e5" },
   ],
   width: "device-width",
   initialScale: 1,

@@ -10,7 +10,8 @@ const styles: Record<ClaimStatus, string> = {
 export function ClaimStatusBadge({ status }: { status: ClaimStatus }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.12em] ${styles[status]}`}
+      data-status={status}
+      className={`claim-badge inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.12em] ${styles[status]}`}
     >
       {CLAIM_STATUS_COPY[status].label}
     </span>

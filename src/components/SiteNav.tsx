@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { label: "Explorer", href: "/explore" },
@@ -74,6 +75,7 @@ export function SiteNav() {
             ))}
           </div>
         </details>
+        <ThemeToggle />
         <Link
           className="site-search"
           href="/search"

@@ -1,5 +1,7 @@
 'use client'
 
+import { ThemeToggle } from '@/components/ThemeToggle'
+
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import type { Verse, BookMeta } from '@/lib/bible-meta'
 import { useVirtualPsalms, SSR_COL_WIDTH } from './useVirtualPsalms'
@@ -118,9 +120,9 @@ function PsalmsFullViewInner({
     <>
       {/* Jump-to-Psalm sticky nav bar */}
       <nav
-        className="sticky top-0 z-40 flex items-center justify-between h-11 px-4 md:px-6 border-b border-[var(--color-border)]"
+        className="sticky top-0 z-40 flex items-center justify-between gap-3 h-14 px-4 md:px-6 border-b border-[var(--color-border)]"
         style={{
-          backgroundColor: 'rgba(var(--color-bg-secondary-rgb, 17,17,17), 0.9)',
+          backgroundColor: 'var(--color-nav-surface)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
         }}
@@ -150,6 +152,7 @@ function PsalmsFullViewInner({
             </option>
           ))}
         </select>
+        <ThemeToggle />
       </nav>
 
       {/* Virtual list container — absolute-positioned chapters inside */}

@@ -62,7 +62,7 @@ export function LensIcon({ size = 64, className = "", animate = true }: LensIcon
       viewBox="1048 1058 2000 2000"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cls}
+      className={`${cls} brand-lens`}
       role="img"
       aria-label="Bible Lens"
     >
@@ -141,6 +141,11 @@ export function LensIcon({ size = 64, className = "", animate = true }: LensIcon
       <path d="M2048 2930 C2040 2702 2038 2366 2048 2178" fill="none" stroke={`url(#${flareV})`} strokeWidth="19" strokeLinecap="butt" opacity=".98" filter={`url(#${lineGlow})`} />
       <circle cx="2048" cy="2052" r="70" fill="#21e6ee" opacity=".18" filter={`url(#${wideGlow})`} />
       <circle cx="2048" cy="2052" r="36" fill={`url(#${coreDot})`} opacity=".98" filter={`url(#${wideGlow})`} />
+      <g className="brand-lens-light">
+        <path d="M2048 1188 L2562 2052 L2048 2928 L1534 2052 Z" stroke="#315f8d" strokeWidth="45" strokeLinejoin="round"/>
+        <path d="M2048 1480 L2382 2052 L2048 2620 L1714 2052 Z" stroke="#9a7437" strokeWidth="28" strokeLinejoin="round"/>
+        <circle cx="2048" cy="2052" r="55" fill="#315f8d"/>
+      </g>
     </svg>
   );
 }

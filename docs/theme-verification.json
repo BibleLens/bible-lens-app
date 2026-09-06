@@ -1,0 +1,100 @@
+{
+  "author": "Pat Robinson",
+  "date": "2026-09-06",
+  "status": "local-review-ready",
+  "branch": "codex/explorer-centrepiece",
+  "baseCommit": "30d3779",
+  "preview": "http://127.0.0.1:3017/",
+  "checks": {
+    "productionBuild": "passed",
+    "typescript": "passed in production build",
+    "targetedEslint": "passed",
+    "explorerTests": {
+      "passed": 14,
+      "failed": 0
+    },
+    "diffWhitespace": "passed",
+    "browser": [
+      "Dark and light switching using mouse and keyboard",
+      "Both theme choices persist after reload and navigation",
+      "1280px desktop, 768px tablet and 390px phone layouts",
+      "Homepage, Books, Commentary, Topics and topic article",
+      "Timeline index and Israel in Egypt investigation",
+      "WEB Explorer and full BSB Luke 2 chapter",
+      "Full Psalms reader theme switch",
+      "Long-form Genesis 1 study template",
+      "Search and Scholar entry interfaces without submitting queries",
+      "Explorer subject, verse and URL preserved while switching",
+      "Map land colour unchanged between themes",
+      "Browser theme-colour metadata follows manual choice",
+      "Mobile navigation renders five inline SVG icons"
+    ]
+  },
+  "contrastPairs": [
+    {
+      "name": "Light body",
+      "foreground": "#213650",
+      "background": "#f7f1e5",
+      "ratio": 10.93
+    },
+    {
+      "name": "Light secondary",
+      "foreground": "#465a73",
+      "background": "#f7f1e5",
+      "ratio": 6.28
+    },
+    {
+      "name": "Light muted",
+      "foreground": "#606e81",
+      "background": "#f7f1e5",
+      "ratio": 4.62
+    },
+    {
+      "name": "Light link",
+      "foreground": "#2b5d92",
+      "background": "#fffbf2",
+      "ratio": 6.59
+    },
+    {
+      "name": "Light gold",
+      "foreground": "#80602d",
+      "background": "#f7f1e5",
+      "ratio": 5.14
+    },
+    {
+      "name": "Light primary button",
+      "foreground": "#fff5df",
+      "background": "#244a77",
+      "ratio": 8.35
+    },
+    {
+      "name": "Dark body",
+      "foreground": "#f3f3f5",
+      "background": "#050508",
+      "ratio": 18.37
+    },
+    {
+      "name": "Dark muted",
+      "foreground": "#b5bdcc",
+      "background": "#10131c",
+      "ratio": 9.82
+    },
+    {
+      "name": "Dark primary button",
+      "foreground": "#081c2c",
+      "background": "#6ce0ef",
+      "ratio": 11.17
+    },
+    {
+      "name": "Graph secondary",
+      "foreground": "#53647b",
+      "background": "#fffbf2",
+      "ratio": 5.85
+    }
+  ],
+  "limits": [
+    "No independent accessibility audit",
+    "AI answers, semantic search and subscription submissions not exercised",
+    "Local changes only; no deployment"
+  ]
+}

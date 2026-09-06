@@ -658,7 +658,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
               style={{
                 background: "rgba(239, 68, 68, 0.08)",
                 border: "1px solid rgba(239, 68, 68, 0.25)",
-                color: "#f87171",
+                color: "var(--color-error)",
               }}
             >
               <span>Connection lost. Check your internet and try again.</span>
@@ -667,7 +667,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
                 className="shrink-0 px-3 py-1 rounded-none text-base font-medium transition-colors"
                 style={{
                   background: "rgba(239, 68, 68, 0.15)",
-                  color: "#f87171",
+                  color: "var(--color-error)",
                 }}
               >
                 Retry

@@ -14,7 +14,7 @@ export function ChatSidebar() {
       className="hidden lg:flex flex-col gap-6 p-6 border-r"
       style={{
         background: "var(--color-obsidian)",
-        borderColor: "rgba(0,229,255,0.1)",
+        borderColor: "var(--color-accent-line)",
         minHeight: "calc(100vh - 64px)",
       }}
     >
@@ -50,7 +50,7 @@ export function ChatSidebar() {
 
       {/* Diamond divider */}
       <div className="flex items-center gap-3" aria-hidden="true">
-        <div className="flex-1 h-px" style={{ background: "rgba(0,229,255,0.1)" }} />
+        <div className="flex-1 h-px" style={{ background: "var(--color-accent-line)" }} />
         <div
           className="w-2 h-2"
           style={{
@@ -59,7 +59,7 @@ export function ChatSidebar() {
             opacity: 0.4,
           }}
         />
-        <div className="flex-1 h-px" style={{ background: "rgba(0,229,255,0.1)" }} />
+        <div className="flex-1 h-px" style={{ background: "var(--color-accent-line)" }} />
       </div>
 
       {/* Suggested inquiries section */}

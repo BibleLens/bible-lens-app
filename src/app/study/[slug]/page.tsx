@@ -49,7 +49,7 @@ export default async function StudyArticlePage({ params }: StudyArticlePageProps
   const ssrEstimateHeight = estimateTextHeight(allText, avgCharWidth, ssrColumnWidth, lineHeightPx)
 
   return (
-    <main id="main-content" className="min-h-screen bg-[#050508]">
+    <main id="main-content" className="min-h-screen bg-[var(--color-obsidian)]">
       <ArticleHero
         title={article.title}
         subtitle={article.subtitle}
