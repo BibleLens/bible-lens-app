@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
+import { LensIcon } from "./LensIcon";
 
 const links = [
   { label: "Explorer", href: "/explore" },
@@ -17,19 +18,7 @@ export function SiteNav() {
   return (
     <header className="site-header">
       <Link href="/" className="site-brand" aria-label="Bible Lens home">
-        <svg viewBox="0 0 44 50" fill="none" aria-hidden="true">
-          <path
-            d="M22 2 41 13v24L22 48 3 37V13Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-          <path d="M22 9 35 17v16L22 41 9 33V17Z" stroke="currentColor" />
-          <path
-            d="m9 17 13 8 13-8M22 25v16"
-            stroke="currentColor"
-            strokeWidth="1.3"
-          />
-        </svg>
+        <LensIcon size={48} alt="" />
         <span>
           BIBLE LENS<small>Ancient wisdom, modern clarity</small>
         </span>

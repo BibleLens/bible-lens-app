@@ -15,7 +15,7 @@ Dark remains the default for a new visitor. A reader's choice is remembered acro
 
 The theme applies to the homepage, collection overview, all three Explorer views, library, chapter reader, commentary, topic and long-form study pages, timelines, search, Scholar interface and shared navigation. Existing shared colours also carry it into About, Privacy and status/error surfaces.
 
-Light mode uses warm cream backgrounds, pale panels, blue text and links, and gold details. Evidence badges retain their labelled distinctions with darker text on pale backgrounds. Dark mode retains dark reading surfaces and luminous accents. Photographs, infographic assets and conventional map colours remain intact. The light logo uses a quiet diamond outline; the original glowing mark remains available in dark mode.
+Light mode uses warm cream backgrounds, pale panels, blue text and links, and gold details. Evidence badges retain their labelled distinctions with darker text on pale backgrounds. Dark mode retains dark reading surfaces and luminous accents. Photographs, infographic assets and conventional map colours remain intact. Both themes use the original gold and cyan icon on its dark rounded-square backing, copied directly from the brand SVG assets. The shared `LensIcon` supplies the website and Explorer header, footer, chapter reader and Scholar interface; the same SVG is also available as a scalable browser icon. Existing home-screen icons already use this mark.
 
 Changing the theme does not change the selected person, passage, verse or date proposal in the Explorer. No study content, date models or source records were changed.
 
@@ -33,3 +33,5 @@ The optimized production build and TypeScript checks pass, targeted ESLint is cl
 Ten representative foreground/background pairs exceed 4.5:1 contrast, including muted light text at 4.62:1, light body text at 10.93:1 and the light primary button at 8.35:1. This is a representative contrast check, not an independent accessibility audit. Results are in `theme-verification.json` and preview captures are in `theme-screenshots/`.
 
 The Scholar and search interfaces were visually checked without submitting AI queries. No email subscriptions or other external service actions were performed. The changes are local to `codex/explorer-centrepiece`; production has not been deployed.
+
+The subsequent original-logo integration passed the production build, TypeScript and targeted ESLint checks. Visual checks covered the homepage and footer, Explorer, chapter reader and Scholar screen in desktop and phone layouts, with both themes exercised. Header spacing also passed at 360px. Logo images loaded successfully, the chapter logo returned home, and the Explorer URL stayed unchanged when switching themes. The source SVG matches the workspace brand original exactly. Review captures are in `logo-screenshots/`.

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { LensIcon } from "@/components/LensIcon";
 export function HomepageFooter() {
   const pathname = usePathname();
   if (pathname.startsWith("/explore/")) return null;
@@ -8,6 +9,7 @@ export function HomepageFooter() {
     <footer className="site-footer">
       <div>
         <Link href="/" className="footer-wordmark">
+          <LensIcon size={48} alt="" />
           Bible Lens
         </Link>
         <p>Scripture, history and room to think.</p>

@@ -176,8 +176,8 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <BackButton />
-            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <LensIcon size={40} animate={false} />
+            <Link href="/" aria-label="Bible Lens home" className="flex items-center gap-2 min-h-[44px] hover:opacity-80 transition-opacity">
+              <LensIcon size={40} animate={false} alt="" />
               <span
                 className="text-2xl font-semibold tracking-wide hidden sm:inline"
                 style={{ fontFamily: "var(--font-cinzel), serif" }}

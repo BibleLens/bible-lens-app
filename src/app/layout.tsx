@@ -57,7 +57,10 @@ export const metadata: Metadata = {
   publisher: "Bible Lens",
   manifest: "/manifest.json",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+      { url: "/brand/bible-lens-symbol-only-chip.svg", type: "image/svg+xml", sizes: "any" },
+    ],
     apple: "/apple-touch-icon.png",
   },
   openGraph: {

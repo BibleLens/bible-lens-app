@@ -210,13 +210,9 @@
   color: var(--site-muted);
 }
 
-/* Retain the original glow in dark mode and a quiet diamond on cream. */
-.brand-lens-light {
-  display: none;
-}
-:root.light .brand-lens > :not(defs):not(.brand-lens-light) {
-  display: none;
-}
-:root.light .brand-lens-light {
-  display: block;
+.brand-lens {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  object-fit: contain;
 }
