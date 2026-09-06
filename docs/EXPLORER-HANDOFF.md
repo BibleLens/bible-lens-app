@@ -7,6 +7,8 @@ status: local-review
 
 # Bible Lens Explorer — integrated preview
 
+**6 September, About and card update:** [About](http://127.0.0.1:3017/about) now explains Pat’s supplied beliefs in ordinary language, beginning with “We’re Christians.” The timeline comparison cards have responsive heading sizes and spacing. See [the update notes](ABOUT-REFRESH.md) for scope and verification.
+
 **6 September, three Temples update:** [The Temple collection](http://127.0.0.1:3017/explore/temples) now contains Solomon’s Temple, Herod’s Temple and Ezekiel’s Temple vision. Each has its own original model, selectable assemblies, an opening interior, separation and isolation, source notes, connected readings and a six-moment guided journey. The three studies contain 33 assemblies in total. See [research and model choices](TEMPLE-STUDIES.md) and [verification](temple-verification.json). All 31 Temple, Tabernacle and Explorer tests pass, along with the production build and targeted lint checks. The models remain local study reconstructions; Ezekiel is explicitly presented as a vision.
 
 **6 September, circular Tabernacle update:** [Inside the Dwelling](http://127.0.0.1:3017/explore/tabernacle) is now a second collection. It includes an original circular schematic, eleven selectable assemblies, reversible separation, isolation, connected passages and a 75-second guided reveal. See [the study notes](TABERNACLE-STUDY.md) for geometry limits and [verification](tabernacle-verification.json) for checks. This is a local, noindex prototype; exact Hoy dimensions and finished video production remain later work.

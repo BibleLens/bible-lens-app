@@ -1,281 +1,194 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/page-metadata";
+import "./about.css";
 
 export const metadata: Metadata = pageMetadata({
-  title: "About the Lens | Bible Lens",
+  title: "About Bible Lens | Our Christian Faith and Hope",
   description:
-    "Bible Lens reads Scripture through a Unitarian, Partial Preterist, Historic Premillennial, historical-critical lens. Learn what that means and why it shapes every answer you get.",
+    "We're Christians who follow Jesus, worship his Father as the one true God, and trust the Bible's promise of resurrection and lasting life on earth.",
   path: "/about",
 });
 
+const beliefs = [
+  {
+    id: "the-father",
+    title: "The God Jesus prayed to",
+    paragraphs: [
+      "We believe in and pray to the same God Jesus did: the Father, the one true God. When Jesus prayed, he addressed his Father as “the only true God” and spoke of himself as the one God had sent. After his resurrection, he still called the Father his God and our God.",
+      "That's the relationship at the heart of our faith. We worship the Father and follow Jesus, his Son, our Lord and Messiah.",
+    ],
+    passages: [
+      { label: "John 17:1–3", href: "/bible/john/17" },
+      { label: "John 20:17", href: "/bible/john/20" },
+      { label: "1 Corinthians 8:6", href: "/bible/1corinthians/8" },
+    ],
+  },
+  {
+    id: "jesus-humanity",
+    title: "Jesus shared our humanity",
+    paragraphs: [
+      "We believe Jesus was fully human. He experienced temptation, suffering and the need to trust God. His faithfulness matters because he was one of us.",
+      "We don't see how God becoming human would demonstrate what a human being can do. Jesus' life shows us a human being remaining faithful to God under the most extreme circumstances, even when that faithfulness cost him his life.",
+      "God is immortal and cannot die. Jesus could die, and did. We understand his death as the real giving of his human life for us.",
+    ],
+    passages: [
+      { label: "Hebrews 2:14–18", href: "/bible/hebrews/2" },
+      { label: "Hebrews 4:15", href: "/bible/hebrews/4" },
+      { label: "Hebrews 5:7–9", href: "/bible/hebrews/5" },
+      { label: "1 Timothy 1:17", href: "/bible/1timothy/1" },
+    ],
+  },
+  {
+    id: "raised-to-life",
+    title: "God raised him to life",
+    paragraphs: [
+      "Jesus' story didn't end in the grave. God raised him from the dead and granted him immortality. He can never die again.",
+      "His resurrection is the foundation of our hope. The God who brought Jesus back to life can also bring back those we've lost. Everlasting life is God's gift, made possible through his Son.",
+    ],
+    passages: [
+      { label: "Acts 2:24, 32–36", href: "/bible/acts/2" },
+      { label: "Romans 6:9", href: "/bible/romans/6" },
+      { label: "1 Corinthians 15:20–22", href: "/bible/1corinthians/15" },
+    ],
+  },
+  {
+    id: "confidence-in-scripture",
+    title: "Why we trust the Bible",
+    paragraphs: [
+      "Our complete confidence in the Bible is rooted in Jesus and the fulfilment of his words. We believe everything he predicted for his contemporaries came true. His warnings about Jerusalem and its Temple belong to the generation he addressed, with their destruction in AD 70 central to that fulfilment.",
+      "For us, this proves his Messianic credentials. His fulfilled words give us reason to trust the promises that still lie ahead, including his future thousand-year reign.",
+      "We distinguish those first-century events from his future visible, bodily return. We look forward to one public return, when he gathers his people and brings the promised Kingdom to its fulfilment.",
+    ],
+    passages: [
+      { label: "Matthew 24:2, 34", href: "/bible/matthew/24" },
+      { label: "Luke 21:20–32", href: "/bible/luke/21" },
+      { label: "Acts 1:9–11", href: "/bible/acts/1" },
+      { label: "Revelation 20:4–6", href: "/bible/revelation/20" },
+    ],
+    history: {
+      label: "Historical account: Josephus, Jewish War 6.4",
+      href: "https://penelope.uchicago.edu/josephus/war-6.html#Ch.4",
+    },
+  },
+  {
+    id: "death-and-deception",
+    title: "Death, and the first deception",
+    paragraphs: [
+      "In Genesis, God warned Adam, “you will surely die.” The serpent told Eve, “You will not surely die.” Those are opposing claims. We believe God's warning.",
+      "We understand Adam and Eve's death as a return to the dust. They didn't continue living in another realm. In our reading, death is the loss of life, and human beings don't possess an inherently immortal soul.",
+      "We see the belief that people never really die as one of the most far-reaching consequences of that first lie. We believe Satan uses it to draw people away from the Bible's teaching about death and the need for resurrection.",
+    ],
+    passages: [
+      { label: "Genesis 2:17", href: "/bible/genesis/2" },
+      { label: "Genesis 3:4, 19", href: "/bible/genesis/3" },
+      { label: "Ecclesiastes 9:5, 10", href: "/bible/ecclesiastes/9" },
+      { label: "Revelation 12:9", href: "/bible/revelation/12" },
+    ],
+  },
+  {
+    id: "resurrection-hope",
+    title: "Our hope is resurrection",
+    paragraphs: [
+      "Death is real, but it needn't be the end. Jesus spoke of waking the dead, and the Bible holds out a resurrection of both the righteous and the unrighteous.",
+      "We believe those who have died have the prospect of being resurrected into Jesus' Kingdom, with the opportunity to live forever in perfect conditions here on earth. Our hope is for real people to live again, on a restored earth where life can flourish.",
+      "We look forward to Jesus' millennial reign and, ultimately, the complete removal of suffering and death. Resurrection and lasting life are gifts from God. That's the future we want to help people discover in the Bible.",
+    ],
+    passages: [
+      { label: "John 11:11–25", href: "/bible/john/11" },
+      { label: "Acts 24:15", href: "/bible/acts/24" },
+      { label: "Matthew 5:5", href: "/bible/matthew/5" },
+      { label: "Revelation 21:3–4", href: "/bible/revelation/21" },
+    ],
+  },
+];
+
 export default function AboutPage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Main content */}
-      <main id="main-content" className="flex-1 max-w-3xl mx-auto w-full px-4 pb-12">
+    <main id="main-content" className="about-page">
+      <header className="about-introduction">
+        <p className="site-eyebrow">About Bible Lens</p>
+        <h1>We’re <em>Christians.</em></h1>
+        <p className="about-lead">
+          We follow Jesus, worship his Father and look forward to the life God has promised.
+        </p>
+        <p>
+          Acts records that Jesus’ followers were first called Christians at Antioch.
+          We believe that name was given through divine providence, and we proudly
+          bear it. It expresses who we belong to and whose example we want to follow.
+        </p>
+        <ul className="about-passages" aria-label="Passages about the name Christian">
+          <li><Link href="/bible/acts/11">Acts 11:26 <span aria-hidden="true">↗</span></Link></li>
+          <li><Link href="/bible/1peter/4">1 Peter 4:16 <span aria-hidden="true">↗</span></Link></li>
+        </ul>
+      </header>
 
-        {/* Section 1: About Bible Lens */}
-        <section className="mb-14">
-          <h1
-            className="text-3xl font-bold mb-8"
-            style={{ fontFamily: "var(--font-cinzel), serif", color: "var(--color-gold-400)" }}
-          >
-            About Bible Lens
-          </h1>
-
-          <div className="space-y-5 text-lg" style={{ color: "var(--color-text-secondary)" }}>
-            <p>
-              Have you ever sat in a pew — or a lecture hall — with a question you were afraid to ask?
-            </p>
-            <p>
-              Maybe it was about Genesis and dinosaurs. Maybe it was about a doctrine that
-              didn&rsquo;t quite add up. Maybe it was a scientific claim that seemed to contradict
-              something you&rsquo;d observed.
-            </p>
-            <p>
-              Most of us learned early: some questions aren&rsquo;t welcome. In religious spaces,
-              asking the wrong thing can get you labeled a doubter — or worse. In academic spaces,
-              questioning the consensus can get you dismissed as uninformed.
-            </p>
-            <p>
-              So we learn to go along to get along. And somewhere along the way, many of us lost
-              something — either our faith, our intellectual honesty, or both.
-            </p>
-            <p className="font-semibold text-xl" style={{ color: "var(--color-text-primary)" }}>
-              Bible Lens exists for the people who refused to stop asking.
-            </p>
-            <p>
-              We believe the Bible can handle your hardest questions — and so can you. We bring
-              ancient texts into focus using archaeology, history, and the worldview of the original
-              audiences. Not to tell you what to think, but to give you the tools to think for
-              yourself.
-            </p>
-            <p>
-              No gatekeepers. No fear of expulsion. Just ancient wisdom, examined honestly.
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-14 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-7 sm:p-9">
-          <p className="micro-label mb-3" style={{ color: "var(--color-cyan-400)" }}>
-            WHO&rsquo;S BEHIND BIBLE LENS
+      <section aria-labelledby="our-faith" className="about-beliefs">
+        <div className="about-section-intro">
+          <p className="site-eyebrow">What we believe</p>
+          <h2 id="our-faith">The faith behind the lens.</h2>
+          <p>
+            These convictions shape how we read Scripture. We share them openly,
+            with the passages that lead us to them, so you can examine them for yourself.
           </p>
-          <h2
-            id="pat-robinson"
-            className="text-2xl font-bold mb-5"
-            style={{ fontFamily: "var(--font-cinzel), serif", color: "var(--color-text-primary)" }}
-          >
-            Pat Robinson
-          </h2>
-          <div className="space-y-4 text-lg" style={{ color: "var(--color-text-secondary)" }}>
-            <p>
-              I built Bible Lens for readers who want to examine a difficult claim without being
-              pushed toward a predetermined answer. My role is to make the argument traceable:
-              begin with the primary text, show the historical setting, name the source and keep
-              the strongest objection in view.
-            </p>
-            <p>
-              I&rsquo;m an independent researcher and publisher, not an archaeologist or biblical
-              languages professor. When specialist evidence matters, Bible Lens points to the
-              excavation report, manuscript or scholar rather than borrowing their authority.
-              If the evidence changes, the page should change with it.
-            </p>
-          </div>
-        </section>
-
-        {/* Section 2: About the Lens */}
-        <section className="mb-14">
-          <h2
-            className="text-2xl font-bold mb-2"
-            style={{ fontFamily: "var(--font-cinzel), serif", color: "var(--color-gold-400)" }}
-          >
-            About the Lens
-          </h2>
-          <p className="text-lg mb-8" style={{ color: "var(--color-text-muted)" }}>
-            Every reader brings a framework to the text. Here&rsquo;s ours — stated plainly.
-          </p>
-
-          {/* Unitarian Monotheism */}
-          <div className="mb-10 pl-5 border-l-2" style={{ borderColor: "var(--color-gold-400)" }}>
-            <h3
-              className="text-xl font-semibold mb-3"
-              style={{ fontFamily: "var(--font-cinzel), serif", color: "var(--color-text-primary)" }}
-            >
-              Unitarian Monotheism
-            </h3>
-            <div className="space-y-4 text-lg" style={{ color: "var(--color-text-secondary)" }}>
-              <p>
-                Through this lens, the Shema — &ldquo;Hear, O Israel: the LORD our God, the LORD
-                is one&rdquo; — means exactly what it says. God is one person: the Father. Jesus is
-                the Messiah, the Son of God, a fully human being chosen and anointed by God.
-              </p>
-              <p>
-                This is a minority position in contemporary Christianity, but it was the
-                mainstream reading of Jewish monotheism in the first century. What the original
-                audience would have understood when Jesus said &ldquo;the Father is greater than
-                I&rdquo; (John 14:28) is straightforward: the one who sends is greater than the
-                one who is sent.
-              </p>
-              <p>
-                Key texts we return to often: John 17:3 (&ldquo;the only true God, and Jesus
-                Christ whom you have sent&rdquo;), 1 Corinthians 8:6 (&ldquo;one God, the
-                Father... and one Lord, Jesus Christ&rdquo;), and the Shema itself (Deuteronomy
-                6:4).
-              </p>
-              <p className="text-lg italic" style={{ color: "var(--color-text-muted)" }}>
-                We acknowledge this challenges traditional Trinitarian theology. We hold this view
-                because we believe it best reflects the historical, textual evidence — not to
-                dismiss those who read differently.
-              </p>
-            </div>
-          </div>
-
-          {/* Partial Preterism */}
-          <div className="mb-10 pl-5 border-l-2" style={{ borderColor: "var(--color-cyan-400)" }}>
-            <h3
-              className="text-xl font-semibold mb-3"
-              style={{ fontFamily: "var(--font-cinzel), serif", color: "var(--color-text-primary)" }}
-            >
-              Partial Preterism
-            </h3>
-            <div className="space-y-4 text-lg" style={{ color: "var(--color-text-secondary)" }}>
-              <p>
-                Here&rsquo;s where it gets interesting: most of Matthew 24 and large portions of
-                Revelation were not predictions about our future — they were predictions about the
-                first century. And they came true in 70 AD when Rome destroyed Jerusalem and the
-                temple.
-              </p>
-              <p>
-                When Jesus said &ldquo;this generation will not pass away until all these things
-                take place&rdquo; (Matthew 24:34), the most natural reading is that he meant the
-                generation he was speaking to. The &ldquo;end of the age&rdquo; he described was
-                the end of the Old Covenant era — not the end of the physical world.
-              </p>
-              <p>
-                This view is called partial preterism. It holds a future return of Christ while
-                taking seriously the plain time-language of the New Testament:
-                &ldquo;soon,&rdquo; &ldquo;near,&rdquo; and &ldquo;quickly&rdquo; meant what
-                they say.
-              </p>
-              <p className="text-lg italic" style={{ color: "var(--color-text-muted)" }}>
-                This is another minority view, held by a significant number of scholars and
-                theologians across history. We present it as historically-grounded, not as the
-                only valid reading.
-              </p>
-            </div>
-          </div>
-
-          {/* Historic Premillennialism */}
-          <div className="mb-10 pl-5 border-l-2" style={{ borderColor: "var(--color-gold-400)" }}>
-            <h3
-              className="text-xl font-semibold mb-3"
-              style={{ fontFamily: "var(--font-cinzel), serif", color: "var(--color-text-primary)" }}
-            >
-              Historic Premillennialism
-            </h3>
-            <div className="space-y-4 text-lg" style={{ color: "var(--color-text-secondary)" }}>
-              <p>
-                First-century fulfilment is not the end of the story. Bible Lens holds that Jesus
-                will return once, visibly and bodily, before the future literal millennial reign
-                described in Revelation 20.
-              </p>
-              <p>
-                That means no separate secret rapture followed years later by another return. The
-                gathering of believers belongs to the same public coming of Christ.
-              </p>
-              <p>
-                This is Historic Premillennialism, not Postmillennialism and not the modern
-                Dispensational system. The kingdom is already inaugurated, but its consummation
-                arrives through Christ&rsquo;s return rather than the gradual Christianisation of
-                history.
-              </p>
-              <p className="text-lg italic" style={{ color: "var(--color-text-muted)" }}>
-                Other Christian traditions arrange these events differently. We present those
-                readings fairly while stating this one as Bible Lens&rsquo;s committed position.
-              </p>
-            </div>
-          </div>
-
-          {/* Historical-Critical Method */}
-          <div className="mb-10 pl-5 border-l-2" style={{ borderColor: "var(--color-gold-400)" }}>
-            <h3
-              className="text-xl font-semibold mb-3"
-              style={{ fontFamily: "var(--font-cinzel), serif", color: "var(--color-text-primary)" }}
-            >
-              Historical-Critical Method
-            </h3>
-            <div className="space-y-4 text-lg" style={{ color: "var(--color-text-secondary)" }}>
-              <p>
-                We read the Bible the way you&rsquo;d read any ancient document: asking first what
-                it meant to the people who wrote it and first received it. What did a
-                first-century Jew understand by &ldquo;the kingdom of God&rdquo;? What did an
-                ancient Israelite hear in the Genesis creation narrative?
-              </p>
-              <p>
-                Through this lens, Genesis 1 isn&rsquo;t a scientific account competing with
-                modern cosmology — it&rsquo;s a cosmic temple dedication narrative structured
-                around the seven-day pattern of ancient Near Eastern literature. Understanding
-                that doesn&rsquo;t diminish the text; it illuminates it.
-              </p>
-              <p>
-                We draw on archaeology, ancient Near Eastern texts, Second Temple Jewish
-                literature, and the work of historians and biblical scholars who have devoted
-                careers to understanding this world. We try to acknowledge our sources and be
-                honest when we&rsquo;re presenting contested interpretations.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 3: What This Means in Practice */}
-        <section className="mb-14">
-          <h2
-            className="text-2xl font-bold mb-6"
-            style={{ fontFamily: "var(--font-cinzel), serif", color: "var(--color-gold-400)" }}
-          >
-            What This Means in Practice
-          </h2>
-          <div className="space-y-5 text-lg" style={{ color: "var(--color-text-secondary)" }}>
-            <p>
-              When you read commentary in Bible Lens, it will reflect this framework. Our analysis
-              of Genesis will emphasize ancient cosmological context over modern scientific
-              debates. Our reading of Matthew 24 will highlight the 70 AD fulfillment. When the
-              identity of Jesus comes up, the AI will present a unitarian perspective grounded in
-              the historical text. And when prophecy reaches beyond that first-century horizon,
-              it will retain the future visible return and literal millennial reign rather than
-              quietly importing Full Preterist or Postmillennial conclusions.
-            </p>
-            <p>
-              Our goal is not to tell you what to believe. It&rsquo;s to give you a coherent,
-              historically-grounded alternative to the readings you may have grown up with — and
-              to let you decide.
-            </p>
-            <p>
-              If you read something that surprises you, good. That&rsquo;s the point. Push back,
-              ask follow-up questions, bring your own reading. The text is rich enough to hold the
-              conversation.
-            </p>
-            <p className="font-medium" style={{ color: "var(--color-text-primary)" }}>
-              Ancient wisdom, modern clarity. That&rsquo;s what we&rsquo;re after.
-            </p>
-          </div>
-        </section>
-
-        {/* CTA back to app */}
-        <div className="text-center">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-lg transition-colors min-h-[44px]"
-            style={{ color: "var(--color-cyan-400)" }}
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back to Bible Lens
-          </Link>
         </div>
-      </main>
-    </div>
+        {beliefs.map((belief) => (
+          <section key={belief.id} aria-labelledby={belief.id} className="about-belief">
+            <h3 id={belief.id}>{belief.title}</h3>
+            {belief.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            <ul className="about-passages" aria-label={`Passages: ${belief.title}`}>
+              {belief.passages.map((passage) => (
+                <li key={passage.href}>
+                  <Link href={passage.href}>{passage.label} <span aria-hidden="true">↗</span></Link>
+                </li>
+              ))}
+            </ul>
+            {belief.history && (
+              <a className="about-history" href={belief.history.href} target="_blank" rel="noopener noreferrer">
+                {belief.history.label} <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </section>
+        ))}
+      </section>
+
+      <section className="about-reading" aria-labelledby="how-we-read">
+        <p className="site-eyebrow">An invitation to explore</p>
+        <h2 id="how-we-read">Confidence, with room for questions.</h2>
+        <p>
+          Confidence in the Bible doesn’t make our interpretations beyond question.
+          We begin with the text, ask what its first readers would have understood,
+          and use history, archaeology and careful scholarship to examine the setting.
+          We show our sources and distinguish the evidence from the conclusions we draw.
+        </p>
+        <p>
+          Some of these convictions are minority readings within Christianity.
+          We respect people who understand the passages differently. You’re welcome
+          to bring your questions, examine an argument and disagree with us.
+          If we’ve misunderstood the evidence, we want to know.
+        </p>
+      </section>
+
+      <section className="about-founder" aria-labelledby="pat-robinson">
+        <p className="site-eyebrow">Who’s behind Bible Lens</p>
+        <h2 id="pat-robinson">Pat Robinson</h2>
+        <p>
+          I built Bible Lens to make careful Bible study more accessible. I’m an
+          independent researcher and publisher. My role is to bring the text,
+          historical context and supporting sources together so you can follow
+          the argument and test it for yourself.
+        </p>
+        <p>
+          When a question needs specialist knowledge, I draw on the work of
+          archaeologists, language scholars and historians, and make those sources
+          available. I want the pages here to grow more useful as we learn.
+        </p>
+      </section>
+
+      <nav className="about-actions" aria-label="Start exploring Bible Lens">
+        <Link className="site-button primary" href="/explore">Enter the Explorer <span aria-hidden="true">→</span></Link>
+        <Link className="site-text-link" href="/books">Read the Bible <span aria-hidden="true">→</span></Link>
+      </nav>
+    </main>
   );
 }

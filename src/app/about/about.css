@@ -1,0 +1,117 @@
+.about-page {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) 28px 80px;
+  color: var(--site-ink);
+}
+.about-page p:not(.site-eyebrow) {
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+.about-page h1,
+.about-page h2,
+.about-page h3 {
+  font-family: var(--font-display), serif;
+  font-weight: 500;
+  text-wrap: balance;
+}
+.about-page h1 {
+  font-size: clamp(48px, 7vw, 76px);
+  line-height: 1.06;
+  margin: 20px 0 24px;
+}
+.about-page h1 em {
+  color: var(--site-gold);
+}
+.about-page h2 {
+  font-size: clamp(32px, 4vw, 42px);
+  line-height: 1.15;
+  margin: 16px 0 22px;
+}
+.about-page h3 {
+  font-size: clamp(28px, 3.6vw, 34px);
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+.about-page p.about-lead {
+  font-size: clamp(22px, 3vw, 27px);
+  line-height: 1.5;
+  color: var(--site-ink);
+  margin-bottom: 28px;
+}
+.about-introduction {
+  padding-bottom: 44px;
+}
+.about-section-intro,
+.about-reading {
+  padding-top: 40px;
+  border-top: 1px solid var(--site-border);
+}
+.about-belief {
+  padding: 20px 0 36px;
+}
+.about-passages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 22px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  font-size: 15px;
+}
+.about-passages a,
+.about-history {
+  color: var(--site-link);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.about-history {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.about-passages a:hover,
+.about-history:hover {
+  text-decoration-line: underline;
+}
+.about-founder {
+  margin-top: 40px;
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid var(--site-border);
+  background: var(--site-panel);
+  border-radius: 12px;
+}
+.about-founder p:last-child {
+  margin-bottom: 0;
+}
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  margin-top: 40px;
+}
+.about-page h2[id],
+.about-page h3[id] {
+  scroll-margin-top: 96px;
+}
+@media (max-width: 540px) {
+  .about-page {
+    padding: 36px 22px 64px;
+  }
+  .about-page p:not(.site-eyebrow) {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .about-page p.about-lead {
+    font-size: 22px;
+  }
+  .about-passages {
+    gap: 0 18px;
+  }
+}

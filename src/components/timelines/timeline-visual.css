@@ -1,0 +1,63 @@
+.timeline-visual-value {
+  overflow-wrap: anywhere;
+}
+
+.timeline-visual--compact {
+  container-type: inline-size;
+  box-shadow: none;
+}
+
+.timeline-visual--compact .timeline-visual-caption {
+  padding: 16px 20px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  line-height: 1.6;
+}
+
+.timeline-visual--compact .timeline-visual-lanes {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.timeline-visual--compact .timeline-visual-lane {
+  padding: 24px clamp(14px, 5cqi, 24px);
+  min-height: 0;
+}
+
+.timeline-visual--compact .timeline-visual-label {
+  min-height: 4.8em;
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.13em;
+  overflow-wrap: anywhere;
+}
+
+.timeline-visual--compact .timeline-visual-value {
+  margin-top: 16px;
+  font-size: clamp(25px, 8cqi, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.timeline-visual--compact .timeline-visual-marker {
+  margin-block: 20px;
+}
+
+.timeline-visual--compact .timeline-visual-description {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.timeline-visual--compact .timeline-visual-note {
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 20px;
+}
+
+@container (max-width: 300px) {
+  .timeline-visual--compact .timeline-visual-lanes {
+    grid-template-columns: 1fr;
+  }
+  .timeline-visual--compact .timeline-visual-label {
+    min-height: 0;
+  }
+}

@@ -92,7 +92,7 @@ export default function TimelinesIndexPage() {
             <div className="grid gap-8 lg:grid-cols-3">
               {TIMELINES.map((timeline) => (
                 <article key={timeline.slug} className="group flex flex-col overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] transition-all hover:-translate-y-1 hover:border-cyan-300/30">
-                  <TimelineVisual visual={timeline.visual} />
+                  <TimelineVisual visual={timeline.visual} compact />
                   <div className="flex flex-1 flex-col p-7">
                     <p className="micro-label text-[var(--homepage-primary)]">{timeline.kicker}</p>
                     <h3 className="mt-3 text-2xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>{timeline.title}</h3>
