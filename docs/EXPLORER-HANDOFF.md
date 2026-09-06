@@ -7,6 +7,8 @@ status: local-review
 
 # Bible Lens Explorer — integrated preview
 
+**6 September, circular Tabernacle update:** [Inside the Dwelling](http://127.0.0.1:3017/explore/tabernacle) is now a second collection. It includes an original circular schematic, eleven selectable assemblies, reversible separation, isolation, connected passages and a 75-second guided reveal. See [the study notes](TABERNACLE-STUDY.md) for geometry limits and [verification](tabernacle-verification.json) for checks. This is a local, noindex prototype; exact Hoy dimensions and finished video production remain later work.
+
 **6 September update:** the entire site now has selectable light and dark themes. See [theme notes](THEMES.md) for coverage and verification. The original screenshots below record the initial Explorer iteration; current theme examples are in `theme-screenshots/`.
 
 The Explorer is now part of the existing Bible Lens application. The homepage, primary navigation and Start Here page lead into a connected study, with the Bible reader, commentary, topics and timelines still available alongside it.

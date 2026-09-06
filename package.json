@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:explorer": "tsx --test tests/explorer.test.ts"
+    "test:explorer": "tsx --test tests/explorer.test.ts",
+    "test:tabernacle": "tsx --test tests/tabernacle.test.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.77.0",
@@ -32,6 +33,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.4.0",
+    "three": "^0.185.1",
     "use-debounce": "^10.1.0",
     "uuid": "^13.0.0"
   },
@@ -41,6 +43,7 @@
     "@types/pdf-parse": "^1.1.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.185.4",
     "eslint": "^9",
     "eslint-config-next": "^16.3.4",
     "tailwindcss": "^4",

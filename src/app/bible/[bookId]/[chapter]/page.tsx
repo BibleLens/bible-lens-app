@@ -254,6 +254,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           style={{ background: "var(--color-scripture-surface)" }}
         >
           {explorerPassage && <Link className="chapter-explorer-link" href={`/explore/jesus-birth?view=read&passage=${explorerPassage}&subject=${explorerPassage}`}>Explore the people, places and questions in this passage →</Link>}
+          {bookId === 'exodus' && [25, 26, 27, 30].includes(chapterNum) && <Link className="chapter-explorer-link" href={`/explore/tabernacle?part=${chapterNum === 25 ? 'ark' : chapterNum === 26 ? 'veil' : chapterNum === 27 ? 'altar' : 'basin'}&separation=80&isolate=1&lens=passage`}>Explore the objects in this passage in the circular Tabernacle study →</Link>}
           {/* Breadcrumb + Chapter Title */}
           <div className="text-center mb-8">
             <nav aria-label="Breadcrumb" className="mb-4">

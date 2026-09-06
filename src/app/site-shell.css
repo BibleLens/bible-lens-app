@@ -480,6 +480,9 @@
   font-size: 13px;
   max-width: 610px;
 }
+.collection-sacred-spaces {
+  margin-top: 24px;
+}
 .collection-facts {
   display: flex;
   gap: 20px;

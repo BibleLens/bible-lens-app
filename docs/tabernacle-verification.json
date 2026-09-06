@@ -1,0 +1,52 @@
+{
+  "title": "Inside the Dwelling prototype verification",
+  "author": "Pat Robinson",
+  "date": "2026-09-06",
+  "preview": "http://127.0.0.1:3017/explore/tabernacle",
+  "branch": "codex/explorer-centrepiece",
+  "automated": {
+    "tabernacle_tests": { "passed": 8, "failed": 0 },
+    "existing_explorer_tests": { "passed": 14, "failed": 0 },
+    "production_build_including_typescript": "passed",
+    "targeted_eslint": "passed",
+    "git_diff_check": "passed",
+    "dependency_audit": "0 known vulnerabilities after installation"
+  },
+  "model": {
+    "selectable_assemblies": 11,
+    "mesh_objects": 269,
+    "external_model_downloads": 0,
+    "three_js_chunk_bytes": 599107,
+    "three_js_chunk_gzip_bytes": 151458,
+    "dimensions": "illustrative display units; specified furnishing proportions retained"
+  },
+  "browser_checks": [
+    "Production route and Explorer collection entry load",
+    "All eleven components are present in the interface",
+    "Direct canvas selection of the canopy opens its component details",
+    "Separation endpoints and keyboard End control work",
+    "Isolated veil and lampstand render at inspection scale",
+    "Labels appear on model components and avoid overlapping one another",
+    "Veil passage opens Exodus 26; reader link returns to veil at 80 percent separation with isolation and text lens",
+    "Returning through a different collection entry opens that entry's component rather than a previous selection",
+    "Keep this view reports a copied link; state round trips also covered by automated tests",
+    "Full timed reveal reaches 01:15, returns to the assembled whole and offers replay",
+    "Reduced-motion control exposes manual story steps; fifth moment returns to assembled state and offers replay",
+    "Source dialog opens; Escape closes it and restores focus to its trigger",
+    "Light/dark theme changes retain the selected component and separation",
+    "Shared links with selected component, separation, isolation and reading lens restore correctly",
+    "Author metadata is Pat Robinson; route is noindex, follow"
+  ],
+  "viewports": [
+    { "width": 1280, "height": 720, "horizontal_overflow": false, "primary_controls_visible_without_scrolling": true },
+    { "width": 768, "height": 1024, "horizontal_overflow": false },
+    { "width": 390, "height": 844, "horizontal_overflow": false },
+    { "width": 320, "height": 740, "horizontal_overflow": false }
+  ],
+  "limits": [
+    "Browser viewport tests do not establish physical-device multitouch performance",
+    "WebGL failure handling and hidden-tab lifecycle were reviewed in code; forced GPU failure was not exercised",
+    "The geometry is an attributed schematic, not a dimensionally faithful reproduction of Hoy's plans",
+    "The guided sequence is interactive; no narrated video export was produced"
+  ]
+}

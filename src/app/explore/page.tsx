@@ -55,11 +55,44 @@ export default function ExploreIndex() {
           </Link>
         </nav>
       </section>
+      <section className="collection-card collection-sacred-spaces">
+        <div>
+          <span className="site-eyebrow">
+            Collection 02 · Interactive 3D study
+          </span>
+          <h2>Inside the Dwelling</h2>
+          <p>
+            Take apart a circular Tabernacle study. Lift the coverings, inspect
+            the furnishings and follow their passages and imagery. An
+            illustrative model inspired by Andrew Hoy’s reconstruction.
+          </p>
+          <div className="collection-facts">
+            <span>11 assemblies</span>
+            <span>Connected passages</span>
+            <span>75-second reveal</span>
+          </div>
+          <Link className="site-button primary" href="/explore/tabernacle">
+            Explore the dwelling →
+          </Link>
+        </div>
+        <nav aria-label="Ways into the Tabernacle study">
+          <Link href="/explore/tabernacle?separation=65">
+            <span>01</span> Open the structure <b>→</b>
+          </Link>
+          <Link href="/explore/tabernacle?part=veil&separation=80&isolate=1&lens=passage">
+            <span>02</span> Begin with the veil <b>→</b>
+          </Link>
+          <Link href="/explore/tabernacle?part=lampstand&separation=80&isolate=1&lens=connections">
+            <span>03</span> Follow the lampstand’s imagery <b>→</b>
+          </Link>
+        </nav>
+      </section>
       <aside className="collection-note">
         <h2>A small collection with room to grow.</h2>
         <p>
-          The Explorer starts with one connected study. The wider Bible,
-          commentary and timeline library is already available alongside it.
+          The Explorer brings connected reading and spatial studies together.
+          The wider Bible, commentary and timeline library is already available
+          alongside it.
         </p>
         <Link className="site-text-link" href="/books">
           Browse the full Bible →
