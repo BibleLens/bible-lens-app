@@ -1,0 +1,241 @@
+.tc-collection {
+  max-width: 1420px;
+  margin: auto;
+  padding: 52px 40px 70px;
+  color: var(--site-ink);
+}
+.tc-collection > header {
+  max-width: 810px;
+  margin-bottom: 42px;
+}
+.tc-collection > header > .site-text-link {
+  display: block;
+  margin-bottom: 36px;
+  font-size: 12px;
+}
+.tc-collection .site-eyebrow {
+  display: block;
+}
+.tc-collection h1 {
+  font:
+    400 clamp(44px, 5vw, 72px)/1.04 var(--font-newsreader),
+    Georgia,
+    serif;
+  letter-spacing: -0.045em;
+  margin: 19px 0 22px;
+}
+.tc-collection h1 em,
+.tc-collection h2 em {
+  color: var(--site-gold);
+  font-weight: 400;
+}
+.tc-collection > header > p {
+  font:
+    19px/1.65 var(--font-source-sans),
+    sans-serif;
+  color: var(--site-muted);
+  max-width: 690px;
+}
+.tc-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.tc-card {
+  border: 1px solid var(--site-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--site-panel);
+}
+.tc-drawing {
+  position: relative;
+  display: block;
+  background: #1c3044;
+  padding: 23px 28px 26px;
+  border-bottom: 1px solid var(--site-border);
+}
+.tc-herod .tc-drawing {
+  background: #293949;
+}
+.tc-ezekiel .tc-drawing {
+  background: #183c41;
+}
+.tc-plan {
+  display: block;
+  width: 100%;
+  height: 210px;
+  stroke: #d5be8c;
+  stroke-width: 1.2;
+}
+.tc-plan-axis {
+  stroke: #ffffff24;
+  stroke-width: 0.6;
+}
+.tc-plan .tc-water {
+  stroke: #79ccc0;
+  stroke-width: 2;
+}
+.tc-drawing > span {
+  position: absolute;
+  bottom: 15px;
+  left: 24px;
+  color: #c3cdd2;
+  font:
+    8px var(--font-manrope),
+    sans-serif;
+  letter-spacing: 0.17em;
+}
+.tc-card-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.tc-card h2 {
+  font:
+    400 31px/1.12 var(--font-newsreader),
+    Georgia,
+    serif;
+  margin: 14px 0;
+}
+.tc-card p {
+  font:
+    17px/1.65 var(--font-source-sans),
+    sans-serif;
+  color: var(--site-muted);
+  min-height: 86px;
+  margin: 0;
+}
+.tc-facts {
+  display: flex;
+  gap: 13px;
+  font-size: 10px;
+  color: var(--site-muted);
+  padding: 24px 0;
+  border-bottom: 1px solid var(--site-border);
+  width: 100%;
+  margin-bottom: 22px;
+}
+.tc-comparison {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  padding: 58px 0 46px;
+  border-bottom: 1px solid var(--site-border);
+}
+.tc-comparison h2,
+.tc-return h2 {
+  font:
+    400 37px/1.13 var(--font-newsreader),
+    Georgia,
+    serif;
+  margin: 13px 0 18px;
+}
+.tc-comparison p,
+.tc-return p {
+  font:
+    17px/1.7 var(--font-source-sans),
+    sans-serif;
+  color: var(--site-muted);
+  max-width: 620px;
+}
+.tc-table-wrap {
+  overflow-x: auto;
+}
+.tc-comparison table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.8;
+}
+.tc-comparison th,
+.tc-comparison td {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--site-border);
+  vertical-align: top;
+}
+.tc-comparison thead th {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--site-muted);
+  font-weight: 500;
+}
+.tc-comparison tbody th {
+  font-weight: 600;
+  color: var(--site-gold);
+}
+.tc-return {
+  padding-top: 38px;
+}
+@media (max-width: 900px) {
+  .tc-collection {
+    padding: 32px 24px 45px;
+  }
+  .tc-cards {
+    gap: 13px;
+  }
+  .tc-card-body {
+    padding: 20px;
+  }
+  .tc-card h2 {
+    font-size: 26px;
+  }
+  .tc-card p {
+    font-size: 16px;
+    min-height: 125px;
+  }
+  .tc-facts {
+    font-size: 9px;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .tc-comparison {
+    gap: 25px;
+  }
+  .tc-drawing {
+    padding-inline: 12px;
+  }
+}
+@media (max-width: 650px) {
+  .tc-collection {
+    padding: 26px 18px 40px;
+  }
+  .tc-collection > header > .site-text-link {
+    margin-bottom: 28px;
+  }
+  .tc-collection > header > p {
+    font-size: 18px;
+  }
+  .tc-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .tc-plan {
+    height: 190px;
+  }
+  .tc-card-body {
+    padding: 24px;
+  }
+  .tc-card h2 {
+    font-size: 33px;
+  }
+  .tc-card p {
+    min-height: 0;
+    font-size: 18px;
+  }
+  .tc-comparison {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-top: 36px;
+  }
+  .tc-comparison th,
+  .tc-comparison td {
+    padding: 12px 7px;
+    font-size: 11px;
+  }
+  .tc-comparison thead th {
+    font-size: 9px;
+  }
+}

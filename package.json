@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test:explorer": "tsx --test tests/explorer.test.ts",
-    "test:tabernacle": "tsx --test tests/tabernacle.test.ts"
+    "test:tabernacle": "tsx --test tests/tabernacle.test.ts",
+    "test:temples": "tsx --test tests/temples.test.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.77.0",

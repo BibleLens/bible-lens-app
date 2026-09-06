@@ -7,6 +7,8 @@ status: local-review
 
 # Bible Lens Explorer — integrated preview
 
+**6 September, three Temples update:** [The Temple collection](http://127.0.0.1:3017/explore/temples) now contains Solomon’s Temple, Herod’s Temple and Ezekiel’s Temple vision. Each has its own original model, selectable assemblies, an opening interior, separation and isolation, source notes, connected readings and a six-moment guided journey. The three studies contain 33 assemblies in total. See [research and model choices](TEMPLE-STUDIES.md) and [verification](temple-verification.json). All 31 Temple, Tabernacle and Explorer tests pass, along with the production build and targeted lint checks. The models remain local study reconstructions; Ezekiel is explicitly presented as a vision.
+
 **6 September, circular Tabernacle update:** [Inside the Dwelling](http://127.0.0.1:3017/explore/tabernacle) is now a second collection. It includes an original circular schematic, eleven selectable assemblies, reversible separation, isolation, connected passages and a 75-second guided reveal. See [the study notes](TABERNACLE-STUDY.md) for geometry limits and [verification](tabernacle-verification.json) for checks. This is a local, noindex prototype; exact Hoy dimensions and finished video production remain later work.
 
 **6 September update:** the entire site now has selectable light and dark themes. See [theme notes](THEMES.md) for coverage and verification. The original screenshots below record the initial Explorer iteration; current theme examples are in `theme-screenshots/`.
@@ -54,6 +56,6 @@ The full Luke 2 chapter and the existing Books, Topics and Timelines pages were 
 - **Reader feedback:** reading is the default, with Connections and Map as companion views. This implements a practical direction for review; it does not record a final layout or chronology choice from Pat.
 - **Publication:** review the collection and homepage before release. The study is currently `noindex`; its collection overview is included in the sitemap. The earlier checkout investigation found that the original local Vercel project link points to an older project, while the live project is `bible-lens`. Resolve that link explicitly before any deployment.
 - **External services:** no credentials were copied into this checkout. Email submission, paid AI chat and other live service integrations were not exercised. Existing service behaviour should be checked in an authorized staging environment before release.
-- **Later work:** broader collections, a separately identified Gleason explanation and a sourced Temple reconstruction follow the first reader trial. Flat Earth is not an official Bible Lens position. There are no new accounts, payments or paywall features in this preview.
+- **Later work:** broader collections and a separately identified Gleason explanation remain future work. The three Temple studies are now implemented locally; detailed model review and narrated film production remain separate work. Flat Earth is not an official Bible Lens position. There are no new accounts, payments or paywall features in this preview.
 
 The formal GSD roadmap remains parked. This is an independently reviewable local application increment, recorded in the workspace Cowork log.

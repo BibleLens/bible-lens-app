@@ -1,0 +1,92 @@
+{
+  "title": "Three Temple studies verification",
+  "author": "Pat Robinson",
+  "date": "2026-09-06",
+  "preview": "http://127.0.0.1:3017/explore/temples",
+  "branch": "codex/explorer-centrepiece",
+  "automated": {
+    "temple_tests": {
+      "passed": 9,
+      "failed": 0
+    },
+    "tabernacle_tests": {
+      "passed": 8,
+      "failed": 0
+    },
+    "explorer_tests": {
+      "passed": 14,
+      "failed": 0
+    },
+    "production_build_including_typescript": "passed",
+    "targeted_eslint": "passed",
+    "git_diff_check": "passed"
+  },
+  "studies": [
+    {
+      "id": "solomon",
+      "assemblies": 12,
+      "guided_moments": 6,
+      "duration_seconds": 90
+    },
+    {
+      "id": "herod",
+      "assemblies": 11,
+      "guided_moments": 6,
+      "duration_seconds": 90
+    },
+    {
+      "id": "ezekiel",
+      "assemblies": 10,
+      "guided_moments": 6,
+      "duration_seconds": 90
+    }
+  ],
+  "browser_checks": [
+    "All three production models render and the Explorer links to the comparison collection",
+    "Opening interiors, isolation, camera focus, top view, reset, labels and measurements work",
+    "Direct canvas selection opens the corresponding component panel",
+    "Separation reaches its endpoints by keyboard and button; separation intentionally returns to the whole model and closes the cutaway",
+    "The copied URL matches the visible selection, separation, isolation, cutaway and reading lens; reload restores the same settings",
+    "The cherubim connection opens 1 Kings 8; the chapter returns to the ark with its sources selected",
+    "Source notes open in a modal and Escape dismisses it",
+    "All eighteen guided moments were exercised through manual progression",
+    "Ezekiel's timed journey ran to 01:30 and offered replay",
+    "Reduced-motion mode exposes six manual story moments and immediate transitions",
+    "Light and dark themes preserve the selected study and view",
+    "Phone, tablet and desktop layouts visually inspected; no horizontal page overflow on measured 360px, 390px, 768px and 1280px widths",
+    "Final production browser console contains no captured warnings or errors"
+  ],
+  "viewport_sizes": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 360,
+      "height": 800
+    }
+  ],
+  "screenshots": "temple-screenshots/",
+  "limits": [
+    "The buildings are selective textual reconstructions; undocumented dimensions and source differences are explained in the studies",
+    "Ezekiel is presented as a vision; its exterior river distances are compressed",
+    "The studies fit their own viewports and do not share a displayed scale or surveyed geographical alignment",
+    "Only Ezekiel's full elapsed-time playback was watched; all three sets of manual moments and the shared timer implementation were checked",
+    "Physical-device multitouch, forced GPU failure and an independent accessibility audit were not performed",
+    "WebGL fallback and hidden-tab lifecycle were reviewed in code",
+    "No recorded narration, film export or Blender deliverable was produced",
+    "Local preview and commit only; no push, deployment or paid generation"
+  ]
+}

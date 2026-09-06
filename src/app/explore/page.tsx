@@ -87,6 +87,38 @@ export default function ExploreIndex() {
           </Link>
         </nav>
       </section>
+      <section className="collection-card collection-sacred-spaces">
+        <div>
+          <span className="site-eyebrow">
+            Collection 03 · Three interactive 3D studies
+          </span>
+          <h2>Enter the Temple</h2>
+          <p>
+            Open Solomon’s sanctuary, explore the courts of Herod’s Temple, and
+            follow Ezekiel’s vision into living water. Each model has its own
+            sources, objects and guided journey.
+          </p>
+          <div className="collection-facts">
+            <span>3 distinct models</span>
+            <span>33 assemblies</span>
+            <span>Connected sources</span>
+          </div>
+          <Link className="site-button primary" href="/explore/temples">
+            Explore the Temple collection →
+          </Link>
+        </div>
+        <nav aria-label="Ways into the Temple studies">
+          <Link href="/explore/temples/solomon">
+            <span>01</span> Solomon’s house and its imagery <b>→</b>
+          </Link>
+          <Link href="/explore/temples/herod">
+            <span>02</span> Herod’s courts and encounters <b>→</b>
+          </Link>
+          <Link href="/explore/temples/ezekiel">
+            <span>03</span> Ezekiel’s vision and river <b>→</b>
+          </Link>
+        </nav>
+      </section>
       <aside className="collection-note">
         <h2>A small collection with room to grow.</h2>
         <p>
