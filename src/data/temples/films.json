@@ -1,0 +1,447 @@
+{
+  "solomon": {
+    "title": "Solomon’s Temple: From courtyard to covenant",
+    "duration": 63.0,
+    "src": "/temples/solomon/film-v1.mp4",
+    "poster": "/temples/solomon/poster-v1.jpg",
+    "captionsSrc": "/temples/solomon/captions-v1.vtt",
+    "chapters": [
+      {
+        "title": "The courtyard",
+        "start": 0,
+        "end": 9.0,
+        "text": "Before the temple Jesus knew, there was Solomon's. Let's begin in its courtyard, with the sanctuary ahead.",
+        "passage": "1 Kings 6–8"
+      },
+      {
+        "title": "The bronze pillars",
+        "start": 9.0,
+        "end": 17.0,
+        "text": "Two bronze pillars frame the entrance. First Kings names them Jachin and Boaz.",
+        "passage": "1 Kings 7:15–22"
+      },
+      {
+        "title": "Worked bronze",
+        "start": 17.0,
+        "end": 28.5,
+        "text": "Lily-shaped capitals, latticework and pomegranates bring the bronze to life. Their exact appearance remains an artist's interpretation.",
+        "passage": "1 Kings 7:17–22; reconstruction qualification"
+      },
+      {
+        "title": "The Holy Place",
+        "start": 28.5,
+        "end": 37.0,
+        "text": "Inside, gold covers the timber. Ten lampstands stand before the inner room, five on each side.",
+        "passage": "1 Kings 6:15–22; 7:49"
+      },
+      {
+        "title": "Light and carved timber",
+        "start": 37.0,
+        "end": 45.0,
+        "text": "The lamps draw our eyes along walls carved with palms, flowers and cherubim.",
+        "passage": "1 Kings 6:29; 7:49"
+      },
+      {
+        "title": "The Most Holy Place",
+        "start": 45.0,
+        "end": 53.0,
+        "text": "Beyond the doors, two great cherubim spread their wings above the Ark in the Most Holy Place.",
+        "passage": "1 Kings 6:23–28; 8:6–7"
+      },
+      {
+        "title": "The Ark of the Covenant",
+        "start": 53.0,
+        "end": 63.0,
+        "text": "Here, the covenant has a physical reminder: the Ark holding the stone tablets Moses placed inside.",
+        "passage": "1 Kings 8:9"
+      }
+    ],
+    "captions": [
+      {
+        "start": 1.194,
+        "end": 4.429,
+        "text": "Before the temple Jesus knew, there was\nSolomon's."
+      },
+      {
+        "start": 4.444,
+        "end": 7.395,
+        "text": "Let's begin in its courtyard, with the\nsanctuary ahead."
+      },
+      {
+        "start": 9.547,
+        "end": 11.879,
+        "text": "Two bronze pillars frame the entrance."
+      },
+      {
+        "start": 12.205,
+        "end": 15.601,
+        "text": "First Kings names them Jachin and Boaz."
+      },
+      {
+        "start": 17.45,
+        "end": 24.091,
+        "text": "Lily-shaped capitals, latticework and\npomegranates bring the bronze to life."
+      },
+      {
+        "start": 24.242,
+        "end": 27.36,
+        "text": "Their exact appearance remains an artist's\ninterpretation."
+      },
+      {
+        "start": 29.084,
+        "end": 31.286,
+        "text": "Inside, gold covers the timber."
+      },
+      {
+        "start": 31.955,
+        "end": 34.295,
+        "text": "Ten lampstands stand before the inner room,"
+      },
+      {
+        "start": 34.538,
+        "end": 35.666,
+        "text": "five on each side."
+      },
+      {
+        "start": 37.45,
+        "end": 40.449,
+        "text": "The lamps draw our eyes along walls carved"
+      },
+      {
+        "start": 40.464,
+        "end": 42.434,
+        "text": "with palms, flowers and cherubim."
+      },
+      {
+        "start": 45.45,
+        "end": 47.718,
+        "text": "Beyond the doors, two great cherubim"
+      },
+      {
+        "start": 47.733,
+        "end": 49.662,
+        "text": "spread their wings above the Ark"
+      },
+      {
+        "start": 49.677,
+        "end": 51.314,
+        "text": "in the Most Holy Place."
+      },
+      {
+        "start": 53.45,
+        "end": 56.647,
+        "text": "Here, the covenant has a physical reminder:"
+      },
+      {
+        "start": 57.121,
+        "end": 59.014,
+        "text": "the Ark holding the stone tablets"
+      },
+      {
+        "start": 59.029,
+        "end": 60.397,
+        "text": "Moses placed inside."
+      }
+    ],
+    "sources": [
+      {
+        "label": "The house, gold covering and carved walls",
+        "url": "https://www.biblegateway.com/passage/?search=1+Kings+6&version=KJV",
+        "passage": "1 Kings 6:15–35"
+      },
+      {
+        "label": "Pillars, capitals and lampstands",
+        "url": "https://www.biblegateway.com/passage/?search=1+Kings+7&version=KJV",
+        "passage": "1 Kings 7:15–22, 49"
+      },
+      {
+        "label": "The Ark and stone tablets",
+        "url": "https://www.biblegateway.com/passage/?search=1+Kings+8:6-9&version=KJV",
+        "passage": "1 Kings 8:6–9"
+      }
+    ]
+  },
+  "herod": {
+    "title": "Herod’s Temple: The temple Jesus knew",
+    "duration": 37.0,
+    "src": "/temples/herod/film-v1.mp4",
+    "poster": "/temples/herod/poster-v1.jpg",
+    "captionsSrc": "/temples/herod/captions-v1.vtt",
+    "chapters": [
+      {
+        "title": "The Royal Stoa",
+        "start": 0,
+        "end": 12.5,
+        "text": "By Jesus' time, Herod had transformed Jerusalem's temple. Along the southern edge stood the Royal Stoa, a great colonnaded hall.",
+        "passage": "Josephus, Antiquities 15.11.1–5"
+      },
+      {
+        "title": "The Holy Place",
+        "start": 12.5,
+        "end": 26.0,
+        "text": "Our view follows ancient descriptions, with some details interpreted. Within the sanctuary, a lampstand, bread table and incense altar furnished the Holy Place.",
+        "passage": "Josephus, Jewish War 5.5.5; reconstruction qualification"
+      },
+      {
+        "title": "The seven lamps",
+        "start": 26.0,
+        "end": 37.0,
+        "text": "Seven lamps burn on a single golden stand. Beyond the sanctuary lay the courts where Jesus walked and taught.",
+        "passage": "Josephus, Jewish War 5.5.5; Mark 11:27; John 8:20"
+      }
+    ],
+    "captions": [
+      {
+        "start": 1.101,
+        "end": 6.988,
+        "text": "By Jesus' time, Herod had transformed\nJerusalem's temple."
+      },
+      {
+        "start": 7.157,
+        "end": 9.438,
+        "text": "Along the southern edge stood the Royal\nStoa,"
+      },
+      {
+        "start": 9.453,
+        "end": 11.321,
+        "text": "a great colonnaded hall."
+      },
+      {
+        "start": 13.168,
+        "end": 15.94,
+        "text": "Our view follows ancient descriptions,"
+      },
+      {
+        "start": 15.955,
+        "end": 18.582,
+        "text": "with some details interpreted."
+      },
+      {
+        "start": 18.705,
+        "end": 21.708,
+        "text": "Within the sanctuary, a lampstand, bread\ntable"
+      },
+      {
+        "start": 21.723,
+        "end": 24.61,
+        "text": "and incense altar furnished the Holy Place."
+      },
+      {
+        "start": 26.76,
+        "end": 30.906,
+        "text": "Seven lamps burn on a single golden stand."
+      },
+      {
+        "start": 31.112,
+        "end": 32.801,
+        "text": "Beyond the sanctuary lay the courts"
+      },
+      {
+        "start": 32.816,
+        "end": 34.351,
+        "text": "where Jesus walked and taught."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Herod’s rebuilding and the Royal Stoa",
+        "url": "https://penelope.uchicago.edu/josephus/ant-15.html",
+        "passage": "Josephus, Antiquities 15.11.1–5"
+      },
+      {
+        "label": "Holy Place furnishings and seven lamps",
+        "url": "https://penelope.uchicago.edu/josephus/war-5.html",
+        "passage": "Josephus, Jewish War 5.5.5"
+      },
+      {
+        "label": "Jesus walking in the Temple courts",
+        "url": "https://biblehub.com/mark/11-27.htm",
+        "passage": "Mark 11:27"
+      },
+      {
+        "label": "Jesus teaching near the treasury",
+        "url": "https://biblehub.com/john/8-20.htm",
+        "passage": "John 8:20"
+      }
+    ]
+  },
+  "ezekiel": {
+    "title": "Ezekiel’s Temple: From exile to life",
+    "duration": 66,
+    "src": "/temples/ezekiel/film-v1.mp4",
+    "poster": "/temples/ezekiel/poster-v1.jpg",
+    "captionsSrc": "/temples/ezekiel/captions-v1.vtt",
+    "chapters": [
+      {
+        "title": "The wider precinct",
+        "start": 0,
+        "end": 8,
+        "text": "Jerusalem has fallen. Far from home, the prophet Ezekiel sees a temple in a vision.",
+        "passage": "Ezekiel 40:1–2"
+      },
+      {
+        "title": "The outer gateway",
+        "start": 8,
+        "end": 16,
+        "text": "A guide with a measuring reed leads him through its gates, measuring as they go.",
+        "passage": "Ezekiel 40:3–16, 20–22"
+      },
+      {
+        "title": "Inside the gateway",
+        "start": 16,
+        "end": 24,
+        "text": "We're picturing that account here. Its measurements guide us; some details are an artist's interpretation.",
+        "passage": "An artistic reconstruction guided by Ezekiel 40–48"
+      },
+      {
+        "title": "The altar in its court",
+        "start": 24,
+        "end": 32,
+        "text": "In the inner court stands an altar, with steps facing east, before the sanctuary.",
+        "passage": "Ezekiel 40:47; 43:13–17"
+      },
+      {
+        "title": "The sanctuary entrance",
+        "start": 32,
+        "end": 40,
+        "text": "The vision carries a promise for Israel: God will dwell among his people.",
+        "passage": "Ezekiel 43:7–9"
+      },
+      {
+        "title": "The timber-lined hall",
+        "start": 40,
+        "end": 48,
+        "text": "Inside, carved timber surrounds a wooden altar, described as the table before the Lord.",
+        "passage": "Ezekiel 41:16–22"
+      },
+      {
+        "title": "Palms and two faces",
+        "start": 48,
+        "end": 56,
+        "text": "Palms alternate with cherubim, each bearing two faces: a human and a young lion.",
+        "passage": "Ezekiel 41:18–20"
+      },
+      {
+        "title": "Water from the threshold",
+        "start": 56,
+        "end": 66,
+        "text": "Then water emerges beneath the threshold. In Ezekiel's vision, it becomes a river that brings life.",
+        "passage": "Ezekiel 47:1–9"
+      }
+    ],
+    "captions": [
+      {
+        "start": 1.281,
+        "end": 2.994,
+        "text": "Jerusalem has fallen."
+      },
+      {
+        "start": 3.18,
+        "end": 6.791,
+        "text": "Far from home, the prophet Ezekiel\nsees a temple in a vision."
+      },
+      {
+        "start": 8.817,
+        "end": 10.872,
+        "text": "A guide with a measuring reed"
+      },
+      {
+        "start": 10.872,
+        "end": 13.835,
+        "text": "leads him through its gates,\nmeasuring as they go."
+      },
+      {
+        "start": 16.68,
+        "end": 18.393,
+        "text": "We're picturing that account here."
+      },
+      {
+        "start": 18.809,
+        "end": 20.569,
+        "text": "Its measurements guide us;"
+      },
+      {
+        "start": 20.569,
+        "end": 23.254,
+        "text": "some details are an artist's interpretation."
+      },
+      {
+        "start": 24.793,
+        "end": 27.107,
+        "text": "In the inner court stands an altar,"
+      },
+      {
+        "start": 27.2,
+        "end": 30.256,
+        "text": "with steps facing east,\nbefore the sanctuary."
+      },
+      {
+        "start": 32.728,
+        "end": 35.089,
+        "text": "The vision carries a promise for Israel:"
+      },
+      {
+        "start": 35.32,
+        "end": 37.126,
+        "text": "God will dwell among his people."
+      },
+      {
+        "start": 40.765,
+        "end": 43.913,
+        "text": "Inside, carved timber surrounds\na wooden altar,"
+      },
+      {
+        "start": 44.117,
+        "end": 46.413,
+        "text": "described as the table before the Lord."
+      },
+      {
+        "start": 48.604,
+        "end": 51.215,
+        "text": "Palms alternate with cherubim,"
+      },
+      {
+        "start": 51.215,
+        "end": 55.224,
+        "text": "each bearing two faces:\na human and a young lion."
+      },
+      {
+        "start": 56.362,
+        "end": 59.649,
+        "text": "Then water emerges beneath the threshold."
+      },
+      {
+        "start": 59.973,
+        "end": 62.288,
+        "text": "In Ezekiel's vision, it becomes a river"
+      },
+      {
+        "start": 62.427,
+        "end": 63.612,
+        "text": "that brings life."
+      }
+    ],
+    "sources": [
+      {
+        "label": "The vision, guide and measured courts",
+        "passage": "Ezekiel 40",
+        "url": "https://www.biblegateway.com/passage/?search=Ezekiel+40&version=KJV"
+      },
+      {
+        "label": "The sanctuary, wooden altar and carvings",
+        "passage": "Ezekiel 41",
+        "url": "https://www.biblegateway.com/passage/?search=Ezekiel+41&version=KJV"
+      },
+      {
+        "label": "The promise and the altar",
+        "passage": "Ezekiel 43",
+        "url": "https://www.biblegateway.com/passage/?search=Ezekiel+43&version=KJV"
+      },
+      {
+        "label": "Water flowing from the threshold",
+        "passage": "Ezekiel 47",
+        "url": "https://www.biblegateway.com/passage/?search=Ezekiel+47&version=KJV"
+      }
+    ]
+  }
+}

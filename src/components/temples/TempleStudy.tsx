@@ -101,7 +101,9 @@ function SourceLink({
   );
 }
 
-export function TempleStudyClient({ id }: { id: TempleId }) {
+export function TempleStudyClient({ id, embedded = false }: { id: TempleId; embedded?: boolean }) {
+  const Root = embedded ? "section" : "main";
+  const Heading = embedded ? "h2" : "h1";
   const study = TEMPLE_STUDIES[id],
     params = useSearchParams();
   const manual = useMemo(() => parseTempleView(id, params), [id, params]);
@@ -229,7 +231,7 @@ export function TempleStudyClient({ id }: { id: TempleId }) {
     }
   }
   return (
-    <main id="main-content" className={`dw-study tp-study tp-${id}`}>
+    <Root id={embedded ? undefined : "main-content"} className={`dw-study tp-study tp-${id}`}>
       <nav className="tp-collection-nav" aria-label="Sacred spaces">
         <Link href="/explore/tabernacle">The Tabernacle</Link>
         <span aria-hidden="true">/</span>
@@ -255,9 +257,9 @@ export function TempleStudyClient({ id }: { id: TempleId }) {
             <span>{study.name}</span>
           </nav>
           <div className="dw-title-row">
-            <h1>
+            <Heading>
               {study.title} <em>{study.emphasis}</em>
-            </h1>
+            </Heading>
           </div>
           <p>{study.introduction}</p>
         </div>
@@ -822,6 +824,6 @@ export function TempleStudyClient({ id }: { id: TempleId }) {
           </button>
         </div>
       </dialog>
-    </main>
+    </Root>
   );
 }

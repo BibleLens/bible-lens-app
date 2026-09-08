@@ -90,17 +90,17 @@ export default function ExploreIndex() {
       <section className="collection-card collection-sacred-spaces">
         <div>
           <span className="site-eyebrow">
-            Collection 03 · Three interactive 3D studies
+            Collection 03 · Three films & 3D studies
           </span>
           <h2>Enter the Temple</h2>
           <p>
             Open Solomon’s sanctuary, explore the courts of Herod’s Temple, and
-            follow Ezekiel’s vision into living water. Each model has its own
-            sources, objects and guided journey.
+            follow Ezekiel’s vision into living water. Begin with a short film,
+            then look closer through the sources and interactive models.
           </p>
           <div className="collection-facts">
-            <span>3 distinct models</span>
-            <span>33 assemblies</span>
+            <span>3 narrated films</span>
+            <span>Interactive models</span>
             <span>Connected sources</span>
           </div>
           <Link className="site-button primary" href="/explore/temples">

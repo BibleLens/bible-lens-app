@@ -47,44 +47,9 @@
   overflow: hidden;
   background: var(--site-panel);
 }
-.tc-drawing {
-  position: relative;
-  display: block;
-  background: #1c3044;
-  padding: 23px 28px 26px;
-  border-bottom: 1px solid var(--site-border);
-}
-.tc-herod .tc-drawing {
-  background: #293949;
-}
-.tc-ezekiel .tc-drawing {
-  background: #183c41;
-}
-.tc-plan {
-  display: block;
-  width: 100%;
-  height: 210px;
-  stroke: #d5be8c;
-  stroke-width: 1.2;
-}
-.tc-plan-axis {
-  stroke: #ffffff24;
-  stroke-width: 0.6;
-}
-.tc-plan .tc-water {
-  stroke: #79ccc0;
-  stroke-width: 2;
-}
-.tc-drawing > span {
-  position: absolute;
-  bottom: 15px;
-  left: 24px;
-  color: #c3cdd2;
-  font:
-    8px var(--font-manrope),
-    sans-serif;
-  letter-spacing: 0.17em;
-}
+ .tc-poster { position: relative; display: block; background: #12263b; border-bottom: 1px solid var(--site-border); }
+.tc-poster img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.tc-poster > span { position: absolute; left: 14px; bottom: 14px; padding: 7px 10px; color: #fff; background: #10253ce8; border-radius: 3px; font: 9px var(--font-manrope), sans-serif; letter-spacing: .13em; }
 .tc-card-body {
   padding: 28px;
   display: flex;
