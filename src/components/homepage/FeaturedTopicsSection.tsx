@@ -25,7 +25,7 @@ const TOPIC_CARDS = [
     title: "Revelation: 666 & The Beast",
     category: "Eschatology",
     description:
-      "Decoding the imperial cult imagery and Nero as the historical 666.",
+      "Explore the imperial imagery and the mystery behind 666.",
     image: "/topic-cards/beast-of-revelation.png",
     imageAlt: "Revelation beast imagery",
     objectPosition: "center 28%",
@@ -59,7 +59,7 @@ const TOPIC_CARDS = [
     slug: "matthew-24-olivet-discourse",
     title: "Matthew 24: The Olivet Discourse",
     category: null,
-    description: "From the Old Adam to the Last Adam.",
+    description: "From the first Adam to the Last Adam.",
     image: "/topic-cards/olivet-discourse.jpeg",
     imageAlt: "Matthew 24 discourse",
     objectPosition: "center 18%",
