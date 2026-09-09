@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export function HomepageLayout({ children }: { children: React.ReactNode }) {
   return (
     <div
+      className="original-home"
       style={{
         background: "var(--homepage-bg)",
         color: "var(--homepage-text)",

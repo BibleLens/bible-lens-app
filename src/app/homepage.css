@@ -1,0 +1,66 @@
+.original-home {
+  --homepage-bg: #050508;
+  --homepage-surface: #0f0f16;
+  --homepage-text: #f3f3f5;
+  --homepage-muted: #a8adbd;
+  --homepage-primary: #00e5ff;
+  --homepage-accent: #ff6b00;
+  --color-text-primary: #f3f3f5;
+  --color-text-secondary: #b6c3d4;
+  --color-text-muted: #a8adbd;
+  --color-bg-elevated: #121a26;
+  --color-border: #344353;
+  --color-action-bg: #00e5ff;
+  --color-action-text: #050508;
+  --color-gold-400: #76e7ff;
+  font-family: var(--homepage-font-body);
+}
+.original-home :focus-visible { outline: 2px solid #00e5ff; outline-offset: 6px; }
+:root .original-home .glass-card { background: rgba(20,28,32,.65); border-color: rgba(0,229,255,.25); box-shadow: none; }
+:root .original-home .glass-card:hover { background: rgba(20,28,32,.8); border-color: rgba(0,229,255,.4); box-shadow: 0 0 40px rgba(0,229,255,.1); }
+:root .original-home .shimmer-layer { display: block; }
+:root .original-home .logo-pulse { animation: logo-pulse 4.5s ease-in-out infinite; }
+.original-home-footer { background: #080d16; border-color: #203544; }
+.home-section { max-width: 1440px; margin: 0 auto; padding: 90px 24px; }
+.home-eyebrow { display: block; color: #71dced; font-size: 11px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+.home-section h2 { font: 500 clamp(38px,4.6vw,64px)/1.06 var(--homepage-font-display); letter-spacing: -.02em; margin: 20px 0 24px; }
+.home-section h2 em { color: #00e5ff; font-weight: 400; }
+.home-section p { color: #b6c3d4; font-size: 17px; line-height: 1.85; margin-bottom: 18px; max-width: 62ch; }
+.home-kingdom, .home-about { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px,6vw,90px); align-items: center; }
+.home-kingdom { border-bottom: 1px solid #1f3542; margin-bottom: 70px; }
+.home-link { display: inline-flex; align-items: center; gap: 22px; color: #00e5ff; min-height: 44px; font-weight: 600; border-bottom: 1px solid #00e5ff55; text-decoration: none; }
+.home-link:hover { border-color: #00e5ff; }
+.home-discover { border-top: 1px solid #1f3542; }
+.home-section-intro { margin-bottom: 36px !important; }
+.home-resource-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 24px; }
+.home-film-card, .home-resource-list > a { border: 1px solid #29424f; background: #0c131c; text-decoration: none; color: inherit; transition: border-color .2s; overflow: hidden; }
+.home-film-card:hover, .home-resource-list > a:hover { border-color: #00e5ff; }
+.home-film-card img { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; }
+.home-film-card > div, .home-resource-list > a { padding: clamp(24px,3vw,40px); }
+.home-section h3 { font: 500 32px/1.15 var(--homepage-font-display); margin: 14px 0; }
+.home-resource-grid p { font-size: 15px; }
+.home-resource-grid strong { color: #70e4f7; font-size: 14px; display: block; margin-top: 24px; }
+.home-resource-list { display: grid; gap: 24px; }
+.home-about { border-top: 1px solid #1f3542; }
+.home-newsletter { padding-top: 0; padding-bottom: 65px; }
+.home-mobile-nav { width: 100%; align-items: center; justify-content: center; gap: 26px; color: #e2e8f0; font-size: 14px; }
+.home-mobile-nav > a, .home-mobile-nav summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; }
+.home-mobile-nav > a:first-child { color: #67e8f9; }
+.home-mobile-nav details { position: relative; }
+.home-mobile-nav summary { list-style: none; }
+.home-mobile-nav summary::-webkit-details-marker { display: none; }
+.home-mobile-nav details > div { position: absolute; top: 44px; right: 0; width: 200px; padding: 8px; background: #0c1829; border: 1px solid #294758; box-shadow: 0 15px 30px #0008; }
+.home-mobile-nav details > div a { display: flex; align-items: center; min-height: 44px; padding: 8px 12px; }
+@media (max-width: 767px) {
+  .home-mobile-nav { display: flex; }
+  .home-kingdom, .home-about, .home-resource-grid { grid-template-columns: 1fr; }
+  .home-section { padding: 60px 24px; }
+  .home-kingdom { margin-bottom: 30px; }
+  .home-newsletter { padding-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .original-home .kingdom-hero { height: max(780px,100svh); }
+  .original-home .kingdom-hero .hero-stage { height: max(780px,100svh); position: relative; }
+  .original-home .hero-main-track, .original-home .hero-scroll-position { display: none; }
+  :root .original-home .logo-pulse { animation: none; }
+}

@@ -29,11 +29,11 @@ export function HeroSection() {
       // --- Reduced motion: set final state immediately ---
       mm.add("(prefers-reduced-motion: reduce)", () => {
         gsap.set(titleRef.current?.children || [], { opacity: 1, y: 0 });
-        gsap.set(lensFrameRef.current, { scale: 1, rotation: 0 });
-        gsap.set(scrollHintRef.current, { opacity: 0.7, y: 0 });
-        gsap.set(endCtaRef.current, { opacity: 1, y: 0 });
+        gsap.set(lensFrameRef.current, { scale: 1, rotation: 45 });
+        gsap.set(scrollHintRef.current, { autoAlpha: 0 });
+        gsap.set(endCtaRef.current, { autoAlpha: 0 });
         gsap.set(clarifiedTrackRef.current, {
-          opacity: 1,
+          opacity: 0,
           xPercent: -50,
           yPercent: -50,
         });
@@ -95,7 +95,7 @@ export function HeroSection() {
         // --- Title fades in first 100px ---
         gsap.to(heroTitleWrapperRef.current, {
           scale: 0.8,
-          opacity: 0,
+          autoAlpha: 0,
           scrollTrigger: {
             trigger: container,
             start: "top top",
@@ -139,17 +139,15 @@ export function HeroSection() {
           },
         });
 
-        // --- Clarified track: same responsive distance, same range ---
-        gsap.to(clarifiedTrackRef.current, {
-          y: trackTravel,
-          ease: "none",
-          scrollTrigger: {
-            trigger: container,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1,
-            invalidateOnRefresh: true,
-          },
+        // Clear the reading before the closing invitation appears.
+        gsap.fromTo(clarifiedTrackRef.current, { opacity: 1 }, {
+          opacity: 0,
+          immediateRender: false,
+          scrollTrigger: { trigger: container, start: "35% top", end: "42% top", scrub: true },
+        });
+        gsap.to(mainTrackRef.current, {
+          opacity: 0,
+          scrollTrigger: { trigger: container, start: "35% top", end: "42% top", scrub: true },
         });
 
         // --- Lens pulse ---
@@ -189,9 +187,9 @@ export function HeroSection() {
         // sticky hero is still pinned (the sticky unpins around 63% of the
         // container, so the fade must COMPLETE before then or it scrolls off
         // screen unseen). Fades in 42%→56%, holds for the rest of the pin. ---
-        gsap.set(endCtaRef.current, { opacity: 0, y: 16 });
+        gsap.set(endCtaRef.current, { autoAlpha: 0, y: 16 });
         gsap.to(endCtaRef.current, {
-          opacity: 1,
+          autoAlpha: 1,
           y: 0,
           scrollTrigger: {
             trigger: container,
@@ -200,13 +198,16 @@ export function HeroSection() {
             scrub: true,
           },
         });
+        const particles = particlesRef.current;
+        return () => particles?.replaceChildren();
       });
+      return () => mm.revert();
     },
     { scope: containerRef }
   );
 
   return (
-    <div ref={containerRef} className="h-[330vh]">
+    <div ref={containerRef} className="kingdom-hero h-[330vh]">
       {/* Sticky viewport — stays in place while container scrolls (230vh of scroll) */}
       <div
         className="hero-stage sticky top-0 h-[100svh] w-full overflow-hidden"
@@ -218,27 +219,19 @@ export function HeroSection() {
           className="absolute inset-0 overflow-hidden pointer-events-none z-0"
         />
 
-        {/* Main Scroll Track — Blurred Ancient Text */}
-        <div ref={mainTrackRef} className="relative z-10 w-full">
+        {/* Decorative background reading */}
+        <div ref={mainTrackRef} aria-hidden="true" className="hero-main-track relative z-10 w-full">
           {/* Reserved opening stage: clears the fixed nav and the full rotated
               diamond before the first manuscript line enters. */}
           <div className="hero-track-opening" />
 
-          {/* Ancient manuscripts scroll through */}
+          {/* The prayer travels behind the lens */}
           <section className="min-h-[120svh] flex flex-col items-center justify-start px-6 sm:px-10">
             <div className="max-w-2xl space-y-24 sm:space-y-32 ancient-text text-xl sm:text-2xl text-center">
-              <p style={{ fontFamily: "var(--font-noto-samaritan), serif" }}>
-                𐤁𐤓𐤀𐤔𐤉𐤕 𐤁𐤓𐤀 𐤀𐤋𐤄𐤉𐤌 𐤀𐤕 𐤄𐤔𐤌𐤉𐤌 𐤅𐤀𐤕 𐤄𐤀𐤓𐤒
-              </p>
-              <p style={{ fontFamily: "serif" }}>
-                Ἐν ἀρχῇ ἐποίησεν ὁ Θεὸς τὸν οὐρανὸν καὶ τὴν γῆν
-              </p>
-              <p style={{ fontFamily: "serif" }}>
-                In principio creavit Deus caelum et terram
-              </p>
-              <p style={{ fontFamily: "var(--homepage-font-body)" }}>
-                The words of the ancients are veiled in time and tradition
-              </p>
+              <p>Your kingdom come.</p>
+              <p>Your will be done.</p>
+              <p>On earth as it is in heaven.</p>
+              <p>Matthew 6:10 · Berean Standard Bible</p>
             </div>
           </section>
 
@@ -259,6 +252,7 @@ export function HeroSection() {
         {/* THE LENS — Diamond Mask at Center */}
         <div
           ref={lensContainerRef}
+          aria-hidden="true"
           className="hero-lens-position absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-none"
         >
           {/* Diamond border frame */}
@@ -272,50 +266,16 @@ export function HeroSection() {
           <div className="absolute inset-0 lens-container overflow-hidden">
             <div
               ref={clarifiedTrackRef}
-              className="absolute w-screen h-screen opacity-0"
-              style={{ top: "80%", left: "50%" }}
+              className="absolute w-[150px] opacity-0 text-center text-[#00E5FF]"
+              style={{ top: "50%", left: "50%" }}
             >
-              {/* Clarified Section 1 — insights revealed through the lens */}
-              <div className="absolute w-full top-[50vh] flex flex-col items-center justify-center px-10 text-[#00E5FF]">
-                <div className="max-w-2xl space-y-16 text-2xl text-center font-bold">
-                  <p className="drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]">
-                    &ldquo;In the beginning, God created...&rdquo;
-                  </p>
-                  <p className="text-[#FF6B00] drop-shadow-[0_0_8px_rgba(255,107,0,0.5)]">
-                    Elohim: A complex unity of the divine.
-                  </p>
-                  <p>Linguistic roots reveal structural patterns.</p>
-                  <p>Clarity emerges where tradition ends.</p>
-                </div>
-              </div>
-
-              {/* Clarified Section 2 — timeline nodes */}
-              <div className="absolute w-full top-[220vh] flex items-center justify-center">
-                <div className="w-full max-w-4xl h-[600px] relative">
-                  <div className="absolute top-1/4 left-1/4 flex flex-col items-center">
-                    <div
-                      className="w-4 h-4 bg-[#FF6B00] rounded-full"
-                      style={{
-                        boxShadow: "0 0 20px rgba(255, 107, 0, 0.4)",
-                      }}
-                    />
-                    <span className="text-[10px] mt-2 whitespace-nowrap">
-                      Babylonian Exile (586 BCE)
-                    </span>
-                  </div>
-                  <div className="absolute top-3/4 left-1/2 flex flex-col items-center">
-                    <div
-                      className="w-4 h-4 bg-[#FF6B00] rounded-full"
-                      style={{
-                        boxShadow: "0 0 20px rgba(255, 107, 0, 0.4)",
-                      }}
-                    />
-                    <span className="text-[10px] mt-2 whitespace-nowrap">
-                      Writing of Genesis
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <p className="text-lg leading-[1.45]" style={{ fontFamily: "var(--homepage-font-display)" }}>
+                Your kingdom come,<br />
+                Your will be done,<br />
+                on earth as it is<br />
+                in heaven.
+              </p>
+              <p className="mt-3 text-[10px] tracking-wide text-slate-300">Matthew 6:10 · BSB</p>
             </div>
           </div>
         </div>
@@ -331,20 +291,20 @@ export function HeroSection() {
               className="font-bold drop-shadow-2xl"
               style={{
                 fontFamily: "var(--homepage-font-display)",
-                fontSize: "44px",
+                fontSize: "clamp(30px, 5.5vw, 44px)",
                 lineHeight: 1.1,
                 letterSpacing: "0.04em",
                 color: "var(--homepage-text)",
               }}
             >
-              <span className="block">CONTEXT</span>
+              <span className="block italic font-normal tracking-normal" style={{ fontSize: "30px", color: "#00E5FF" }}>The</span>
               <span
                 className="block italic font-normal tracking-normal"
-                style={{ fontSize: "30px", color: "#00E5FF" }}
+                style={{ fontSize: "clamp(34px, 6.5vw, 44px)", color: "var(--homepage-text)", fontStyle: "normal", fontWeight: 700 }}
               >
-                Over
+                KINGDOM
               </span>
-              <span className="block">TRADITION</span>
+              <span className="block italic font-normal tracking-normal" style={{ fontSize: "30px", color: "#00E5FF" }}>of God</span>
             </h1>
 
             {/* Primary CTA → onboarding */}
@@ -364,13 +324,13 @@ export function HeroSection() {
             lens animation completes */}
         <div
           ref={endCtaRef}
-          className="hero-copy-position absolute inset-x-0 -translate-y-1/2 z-50 flex flex-col items-center justify-center gap-3 opacity-0 pointer-events-none"
+          className="hero-copy-position absolute inset-x-0 -translate-y-1/2 z-50 flex flex-col items-center justify-center gap-3 invisible opacity-0 pointer-events-none"
         >
           <span
             className="text-[11px] uppercase tracking-[0.3em] text-slate-300"
             style={{ fontFamily: "var(--homepage-font-body)" }}
           >
-            Ready to begin?
+            Good news for the earth
           </span>
           <Link
             href="/start-here"

@@ -1,0 +1,50 @@
+.kingdom-page { padding-bottom: 70px; }
+.kingdom-page section[id] { scroll-margin-top: 100px; }
+.kingdom-page .kingdom-intro { max-width: 900px; padding-bottom: 0; }
+.kingdom-page .kingdom-intro > p { max-width: 650px; font-size: 21px; }
+.kingdom-jump-links { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 26px; margin-top: 28px; }
+.kingdom-prayer { margin: 52px 0 64px; padding: clamp(28px,5vw,60px); background: var(--site-feature-bg); color: #fff7e8; border-radius: 4px; }
+.kingdom-prayer blockquote { font: 400 clamp(26px,3.4vw,43px)/1.3 var(--font-newsreader),serif; max-width: 860px; margin: 0; }
+.kingdom-prayer figcaption { margin-top: 26px; font-size: 13px; display: flex; flex-wrap: wrap; gap: 10px 24px; color: #d5e0ee; }
+.kingdom-prayer a { color: inherit; text-decoration: underline; text-underline-offset: 4px; }
+.kingdom-meaning { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-bottom: 80px; }
+.kingdom-page h2 em { color: var(--site-link); font-weight: 400; }
+.kingdom-meaning p { margin: 0 0 18px; }
+.kingdom-series, .kingdom-readings, .kingdom-further { padding: 55px 0; border-top: 1px solid var(--site-border); }
+.kingdom-page .section-heading { align-items: start; margin-bottom: 32px; }
+.kingdom-page .section-heading > p { max-width: 380px; }
+.kingdom-episodes { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.kingdom-episode { display: flex; flex-direction: column; min-width: 0; padding: 28px; border: 1px solid var(--site-border); border-top: 3px solid var(--site-link); background: var(--site-panel); border-radius: 4px; }
+.episode-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: var(--site-link); font: 600 11px/1.4 var(--font-manrope); letter-spacing: .05em; margin-bottom: 25px; }
+.kingdom-page .kingdom-episode h3 { font-size: clamp(24px,2.3vw,30px); line-height: 1.15; margin: 0 0 18px; }
+.kingdom-page .kingdom-episode p { font-size: 15px; margin: 0 0 22px; }
+.kingdom-page .kingdom-episode .episode-release { margin-top: auto; padding-top: 22px; color: var(--site-link); font-size: 13px; font-weight: 600; }
+.episode-release time { display: block; }
+.kingdom-episode .site-text-link { font-size: 13px; }
+.kingdom-page .kingdom-series-note { font-size: 14px; margin-top: 22px; max-width: 860px; }
+.kingdom-series-note a { color: var(--site-link); text-decoration: underline; text-underline-offset: 3px; }
+.kingdom-reading-list { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 46px; }
+.kingdom-reading-list article { display: grid; grid-template-columns: 34px 1fr; gap: 14px; }
+.reading-number { color: var(--site-link); font: 500 25px/1.3 var(--font-newsreader); }
+.kingdom-reading-list h3 { margin: 0 0 12px; }
+.kingdom-reading-list p { margin: 0 0 12px; font-size: 16px; }
+.kingdom-reading-list nav { display: flex; gap: 4px 20px; flex-wrap: wrap; }
+.kingdom-reading-list nav a { font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; }
+.kingdom-further .path-cards { margin-top: 30px; }
+.kingdom-library-links { display: flex; flex-wrap: wrap; gap: 4px 30px; margin-top: 28px; }
+.kingdom-library-links a { min-height: 44px; display: inline-flex; align-items: center; color: var(--site-link); font-size: 14px; }
+.kingdom-more-paths { border-top: 1px solid var(--site-border); border-bottom: 1px solid var(--site-border); padding: 24px 0; }
+.kingdom-more-paths summary { font: 500 24px/1.4 var(--font-newsreader); cursor: pointer; }
+.kingdom-more-paths > p { margin-top: 20px; }
+.kingdom-path-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
+.kingdom-path-list a { padding: 14px 0; border-bottom: 1px solid var(--site-border); display: flex; justify-content: space-between; gap: 20px; align-items: center; font-size: 15px; color: var(--site-ink); }
+.kingdom-path-list small { color: var(--site-muted); white-space: nowrap; }
+@media (max-width: 800px) {
+  .kingdom-meaning { grid-template-columns: 1fr; gap: 20px; margin-bottom: 45px; }
+  .kingdom-episodes { grid-template-columns: 1fr; }
+  .kingdom-reading-list { grid-template-columns: 1fr; gap: 32px; }
+  .kingdom-path-list { grid-template-columns: 1fr; }
+  .kingdom-series, .kingdom-readings, .kingdom-further { padding: 36px 0; }
+  .kingdom-page .kingdom-intro > p { font-size: 18px; }
+  .kingdom-jump-links { align-items: start; flex-direction: column; }
+}

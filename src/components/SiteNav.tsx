@@ -6,6 +6,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { LensIcon } from "./LensIcon";
 
 const links = [
+  { label: "Start here", href: "/start-here" },
   { label: "Explorer", href: "/explore" },
   { label: "Read the Bible", href: "/books" },
   { label: "Commentary", href: "/commentary" },
@@ -13,7 +14,7 @@ const links = [
 ];
 export function SiteNav() {
   const pathname = usePathname();
-  if (pathname.startsWith("/bible/") && pathname.split("/").length > 3)
+  if (pathname === "/" || (pathname.startsWith("/bible/") && pathname.split("/").length > 3))
     return null;
   return (
     <header className="site-header">
@@ -48,7 +49,6 @@ export function SiteNav() {
             {[
               ...links,
               { label: "Topics", href: "/topics" },
-              { label: "Start here", href: "/start-here" },
               { label: "Ask a Scholar", href: "/chat" },
               { label: "About Bible Lens", href: "/about" },
             ].map((link) => (

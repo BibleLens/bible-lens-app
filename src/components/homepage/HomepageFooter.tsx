@@ -6,7 +6,7 @@ export function HomepageFooter() {
   const pathname = usePathname();
   if (pathname.startsWith("/explore/")) return null;
   return (
-    <footer className="site-footer">
+    <footer className={`site-footer${pathname === "/" ? " original-home-footer" : ""}`}>
       <div>
         <Link href="/" className="footer-wordmark">
           <LensIcon size={48} alt="" />

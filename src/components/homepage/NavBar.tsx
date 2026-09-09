@@ -3,12 +3,12 @@
 import Link from "next/link";
 
 const navLinks = [
+  { label: "Start Here", href: "/start-here" },
   { label: "Books", href: "/books" },
   { label: "Commentary", href: "/commentary" },
   { label: "Topics", href: "/topics" },
   { label: "Timelines", href: "/timelines" },
-  { label: "Start Here", href: "/start-here" },
-  { label: "Ask a Scholar", href: "/chat" },
+  { label: "Explorer", href: "/explore" },
 ];
 
 export function NavBar() {
@@ -24,7 +24,7 @@ export function NavBar() {
           <img
             src="/brand/bible-lens-logo-no-tagline.svg"
             alt="Bible Lens"
-            className="h-44 w-auto logo-pulse"
+            className="h-32 md:h-44 w-auto logo-pulse"
           />
         </Link>
 
@@ -42,6 +42,11 @@ export function NavBar() {
             </li>
           ))}
         </ul>
+        <div className="home-mobile-nav md:hidden">
+          <Link href="/start-here">Start Here</Link>
+          <Link href="/explore">Explorer</Link>
+          <details><summary>More ⌄</summary><div>{[...navLinks.slice(1, -1), { label: "Ask a Scholar", href: "/chat" }, { label: "About", href: "/about" }].map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}</div></details>
+        </div>
       </div>
     </nav>
   );
