@@ -50,12 +50,12 @@ export default function StartHere() {
             <article className="kingdom-episode" key={episode.id}>
               <div className="episode-top"><span>PART {String(index + 1).padStart(2, "0")}</span><span>{episode.duration}</span></div>
               <h3>{episode.title}</h3><p>{episode.description}</p>
-              {episode.published ? <a className="site-button primary" href={`https://www.youtube.com/watch?v=${episode.videoId}`} target="_blank" rel="noopener noreferrer">Watch part {index + 1} on YouTube ↗</a> : <p className="episode-release">Scheduled for <time dateTime={episode.releaseDate}>{episode.releaseLabel}</time></p>}
+              {episode.published ? <a className="site-button primary" href={`https://www.youtube.com/watch?v=${episode.videoId}`} target="_blank" rel="noopener noreferrer">Watch part {index + 1} on YouTube ↗</a> : <p className="episode-release">{episode.releaseLabel}</p>}
               <Link className="site-text-link" href={episode.readingHref}>{episode.published ? "Read alongside" : "Read ahead"}: {episode.readingLabel} →</Link>
             </article>
           ))}
         </div>
-        <p className="kingdom-series-note">New episodes are scheduled for 13, 20 and 27 September. Follow the readings now, or join us on the channel. <a href={KINGDOM_CHANNEL_URL} target="_blank" rel="noopener noreferrer">Visit Bible Lens on YouTube ↗</a></p>
+        <p className="kingdom-series-note">Follow the readings now, or join us on the channel. <a href={KINGDOM_CHANNEL_URL} target="_blank" rel="noopener noreferrer">Visit Bible Lens on YouTube ↗</a></p>
       </section>
       <section id="kingdom-passages" className="kingdom-readings" aria-labelledby="kingdom-passages-heading">
         <div className="section-heading"><div><span className="site-eyebrow">Read it for yourself</span><h2 id="kingdom-passages-heading">Four places to begin.</h2></div><p>Follow these in order, or start with the question that draws you in. Each link opens the whole chapter so you can read the context.</p></div>
