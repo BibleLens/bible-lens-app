@@ -3,7 +3,10 @@ import { READING_PATHS } from "@/lib/commentary-index";
 import { pageMetadata } from "@/lib/page-metadata";
 import { studyUrl } from "@/lib/explorer/state";
 import { KINGDOM_EPISODES, KINGDOM_CHANNEL_URL } from "@/data/kingdom-series";
+import { isKingdomVideoAvailable } from "@/lib/kingdom-availability";
 import "./start-here.css";
+
+export const revalidate = 300;
 
 export const metadata = pageMetadata({
   title: "The Kingdom of God: start here | Bible Lens",
@@ -18,7 +21,10 @@ const readings = [
   { title: "A hope that reaches beyond death", text: "Paul connects our resurrection hope to Jesus’ resurrection. Christ’s reign leads toward the defeat of the last enemy, death, and the day when God is all in all.", links: [{ label: "1 Corinthians 15:20–28", href: "/bible/1corinthians/15" }, { label: "Revelation 21:1–4", href: "/bible/revelation/21" }] },
 ];
 
-export default function StartHere() {
+export default async function StartHere() {
+  const episodes = await Promise.all(KINGDOM_EPISODES.map(async episode => ({
+    ...episode, published: await isKingdomVideoAvailable(episode),
+  })));
   return (
     <main id="main-content" className="discovery-home collection-page kingdom-page">
       <header className="kingdom-intro">
@@ -38,7 +44,7 @@ export default function StartHere() {
         <div><span className="site-eyebrow">What are we looking forward to?</span><h2 id="kingdom-meaning-heading">God’s good rule.<br /><em>A world restored.</em></h2></div>
         <div>
           <p>At its heart, the Kingdom is God’s rule, exercised through his appointed King, Jesus the Messiah. In Jesus’ ministry, people saw what that rule meant: healing, forgiveness, freedom and a call to love God and our neighbours.</p>
-          <p>We believe Jesus reigns now and will return to establish his Millennial reign on earth. We look forward to the resurrection of the dead and the prospect of lasting life in a world being restored under his care.</p>
+          <p>We believe God has appointed Jesus as King. We understand his first-century judgment-coming separately from the first resurrection and Millennial restoration, which we still expect. Our hope is lasting life on an earth restored under his care; how that reign will be inaugurated remains an open question in our study.</p>
           <p>The Bible’s horizon reaches further still: death itself defeated, creation made new and God dwelling with his people. Christians differ on how parts of that future unfold. Here, we’ll show you the passages and explain how we read them.</p>
           <Link className="site-text-link" href="/about">More about what we believe →</Link>
         </div>
@@ -46,7 +52,7 @@ export default function StartHere() {
       <section id="kingdom-series" className="kingdom-series" aria-labelledby="kingdom-series-heading">
         <div className="section-heading"><div><span className="site-eyebrow">The Kingdom video series</span><h2 id="kingdom-series-heading">One message.<br /><em>Three questions to follow.</em></h2></div><p>Begin with the big picture. Follow the signs of the Kingdom, then look closely at one of Jesus’ most discussed sayings.</p></div>
         <div className="kingdom-episodes">
-          {KINGDOM_EPISODES.map((episode, index) => (
+          {episodes.map((episode, index) => (
             <article className="kingdom-episode" key={episode.id}>
               <div className="episode-top"><span>PART {String(index + 1).padStart(2, "0")}</span><span>{episode.duration}</span></div>
               <h3>{episode.title}</h3><p>{episode.description}</p>
