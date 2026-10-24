@@ -1,7 +1,7 @@
 "use client";
 
 // src/components/EmailCapture.tsx
-// Self-contained email capture form island — can be dropped into any server component page
+// Self-contained email capture form island for any server component page
 // without converting that page to a client component.
 import { useState } from "react";
 
@@ -12,7 +12,7 @@ interface EmailCaptureProps {
 
 export function EmailCapture({
   headline = "Stay in the loop",
-  subtext = "Get notified when new commentary drops — no spam, just fresh perspectives on ancient texts.",
+  subtext = "Get notified when new commentary drops. No spam, just fresh perspectives on ancient texts.",
 }: EmailCaptureProps) {
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
@@ -42,7 +42,7 @@ export function EmailCapture({
         setStatus("error");
       }
     } catch {
-      setErrorMessage("Network error — please try again.");
+      setErrorMessage("Network error. Please try again.");
       setStatus("error");
     }
   }
@@ -57,11 +57,11 @@ export function EmailCapture({
 
         {status === "success" ? (
           <p className="text-[var(--color-gold-400)] font-medium">
-            You&apos;re in — check your inbox to confirm.
+            Check your inbox to confirm your subscription.
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="relative">
-            {/* Honeypot field — hidden from visual users, screen readers, and keyboard nav */}
+            {/* Honeypot hidden from visual users, screen readers, and keyboard navigation. */}
             <div
               aria-hidden="true"
               style={{
