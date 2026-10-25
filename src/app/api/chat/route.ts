@@ -9,6 +9,7 @@ import { embedQuery } from '@/lib/embeddings';
 import { buildSystemPrompt } from '@/lib/system-prompt';
 import { checkChatRateLimit, getClientIp } from '@/lib/rate-limit';
 import { pruneToTokenBudget, CONVERSATION_TOKEN_BUDGET } from '@/lib/token-budget';
+import { crossOrigin, readJsonObject } from '@/lib/request-guards';
 
 export const maxDuration = 30;
 
@@ -36,6 +37,7 @@ interface ConversationMessage {
 const MAX_MESSAGE_CHARS = 4000;
 
 export async function POST(request: NextRequest) {
+  if (crossOrigin(request)) return Response.json({ error: 'Forbidden.' }, { status: 403 });
   // Step 1: Rate limit check
   const ip = getClientIp(request);
   const { allowed, remaining, resetAt } = checkChatRateLimit(ip);
@@ -54,13 +56,15 @@ export async function POST(request: NextRequest) {
 
   // Step 2: Parse and validate request body
   // Accepts either { messages: ConversationMessage[] } (multi-turn) or { question: string } (legacy single-turn)
-  const body = await request.json();
+  const parsed = await readJsonObject(request, 850_000);
+  if (parsed.response) return parsed.response;
+  const body = parsed.body;
 
   let conversationMessages: ConversationMessage[];
 
   if (body.messages !== undefined) {
     // Multi-turn: validate messages array
-    if (!Array.isArray(body.messages) || body.messages.length === 0) {
+    if (!Array.isArray(body.messages) || body.messages.length === 0 || body.messages.length > 50) {
       return new Response(
         JSON.stringify({ error: "That question didn't quite register — could you rephrase it?" }),
         {
@@ -73,7 +77,7 @@ export async function POST(request: NextRequest) {
     // Validate each message entry
     for (const msg of body.messages) {
       if (
-        typeof msg !== 'object' ||
+        !msg || typeof msg !== 'object' || Array.isArray(msg) ||
         (msg.role !== 'user' && msg.role !== 'assistant') ||
         typeof msg.content !== 'string' ||
         msg.content.trim() === '' ||
@@ -109,7 +113,7 @@ export async function POST(request: NextRequest) {
   } else {
     // Legacy single-turn: { question: string }
     const { question } = body;
-    if (!question || typeof question !== 'string' || question.length > MAX_MESSAGE_CHARS) {
+    if (typeof question !== 'string' || !question.trim() || question.length > MAX_MESSAGE_CHARS) {
       return new Response(
         JSON.stringify({ error: "That question didn't quite register — could you rephrase it?" }),
         {
@@ -223,7 +227,7 @@ export async function POST(request: NextRequest) {
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
         'X-RateLimit-Remaining': String(remaining),
-        'Cache-Control': 'no-cache',
+        'Cache-Control': 'no-store',
         'Transfer-Encoding': 'chunked',
       },
     });

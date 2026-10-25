@@ -411,7 +411,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string } = {}) 
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: conversationHistory }),
+        body: JSON.stringify({ messages: conversationHistory.slice(-50) }),
       });
 
       if (response.status === 429) {

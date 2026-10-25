@@ -2,15 +2,16 @@
 // Server-side Buttondown relay with honeypot check and input validation
 import { NextRequest, NextResponse } from "next/server";
 import { isIP } from "node:net";
+import { crossOrigin, readJsonObject } from '@/lib/request-guards';
+import { checkSubscribeRateLimit, getClientIp } from '@/lib/rate-limit';
 
 const BUTTONDOWN_API_URL = "https://api.buttondown.com/v1/subscribers";
 
 export async function POST(request: NextRequest) {
-  const input: unknown = await request.json().catch(() => null);
-  if (!input || typeof input !== "object" || Array.isArray(input)) {
-    return NextResponse.json({ error: "Invalid signup request." }, { status: 400 });
-  }
-  const { email, website } = input as Record<string, unknown>;
+  if (crossOrigin(request)) return Response.json({ error: 'Forbidden.' }, { status: 403 });
+  const parsed = await readJsonObject(request, 8192);
+  if (parsed.response) return parsed.response;
+  const { email, website } = parsed.body;
 
   // Return silently for honeypot submissions without contacting Buttondown.
   if (website && typeof website === "string" && website.trim().length > 0) {
@@ -36,6 +37,13 @@ export async function POST(request: NextRequest) {
       { error: "Subscription service unavailable." },
       { status: 503 }
     );
+  }
+
+  const { allowed, resetAt } = checkSubscribeRateLimit(getClientIp(request));
+  if (!allowed) {
+    return Response.json({ error: 'Too many signups. Please try again in a minute.' }, {
+      status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil((resetAt - Date.now()) / 1000))) },
+    });
   }
 
   // Only trust the client IP supplied by Vercel on a Vercel deployment.

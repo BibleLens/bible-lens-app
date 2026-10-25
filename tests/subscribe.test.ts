@@ -7,7 +7,10 @@ const originalKey = process.env.BUTTONDOWN_API_KEY;
 const originalVercel = process.env.VERCEL;
 const email = "reader@example.test";
 
+let testTime = Date.now();
 beforeEach(() => {
+  testTime += 60_001;
+  mock.method(Date, "now", () => testTime);
   process.env.BUTTONDOWN_API_KEY = "test-only-credential";
   process.env.VERCEL = "1";
   mock.method(globalThis, "fetch", async () => {
@@ -119,7 +122,7 @@ test("non-JSON provider failures and network errors return safe JSON errors", as
 test("malformed requests, invalid addresses and missing credentials never contact Buttondown", async () => {
   const fetchMock = mock.method(globalThis, "fetch", async () => { throw new Error("No fetch expected"); });
   const malformed = new NextRequest("https://www.biblelens.faith/api/subscribe", {
-    method: "POST", body: "{",
+    method: "POST", headers: { "Content-Type": "application/json" }, body: "{",
   });
   assert.equal((await POST(malformed)).status, 400);
   for (const body of [null, [], {}, { email: "@" }, { email: "bad value@example.test" }, { email: 42 }]) {

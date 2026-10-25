@@ -1,7 +1,8 @@
 // src/lib/rate-limit.ts
-// In-memory per-IP rate limiting using lru-cache sliding window
-// NOTE: Cache resets on cold start — acceptable for v1 with organic traffic
+// Best-effort fixed windows per server instance. These are not global spending limits.
+// Counts reset on cold starts and are not shared between instances.
 import { LRUCache } from 'lru-cache';
+import { isIP } from 'node:net';
 
 interface RateLimitEntry {
   count: number;
@@ -24,6 +25,8 @@ const commentaryCache = new LRUCache<string, RateLimitEntry>({
   ttl: 60_000,
 });
 
+const subscribeCache = new LRUCache<string, RateLimitEntry>({ max: 500, ttl: 60_000 });
+
 const CHAT_LIMIT = 10;       // 10 req/min per IP — protect the wallet on Claude calls
 const SEARCH_LIMIT = 30;     // 30 req/min per IP — search is cheaper (just OpenAI + Qdrant)
 const COMMENTARY_LIMIT = 30; // 30 req/min per IP — same cost profile as search (OpenAI + Qdrant)
@@ -36,7 +39,7 @@ function checkLimit(
   const now = Date.now();
   const entry = cache.get(key);
 
-  if (!entry || now > entry.resetAt) {
+  if (!entry || now >= entry.resetAt) {
     // First request or window expired — start fresh
     cache.set(key, { count: 1, resetAt: now + 60_000 });
     return { allowed: true, remaining: limit - 1, resetAt: now + 60_000 };
@@ -63,12 +66,14 @@ export function checkCommentaryRateLimit(ip: string) {
   return checkLimit(commentaryCache, ip, COMMENTARY_LIMIT);
 }
 
-/**
- * Extract client IP from request headers.
- * x-forwarded-for may contain a comma-separated list — use the first value.
- * Falls back to '127.0.0.1' for local development.
- */
+export function checkSubscribeRateLimit(ip: string) {
+  return checkLimit(subscribeCache, ip, 5);
+}
+
+// Only trust the deployment platform's client address, never caller-supplied proxies.
 export function getClientIp(request: Request): string {
-  const forwarded = request.headers.get('x-forwarded-for');
-  return forwarded ? forwarded.split(',')[0].trim() : '127.0.0.1';
+  const ip = process.env.VERCEL === '1'
+    ? request.headers.get('x-vercel-forwarded-for')?.trim()
+    : undefined;
+  return ip && isIP(ip) ? ip : 'unknown';
 }
